@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const stats = [
+    { number: "300%", label: "Average ROI Increase" },
+    { number: "2.5x", label: "Lead Generation Boost" },
+    { number: "90%", label: "Time Saved on Campaigns" }
+  ];
+
   const aiAgents = [
     {
       icon: Globe,
@@ -59,70 +65,160 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight">
-            AI AGENTS
-            <br />
-            <span className="text-gray-400">FOR GROWTH</span>
+      <section className="min-h-screen bg-white relative overflow-hidden">
+        {/* Stats Sidebar */}
+        <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:block">
+          <div className="text-left space-y-12">
+            <div className="text-sm text-gray-400 uppercase tracking-wider mb-8">
+              Number of businesses<br/>transformed
+            </div>
+            {stats.map((stat, index) => (
+              <div key={index} className="space-y-2">
+                <div className="text-3xl font-black text-black">{stat.number}</div>
+                <div className="text-sm text-gray-600 max-w-24 leading-tight">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto px-6 pt-40 pb-20 text-center">
+          <h1 className="text-7xl md:text-9xl font-black mb-12 leading-none tracking-wider">
+            A I
           </h1>
-          <p className="text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Choose the AI agent that matches your business needs. 
-            Each one is designed to accelerate your specific goals.
-          </p>
-          <Button size="lg" className="bg-white text-black hover:bg-gray-200 font-bold text-xl px-12 py-6 rounded-none">
-            Take Our Quiz
-            <ArrowRight className="ml-3 w-6 h-6" />
-          </Button>
+          <div className="space-y-8 mb-16">
+            <h2 className="text-3xl md:text-4xl font-normal text-gray-800 leading-relaxed">
+              Transform <span className="font-black">workflows</span> and elevate
+              <br />
+              <span className="font-black">experiences</span> with AI innovation.
+            </h2>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-8 py-6 text-lg rounded-none">
+              Start Your Transformation
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-none">
+              See Results
+            </Button>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
+          <div className="text-center">
+            <div className="text-sm text-gray-400 mb-4 uppercase tracking-wider">Scroll</div>
+            <div className="w-px h-16 bg-gray-300 mx-auto"></div>
+          </div>
         </div>
       </section>
 
-      {/* AI Agents Grid */}
-      <section className="py-32 px-6">
+      {/* Content Intro */}
+      <section className="py-32 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div>
+              <h2 className="text-5xl md:text-6xl font-black leading-tight mb-8">
+                A I &nbsp;&nbsp;&nbsp; i s &nbsp;&nbsp;&nbsp; t h e &nbsp;&nbsp;&nbsp; f o u n d a t i o n a l
+                <br />
+                t e c h n o l o g y &nbsp;&nbsp;&nbsp; a t &nbsp;&nbsp;&nbsp; t h e
+                <br />
+                c o r e &nbsp;&nbsp;&nbsp; o f &nbsp;&nbsp;&nbsp; o u r &nbsp;&nbsp;&nbsp; t e a m .
+              </h2>
+            </div>
+            <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
+              <p>
+                From uncovering new insights in their data, to responsive content personalization 
+                on an unprecedented scale, AI-first marketing teams deliver a world of new relevance 
+                to audiences and ROI for the entire organization.
+              </p>
+              <p>
+                Getting there requires wide-scale transformation and is best guided by the people 
+                who use these tools every day to lead enterprise implementations, custom automation, 
+                and fine-tuned AI tools and training for your people. That's TorqueAI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Agents Section */}
+      <section className="py-32 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-8">
-              CHOOSE YOUR AI
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-wider">
+              W e ' l l &nbsp;&nbsp;&nbsp; g u i d e &nbsp;&nbsp;&nbsp; y o u &nbsp;&nbsp;&nbsp; o n
+              <br />
+              y o u r &nbsp;&nbsp;&nbsp; j o u r n e y &nbsp;&nbsp;&nbsp; t o &nbsp;&nbsp;&nbsp; b e c o m e
+              <br />
+              a n &nbsp;&nbsp;&nbsp; A I - f i r s t &nbsp;&nbsp;&nbsp; b r a n d .
             </h2>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Each AI agent specializes in a different area of your business growth.
-              Select the one that fits your immediate needs.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {aiAgents.map((agent, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {aiAgents.slice(0, 6).map((agent, index) => (
               <Link 
                 key={index} 
                 to="/contact"
                 className="group block"
               >
-                <div className="border-2 border-gray-100 hover:border-black transition-all duration-300 p-10 h-full">
-                  <div className="w-20 h-20 bg-black flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                    <agent.icon className="w-10 h-10 text-white" />
+                <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-black flex items-center justify-center mr-4">
+                      <agent.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-black">
+                      {agent.title}
+                    </h3>
                   </div>
                   
-                  <h3 className="text-3xl font-black mb-6 group-hover:text-black transition-colors">
-                    {agent.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     {agent.description}
                   </p>
                   
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-2 text-sm text-gray-500">
                     {agent.features.map((feature, idx) => (
-                      <li key={idx} className="text-gray-500 flex items-center text-base">
-                        <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                      <li key={idx} className="flex items-center">
+                        <div className="w-1 h-1 bg-black rounded-full mr-3"></div>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  
-                  <div className="flex items-center text-black font-bold text-lg group-hover:translate-x-3 transition-transform">
-                    Learn More
-                    <ArrowRight className="ml-3 w-5 h-5" />
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {aiAgents.slice(6, 8).map((agent, index) => (
+              <Link 
+                key={index + 6} 
+                to="/contact"
+                className="group block"
+              >
+                <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-black flex items-center justify-center mr-4">
+                      <agent.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-black">
+                      {agent.title}
+                    </h3>
                   </div>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {agent.description}
+                  </p>
+                  
+                  <ul className="space-y-2 text-sm text-gray-500">
+                    {agent.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center">
+                        <div className="w-1 h-1 bg-black rounded-full mr-3"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Link>
             ))}
@@ -131,19 +227,21 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gray-50 px-6">
+      <section className="py-32 bg-white px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-black mb-8">
-            NOT SURE WHICH AI?
+          <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-wider">
+            N O T &nbsp;&nbsp;&nbsp; S U R E &nbsp;&nbsp;&nbsp; W H I C H &nbsp;&nbsp;&nbsp; A I ?
           </h2>
-          <p className="text-2xl text-gray-600 mb-12 leading-relaxed">
-            Take our 5-minute quiz to find the perfect AI agent for your business goals.
+          <p className="text-xl text-gray-600 mb-16 leading-relaxed max-w-3xl mx-auto">
+            Take our 5-minute quiz to find the perfect AI agent for your business goals,
+            or speak with one of our specialists to design a custom solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-bold px-12 py-6 text-xl rounded-none">
+            <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg rounded-none">
               Take Quiz
+              <ArrowRight className="ml-3 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white font-bold px-12 py-6 text-xl rounded-none">
+            <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg rounded-none">
               Talk to Expert
             </Button>
           </div>

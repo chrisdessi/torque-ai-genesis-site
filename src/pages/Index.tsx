@@ -83,8 +83,8 @@ const Index = () => {
 
         {/* Main Content */}
         <div className="max-w-4xl mx-auto px-6 pt-40 pb-20 text-center">
-          <h1 className="text-7xl md:text-9xl font-black mb-12 leading-none tracking-wider">
-            A I
+          <h1 className="text-7xl md:text-9xl font-black mb-12 leading-none tracking-[0.2em]">
+            AI
           </h1>
           <div className="space-y-8 mb-16">
             <h2 className="text-3xl md:text-4xl font-normal text-gray-800 leading-relaxed">
@@ -119,12 +119,12 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div>
-              <h2 className="text-5xl md:text-6xl font-black leading-tight mb-8">
-                A I &nbsp;&nbsp;&nbsp; i s &nbsp;&nbsp;&nbsp; t h e &nbsp;&nbsp;&nbsp; f o u n d a t i o n a l
+              <h2 className="text-5xl md:text-6xl font-black leading-tight mb-8 tracking-wide">
+                AI is the foundational
                 <br />
-                t e c h n o l o g y &nbsp;&nbsp;&nbsp; a t &nbsp;&nbsp;&nbsp; t h e
+                technology at the
                 <br />
-                c o r e &nbsp;&nbsp;&nbsp; o f &nbsp;&nbsp;&nbsp; o u r &nbsp;&nbsp;&nbsp; t e a m .
+                core of our team.
               </h2>
             </div>
             <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
@@ -147,12 +147,12 @@ const Index = () => {
       <section className="py-32 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-wider">
-              W e ' l l &nbsp;&nbsp;&nbsp; g u i d e &nbsp;&nbsp;&nbsp; y o u &nbsp;&nbsp;&nbsp; o n
+            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-wide">
+              We'll guide you on
               <br />
-              y o u r &nbsp;&nbsp;&nbsp; j o u r n e y &nbsp;&nbsp;&nbsp; t o &nbsp;&nbsp;&nbsp; b e c o m e
+              your journey to become
               <br />
-              a n &nbsp;&nbsp;&nbsp; A I - f i r s t &nbsp;&nbsp;&nbsp; b r a n d .
+              an AI-first brand.
             </h2>
           </div>
 
@@ -229,8 +229,8 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-32 bg-white px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-wider">
-            N O T &nbsp;&nbsp;&nbsp; S U R E &nbsp;&nbsp;&nbsp; W H I C H &nbsp;&nbsp;&nbsp; A I ?
+          <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-wide">
+            NOT SURE WHICH AI?
           </h2>
           <p className="text-xl text-gray-600 mb-16 leading-relaxed max-w-3xl mx-auto">
             Take our 5-minute quiz to find the perfect AI agent for your business goals,

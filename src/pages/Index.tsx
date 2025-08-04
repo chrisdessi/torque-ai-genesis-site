@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Users, Mail, Megaphone, Star, MapPin, BarChart3, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
+import circuitBoard from "@/assets/circuit-board.jpg";
+import codeLaptop from "@/assets/code-laptop.jpg";
+import robot from "@/assets/robot.jpg";
 
 const Index = () => {
   const stats = [
@@ -82,7 +85,7 @@ const Index = () => {
         </div>
 
         {/* Main Content */}
-        <div className="max-w-4xl mx-auto px-6 pt-40 pb-20 text-center">
+        <div className="max-w-4xl mx-auto px-6 pt-40 pb-8 text-center">
           <h1 className="text-7xl md:text-9xl font-black mb-12 leading-none tracking-[0.2em]">
             AI
           </h1>
@@ -106,7 +109,7 @@ const Index = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
           <div className="text-center">
             <div className="text-sm text-gray-400 mb-4 uppercase tracking-wider">Scroll</div>
             <div className="w-px h-16 bg-gray-300 mx-auto"></div>
@@ -138,6 +141,35 @@ const Index = () => {
                 who use these tools every day to lead enterprise implementations, custom automation, 
                 and fine-tuned AI tools and training for your people. That's TorqueAI.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Gallery */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="relative overflow-hidden bg-white">
+              <img 
+                src={circuitBoard} 
+                alt="AI Technology" 
+                className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+            <div className="relative overflow-hidden bg-white">
+              <img 
+                src={codeLaptop} 
+                alt="Development Process" 
+                className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+            <div className="relative overflow-hidden bg-white">
+              <img 
+                src={robot} 
+                alt="AI Innovation" 
+                className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
             </div>
           </div>
         </div>

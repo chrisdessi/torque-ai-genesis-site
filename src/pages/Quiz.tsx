@@ -105,13 +105,22 @@ const Quiz = () => {
   };
 
   const getRecommendation = () => {
+    if (answers.length === 0) {
+      return aiAgentRecommendations.website; // Default fallback
+    }
+    
     const answerCounts = answers.reduce((acc, answer) => {
       acc[answer] = (acc[answer] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
     
-    const topAnswer = Object.entries(answerCounts).sort(([,a], [,b]) => b - a)[0][0];
-    return aiAgentRecommendations[topAnswer as keyof typeof aiAgentRecommendations];
+    const entries = Object.entries(answerCounts);
+    if (entries.length === 0) {
+      return aiAgentRecommendations.website; // Default fallback
+    }
+    
+    const topAnswer = entries.sort(([,a], [,b]) => b - a)[0][0];
+    return aiAgentRecommendations[topAnswer as keyof typeof aiAgentRecommendations] || aiAgentRecommendations.website;
   };
 
   const resetQuiz = () => {

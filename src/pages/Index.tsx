@@ -273,12 +273,12 @@ const Index = () => {
             or speak with one of our specialists to design a custom solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="https://torqueapp.ai/ai-agents/">
+            <Link to="/quiz">
               <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg rounded-none">
                 Take Quiz
                 <ArrowRight className="ml-3 w-5 h-5" />
               </Button>
-            </a>
+            </Link>
             <a href="https://torqueapp.ai/centered-heading-with-contact-form/">
               <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg rounded-none">
                 Talk to Expert

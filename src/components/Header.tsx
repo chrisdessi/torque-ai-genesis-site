@@ -9,7 +9,7 @@ const Header = () => {
 
   const navigation = [
     { name: "AI Agents", href: "https://torqueapp.ai/ai-agents/" },
-    { name: "Quiz", href: "https://torqueapp.ai/ai-agents/" },
+    { name: "Quiz", href: "/quiz" },
     { name: "Pricing", href: "https://torqueapp.ai/pricing/" },
     { name: "About", href: "https://torqueapp.ai/our-story/" },
   ];
@@ -27,13 +27,23 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-black font-medium transition-colors"
-              >
-                {item.name}
-              </a>
+              item.name === "Quiz" ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-gray-700 hover:text-black font-medium transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-black font-medium transition-colors"
+                >
+                  {item.name}
+                </a>
+              )
             ))}
             <Link to="/dashboard">
               <Button className="bg-black text-white hover:bg-gray-800 font-semibold px-6">
@@ -58,14 +68,25 @@ const Header = () => {
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4 pt-4">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-black font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
+                item.name === "Quiz" ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="text-gray-700 hover:text-black font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-700 hover:text-black font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
               <Link to="/dashboard">
                 <Button className="bg-black text-white hover:bg-gray-800 font-semibold w-full">

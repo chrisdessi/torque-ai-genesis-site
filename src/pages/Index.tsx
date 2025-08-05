@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import circuitBoard from "@/assets/circuit-board.jpg";
 import codeLaptop from "@/assets/code-laptop.jpg";
-import robot from "@/assets/robot.jpg";
+import officeTeam from "@/assets/office-team.jpg";
 
 const Index = () => {
   const stats = [
@@ -98,13 +98,17 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-8 py-6 text-lg rounded-none">
-              Start Your Transformation
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-none">
-              See Results
-            </Button>
+            <a href="https://torqueapp.ai/centered-heading-with-contact-form/">
+              <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-8 py-6 text-lg rounded-none">
+                Start Your Transformation
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+            <a href="https://torqueapp.ai/ai-agents/">
+              <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-none">
+                See Results
+              </Button>
+            </a>
           </div>
         </div>
 
@@ -166,8 +170,8 @@ const Index = () => {
             </div>
             <div className="relative overflow-hidden bg-white">
               <img 
-                src={robot} 
-                alt="AI Innovation" 
+                src={officeTeam} 
+                alt="Team Collaboration" 
                 className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
@@ -190,9 +194,9 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {aiAgents.slice(0, 6).map((agent, index) => (
-              <Link 
+              <a 
                 key={index} 
-                to="/contact"
+                href="https://torqueapp.ai/ai-agents/"
                 className="group block"
               >
                 <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 p-8 h-full">
@@ -218,15 +222,15 @@ const Index = () => {
                     ))}
                   </ul>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {aiAgents.slice(6, 8).map((agent, index) => (
-              <Link 
+              <a 
                 key={index + 6} 
-                to="/contact"
+                href="https://torqueapp.ai/ai-agents/"
                 className="group block"
               >
                 <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 p-8 h-full">
@@ -252,7 +256,7 @@ const Index = () => {
                     ))}
                   </ul>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -269,13 +273,17 @@ const Index = () => {
             or speak with one of our specialists to design a custom solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg rounded-none">
-              Take Quiz
-              <ArrowRight className="ml-3 w-5 h-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg rounded-none">
-              Talk to Expert
-            </Button>
+            <a href="https://torqueapp.ai/ai-agents/">
+              <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg rounded-none">
+                Take Quiz
+                <ArrowRight className="ml-3 w-5 h-5" />
+              </Button>
+            </a>
+            <a href="https://torqueapp.ai/centered-heading-with-contact-form/">
+              <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg rounded-none">
+                Talk to Expert
+              </Button>
+            </a>
           </div>
         </div>
       </section>

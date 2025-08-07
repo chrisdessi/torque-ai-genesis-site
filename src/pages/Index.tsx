@@ -261,34 +261,77 @@ const Index = () => {
                 at the core of our team.
               </h2>
             </motion.div>
-            <motion.div 
-              className="space-y-8 text-lg text-muted-foreground leading-relaxed"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              viewport={{ once: true, margin: "-100px" }}
+          <motion.div 
+            className="space-y-8 text-lg text-muted-foreground leading-relaxed"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
             >
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
+              From uncovering new insights in their data, to responsive content personalization 
+              on an unprecedented scale, AI-first marketing teams deliver a world of new relevance 
+              to audiences and ROI for the entire organization.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Getting there requires wide-scale transformation and is best guided by the people 
+              who use these tools every day to lead enterprise implementations, custom automation, 
+              and fine-tuned AI tools and training for your people. That's TorqueAI.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+              className="p-6 bg-background rounded-lg border"
+            >
+              <p className="mb-4">
+                Looking to coach your team on AI?{' '}
+                <motion.span 
+                  className="highlight-blue font-semibold"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                  viewport={{ once: true }}
+                >
+                  Visit TorqueAcademy.ai
+                </motion.span>{' '}
+                for comprehensive AI training and coaching programs.
+              </p>
+              <motion.a
+                href="https://torqueacademy.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded-lg hover:border-black transition-all duration-300 group"
+                whileHover={{ y: -2, scale: 1.02 }}
+                transition={{ duration: 0.2 }}
               >
-                From uncovering new insights in their data, to responsive content personalization 
-                on an unprecedented scale, AI-first marketing teams deliver a world of new relevance 
-                to audiences and ROI for the entire organization.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-              >
-                Getting there requires wide-scale transformation and is best guided by the people 
-                who use these tools every day to lead enterprise implementations, custom automation, 
-                and fine-tuned AI tools and training for your people. That's TorqueAI.
-              </motion.p>
+                <img 
+                  src="/lovable-uploads/85521d42-7840-4d81-b8ca-c002ab15932e.png" 
+                  alt="TorqueAcademy.ai" 
+                  className="h-8 w-auto"
+                />
+                <div>
+                  <div className="font-bold text-black group-hover:text-primary transition-colors">
+                    TorqueAcademy.ai
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    AI Training & Coaching
+                  </div>
+                </div>
+              </motion.a>
             </motion.div>
+          </motion.div>
           </div>
         </div>
       </section>

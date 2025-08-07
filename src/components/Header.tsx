@@ -19,8 +19,8 @@ const Header = () => {
       <nav className="section-padding py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-black">
-              TORQUE<span className="text-gray-600">AI</span>
+            <Link to="/" className="flex items-center space-x-2">
+              <img src="/lovable-uploads/85521d42-7840-4d81-b8ca-c002ab15932e.png" alt="TorqueAI" className="h-8 w-auto" />
             </Link>
           </div>
 

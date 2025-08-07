@@ -144,18 +144,34 @@ const Index = () => {
                 TorqueApp is{' '}
                 <motion.span 
                   className="highlight-green"
-                  initial={{ opacity: 0, x: -20, scale: 0.8 }}
+                  initial={{ opacity: 0, x: -100, scale: 0.8 }}
                   animate={{ 
                     opacity: 1, 
-                    x: 0, 
-                    scale: 1,
-                    y: [0, -2, 0]
+                    x: [0, 8, -8, 0], 
+                    scale: [1, 1.05, 0.95, 1],
+                    y: [0, -5, 5, 0],
+                    rotate: [0, 1, -1, 0]
                   }}
                   transition={{ 
-                    duration: 0.6, 
+                    duration: 0.8, 
                     delay: 0.8,
+                    x: {
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    scale: {
+                      duration: 3.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
                     y: {
                       duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    rotate: {
+                      duration: 6,
                       repeat: Infinity,
                       ease: "easeInOut"
                     }
@@ -166,18 +182,34 @@ const Index = () => {
                 that helps{' '}
                 <motion.span 
                   className="highlight-blue"
-                  initial={{ opacity: 0, x: 20, scale: 0.8 }}
+                  initial={{ opacity: 0, x: 100, scale: 0.8 }}
                   animate={{ 
                     opacity: 1, 
-                    x: 0, 
-                    scale: 1,
-                    y: [0, 2, 0]
+                    x: [0, -12, 12, 0], 
+                    scale: [1, 0.95, 1.05, 1],
+                    y: [0, 8, -8, 0],
+                    rotate: [0, -1, 1, 0]
                   }}
                   transition={{ 
-                    duration: 0.6, 
+                    duration: 0.8, 
                     delay: 1.0,
+                    x: {
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    scale: {
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
                     y: {
                       duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    rotate: {
+                      duration: 7,
                       repeat: Infinity,
                       ease: "easeInOut"
                     }
@@ -188,18 +220,34 @@ const Index = () => {
                 work{' '}
                 <motion.span 
                   className="highlight-purple"
-                  initial={{ opacity: 0, x: -15, scale: 0.8 }}
+                  initial={{ opacity: 0, x: -80, scale: 0.8 }}
                   animate={{ 
                     opacity: 1, 
-                    x: 0, 
-                    scale: 1,
-                    y: [0, -3, 0]
+                    x: [0, 15, -15, 0], 
+                    scale: [1, 1.08, 0.92, 1],
+                    y: [0, -10, 10, 0],
+                    rotate: [0, 2, -2, 0]
                   }}
                   transition={{ 
-                    duration: 0.6, 
+                    duration: 0.8, 
                     delay: 1.2,
-                    y: {
+                    x: {
                       duration: 3.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    scale: {
+                      duration: 2.8,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    y: {
+                      duration: 4.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    rotate: {
+                      duration: 5.5,
                       repeat: Infinity,
                       ease: "easeInOut"
                     }
@@ -210,18 +258,34 @@ const Index = () => {
                 to achieve{' '}
                 <motion.span 
                   className="highlight-yellow"
-                  initial={{ opacity: 0, x: 25, scale: 0.8 }}
+                  initial={{ opacity: 0, x: 120, scale: 0.8 }}
                   animate={{ 
                     opacity: 1, 
-                    x: 0, 
-                    scale: 1,
-                    y: [0, 1, 0]
+                    x: [0, -10, 10, 0], 
+                    scale: [1, 0.98, 1.02, 1],
+                    y: [0, 6, -6, 0],
+                    rotate: [0, -0.5, 0.5, 0]
                   }}
                   transition={{ 
-                    duration: 0.6, 
+                    duration: 0.8, 
                     delay: 1.4,
+                    x: {
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    scale: {
+                      duration: 3.2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
                     y: {
                       duration: 2.8,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    rotate: {
+                      duration: 8,
                       repeat: Infinity,
                       ease: "easeInOut"
                     }

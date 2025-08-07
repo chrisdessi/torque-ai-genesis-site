@@ -144,36 +144,88 @@ const Index = () => {
                 TorqueApp is{' '}
                 <motion.span 
                   className="highlight-green"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
+                  initial={{ opacity: 0, x: -20, scale: 0.8 }}
+                  animate={{ 
+                    opacity: 1, 
+                    x: 0, 
+                    scale: 1,
+                    y: [0, -2, 0]
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: 0.8,
+                    y: {
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
                 >
                   purpose-built AI
                 </motion.span>{' '}
                 that helps{' '}
                 <motion.span 
                   className="highlight-blue"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.0 }}
+                  initial={{ opacity: 0, x: 20, scale: 0.8 }}
+                  animate={{ 
+                    opacity: 1, 
+                    x: 0, 
+                    scale: 1,
+                    y: [0, 2, 0]
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: 1.0,
+                    y: {
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
                 >
                   content marketing teams
                 </motion.span>{' '}
                 work{' '}
                 <motion.span 
                   className="highlight-purple"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
+                  initial={{ opacity: 0, x: -15, scale: 0.8 }}
+                  animate={{ 
+                    opacity: 1, 
+                    x: 0, 
+                    scale: 1,
+                    y: [0, -3, 0]
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: 1.2,
+                    y: {
+                      duration: 3.5,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
                 >
                   smarter
                 </motion.span>{' '}
                 to achieve{' '}
                 <motion.span 
                   className="highlight-yellow"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 1.4 }}
+                  initial={{ opacity: 0, x: 25, scale: 0.8 }}
+                  animate={{ 
+                    opacity: 1, 
+                    x: 0, 
+                    scale: 1,
+                    y: [0, 1, 0]
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: 1.4,
+                    y: {
+                      duration: 2.8,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
                 >
                   better outcomes
                 </motion.span>
@@ -192,9 +244,9 @@ const Index = () => {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-2 hover:bg-muted" asChild>
-                <Link to="https://torqueapp.ai/centered-heading-with-contact-form/">
+                <a href="https://torqueapp.ai/centered-heading-with-contact-form/" target="_blank" rel="noopener noreferrer">
                   Get A Demo
-                </Link>
+                </a>
               </Button>
             </motion.div>
           </div>

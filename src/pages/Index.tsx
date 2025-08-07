@@ -66,75 +66,59 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="min-h-screen bg-white relative overflow-hidden">
-        {/* Stats Sidebar */}
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:block">
-          <div className="text-left space-y-12">
-            <div className="text-sm text-gray-400 uppercase tracking-wider mb-8">
-              Number of businesses<br/>transformed
+      <section className="relative px-4 py-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <p className="text-sm font-medium text-muted-foreground tracking-wider uppercase">
+                The TorqueApp Platform
+              </p>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight max-w-6xl mx-auto">
+                TorqueApp is <span className="highlight-green">purpose-built AI</span> that helps{' '}
+                <span className="highlight-blue">content marketing teams</span> work{' '}
+                <span className="highlight-purple">smarter</span> to achieve <span className="highlight-yellow">better outcomes</span>
+              </h1>
             </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+              <Button size="lg" className="px-8 py-4 text-lg bg-primary hover:bg-primary/90" asChild>
+                <Link to="/quiz">
+                  Start Free Trial
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-2 hover:bg-muted" asChild>
+                <Link to="https://torqueapp.ai/centered-heading-with-contact-form/">
+                  Get A Demo
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-16">
             {stats.map((stat, index) => (
-              <div key={index} className="space-y-2">
-                <div className="text-3xl font-black text-black">{stat.number}</div>
-                <div className="text-sm text-gray-600 max-w-24 leading-tight">{stat.label}</div>
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-primary mb-3">{stat.number}</div>
+                <div className="text-lg text-muted-foreground font-medium">{stat.label}</div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Main Content */}
-        <div className="max-w-4xl mx-auto px-6 pt-40 pb-8 text-center">
-          <h1 className="text-7xl md:text-9xl font-black mb-12 leading-none tracking-[0.2em]">
-            AI
-          </h1>
-          <div className="space-y-8 mb-16">
-            <h2 className="text-3xl md:text-4xl font-normal text-gray-800 leading-relaxed">
-              Transform <span className="font-black">workflows</span> and elevate
-              <br />
-              <span className="font-black">experiences</span> with AI innovation.
-            </h2>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="https://torqueapp.ai/centered-heading-with-contact-form/">
-              <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-8 py-6 text-lg rounded-none">
-                Start Your Transformation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
-            <a href="https://torqueapp.ai/ai-agents/">
-              <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-none">
-                See Results
-              </Button>
-            </a>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="text-center">
-            <div className="text-sm text-gray-400 mb-4 uppercase tracking-wider">Scroll</div>
-            <div className="w-px h-16 bg-gray-300 mx-auto"></div>
           </div>
         </div>
       </section>
 
       {/* Content Intro */}
-      <section className="py-32 px-6 bg-white">
+      <section className="py-32 px-6 bg-card">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div>
-              <h2 className="text-5xl md:text-6xl font-black leading-tight mb-8 tracking-wide">
-                AI is the foundational
-                <br />
-                technology at the
-                <br />
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-8">
+                AI is the <span className="highlight-orange">foundational technology</span> at the
                 core of our team.
               </h2>
             </div>
-            <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
+            <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
               <p>
                 From uncovering new insights in their data, to responsive content personalization 
                 on an unprecedented scale, AI-first marketing teams deliver a world of new relevance 
@@ -151,28 +135,28 @@ const Index = () => {
       </section>
 
       {/* Image Gallery */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="relative overflow-hidden bg-white">
+            <div className="relative overflow-hidden bg-card rounded-lg shadow-sm">
               <img 
                 src={circuitBoard} 
                 alt="AI Technology" 
-                className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
               />
             </div>
-            <div className="relative overflow-hidden bg-white">
+            <div className="relative overflow-hidden bg-card rounded-lg shadow-sm">
               <img 
                 src={codeLaptop} 
                 alt="Development Process" 
-                className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
               />
             </div>
-            <div className="relative overflow-hidden bg-white">
+            <div className="relative overflow-hidden bg-card rounded-lg shadow-sm">
               <img 
                 src={officeTeam} 
                 alt="Team Collaboration" 
-                className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
               />
             </div>
           </div>
@@ -180,15 +164,12 @@ const Index = () => {
       </section>
 
       {/* AI Agents Section */}
-      <section className="py-32 px-6 bg-gray-50">
+      <section className="py-32 px-6 bg-card">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-wide">
-              We'll guide you on
-              <br />
-              your journey to become
-              <br />
-              an AI-first brand.
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">
+              We'll guide you on your journey to become an{' '}
+              <span className="highlight-green">AI-first brand</span>.
             </h2>
           </div>
 
@@ -263,24 +244,24 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-white px-6">
+      <section className="py-32 bg-background px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-black mb-8 tracking-wide">
-            NOT SURE WHICH AI?
+          <h2 className="text-5xl md:text-6xl font-bold mb-8">
+            <span className="highlight-purple">NOT SURE</span> WHICH AI?
           </h2>
-          <p className="text-xl text-gray-600 mb-16 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-16 leading-relaxed max-w-3xl mx-auto">
             Take our 5-minute quiz to find the perfect AI agent for your business goals,
             or speak with one of our specialists to design a custom solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/quiz">
-              <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg rounded-none">
+              <Button size="lg" className="px-12 py-6 text-lg">
                 Take Quiz
                 <ArrowRight className="ml-3 w-5 h-5" />
               </Button>
             </Link>
             <a href="https://torqueapp.ai/centered-heading-with-contact-form/">
-              <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg rounded-none">
+              <Button size="lg" variant="outline" className="px-12 py-6 text-lg">
                 Talk to Expert
               </Button>
             </a>

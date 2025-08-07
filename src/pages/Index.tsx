@@ -6,13 +6,25 @@ import Footer from "@/components/Footer";
 import circuitBoard from "@/assets/circuit-board.jpg";
 import codeLaptop from "@/assets/code-laptop.jpg";
 import officeTeam from "@/assets/office-team.jpg";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 const Index = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const stats = [
     { number: "300%", label: "Average ROI Increase" },
     { number: "2.5x", label: "Lead Generation Boost" },
     { number: "90%", label: "Time Saved on Campaigns" }
   ];
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [controls, isInView]);
 
   const aiAgents = [
     {
@@ -69,20 +81,111 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative px-4 py-24 overflow-hidden">
+        {/* Floating Background Elements */}
+        <motion.div
+          className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-highlight-green/20 to-highlight-blue/20 rounded-full blur-xl"
+          animate={{
+            y: [-20, 20, -20],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-highlight-purple/20 to-highlight-yellow/20 rounded-full blur-xl"
+          animate={{
+            y: [20, -20, 20],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 left-1/3 w-16 h-16 bg-gradient-to-br from-highlight-orange/20 to-highlight-green/20 rounded-full blur-xl"
+          animate={{
+            y: [-10, 30, -10],
+            x: [-10, 10, -10],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
         <div className="max-w-7xl mx-auto text-center">
           <div className="space-y-12">
-            <div className="space-y-6">
-              <p className="text-sm font-medium text-muted-foreground tracking-wider uppercase">
+            <motion.div 
+              className="space-y-6"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.p 
+                className="text-sm font-medium text-muted-foreground tracking-wider uppercase"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 The TorqueApp Platform
-              </p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight max-w-6xl mx-auto">
-                TorqueApp is <span className="highlight-green">purpose-built AI</span> that helps{' '}
-                <span className="highlight-blue">content marketing teams</span> work{' '}
-                <span className="highlight-purple">smarter</span> to achieve <span className="highlight-yellow">better outcomes</span>
-              </h1>
-            </div>
+              </motion.p>
+              <motion.h1 
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight max-w-6xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                TorqueApp is{' '}
+                <motion.span 
+                  className="highlight-green"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  purpose-built AI
+                </motion.span>{' '}
+                that helps{' '}
+                <motion.span 
+                  className="highlight-blue"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                >
+                  content marketing teams
+                </motion.span>{' '}
+                work{' '}
+                <motion.span 
+                  className="highlight-purple"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                >
+                  smarter
+                </motion.span>{' '}
+                to achieve{' '}
+                <motion.span 
+                  className="highlight-yellow"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.4 }}
+                >
+                  better outcomes
+                </motion.span>
+              </motion.h1>
+            </motion.div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.6 }}
+            >
               <Button size="lg" className="px-8 py-4 text-lg bg-primary hover:bg-primary/90" asChild>
                 <Link to="/quiz">
                   Start Free Trial
@@ -93,18 +196,44 @@ const Index = () => {
                   Get A Demo
                 </Link>
               </Button>
-            </div>
+            </motion.div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-16">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-16"
+            ref={ref}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.2 }
+              }
+            }}
+            initial="hidden"
+            animate={controls}
+          >
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-primary mb-3">{stat.number}</div>
+              <motion.div 
+                key={index} 
+                className="text-center"
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <motion.div 
+                  className="text-4xl font-bold text-primary mb-3"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  {stat.number}
+                </motion.div>
                 <div className="text-lg text-muted-foreground font-medium">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -112,24 +241,54 @@ const Index = () => {
       <section className="py-32 px-6 bg-card">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-8">
-                AI is the <span className="highlight-orange">foundational technology</span> at the
-                core of our team.
+                AI is the{' '}
+                <motion.span 
+                  className="highlight-orange"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  foundational technology
+                </motion.span>{' '}
+                at the core of our team.
               </h2>
-            </div>
-            <div className="space-y-8 text-lg text-muted-foreground leading-relaxed">
-              <p>
+            </motion.div>
+            <motion.div 
+              className="space-y-8 text-lg text-muted-foreground leading-relaxed"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
                 From uncovering new insights in their data, to responsive content personalization 
                 on an unprecedented scale, AI-first marketing teams deliver a world of new relevance 
                 to audiences and ROI for the entire organization.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
                 Getting there requires wide-scale transformation and is best guided by the people 
                 who use these tools every day to lead enterprise implementations, custom automation, 
                 and fine-tuned AI tools and training for your people. That's TorqueAI.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -137,54 +296,104 @@ const Index = () => {
       {/* Image Gallery */}
       <section className="py-20 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="relative overflow-hidden bg-card rounded-lg shadow-sm">
-              <img 
-                src={circuitBoard} 
-                alt="AI Technology" 
-                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
-              />
-            </div>
-            <div className="relative overflow-hidden bg-card rounded-lg shadow-sm">
-              <img 
-                src={codeLaptop} 
-                alt="Development Process" 
-                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
-              />
-            </div>
-            <div className="relative overflow-hidden bg-card rounded-lg shadow-sm">
-              <img 
-                src={officeTeam} 
-                alt="Team Collaboration" 
-                className="w-full h-80 object-cover hover:scale-105 transition-all duration-500"
-              />
-            </div>
-          </div>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.2 }
+              }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {[
+              { src: circuitBoard, alt: "AI Technology" },
+              { src: codeLaptop, alt: "Development Process" },
+              { src: officeTeam, alt: "Team Collaboration" }
+            ].map((image, index) => (
+              <motion.div 
+                key={index}
+                className="relative overflow-hidden bg-card rounded-lg shadow-sm"
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ y: -10 }}
+              >
+                <motion.img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className="w-full h-80 object-cover transition-all duration-500"
+                  whileHover={{ scale: 1.05 }}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* AI Agents Section */}
       <section className="py-32 px-6 bg-card">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <h2 className="text-5xl md:text-6xl font-bold mb-8">
               We'll guide you on your journey to become an{' '}
-              <span className="highlight-green">AI-first brand</span>.
+              <motion.span 
+                className="highlight-green"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                AI-first brand
+              </motion.span>.
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.1 }
+              }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-200px" }}
+          >
             {aiAgents.slice(0, 6).map((agent, index) => (
-              <a 
+              <motion.a 
                 key={index} 
                 href="https://torqueapp.ai/ai-agents/"
                 className="group block"
+                variants={{
+                  hidden: { opacity: 0, y: 50, scale: 0.9 },
+                  visible: { opacity: 1, y: 0, scale: 1 }
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ y: -8, scale: 1.02 }}
               >
                 <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 p-8 h-full">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-black flex items-center justify-center mr-4">
+                    <motion.div 
+                      className="w-12 h-12 bg-black flex items-center justify-center mr-4"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <agent.icon className="w-6 h-6 text-white" />
-                    </div>
+                    </motion.div>
                     <h3 className="text-xl font-black">
                       {agent.title}
                     </h3>
@@ -203,22 +412,44 @@ const Index = () => {
                     ))}
                   </ul>
                 </div>
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.2 }
+              }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {aiAgents.slice(6, 8).map((agent, index) => (
-              <a 
+              <motion.a 
                 key={index + 6} 
                 href="https://torqueapp.ai/ai-agents/"
                 className="group block"
+                variants={{
+                  hidden: { opacity: 0, y: 50, scale: 0.9 },
+                  visible: { opacity: 1, y: 0, scale: 1 }
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ y: -8, scale: 1.02 }}
               >
                 <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 p-8 h-full">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-black flex items-center justify-center mr-4">
+                    <motion.div 
+                      className="w-12 h-12 bg-black flex items-center justify-center mr-4"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <agent.icon className="w-6 h-6 text-white" />
-                    </div>
+                    </motion.div>
                     <h3 className="text-xl font-black">
                       {agent.title}
                     </h3>
@@ -237,36 +468,73 @@ const Index = () => {
                     ))}
                   </ul>
                 </div>
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-32 bg-background px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">
-            <span className="highlight-purple">NOT SURE</span> WHICH AI?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-16 leading-relaxed max-w-3xl mx-auto">
+        <motion.div 
+          className="max-w-5xl mx-auto text-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.h2 
+            className="text-5xl md:text-6xl font-bold mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <motion.span 
+              className="highlight-purple"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              NOT SURE
+            </motion.span>{' '}
+            WHICH AI?
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground mb-16 leading-relaxed max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
             Take our 5-minute quiz to find the perfect AI agent for your business goals,
             or speak with one of our specialists to design a custom solution.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-6 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
             <Link to="/quiz">
-              <Button size="lg" className="px-12 py-6 text-lg">
-                Take Quiz
-                <ArrowRight className="ml-3 w-5 h-5" />
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" className="px-12 py-6 text-lg">
+                  Take Quiz
+                  <ArrowRight className="ml-3 w-5 h-5" />
+                </Button>
+              </motion.div>
             </Link>
             <a href="https://torqueapp.ai/centered-heading-with-contact-form/">
-              <Button size="lg" variant="outline" className="px-12 py-6 text-lg">
-                Talk to Expert
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" variant="outline" className="px-12 py-6 text-lg">
+                  Talk to Expert
+                </Button>
+              </motion.div>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <Footer />

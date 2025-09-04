@@ -141,21 +141,22 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                TorqueApp is{' '}
                 <span className="highlight-green animate-float inline-block">
-                  purpose-built AI
+                  AI powered
                 </span>{' '}
-                that helps{' '}
                 <span className="highlight-blue animate-wiggle inline-block">
-                  content marketing teams
-                </span>{' '}
-                work{' '}
+                  Marketing software
+                </span>,{' '}
                 <span className="highlight-purple animate-bounce-slow inline-block">
-                  smarter
+                  consulting
                 </span>{' '}
-                to achieve{' '}
+                and{' '}
                 <span className="highlight-yellow animate-float inline-block">
-                  better outcomes
+                  coaching
+                </span>{' '}
+                for{' '}
+                <span className="highlight-orange animate-scroll-x inline-block">
+                  purpose driven companies
                 </span>
               </motion.h1>
             </motion.div>

@@ -141,22 +141,19 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <span className="highlight-green animate-float inline-block">
-                  AI powered
-                </span>{' '}
                 <span className="highlight-blue animate-wiggle inline-block">
-                  Marketing software
+                  Marketing Software
                 </span>,{' '}
                 <span className="highlight-purple animate-bounce-slow inline-block">
-                  consulting
-                </span>{' '}
+                  Consulting
+                </span>,{' '}
                 and{' '}
                 <span className="highlight-yellow animate-float inline-block">
-                  coaching
+                  Coaching
                 </span>{' '}
                 for{' '}
                 <span className="highlight-orange animate-scroll-x inline-block">
-                  purpose driven companies
+                  Purpose Driven Companies
                 </span>
               </motion.h1>
             </motion.div>

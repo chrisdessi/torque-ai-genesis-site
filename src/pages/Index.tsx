@@ -49,14 +49,18 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black">
-          <img 
-            src={chrisHero} 
-            alt="Christopher Dessi"
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="relative w-full max-w-4xl mx-auto">
+            <img 
+              src={chrisHero} 
+              alt="Christopher Dessi"
+              className="w-full h-auto object-contain"
+              style={{
+                filter: 'drop-shadow(0 0 120px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.2))'
+              }}
+            />
+          </div>
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center text-white">

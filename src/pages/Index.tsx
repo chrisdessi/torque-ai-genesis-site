@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import chrisHero from "@/assets/chris-hero-alt.jpg";
+import chrisHero from "@/assets/chris-hero-new.jpg";
 
 const Index = () => {
   const process = [
@@ -49,18 +49,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-full max-w-4xl mx-auto">
-            <img 
-              src={chrisHero} 
-              alt="Christopher Dessi"
-              className="w-full h-auto object-contain"
-              style={{
-                filter: 'drop-shadow(0 0 120px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.2))'
-              }}
-            />
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={chrisHero} 
+            alt="Christopher Dessi"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center text-white">
@@ -70,10 +66,10 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tight drop-shadow-2xl">
               Christopher Dessi
             </h1>
-            <p className="text-2xl md:text-4xl font-light text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-2xl md:text-4xl font-light text-gray-200 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Marketing, Sales & Communications Consultant
               <br />
               <span className="text-white font-normal">Specializing in AI Integration</span>

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import chrisHero from "@/assets/chris-hero-alt.jpg";
+import chrisHero from "@/assets/chris-hero-main.png";
 
 const Index = () => {
   const process = [

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import chrisHero from "@/assets/chris-hero-new.jpg";
+import aiConsultingHero from "@/assets/ai-consulting-hero.jpg";
 
 const Index = () => {
   const process = [
@@ -29,12 +29,12 @@ const Index = () => {
   ];
 
   const expertise = [
-    "AI Integration & Automation",
-    "Marketing Strategy & Execution",
-    "Sales Operations & CRM",
-    "Team Training & Development",
-    "Go-to-Market Strategy",
-    "Revenue Growth & Scaling"
+    "Business Analysis & Infrastructure Assessment",
+    "AI Strategy Development",
+    "Data Qualification & Preparation",
+    "AI Product Solutions",
+    "Integration & Deployment",
+    "Maintenance & Support"
   ];
 
   const credentials = [
@@ -52,8 +52,8 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={chrisHero} 
-            alt="Christopher Dessi"
+            src={aiConsultingHero} 
+            alt="AI Consulting Strategy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
@@ -143,7 +143,7 @@ const Index = () => {
                   We partner with enterprise businesses who have no AI strategy to transform their marketing, sales, and communications operations through strategic AI integration and proven methodologies.
                 </p>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  With 25+ years of experience scaling organizations from startup to acquisition, we bring a unique blend of technical expertise and business acumen to help you achieve measurable results.
+                  We analyze your infrastructure, data, and industry trends to identify opportunities for transformative AI solutions that meet your unique business needs and drive measurable results.
                 </p>
                 
                 <div className="pt-8">

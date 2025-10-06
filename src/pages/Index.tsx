@@ -113,7 +113,7 @@ const Index = () => {
           transition={{ duration: 0.8 }}
         >
           <blockquote className="text-3xl md:text-5xl font-light leading-tight mb-8">
-            "One 15 minute meeting with Chris made me millions"
+            "One 15 minute meeting with Chris (Founder of Torque AI) made me millions"
           </blockquote>
           <cite className="text-xl md:text-2xl text-gray-400 not-italic">
             — Gary Vaynerchuk

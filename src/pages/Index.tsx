@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import aiConsultingHero from "@/assets/ai-consulting-hero.jpg";
+import heroProfessional from "@/assets/hero-professional.jpg";
 
 const Index = () => {
   const process = [
@@ -44,8 +44,8 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={aiConsultingHero} 
-            alt="AI Consulting Strategy"
+            src={heroProfessional} 
+            alt="Torque AI - Professional AI Consulting Services"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
@@ -93,24 +93,6 @@ const Index = () => {
             <div className="w-1 h-3 bg-white/50 rounded-full"></div>
           </div>
         </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-32 bg-black text-white">
-        <motion.div 
-          className="max-w-5xl mx-auto px-6 text-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <blockquote className="text-3xl md:text-5xl font-light leading-tight mb-8">
-            "One 15 minute meeting with Chris (Founder of Torque AI) made me millions"
-          </blockquote>
-          <cite className="text-xl md:text-2xl text-gray-400 not-italic">
-            — Gary Vaynerchuk
-          </cite>
-        </motion.div>
       </section>
 
       {/* Value Proposition */}

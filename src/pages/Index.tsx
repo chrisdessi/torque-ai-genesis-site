@@ -37,14 +37,6 @@ const Index = () => {
     "Maintenance & Support"
   ];
 
-  const credentials = [
-    "25+ years scaling organizations",
-    "$32M revenue generated at Diamond Standard",
-    "Multiple successful exits & acquisitions",
-    "Author: ChatGPT for Profit",
-    "TEDx Speaker",
-    "Frequent TV/Media AI Expert"
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -82,15 +74,15 @@ const Index = () => {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="inline-block"
               >
-                <a href="mailto:chris@torqueapp.ai">
-                  <Button 
-                    size="lg" 
-                    className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
-                  >
-                    Schedule Consultation
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </a>
+            <a href="mailto:info@torqueapp.ai">
+              <Button 
+                size="lg" 
+                className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
+              >
+                Schedule Consultation
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
               </motion.div>
             </div>
           </motion.div>
@@ -167,20 +159,35 @@ const Index = () => {
               </div>
 
               <div className="bg-muted p-12 rounded-lg">
-                <h3 className="text-3xl font-bold mb-8">Credentials</h3>
+                <h3 className="text-3xl font-bold mb-8">Why Choose Torque AI</h3>
                 <ul className="space-y-4">
-                  {credentials.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="text-lg text-foreground border-l-4 border-black pl-6 py-2"
-                    >
-                      {item}
-                    </motion.li>
-                  ))}
+                  <motion.li
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0 * 0.1 }}
+                    className="text-lg text-foreground border-l-4 border-black pl-6 py-2"
+                  >
+                    Proven track record of transforming enterprise operations
+                  </motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1 * 0.1 }}
+                    className="text-lg text-foreground border-l-4 border-black pl-6 py-2"
+                  >
+                    Strategic AI implementation with measurable ROI
+                  </motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 2 * 0.1 }}
+                    className="text-lg text-foreground border-l-4 border-black pl-6 py-2"
+                  >
+                    End-to-end support from strategy to optimization
+                  </motion.li>
                 </ul>
               </div>
             </div>
@@ -248,26 +255,13 @@ const Index = () => {
             to drive measurable results and sustainable growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="mailto:chris@torqueapp.ai">
+            <a href="mailto:info@torqueapp.ai">
               <Button 
                 size="lg" 
                 className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
               >
                 Get in Touch
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
-            <a 
-              href="https://www.christopherdessi.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold px-12 py-6 text-lg"
-              >
-                Learn More
               </Button>
             </a>
           </div>

@@ -8,17 +8,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div className="md:col-span-2">
             <h3 className="text-4xl font-bold mb-4">
-              Christopher Dessi
+              Torque AI
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md text-lg">
-              Marketing, Sales & Communications Consultant specializing in AI integration
-              for purpose-driven enterprises.
+              Marketing, Sales and Communications Consulting specializing in AI integration,
+              training and optimization for enterprise businesses.
             </p>
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-3" />
-                <a href="mailto:chris@torqueapp.ai" className="hover:text-white transition-colors">
-                  chris@torqueapp.ai
+                <a href="mailto:info@torqueapp.ai" className="hover:text-white transition-colors">
+                  info@torqueapp.ai
                 </a>
               </div>
             </div>
@@ -29,17 +29,23 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-300">
               <li>
                 <a 
-                  href="https://www.christopherdessi.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="/services"
                   className="hover:text-white transition-colors"
                 >
-                  Website
+                  Services
                 </a>
               </li>
               <li>
                 <a 
-                  href="mailto:chris@torqueapp.ai" 
+                  href="/about"
+                  className="hover:text-white transition-colors"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/contact" 
                   className="hover:text-white transition-colors"
                 >
                   Contact
@@ -52,7 +58,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Christopher Dessi. All rights reserved.
+              © {new Date().getFullYear()} Torque AI. All Rights Reserved.
             </div>
           </div>
         </div>

@@ -1,147 +1,199 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, Mail, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Contact = () => {
+  const contactMethods = [
+    {
+      icon: Mail,
+      title: "Email Us",
+      description: "Send us an email and we'll respond within 24 hours",
+      action: "info@torqueapp.ai",
+      href: "mailto:info@torqueapp.ai"
+    },
+    {
+      icon: MessageSquare,
+      title: "Schedule Consultation",
+      description: "Book a strategic planning session with our team",
+      action: "Schedule Meeting",
+      href: "mailto:info@torqueapp.ai?subject=Consultation Request"
+    },
+    {
+      icon: Clock,
+      title: "Business Hours",
+      description: "Monday - Friday, 9 AM - 6 PM EST",
+      action: "Available Now",
+      href: null
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
+      <Header />
+      
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-6xl md:text-7xl font-black mb-8">
-            LET'S TALK
-          </h1>
-          <p className="text-2xl text-gray-300 mb-8 leading-relaxed">
-            Ready to accelerate your business with AI? 
-            Get in touch and we'll find the perfect solution for you.
-          </p>
+      <section className="pt-32 pb-20 bg-gradient-to-b from-black to-gray-900 text-white">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              Let's Talk AI Strategy
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Ready to transform your business with strategic AI implementation? 
+              Get in touch with our team to discuss your needs.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            {/* Contact Info */}
-            <div className="space-y-12">
-              <div>
-                <h2 className="text-4xl font-black mb-8">GET IN TOUCH</h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Our team is here to help you choose the right AI agent and get started 
-                  with your growth journey. No pressure, just honest advice.
-                </p>
-              </div>
+      {/* Contact Methods */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {contactMethods.map((method, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="bg-muted p-8 rounded-lg text-center hover:shadow-lg transition-shadow"
+              >
+                <method.icon className="w-12 h-12 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold mb-3">{method.title}</h3>
+                <p className="text-muted-foreground mb-6">{method.description}</p>
+                {method.href ? (
+                  <a
+                    href={method.href}
+                    className="text-lg font-semibold hover:underline"
+                  >
+                    {method.action}
+                  </a>
+                ) : (
+                  <span className="text-lg font-semibold">{method.action}</span>
+                )}
+              </motion.div>
+            ))}
+          </div>
 
-              <div className="space-y-8">
-                <div className="flex items-center space-x-6">
-                  <div className="w-16 h-16 bg-black flex items-center justify-center">
-                    <Mail className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">Email Us</h3>
-                    <p className="text-gray-600 text-lg">hello@torqueai.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-6">
-                  <div className="w-16 h-16 bg-black flex items-center justify-center">
-                    <Phone className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">Call Us</h3>
-                    <p className="text-gray-600 text-lg">(555) 123-4567</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-6">
-                  <div className="w-16 h-16 bg-black flex items-center justify-center">
-                    <MessageCircle className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">Live Chat</h3>
-                    <p className="text-gray-600 text-lg">Available 9 AM - 6 PM EST</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="border-2 border-gray-100 p-12">
-              <h3 className="text-3xl font-black mb-8">Send us a message</h3>
-              
-              <form className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-lg font-bold mb-3">First Name</label>
-                    <Input className="border-2 border-gray-200 rounded-none p-4 text-lg" />
-                  </div>
-                  <div>
-                    <label className="block text-lg font-bold mb-3">Last Name</label>
-                    <Input className="border-2 border-gray-200 rounded-none p-4 text-lg" />
-                  </div>
-                </div>
-
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto bg-muted p-12 rounded-lg"
+          >
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Send Us a Message
+            </h2>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-lg font-bold mb-3">Email</label>
-                  <Input type="email" className="border-2 border-gray-200 rounded-none p-4 text-lg" />
-                </div>
-
-                <div>
-                  <label className="block text-lg font-bold mb-3">Company</label>
-                  <Input className="border-2 border-gray-200 rounded-none p-4 text-lg" />
-                </div>
-
-                <div>
-                  <label className="block text-lg font-bold mb-3">Which AI Agent interests you?</label>
-                  <select className="w-full border-2 border-gray-200 rounded-none p-4 text-lg bg-white">
-                    <option>Select an AI Agent</option>
-                    <option>Website AI</option>
-                    <option>CRM AI</option>
-                    <option>Email AI</option>
-                    <option>Ads AI</option>
-                    <option>Reputation AI</option>
-                    <option>Local AI</option>
-                    <option>Analytics AI</option>
-                    <option>Intelligence AI</option>
-                    <option>Not sure - need guidance</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-lg font-bold mb-3">Tell us about your goals</label>
-                  <Textarea 
-                    rows={5} 
-                    className="border-2 border-gray-200 rounded-none p-4 text-lg resize-none"
-                    placeholder="What are your biggest business challenges? What growth goals do you have?"
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
+                    placeholder="Your name"
                   />
                 </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
+                    placeholder="your@email.com"
+                  />
+                </div>
+              </div>
 
-                <Button className="w-full bg-black text-white hover:bg-gray-800 font-bold text-xl py-6 rounded-none">
-                  Send Message
-                  <ArrowRight className="ml-3 w-6 h-6" />
-                </Button>
-              </form>
-            </div>
-          </div>
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium mb-2">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
+                  placeholder="Your company name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                  Subject *
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
+                  placeholder="What would you like to discuss?"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
+                  placeholder="Tell us about your AI strategy needs..."
+                />
+              </div>
+
+              <Button type="submit" size="lg" className="w-full bg-black text-white hover:bg-gray-800 font-semibold py-6 text-lg">
+                Send Message
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </form>
+          </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 bg-gray-50 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-8">
-            PREFER TO START WITH OUR QUIZ?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Take our 5-minute assessment to discover which AI agent is perfect for your business.
-          </p>
-          <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-bold px-12 py-6 text-xl rounded-none">
-            Take Quiz Instead
-            <ArrowRight className="ml-3 w-6 h-6" />
-          </Button>
+      {/* CTA */}
+      <section className="py-24 bg-black text-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+              Limited availability for enterprise clients serious about AI transformation
+            </p>
+            <a href="mailto:info@torqueapp.ai">
+              <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
+                Schedule Consultation
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+          </motion.div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

@@ -67,12 +67,12 @@ const Index = () => {
             className="space-y-8"
           >
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight drop-shadow-2xl">
-              Christopher Dessi
+              Torque AI
             </h1>
             <p className="text-2xl md:text-4xl font-light text-gray-200 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
-              Marketing, Sales & Communications Consultant
+              Marketing, Sales and Communications Consulting
               <br />
-              <span className="text-white font-normal">Specializing in AI Integration</span>
+              <span className="text-white font-normal">Specializing in AI Integration, Training and Optimization</span>
             </p>
             
             <div className="pt-8">
@@ -132,18 +132,18 @@ const Index = () => {
             className="space-y-12"
           >
             <h2 className="text-5xl md:text-6xl font-bold text-center mb-16">
-              Enterprise-Level Consulting
+              Our Approach: Comprehensive AI Strategy,
               <br />
-              <span className="text-muted-foreground">For Mission-Driven Leaders</span>
+              <span className="text-muted-foreground">AI Business and AI Software Solutions</span>
             </h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  I partner with purpose-driven enterprises to transform their marketing, sales, and communications operations through strategic AI integration and proven methodologies.
+                  We partner with enterprise businesses who have no AI strategy to transform their marketing, sales, and communications operations through strategic AI integration and proven methodologies.
                 </p>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  With 25+ years of experience scaling organizations from startup to acquisition, I bring a unique blend of technical expertise and business acumen to help you achieve measurable results.
+                  With 25+ years of experience scaling organizations from startup to acquisition, we bring a unique blend of technical expertise and business acumen to help you achieve measurable results.
                 </p>
                 
                 <div className="pt-8">
@@ -199,7 +199,7 @@ const Index = () => {
             className="text-center mb-20"
           >
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              My Approach
+              Our Approach
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               A proven methodology to transform your operations and empower your team

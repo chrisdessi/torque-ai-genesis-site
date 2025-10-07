@@ -37,6 +37,14 @@ const Footer = () => {
               </li>
               <li>
                 <a 
+                  href="/enterprise-accelerator"
+                  className="hover:text-white transition-colors"
+                >
+                  Enterprise AI Accelerator
+                </a>
+              </li>
+              <li>
+                <a 
                   href="/about"
                   className="hover:text-white transition-colors"
                 >

@@ -8,7 +8,7 @@ import chrisProfile from "@/assets/chris-profile.jpg";
 const About = () => {
   const credentials = [
     { icon: TrendingUp, text: "25+ years scaling organizations from startup to acquisition" },
-    { icon: Award, text: "$32M revenue generated at Diamond Standard" },
+    { icon: Award, text: "$32M revenue using Generative AI" },
     { icon: Target, text: "Multiple successful exits & acquisitions" },
     { icon: BookOpen, text: "Author: ChatGPT for Profit" },
     { icon: Mic, text: "TEDx Speaker" },
@@ -118,7 +118,7 @@ const About = () => {
               </p>
 
               <p className="text-lg leading-relaxed">
-                With a proven track record of generating $32M in revenue at Diamond Standard and 
+                With a proven track record of generating $32M in revenue using Generative AI and 
                 leading multiple successful exits, Chris combines technical AI expertise with 
                 deep business acumen to deliver solutions that drive measurable results.
               </p>

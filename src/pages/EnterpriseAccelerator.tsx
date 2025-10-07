@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
-import chrisTvImage from "@/assets/chris-tv-appearance.png";
+import chrisTvImage from "@/assets/chris-profile.jpg";
 
 const EnterpriseAccelerator = () => {
   const fadeInUp = {

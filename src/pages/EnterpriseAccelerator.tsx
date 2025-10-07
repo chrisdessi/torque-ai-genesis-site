@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
-import chrisTvImage from "@/assets/chris-profile.jpg";
+import chrisBioImage from "@/assets/chris-bio.png";
 
 const EnterpriseAccelerator = () => {
   const fadeInUp = {
@@ -211,7 +211,7 @@ const EnterpriseAccelerator = () => {
             <motion.div {...fadeInUp} className="relative">
               <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden">
                 <img 
-                  src={chrisTvImage} 
+                  src={chrisBioImage} 
                   alt="Chris Dessi - Founder of Torque AI" 
                   className="w-full h-full object-cover"
                 />

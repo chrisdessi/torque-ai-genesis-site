@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, DollarSign, TrendingDown, Clock, AlertTriangle, Users, Target, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, DollarSign, TrendingDown, Clock, AlertTriangle, Users, Target, Zap, TrendingUp, Sparkles, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import heroProfessional from "@/assets/hero-professional.jpg";
 
 const Index = () => {
@@ -115,10 +116,10 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {[
-              { stat: "5–10%", label: "of annual revenue wiped out by strategy failures", icon: DollarSign },
-              { stat: "80%", label: "of employees lack time or energy to do their best work", icon: Users },
-              { stat: "40%", label: "of productive time stolen by context switching each week", icon: Clock },
-              { stat: "100%", label: "of margins silently taxed by meeting and tool overload", icon: TrendingDown }
+              { end: 10, prefix: "5–", suffix: "%", label: "of annual revenue wiped out by strategy failures", icon: DollarSign, iconColor: "text-red-600" },
+              { end: 80, suffix: "%", label: "of employees lack time or energy to do their best work", icon: Users, iconColor: "text-orange-600" },
+              { end: 40, suffix: "%", label: "of productive time stolen by context switching each week", icon: Clock, iconColor: "text-yellow-600" },
+              { end: 100, suffix: "%", label: "of margins silently taxed by meeting and tool overload", icon: TrendingDown, iconColor: "text-red-700" }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -126,10 +127,14 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-muted p-8 rounded-lg text-center"
+                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border-2 border-transparent hover:border-foreground"
               >
-                <item.icon className="w-12 h-12 mx-auto mb-4 text-foreground" />
-                <div className="text-4xl font-bold mb-3">{item.stat}</div>
+                <div className={`w-16 h-16 mx-auto mb-4 ${item.iconColor} bg-muted rounded-full flex items-center justify-center`}>
+                  <item.icon className="w-8 h-8" />
+                </div>
+                <div className="text-4xl font-bold mb-3">
+                  <AnimatedCounter end={item.end} suffix={item.suffix} prefix={item.prefix} duration={2.5} />
+                </div>
                 <p className="text-muted-foreground">{item.label}</p>
               </motion.div>
             ))}
@@ -170,14 +175,19 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg"
+              className="bg-white p-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-red-600"
             >
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
-                <DollarSign className="w-8 h-8 text-destructive" />
+              <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <DollarSign className="w-10 h-10 text-red-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">💸 Revenue Leak</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Execution drift wastes <strong>5–10% of topline</strong> through duplication and hand-offs.
+              <h3 className="text-2xl font-bold mb-4 text-center">Revenue Leak</h3>
+              <div className="text-center mb-4">
+                <span className="text-5xl font-bold text-red-600">
+                  <AnimatedCounter end={5} duration={2} />–<AnimatedCounter end={10} duration={2} />%
+                </span>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-center">
+                of topline wasted through execution drift, duplication and hand-offs
               </p>
             </motion.div>
 
@@ -186,14 +196,19 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg"
+              className="bg-white p-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-orange-600"
             >
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
-                <AlertTriangle className="w-8 h-8 text-destructive" />
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <AlertTriangle className="w-10 h-10 text-orange-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">📉 AI Risk</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                EY (2025): firms without Responsible AI governance lost <strong>$4.4B</strong> in a year.
+              <h3 className="text-2xl font-bold mb-4 text-center">AI Risk</h3>
+              <div className="text-center mb-4">
+                <span className="text-5xl font-bold text-orange-600">
+                  $<AnimatedCounter end={4.4} decimals={1} duration={2} />B
+                </span>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-center">
+                lost by firms without Responsible AI governance (EY 2025)
               </p>
             </motion.div>
 
@@ -202,14 +217,19 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg"
+              className="bg-white p-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-yellow-600"
             >
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
-                <Clock className="w-8 h-8 text-destructive" />
+              <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Clock className="w-10 h-10 text-yellow-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">⏱ Lost Time</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Microsoft (2025): leaders want productivity gains while <strong>80% of staff are at capacity</strong>.
+              <h3 className="text-2xl font-bold mb-4 text-center">Lost Time</h3>
+              <div className="text-center mb-4">
+                <span className="text-5xl font-bold text-yellow-600">
+                  <AnimatedCounter end={80} duration={2} />%
+                </span>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-center">
+                of staff already at capacity while leaders demand productivity gains (Microsoft 2025)
               </p>
             </motion.div>
           </div>
@@ -249,9 +269,14 @@ const Index = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0, duration: 0.6 }}
-              className="bg-muted p-10 rounded-lg text-center"
+              className="bg-white p-10 rounded-lg text-center shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-green-600"
             >
-              <div className="text-5xl font-bold mb-4">93%</div>
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <TrendingUp className="w-10 h-10 text-green-600" />
+              </div>
+              <div className="text-6xl font-bold mb-4 text-green-600">
+                <AnimatedCounter end={93} duration={2.5} />%
+              </div>
               <p className="text-lg text-muted-foreground">
                 of CMOs already report positive ROI from Gen AI
               </p>
@@ -262,9 +287,12 @@ const Index = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="bg-muted p-10 rounded-lg text-center"
+              className="bg-white p-10 rounded-lg text-center shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-600"
             >
-              <div className="text-5xl font-bold mb-4">Revenue Lift</div>
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <BarChart3 className="w-10 h-10 text-blue-600" />
+              </div>
+              <div className="text-5xl font-bold mb-4 text-blue-600">Revenue Lift</div>
               <p className="text-lg text-muted-foreground">
                 Business units using Gen AI see measurable revenue lift (McKinsey 2025)
               </p>
@@ -275,9 +303,14 @@ const Index = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-muted p-10 rounded-lg text-center"
+              className="bg-white p-10 rounded-lg text-center shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-600"
             >
-              <div className="text-5xl font-bold mb-4">40%</div>
+              <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Sparkles className="w-10 h-10 text-purple-600" />
+              </div>
+              <div className="text-6xl font-bold mb-4 text-purple-600">
+                <AnimatedCounter end={40} duration={2.5} />%
+              </div>
               <p className="text-lg text-muted-foreground">
                 of enterprise apps will embed AI agents by 2026 (Gartner)
               </p>

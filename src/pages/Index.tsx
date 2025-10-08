@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, DollarSign, TrendingDown, Clock, AlertTriangle, Users, Target, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import heroProfessional from "@/assets/hero-professional.jpg";
@@ -95,6 +95,236 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Why Now / The Cost of Inaction */}
+      <section className="py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              The Hidden Cost of Misalignment
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Every day without alignment costs you real revenue
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {[
+              { stat: "5–10%", label: "of annual revenue wiped out by strategy failures", icon: DollarSign },
+              { stat: "80%", label: "of employees lack time or energy to do their best work", icon: Users },
+              { stat: "40%", label: "of productive time stolen by context switching each week", icon: Clock },
+              { stat: "100%", label: "of margins silently taxed by meeting and tool overload", icon: TrendingDown }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="bg-muted p-8 rounded-lg text-center"
+              >
+                <item.icon className="w-12 h-12 mx-auto mb-4 text-foreground" />
+                <div className="text-4xl font-bold mb-3">{item.stat}</div>
+                <p className="text-muted-foreground">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a href="mailto:info@torqueapp.ai?subject=Execution%20Leak%20Audit">
+              <Button size="lg" className="font-semibold">
+                Quantify Your Execution Leak
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Where You're Losing Money */}
+      <section className="py-32 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Where You're Losing Money
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Identify the leaks draining your bottom line
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0, duration: 0.6 }}
+              className="bg-white p-10 rounded-lg"
+            >
+              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
+                <DollarSign className="w-8 h-8 text-destructive" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">💸 Revenue Leak</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Execution drift wastes <strong>5–10% of topline</strong> through duplication and hand-offs.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="bg-white p-10 rounded-lg"
+            >
+              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
+                <AlertTriangle className="w-8 h-8 text-destructive" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">📉 AI Risk</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                EY (2025): firms without Responsible AI governance lost <strong>$4.4B</strong> in a year.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="bg-white p-10 rounded-lg"
+            >
+              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
+                <Clock className="w-8 h-8 text-destructive" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">⏱ Lost Time</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Microsoft (2025): leaders want productivity gains while <strong>80% of staff are at capacity</strong>.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="text-center">
+            <a href="mailto:info@torqueapp.ai?subject=Stop%20the%20Leak">
+              <Button size="lg" className="font-semibold">
+                Stop the Leak
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Competitive Advantage */}
+      <section className="py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Your Competition Isn't Waiting
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Leading enterprises are already leveraging AI for measurable growth
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0, duration: 0.6 }}
+              className="bg-muted p-10 rounded-lg text-center"
+            >
+              <div className="text-5xl font-bold mb-4">93%</div>
+              <p className="text-lg text-muted-foreground">
+                of CMOs already report positive ROI from Gen AI
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="bg-muted p-10 rounded-lg text-center"
+            >
+              <div className="text-5xl font-bold mb-4">Revenue Lift</div>
+              <p className="text-lg text-muted-foreground">
+                Business units using Gen AI see measurable revenue lift (McKinsey 2025)
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="bg-muted p-10 rounded-lg text-center"
+            >
+              <div className="text-5xl font-bold mb-4">40%</div>
+              <p className="text-lg text-muted-foreground">
+                of enterprise apps will embed AI agents by 2026 (Gartner)
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="text-center">
+            <a href="mailto:info@torqueapp.ai?subject=Competitive%20Advantage%20Consultation">
+              <Button size="lg" className="font-semibold">
+                Catch Up Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Career Risk / Leadership Pressure */}
+      <section className="py-24 bg-destructive text-white">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto px-6 text-center"
+        >
+          <AlertTriangle className="w-16 h-16 mx-auto mb-6" />
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Boards Are Replacing Leaders Who Can't Deliver Change
+          </h2>
+          <p className="text-xl mb-8 leading-relaxed">
+            <strong>31% of CEOs</strong> lose their roles for failed transformation efforts.
+            <br />
+            Don't be next—lead with alignment.
+          </p>
+          <a href="mailto:info@torqueapp.ai?subject=Leadership%20Alignment">
+            <Button 
+              size="lg" 
+              className="bg-white text-destructive hover:bg-gray-100 font-semibold"
+            >
+              Secure Your Seat
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </a>
+        </motion.div>
+      </section>
+
       {/* Value Proposition */}
       <section className="py-32 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -177,8 +407,103 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Process */}
+      {/* The Torque AI Difference */}
       <section className="py-32 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              The Torque AI Difference
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Four ways we help you reclaim revenue and rebuild alignment
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0, duration: 0.6 }}
+              className="bg-white p-10 rounded-lg border-2 border-transparent hover:border-foreground transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6 font-bold text-xl">
+                1
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Stop the Leak</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Quantify execution drift and reclaim that 5–10% revenue.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="bg-white p-10 rounded-lg border-2 border-transparent hover:border-foreground transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6 font-bold text-xl">
+                2
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Make AI Pay</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Apply Responsible-AI guardrails for real ROI.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="bg-white p-10 rounded-lg border-2 border-transparent hover:border-foreground transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6 font-bold text-xl">
+                3
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Win the Capacity War</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Cut meeting/tool overload, redeploy hours to revenue work.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="bg-white p-10 rounded-lg border-2 border-transparent hover:border-foreground transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6 font-bold text-xl">
+                4
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Match or Pass Peers</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Deploy the same Gen AI plays top performers use.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="text-center">
+            <a href="mailto:info@torqueapp.ai?subject=Torque%20AI%20Audit">
+              <Button size="lg" className="font-semibold">
+                Book Your Audit
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

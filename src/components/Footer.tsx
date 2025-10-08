@@ -14,6 +14,9 @@ const Footer = () => {
               Marketing, Sales and Communications Consulting specializing in AI integration,
               training and optimization for enterprise businesses.
             </p>
+            <p className="text-gray-400 leading-relaxed max-w-md text-base italic">
+              Torque AI helps leaders recover lost revenue, de-risk AI, and rebuild human alignment in an algorithmic world.
+            </p>
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-3" />

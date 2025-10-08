@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import heroProfessional from "@/assets/hero-professional.jpg";
+import Hero from "@/components/Hero";
+import alignmentVisual from "@/assets/alignment-visual.jpg";
+import teamCollaboration from "@/assets/team-collaboration.jpg";
+import automationFlow from "@/assets/automation-flow.jpg";
 
 const Index = () => {
   const process = [
@@ -43,60 +46,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={heroProfessional} 
-            alt="Torque AI - Professional AI Consulting Services"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight drop-shadow-2xl">
-              Torque AI
-            </h1>
-            <p className="text-2xl md:text-4xl font-light text-gray-200 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
-              Marketing, Sales and Communications Consulting
-              <br />
-              <span className="text-white font-normal">Specializing in AI Integration, Training and Optimization</span>
-            </p>
-            
-            <div className="pt-8">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="inline-block"
-              >
-            <Button 
-              asChild
-              size="lg" 
-              className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
-            >
-              <Link to="/contact">
-                Schedule Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full"></div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Why Now / The Cost of Inaction */}
       <section className="py-32 bg-white">
@@ -154,8 +104,15 @@ const Index = () => {
       </section>
 
       {/* Where You're Losing Money */}
-      <section className="py-32 bg-muted">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-32 bg-muted relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src={automationFlow} 
+            alt="Background pattern"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -378,6 +335,14 @@ const Index = () => {
             </h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="relative">
+                <img 
+                  src={teamCollaboration} 
+                  alt="Team collaborating with AI technology"
+                  className="rounded-2xl shadow-2xl"
+                />
+              </div>
+              
               <div className="space-y-8">
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   We partner with enterprise businesses who have no AI strategy to transform their marketing, sales, and communications operations through strategic AI integration and proven methodologies.

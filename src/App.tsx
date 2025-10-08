@@ -13,6 +13,7 @@ import Websites from "./pages/products/Websites";
 import Contact from "./pages/Contact";
 import Quiz from "./pages/Quiz";
 import EnterpriseAccelerator from "./pages/EnterpriseAccelerator";
+import Momento from "./pages/Momento";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/enterprise-accelerator" element={<EnterpriseAccelerator />} />
+          <Route path="/momento" element={<Momento />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

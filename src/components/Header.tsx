@@ -25,6 +25,7 @@ const Header = () => {
   const navigation = [
     { name: "Platform", href: "/services" },
     { name: "Solutions", href: "/enterprise-accelerator" },
+    { name: "Momento", href: "/momento" },
     { name: "Company", href: "/about" },
   ];
 

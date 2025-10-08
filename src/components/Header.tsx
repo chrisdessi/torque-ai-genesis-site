@@ -41,9 +41,9 @@ const Header = () => {
               size="lg"
               className="ml-4"
             >
-              <a href="mailto:info@torqueapp.ai?subject=Get%20A%20Demo">
+              <Link to="/contact">
                 Get A Demo
-              </a>
+              </Link>
             </Button>
           </div>
 
@@ -77,9 +77,9 @@ const Header = () => {
                 size="lg"
                 className="mt-2"
               >
-                <a href="mailto:info@torqueapp.ai?subject=Get%20A%20Demo">
+                <Link to="/contact">
                   Get A Demo
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

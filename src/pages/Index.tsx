@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, DollarSign, TrendingDown, Clock, AlertTriangle, Users, Target, Zap, TrendingUp, Sparkles, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import heroProfessional from "@/assets/hero-professional.jpg";
@@ -75,15 +76,16 @@ const Index = () => {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="inline-block"
               >
-            <a href="mailto:info@torqueapp.ai">
-              <Button 
-                size="lg" 
-                className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
-              >
+            <Button 
+              asChild
+              size="lg" 
+              className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
+            >
+              <Link to="/contact">
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+              </Link>
+            </Button>
               </motion.div>
             </div>
           </motion.div>
@@ -141,12 +143,12 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <a href="mailto:info@torqueapp.ai?subject=Execution%20Leak%20Audit">
-              <Button size="lg" className="font-semibold">
+            <Button asChild size="lg" className="font-semibold">
+              <Link to="/contact">
                 Quantify Your Execution Leak
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -235,12 +237,12 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <a href="mailto:info@torqueapp.ai?subject=Stop%20the%20Leak">
-              <Button size="lg" className="font-semibold">
+            <Button asChild size="lg" className="font-semibold">
+              <Link to="/contact">
                 Stop the Leak
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -318,12 +320,12 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <a href="mailto:info@torqueapp.ai?subject=Competitive%20Advantage%20Consultation">
-              <Button size="lg" className="font-semibold">
+            <Button asChild size="lg" className="font-semibold">
+              <Link to="/contact">
                 Catch Up Now
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -346,15 +348,16 @@ const Index = () => {
             <br />
             Don't be next—lead with alignment.
           </p>
-          <a href="mailto:info@torqueapp.ai?subject=Leadership%20Alignment">
-            <Button 
-              size="lg" 
-              className="bg-white text-destructive hover:bg-gray-100 font-semibold"
-            >
+          <Button 
+            asChild
+            size="lg" 
+            className="bg-white text-destructive hover:bg-gray-100 font-semibold"
+          >
+            <Link to="/contact">
               Secure Your Seat
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </a>
+            </Link>
+          </Button>
         </motion.div>
       </section>
 
@@ -525,12 +528,12 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <a href="mailto:info@torqueapp.ai?subject=Torque%20AI%20Audit">
-              <Button size="lg" className="font-semibold">
+            <Button asChild size="lg" className="font-semibold">
+              <Link to="/contact">
                 Book Your Audit
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -595,15 +598,16 @@ const Index = () => {
             to drive measurable results and sustainable growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a href="mailto:info@torqueapp.ai">
-              <Button 
-                size="lg" 
-                className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
-              >
+            <Button 
+              asChild
+              size="lg" 
+              className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
+            >
+              <Link to="/contact">
                 Get in Touch
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+              </Link>
+            </Button>
           </div>
         </motion.div>
       </section>

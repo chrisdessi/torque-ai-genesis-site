@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -28,19 +29,19 @@ const Hero = () => {
               size="lg" 
               className="group"
             >
-              <a href="mailto:info@torqueapp.ai?subject=Start%20Free%20Trial">
+              <Link to="/contact">
                 Start Free Trial
-              </a>
+              </Link>
             </Button>
             <Button 
               asChild
               size="lg" 
               className="group"
             >
-              <a href="mailto:info@torqueapp.ai?subject=Get%20A%20Demo">
+              <Link to="/contact">
                 Get A Demo
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

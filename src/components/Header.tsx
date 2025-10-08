@@ -42,7 +42,7 @@ const Header = () => {
               className="ml-4"
             >
               <Link to="/contact">
-                Get A Demo
+                Contact Us
               </Link>
             </Button>
           </div>
@@ -78,7 +78,7 @@ const Header = () => {
                 className="mt-2"
               >
                 <Link to="/contact">
-                  Get A Demo
+                  Contact Us
                 </Link>
               </Button>
             </div>

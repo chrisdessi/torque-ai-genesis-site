@@ -97,7 +97,7 @@ const Hero = () => {
               className="group bg-accent hover:bg-accent/90 text-white border-0"
             >
               <Link to="/contact">
-                Get A Demo
+                Contact Us
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -107,8 +107,8 @@ const Hero = () => {
               size="lg" 
               className="group bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 hover:text-white"
             >
-              <Link to="/contact">
-                Start Free Trial
+              <Link to="/services">
+                Learn More
               </Link>
             </Button>
           </motion.div>

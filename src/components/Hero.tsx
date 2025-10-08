@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, TrendingUp, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroAiPlatform from "@/assets/hero-ai-platform.jpg";
+import heroAiPlatform from "@/assets/hero-professional.jpg";
 
 const Hero = () => {
   return (

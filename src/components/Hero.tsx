@@ -1,61 +1,64 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 section-padding">
+    <section className="pt-32 pb-20 section-padding bg-gradient-to-b from-muted/30 to-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center animate-fade-up">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-sm font-medium text-gray-700 mb-8">
-            <Zap className="w-4 h-4 mr-2" />
-            AI-Powered Marketing Revolution
+          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-xs font-medium text-primary mb-6">
+            <span className="bg-green-500 w-1.5 h-1.5 rounded-full mr-2"></span>
+            New! Forrester Total Economic Impact™ of Torque. Download the study today
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-black leading-tight mb-6">
-            ACCELERATE
-            <br />
-            YOUR <span className="gradient-text">GROWTH</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal text-primary leading-[1.1] mb-8 tracking-tight">
+            AI built for leaders
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Transform your marketing strategy with cutting-edge AI technology. 
-            Drive unprecedented results, maximize ROI, and dominate your market.
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+            Torque is the AI platform that unifies the brand experience, accelerates content velocity, 
+            and automates marketing processes—at scale.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
+              asChild
+              variant="outline"
               size="lg" 
-              className="bg-black text-white hover:bg-gray-800 font-bold px-8 py-4 text-lg group animate-pulse-glow"
+              className="group"
             >
-              START YOUR TRANSFORMATION
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a href="mailto:info@torqueapp.ai?subject=Start%20Free%20Trial">
+                Start Free Trial
+              </a>
             </Button>
             <Button 
-              variant="outline" 
+              asChild
               size="lg" 
-              className="border-2 border-black text-black hover:bg-black hover:text-white font-bold px-8 py-4 text-lg"
+              className="group"
             >
-              SEE RESULTS
+              <a href="mailto:info@torqueapp.ai?subject=Get%20A%20Demo">
+                Get A Demo
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
         </div>
         
-        <div className="mt-20 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent rounded-2xl"></div>
-          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="mt-24 relative">
+          <div className="bg-card border border-border rounded-2xl p-10 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
               <div>
-                <div className="text-4xl font-black text-black mb-2">300%</div>
-                <div className="text-gray-600 font-medium">Average ROI Increase</div>
+                <div className="text-5xl font-serif font-normal text-primary mb-3">300%</div>
+                <div className="text-muted-foreground font-normal">Average ROI Increase</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-black mb-2">2.5X</div>
-                <div className="text-gray-600 font-medium">Lead Generation Boost</div>
+                <div className="text-5xl font-serif font-normal text-primary mb-3">2.5X</div>
+                <div className="text-muted-foreground font-normal">Lead Generation Boost</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-black mb-2">90%</div>
-                <div className="text-gray-600 font-medium">Time Saved on Campaigns</div>
+                <div className="text-5xl font-serif font-normal text-primary mb-3">90%</div>
+                <div className="text-muted-foreground font-normal">Time Saved on Campaigns</div>
               </div>
             </div>
           </div>

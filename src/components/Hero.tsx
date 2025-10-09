@@ -3,36 +3,54 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, TrendingUp, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroAiPlatform from "@/assets/hero-professional.jpg";
+import heroAiWorkspace from "@/assets/hero-ai-workspace.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <img 
-          src={heroAiPlatform} 
+        <motion.img 
+          src={heroAiWorkspace} 
           alt="Torque AI - Enterprise AI Platform for Marketing and Sales"
           className="w-full h-full object-cover"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/75 to-accent/80"></div>
       </div>
       
-      {/* Floating particles animation */}
+      {/* Animated grid overlay */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      {/* Floating particles animation - enhanced */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-accent/30 rounded-full"
+            className="absolute rounded-full"
+            style={{
+              width: Math.random() * 4 + 2,
+              height: Math.random() * 4 + 2,
+              background: i % 3 === 0 ? 'rgba(255,255,255,0.4)' : 'rgba(162,226,255,0.3)',
+            }}
             initial={{
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
+              opacity: 0,
             }}
             animate={{
               y: [null, Math.random() * window.innerHeight],
               x: [null, Math.random() * window.innerWidth],
+              opacity: [0, 1, 0],
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
+              duration: Math.random() * 15 + 15,
               repeat: Infinity,
               ease: "linear",
             }}

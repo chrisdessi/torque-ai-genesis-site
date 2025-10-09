@@ -1,10 +1,66 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, MessageSquare, Clock } from "lucide-react";
 import { motion } from "framer-motion";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try emailing us directly at info@torqueapp.ai",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
+  };
+
   const contactMethods = [
     {
       icon: Mail,
@@ -93,7 +149,7 @@ const Contact = () => {
             <h2 className="text-3xl font-bold mb-8 text-center">
               Send Us a Message
             </h2>
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -103,6 +159,8 @@ const Contact = () => {
                     type="text"
                     id="name"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
                     placeholder="Your name"
                   />
@@ -115,6 +173,8 @@ const Contact = () => {
                     type="email"
                     id="email"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
                     placeholder="your@email.com"
                   />
@@ -128,6 +188,8 @@ const Contact = () => {
                 <input
                   type="text"
                   id="company"
+                  value={formData.company}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
                   placeholder="Your company name"
                 />
@@ -141,6 +203,8 @@ const Contact = () => {
                   type="text"
                   id="subject"
                   required
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
                   placeholder="What would you like to discuss?"
                 />
@@ -154,13 +218,20 @@ const Contact = () => {
                   id="message"
                   required
                   rows={6}
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent"
                   placeholder="Tell us about your AI strategy needs..."
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full bg-black text-white hover:bg-gray-800 font-semibold py-6 text-lg">
-                Send Message
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full bg-black text-white hover:bg-gray-800 font-semibold py-6 text-lg"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </form>

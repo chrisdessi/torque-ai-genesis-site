@@ -3,7 +3,7 @@ import { ArrowRight, Award, BookOpen, Mic, TrendingUp, Users, Target } from "luc
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import chrisProfile from "@/assets/chris-profile.jpg";
+import chrisProfile from "@/assets/chris-bio.png";
 
 const About = () => {
   const credentials = [

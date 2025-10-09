@@ -74,7 +74,7 @@ const Contact = () => {
       title: "Schedule Consultation",
       description: "Book a strategic planning session with our team",
       action: "Schedule Meeting",
-      href: "mailto:info@torqueapp.ai?subject=Consultation Request"
+      href: "https://calendar.app.google/rAZmF5kNNCsfMyBf7"
     },
     {
       icon: Clock,
@@ -254,7 +254,7 @@ const Contact = () => {
             <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
               Limited availability for enterprise clients serious about AI transformation
             </p>
-            <a href="mailto:info@torqueapp.ai">
+            <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />

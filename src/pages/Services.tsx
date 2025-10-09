@@ -267,7 +267,7 @@ const Services = () => {
             <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
               Partner with Torque AI to transform your business with strategic AI implementation
             </p>
-            <a href="mailto:info@torqueapp.ai">
+            <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />

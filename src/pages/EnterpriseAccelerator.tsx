@@ -108,7 +108,7 @@ const EnterpriseAccelerator = () => {
               <Button 
                 size="lg"
                 className="bg-black hover:bg-black/90 text-white px-10 py-7"
-                onClick={() => window.location.href = 'mailto:info@torqueapp.ai?subject=Consultation Request'}
+                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
               >
                 Schedule Consultation
               </Button>

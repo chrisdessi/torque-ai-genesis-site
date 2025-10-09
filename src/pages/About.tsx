@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Award, BookOpen, Mic, TrendingUp, Users, Target } from "lucide-react";
+import { ArrowRight, Award, BookOpen, Mic, TrendingUp, Users, Target, Linkedin, Youtube } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -140,6 +140,31 @@ const About = () => {
                     </motion.div>
                   ))}
                 </div>
+              </div>
+
+              <div className="pt-8 flex flex-wrap gap-4">
+                <a 
+                  href="https://www.linkedin.com/in/chrisdessi/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  <Button size="lg" className="bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold">
+                    <Linkedin className="w-5 h-5" />
+                    Connect on LinkedIn
+                  </Button>
+                </a>
+                <a 
+                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  <Button size="lg" variant="outline" className="border-2 font-semibold">
+                    <Youtube className="w-5 h-5 text-red-600" />
+                    The Quantum Shift Podcast
+                  </Button>
+                </a>
               </div>
             </motion.div>
           </div>

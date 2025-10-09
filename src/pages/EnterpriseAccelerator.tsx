@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Brain, Zap, Target, TrendingUp } from "lucide-react";
+import { Brain, Zap, Target, TrendingUp, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 
 const EnterpriseAccelerator = () => {
@@ -230,6 +230,36 @@ const EnterpriseAccelerator = () => {
               <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                 He's also a best-selling author, keynote speaker, and TV commentator featured on CNN, Fox Business, and Cheddar.
               </p>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <a 
+                  href="https://www.linkedin.com/in/chrisdessi/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    size="lg"
+                    variant="outline"
+                    className="border-white/20 text-white hover:bg-white/10"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
+                    Connect on LinkedIn
+                  </Button>
+                </a>
+                <a 
+                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    size="lg"
+                    variant="outline"
+                    className="border-white/20 text-white hover:bg-white/10"
+                  >
+                    <Youtube className="w-5 h-5 mr-2 text-red-500" />
+                    The Quantum Shift
+                  </Button>
+                </a>
+              </div>
               <Button 
                 size="lg"
                 className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"

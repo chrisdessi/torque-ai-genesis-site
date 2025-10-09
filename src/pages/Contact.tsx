@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, MessageSquare, Clock } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare, Clock, Linkedin, Youtube } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,11 +21,18 @@ const Contact = () => {
       href: "https://calendar.app.google/rAZmF5kNNCsfMyBf7"
     },
     {
-      icon: Clock,
-      title: "Business Hours",
-      description: "Monday - Friday, 9 AM - 6 PM EST",
-      action: "Available Now",
-      href: null
+      icon: Linkedin,
+      title: "Connect on LinkedIn",
+      description: "Follow Chris Dessi for AI insights and industry updates",
+      action: "View Profile",
+      href: "https://www.linkedin.com/in/chrisdessi/"
+    },
+    {
+      icon: Youtube,
+      title: "The Quantum Shift Podcast",
+      description: "Watch our podcast series on AI transformation",
+      action: "Watch Now",
+      href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2"
     }
   ];
 
@@ -68,7 +75,7 @@ const Contact = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactMethods.map((method, index) => (
               <motion.div
                 key={index}

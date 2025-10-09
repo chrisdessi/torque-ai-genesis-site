@@ -1,5 +1,4 @@
-
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -17,11 +16,31 @@ const Footer = () => {
             <p className="text-gray-400 leading-relaxed max-w-md text-base italic">
               Torque AI helps leaders recover lost revenue, de-risk AI, and rebuild human alignment in an algorithmic world.
             </p>
-            <div className="space-y-3">
+            <div className="space-y-3 mt-6">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-3" />
                 <a href="mailto:info@torqueapp.ai" className="hover:text-white transition-colors">
                   info@torqueapp.ai
+                </a>
+              </div>
+              <div className="flex items-center gap-4 mt-4">
+                <a 
+                  href="https://www.linkedin.com/in/chrisdessi/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                  aria-label="Chris Dessi on LinkedIn"
+                >
+                  <Linkedin className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-red-500 transition-colors"
+                  aria-label="The Quantum Shift Podcast on YouTube"
+                >
+                  <Youtube className="w-6 h-6" />
                 </a>
               </div>
             </div>

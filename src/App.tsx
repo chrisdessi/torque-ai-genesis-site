@@ -16,6 +16,7 @@ import EnterpriseAccelerator from "./pages/EnterpriseAccelerator";
 import Momento from "./pages/Momento";
 import BrandIdentity from "./pages/BrandIdentity";
 import CreatorLaunch from "./pages/CreatorLaunch";
+import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/momento" element={<Momento />} />
           <Route path="/brand" element={<BrandIdentity />} />
           <Route path="/creator-launch" element={<CreatorLaunch />} />
+          <Route path="/events" element={<Events />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

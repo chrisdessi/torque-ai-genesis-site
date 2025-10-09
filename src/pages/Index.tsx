@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Hero from "@/components/Hero";
 import alignmentVisual from "@/assets/alignment-visual.jpg";
-import teamCollaboration from "@/assets/team-collaboration.jpg";
+import teamCollaboration from "@/assets/team-collaboration-stock.jpg";
 import automationFlow from "@/assets/automation-flow.jpg";
 
 const Index = () => {

@@ -1,27 +1,34 @@
-
 import { CheckCircle } from "lucide-react";
+import processAnalyze from "@/assets/process-analyze.jpg";
+import processStrategize from "@/assets/process-strategize.jpg";
+import processImplement from "@/assets/process-implement.jpg";
+import processScale from "@/assets/process-scale.jpg";
 
 const Process = () => {
   const steps = [
     {
       number: "01",
       title: "ANALYZE & AUDIT",
-      description: "Comprehensive analysis of your current marketing performance and competitive landscape."
+      description: "Comprehensive analysis of your current marketing performance and competitive landscape.",
+      image: processAnalyze
     },
     {
       number: "02", 
       title: "STRATEGIZE & PLAN",
-      description: "Development of custom AI-powered marketing strategy aligned with your business objectives."
+      description: "Development of custom AI-powered marketing strategy aligned with your business objectives.",
+      image: processStrategize
     },
     {
       number: "03",
       title: "IMPLEMENT & OPTIMIZE",
-      description: "Deployment of AI systems with continuous monitoring and real-time optimization."
+      description: "Deployment of AI systems with continuous monitoring and real-time optimization.",
+      image: processImplement
     },
     {
       number: "04",
       title: "SCALE & DOMINATE",
-      description: "Scale successful campaigns and expand market dominance through data-driven insights."
+      description: "Scale successful campaigns and expand market dominance through data-driven insights.",
+      image: processScale
     }
   ];
 
@@ -41,12 +48,18 @@ const Process = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="text-center group">
-              <div className="relative mb-8">
-                <div className="w-20 h-20 bg-black text-white rounded-full flex items-center justify-center mx-auto text-2xl font-black group-hover:scale-110 transition-transform">
+              <div className="relative mb-6 overflow-hidden rounded-xl">
+                <img 
+                  src={step.image} 
+                  alt={step.title}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-16 h-16 bg-white text-black rounded-full flex items-center justify-center text-xl font-black shadow-lg">
                   {step.number}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gray-300 -translate-y-1/2"></div>
+                  <div className="hidden lg:block absolute top-24 left-full w-full h-0.5 bg-gray-300 -translate-y-1/2 z-10"></div>
                 )}
               </div>
               <h3 className="text-lg font-black text-black mb-4">{step.title}</h3>

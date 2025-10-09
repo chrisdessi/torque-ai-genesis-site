@@ -226,9 +226,9 @@ const Quiz = () => {
                       <ArrowRight className="ml-3 w-5 h-5" />
                     </Button>
                   </a>
-                  <a href="https://torqueapp.ai/centered-heading-with-contact-form/">
+                  <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
                     <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
-                      Talk to Expert
+                      Schedule Consultation
                     </Button>
                   </a>
                 </div>

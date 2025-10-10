@@ -79,14 +79,13 @@ const Index = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white/10 px-10 py-7 text-lg"
-                  onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-                >
-                  Start AI Transformation
-                </Button>
+              <Button 
+                size="lg"
+                className="bg-white hover:bg-white/90 text-black font-semibold px-10 py-7 text-lg"
+                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+              >
+                Start AI Transformation
+              </Button>
               </motion.div>
             </div>
           </motion.div>

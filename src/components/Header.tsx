@@ -36,10 +36,20 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img 
+            <motion.img 
               src={torqueLogo} 
               alt="Torque AI" 
-              className="h-10 w-auto opacity-90 transition-all group-hover:opacity-100 group-hover:scale-105"
+              className="h-10 w-auto opacity-90 transition-all group-hover:opacity-100"
+              animate={{ 
+                y: [0, -3, 0],
+                rotate: [0, 2, 0, -2, 0]
+              }}
+              transition={{ 
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              whileHover={{ scale: 1.05 }}
             />
           </Link>
 

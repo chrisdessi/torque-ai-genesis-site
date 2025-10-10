@@ -13,9 +13,18 @@ const Hero = () => {
           src={heroAiWorkspace} 
           alt="Torque AI - Enterprise AI Platform for Marketing and Sales"
           className="w-full h-full object-cover"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          initial={{ scale: 1.2, x: -20, y: -20 }}
+          animate={{ 
+            scale: [1.2, 1.15, 1.1, 1.15, 1.2],
+            x: [-20, 0, 20, 0, -20],
+            y: [-20, 10, -10, 20, -20]
+          }}
+          transition={{ 
+            duration: 20, 
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/75 to-accent/80"></div>
       </div>

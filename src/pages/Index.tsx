@@ -106,10 +106,22 @@ const Index = () => {
       {/* Where You're Losing Money */}
       <section className="py-32 bg-muted relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img 
+          <motion.img 
             src={automationFlow} 
             alt="Background pattern"
             className="w-full h-full object-cover"
+            initial={{ scale: 1.1, x: -15 }}
+            animate={{ 
+              scale: [1.1, 1.15, 1.1],
+              x: [-15, 15, -15],
+              y: [0, -10, 0]
+            }}
+            transition={{ 
+              duration: 25, 
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
           />
         </div>
         <div className="max-w-6xl mx-auto px-6 relative z-10">

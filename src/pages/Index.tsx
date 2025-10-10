@@ -7,7 +7,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import Hero from "@/components/Hero";
 import alignmentVisual from "@/assets/alignment-visual.jpg";
 import teamCollaboration from "@/assets/team-collaboration-stock.jpg";
-import automationFlow from "@/assets/automation-flow.jpg";
+import leadershipVision from "@/assets/leadership-vision.jpg";
 
 const Index = () => {
   const process = [
@@ -107,8 +107,8 @@ const Index = () => {
       <section className="py-32 bg-muted relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <motion.img 
-            src={automationFlow} 
-            alt="Background pattern"
+            src={leadershipVision} 
+            alt="Leadership and vision background"
             className="w-full h-full object-cover"
             initial={{ scale: 1.1, x: -15 }}
             animate={{ 

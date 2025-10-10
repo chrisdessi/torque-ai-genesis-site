@@ -76,12 +76,15 @@ const Hero = () => {
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal text-white leading-[1.1] mb-8 tracking-tight">
-            AI built for leaders
+            Unleash the Full Power of AI in Your Business with Torque AI
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-10 leading-relaxed font-light">
-            Torque is the AI platform that unifies the brand experience, accelerates content velocity, 
-            and automates marketing processes—at scale.
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-4 leading-relaxed font-light">
+            Build, Scale & Automate with Confidence — Learn the Playbook Inside Torque Academy
+          </p>
+
+          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+            Torque AI helps forward-thinking teams integrate AI across Sales, Marketing & Communications — and trains them to master it through Torque Academy, your all-in-one AI education and execution hub.
           </p>
 
           {/* Feature highlights */}

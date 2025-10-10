@@ -15,27 +15,27 @@ const Index = () => {
 
   const solutions = [
     {
-      title: "Executive AI Briefing",
-      description: "90-minute strategy session to align leadership and identify growth opportunities.",
-      price: "$10,000"
+      title: "AI Strategy & Roadmap",
+      description: "Custom AI implementation strategy tailored to your business objectives and existing infrastructure.",
+      price: "Starting at $25k"
     },
     {
-      title: "AI Strategy Workshop",
-      description: "1-day onsite/virtual workshop to design AI adoption roadmaps and compliance frameworks.",
-      price: "$25,000"
+      title: "AI Integration & Deployment",
+      description: "End-to-end implementation of AI solutions with your team, ensuring smooth adoption and measurable ROI.",
+      price: "Starting at $50k"
     },
     {
-      title: "90-Day AI Accelerator",
-      description: "Implementation of AI-driven GTM, automation, and analytics systems for measurable ROI.",
-      price: "$75,000–$150,000"
+      title: "Ongoing AI Optimization",
+      description: "Continuous improvement and scaling of your AI systems to maximize business impact.",
+      price: "Custom pricing"
     }
   ];
 
   const metrics = [
-    { stat: "100%", label: "Leadership Alignment within 4 Weeks" },
-    { stat: "60%", label: "Reduction in Manual Marketing Workflows" },
-    { stat: "100%", label: "Brand-Safe AI Adoption Framework" },
-    { stat: "90 Days", label: "Measurable ROI Timeline" }
+    { value: "3x", label: "Average ROI Increase" },
+    { value: "50%", label: "Time Savings" },
+    { value: "90%", label: "Client Satisfaction" },
+    { value: "200+", label: "Projects Delivered" }
   ];
 
   return (
@@ -93,91 +93,61 @@ const Index = () => {
       </section>
 
       {/* The Problem Section */}
-      <section className="bg-white py-32">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeInUp}>
-              <h2 className="text-5xl md:text-6xl font-bold text-black mb-8 leading-tight">
-                Most Enterprise AI Projects Fail — Not Because of Technology, But Alignment.
-              </h2>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Organizations know they need AI, but they don't know where to begin. Teams run isolated pilots. Leaders get flooded with tools. ROI disappears in the noise.
-              </p>
-              <p className="text-2xl font-semibold text-black mb-8 italic">
-                Torque AI changes that.
-              </p>
-              <Button 
-                size="lg"
-                className="bg-black hover:bg-black/90 text-white px-10 py-7"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Meet With Us
-              </Button>
-            </motion.div>
-            <motion.div 
-              {...fadeInUp}
-              className="relative h-[500px] flex items-center justify-center"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl"></div>
-              <Brain className="w-64 h-64 text-gray-400 relative z-10" strokeWidth={0.5} />
-            </motion.div>
-          </div>
+      <section className="section-padding py-24">
+        <div className="max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Why Most AI Initiatives Fail
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              70% of AI projects never make it to production. The gap isn't technology—it's alignment, strategy, and execution.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* The Solution Section */}
-      <section className="bg-black text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E5C07B] to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E5C07B] to-transparent"></div>
-        </div>
-        <div className="section-padding max-w-7xl mx-auto relative z-10">
-          <motion.h2 
-            {...fadeInUp}
-            className="text-5xl md:text-6xl font-bold text-center mb-20"
-          >
-            Enterprise AI, Delivered as a System
-          </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="bg-gray-50 py-24">
+        <div className="section-padding">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Our AI Consulting Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              End-to-end AI transformation services designed to deliver measurable results
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {solutions.map((solution, index) => (
               <motion.div
                 key={index}
                 {...fadeInUp}
                 transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -10 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 hover:border-[#0074FF]/50 transition-all duration-300"
+                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               >
-                <h3 className="text-2xl font-bold mb-6">{solution.title}</h3>
-                <p className="text-gray-400 mb-8 leading-relaxed text-lg">{solution.description}</p>
-                <div className="text-3xl font-bold text-[#E5C07B]">{solution.price}</div>
+                <h3 className="text-2xl font-bold mb-4">{solution.title}</h3>
+                <p className="text-gray-600 mb-6">{solution.description}</p>
+                <p className="text-2xl font-bold text-primary">{solution.price}</p>
               </motion.div>
             ))}
           </div>
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mt-16"
-          >
-            <Button 
-              size="lg"
-              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-            >
-              Meet With Us
-            </Button>
-          </motion.div>
         </div>
       </section>
 
       {/* Results Section */}
-      <section className="bg-white py-32">
-        <div className="section-padding max-w-7xl mx-auto">
-          <motion.h2 
-            {...fadeInUp}
-            className="text-5xl md:text-6xl font-bold text-black text-center mb-20"
-          >
-            Tangible Results, Visible Impact
-          </motion.h2>
-          <div className="grid md:grid-cols-4 gap-12">
+      <section className="section-padding py-24">
+        <div className="max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Proven Results
+            </h2>
+            <p className="text-xl text-gray-600">
+              Real impact from real implementations
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-4 gap-8">
             {metrics.map((metric, index) => (
               <motion.div
                 key={index}
@@ -185,65 +155,45 @@ const Index = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-6xl font-bold text-black mb-4">{metric.stat}</div>
-                <div className="text-xl text-gray-600 leading-relaxed">{metric.label}</div>
+                <div className="text-5xl font-bold text-primary mb-2">{metric.value}</div>
+                <div className="text-gray-600">{metric.label}</div>
               </motion.div>
             ))}
           </div>
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mt-16"
-          >
-            <Button 
-              size="lg"
-              className="bg-black hover:bg-black/90 text-white px-10 py-7"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-            >
-              Meet With Us
-            </Button>
-          </motion.div>
         </div>
       </section>
 
       {/* About Chris Section */}
-      <section className="bg-black text-white py-32">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeInUp} className="relative">
-              <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden">
-                <img 
-                  src={chrisBioImage} 
-                  alt="Chris Dessi - Founder of Torque AI" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
+      <section className="bg-gray-50 py-24">
+        <div className="section-padding">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8">
-                Meet Your Partner in AI Transformation
+              <img 
+                src={chrisBioImage} 
+                alt="Chris Dessi" 
+                className="rounded-lg shadow-xl w-full"
+              />
+            </motion.div>
+            
+            <motion.div {...fadeInUp}>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Meet Chris Dessi
               </h2>
-              <p className="text-xl text-gray-400 mb-6 leading-relaxed">
-                Chris Dessi is the Founder & CEO of Torque AI, helping enterprises implement AI systems that scale revenue and culture simultaneously.
+              <p className="text-lg text-gray-600 mb-6">
+                Chris Dessi is the founder of Torque AI, a leading AI consulting firm helping businesses transform through artificial intelligence. With over a decade of experience in digital strategy and marketing, Chris has helped hundreds of companies leverage AI to drive growth and innovation.
               </p>
-              <p className="text-xl text-gray-400 mb-6 leading-relaxed">
-                A former CRO and enterprise SaaS growth leader, Chris has generated over $30M in new business using AI automation.
+              <p className="text-lg text-gray-600 mb-8">
+                As a recognized thought leader in AI and business transformation, Chris regularly speaks at industry conferences and has been featured in major publications. His practical approach to AI implementation has helped businesses of all sizes achieve measurable results.
               </p>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                He's also a best-selling author, keynote speaker, and TV commentator featured on CNN, Fox Business, and Cheddar.
-              </p>
-              <div className="flex flex-wrap gap-4 mb-8">
+              <div className="flex gap-4">
                 <a 
                   href="https://www.linkedin.com/in/chrisdessi/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10"
-                  >
+                  <Button variant="outline" size="lg">
                     <Linkedin className="w-5 h-5 mr-2" />
-                    Connect on LinkedIn
+                    LinkedIn
                   </Button>
                 </a>
                 <a 
@@ -251,51 +201,34 @@ const Index = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10"
-                  >
-                    <Youtube className="w-5 h-5 mr-2 text-red-500" />
-                    The Quantum Shift
+                  <Button variant="outline" size="lg">
+                    <Youtube className="w-5 h-5 mr-2" />
+                    YouTube
                   </Button>
                 </a>
               </div>
-              <Button 
-                size="lg"
-                className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Meet With Us
-              </Button>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative bg-black py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0074FF]/20 to-transparent"></div>
-        <div className="section-padding max-w-5xl mx-auto text-center relative z-10">
-          <motion.h2 
-            {...fadeInUp}
-            className="text-6xl md:text-7xl font-bold text-white mb-8"
-          >
-            The Future of Work Isn't Coming. It's Already Here.
-          </motion.h2>
-          <motion.p 
-            {...fadeInUp}
-            className="text-2xl text-gray-400 mb-12"
-          >
-            Your competitors are using AI to scale. Don't get left behind.
-          </motion.p>
+      <section className="bg-primary text-white py-24">
+        <div className="section-padding text-center">
           <motion.div {...fadeInUp}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to Transform Your Business with AI?
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Let's discuss how AI can drive growth and innovation in your organization
+            </p>
             <Button 
-              size="lg"
-              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-12 py-8 text-xl"
+              size="lg" 
+              variant="secondary"
+              className="text-lg px-8"
               onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
             >
-              Meet With Us
+              Schedule a Consultation
             </Button>
           </motion.div>
         </div>

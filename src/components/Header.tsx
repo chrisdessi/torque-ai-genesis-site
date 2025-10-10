@@ -35,15 +35,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center group">
             <img 
               src={torqueLogo} 
               alt="Torque AI" 
-              className="h-8 w-auto transition-transform group-hover:scale-105"
+              className="h-10 w-auto opacity-90 transition-all group-hover:opacity-100 group-hover:scale-105"
             />
-            <span className="text-xl font-semibold text-foreground">
-              Torque AI
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

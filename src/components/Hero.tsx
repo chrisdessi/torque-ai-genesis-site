@@ -4,7 +4,6 @@ import { ArrowRight, Sparkles, TrendingUp, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import heroAiWorkspace from "@/assets/hero-ai-workspace.jpg";
-import torqueLogo from "@/assets/torque-ai-logo.png";
 
 const Hero = () => {
   return (
@@ -66,19 +65,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-            className="mb-6"
-          >
-            <img 
-              src={torqueLogo} 
-              alt="Torque AI Logo" 
-              className="h-16 md:h-20 mx-auto"
-            />
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

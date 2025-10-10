@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import torqueLogo from "@/assets/torque-ai-logo.png";
+import torqueLogo from "@/assets/torque-ai-logo-white.png";
 import { motion } from "framer-motion";
 
 const Header = () => {
@@ -37,17 +37,22 @@ const Header = () => {
             <motion.img 
               src={torqueLogo} 
               alt="Torque AI" 
-              className="h-10 w-auto opacity-90 transition-all group-hover:opacity-100"
+              className="h-10 w-auto brightness-0 invert transition-all"
               animate={{ 
-                y: [0, -3, 0],
-                rotate: [0, 2, 0, -2, 0]
+                y: [0, -4, 0],
+                rotate: [0, 3, 0, -3, 0],
+                scale: [1, 1.02, 1]
               }}
               transition={{ 
-                duration: 4,
+                duration: 3.5,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.08,
+                rotate: [0, -5, 5, -5, 0],
+                transition: { duration: 0.5 }
+              }}
             />
           </Link>
 
@@ -81,9 +86,9 @@ const Header = () => {
               size="sm"
               className="bg-primary hover:bg-primary/90"
             >
-              <Link to="/contact">
-                Get A Demo
-              </Link>
+              <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
+                Meet With Us
+              </a>
             </Button>
           </div>
 
@@ -131,9 +136,9 @@ const Header = () => {
                   asChild 
                   className="w-full"
                 >
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    Get A Demo
-                  </Link>
+                  <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+                    Meet With Us
+                  </a>
                 </Button>
               </div>
             </nav>

@@ -1,592 +1,305 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, DollarSign, TrendingDown, Clock, AlertTriangle, Users, Target, Zap, TrendingUp, Sparkles, BarChart3 } from "lucide-react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AnimatedCounter from "@/components/AnimatedCounter";
-import Hero from "@/components/Hero";
-import alignmentVisual from "@/assets/alignment-visual.jpg";
-import teamCollaboration from "@/assets/team-collaboration-stock.jpg";
-import leadershipVision from "@/assets/leadership-vision.jpg";
+import { motion } from "framer-motion";
+import { Brain, Linkedin, Youtube } from "lucide-react";
+import chrisBioImage from "@/assets/chris-bio.png";
 
 const Index = () => {
-  const process = [
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
+  };
+
+  const solutions = [
     {
-      number: "01",
-      title: "Audit",
-      description: "Deep analysis of your current marketing, sales, and communications operations to identify gaps and opportunities."
+      title: "Executive AI Briefing",
+      description: "90-minute strategy session to align leadership and identify growth opportunities.",
+      price: "$10,000"
     },
     {
-      number: "02",
-      title: "Optimize",
-      description: "Strategic implementation of AI-powered solutions and process improvements to maximize efficiency and results."
+      title: "AI Strategy Workshop",
+      description: "1-day onsite/virtual workshop to design AI adoption roadmaps and compliance frameworks.",
+      price: "$25,000"
     },
     {
-      number: "03",
-      title: "Train",
-      description: "Comprehensive coaching for your team on new systems, AI tools, and best practices for sustained success."
-    },
-    {
-      number: "04",
-      title: "Hand Off",
-      description: "Seamless transition to your empowered team with ongoing support as needed."
+      title: "90-Day AI Accelerator",
+      description: "Implementation of AI-driven GTM, automation, and analytics systems for measurable ROI.",
+      price: "$75,000–$150,000"
     }
   ];
 
-  const expertise = [
-    "Business Analysis & Infrastructure Assessment",
-    "AI Strategy Development",
-    "Data Qualification & Preparation",
-    "AI Product Solutions",
-    "Integration & Deployment",
-    "Maintenance & Support"
+  const metrics = [
+    { stat: "100%", label: "Leadership Alignment within 4 Weeks" },
+    { stat: "60%", label: "Reduction in Manual Marketing Workflows" },
+    { stat: "100%", label: "Brand-Safe AI Adoption Framework" },
+    { stat: "90 Days", label: "Measurable ROI Timeline" }
   ];
 
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
+      <Header />
+      
       {/* Hero Section */}
-      <Hero />
-
-      {/* Why Now / The Cost of Inaction */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              The Hidden Cost of Misalignment
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every day without alignment costs you real revenue
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {[
-              { end: 10, prefix: "5–", suffix: "%", label: "of annual revenue wiped out by strategy failures", icon: DollarSign, iconColor: "text-red-600" },
-              { end: 80, suffix: "%", label: "of employees lack time or energy to do their best work", icon: Users, iconColor: "text-orange-600" },
-              { end: 40, suffix: "%", label: "of productive time stolen by context switching each week", icon: Clock, iconColor: "text-yellow-600" },
-              { end: 100, suffix: "%", label: "of margins silently taxed by meeting and tool overload", icon: TrendingDown, iconColor: "text-red-700" }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border-2 border-transparent hover:border-foreground"
-              >
-                <div className={`w-16 h-16 mx-auto mb-4 ${item.iconColor} bg-muted rounded-full flex items-center justify-center`}>
-                  <item.icon className="w-8 h-8" />
-                </div>
-                <div className="text-4xl font-bold mb-3">
-                  <AnimatedCounter end={item.end} suffix={item.suffix} prefix={item.prefix} duration={2.5} />
-                </div>
-                <p className="text-muted-foreground">{item.label}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button asChild size="lg" className="font-semibold">
-              <Link to="/contact">
-                Quantify Your Execution Leak
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Where You're Losing Money */}
-      <section className="py-32 bg-muted relative overflow-hidden">
+      <section className="relative bg-black text-white min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <motion.img 
-            src={leadershipVision} 
-            alt="Leadership and vision background"
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.1, x: -15 }}
-            animate={{ 
-              scale: [1.1, 1.15, 1.1],
-              x: [-15, 15, -15],
-              y: [0, -10, 0]
-            }}
-            transition={{ 
-              duration: 25, 
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-yellow-600/20"></div>
         </div>
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+        <div className="section-padding w-full py-32 relative z-10">
+          <motion.div 
+            className="max-w-5xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Where You're Losing Money
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Identify the leaks draining your bottom line
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+              Unleash the Full Power<br />of AI in Your Business<br />with Torque AI
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Build, Scale & Automate with Confidence — Learn the Playbook Inside Torque Academy
+              <br /><br />
+              Torque AI helps forward-thinking teams integrate AI across Sales, Marketing & Communications — and trains them to master it through Torque Academy, your all-in-one AI education and execution hub.
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-red-600"
-            >
-              <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <DollarSign className="w-10 h-10 text-red-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">Revenue Leak</h3>
-              <div className="text-center mb-4">
-                <span className="text-5xl font-bold text-red-600">
-                  <AnimatedCounter end={5} duration={2} />–<AnimatedCounter end={10} duration={2} />%
-                </span>
-              </div>
-              <p className="text-muted-foreground leading-relaxed text-center">
-                of topline wasted through execution drift, duplication and hand-offs
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-orange-600"
-            >
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <AlertTriangle className="w-10 h-10 text-orange-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">AI Risk</h3>
-              <div className="text-center mb-4">
-                <span className="text-5xl font-bold text-orange-600">
-                  $<AnimatedCounter end={4.4} decimals={1} duration={2} />B
-                </span>
-              </div>
-              <p className="text-muted-foreground leading-relaxed text-center">
-                lost by firms without Responsible AI governance (EY 2025)
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-yellow-600"
-            >
-              <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <Clock className="w-10 h-10 text-yellow-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">Lost Time</h3>
-              <div className="text-center mb-4">
-                <span className="text-5xl font-bold text-yellow-600">
-                  <AnimatedCounter end={80} duration={2} />%
-                </span>
-              </div>
-              <p className="text-muted-foreground leading-relaxed text-center">
-                of staff already at capacity while leaders demand productivity gains (Microsoft 2025)
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="text-center">
-            <Button asChild size="lg" className="font-semibold">
-              <Link to="/contact">
-                Stop the Leak
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Competitive Advantage */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Your Competition Isn't Waiting
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Leading enterprises are already leveraging AI for measurable growth
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg text-center shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-green-600"
-            >
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <TrendingUp className="w-10 h-10 text-green-600" />
-              </div>
-              <div className="text-6xl font-bold mb-4 text-green-600">
-                <AnimatedCounter end={93} duration={2.5} />%
-              </div>
-              <p className="text-lg text-muted-foreground">
-                of CMOs already report positive ROI from Gen AI
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg text-center shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-600"
-            >
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <BarChart3 className="w-10 h-10 text-blue-600" />
-              </div>
-              <div className="text-5xl font-bold mb-4 text-blue-600">Revenue Lift</div>
-              <p className="text-lg text-muted-foreground">
-                Business units using Gen AI see measurable revenue lift (McKinsey 2025)
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg text-center shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-600"
-            >
-              <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <Sparkles className="w-10 h-10 text-purple-600" />
-              </div>
-              <div className="text-6xl font-bold mb-4 text-purple-600">
-                <AnimatedCounter end={40} duration={2.5} />%
-              </div>
-              <p className="text-lg text-muted-foreground">
-                of enterprise apps will embed AI agents by 2026 (Gartner)
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="text-center">
-            <Button asChild size="lg" className="font-semibold">
-              <Link to="/contact">
-                Catch Up Now
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Career Risk / Leadership Pressure */}
-      <section className="py-24 bg-destructive text-white">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto px-6 text-center"
-        >
-          <AlertTriangle className="w-16 h-16 mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Boards Are Replacing Leaders Who Can't Deliver Change
-          </h2>
-          <p className="text-xl mb-8 leading-relaxed">
-            <strong>31% of CEOs</strong> lose their roles for failed transformation efforts.
-            <br />
-            Don't be next—lead with alignment.
-          </p>
-          <Button 
-            asChild
-            size="lg" 
-            className="bg-white text-destructive hover:bg-gray-100 font-semibold"
-          >
-            <Link to="/contact">
-              Secure Your Seat
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </Button>
-        </motion.div>
-      </section>
-
-      {/* Value Proposition */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-12"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold text-center mb-16">
-              Our Approach: Comprehensive AI Strategy,
-              <br />
-              <span className="text-muted-foreground">AI Business and AI Software Solutions</span>
-            </h2>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative">
-                <img 
-                  src={teamCollaboration} 
-                  alt="Team collaborating with AI technology"
-                  className="rounded-2xl shadow-2xl"
-                />
-              </div>
-              
-              <div className="space-y-8">
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  We partner with enterprise businesses who have no AI strategy to transform their marketing, sales, and communications operations through strategic AI integration and proven methodologies.
-                </p>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  We analyze your infrastructure, data, and industry trends to identify opportunities for transformative AI solutions that meet your unique business needs and drive measurable results.
-                </p>
-                
-                <div className="pt-8">
-                  <h3 className="text-2xl font-bold mb-6">Areas of Expertise</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {expertise.map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="flex items-center space-x-3"
-                      >
-                        <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
-                        <span className="text-foreground">{item}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-muted p-12 rounded-lg">
-                <h3 className="text-3xl font-bold mb-8">Why Choose Torque AI</h3>
-                <ul className="space-y-4">
-                  <motion.li
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0 * 0.1 }}
-                    className="text-lg text-foreground border-l-4 border-black pl-6 py-2"
-                  >
-                    Proven track record of transforming enterprise operations
-                  </motion.li>
-                  <motion.li
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1 * 0.1 }}
-                    className="text-lg text-foreground border-l-4 border-black pl-6 py-2"
-                  >
-                    Strategic AI implementation with measurable ROI
-                  </motion.li>
-                  <motion.li
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 2 * 0.1 }}
-                    className="text-lg text-foreground border-l-4 border-black pl-6 py-2"
-                  >
-                    End-to-end support from strategy to optimization
-                  </motion.li>
-                </ul>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button 
+                  size="lg"
+                  className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
+                  onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                >
+                  Meet With Us
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white/10 px-10 py-7 text-lg"
+                  onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                >
+                  Start AI Transformation
+                </Button>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* The Torque AI Difference */}
-      <section className="py-32 bg-muted">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              The Torque AI Difference
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Four ways we help you reclaim revenue and rebuild alignment
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg border-2 border-transparent hover:border-foreground transition-all duration-300"
-            >
-              <div className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6 font-bold text-xl">
-                1
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Stop the Leak</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Quantify execution drift and reclaim that 5–10% revenue.
+      {/* The Problem Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div {...fadeInUp}>
+              <h2 className="text-5xl md:text-6xl font-bold text-black mb-8 leading-tight">
+                Most Enterprise AI Projects Fail — Not Because of Technology, But Alignment.
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Organizations know they need AI, but they don't know where to begin. Teams run isolated pilots. Leaders get flooded with tools. ROI disappears in the noise.
               </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg border-2 border-transparent hover:border-foreground transition-all duration-300"
-            >
-              <div className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6 font-bold text-xl">
-                2
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Make AI Pay</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Apply Responsible-AI guardrails for real ROI.
+              <p className="text-2xl font-semibold text-black mb-8 italic">
+                Torque AI changes that.
               </p>
+              <Button 
+                size="lg"
+                className="bg-black hover:bg-black/90 text-white px-10 py-7"
+                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+              >
+                Meet With Us
+              </Button>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg border-2 border-transparent hover:border-foreground transition-all duration-300"
+            <motion.div 
+              {...fadeInUp}
+              className="relative h-[500px] flex items-center justify-center"
             >
-              <div className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6 font-bold text-xl">
-                3
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Win the Capacity War</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Cut meeting/tool overload, redeploy hours to revenue work.
-              </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl"></div>
+              <Brain className="w-64 h-64 text-gray-400 relative z-10" strokeWidth={0.5} />
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="bg-white p-10 rounded-lg border-2 border-transparent hover:border-foreground transition-all duration-300"
-            >
-              <div className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6 font-bold text-xl">
-                4
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Match or Pass Peers</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Deploy the same Gen AI plays top performers use.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="text-center">
-            <Button asChild size="lg" className="font-semibold">
-              <Link to="/contact">
-                Book Your Audit
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+      {/* The Solution Section */}
+      <section className="bg-black text-white py-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E5C07B] to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E5C07B] to-transparent"></div>
+        </div>
+        <div className="section-padding max-w-7xl mx-auto relative z-10">
+          <motion.h2 
+            {...fadeInUp}
+            className="text-5xl md:text-6xl font-bold text-center mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Our Approach
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A proven methodology to transform your operations and empower your team
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((step, index) => (
+            Enterprise AI, Delivered as a System
+          </motion.h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {solutions.map((solution, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-                className="bg-white p-8 rounded-lg border-2 border-transparent hover:border-black transition-all duration-300"
+                {...fadeInUp}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ y: -10 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 hover:border-[#0074FF]/50 transition-all duration-300"
               >
-                <div className="text-6xl font-bold text-muted-foreground/20 mb-4">
-                  {step.number}
-                </div>
-                <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
+                <h3 className="text-2xl font-bold mb-6">{solution.title}</h3>
+                <p className="text-gray-400 mb-8 leading-relaxed text-lg">{solution.description}</p>
+                <div className="text-3xl font-bold text-[#E5C07B]">{solution.price}</div>
               </motion.div>
             ))}
           </div>
+          <motion.div 
+            {...fadeInUp}
+            className="text-center mt-16"
+          >
+            <Button 
+              size="lg"
+              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
+              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+            >
+              Meet With Us
+            </Button>
+          </motion.div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-32 bg-black text-white">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto px-6 text-center"
-        >
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">
-            Ready to Transform
-            <br />
-            Your Business?
-          </h2>
-          <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Limited availability for enterprise clients who are serious about leveraging AI
-            to drive measurable results and sustainable growth.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button 
-              asChild
-              size="lg" 
-              className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
-            >
-              <Link to="/contact">
-                Get in Touch
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
+      {/* Results Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.h2 
+            {...fadeInUp}
+            className="text-5xl md:text-6xl font-bold text-black text-center mb-20"
+          >
+            Tangible Results, Visible Impact
+          </motion.h2>
+          <div className="grid md:grid-cols-4 gap-12">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                {...fadeInUp}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-6xl font-bold text-black mb-4">{metric.stat}</div>
+                <div className="text-xl text-gray-600 leading-relaxed">{metric.label}</div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+          <motion.div 
+            {...fadeInUp}
+            className="text-center mt-16"
+          >
+            <Button 
+              size="lg"
+              className="bg-black hover:bg-black/90 text-white px-10 py-7"
+              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+            >
+              Meet With Us
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* About Chris Section */}
+      <section className="bg-black text-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div {...fadeInUp} className="relative">
+              <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden">
+                <img 
+                  src={chrisBioImage} 
+                  alt="Chris Dessi - Founder of Torque AI" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+            <motion.div {...fadeInUp}>
+              <h2 className="text-5xl md:text-6xl font-bold mb-8">
+                Meet Your Partner in AI Transformation
+              </h2>
+              <p className="text-xl text-gray-400 mb-6 leading-relaxed">
+                Chris Dessi is the Founder & CEO of Torque AI, helping enterprises implement AI systems that scale revenue and culture simultaneously.
+              </p>
+              <p className="text-xl text-gray-400 mb-6 leading-relaxed">
+                A former CRO and enterprise SaaS growth leader, Chris has generated over $30M in new business using AI automation.
+              </p>
+              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                He's also a best-selling author, keynote speaker, and TV commentator featured on CNN, Fox Business, and Cheddar.
+              </p>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <a 
+                  href="https://www.linkedin.com/in/chrisdessi/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    size="lg"
+                    variant="outline"
+                    className="border-white/20 text-white hover:bg-white/10"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
+                    Connect on LinkedIn
+                  </Button>
+                </a>
+                <a 
+                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    size="lg"
+                    variant="outline"
+                    className="border-white/20 text-white hover:bg-white/10"
+                  >
+                    <Youtube className="w-5 h-5 mr-2 text-red-500" />
+                    The Quantum Shift
+                  </Button>
+                </a>
+              </div>
+              <Button 
+                size="lg"
+                className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
+                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+              >
+                Meet With Us
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="relative bg-black py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0074FF]/20 to-transparent"></div>
+        <div className="section-padding max-w-5xl mx-auto text-center relative z-10">
+          <motion.h2 
+            {...fadeInUp}
+            className="text-6xl md:text-7xl font-bold text-white mb-8"
+          >
+            The Future of Work Isn't Coming. It's Already Here.
+          </motion.h2>
+          <motion.p 
+            {...fadeInUp}
+            className="text-2xl text-gray-400 mb-12"
+          >
+            Your competitors are using AI to scale. Don't get left behind.
+          </motion.p>
+          <motion.div {...fadeInUp}>
+            <Button 
+              size="lg"
+              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-12 py-8 text-xl"
+              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+            >
+              Meet With Us
+            </Button>
+          </motion.div>
+        </div>
       </section>
 
       <Footer />

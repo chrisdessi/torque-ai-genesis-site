@@ -19,7 +19,7 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: "Platform", href: "/services" },
+    { name: "Consulting", href: "/services" },
     { name: "Solutions", href: "/enterprise-accelerator" },
     { name: "Events", href: "/events" },
     { name: "Company", href: "/about" },
@@ -37,7 +37,7 @@ const Header = () => {
             <motion.img 
               src={torqueLogo} 
               alt="Torque AI" 
-              className="h-10 w-auto brightness-0 invert transition-all"
+              className="h-10 w-auto filter brightness-0 invert"
               animate={{ 
                 y: [0, -4, 0],
                 rotate: [0, 3, 0, -3, 0],

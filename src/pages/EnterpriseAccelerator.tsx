@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const EnterpriseAccelerator = () => {
   const fadeInUp = {
@@ -32,10 +33,10 @@ const EnterpriseAccelerator = () => {
   ];
 
   const metrics = [
-    { stat: "100%", label: "Leadership Alignment within 4 Weeks" },
-    { stat: "60%", label: "Reduction in Manual Marketing Workflows" },
-    { stat: "100%", label: "Brand-Safe AI Adoption Framework" },
-    { stat: "90 Days", label: "Measurable ROI Timeline" }
+    { value: 100, suffix: "%", label: "Leadership Alignment within 4 Weeks" },
+    { value: 60, suffix: "%", label: "Reduction in Manual Marketing Workflows" },
+    { value: 100, suffix: "%", label: "Brand-Safe AI Adoption Framework" },
+    { value: 90, suffix: " Days", label: "Measurable ROI Timeline" }
   ];
 
   return (
@@ -184,7 +185,9 @@ const EnterpriseAccelerator = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-6xl font-bold text-black mb-4">{metric.stat}</div>
+                <div className="text-6xl font-bold text-black mb-4">
+                  <AnimatedCounter end={metric.value} suffix={metric.suffix} />
+                </div>
                 <div className="text-xl text-gray-600 leading-relaxed">{metric.label}</div>
               </motion.div>
             ))}
@@ -225,7 +228,7 @@ const EnterpriseAccelerator = () => {
                 Chris Dessi is the Founder & CEO of Torque AI, helping enterprises implement AI systems that scale revenue and culture simultaneously.
               </p>
               <p className="text-xl text-gray-400 mb-6 leading-relaxed">
-                A former CRO and enterprise SaaS growth leader, Chris has generated over $30M in new business using AI automation.
+                A former CRO and enterprise SaaS growth leader, Chris has generated over <AnimatedCounter end={30} prefix="$" suffix="M" /> in new business using AI automation.
               </p>
               <p className="text-xl text-gray-400 mb-8 leading-relaxed">
                 He's also a best-selling author, keynote speaker, and TV commentator featured on CNN, Fox Business, and Cheddar.

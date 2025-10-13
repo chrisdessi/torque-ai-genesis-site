@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const Index = () => {
   const fadeInUp = {
@@ -32,10 +33,10 @@ const Index = () => {
   ];
 
   const metrics = [
-    { stat: "100%", label: "Leadership Alignment within 4 Weeks" },
-    { stat: "60%", label: "Reduction in Manual Marketing Workflows" },
-    { stat: "100%", label: "Brand-Safe AI Adoption Framework" },
-    { stat: "90 Days", label: "Measurable ROI Timeline" }
+    { value: 100, suffix: "%", label: "Leadership Alignment within 4 Weeks" },
+    { value: 60, suffix: "%", label: "Reduction in Manual Marketing Workflows" },
+    { value: 100, suffix: "%", label: "Brand-Safe AI Adoption Framework" },
+    { value: 90, suffix: " Days", label: "Measurable ROI Timeline" }
   ];
 
   return (
@@ -110,19 +111,27 @@ const Index = () => {
           </motion.div>
           <div className="grid md:grid-cols-4 gap-8">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">5–10%</div>
+              <div className="text-6xl font-bold text-black mb-4">
+                <AnimatedCounter end={5} decimals={0} />–<AnimatedCounter end={10} decimals={0} />%
+              </div>
               <p className="text-lg text-gray-600">of annual revenue wiped out by strategy failures</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">80%</div>
+              <div className="text-6xl font-bold text-black mb-4">
+                <AnimatedCounter end={80} suffix="%" />
+              </div>
               <p className="text-lg text-gray-600">of employees lack time or energy to do their best work</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">40%</div>
+              <div className="text-6xl font-bold text-black mb-4">
+                <AnimatedCounter end={40} suffix="%" />
+              </div>
               <p className="text-lg text-gray-600">of productive time stolen by context switching each week</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">100%</div>
+              <div className="text-6xl font-bold text-black mb-4">
+                <AnimatedCounter end={100} suffix="%" />
+              </div>
               <p className="text-lg text-gray-600">of margins silently taxed by meeting and tool overload</p>
             </motion.div>
           </div>
@@ -152,17 +161,23 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
               <h3 className="text-2xl font-bold mb-4">Revenue Leak</h3>
-              <div className="text-6xl font-bold text-[#E5C07B] mb-4">5–10%</div>
+              <div className="text-6xl font-bold text-[#E5C07B] mb-4">
+                <AnimatedCounter end={5} />–<AnimatedCounter end={10} />%
+              </div>
               <p className="text-gray-400 text-lg">of topline wasted through execution drift, duplication and hand-offs</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
               <h3 className="text-2xl font-bold mb-4">AI Risk</h3>
-              <div className="text-6xl font-bold text-[#E5C07B] mb-4">$4.4B</div>
+              <div className="text-6xl font-bold text-[#E5C07B] mb-4">
+                <AnimatedCounter end={4.4} prefix="$" suffix="B" decimals={1} />
+              </div>
               <p className="text-gray-400 text-lg">lost by firms without Responsible AI governance (EY 2025)</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
               <h3 className="text-2xl font-bold mb-4">Lost Time</h3>
-              <div className="text-6xl font-bold text-[#E5C07B] mb-4">80%</div>
+              <div className="text-6xl font-bold text-[#E5C07B] mb-4">
+                <AnimatedCounter end={80} suffix="%" />
+              </div>
               <p className="text-gray-400 text-lg">of staff already at capacity while leaders demand productivity gains (Microsoft 2025)</p>
             </motion.div>
           </div>
@@ -191,7 +206,9 @@ const Index = () => {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">93%</div>
+              <div className="text-6xl font-bold text-black mb-4">
+                <AnimatedCounter end={93} suffix="%" />
+              </div>
               <p className="text-lg text-gray-600">of CMOs already report positive ROI from Gen AI</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gray-50 rounded-2xl">
@@ -199,7 +216,9 @@ const Index = () => {
               <p className="text-lg text-gray-600">Business units using Gen AI see measurable revenue lift (McKinsey 2025)</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">40%</div>
+              <div className="text-6xl font-bold text-black mb-4">
+                <AnimatedCounter end={40} suffix="%" />
+              </div>
               <p className="text-lg text-gray-600">of enterprise apps will embed AI agents by 2026 (Gartner)</p>
             </motion.div>
           </div>
@@ -222,7 +241,7 @@ const Index = () => {
             Boards Are Replacing Leaders Who Can't Deliver Change
           </motion.h2>
           <motion.p {...fadeInUp} className="text-2xl text-gray-400 mb-12">
-            31% of CEOs lose their roles for failed transformation efforts.<br />
+            <AnimatedCounter end={31} suffix="%" /> of CEOs lose their roles for failed transformation efforts.<br />
             Don't be next—lead with alignment.
           </motion.p>
           <motion.div {...fadeInUp}>

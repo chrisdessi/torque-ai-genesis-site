@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const MomentoCouncil = () => {
   const fadeInUp = {
@@ -28,7 +29,7 @@ const MomentoCouncil = () => {
                 Founding Cohort (NYC-01)
               </span>
               <span className="text-sm text-[#c7c7cc]">
-                12 Seats • <strong>{eventDate}</strong> • {neighborhood}, NYC
+                <AnimatedCounter end={12} /> Seats • <strong>{eventDate}</strong> • {neighborhood}, NYC
               </span>
             </div>
             <div className="flex gap-3">
@@ -157,27 +158,27 @@ const MomentoCouncil = () => {
                   <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
                   <span><strong>Transparency Charter (draft)</strong> — how your team shares truth, and when</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
-                  <span><strong>Shift Breath protocol</strong> — a 10-minute daily presence framework</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
-                  <span><strong>Two curated introductions</strong> aligned to your commitments (delivered in 14 days)</span>
-                </li>
+                 <li className="flex items-start gap-3">
+                   <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
+                   <span><strong>Shift Breath protocol</strong> — a <AnimatedCounter end={10} />-minute daily presence framework</span>
+                 </li>
+                 <li className="flex items-start gap-3">
+                   <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
+                   <span><strong>Two curated introductions</strong> aligned to your commitments (delivered in <AnimatedCounter end={14} /> days)</span>
+                 </li>
               </ul>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-[#121212] border border-[#202020] rounded-2xl p-8">
               <div className="text-xs font-semibold text-[#cfcfd6] uppercase tracking-wider mb-4">Included after (no extra fee)</div>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
-                  <span><strong>45-minute working session</strong> (next week) to report progress &amp; remove blockers</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
-                  <span><strong>30-day Accountability Concierge</strong> — weekly SMS check-ins (status / obstacle / next step)</span>
-                </li>
+                 <li className="flex items-start gap-3">
+                   <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
+                   <span><strong><AnimatedCounter end={45} />-minute working session</strong> (next week) to report progress &amp; remove blockers</span>
+                 </li>
+                 <li className="flex items-start gap-3">
+                   <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
+                   <span><strong><AnimatedCounter end={30} />-day Accountability Concierge</strong> — weekly SMS check-ins (status / obstacle / next step)</span>
+                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#7ee787] flex-shrink-0 mt-0.5" />
                   <span><strong>Founding Member</strong> access to the Memento Council (NYC-01) private thread</span>
@@ -186,12 +187,12 @@ const MomentoCouncil = () => {
               <div className="border-t border-[#1d1d1f] pt-6">
                 <p className="mb-4">
                   <strong>Investment:</strong>{" "}
-                  <span className="inline-block bg-[#1a1a1a] border border-[#2a2a2a] text-[#e6e6ea] rounded-full px-3 py-1.5 text-sm mx-2">
-                    $1,250 / seat
-                  </span>
-                  <span className="inline-block bg-[#1a1a1a] border border-[#2a2a2a] text-[#e6e6ea] rounded-full px-3 py-1.5 text-sm">
-                    Duo Bundle: $2,200 (2 seats)
-                  </span>
+                   <span className="inline-block bg-[#1a1a1a] border border-[#2a2a2a] text-[#e6e6ea] rounded-full px-3 py-1.5 text-sm mx-2">
+                     <AnimatedCounter end={1250} prefix="$" /> / seat
+                   </span>
+                   <span className="inline-block bg-[#1a1a1a] border border-[#2a2a2a] text-[#e6e6ea] rounded-full px-3 py-1.5 text-sm">
+                     Duo Bundle: <AnimatedCounter end={2200} prefix="$" /> (<AnimatedCounter end={2} /> seats)
+                   </span>
                 </p>
                 <div className="flex gap-3 flex-wrap">
                   <Button 
@@ -249,11 +250,11 @@ const MomentoCouncil = () => {
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-[#121212] border border-[#202020] rounded-2xl p-6">
               <div className="text-xs font-semibold text-[#cfcfd6] uppercase tracking-wider mb-3">Shift Breath</div>
-              <p className="text-[#d7d7db]">3 minutes. In 4 — hold 2 — out 6. Land together.</p>
+              <p className="text-[#d7d7db]"><AnimatedCounter end={3} /> minutes. In <AnimatedCounter end={4} /> — hold <AnimatedCounter end={2} /> — out <AnimatedCounter end={6} />. Land together.</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-[#121212] border border-[#202020] rounded-2xl p-6">
               <div className="text-xs font-semibold text-[#cfcfd6] uppercase tracking-wider mb-3">The Work</div>
-              <p className="text-[#d7d7db]">Facts → Feelings → Fears → Commitments. Each person shares 7 minutes.</p>
+              <p className="text-[#d7d7db]">Facts → Feelings → Fears → Commitments. Each person shares <AnimatedCounter end={7} /> minutes.</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="bg-[#121212] border border-[#202020] rounded-2xl p-6">
               <div className="text-xs font-semibold text-[#cfcfd6] uppercase tracking-wider mb-3">Witness Round</div>
@@ -265,7 +266,7 @@ const MomentoCouncil = () => {
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.5 }} className="bg-[#121212] border border-[#202020] rounded-2xl p-6">
               <div className="text-xs font-semibold text-[#cfcfd6] uppercase tracking-wider mb-3">After</div>
-              <p className="text-[#d7d7db]">45-min working session next week. 30-day SMS accountability.</p>
+              <p className="text-[#d7d7db]"><AnimatedCounter end={45} />-min working session next week. <AnimatedCounter end={30} />-day SMS accountability.</p>
             </motion.div>
           </div>
         </div>
@@ -277,7 +278,7 @@ const MomentoCouncil = () => {
           <motion.div {...fadeInUp}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to commit?</h2>
             <p className="text-xl text-[#d7d7db] mb-8">
-              Limited to 12 seats. Founding Cohort closes when full.
+              Limited to <AnimatedCounter end={12} /> seats. Founding Cohort closes when full.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button 

@@ -1,29 +1,35 @@
-
 import { TrendingUp, Users, DollarSign, Clock } from "lucide-react";
+import AnimatedCounter from "./AnimatedCounter";
 
 const Results = () => {
   const metrics = [
     {
       icon: TrendingUp,
-      value: "427%",
+      value: 427,
+      suffix: "%",
       label: "Average Revenue Increase",
       description: "Across all client campaigns"
     },
     {
       icon: Users,
-      value: "2.8M+",
+      value: 2.8,
+      suffix: "M+",
+      decimals: 1,
       label: "Qualified Leads Generated",
       description: "In the past 12 months"
     },
     {
       icon: DollarSign,
-      value: "$50M+",
+      value: 50,
+      prefix: "$",
+      suffix: "M+",
       label: "Revenue Generated",
       description: "For our clients to date"
     },
     {
       icon: Clock,
-      value: "72%",
+      value: 72,
+      suffix: "%",
       label: "Faster Campaign Launch",
       description: "Compared to traditional methods"
     }
@@ -66,7 +72,14 @@ const Results = () => {
               <div className="w-16 h-16 bg-black rounded-xl flex items-center justify-center mx-auto mb-4">
                 <metric.icon className="w-8 h-8 text-white" />
               </div>
-              <div className="text-3xl font-black text-black mb-2">{metric.value}</div>
+              <div className="text-3xl font-black text-black mb-2">
+                <AnimatedCounter 
+                  end={metric.value} 
+                  prefix={metric.prefix}
+                  suffix={metric.suffix}
+                  decimals={metric.decimals || 0}
+                />
+              </div>
               <div className="text-lg font-bold text-gray-800 mb-2">{metric.label}</div>
               <div className="text-sm text-gray-600">{metric.description}</div>
             </div>

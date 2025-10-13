@@ -17,6 +17,7 @@ import Momento from "./pages/Momento";
 import BrandIdentity from "./pages/BrandIdentity";
 import CreatorLaunch from "./pages/CreatorLaunch";
 import Events from "./pages/Events";
+import MomentoCouncil from "./pages/MomentoCouncil";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/enterprise-accelerator" element={<EnterpriseAccelerator />} />
           <Route path="/momento" element={<Momento />} />
+          <Route path="/momento-council" element={<MomentoCouncil />} />
           <Route path="/brand" element={<BrandIdentity />} />
           <Route path="/creator-launch" element={<CreatorLaunch />} />
           <Route path="/events" element={<Events />} />

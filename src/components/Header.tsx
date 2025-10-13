@@ -22,6 +22,7 @@ const Header = () => {
     { name: "Consulting", href: "/services" },
     { name: "Solutions", href: "/enterprise-accelerator" },
     { name: "Events", href: "/events" },
+    { name: "Momento Council", href: "/momento-council" },
     { name: "Company", href: "/about" },
   ];
 

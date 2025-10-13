@@ -92,202 +92,297 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Problem Section */}
+      {/* The Hidden Cost of Misalignment */}
       <section className="bg-white py-32">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeInUp}>
-              <h2 className="text-5xl md:text-6xl font-bold text-black mb-8 leading-tight">
-                Most Enterprise AI Projects Fail — Not Because of Technology, But Alignment.
-              </h2>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Organizations know they need AI, but they don't know where to begin. Teams run isolated pilots. Leaders get flooded with tools. ROI disappears in the noise.
-              </p>
-              <p className="text-2xl font-semibold text-black mb-8 italic">
-                Torque AI changes that.
-              </p>
-              <Button 
-                size="lg"
-                className="bg-black hover:bg-black/90 text-white px-10 py-7"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Meet With Us
-              </Button>
-            </motion.div>
-            <motion.div 
-              {...fadeInUp}
-              className="relative h-[500px] flex items-center justify-center"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl"></div>
-              <Brain className="w-64 h-64 text-gray-400 relative z-10" strokeWidth={0.5} />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Solution Section */}
-      <section className="bg-black text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E5C07B] to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E5C07B] to-transparent"></div>
-        </div>
-        <div className="section-padding max-w-7xl mx-auto relative z-10">
-          <motion.h2 
-            {...fadeInUp}
-            className="text-5xl md:text-6xl font-bold text-center mb-20"
-          >
-            Enterprise AI, Delivered as a System
-          </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                {...fadeInUp}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -10 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 hover:border-[#0074FF]/50 transition-all duration-300"
-              >
-                <h3 className="text-2xl font-bold mb-6">{solution.title}</h3>
-                <p className="text-gray-400 mb-8 leading-relaxed text-lg">{solution.description}</p>
-                <div className="text-3xl font-bold text-[#E5C07B]">{solution.price}</div>
-              </motion.div>
-            ))}
-          </div>
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mt-16"
-          >
-            <Button 
-              size="lg"
-              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-            >
-              Meet With Us
-            </Button>
+          <motion.div {...fadeInUp} className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+              The Hidden Cost of Misalignment
+            </h2>
+            <p className="text-2xl text-gray-600">
+              Every day without alignment costs you real revenue
+            </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section className="bg-white py-32">
-        <div className="section-padding max-w-7xl mx-auto">
-          <motion.h2 
-            {...fadeInUp}
-            className="text-5xl md:text-6xl font-bold text-black text-center mb-20"
-          >
-            Tangible Results, Visible Impact
-          </motion.h2>
-          <div className="grid md:grid-cols-4 gap-12">
-            {metrics.map((metric, index) => (
-              <motion.div
-                key={index}
-                {...fadeInUp}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-6xl font-bold text-black mb-4">{metric.stat}</div>
-                <div className="text-xl text-gray-600 leading-relaxed">{metric.label}</div>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-4 gap-8">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-6xl font-bold text-black mb-4">5–10%</div>
+              <p className="text-lg text-gray-600">of annual revenue wiped out by strategy failures</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-6xl font-bold text-black mb-4">80%</div>
+              <p className="text-lg text-gray-600">of employees lack time or energy to do their best work</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-6xl font-bold text-black mb-4">40%</div>
+              <p className="text-lg text-gray-600">of productive time stolen by context switching each week</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-6xl font-bold text-black mb-4">100%</div>
+              <p className="text-lg text-gray-600">of margins silently taxed by meeting and tool overload</p>
+            </motion.div>
           </div>
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mt-16"
-          >
+          <motion.div {...fadeInUp} className="text-center mt-12">
             <Button 
               size="lg"
               className="bg-black hover:bg-black/90 text-white px-10 py-7"
               onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
             >
-              Meet With Us
+              Quantify Your Execution Leak
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* About Chris Section */}
+      {/* Where You're Losing Money */}
       <section className="bg-black text-white py-32">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeInUp} className="relative">
-              <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden">
-                <img 
-                  src={chrisBioImage} 
-                  alt="Chris Dessi - Founder of Torque AI" 
-                  className="w-full h-full object-cover"
-                />
+          <motion.div {...fadeInUp} className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Where You're Losing Money
+            </h2>
+            <p className="text-2xl text-gray-400">
+              Identify the leaks draining your bottom line
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <h3 className="text-2xl font-bold mb-4">Revenue Leak</h3>
+              <div className="text-6xl font-bold text-[#E5C07B] mb-4">5–10%</div>
+              <p className="text-gray-400 text-lg">of topline wasted through execution drift, duplication and hand-offs</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <h3 className="text-2xl font-bold mb-4">AI Risk</h3>
+              <div className="text-6xl font-bold text-[#E5C07B] mb-4">$4.4B</div>
+              <p className="text-gray-400 text-lg">lost by firms without Responsible AI governance (EY 2025)</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <h3 className="text-2xl font-bold mb-4">Lost Time</h3>
+              <div className="text-6xl font-bold text-[#E5C07B] mb-4">80%</div>
+              <p className="text-gray-400 text-lg">of staff already at capacity while leaders demand productivity gains (Microsoft 2025)</p>
+            </motion.div>
+          </div>
+          <motion.div {...fadeInUp} className="text-center mt-12">
+            <Button 
+              size="lg"
+              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
+              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+            >
+              Stop the Leak
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Your Competition Isn't Waiting */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+              Your Competition Isn't Waiting
+            </h2>
+            <p className="text-2xl text-gray-600">
+              Leading enterprises are already leveraging AI for measurable growth
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-6xl font-bold text-black mb-4">93%</div>
+              <p className="text-lg text-gray-600">of CMOs already report positive ROI from Gen AI</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-xl font-bold text-black mb-4">Revenue Lift</div>
+              <p className="text-lg text-gray-600">Business units using Gen AI see measurable revenue lift (McKinsey 2025)</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-6xl font-bold text-black mb-4">40%</div>
+              <p className="text-lg text-gray-600">of enterprise apps will embed AI agents by 2026 (Gartner)</p>
+            </motion.div>
+          </div>
+          <motion.div {...fadeInUp} className="text-center mt-12">
+            <Button 
+              size="lg"
+              className="bg-black hover:bg-black/90 text-white px-10 py-7"
+              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+            >
+              Catch Up Now
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Boards Are Replacing Leaders */}
+      <section className="bg-black text-white py-32">
+        <div className="section-padding max-w-7xl mx-auto text-center">
+          <motion.h2 {...fadeInUp} className="text-5xl md:text-6xl font-bold mb-8">
+            Boards Are Replacing Leaders Who Can't Deliver Change
+          </motion.h2>
+          <motion.p {...fadeInUp} className="text-2xl text-gray-400 mb-12">
+            31% of CEOs lose their roles for failed transformation efforts.<br />
+            Don't be next—lead with alignment.
+          </motion.p>
+          <motion.div {...fadeInUp}>
+            <Button 
+              size="lg"
+              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
+              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+            >
+              Secure Your Seat
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Our Approach Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+            <motion.div {...fadeInUp}>
+              <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+                Our Approach: Comprehensive AI Strategy, AI Business and AI Software Solutions
+              </h2>
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                We partner with enterprise businesses who have no AI strategy to transform their marketing, sales, and communications operations through strategic AI integration and proven methodologies.
+              </p>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                We analyze your infrastructure, data, and industry trends to identify opportunities for transformative AI solutions that meet your unique business needs and drive measurable results.
+              </p>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-black mb-4">Areas of Expertise</h3>
+                <ul className="space-y-3 text-lg text-gray-600">
+                  <li className="flex items-start">
+                    <span className="text-[#E5C07B] mr-3">•</span>
+                    Business Analysis & Infrastructure Assessment
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#E5C07B] mr-3">•</span>
+                    AI Strategy Development
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#E5C07B] mr-3">•</span>
+                    Data Qualification & Preparation
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#E5C07B] mr-3">•</span>
+                    AI Product Solutions
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#E5C07B] mr-3">•</span>
+                    Integration & Deployment
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#E5C07B] mr-3">•</span>
+                    Maintenance & Support
+                  </li>
+                </ul>
               </div>
             </motion.div>
-            <motion.div {...fadeInUp}>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8">
-                Meet Your Partner in AI Transformation
-              </h2>
-              <p className="text-xl text-gray-400 mb-6 leading-relaxed">
-                Chris Dessi is the Founder & CEO of Torque AI, helping enterprises implement AI systems that scale revenue and culture simultaneously.
-              </p>
-              <p className="text-xl text-gray-400 mb-6 leading-relaxed">
-                A former CRO and enterprise SaaS growth leader, Chris has generated over $30M in new business using AI automation.
-              </p>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                He's also a best-selling author, keynote speaker, and TV commentator featured on CNN, Fox Business, and Cheddar.
-              </p>
-              <div className="flex flex-wrap gap-4 mb-8">
-                <a 
-                  href="https://www.linkedin.com/in/chrisdessi/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10"
-                  >
-                    <Linkedin className="w-5 h-5 mr-2" />
-                    Connect on LinkedIn
-                  </Button>
-                </a>
-                <a 
-                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10"
-                  >
-                    <Youtube className="w-5 h-5 mr-2 text-red-500" />
-                    The Quantum Shift
-                  </Button>
-                </a>
+            <motion.div {...fadeInUp} className="relative h-[600px] rounded-2xl overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
+            </motion.div>
+          </div>
+          
+          <motion.div {...fadeInUp} className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-black mb-8">Why Choose Torque AI</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="p-6">
+                <p className="text-lg text-gray-600">Proven track record of transforming enterprise operations</p>
               </div>
-              <Button 
-                size="lg"
-                className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Meet With Us
-              </Button>
+              <div className="p-6">
+                <p className="text-lg text-gray-600">Strategic AI implementation with measurable ROI</p>
+              </div>
+              <div className="p-6">
+                <p className="text-lg text-gray-600">End-to-end support from strategy to optimization</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Torque AI Difference */}
+      <section className="bg-black text-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.h2 {...fadeInUp} className="text-5xl md:text-6xl font-bold text-center mb-8">
+            The Torque AI Difference
+          </motion.h2>
+          <motion.p {...fadeInUp} className="text-2xl text-gray-400 text-center mb-20">
+            Four ways we help you reclaim revenue and rebuild alignment
+          </motion.p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <div className="text-6xl font-bold text-[#E5C07B] mb-6">1</div>
+              <h3 className="text-2xl font-bold mb-4">Stop the Leak</h3>
+              <p className="text-gray-400 text-lg">Quantify execution drift and reclaim that 5–10% revenue.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <div className="text-6xl font-bold text-[#E5C07B] mb-6">2</div>
+              <h3 className="text-2xl font-bold mb-4">Make AI Pay</h3>
+              <p className="text-gray-400 text-lg">Apply Responsible-AI guardrails for real ROI.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <div className="text-6xl font-bold text-[#E5C07B] mb-6">3</div>
+              <h3 className="text-2xl font-bold mb-4">Win the Capacity War</h3>
+              <p className="text-gray-400 text-lg">Cut meeting/tool overload, redeploy hours to revenue work.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
+              <div className="text-6xl font-bold text-[#E5C07B] mb-6">4</div>
+              <h3 className="text-2xl font-bold mb-4">Match or Pass Peers</h3>
+              <p className="text-gray-400 text-lg">Deploy the same Gen AI plays top performers use.</p>
+            </motion.div>
+          </div>
+          <motion.div {...fadeInUp} className="text-center mt-12">
+            <Button 
+              size="lg"
+              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
+              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+            >
+              Book Your Audit
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Our Approach Methodology */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.h2 {...fadeInUp} className="text-5xl md:text-6xl font-bold text-black text-center mb-8">
+            Our Approach
+          </motion.h2>
+          <motion.p {...fadeInUp} className="text-2xl text-gray-600 text-center mb-20">
+            A proven methodology to transform your operations and empower your team
+          </motion.p>
+          <div className="grid md:grid-cols-4 gap-8">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center">
+              <div className="text-6xl font-bold text-black mb-6">01</div>
+              <h3 className="text-2xl font-bold text-black mb-4">Audit</h3>
+              <p className="text-lg text-gray-600">Deep analysis of your current marketing, sales, and communications operations to identify gaps and opportunities.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center">
+              <div className="text-6xl font-bold text-black mb-6">02</div>
+              <h3 className="text-2xl font-bold text-black mb-4">Optimize</h3>
+              <p className="text-lg text-gray-600">Strategic implementation of AI-powered solutions and process improvements to maximize efficiency and results.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center">
+              <div className="text-6xl font-bold text-black mb-6">03</div>
+              <h3 className="text-2xl font-bold text-black mb-4">Train</h3>
+              <p className="text-lg text-gray-600">Comprehensive coaching for your team on new systems, AI tools, and best practices for sustained success.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center">
+              <div className="text-6xl font-bold text-black mb-6">04</div>
+              <h3 className="text-2xl font-bold text-black mb-4">Hand Off</h3>
+              <p className="text-lg text-gray-600">Seamless transition to your empowered team with ongoing support as needed.</p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="relative bg-black py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0074FF]/20 to-transparent"></div>
-        <div className="section-padding max-w-5xl mx-auto text-center relative z-10">
-          <motion.h2 
-            {...fadeInUp}
-            className="text-6xl md:text-7xl font-bold text-white mb-8"
-          >
-            The Future of Work Isn't Coming. It's Already Here.
+      {/* Final CTA */}
+      <section className="bg-black text-white py-32">
+        <div className="section-padding max-w-5xl mx-auto text-center">
+          <motion.h2 {...fadeInUp} className="text-5xl md:text-6xl font-bold mb-8">
+            Ready to Transform Your Business?
           </motion.h2>
-          <motion.p 
-            {...fadeInUp}
-            className="text-2xl text-gray-400 mb-12"
-          >
-            Your competitors are using AI to scale. Don't get left behind.
+          <motion.p {...fadeInUp} className="text-2xl text-gray-400 mb-12">
+            Limited availability for enterprise clients who are serious about leveraging AI to drive measurable results and sustainable growth.
           </motion.p>
           <motion.div {...fadeInUp}>
             <Button 
@@ -295,7 +390,7 @@ const Index = () => {
               className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-12 py-8 text-xl"
               onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
             >
-              Meet With Us
+              Get in Touch
             </Button>
           </motion.div>
         </div>

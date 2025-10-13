@@ -18,6 +18,9 @@ import BrandIdentity from "./pages/BrandIdentity";
 import CreatorLaunch from "./pages/CreatorLaunch";
 import Events from "./pages/Events";
 import MomentoCouncil from "./pages/MomentoCouncil";
+import Torque from "./pages/Torque";
+import MementoHub from "./pages/MementoHub";
+import QuantumShift from "./pages/QuantumShift";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +33,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/torque" element={<Torque />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/platform" element={<Platform />} />
@@ -39,7 +43,9 @@ const App = () => (
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/enterprise-accelerator" element={<EnterpriseAccelerator />} />
           <Route path="/momento" element={<Momento />} />
+          <Route path="/memento-hub" element={<MementoHub />} />
           <Route path="/momento-council" element={<MomentoCouncil />} />
+          <Route path="/quantum-shift" element={<QuantumShift />} />
           <Route path="/brand" element={<BrandIdentity />} />
           <Route path="/creator-launch" element={<CreatorLaunch />} />
           <Route path="/events" element={<Events />} />

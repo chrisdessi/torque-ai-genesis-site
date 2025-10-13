@@ -1,20 +1,21 @@
-import { Mail, Phone, MapPin, Linkedin, Youtube } from "lucide-react";
+import { Mail, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-16">
-      <div className="section-padding max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div className="section-padding max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Company Info */}
           <div className="md:col-span-2">
             <h3 className="text-4xl font-bold mb-4">
-              Torque AI
+              Torque AI, Inc.
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md text-lg">
-              Marketing, Sales and Communications Consulting specializing in AI integration,
-              training and optimization for enterprise businesses.
+              Building the future through AI consulting, transparent leadership events, 
+              and transformative content.
             </p>
             <p className="text-gray-400 leading-relaxed max-w-md text-base italic">
-              Torque AI helps leaders recover lost revenue, de-risk AI, and rebuild human alignment in an algorithmic world.
+              Helping leaders recover lost revenue, de-risk AI, and rebuild human alignment in an algorithmic world.
             </p>
             <div className="space-y-3 mt-6">
               <div className="flex items-center text-gray-300">
@@ -46,49 +47,87 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Torque Division */}
           <div>
-            <h4 className="text-lg font-bold mb-4">CONNECT</h4>
-            <ul className="space-y-3 text-gray-300">
+            <h4 className="text-lg font-bold mb-4 text-blue-400">TORQUE</h4>
+            <p className="text-gray-400 text-sm mb-3">AI Consulting</p>
+            <ul className="space-y-2 text-gray-300">
               <li>
-                <a 
-                  href="/services"
-                  className="hover:text-white transition-colors"
-                >
-                  Services
+                <a href="/torque" className="hover:text-white transition-colors text-sm">
+                  AI Strategy
                 </a>
               </li>
               <li>
-                <a 
-                  href="/enterprise-accelerator"
-                  className="hover:text-white transition-colors"
-                >
-                  Enterprise AI Accelerator
+                <a href="/services" className="hover:text-white transition-colors text-sm">
+                  Consulting Services
                 </a>
               </li>
               <li>
-                <a 
-                  href="/about"
-                  className="hover:text-white transition-colors"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/contact" 
-                  className="hover:text-white transition-colors"
-                >
-                  Contact
+                <a href="/enterprise-accelerator" className="hover:text-white transition-colors text-sm">
+                  90-Day Accelerator
                 </a>
               </li>
             </ul>
           </div>
+
+          {/* Combined Memento & Quantum Shift */}
+          <div>
+            <div className="mb-6">
+              <h4 className="text-lg font-bold mb-4 text-green-400">MEMENTO</h4>
+              <p className="text-gray-400 text-sm mb-3">Events & Software</p>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <a href="/memento-hub" className="hover:text-white transition-colors text-sm">
+                    Memento Overview
+                  </a>
+                </li>
+                <li>
+                  <a href="/momento-council" className="hover:text-white transition-colors text-sm">
+                    Council Dinners
+                  </a>
+                </li>
+                <li>
+                  <a href="/events" className="hover:text-white transition-colors text-sm">
+                    Offsite Events
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mb-4 text-purple-400">THE QUANTUM SHIFT</h4>
+              <p className="text-gray-400 text-sm mb-3">Podcast & Philosophy</p>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <a href="/quantum-shift" className="hover:text-white transition-colors text-sm">
+                    Philosophy
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-sm">
+                    Podcast
+                  </a>
+                </li>
+                <li>
+                  <a href="/about" className="hover:text-white transition-colors text-sm">
+                    About
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Torque AI. All Rights Reserved.
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Torque AI, Inc. All Rights Reserved.
+            </div>
+            <div className="flex gap-6 text-sm text-gray-400">
+              <span className="text-blue-400">Torque</span>
+              <span className="text-gray-600">•</span>
+              <span className="text-green-400">Memento</span>
+              <span className="text-gray-600">•</span>
+              <span className="text-purple-400">The Quantum Shift</span>
             </div>
           </div>
         </div>

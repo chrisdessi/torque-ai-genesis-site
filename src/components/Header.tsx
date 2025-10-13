@@ -19,13 +19,37 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: "Consulting", href: "/services" },
-    { name: "Solutions", href: "/enterprise-accelerator" },
-    { name: "Events", href: "/events" },
-    { name: "Momento Council", href: "/momento-council" },
-    { name: "Company", href: "/about" },
+    { 
+      name: "Torque", 
+      href: "/torque",
+      subItems: [
+        { name: "AI Consulting", href: "/torque" },
+        { name: "Services", href: "/services" },
+        { name: "90-Day Accelerator", href: "/enterprise-accelerator" }
+      ]
+    },
+    { 
+      name: "Memento", 
+      href: "/memento-hub",
+      subItems: [
+        { name: "Overview", href: "/memento-hub" },
+        { name: "Council Dinners", href: "/momento-council" },
+        { name: "Events", href: "/events" },
+        { name: "Software", href: "/momento" }
+      ]
+    },
+    { 
+      name: "The Quantum Shift", 
+      href: "/quantum-shift",
+      subItems: [
+        { name: "Philosophy", href: "/quantum-shift" },
+        { name: "Podcast", href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" },
+        { name: "About", href: "/about" }
+      ]
+    },
   ];
 
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
     <header 
@@ -58,29 +82,42 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {navigation.map((item) => (
-              <Link
+              <div 
                 key={item.name}
-                to={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="relative"
+                onMouseEnter={() => setOpenDropdown(item.name)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {item.name}
-              </Link>
+                <Link
+                  to={item.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                >
+                  {item.name}
+                  {item.subItems && <ChevronDown className="w-4 h-4" />}
+                </Link>
+                {item.subItems && openDropdown === item.name && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-black border border-white/10 rounded-lg shadow-xl py-2">
+                    {item.subItems.map((subItem) => (
+                      <a
+                        key={subItem.name}
+                        href={subItem.href}
+                        target={subItem.href.startsWith('http') ? '_blank' : undefined}
+                        rel={subItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
+                      >
+                        {subItem.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center space-x-3">
-            <Button 
-              asChild 
-              variant="ghost"
-              size="sm"
-            >
-              <Link to="/momento">
-                Momento
-              </Link>
-            </Button>
             <Button 
               asChild 
               variant="default"
@@ -114,25 +151,33 @@ const Header = () => {
           >
             <nav className="py-4 space-y-1">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                <div key={item.name}>
+                  <Link
+                    to={item.href}
+                    className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                  {item.subItems && (
+                    <div className="ml-4 mt-1 space-y-1">
+                      {item.subItems.map((subItem) => (
+                        <a
+                          key={subItem.name}
+                          href={subItem.href}
+                          target={subItem.href.startsWith('http') ? '_blank' : undefined}
+                          rel={subItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="block px-4 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {subItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <div className="pt-4 px-4 space-y-2">
-                <Button 
-                  asChild 
-                  variant="outline"
-                  className="w-full"
-                >
-                  <Link to="/momento" onClick={() => setIsMenuOpen(false)}>
-                    Momento
-                  </Link>
-                </Button>
                 <Button 
                   asChild 
                   className="w-full"

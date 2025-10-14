@@ -61,117 +61,41 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="inline-block">Boards Are Replacing Leaders Who </span>
-              <motion.span 
-                className="inline-block bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-300 bg-clip-text text-transparent"
-                animate={{ 
-                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                style={{ backgroundSize: "200% 200%" }}
-              >
+              <span className="block text-white/95 mb-2">Boards Are Replacing Leaders Who</span>
+              <span className="block text-yellow-300 font-black text-6xl md:text-7xl lg:text-8xl mb-4">
                 Can't Deliver
-              </motion.span>
-              <span className="inline-block">
-                {" "}
-                <motion.span 
-                  className="inline-block bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent font-bold"
-                  animate={{ 
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{ 
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  style={{ backgroundSize: "200% 200%" }}
-                >
-                  AI Strategy
-                </motion.span>
-                {" and "}
-                <motion.span 
-                  className="inline-block bg-gradient-to-r from-green-300 via-emerald-300 to-green-300 bg-clip-text text-transparent font-bold"
-                  animate={{ 
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{ 
-                    duration: 3.5,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  style={{ backgroundSize: "200% 200%" }}
-                >
-                  Change
-                </motion.span>
-                {" at "}
-                <motion.span 
-                  className="inline-block bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 bg-clip-text text-transparent font-bold"
-                  animate={{ 
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{ 
-                    duration: 4.5,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  style={{ backgroundSize: "200% 200%" }}
-                >
-                  Scale
-                </motion.span>
+              </span>
+              <span className="block text-white font-bold">
+                AI Strategy and Change at Scale
               </span>
             </motion.h1>
+            
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              className="bg-black/30 backdrop-blur-sm border-2 border-yellow-300/50 rounded-2xl p-8 max-w-3xl mx-auto mb-8"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <p className="text-2xl md:text-3xl text-white mb-4 font-semibold">
-                <motion.span
-                  className="inline-block"
-                  animate={{ 
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
+              <p className="text-3xl md:text-4xl text-white font-bold mb-2">
+                <span className="text-yellow-300 text-5xl md:text-6xl font-black">
                   <AnimatedCounter end={31} suffix="%" />
-                </motion.span>
-                <span className="bg-gradient-to-r from-red-300 to-orange-300 bg-clip-text text-transparent"> of CEOs lose their roles</span> for failed transformation efforts.
+                </span>
+                <span className="block mt-2">of CEOs lose their roles for failed transformation efforts.</span>
               </p>
             </motion.div>
+
             <motion.p 
-              className="text-xl md:text-2xl text-white/90 mb-4 max-w-4xl mx-auto leading-relaxed font-semibold"
+              className="text-2xl md:text-3xl text-white font-semibold mb-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Don't be next—
-              <motion.span 
-                className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent font-bold"
-                animate={{ 
-                  opacity: [1, 0.8, 1],
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                lead with alignment
-              </motion.span>
-              .
+              Don't be next—<span className="text-yellow-300 font-black">lead with alignment</span>.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-6 justify-center"

@@ -44,25 +44,33 @@ const Index = () => {
       <Header />
       
       {/* As Seen On Section */}
-      <section className="bg-white py-12 border-b border-gray-200">
+      <section className="bg-gradient-to-r from-gray-50 to-white py-8 border-b border-gray-200">
         <div className="section-padding max-w-7xl mx-auto">
-          <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">As Seen On</p>
+          <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-6">As Seen On</p>
           <div className="relative overflow-hidden">
             <motion.div 
-              className="flex gap-12 items-center justify-center md:justify-start"
-              animate={{ x: [0, -1000] }}
+              className="flex gap-16 items-center justify-center md:justify-start"
+              animate={{ x: [0, -1200] }}
               transition={{ 
-                duration: 20, 
+                duration: 25, 
                 repeat: Infinity, 
                 ease: "linear" 
               }}
             >
               {[...Array(3)].map((_, setIndex) => (
-                <div key={setIndex} className="flex gap-12 items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Fox_Business.svg" alt="Fox Business" className="h-8 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg" alt="CNN" className="h-6 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/MSNBC_2021.svg" alt="MSNBC" className="h-8 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/CNBC_logo.svg" alt="CNBC" className="h-6 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                <div key={setIndex} className="flex gap-16 items-center whitespace-nowrap">
+                  <div className="font-bold text-2xl text-gray-700 hover:text-gray-900 transition-colors">
+                    FOX <span className="text-blue-600">BUSINESS</span>
+                  </div>
+                  <div className="font-black text-3xl text-red-600 hover:text-red-700 transition-colors">
+                    CNN
+                  </div>
+                  <div className="font-bold text-2xl text-gray-800 hover:text-gray-900 transition-colors">
+                    <span className="text-blue-600">MS</span>NBC
+                  </div>
+                  <div className="font-bold text-2xl text-blue-700 hover:text-blue-800 transition-colors">
+                    CNBC
+                  </div>
                 </div>
               ))}
             </motion.div>

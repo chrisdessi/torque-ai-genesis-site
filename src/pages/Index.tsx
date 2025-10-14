@@ -137,26 +137,26 @@ const Index = () => {
             </p>
           </motion.div>
           <div className="grid md:grid-cols-4 gap-8">
-            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border border-purple-100">
+              <div className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={5} decimals={0} />–<AnimatedCounter end={10} decimals={0} />%
               </div>
               <p className="text-lg text-gray-600">of annual revenue wiped out by strategy failures</p>
             </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100">
+              <div className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={80} suffix="%" />
               </div>
               <p className="text-lg text-gray-600">of employees lack time or energy to do their best work</p>
             </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100">
+              <div className="text-6xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={40} suffix="%" />
               </div>
               <p className="text-lg text-gray-600">of productive time stolen by context switching each week</p>
             </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">
+            <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center p-8 bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl border border-pink-100">
+              <div className="text-6xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={100} suffix="%" />
               </div>
               <p className="text-lg text-gray-600">of margins silently taxed by meeting and tool overload</p>
@@ -232,18 +232,18 @@ const Index = () => {
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
-            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl border border-purple-100">
+              <div className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={93} suffix="%" />
               </div>
               <p className="text-lg text-gray-600">of CMOs already report positive ROI from Gen AI</p>
             </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-xl font-bold text-black mb-4">Revenue Lift</div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl border border-cyan-100">
+              <div className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent mb-4">Revenue Lift</div>
               <p className="text-lg text-gray-600">Business units using Gen AI see measurable revenue lift (McKinsey 2025)</p>
             </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="text-6xl font-bold text-black mb-4">
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gradient-to-br from-indigo-50 to-pink-50 rounded-2xl border border-indigo-100">
+              <div className="text-6xl font-bold bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={40} suffix="%" />
               </div>
               <p className="text-lg text-gray-600">of enterprise apps will embed AI agents by 2026 (Gartner)</p>
@@ -328,7 +328,19 @@ const Index = () => {
               </div>
             </motion.div>
             <motion.div {...fadeInUp} className="relative h-[600px] rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500"></div>
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-[float_6s_ease-in-out_infinite]"></div>
+                <div className="absolute bottom-10 left-10 w-64 h-64 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-[float_8s_ease-in-out_infinite]"></div>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Brain className="w-64 h-64 text-white opacity-20" strokeWidth={0.5} />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-10 left-10 right-10">
+                <h3 className="text-4xl font-bold text-white mb-4">AI-Powered Solutions</h3>
+                <p className="text-xl text-white/90">Transform your business with cutting-edge AI technology</p>
+              </div>
             </motion.div>
           </div>
           

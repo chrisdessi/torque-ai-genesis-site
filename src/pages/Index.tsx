@@ -138,8 +138,11 @@ const Index = () => {
           </motion.div>
           <div className="grid md:grid-cols-4 gap-8">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border border-purple-100">
-              <div className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
-                <AnimatedCounter end={5} decimals={0} />–<AnimatedCounter end={10} decimals={0} />%
+              <div className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 flex items-baseline justify-center">
+                <AnimatedCounter end={5} decimals={0} />
+                <span>–</span>
+                <AnimatedCounter end={10} decimals={0} />
+                <span>%</span>
               </div>
               <p className="text-lg text-gray-600">of annual revenue wiped out by strategy failures</p>
             </motion.div>
@@ -188,8 +191,11 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
               <h3 className="text-2xl font-bold mb-4">Revenue Leak</h3>
-              <div className="text-6xl font-bold text-[#E5C07B] mb-4">
-                <AnimatedCounter end={5} />–<AnimatedCounter end={10} />%
+              <div className="text-6xl font-bold text-[#E5C07B] mb-4 flex items-baseline justify-center">
+                <AnimatedCounter end={5} />
+                <span>–</span>
+                <AnimatedCounter end={10} />
+                <span>%</span>
               </div>
               <p className="text-gray-400 text-lg">of topline wasted through execution drift, duplication and hand-offs</p>
             </motion.div>

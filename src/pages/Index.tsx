@@ -152,23 +152,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Torque AI Description Section */}
-      <section className="bg-white py-20">
-        <div className="section-padding max-w-5xl mx-auto text-center">
-          <motion.p 
-            {...fadeInUp}
-            className="text-2xl md:text-3xl text-gray-700 mb-8 leading-relaxed"
-          >
-            Build, Scale & Automate with Confidence — Learn the Playbook Inside Torque Academy
-          </motion.p>
-          <motion.p 
-            {...fadeInUp}
-            className="text-xl md:text-2xl text-gray-600 leading-relaxed"
-          >
-            Torque AI helps forward-thinking teams integrate AI across Sales, Marketing & Communications — and trains them to master it through Torque Academy, your all-in-one AI education and execution hub.
-          </motion.p>
-        </div>
-      </section>
 
       {/* The Hidden Cost of Misalignment */}
       <section className="bg-white py-32">
@@ -312,27 +295,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Boards Are Replacing Leaders */}
-      <section className="bg-black text-white py-32">
-        <div className="section-padding max-w-7xl mx-auto text-center">
-          <motion.h2 {...fadeInUp} className="text-5xl md:text-6xl font-bold mb-8">
-            Boards Are Replacing Leaders Who Can't Deliver Change
-          </motion.h2>
-          <motion.p {...fadeInUp} className="text-2xl text-gray-400 mb-12">
-            <AnimatedCounter end={31} suffix="%" /> of CEOs lose their roles for failed transformation efforts.<br />
-            Don't be next—lead with alignment.
-          </motion.p>
-          <motion.div {...fadeInUp}>
-            <Button 
-              size="lg"
-              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-            >
-              Secure Your Seat
-            </Button>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Our Approach Section */}
       <section className="bg-white py-32">

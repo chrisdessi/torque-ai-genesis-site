@@ -60,23 +60,87 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Boards Are Replacing Leaders Who Can't Deliver AI Strategy and Change at Scale
-            </h1>
-            <p className="text-2xl md:text-3xl text-white mb-8 font-semibold">
-              <AnimatedCounter end={31} suffix="%" /> of CEOs lose their roles for failed transformation efforts.
-            </p>
-            <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-4xl mx-auto leading-relaxed">
-              Don't be next—lead with alignment.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <motion.h1 
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <span className="inline-block">Boards Are Replacing Leaders Who </span>
+              <motion.span 
+                className="inline-block bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-300 bg-clip-text text-transparent"
+                animate={{ 
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                style={{ backgroundSize: "200% 200%" }}
+              >
+                Can't Deliver
+              </motion.span>
+              <span className="inline-block"> AI Strategy and Change at Scale</span>
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <p className="text-2xl md:text-3xl text-white mb-4 font-semibold">
+                <motion.span
+                  className="inline-block"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <AnimatedCounter end={31} suffix="%" />
+                </motion.span>
+                <span className="bg-gradient-to-r from-red-300 to-orange-300 bg-clip-text text-transparent"> of CEOs lose their roles</span> for failed transformation efforts.
+              </p>
+            </motion.div>
+            <motion.p 
+              className="text-xl md:text-2xl text-white/90 mb-4 max-w-4xl mx-auto leading-relaxed font-semibold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Don't be next—
+              <motion.span 
+                className="bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent font-bold"
+                animate={{ 
+                  opacity: [1, 0.8, 1],
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                lead with alignment
+              </motion.span>
+              .
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
               <motion.div
                 whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
                 <Button 
                   size="lg"
-                  className="bg-black hover:bg-black/90 text-white font-semibold px-10 py-7 text-lg"
+                  className="bg-black hover:bg-black/90 text-white font-semibold px-10 py-7 text-lg shadow-2xl shadow-yellow-500/20"
                   onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
                 >
                   Meet With Us
@@ -84,6 +148,7 @@ const Index = () => {
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
               <Button 
@@ -94,7 +159,7 @@ const Index = () => {
                 Start AI Transformation
               </Button>
               </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

@@ -42,6 +42,62 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+
+      {/* Hero Section */}
+      <section className="relative bg-red-600 text-white min-h-screen flex items-center overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-red-700 via-red-800 to-red-900 gradient-animate"></div>
+        </div>
+        {/* Floating gradient orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-red-700 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_6s_ease-in-out_infinite]"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-red-800 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_8s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-red-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_7s_ease-in-out_infinite]"></div>
+        <div className="section-padding w-full py-32 relative z-10">
+          <motion.div 
+            className="max-w-5xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Boards Are Replacing Leaders Who Can't Deliver AI Strategy and Change at Scale
+            </h1>
+            <p className="text-2xl md:text-3xl text-white mb-8 font-semibold">
+              <AnimatedCounter end={31} suffix="%" /> of CEOs lose their roles for failed transformation efforts.
+            </p>
+            <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-4xl mx-auto leading-relaxed">
+              Don't be next—lead with alignment.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button 
+                  size="lg"
+                  className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
+                  onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                >
+                  Meet With Us
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+              <Button 
+                size="lg"
+                className="bg-white hover:bg-white/90 text-black font-semibold px-10 py-7 text-lg"
+                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+              >
+                Start AI Transformation
+              </Button>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
       
       {/* As Seen On Section */}
       <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-12 border-b border-slate-700">
@@ -96,64 +152,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Hero Section */}
-      <section className="relative bg-red-600 text-white min-h-screen flex items-center overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-red-700 via-red-800 to-red-900 gradient-animate"></div>
-        </div>
-        {/* Floating gradient orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-red-700 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_6s_ease-in-out_infinite]"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-red-800 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_8s_ease-in-out_infinite]"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-red-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_7s_ease-in-out_infinite]"></div>
-        <div className="section-padding w-full py-32 relative z-10">
-          <motion.div 
-            className="max-w-5xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+      {/* Torque AI Description Section */}
+      <section className="bg-white py-20">
+        <div className="section-padding max-w-5xl mx-auto text-center">
+          <motion.p 
+            {...fadeInUp}
+            className="text-2xl md:text-3xl text-gray-700 mb-8 leading-relaxed"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Boards Are Replacing Leaders Who Can't Deliver AI Strategy and Change at Scale
-            </h1>
-            <p className="text-2xl md:text-3xl text-white mb-8 font-semibold">
-              <AnimatedCounter end={31} suffix="%" /> of CEOs lose their roles for failed transformation efforts.
-            </p>
-            <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-4xl mx-auto leading-relaxed">
-              Don't be next—lead with alignment.
-            </p>
-            <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Build, Scale & Automate with Confidence — Learn the Playbook Inside Torque Academy
-              <br /><br />
-              Torque AI helps forward-thinking teams integrate AI across Sales, Marketing & Communications — and trains them to master it through Torque Academy, your all-in-one AI education and execution hub.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Button 
-                  size="lg"
-                  className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
-                  onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-                >
-                  Meet With Us
-                </Button>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-              <Button 
-                size="lg"
-                className="bg-white hover:bg-white/90 text-black font-semibold px-10 py-7 text-lg"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Start AI Transformation
-              </Button>
-              </motion.div>
-            </div>
-          </motion.div>
+            Build, Scale & Automate with Confidence — Learn the Playbook Inside Torque Academy
+          </motion.p>
+          <motion.p 
+            {...fadeInUp}
+            className="text-xl md:text-2xl text-gray-600 leading-relaxed"
+          >
+            Torque AI helps forward-thinking teams integrate AI across Sales, Marketing & Communications — and trains them to master it through Torque Academy, your all-in-one AI education and execution hub.
+          </motion.p>
         </div>
       </section>
 

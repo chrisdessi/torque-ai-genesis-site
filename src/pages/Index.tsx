@@ -5,11 +5,6 @@ import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import nbcLogo from "@/../../public/logos/nbc-logo.png";
-import abcLogo from "@/../../public/logos/abc-logo.png";
-import foxLogo from "@/../../public/logos/fox-logo.png";
-import cbsLogo from "@/../../public/logos/cbs-logo.png";
-import apLogo from "@/../../public/logos/ap-logo.png";
 
 const Index = () => {
   const fadeInUp = {
@@ -123,11 +118,11 @@ const Index = () => {
             >
               {[...Array(4)].map((_, setIndex) => (
                 <div key={setIndex} className="flex gap-20 items-center whitespace-nowrap">
-                  <img src={nbcLogo} alt="NBC" className="h-16 w-auto object-contain" />
-                  <img src={abcLogo} alt="ABC" className="h-16 w-auto object-contain" />
-                  <img src={foxLogo} alt="FOX News" className="h-16 w-auto object-contain" />
-                  <img src={apLogo} alt="Associated Press" className="h-16 w-auto object-contain" />
-                  <img src={cbsLogo} alt="CBS" className="h-16 w-auto object-contain" />
+                  <img src="/logos/nbc-logo.png" alt="NBC" className="h-16 w-auto object-contain" />
+                  <img src="/logos/abc-logo.png" alt="ABC" className="h-16 w-auto object-contain" />
+                  <img src="/logos/fox-logo.png" alt="FOX News" className="h-16 w-auto object-contain" />
+                  <img src="/logos/ap-logo.png" alt="Associated Press" className="h-16 w-auto object-contain" />
+                  <img src="/logos/cbs-logo.png" alt="CBS" className="h-16 w-auto object-contain" />
                 </div>
               ))}
             </motion.div>

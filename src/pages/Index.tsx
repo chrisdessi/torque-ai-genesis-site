@@ -44,15 +44,15 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-red-600 text-white min-h-screen flex items-center overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white min-h-screen flex items-center overflow-hidden">
         {/* Animated gradient background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-red-700 via-red-800 to-red-900 gradient-animate"></div>
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-slate-900/50 to-blue-950/50 gradient-animate"></div>
         </div>
         {/* Floating gradient orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-red-700 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_6s_ease-in-out_infinite]"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-red-800 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_8s_ease-in-out_infinite]"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-red-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_7s_ease-in-out_infinite]"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_6s_ease-in-out_infinite]"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-900 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_8s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-950 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_7s_ease-in-out_infinite]"></div>
         <div className="section-padding w-full py-32 relative z-10">
           <motion.div 
             className="max-w-5xl mx-auto text-center"
@@ -67,7 +67,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="block text-white/95 mb-2">Boards Are Replacing Leaders Who</span>
-              <span className="block text-yellow-300 font-black text-6xl md:text-7xl lg:text-8xl mb-4">
+              <span className="block text-cyan-400 font-black text-6xl md:text-7xl lg:text-8xl mb-4">
                 Can't Deliver
               </span>
               <span className="block text-white font-bold">
@@ -76,13 +76,13 @@ const Index = () => {
             </motion.h1>
             
             <motion.div
-              className="bg-black/30 backdrop-blur-sm border-2 border-yellow-300/50 rounded-2xl p-8 max-w-3xl mx-auto mb-8"
+              className="bg-black/40 backdrop-blur-sm border-2 border-cyan-500/40 rounded-2xl p-8 max-w-3xl mx-auto mb-8"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p className="text-3xl md:text-4xl text-white font-bold mb-2">
-                <span className="text-yellow-300 text-5xl md:text-6xl font-black">
+                <span className="text-cyan-400 text-5xl md:text-6xl font-black">
                   <AnimatedCounter end={31} suffix="%" />
                 </span>
                 <span className="block mt-2">of CEOs lose their roles for failed transformation efforts.</span>
@@ -95,7 +95,7 @@ const Index = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Don't be next—<span className="text-yellow-300 font-black">lead with alignment</span>.
+              Don't be next—<span className="text-cyan-400 font-black">lead with alignment</span>.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-6 justify-center"
@@ -110,7 +110,7 @@ const Index = () => {
               >
                 <Button 
                   size="lg"
-                  className="bg-black hover:bg-black/90 text-white font-semibold px-10 py-7 text-lg shadow-2xl shadow-yellow-500/20"
+                  className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-10 py-7 text-lg shadow-2xl shadow-cyan-500/30"
                   onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
                 >
                   Meet With Us
@@ -123,7 +123,7 @@ const Index = () => {
               >
               <Button 
                 size="lg"
-                className="bg-white hover:bg-white/90 text-black font-semibold px-10 py-7 text-lg"
+                className="bg-white hover:bg-gray-100 text-slate-900 font-semibold px-10 py-7 text-lg border-2 border-white/20"
                 onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
               >
                 Start AI Transformation
@@ -139,7 +139,7 @@ const Index = () => {
         <div className="section-padding max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h3 className="text-white text-2xl font-semibold mb-2">As Seen On</h3>
-            <div className="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            <div className="w-24 h-1 bg-cyan-500 mx-auto"></div>
           </div>
           <div className="relative overflow-hidden py-4">
             <motion.div 

@@ -43,6 +43,59 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
+      {/* As Seen On Section */}
+      <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-12 border-b border-slate-700">
+        <div className="section-padding max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-white text-2xl font-semibold mb-2">As Seen On</h3>
+            <div className="w-24 h-1 bg-yellow-500 mx-auto"></div>
+          </div>
+          <div className="relative overflow-hidden">
+            <motion.div 
+              className="flex gap-20 items-center"
+              animate={{ x: [0, -1400] }}
+              transition={{ 
+                duration: 30, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            >
+              {[...Array(4)].map((_, setIndex) => (
+                <div key={setIndex} className="flex gap-20 items-center whitespace-nowrap">
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-500 rounded-full"></div>
+                    <span className="font-bold text-3xl text-white">NBC</span>
+                  </div>
+                  <div className="w-12 h-12 rounded-full border-4 border-white flex items-center justify-center">
+                    <span className="font-bold text-xl text-white">abc</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="font-bold text-2xl text-white">FOX</span>
+                    <span className="font-bold text-lg text-white bg-blue-600 px-2">NEWS</span>
+                    <span className="text-xs text-white">channel</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <span className="font-black text-4xl text-white">AP</span>
+                    <div className="w-12 h-1 bg-red-600"></div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 border-2 border-white rounded-full"></div>
+                    </div>
+                    <span className="font-bold text-3xl text-blue-400">CBS</span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+          <div className="flex justify-center gap-2 mt-6">
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-white' : 'bg-white/30'}`}></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative bg-red-600 text-white min-h-screen flex items-center overflow-hidden">
         {/* Animated gradient background */}
@@ -60,11 +113,14 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-              Boards are replacing leaders who can't prove AI strategy is working
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Boards Are Replacing Leaders Who Can't Deliver AI Strategy and Change at Scale
             </h1>
+            <p className="text-2xl md:text-3xl text-white mb-8 font-semibold">
+              <AnimatedCounter end={31} suffix="%" /> of CEOs lose their roles for failed transformation efforts.
+            </p>
             <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-4xl mx-auto leading-relaxed">
-              Unleash the Full Power of AI in Your Business with Torque AI
+              Don't be next—lead with alignment.
             </p>
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
               Build, Scale & Automate with Confidence — Learn the Playbook Inside Torque Academy

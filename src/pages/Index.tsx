@@ -135,43 +135,36 @@ const Index = () => {
       </section>
       
       {/* As Seen On Section */}
-      <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-16 border-b border-slate-700">
+      <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-20 border-b border-slate-700">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <h3 className="text-white text-2xl font-semibold mb-2">As Seen On</h3>
-            <div className="w-24 h-1 bg-cyan-500 mx-auto"></div>
-          </div>
-          <div className="relative overflow-hidden py-4">
-            <motion.div 
-              className="flex gap-16 items-center justify-start"
-              animate={{ x: [0, -1000] }}
-              transition={{ 
-                duration: 25, 
-                repeat: Infinity, 
-                ease: "linear" 
-              }}
-            >
-              {[...Array(3)].map((_, setIndex) => (
-                <div key={setIndex} className="flex gap-16 items-center flex-shrink-0">
-                  <div className="w-32 h-20 flex items-center justify-center">
-                    <img src="/logos/nbc-logo.png" alt="NBC" className="max-h-16 max-w-full object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-                  </div>
-                  <div className="w-32 h-20 flex items-center justify-center">
-                    <img src="/logos/abc-logo.png" alt="ABC" className="max-h-16 max-w-full object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-                  </div>
-                  <div className="w-32 h-20 flex items-center justify-center">
-                    <img src="/logos/fox-logo.png" alt="FOX News" className="max-h-16 max-w-full object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-                  </div>
-                  <div className="w-32 h-20 flex items-center justify-center">
-                    <img src="/logos/ap-logo.png" alt="Associated Press" className="max-h-16 max-w-full object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-                  </div>
-                  <div className="w-32 h-20 flex items-center justify-center">
-                    <img src="/logos/cbs-logo.png" alt="CBS" className="max-h-16 max-w-full object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
+          <motion.div 
+            className="text-center mb-12"
+            {...fadeInUp}
+          >
+            <h3 className="text-white/60 text-sm font-semibold tracking-widest uppercase mb-3">As Seen On</h3>
+            <div className="w-16 h-0.5 bg-cyan-500/50 mx-auto"></div>
+          </motion.div>
+          <motion.div 
+            className="flex flex-wrap items-center justify-center gap-12 md:gap-16"
+            {...fadeInUp}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <img src="/logos/nbc-logo.png" alt="NBC" className="h-12 w-auto object-contain" />
+            </div>
+            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <img src="/logos/abc-logo.png" alt="ABC" className="h-12 w-auto object-contain" />
+            </div>
+            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <img src="/logos/fox-logo.png" alt="FOX News" className="h-12 w-auto object-contain" />
+            </div>
+            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <img src="/logos/ap-logo.png" alt="Associated Press" className="h-12 w-auto object-contain" />
+            </div>
+            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <img src="/logos/cbs-logo.png" alt="CBS" className="h-12 w-auto object-contain" />
+            </div>
+          </motion.div>
         </div>
       </section>
 

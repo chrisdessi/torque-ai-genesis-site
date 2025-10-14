@@ -43,51 +43,16 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* As Seen On Section */}
-      <section className="bg-gradient-to-r from-gray-50 to-white py-8 border-b border-gray-200">
-        <div className="section-padding max-w-7xl mx-auto">
-          <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-6">As Seen On</p>
-          <div className="relative overflow-hidden">
-            <motion.div 
-              className="flex gap-16 items-center justify-center md:justify-start"
-              animate={{ x: [0, -1200] }}
-              transition={{ 
-                duration: 25, 
-                repeat: Infinity, 
-                ease: "linear" 
-              }}
-            >
-              {[...Array(3)].map((_, setIndex) => (
-                <div key={setIndex} className="flex gap-16 items-center whitespace-nowrap">
-                  <div className="font-bold text-2xl text-gray-700 hover:text-gray-900 transition-colors">
-                    FOX <span className="text-blue-600">BUSINESS</span>
-                  </div>
-                  <div className="font-black text-3xl text-red-600 hover:text-red-700 transition-colors">
-                    CNN
-                  </div>
-                  <div className="font-bold text-2xl text-gray-800 hover:text-gray-900 transition-colors">
-                    <span className="text-blue-600">MS</span>NBC
-                  </div>
-                  <div className="font-bold text-2xl text-blue-700 hover:text-blue-800 transition-colors">
-                    CNBC
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section */}
-      <section className="relative bg-black text-white min-h-screen flex items-center overflow-hidden">
+      <section className="relative bg-red-600 text-white min-h-screen flex items-center overflow-hidden">
         {/* Animated gradient background */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 gradient-animate"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-red-700 via-red-800 to-red-900 gradient-animate"></div>
         </div>
         {/* Floating gradient orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-[float_6s_ease-in-out_infinite]"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-[float_8s_ease-in-out_infinite]"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-[float_7s_ease-in-out_infinite]"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-red-700 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_6s_ease-in-out_infinite]"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-red-800 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_8s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-red-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-[float_7s_ease-in-out_infinite]"></div>
         <div className="section-padding w-full py-32 relative z-10">
           <motion.div 
             className="max-w-5xl mx-auto text-center"
@@ -96,8 +61,11 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-              Unleash the Full Power<br />of AI in Your Business<br />with Torque AI
+              Boards are replacing leaders who can't prove AI strategy is working
             </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-4xl mx-auto leading-relaxed">
+              Unleash the Full Power of AI in Your Business with Torque AI
+            </p>
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
               Build, Scale & Automate with Confidence — Learn the Playbook Inside Torque Academy
               <br /><br />

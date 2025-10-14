@@ -81,7 +81,53 @@ const Index = () => {
               >
                 Can't Deliver
               </motion.span>
-              <span className="inline-block"> AI Strategy and Change at Scale</span>
+              <span className="inline-block">
+                {" "}
+                <motion.span 
+                  className="inline-block bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent font-bold"
+                  animate={{ 
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  style={{ backgroundSize: "200% 200%" }}
+                >
+                  AI Strategy
+                </motion.span>
+                {" and "}
+                <motion.span 
+                  className="inline-block bg-gradient-to-r from-green-300 via-emerald-300 to-green-300 bg-clip-text text-transparent font-bold"
+                  animate={{ 
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{ 
+                    duration: 3.5,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  style={{ backgroundSize: "200% 200%" }}
+                >
+                  Change
+                </motion.span>
+                {" at "}
+                <motion.span 
+                  className="inline-block bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 bg-clip-text text-transparent font-bold"
+                  animate={{ 
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{ 
+                    duration: 4.5,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  style={{ backgroundSize: "200% 200%" }}
+                >
+                  Scale
+                </motion.span>
+              </span>
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

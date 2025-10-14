@@ -43,6 +43,33 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
+      {/* As Seen On Section */}
+      <section className="bg-white py-12 border-b border-gray-200">
+        <div className="section-padding max-w-7xl mx-auto">
+          <p className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">As Seen On</p>
+          <div className="relative overflow-hidden">
+            <motion.div 
+              className="flex gap-12 items-center justify-center md:justify-start"
+              animate={{ x: [0, -1000] }}
+              transition={{ 
+                duration: 20, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            >
+              {[...Array(3)].map((_, setIndex) => (
+                <div key={setIndex} className="flex gap-12 items-center">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Fox_Business.svg" alt="Fox Business" className="h-8 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/CNN.svg" alt="CNN" className="h-6 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/MSNBC_2021.svg" alt="MSNBC" className="h-8 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/CNBC_logo.svg" alt="CNBC" className="h-6 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative bg-black text-white min-h-screen flex items-center overflow-hidden">
         {/* Animated gradient background */}

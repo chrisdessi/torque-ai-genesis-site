@@ -10,7 +10,7 @@
     <loc>https://torqueapp.ai/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-01-15</lastmod>
   </url>
   
   <url>
@@ -28,7 +28,8 @@
   <url>
     <loc>https://torqueapp.ai/blog</loc>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <lastmod>2025-01-15</lastmod>
   </url>
   
   <url>

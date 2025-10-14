@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import nbcLogo from "@/../../public/logos/nbc-logo.png";
+import abcLogo from "@/../../public/logos/abc-logo.png";
+import foxLogo from "@/../../public/logos/fox-logo.png";
+import cbsLogo from "@/../../public/logos/cbs-logo.png";
+import apLogo from "@/../../public/logos/ap-logo.png";
 
 const Index = () => {
   const fadeInUp = {
@@ -118,28 +123,11 @@ const Index = () => {
             >
               {[...Array(4)].map((_, setIndex) => (
                 <div key={setIndex} className="flex gap-20 items-center whitespace-nowrap">
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-500 rounded-full"></div>
-                    <span className="font-bold text-3xl text-white">NBC</span>
-                  </div>
-                  <div className="w-12 h-12 rounded-full border-4 border-white flex items-center justify-center">
-                    <span className="font-bold text-xl text-white">abc</span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <span className="font-bold text-2xl text-white">FOX</span>
-                    <span className="font-bold text-lg text-white bg-blue-600 px-2">NEWS</span>
-                    <span className="text-xs text-white">channel</span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <span className="font-black text-4xl text-white">AP</span>
-                    <div className="w-12 h-1 bg-red-600"></div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                      <div className="w-6 h-6 border-2 border-white rounded-full"></div>
-                    </div>
-                    <span className="font-bold text-3xl text-blue-400">CBS</span>
-                  </div>
+                  <img src={nbcLogo} alt="NBC" className="h-16 w-auto object-contain" />
+                  <img src={abcLogo} alt="ABC" className="h-16 w-auto object-contain" />
+                  <img src={foxLogo} alt="FOX News" className="h-16 w-auto object-contain" />
+                  <img src={apLogo} alt="Associated Press" className="h-16 w-auto object-contain" />
+                  <img src={cbsLogo} alt="CBS" className="h-16 w-auto object-contain" />
                 </div>
               ))}
             </motion.div>

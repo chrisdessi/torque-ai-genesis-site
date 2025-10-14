@@ -76,7 +76,7 @@ const Index = () => {
               >
                 <Button 
                   size="lg"
-                  className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
+                  className="bg-black hover:bg-black/90 text-white font-semibold px-10 py-7 text-lg"
                   onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
                 >
                   Meet With Us

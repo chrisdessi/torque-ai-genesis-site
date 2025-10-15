@@ -121,13 +121,14 @@ const Index = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
-              <Button 
-                size="lg"
-                className="bg-white hover:bg-gray-100 text-slate-900 font-semibold px-10 py-7 text-lg border-2 border-white/20"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Start AI Transformation
-              </Button>
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="bg-white/10 hover:bg-white/20 text-white font-semibold px-10 py-7 text-lg border-2 border-white/30"
+                  asChild
+                >
+                  <a href="/torque-ai-guide">Download AI Strategy Guide</a>
+                </Button>
               </motion.div>
             </motion.div>
           </motion.div>

@@ -3,6 +3,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
+import processDiscovery from "@/assets/process-discovery.jpg";
+import processImplementation from "@/assets/process-implementation.jpg";
+import processTraining from "@/assets/process-training.jpg";
+import processResults from "@/assets/process-results.jpg";
 
 const Torque = () => {
   const fadeInUp = {
@@ -108,6 +112,165 @@ const Torque = () => {
                 <p className="text-gray-600 leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Proven Process Section */}
+      <section className="bg-gray-50 py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+              Our Proven Process
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A systematic approach to AI transformation that delivers measurable results
+            </p>
+          </motion.div>
+
+          <div className="space-y-24">
+            {/* Step 1 - Discovery */}
+            <motion.div 
+              {...fadeInUp}
+              className="grid md:grid-cols-2 gap-12 items-center"
+            >
+              <div className="order-2 md:order-1">
+                <div className="inline-block bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full px-4 py-2 text-sm font-bold mb-4">
+                  Step 1
+                </div>
+                <h3 className="text-4xl font-bold text-black mb-6">Discovery & Strategy</h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  We begin by understanding your business objectives, challenges, and opportunities. Through comprehensive audits and stakeholder interviews, we identify high-impact AI use cases aligned with your goals.
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Business process mapping and gap analysis</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>AI readiness assessment and roadmap creation</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>ROI modeling and success metrics definition</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-1 md:order-2">
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <img src={processDiscovery} alt="AI Strategy Discovery Session" className="w-full h-auto" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Step 2 - Implementation */}
+            <motion.div 
+              {...fadeInUp}
+              transition={{ delay: 0.2 }}
+              className="grid md:grid-cols-2 gap-12 items-center"
+            >
+              <div>
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <img src={processImplementation} alt="AI Implementation Development" className="w-full h-auto" />
+                </div>
+              </div>
+              <div>
+                <div className="inline-block bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full px-4 py-2 text-sm font-bold mb-4">
+                  Step 2
+                </div>
+                <h3 className="text-4xl font-bold text-black mb-6">Implementation & Build</h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  Our expert team deploys tailored AI solutions with precision. We build secure, scalable systems that integrate seamlessly with your existing technology stack and workflows.
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Custom AI model development and integration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Workflow automation and process optimization</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Security, compliance, and data governance setup</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Step 3 - Training */}
+            <motion.div 
+              {...fadeInUp}
+              transition={{ delay: 0.4 }}
+              className="grid md:grid-cols-2 gap-12 items-center"
+            >
+              <div className="order-2 md:order-1">
+                <div className="inline-block bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full px-4 py-2 text-sm font-bold mb-4">
+                  Step 3
+                </div>
+                <h3 className="text-4xl font-bold text-black mb-6">Training & Enablement</h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  We empower your team with the knowledge and skills needed to leverage AI effectively. Through hands-on workshops and ongoing support, we ensure lasting adoption and success.
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Role-based training programs and workshops</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Best practices documentation and playbooks</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Change management and adoption strategies</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-1 md:order-2">
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <img src={processTraining} alt="AI Training Workshop" className="w-full h-auto" />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Step 4 - Results */}
+            <motion.div 
+              {...fadeInUp}
+              transition={{ delay: 0.6 }}
+              className="grid md:grid-cols-2 gap-12 items-center"
+            >
+              <div>
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <img src={processResults} alt="AI Results and Analytics" className="w-full h-auto" />
+                </div>
+              </div>
+              <div>
+                <div className="inline-block bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full px-4 py-2 text-sm font-bold mb-4">
+                  Step 4
+                </div>
+                <h3 className="text-4xl font-bold text-black mb-6">Measurement & Results</h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  We track performance against defined KPIs and continuously optimize for maximum impact. Our data-driven approach ensures your AI investment delivers measurable business value.
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Real-time performance dashboards and reporting</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Continuous optimization and model refinement</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>ROI analysis and strategic recommendations</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

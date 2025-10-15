@@ -22,6 +22,7 @@ import Torque from "./pages/Torque";
 import MementoHub from "./pages/MementoHub";
 import QuantumShift from "./pages/QuantumShift";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/blog/BlogPost";
 import TorqueAIGuide from "./pages/TorqueAIGuide";
 import NotFound from "./pages/NotFound";
 
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/platform" element={<Platform />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/products/websites" element={<Websites />} />

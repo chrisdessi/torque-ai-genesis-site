@@ -32,7 +32,7 @@ const Contact = () => {
       title: "The Quantum Shift Podcast",
       description: "Watch our podcast series on AI transformation",
       action: "Watch Now",
-      href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2"
+      href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_"
     }
   ];
 

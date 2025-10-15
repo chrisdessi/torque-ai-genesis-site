@@ -38,7 +38,7 @@ const Events = () => {
           description: "Pitch your innovation to top investors and decision-makers"
         }
       ],
-      url: "https://www.aisummit.nyc",
+      url: "https://aisummit.nyc",
       ctaText: "Learn More & Register"
     },
     {

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Mic, Youtube, BookOpen, Compass } from "lucide-react";
+import { Mic, Youtube, BookOpen, Compass, Radio, Music, Apple, Video } from "lucide-react";
 
 const QuantumShift = () => {
   const fadeInUp = {
@@ -17,7 +17,7 @@ const QuantumShift = () => {
       icon: Mic,
       title: "The Quantum Shift Podcast",
       description: "Conversations with leaders navigating the intersection of AI, transparency, and human potential.",
-      href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2"
+      href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_"
     },
     {
       icon: Compass,
@@ -69,7 +69,7 @@ const QuantumShift = () => {
               <Button 
                 size="lg"
                 className="bg-white hover:bg-white/90 text-purple-900 font-semibold px-10 py-7 text-lg"
-                onClick={() => window.open('https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2', '_blank')}
+                onClick={() => window.open('https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_', '_blank')}
               >
                 Watch the Podcast
               </Button>
@@ -119,6 +119,92 @@ const QuantumShift = () => {
                 <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Listen on Your Favorite Platform */}
+      <section className="bg-gradient-to-br from-gray-50 to-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+              Listen & Watch
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Catch The Quantum Shift Podcast on your favorite platform
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.1 }}
+              onClick={() => window.open('https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_', '_blank')}
+              className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-2xl hover:border-red-500 transition-all duration-300 cursor-pointer group text-center"
+            >
+              <Youtube className="w-16 h-16 mx-auto mb-4 text-red-600 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-black mb-2">YouTube</h3>
+              <p className="text-gray-600 text-sm">Watch full episodes</p>
+            </motion.div>
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.2 }}
+              onClick={() => window.open('https://www.iheart.com/podcast/269-the-quantum-shift-with-chr-300437455/', '_blank')}
+              className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-2xl hover:border-red-500 transition-all duration-300 cursor-pointer group text-center"
+            >
+              <Radio className="w-16 h-16 mx-auto mb-4 text-red-600 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-black mb-2">iHeartRadio</h3>
+              <p className="text-gray-600 text-sm">Stream on iHeart</p>
+            </motion.div>
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.3 }}
+              onClick={() => window.open('https://open.spotify.com/show/526A1oDnq14xmg21e8lN14', '_blank')}
+              className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-2xl hover:border-green-500 transition-all duration-300 cursor-pointer group text-center"
+            >
+              <Music className="w-16 h-16 mx-auto mb-4 text-green-600 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-black mb-2">Spotify</h3>
+              <p className="text-gray-600 text-sm">Listen on Spotify</p>
+            </motion.div>
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.4 }}
+              onClick={() => window.open('https://podcasts.apple.com/us/podcast/the-quantum-shift-with-chris-dessi/id1843712353', '_blank')}
+              className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-2xl hover:border-purple-500 transition-all duration-300 cursor-pointer group text-center"
+            >
+              <Apple className="w-16 h-16 mx-auto mb-4 text-purple-600 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-black mb-2">Apple Podcasts</h3>
+              <p className="text-gray-600 text-sm">Listen on Apple</p>
+            </motion.div>
+          </div>
+
+          {/* Chris Dessi Media Section */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.5 }}
+              onClick={() => window.open('https://www.youtube.com/watch?v=9J1Kauiq42g&list=PL1uIG3i2RBhFgAUMHKj-kGuPZgM45u8PZ', '_blank')}
+              className="bg-gradient-to-br from-purple-900 to-pink-800 text-white rounded-2xl p-10 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+            >
+              <Video className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold mb-3">TV Appearances & Highlights</h3>
+              <p className="text-gray-200 mb-4">Watch Chris Dessi's featured TV appearances and highlight reel</p>
+              <span className="inline-flex items-center text-white font-semibold group-hover:underline">
+                Watch Now →
+              </span>
+            </motion.div>
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.6 }}
+              onClick={() => window.open('https://amzn.to/43fFIJ9', '_blank')}
+              className="bg-gradient-to-br from-blue-900 to-cyan-800 text-white rounded-2xl p-10 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+            >
+              <BookOpen className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl font-bold mb-3">Chris Dessi's Books</h3>
+              <p className="text-gray-200 mb-4">Explore Chris Dessi's published works on leadership and AI</p>
+              <span className="inline-flex items-center text-white font-semibold group-hover:underline">
+                Shop Books →
+              </span>
+            </motion.div>
           </div>
         </div>
       </section>

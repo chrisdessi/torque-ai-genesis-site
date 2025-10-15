@@ -35,7 +35,7 @@ const Footer = () => {
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" 
+                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-red-500 transition-colors"
@@ -103,7 +103,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhHIqRMlUAaHP0NksIAdSzQ2" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-sm">
+                  <a href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-sm">
                     Podcast
                   </a>
                 </li>

@@ -135,36 +135,82 @@ const Index = () => {
       </section>
       
       {/* As Seen On Section */}
-      <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-20 border-b border-slate-700">
-        <div className="section-padding max-w-7xl mx-auto">
+      <section className="relative py-24 overflow-hidden border-b border-border">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background"></div>
+        
+        <div className="section-padding max-w-7xl mx-auto relative z-10">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-16"
             {...fadeInUp}
           >
-            <h3 className="text-white/60 text-sm font-semibold tracking-widest uppercase mb-3">As Seen On</h3>
-            <div className="w-16 h-0.5 bg-cyan-500/50 mx-auto"></div>
+            <motion.h3 
+              className="text-primary text-sm font-semibold tracking-widest uppercase mb-4"
+              animate={{ 
+                scale: [1, 1.05, 1],
+                opacity: [0.8, 1, 0.8]
+              }}
+              transition={{ 
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              As Seen On
+            </motion.h3>
+            <motion.div 
+              className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full"
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              style={{ backgroundSize: "200% 100%" }}
+            ></motion.div>
           </motion.div>
-          <motion.div 
-            className="flex flex-wrap items-center justify-center gap-12 md:gap-16"
-            {...fadeInUp}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-              <img src="/logos/nbc-logo.png" alt="NBC" className="h-12 w-auto object-contain" />
-            </div>
-            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-              <img src="/logos/abc-logo.png" alt="ABC" className="h-12 w-auto object-contain" />
-            </div>
-            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-              <img src="/logos/fox-logo.png" alt="FOX News" className="h-12 w-auto object-contain" />
-            </div>
-            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-              <img src="/logos/ap-logo.png" alt="Associated Press" className="h-12 w-auto object-contain" />
-            </div>
-            <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-              <img src="/logos/cbs-logo.png" alt="CBS" className="h-12 w-auto object-contain" />
-            </div>
-          </motion.div>
+          
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            {[
+              { src: "/logos/nbc-logo.png", alt: "NBC", delay: 0 },
+              { src: "/logos/abc-logo.png", alt: "ABC", delay: 0.1 },
+              { src: "/logos/fox-logo.png", alt: "FOX News", delay: 0.2 },
+              { src: "/logos/ap-logo.png", alt: "Associated Press", delay: 0.3 },
+              { src: "/logos/cbs-logo.png", alt: "CBS", delay: 0.4 }
+            ].map((logo, index) => (
+              <motion.div
+                key={logo.alt}
+                className="relative group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: logo.delay, duration: 0.5 }}
+                whileHover={{ scale: 1.1, y: -5 }}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl"
+                  animate={{
+                    opacity: [0.3, 0.6, 0.3],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{
+                    duration: 2,
+                    delay: index * 0.2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                ></motion.div>
+                <div className="relative bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
+                  <img 
+                    src={logo.src} 
+                    alt={logo.alt} 
+                    className="h-12 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300" 
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

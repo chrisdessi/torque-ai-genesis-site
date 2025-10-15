@@ -66,8 +66,8 @@ const Header = () => {
             <motion.img 
               src={torqueLogo} 
               alt="Torque AI" 
-              className="h-10 w-auto"
-              animate={{ 
+              className="h-14 w-auto"
+              animate={{
                 y: [0, -4, 0],
                 rotate: [0, 3, 0, -3, 0],
                 scale: [1, 1.02, 1]

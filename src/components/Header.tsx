@@ -24,6 +24,7 @@ const Header = () => {
       href: "/torque",
       subItems: [
         { name: "AI Consulting", href: "/torque" },
+        { name: "AI Strategy Guide", href: "/torque-ai-guide" },
         { name: "Services", href: "/services" },
         { name: "90-Day Accelerator", href: "/enterprise-accelerator" }
       ]

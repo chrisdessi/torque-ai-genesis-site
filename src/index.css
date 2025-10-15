@@ -136,7 +136,46 @@
   }
 }
 
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin-slowest {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .gradient-animate {
   background-size: 200% 200%;
   animation: gradient-shift 8s ease infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+.animate-spin-slower {
+  animation: spin-slower 28s linear infinite;
+}
+
+.animate-spin-slowest {
+  animation: spin-slowest 40s linear infinite;
 }

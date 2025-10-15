@@ -22,6 +22,7 @@ import Torque from "./pages/Torque";
 import MementoHub from "./pages/MementoHub";
 import QuantumShift from "./pages/QuantumShift";
 import Blog from "./pages/Blog";
+import TorqueAIGuide from "./pages/TorqueAIGuide";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/torque" element={<Torque />} />
+          <Route path="/torque-ai-guide" element={<TorqueAIGuide />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />

@@ -202,13 +202,20 @@ const Index = () => {
                     ease: "easeInOut"
                   }}
                 ></motion.div>
-                <div className="relative bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
-                  <img 
-                    src={logo.src} 
-                    alt={logo.alt} 
-                    className="h-12 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300" 
-                  />
-                </div>
+                <a 
+                  href="https://www.youtube.com/watch?v=9J1Kauiq42g&t=27s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="relative bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer">
+                    <img 
+                      src={logo.src} 
+                      alt={logo.alt} 
+                      className="h-12 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300" 
+                    />
+                  </div>
+                </a>
               </motion.div>
             ))}
           </div>

@@ -289,7 +289,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
               <h3 className="text-2xl font-bold mb-4">Revenue Leak</h3>
-              <div className="text-6xl font-bold text-[#E5C07B] mb-4 flex items-baseline justify-center">
+              <div className="text-6xl font-bold text-destructive mb-4 flex items-baseline justify-center">
                 <AnimatedCounter end={5} />
                 <span>–</span>
                 <AnimatedCounter end={10} />
@@ -299,14 +299,14 @@ const Index = () => {
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
               <h3 className="text-2xl font-bold mb-4">AI Risk</h3>
-              <div className="text-6xl font-bold text-[#E5C07B] mb-4">
+              <div className="text-6xl font-bold text-destructive mb-4">
                 <AnimatedCounter end={4.4} prefix="$" suffix="B" decimals={1} />
               </div>
               <p className="text-gray-400 text-lg">lost by firms without Responsible AI governance (EY 2025)</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10">
               <h3 className="text-2xl font-bold mb-4">Lost Time</h3>
-              <div className="text-6xl font-bold text-[#E5C07B] mb-4">
+              <div className="text-6xl font-bold text-destructive mb-4">
                 <AnimatedCounter end={80} suffix="%" />
               </div>
               <p className="text-gray-400 text-lg">of staff already at capacity while leaders demand productivity gains (Microsoft 2025)</p>

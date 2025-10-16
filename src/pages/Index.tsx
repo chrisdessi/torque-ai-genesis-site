@@ -314,8 +314,9 @@ const Index = () => {
           </div>
           <motion.div {...fadeInUp} className="text-center mt-12">
             <Button 
+              variant="success"
               size="lg"
-              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
+              className="font-semibold px-10 py-7"
               onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
             >
               Stop the Leak

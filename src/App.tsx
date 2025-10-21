@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import ZapierChatbot from "@/components/ZapierChatbot";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -21,6 +20,7 @@ import Events from "./pages/Events";
 import MomentoCouncil from "./pages/MomentoCouncil";
 import Torque from "./pages/Torque";
 import MementoHub from "./pages/MementoHub";
+import MementoLanding from "./pages/MementoLanding";
 import QuantumShift from "./pages/QuantumShift";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/blog/BlogPost";
@@ -34,7 +34,6 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <ZapierChatbot />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -53,6 +52,7 @@ const App = () => (
           <Route path="/enterprise-accelerator" element={<EnterpriseAccelerator />} />
           <Route path="/momento" element={<Momento />} />
           <Route path="/memento-hub" element={<MementoHub />} />
+          <Route path="/memento-landing" element={<MementoLanding />} />
           <Route path="/momento-council" element={<MomentoCouncil />} />
           <Route path="/quantum-shift" element={<QuantumShift />} />
           <Route path="/brand" element={<BrandIdentity />} />

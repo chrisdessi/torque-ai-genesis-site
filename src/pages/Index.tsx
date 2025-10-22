@@ -176,10 +176,17 @@ const Index = () => {
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {[
               { src: "/logos/nbc-logo.png", alt: "NBC", delay: 0 },
-              { src: "/logos/abc-logo.png", alt: "ABC", delay: 0.1 },
-              { src: "/logos/fox-logo.png", alt: "FOX News", delay: 0.2 },
-              { src: "/logos/ap-logo.png", alt: "Associated Press", delay: 0.3 },
-              { src: "/logos/cbs-logo.png", alt: "CBS", delay: 0.4 }
+              { src: "/logos/abc-logo.png", alt: "ABC", delay: 0.05 },
+              { src: "/logos/fox-logo.png", alt: "FOX News", delay: 0.1 },
+              { src: "/logos/fox-business-logo.png", alt: "Fox Business", delay: 0.15 },
+              { src: "/logos/ap-logo.png", alt: "Associated Press", delay: 0.2 },
+              { src: "/logos/cbs-logo.png", alt: "CBS", delay: 0.25 },
+              { src: "/logos/fortune-logo.png", alt: "Fortune", delay: 0.3 },
+              { src: "/logos/cnn-logo.png", alt: "CNN", delay: 0.35 },
+              { src: "/logos/sports-illustrated-logo.png", alt: "Sports Illustrated", delay: 0.4 },
+              { src: "/logos/time-logo.png", alt: "TIME", delay: 0.45 },
+              { src: "/logos/business-insider-logo.png", alt: "Business Insider", delay: 0.5 },
+              { src: "/logos/forbes-logo.png", alt: "Forbes", delay: 0.55 }
             ].map((logo, index) => (
               <motion.div
                 key={logo.alt}

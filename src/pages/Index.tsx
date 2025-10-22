@@ -5,8 +5,12 @@ import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const Index = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -175,18 +179,17 @@ const Index = () => {
           
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {[
-              { src: "/logos/nbc-logo.png", alt: "NBC", delay: 0 },
-              { src: "/logos/abc-logo.png", alt: "ABC", delay: 0.05 },
-              { src: "/logos/fox-logo.png", alt: "FOX News", delay: 0.1 },
-              { src: "/logos/fox-business-logo.png", alt: "Fox Business", delay: 0.15 },
-              { src: "/logos/ap-logo.png", alt: "Associated Press", delay: 0.2 },
-              { src: "/logos/cbs-logo.png", alt: "CBS", delay: 0.25 },
-              { src: "/logos/fortune-logo.png", alt: "Fortune", delay: 0.3 },
-              { src: "/logos/cnn-logo.png", alt: "CNN", delay: 0.35 },
-              { src: "/logos/sports-illustrated-logo.png", alt: "Sports Illustrated", delay: 0.4 },
-              { src: "/logos/time-logo.png", alt: "TIME", delay: 0.45 },
-              { src: "/logos/business-insider-logo.png", alt: "Business Insider", delay: 0.5 },
-              { src: "/logos/forbes-logo.png", alt: "Forbes", delay: 0.55 }
+              { src: "/logos/abc-logo.png", alt: "ABC", delay: 0 },
+              { src: "/logos/fox-logo.png", alt: "FOX News", delay: 0.05 },
+              { src: "/logos/fox-business-logo.png", alt: "Fox Business", delay: 0.1 },
+              { src: "/logos/ap-logo.png", alt: "Associated Press", delay: 0.15 },
+              { src: "/logos/cbs-logo.png", alt: "CBS", delay: 0.2 },
+              { src: "/logos/fortune-logo.png", alt: "Fortune", delay: 0.25 },
+              { src: "/logos/cnn-logo.png", alt: "CNN", delay: 0.3 },
+              { src: "/logos/sports-illustrated-logo.png", alt: "Sports Illustrated", delay: 0.35 },
+              { src: "/logos/time-logo.png", alt: "TIME", delay: 0.4 },
+              { src: "/logos/business-insider-logo.png", alt: "Business Insider", delay: 0.45 },
+              { src: "/logos/forbes-logo.png", alt: "Forbes", delay: 0.5 }
             ].map((logo, index) => (
               <motion.div
                 key={logo.alt}
@@ -209,10 +212,8 @@ const Index = () => {
                     ease: "easeInOut"
                   }}
                 ></motion.div>
-                <a 
-                  href="https://www.youtube.com/watch?v=9J1Kauiq42g&t=27s"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => setIsVideoOpen(true)}
                   className="block"
                 >
                   <div className="relative bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer">
@@ -222,13 +223,28 @@ const Index = () => {
                       className="h-12 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300" 
                     />
                   </div>
-                </a>
+                </button>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Video Dialog */}
+      <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
+        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden">
+          <DialogTitle className="sr-only">Chris Dessi Highlight Reel</DialogTitle>
+          <div className="relative w-full pt-[56.25%]">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/9J1Kauiq42g"
+              title="Chris Dessi Highlight Reel"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* The Hidden Cost of Misalignment */}
       <section className="bg-white py-32">

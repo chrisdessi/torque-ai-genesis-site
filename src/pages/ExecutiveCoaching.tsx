@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Check, Target, TrendingUp, Users, Zap, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import garyVeeImage from "@/assets/gary-vee.jpg";
 
 const ExecutiveCoaching = () => {
   const [slotsRemaining] = useState(8);
@@ -148,6 +149,19 @@ const ExecutiveCoaching = () => {
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t border-border">
+                <div className="flex items-start gap-4 mb-4">
+                  <img 
+                    src={garyVeeImage} 
+                    alt="Gary Vaynerchuk" 
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div className="flex-1">
+                    <p className="text-sm text-muted-foreground italic mb-2">
+                      "One 15 minute meeting with Chris made me millions"
+                    </p>
+                    <p className="text-xs font-semibold text-foreground">— Gary Vaynerchuk</p>
+                  </div>
+                </div>
                 <p className="text-sm text-muted-foreground">
                   <span className="font-semibold text-foreground">{slotsRemaining} spots</span> remain this month
                 </p>

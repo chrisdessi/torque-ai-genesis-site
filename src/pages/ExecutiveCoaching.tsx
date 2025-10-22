@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Check, Target, TrendingUp, Users, Zap, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import garyVeeImage from "@/assets/gary-vee.jpg";
+import garyVeeImage from "@/assets/gary-vee.png";
 
 const ExecutiveCoaching = () => {
   const [slotsRemaining] = useState(8);

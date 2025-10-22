@@ -45,6 +45,7 @@ const Header = () => {
       subItems: [
         { name: "Philosophy", href: "/quantum-shift" },
         { name: "Podcast", href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" },
+        { name: "Quantum Coach", href: "/quantum-shift/coach" },
         { name: "About", href: "/about" }
       ]
     },

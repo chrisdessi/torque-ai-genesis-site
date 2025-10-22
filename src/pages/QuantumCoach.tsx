@@ -1,0 +1,313 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Check, Target, TrendingUp, Users, Zap, ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import garyVeeImage from "@/assets/gary-vee.jpg";
+
+const QuantumCoach = () => {
+  const [slotsRemaining] = useState(8);
+
+  const benefits = [
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Strategic Clarity",
+      description: "Cut through the noise and focus on what moves the needle for your business and career."
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Revenue Growth",
+      description: "Learn the exact frameworks Chris used to close $32M in enterprise deals."
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Leadership Impact",
+      description: "Build high-performing teams that execute with speed and confidence."
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Decision Velocity",
+      description: "Make better decisions faster and eliminate costly delays."
+    }
+  ];
+
+  const outcomes = [
+    "Clear 90-day action plan with measurable milestones",
+    "Weekly accountability and strategic guidance",
+    "Access to proven frameworks from $32M in closed deals",
+    "Direct feedback on your toughest leadership challenges",
+    "Private executive roundtable invitations",
+    "Recorded sessions for your leadership team"
+  ];
+
+  const testimonials = [
+    {
+      quote: "Chris helped me see the gaps in my decision-making process. Revenue jumped 40% in six months.",
+      author: "Sarah Chen",
+      role: "CEO, SaaS Platform"
+    },
+    {
+      quote: "The clarity I gained in our first session was worth 10x the investment. Chris doesn't pull punches.",
+      author: "Michael Roberts",
+      role: "VP of Sales, Enterprise Software"
+    },
+    {
+      quote: "Best coaching investment I've made. Chris brings real-world battle scars and actionable frameworks.",
+      author: "Jennifer Martinez",
+      role: "Chief Revenue Officer"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      {/* Sticky CTA Bar */}
+      <div className="fixed bottom-0 inset-x-0 bg-gradient-to-r from-purple-600 to-pink-600 py-3 px-4 flex items-center justify-between z-40 backdrop-blur-sm">
+        <div className="text-sm md:text-base font-medium text-white">
+          First session: $199 · {slotsRemaining} slots remaining this month
+        </div>
+        <Button asChild className="bg-white text-purple-900 hover:bg-white/90">
+          <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
+            Book Your Session
+          </a>
+        </Button>
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-purple-900 via-pink-800 to-orange-600 text-white pt-32 pb-16 px-6 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500"></div>
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
+                <Zap className="w-4 h-4" />
+                Quantum Coach with Chris Dessi
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                Stop wondering what to do next. Start executing.
+              </h1>
+              <p className="text-xl text-white/90 mb-8">
+                Work 1-on-1 with Chris Dessi—author, TV commentator, and the leader who personally closed 
+                <span className="font-semibold"> $32 million in enterprise deals</span> in two years.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" asChild className="bg-white text-purple-900 hover:bg-white/90">
+                  <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
+                    Book First Session — $199
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-transparent border-white/30 text-white hover:bg-white/10">
+                  <a href="#outcomes">See What You'll Get</a>
+                </Button>
+              </div>
+              <div className="mt-8 flex items-center gap-6 text-sm text-white/80">
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-white" />
+                  <span>60-minute deep dive</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-white" />
+                  <span>Actionable playbook</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-white" />
+                  <span>No fluff</span>
+                </div>
+              </div>
+            </div>
+            <Card className="p-8 bg-white/10 backdrop-blur-lg border-white/20">
+              <h3 className="text-xl font-semibold mb-6 text-white">First Session Preview</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-semibold">1</span>
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">Strategic Audit</p>
+                    <p className="text-sm text-white/80">We'll map your current state, growth blockers, and hidden leverage points.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-semibold">2</span>
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">Decision Framework</p>
+                    <p className="text-sm text-white/80">Learn the exact criteria Chris uses to evaluate opportunities and cut noise.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-semibold">3</span>
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">30-Day Roadmap</p>
+                    <p className="text-sm text-white/80">Walk away with three clear actions and measurable milestones.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 pt-6 border-t border-white/20">
+                <div className="flex items-start gap-4 mb-4">
+                  <img 
+                    src={garyVeeImage} 
+                    alt="Gary Vaynerchuk" 
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div className="flex-1">
+                    <p className="text-sm text-white/90 italic mb-2">
+                      "One 15 minute meeting with Chris made me millions"
+                    </p>
+                    <p className="text-xs font-semibold text-white">— Gary Vaynerchuk</p>
+                  </div>
+                </div>
+                <p className="text-sm text-white/80">
+                  <span className="font-semibold text-white">{slotsRemaining} spots</span> remain this month
+                </p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 px-6 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What You'll Transform</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Real coaching for leaders who want results, not theory.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="p-6 bg-card border-border hover:border-purple-500/50 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white mb-4">
+                  {benefit.icon}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-muted-foreground">{benefit.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Outcomes Section */}
+      <section id="outcomes" className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                What's Included in Your First Session
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                This isn't a sales call. This isn't a therapy session. This is a strategic deep dive 
+                that produces a clear action plan you can start executing immediately.
+              </p>
+              <Button size="lg" asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+                <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
+                  Claim Your Spot — $199
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+            <Card className="p-8 bg-card border-border">
+              <ul className="space-y-4">
+                {outcomes.map((outcome, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{outcome}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-6 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+            What Leaders Are Saying
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="p-6 bg-card border-border">
+                <p className="text-muted-foreground mb-4 italic">"{testimonial.quote}"</p>
+                <div className="pt-4 border-t border-border">
+                  <p className="font-semibold">{testimonial.author}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Chris */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 items-center">
+            <div className="md:col-span-2">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">About Chris Dessi</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  <span className="font-semibold text-foreground">Chris Dessi</span> is an author, 
+                  television commentator, and growth leader who has built and led high-performing sales teams.
+                </p>
+                <p>
+                  Over two years, Chris personally closed <span className="font-semibold text-foreground">$32 million</span> in 
+                  enterprise deals. He's been in the trenches—navigating complex sales cycles, building teams from scratch, 
+                  and scaling revenue in competitive markets.
+                </p>
+                <p>
+                  Chris doesn't teach theory. He brings battle-tested frameworks, hard-won lessons, and direct feedback 
+                  that cuts through the noise. If you're ready to move faster and win bigger, this is your coach.
+                </p>
+              </div>
+            </div>
+            <Card className="p-6 bg-gradient-to-br from-purple-900 to-pink-800 text-white border-0">
+              <p className="text-sm italic">
+                "Most leaders know what to do. They just don't know what to do first. That's what I solve."
+              </p>
+              <p className="mt-4 font-semibold">— Chris Dessi</p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 px-6 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to move faster?
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Book your first Quantum Coach session with Chris Dessi. 
+            Walk away with a clear roadmap and the confidence to execute.
+          </p>
+          <Button size="lg" asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+            <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
+              Book Your Session — $199
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+          </Button>
+          <p className="mt-6 text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">{slotsRemaining} spots</span> remain this month · 
+            First session is 60 minutes · Recorded for your reference
+          </p>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default QuantumCoach;

@@ -108,6 +108,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
+                  <a href="/quantum-shift/coach" className="hover:text-white transition-colors text-sm">
+                    Quantum Coach
+                  </a>
+                </li>
+                <li>
                   <a href="/about" className="hover:text-white transition-colors text-sm">
                     About
                   </a>

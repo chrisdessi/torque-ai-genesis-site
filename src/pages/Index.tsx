@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Brain, Linkedin, Youtube } from "lucide-react";
-import chrisBioImage from "@/assets/chris-bio.png";
+import { ArrowRight, CheckCircle, PlayCircle, Mail, Zap, Brain } from "lucide-react";
+import chrisHeadshot from "@/assets/chris-headshot-professional.jpg";
+import chrisMediaAppearances from "@/assets/chris-media-appearances.png";
+import garyVeeTestimonial from "@/assets/gary-vee-testimonial.png";
+import chrisVideo from "@/assets/chris-video.mp4";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
 const Index = () => {
@@ -44,233 +48,387 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white min-h-screen flex items-center overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-slate-900/50 to-blue-950/50 gradient-animate"></div>
+      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
         </div>
-        {/* Floating gradient orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_6s_ease-in-out_infinite]"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-900 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_8s_ease-in-out_infinite]"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-950 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_7s_ease-in-out_infinite]"></div>
-        <div className="section-padding w-full py-32 relative z-10">
-          <motion.div 
-            className="max-w-5xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="block text-white/95 mb-2">Boards Are Replacing Leaders Who</span>
-              <span className="block text-cyan-400 font-black text-6xl md:text-7xl lg:text-8xl mb-4">
-                Can't Deliver
-              </span>
-              <span className="block text-white font-bold">
-                AI Strategy and Change at Scale
-              </span>
-            </motion.h1>
-            
+        
+        <div className="section-padding max-w-7xl mx-auto py-20 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
             <motion.div
-              className="bg-black/40 backdrop-blur-sm border-2 border-cyan-500/40 rounded-2xl p-8 max-w-3xl mx-auto mb-8"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <p className="text-3xl md:text-4xl text-white font-bold mb-2">
-                <span className="text-cyan-400 text-5xl md:text-6xl font-black">
-                  <AnimatedCounter end={31} suffix="%" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
+                <Zap className="w-4 h-4" />
+                <span>Transform Your Business with AI</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                <span className="block text-white mb-2">Stop Guessing.</span>
+                <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                  Start Executing.
                 </span>
-                <span className="block mt-2">of CEOs lose their roles for failed transformation efforts.</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                Work with <span className="text-white font-semibold">Chris Dessi</span>—the leader who personally closed{" "}
+                <span className="text-primary font-bold">$32 million</span> in enterprise deals and has been featured on{" "}
+                <span className="text-white font-semibold">NBC, ABC, FOX, and CBS</span>.
               </p>
-            </motion.div>
 
-            <motion.p 
-              className="text-2xl md:text-3xl text-white font-semibold mb-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              Don't be next—<span className="text-cyan-400 font-black">lead with alignment</span>.
-            </motion.p>
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-6 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Button 
-                  size="lg"
-                  className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-10 py-7 text-lg shadow-2xl shadow-cyan-500/30"
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground group"
                   onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
                 >
-                  Meet With Us
+                  Book Strategy Call
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
                 <Button 
-                  size="lg"
-                  variant="outline"
-                  className="bg-white/10 hover:bg-white/20 text-white font-semibold px-10 py-7 text-lg border-2 border-white/30"
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2"
                   asChild
                 >
-                  <a href="/torque-ai-guide">Download AI Strategy Guide</a>
+                  <a href="#offers">View Services</a>
                 </Button>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <span>$32M in Closed Deals</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <span>TV Commentator</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <span>Published Author</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Image/Video */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={chrisHeadshot} 
+                  alt="Chris Dessi - Executive Coach and Business Leader" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+              </div>
+              
+              {/* Floating Stats Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-6 shadow-xl backdrop-blur-sm"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">$32M+</div>
+                    <div className="text-sm text-muted-foreground">in Enterprise Deals</div>
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
       
-      {/* As Seen On Section */}
-      <section className="relative py-24 overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background"></div>
-        
-        <div className="section-padding max-w-7xl mx-auto relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            {...fadeInUp}
+      {/* Gary Vee Testimonial - Prominent Placement */}
+      <section className="py-16 px-6 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <motion.h3 
-              className="text-primary text-sm font-semibold tracking-widest uppercase mb-4"
-              animate={{ 
-                scale: [1, 1.05, 1],
-                opacity: [0.8, 1, 0.8]
-              }}
-              transition={{ 
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              As Seen On
-            </motion.h3>
-            <motion.div 
-              className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full"
-              animate={{
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              style={{ backgroundSize: "200% 100%" }}
-            ></motion.div>
+            <Card className="overflow-hidden border-2 border-primary/20 shadow-2xl">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto">
+                  <img 
+                    src={garyVeeTestimonial} 
+                    alt="Gary Vaynerchuk Testimonial" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center bg-card">
+                  <div className="text-4xl text-primary mb-4">"</div>
+                  <p className="text-xl md:text-2xl font-semibold text-foreground mb-6 leading-relaxed">
+                    I've known Chris for a long time and adore his work ethic, standards and passion ...
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <p className="font-bold text-lg text-foreground">GARY VAYNERCHUK</p>
+                      <p className="text-muted-foreground">@garyvee</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* As Seen On - Media Appearances */}
+      <section className="py-20 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              As Seen On Major Networks
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Featured across NBC, ABC, FOX, CBS, and more
+            </p>
           </motion.div>
           
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {[
-              { src: "/logos/nbc-logo.png", alt: "NBC", delay: 0 },
-              { src: "/logos/abc-logo.png", alt: "ABC", delay: 0.1 },
-              { src: "/logos/fox-logo.png", alt: "FOX News", delay: 0.2 },
-              { src: "/logos/ap-logo.png", alt: "Associated Press", delay: 0.3 },
-              { src: "/logos/cbs-logo.png", alt: "CBS", delay: 0.4 }
-            ].map((logo, index) => (
-              <motion.div
-                key={logo.alt}
-                className="relative group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: logo.delay, duration: 0.5 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl"
-                  animate={{
-                    opacity: [0.3, 0.6, 0.3],
-                    scale: [1, 1.1, 1]
-                  }}
-                  transition={{
-                    duration: 2,
-                    delay: index * 0.2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                ></motion.div>
-                <a 
-                  href="https://www.youtube.com/watch?v=9J1Kauiq42g&t=27s"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="relative bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 cursor-pointer">
-                    <img 
-                      src={logo.src} 
-                      alt={logo.alt} 
-                      className="h-12 w-auto object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300" 
-                    />
-                  </div>
-                </a>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-2xl overflow-hidden shadow-2xl border border-border"
+          >
+            <img 
+              src={chrisMediaAppearances} 
+              alt="Chris Dessi on NBC, ABC, FOX, CBS and other major networks" 
+              className="w-full h-auto"
+            />
+          </motion.div>
         </div>
       </section>
 
 
-      {/* The Hidden Cost of Misalignment */}
-      <section className="bg-white py-32">
-        <div className="section-padding max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
-              The Hidden Cost of Misalignment
+      {/* Services & Offers Section */}
+      <section id="offers" className="py-20 px-6 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Choose Your Path to Success
             </h2>
-            <p className="text-2xl text-gray-600">
-              Every day without alignment costs you real revenue
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From AI audits to enterprise engagement, select the service that fits your goals
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-4 gap-8">
-            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border border-purple-100">
-              <div className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 flex items-baseline justify-center">
-                <AnimatedCounter end={5} decimals={0} />
-                <span>–</span>
-                <AnimatedCounter end={10} decimals={0} />
-                <span>%</span>
-              </div>
-              <p className="text-lg text-gray-600">of annual revenue wiped out by strategy failures</p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* AI Audit and Action Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Card className="p-8 h-full flex flex-col border-2 hover:border-primary/50 transition-colors">
+                <div className="mb-6">
+                  <div className="text-sm font-semibold text-primary mb-2">STARTER</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">AI Audit & Action Plan</h3>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="text-4xl font-bold text-foreground">$297</span>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Comprehensive analysis of your business with a clear 30-day action plan to implement AI-driven growth strategies.
+                  </p>
+                </div>
+                <ul className="space-y-3 mb-8 flex-grow">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Business infrastructure audit</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">AI opportunity identification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Detailed action plan</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">30-day implementation roadmap</span>
+                  </li>
+                </ul>
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  size="lg"
+                  asChild
+                >
+                  <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
+                    Get Your Audit
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </Button>
+              </Card>
             </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100">
-              <div className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
-                <AnimatedCounter end={80} suffix="%" />
-              </div>
-              <p className="text-lg text-gray-600">of employees lack time or energy to do their best work</p>
+
+            {/* 90-Day Cohort */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="p-8 h-full flex flex-col border-2 border-primary shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1 text-xs font-bold rounded-bl-lg">
+                  MOST POPULAR
+                </div>
+                <div className="mb-6">
+                  <div className="text-sm font-semibold text-primary mb-2">TRANSFORMATION</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">90-Day Cohort</h3>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="text-4xl font-bold text-foreground">Custom</span>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Join an exclusive cohort for 90 days of intensive coaching, implementation, and accountability with Chris.
+                  </p>
+                </div>
+                <ul className="space-y-3 mb-8 flex-grow">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Weekly group coaching calls</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Implementation support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Private community access</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Frameworks from $32M in deals</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Measurable ROI milestones</span>
+                  </li>
+                </ul>
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  size="lg"
+                  asChild
+                >
+                  <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
+                    Join the Cohort
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </Button>
+              </Card>
             </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100">
-              <div className="text-6xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                <AnimatedCounter end={40} suffix="%" />
-              </div>
-              <p className="text-lg text-gray-600">of productive time stolen by context switching each week</p>
-            </motion.div>
-            <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center p-8 bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl border border-pink-100">
-              <div className="text-6xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent mb-4">
-                <AnimatedCounter end={100} suffix="%" />
-              </div>
-              <p className="text-lg text-gray-600">of margins silently taxed by meeting and tool overload</p>
+
+            {/* Enterprise Retainer */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Card className="p-8 h-full flex flex-col border-2 hover:border-primary/50 transition-colors bg-gradient-to-br from-card to-muted/20">
+                <div className="mb-6">
+                  <div className="text-sm font-semibold text-primary mb-2">ENTERPRISE</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Executive Engagement</h3>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="text-4xl font-bold text-foreground">Custom</span>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Ongoing executive coaching and strategic guidance on retainer for enterprise leaders.
+                  </p>
+                </div>
+                <ul className="space-y-3 mb-8 flex-grow">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Dedicated monthly hours</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Strategic planning sessions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Leadership team access</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Priority support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">Custom AI implementation</span>
+                  </li>
+                </ul>
+                <Button 
+                  className="w-full bg-foreground hover:bg-foreground/90 text-background"
+                  size="lg"
+                  asChild
+                >
+                  <a href="https://buy.stripe.com/7sY6oH3Na6aX0gd1w78g003" target="_blank" rel="noopener noreferrer">
+                    Engage Chris
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </Button>
+              </Card>
             </motion.div>
           </div>
-          <motion.div {...fadeInUp} className="text-center mt-12">
-            <Button 
-              size="lg"
-              className="bg-black hover:bg-black/90 text-white px-10 py-7"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-            >
-              Quantify Your Execution Leak
-            </Button>
+
+          {/* Newsletter CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card className="p-8 md:p-12 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/20">
+              <div className="max-w-3xl mx-auto text-center">
+                <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                  Not Ready Just Yet?
+                </h3>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Join my mailing list for exclusive insights, strategies, and updates on AI-driven business transformation.
+                </p>
+                <div className="max-w-md mx-auto">
+                  <iframe 
+                    src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9?slim=true" 
+                    data-test-id="beehiiv-embed" 
+                    height="52" 
+                    style={{ margin: 0, borderRadius: '8px', backgroundColor: 'transparent', border: 'none', width: '100%' }}
+                  ></iframe>
+                </div>
+              </div>
+            </Card>
           </motion.div>
         </div>
       </section>

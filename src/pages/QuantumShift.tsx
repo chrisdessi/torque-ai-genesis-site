@@ -232,6 +232,106 @@ const QuantumShift = () => {
         </div>
       </section>
 
+      {/* Quantum Coach Section */}
+      <section className="bg-gradient-to-br from-purple-50 to-pink-50 py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full px-6 py-2 mb-6">
+              <span className="text-sm font-medium">Quantum Coach</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+              Work 1-on-1 with Chris Dessi
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Stop wondering what to do next. Start executing with clarity and confidence.
+            </p>
+          </motion.div>
+          
+          <motion.div
+            {...fadeInUp}
+            transition={{ delay: 0.2 }}
+            className="bg-white border-2 border-gray-200 rounded-2xl p-12 max-w-4xl mx-auto shadow-xl"
+          >
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl font-bold text-black mb-4">
+                  Executive Coaching Sessions
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Work directly with Chris Dessi—author, TV commentator, and the leader who personally closed 
+                  <span className="font-semibold text-black"> $32 million in enterprise deals</span> in two years.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span className="text-gray-700">60-minute strategic deep dive</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span className="text-gray-700">Clear 30-day action plan</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span className="text-gray-700">Battle-tested frameworks from real deals</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span className="text-gray-700">No fluff, just actionable insights</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="text-center md:text-right">
+                <div className="mb-6">
+                  <p className="text-sm text-gray-500 mb-2">First Session</p>
+                  <p className="text-5xl font-bold text-black mb-1">$199</p>
+                  <p className="text-gray-600">60 minutes · Recorded for reference</p>
+                </div>
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-10 py-7 text-lg w-full md:w-auto"
+                  onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}
+                >
+                  Book Your Session
+                </Button>
+                <p className="text-sm text-gray-500 mt-4">Limited spots available this month</p>
+              </div>
+            </div>
+            
+            <div className="mt-12 pt-12 border-t border-gray-200">
+              <blockquote className="text-center">
+                <p className="text-lg text-gray-700 italic mb-4">
+                  "Most leaders know what to do. They just don't know what to do first. That's what I solve."
+                </p>
+                <footer className="text-sm font-semibold text-black">— Chris Dessi</footer>
+              </blockquote>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            {...fadeInUp} 
+            transition={{ delay: 0.4 }}
+            className="text-center mt-8"
+          >
+            <Button 
+              variant="outline"
+              size="lg"
+              className="border-2 border-gray-300 hover:border-purple-600 text-black hover:text-purple-600 font-semibold px-8 py-6"
+              onClick={() => window.location.href = '/executive-coaching'}
+            >
+              Learn More About Quantum Coach
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

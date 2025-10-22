@@ -25,6 +25,7 @@ import QuantumShift from "./pages/QuantumShift";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/blog/BlogPost";
 import TorqueAIGuide from "./pages/TorqueAIGuide";
+import ExecutiveCoaching from "./pages/ExecutiveCoaching";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => (
           <Route path="/brand" element={<BrandIdentity />} />
           <Route path="/creator-launch" element={<CreatorLaunch />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/executive-coaching" element={<ExecutiveCoaching />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

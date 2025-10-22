@@ -106,15 +106,25 @@ const Header = () => {
                 {item.subItems && openDropdown === item.name && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-xl py-2 z-50">
                     {item.subItems.map((subItem) => (
-                      <a
-                        key={subItem.name}
-                        href={subItem.href}
-                        target={subItem.href.startsWith('http') ? '_blank' : undefined}
-                        rel={subItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                      >
-                        {subItem.name}
-                      </a>
+                      subItem.href.startsWith('http') ? (
+                        <a
+                          key={subItem.name}
+                          href={subItem.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                        >
+                          {subItem.name}
+                        </a>
+                      ) : (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.href}
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                        >
+                          {subItem.name}
+                        </Link>
+                      )
                     ))}
                   </div>
                 )}
@@ -168,16 +178,27 @@ const Header = () => {
                   {item.subItems && (
                     <div className="ml-4 mt-1 space-y-1">
                       {item.subItems.map((subItem) => (
-                        <a
-                          key={subItem.name}
-                          href={subItem.href}
-                          target={subItem.href.startsWith('http') ? '_blank' : undefined}
-                          rel={subItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="block px-4 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {subItem.name}
-                        </a>
+                        subItem.href.startsWith('http') ? (
+                          <a
+                            key={subItem.name}
+                            href={subItem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {subItem.name}
+                          </a>
+                        ) : (
+                          <Link
+                            key={subItem.name}
+                            to={subItem.href}
+                            className="block px-4 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {subItem.name}
+                          </Link>
+                        )
                       ))}
                     </div>
                   )}

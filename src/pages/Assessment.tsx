@@ -1,11 +1,13 @@
 import { useState, useEffect, FormEvent } from 'react';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Sparkles, TrendingUp, Users, Zap, CheckCircle2 } from 'lucide-react';
 
 // Configuration
 const MEETING_URL = "https://calendar.app.google/sgsqiUz4hW6NqKm68";
 const WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/18931428/urxvjm2/";
-const META_PIXEL_ID = "";
-const LINKEDIN_PARTNER_ID = "";
-const LINKEDIN_CONVERSION_ID_RESULTS = null;
 
 // Types
 type Audience = 'enterprise' | 'founders';
@@ -234,20 +236,6 @@ export default function Assessment() {
       console.error("Zapier delivery error", err);
     }
 
-    // Track with pixels if configured
-    try {
-      if ((window as any).fbq && META_PIXEL_ID) {
-        (window as any).fbq('trackCustom', 'AssessmentResult', {
-          audience, tier, pct, bpScore, situation, outcome, obstacle, solution, utm, page: payload.page
-        });
-      }
-      if ((window as any).lintrk && LINKEDIN_CONVERSION_ID_RESULTS) {
-        (window as any).lintrk('track', { conversion_id: LINKEDIN_CONVERSION_ID_RESULTS });
-      }
-    } catch (e) {
-      console.warn('Pixel event error', e);
-    }
-
     // Scroll to results
     setTimeout(() => {
       document.getElementById('results')?.scrollIntoView({ behavior: 'smooth' });
@@ -255,222 +243,277 @@ export default function Assessment() {
   };
 
   return (
-    <div style={styles.wrap}>
-      <style>{cssStyles}</style>
-
-      {/* Navigation */}
-      <div style={styles.nav}>
-        <div style={styles.navLogo}>
-          <strong>Torque AI</strong>
-        </div>
-        <div>
-          <a className="btn btn-primary" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+      {/* Floating particles animation */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-primary/20"
+            style={{
+              width: Math.random() * 4 + 2,
+              height: Math.random() * 4 + 2,
+            }}
+            initial={{
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+              opacity: 0,
+            }}
+            animate={{
+              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)],
+              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
+              opacity: [0, 0.6, 0],
+            }}
+            transition={{
+              duration: Math.random() * 15 + 15,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        ))}
       </div>
 
-      {/* Chooser View */}
-      {currentView === 'chooser' && (
-        <main>
-          <section className="card">
-            <div className="panel">
-              <span className="badge">Make AI deliver • 90 days</span>
-              <h2>Choose your path</h2>
-              <p className="muted">We tune the same operating rhythm for two audiences. Pick the one that fits you best.</p>
-              <div className="chooser">
-                <a className="card" href="#/enterprise" style={{ textDecoration: 'none' }}>
-                  <div className="panel">
-                    <h3>For Enterprise Leaders</h3>
-                    <p className="muted">Install a weekly cadence across teams. Ship AI outcomes with truth over politics.</p>
-                    <div className="cta-row"><span className="btn btn-primary">See enterprise path →</span></div>
-                  </div>
-                </a>
-                <a className="card" href="#/founders" style={{ textDecoration: 'none' }}>
-                  <div className="panel">
-                    <h3>For Founders</h3>
-                    <p className="muted">Focus, ship, and scale. Use AI to create content that sells and a pipeline that moves.</p>
-                    <div className="cta-row"><span className="btn btn-primary">See founder path →</span></div>
-                  </div>
-                </a>
-              </div>
+      <div className="relative z-10 max-w-7xl mx-auto section-padding">
+        {/* Navigation */}
+        <nav className="flex items-center justify-between mb-12 py-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+              <Sparkles className="w-6 h-6 text-white" />
             </div>
-          </section>
-        </main>
-      )}
+            <strong className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Torque AI</strong>
+          </div>
+          <Button asChild className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity">
+            <a href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
+          </Button>
+        </nav>
 
-      {/* Enterprise View */}
-      {currentView === 'enterprise' && (
-        <main>
-          <section className="hero">
-            <div>
-              <span className="badge">Enterprise • Alignment at scale</span>
-              <h1>Boards are replacing leaders who can't make AI deliver.</h1>
-              <h2>Install a weekly operating rhythm that turns AI talk into revenue, accountability, and momentum.</h2>
-              <p className="muted">Start with a free 3-minute assessment. Get your score, three tailored insights, and the next step (1:1, Memento Council, or playbook).</p>
-              <div className="proof">
-                <span className="chip">$32M closed with AI-driven GTM</span>
-                <span className="chip">Founder: Torque AI & Memento</span>
-                <span className="chip">TV commentator & author</span>
-                <span className="chip">AI Summit NYC</span>
+        {/* Chooser View */}
+        {currentView === 'chooser' && (
+          <motion.main
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-card/50 backdrop-blur-sm border border-border rounded-3xl p-8 shadow-2xl">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4 text-primary" />
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Make AI deliver • 90 days</span>
               </div>
-              <div className="cta-row">
-                <a className="btn btn-primary" href="#/assessment">Start the 3-minute assessment</a>
-                <a className="btn btn-ghost" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
+              <h2 className="text-4xl md:text-5xl font-black mb-4 gradient-text">Choose your path</h2>
+              <p className="text-muted-foreground text-lg mb-8">We tune the same operating rhythm for two audiences. Pick the one that fits you best.</p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <motion.a
+                  href="#/enterprise"
+                  className="group bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border border-border rounded-2xl p-8 hover:border-primary/50 transition-all hover-scale no-underline"
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-foreground">For Enterprise Leaders</h3>
+                  <p className="text-muted-foreground mb-6">Install a weekly cadence across teams. Ship AI outcomes with truth over politics.</p>
+                  <Button className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90">
+                    See enterprise path →
+                  </Button>
+                </motion.a>
+
+                <motion.a
+                  href="#/founders"
+                  className="group bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border border-border rounded-2xl p-8 hover:border-accent/50 transition-all hover-scale no-underline"
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Zap className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-foreground">For Founders</h3>
+                  <p className="text-muted-foreground mb-6">Focus, ship, and scale. Use AI to create content that sells and a pipeline that moves.</p>
+                  <Button className="w-full bg-gradient-to-r from-accent to-primary hover:opacity-90">
+                    See founder path →
+                  </Button>
+                </motion.a>
               </div>
-              <p className="muted" style={{ marginTop: '6px' }}>31% of CEOs lose their roles for failed transformation. Don't be next—lead with alignment.</p>
             </div>
-            <div className="card">
-              <div className="panel">
-                <h3>As seen on</h3>
-                <div className="logos">
-                  {['ABC', 'FOX News', 'Fox Business', 'Associated Press', 'CBS', 'Fortune', 'CNN', 'Sports Illustrated', 'TIME', 'Business Insider', 'Forbes'].map(logo => (
-                    <span key={logo} className="logo-tag">{logo}</span>
-                  ))}
+          </motion.main>
+        )}
+
+        {/* Enterprise View */}
+        {currentView === 'enterprise' && (
+          <main>
+            <section className="hero">
+              <div>
+                <span className="badge">Enterprise • Alignment at scale</span>
+                <h1>Boards are replacing leaders who can't make AI deliver.</h1>
+                <h2>Install a weekly operating rhythm that turns AI talk into revenue, accountability, and momentum.</h2>
+                <p className="muted">Start with a free 3-minute assessment. Get your score, three tailored insights, and the next step (1:1, Memento Council, or playbook).</p>
+                <div className="proof">
+                  <span className="chip">$32M closed with AI-driven GTM</span>
+                  <span className="chip">Founder: Torque AI & Memento</span>
+                  <span className="chip">TV commentator & author</span>
+                  <span className="chip">AI Summit NYC</span>
+                </div>
+                <div className="cta-row">
+                  <a className="btn btn-primary" href="#/assessment">Start the 3-minute assessment</a>
+                  <a className="btn btn-ghost" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
+                </div>
+                <p className="muted" style={{ marginTop: '6px' }}>31% of CEOs lose their roles for failed transformation. Don't be next—lead with alignment.</p>
+              </div>
+              <div className="card">
+                <div className="panel">
+                  <h3>As seen on</h3>
+                  <div className="logos">
+                    {['ABC', 'FOX News', 'Fox Business', 'Associated Press', 'CBS', 'Fortune', 'CNN', 'Sports Illustrated', 'TIME', 'Business Insider', 'Forbes'].map(logo => (
+                      <span key={logo} className="logo-tag">{logo}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="panel">
+                  <h3>What we install</h3>
+                  <div className="grid cols-3">
+                    <div>
+                      <strong>Strategy Clarity</strong>
+                      <ul className="list">
+                        <li>90-day outcomes & owners</li>
+                        <li>ICP, offers, pricing</li>
+                        <li>Messaging & proof</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <strong>Operating Rhythm</strong>
+                      <ul className="list">
+                        <li>Weekly commitments</li>
+                        <li>Scorecards & reviews</li>
+                        <li>Truth over politics</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <strong>AI Leverage</strong>
+                      <ul className="list">
+                        <li>Content engine</li>
+                        <li>Pipeline automation</li>
+                        <li>Insight → action</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </section>
+
+            <section className="section card">
               <div className="panel">
-                <h3>What we install</h3>
+                <h3>Why now</h3>
+                <div className="grid cols-4">
+                  <div><strong>5–10% revenue leak</strong><p className="small">Execution drift, duplication & hand-offs silently tax topline.</p></div>
+                  <div><strong>40% time lost</strong><p className="small">Context switching & meetings drain productive hours.</p></div>
+                  <div><strong>AI adoption is compounding</strong><p className="small">Top performers embed AI into apps & workflows.</p></div>
+                  <div><strong>31% CEO attrition</strong><p className="small">Boards replace leaders who can't ship transformation.</p></div>
+                </div>
+              </div>
+            </section>
+
+            <section className="section card">
+              <div className="panel">
+                <h3>How it works</h3>
                 <div className="grid cols-3">
-                  <div>
-                    <strong>Strategy Clarity</strong>
-                    <ul className="list">
-                      <li>90-day outcomes & owners</li>
-                      <li>ICP, offers, pricing</li>
-                      <li>Messaging & proof</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <strong>Operating Rhythm</strong>
-                    <ul className="list">
-                      <li>Weekly commitments</li>
-                      <li>Scorecards & reviews</li>
-                      <li>Truth over politics</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <strong>AI Leverage</strong>
-                    <ul className="list">
-                      <li>Content engine</li>
-                      <li>Pipeline automation</li>
-                      <li>Insight → action</li>
-                    </ul>
+                  <div><strong>1) Assess</strong><p className="muted">3-minute scorecard reveals gaps across Strategy, Rhythm, and AI Leverage.</p></div>
+                  <div><strong>2) Plan</strong><p className="muted">Lock a 90-day plan, owners, and a single weekly scorecard.</p></div>
+                  <div><strong>3) Ship</strong><p className="muted">Install the cadence. Scale AI content + pipeline while leadership models accountability.</p></div>
+                </div>
+                <div className="cta-row" style={{ marginTop: '10px' }}>
+                  <a className="btn btn-primary" href="#/assessment">Start the 3-minute assessment</a>
+                  <a className="btn btn-ghost" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
+                </div>
+              </div>
+            </section>
+
+            <footer className="footer">
+              <div className="pill">Torque AI</div><div className="pill">Memento</div><div className="pill">Quantum Shift</div>
+              <p style={{ marginTop: '10px' }}>It's free to start. You'll see your score and recommendations instantly.</p>
+            </footer>
+          </main>
+        )}
+
+        {/* Founders View */}
+        {currentView === 'founders' && (
+          <main>
+            <section className="hero">
+              <div>
+                <span className="badge">Founders • Focus & ship</span>
+                <h1>Make AI pay—without burning the week on busywork.</h1>
+                <h2>Get a weekly cadence that publishes, pipelines, and closes. No politics. No fluff.</h2>
+                <p className="muted">Take the 3-minute assessment. You'll get a score, three tailored insights, and your next step (1:1, Council, or playbook).</p>
+                <div className="proof">
+                  <span className="chip">$32M closed with AI-driven GTM</span>
+                  <span className="chip">Founder: Torque AI & Memento</span>
+                  <span className="chip">TV commentator & author</span>
+                  <span className="chip">AI Summit NYC</span>
+                </div>
+                <div className="cta-row">
+                  <a className="btn btn-primary" href="#/assessment">Start the 3-minute assessment</a>
+                  <a className="btn btn-ghost" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
+                </div>
+                <p className="muted" style={{ marginTop: '6px' }}>Cut tool bloat, ship weekly, and move the only metrics that matter.</p>
+              </div>
+              <div className="card">
+                <div className="panel">
+                  <h3>What you'll install</h3>
+                  <div className="grid cols-3">
+                    <div><strong>Offer & ICP</strong><ul className="list"><li>Dial productized offers</li><li>Proof & pricing</li><li>Messaging</li></ul></div>
+                    <div><strong>Operating Rhythm</strong><ul className="list"><li>Weekly commitments</li><li>Scorecard</li><li>Post-mortems</li></ul></div>
+                    <div><strong>AI Engine</strong><ul className="list"><li>Content → pipeline</li><li>CRM hygiene</li><li>Sequenced outreach</li></ul></div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className="section card">
-            <div className="panel">
-              <h3>Why now</h3>
-              <div className="grid cols-4">
-                <div><strong>5–10% revenue leak</strong><p className="small">Execution drift, duplication & hand-offs silently tax topline.</p></div>
-                <div><strong>40% time lost</strong><p className="small">Context switching & meetings drain productive hours.</p></div>
-                <div><strong>AI adoption is compounding</strong><p className="small">Top performers embed AI into apps & workflows.</p></div>
-                <div><strong>31% CEO attrition</strong><p className="small">Boards replace leaders who can't ship transformation.</p></div>
-              </div>
-            </div>
-          </section>
-
-          <section className="section card">
-            <div className="panel">
-              <h3>How it works</h3>
-              <div className="grid cols-3">
-                <div><strong>1) Assess</strong><p className="muted">3-minute scorecard reveals gaps across Strategy, Rhythm, and AI Leverage.</p></div>
-                <div><strong>2) Plan</strong><p className="muted">Lock a 90-day plan, owners, and a single weekly scorecard.</p></div>
-                <div><strong>3) Ship</strong><p className="muted">Install the cadence. Scale AI content + pipeline while leadership models accountability.</p></div>
-              </div>
-              <div className="cta-row" style={{ marginTop: '10px' }}>
-                <a className="btn btn-primary" href="#/assessment">Start the 3-minute assessment</a>
-                <a className="btn btn-ghost" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
-              </div>
-            </div>
-          </section>
-
-          <footer className="footer">
-            <div className="pill">Torque AI</div><div className="pill">Memento</div><div className="pill">Quantum Shift</div>
-            <p style={{ marginTop: '10px' }}>It's free to start. You'll see your score and recommendations instantly.</p>
-          </footer>
-        </main>
-      )}
-
-      {/* Founders View */}
-      {currentView === 'founders' && (
-        <main>
-          <section className="hero">
-            <div>
-              <span className="badge">Founders • Focus & ship</span>
-              <h1>Make AI pay—without burning the week on busywork.</h1>
-              <h2>Get a weekly cadence that publishes, pipelines, and closes. No politics. No fluff.</h2>
-              <p className="muted">Take the 3-minute assessment. You'll get a score, three tailored insights, and your next step (1:1, Council, or playbook).</p>
-              <div className="proof">
-                <span className="chip">$32M closed with AI-driven GTM</span>
-                <span className="chip">Founder: Torque AI & Memento</span>
-                <span className="chip">TV commentator & author</span>
-                <span className="chip">AI Summit NYC</span>
-              </div>
-              <div className="cta-row">
-                <a className="btn btn-primary" href="#/assessment">Start the 3-minute assessment</a>
-                <a className="btn btn-ghost" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
-              </div>
-              <p className="muted" style={{ marginTop: '6px' }}>Cut tool bloat, ship weekly, and move the only metrics that matter.</p>
-            </div>
-            <div className="card">
+            <section className="section card">
               <div className="panel">
-                <h3>What you'll install</h3>
+                <h3>Why now</h3>
                 <div className="grid cols-3">
-                  <div><strong>Offer & ICP</strong><ul className="list"><li>Dial productized offers</li><li>Proof & pricing</li><li>Messaging</li></ul></div>
-                  <div><strong>Operating Rhythm</strong><ul className="list"><li>Weekly commitments</li><li>Scorecard</li><li>Post-mortems</li></ul></div>
-                  <div><strong>AI Engine</strong><ul className="list"><li>Content → pipeline</li><li>CRM hygiene</li><li>Sequenced outreach</li></ul></div>
+                  <div><strong>Focus = growth</strong><p className="small">Most founders lose 40% to context switching. We claw it back.</p></div>
+                  <div><strong>AI compounding</strong><p className="small">Founders using AI publish more, learn faster, and sell more.</p></div>
+                  <div><strong>Ship weekly</strong><p className="small">Cadence beats heroics. Keep promises, compound results.</p></div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className="section card">
-            <div className="panel">
-              <h3>Why now</h3>
-              <div className="grid cols-3">
-                <div><strong>Focus = growth</strong><p className="small">Most founders lose 40% to context switching. We claw it back.</p></div>
-                <div><strong>AI compounding</strong><p className="small">Founders using AI publish more, learn faster, and sell more.</p></div>
-                <div><strong>Ship weekly</strong><p className="small">Cadence beats heroics. Keep promises, compound results.</p></div>
+            <section className="section card">
+              <div className="panel">
+                <h3>How it works</h3>
+                <div className="grid cols-3">
+                  <div><strong>1) Assess</strong><p className="muted">3-minute scorecard across Offer, Rhythm, and AI Engine.</p></div>
+                  <div><strong>2) Plan</strong><p className="muted">Lock a 90-day plan + single scorecard. Ruthless focus.</p></div>
+                  <div><strong>3) Ship</strong><p className="muted">Publish weekly, pipeline daily, review blockers Friday.</p></div>
+                </div>
+                <div className="cta-row" style={{ marginTop: '10px' }}>
+                  <a className="btn btn-primary" href="#/assessment">Start the 3-minute assessment</a>
+                  <a className="btn btn-ghost" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className="section card">
-            <div className="panel">
-              <h3>How it works</h3>
-              <div className="grid cols-3">
-                <div><strong>1) Assess</strong><p className="muted">3-minute scorecard across Offer, Rhythm, and AI Engine.</p></div>
-                <div><strong>2) Plan</strong><p className="muted">Lock a 90-day plan + single scorecard. Ruthless focus.</p></div>
-                <div><strong>3) Ship</strong><p className="muted">Publish weekly, pipeline daily, review blockers Friday.</p></div>
-              </div>
-              <div className="cta-row" style={{ marginTop: '10px' }}>
-                <a className="btn btn-primary" href="#/assessment">Start the 3-minute assessment</a>
-                <a className="btn btn-ghost" href={MEETING_URL} target="_blank" rel="noopener">Meet With Us</a>
-              </div>
-            </div>
-          </section>
+            <footer className="footer">
+              <div className="pill">Torque AI</div><div className="pill">Memento</div><div className="pill">Quantum Shift</div>
+              <p style={{ marginTop: '10px' }}>It's free to start. You'll see your score and recommendations instantly.</p>
+            </footer>
+          </main>
+        )}
 
-          <footer className="footer">
-            <div className="pill">Torque AI</div><div className="pill">Memento</div><div className="pill">Quantum Shift</div>
-            <p style={{ marginTop: '10px' }}>It's free to start. You'll see your score and recommendations instantly.</p>
-          </footer>
-        </main>
-      )}
-
-      {/* Assessment View */}
-      {currentView === 'assessment' && (
-        <main>
-          <AssessmentForm
-            audience={audience}
-            onAudienceChange={saveAudience}
-            onSubmit={handleSubmit}
-            showResults={showResults}
-            resultData={resultData}
-          />
-        </main>
-      )}
+        {/* Assessment View */}
+        {currentView === 'assessment' && (
+          <main>
+            <AssessmentForm
+              audience={audience}
+              onAudienceChange={saveAudience}
+              onSubmit={handleSubmit}
+              showResults={showResults}
+              resultData={resultData}
+            />
+          </main>
+        )}
+      </div>
     </div>
   );
 }
@@ -706,292 +749,3 @@ function AssessmentForm({ audience, onAudienceChange, onSubmit, showResults, res
     </section>
   );
 }
-
-// Inline styles
-const styles = {
-  wrap: {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '28px'
-  },
-  nav: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: '10px'
-  },
-  navLogo: {
-    display: 'flex',
-    gap: '10px',
-    alignItems: 'center'
-  }
-};
-
-// CSS styles as string
-const cssStyles = `
-  :root {
-    --bg: #0b0e13;
-    --card: #121622;
-    --ink: #eef2ff;
-    --muted: #97a0b6;
-    --line: #20263b;
-    --brand: #6aa5ff;
-    --ok: #6ee7b7;
-    --warn: #facc15;
-    --bad: #fb7185;
-  }
-  
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-    border-radius: 12px;
-    border: 1px solid transparent;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .btn-primary {
-    background: var(--brand);
-    color: #0b0e13;
-  }
-  
-  .btn-ghost {
-    background: transparent;
-    border: 1px solid #2a344f;
-    color: var(--ink);
-  }
-  
-  .badge {
-    display: inline-block;
-    padding: 6px 10px;
-    border: 1px solid #26325e;
-    background: #0f1730;
-    color: #b8c6ff;
-    border-radius: 20px;
-    font-size: 12px;
-  }
-  
-  .hero {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 28px;
-    align-items: center;
-    padding: 20px 0 8px;
-  }
-  
-  h1 {
-    font-size: 42px;
-    line-height: 1.05;
-    margin: 8px 0 6px;
-    font-weight: 900;
-  }
-  
-  h2 {
-    font-size: 22px;
-    margin: 0 0 8px;
-    font-weight: 700;
-  }
-  
-  h3 {
-    margin: 0 0 8px;
-  }
-  
-  p {
-    color: var(--muted);
-    margin: 0 0 12px;
-  }
-  
-  .muted {
-    color: var(--muted);
-  }
-  
-  .proof {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin: 8px 0 4px;
-  }
-  
-  .chip {
-    background: #0d1220;
-    border: 1px solid #1a2140;
-    color: #b4bfd8;
-    padding: 8px 12px;
-    border-radius: 999px;
-    font-size: 12px;
-  }
-  
-  .cta-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 14px;
-  }
-  
-  .card {
-    background: linear-gradient(180deg, #121622, #0f1320);
-    border: 1px solid #1d2338;
-    border-radius: 18px;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-  }
-  
-  .panel {
-    padding: 22px;
-  }
-  
-  .grid {
-    display: grid;
-    gap: 18px;
-  }
-  
-  .grid.cols-4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .grid.cols-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .grid.cols-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .list {
-    margin: 8px 0 0;
-    padding: 0 0 0 18px;
-  }
-  
-  .section {
-    margin-top: 26px;
-  }
-  
-  .pill {
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-    padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid #2a3350;
-    background: #0f1730;
-    font-size: 12px;
-  }
-  
-  .footer {
-    margin: 32px 0 8px;
-    color: #b8c6ff;
-    font-size: 12px;
-  }
-  
-  .input, select, textarea {
-    width: 100%;
-    padding: 11px 12px;
-    border-radius: 10px;
-    border: 1px solid #2a3350;
-    background: #0d1220;
-    color: #eef2ff;
-  }
-  
-  .question {
-    margin: 8px 0 14px;
-  }
-  
-  .q-title {
-    font-weight: 700;
-    margin: 0 0 6px;
-  }
-  
-  .inline {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .meter {
-    height: 14px;
-    background: #0e1426;
-    border: 1px solid #243055;
-    border-radius: 999px;
-    overflow: hidden;
-  }
-  
-  .fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--bad), var(--warn), var(--ok));
-    transition: width 0.5s ease;
-  }
-  
-  .small {
-    font-size: 12px;
-    color: #9aa3b5;
-  }
-  
-  .logos {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .logo-tag {
-    border: 1px solid #223;
-    background: #0f1730;
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-    color: #b8c6ff;
-  }
-  
-  .chooser {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    margin-top: 14px;
-  }
-  
-  .chooser .card:hover {
-    transform: translateY(-2px);
-    transition: transform 0.15s ease;
-  }
-  
-  .aud-switch {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    margin: 8px 0 0;
-  }
-  
-  .aud-pill {
-    cursor: pointer;
-    border: 1px solid #2a3350;
-    background: #0f1730;
-    color: #b8c6ff;
-    border-radius: 999px;
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-  
-  .aud-pill.active {
-    border-color: #4d68ff;
-    color: #fff;
-    background: #1b2550;
-  }
-  
-  @media (max-width: 980px) {
-    .hero {
-      grid-template-columns: 1fr;
-    }
-    h1 {
-      font-size: 34px;
-    }
-    .chooser {
-      grid-template-columns: 1fr;
-    }
-    .grid.cols-4,
-    .grid.cols-3 {
-      grid-template-columns: 1fr;
-    }
-  }
-`;

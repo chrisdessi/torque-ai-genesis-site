@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -14,6 +14,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 /**
  * Torque AI – Strategy & Deployment Guide
@@ -39,10 +46,9 @@ const Glow: React.FC<{ className?: string }> = ({ className = "" }) => (
   />
 );
 
-// Path to downloadable PDF (make sure the file exists at this path)
-const pdfHref = "/downloads/torque-ai-guide.pdf";
-
 export default function TorqueAIStrategyGuidePage() {
+  const [isPdfDialogOpen, setIsPdfDialogOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* SITE HEADER */}
@@ -58,7 +64,7 @@ export default function TorqueAIStrategyGuidePage() {
             <a href="#cta" className="hover:text-white">Get Started</a>
           </nav>
           <a
-            href="https://www.torqueapp.ai"
+            href="https://calendar.app.google/ggDwHhM8VExNxGki8"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg bg-violet-600 px-3 py-1.5 text-sm font-semibold hover:bg-violet-500"
@@ -92,15 +98,27 @@ export default function TorqueAIStrategyGuidePage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button asChild size="lg" className="bg-violet-600 hover:bg-violet-500">
-                  <a href="https://www.torqueapp.ai" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendar.app.google/ggDwHhM8VExNxGki8" target="_blank" rel="noopener noreferrer">
                     Book Strategy Session <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Button asChild variant="secondary" className="bg-white text-black hover:bg-white/90">
-                  <a href={pdfHref} download>
-                    <Download className="mr-2 h-4 w-4" /> Download PDF
-                  </a>
-                </Button>
+                <Dialog open={isPdfDialogOpen} onOpenChange={setIsPdfDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button variant="secondary" size="lg" className="bg-white text-black hover:bg-white/90">
+                      <Download className="mr-2 h-4 w-4" /> Download PDF
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-3xl h-[600px]">
+                    <DialogHeader>
+                      <DialogTitle>AI Strategy & Deployment Guide</DialogTitle>
+                    </DialogHeader>
+                    <iframe 
+                      src="https://docsend.com/view/wfwimczj3re9dute" 
+                      allow="fullscreen" 
+                      className="w-full h-full rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
               </div>
               <p className="mt-4 text-sm text-white/50">By Chris Dessi, Founder of Torque AI</p>
             </motion.div>
@@ -424,15 +442,17 @@ export default function TorqueAIStrategyGuidePage() {
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg" className="bg-violet-600 hover:bg-violet-500">
-                <a href="https://www.torqueapp.ai" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendar.app.google/ggDwHhM8VExNxGki8" target="_blank" rel="noopener noreferrer">
                   Book Strategy Session <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild variant="secondary" className="bg-white text-black hover:bg-white/90">
-                <a href={pdfHref} download>
-                  <Download className="mr-2 h-4 w-4" /> Download PDF
-                </a>
-              </Button>
+              <Dialog open={isPdfDialogOpen} onOpenChange={setIsPdfDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button variant="secondary" size="lg" className="bg-white text-black hover:bg-white/90">
+                    <Download className="mr-2 h-4 w-4" /> Download PDF
+                  </Button>
+                </DialogTrigger>
+              </Dialog>
             </div>
             <p className="mt-6 text-sm text-white/50">
               © {new Date().getFullYear()} Torque AI. All rights reserved.
@@ -447,9 +467,9 @@ export default function TorqueAIStrategyGuidePage() {
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <p className="text-sm text-white/60">© {new Date().getFullYear()} Torque AI. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-              <a href={pdfHref} download className="hover:text-white">
+              <button onClick={() => setIsPdfDialogOpen(true)} className="hover:text-white">
                 Download the PDF
-              </a>
+              </button>
               <a href="https://www.torqueapp.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 Website
               </a>

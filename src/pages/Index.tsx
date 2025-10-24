@@ -290,9 +290,9 @@ const Index = () => {
             <Button 
               size="lg"
               className="bg-black hover:bg-black/90 text-white px-10 py-7"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+              asChild
             >
-              Quantify Your Execution Leak
+              <a href="/assessment">Quantify Your Execution Leak</a>
             </Button>
           </motion.div>
         </div>

@@ -12,7 +12,6 @@ import Dashboard from "./pages/Dashboard";
 import Websites from "./pages/products/Websites";
 import Contact from "./pages/Contact";
 import Quiz from "./pages/Quiz";
-import Assessment from "./pages/Assessment";
 import EnterpriseAccelerator from "./pages/EnterpriseAccelerator";
 import Momento from "./pages/Momento";
 import BrandIdentity from "./pages/BrandIdentity";
@@ -52,7 +51,6 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/centered-heading-with-contact-form" element={<Navigate to="/contact" replace />} />
           <Route path="/quiz" element={<Quiz />} />
-          <Route path="/assessment" element={<Assessment />} />
           <Route path="/enterprise-accelerator" element={<EnterpriseAccelerator />} />
           <Route path="/momento" element={<Momento />} />
           <Route path="/memento-hub" element={<MementoHub />} />

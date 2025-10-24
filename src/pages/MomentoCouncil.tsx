@@ -35,14 +35,14 @@ const MomentoCouncil = () => {
             <div className="flex gap-3">
               <Button 
                 className="bg-white hover:bg-white/90 text-black font-semibold"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
               >
                 Reserve Seat
               </Button>
               <Button 
                 variant="outline"
                 className="bg-[#161616] hover:bg-[#161616]/90 text-white border-[#2a2a2a]"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
               >
                 Reserve Duo Seats
               </Button>
@@ -69,7 +69,7 @@ const MomentoCouncil = () => {
               <Button 
                 size="lg"
                 className="bg-white hover:bg-white/90 text-black font-semibold px-8 py-6"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
               >
                 Reserve Seat
               </Button>
@@ -77,7 +77,7 @@ const MomentoCouncil = () => {
                 size="lg"
                 variant="outline"
                 className="bg-[#161616] hover:bg-[#161616]/90 text-white border-[#2a2a2a] px-8 py-6"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
               >
                 Invite a Peer (Duo Bundle)
               </Button>
@@ -197,14 +197,14 @@ const MomentoCouncil = () => {
                 <div className="flex gap-3 flex-wrap">
                   <Button 
                     className="bg-white hover:bg-white/90 text-black font-semibold"
-                    onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                    onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
                   >
                     Reserve Seat
                   </Button>
                   <Button 
                     variant="outline"
                     className="bg-[#161616] hover:bg-[#161616]/90 text-white border-[#2a2a2a]"
-                    onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                    onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
                   >
                     Reserve Duo Seats
                   </Button>
@@ -284,7 +284,7 @@ const MomentoCouncil = () => {
               <Button 
                 size="lg"
                 className="bg-white hover:bg-white/90 text-black font-semibold px-10 py-7 text-lg"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
               >
                 Reserve Your Seat
               </Button>

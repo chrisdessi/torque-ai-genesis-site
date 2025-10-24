@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -14,13 +14,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 
 /**
  * Torque AI – Strategy & Deployment Guide
@@ -50,8 +43,6 @@ const Glow: React.FC<{ className?: string }> = ({ className = "" }) => (
 const pdfHref = "/downloads/torque-ai-guide.pdf";
 
 export default function TorqueAIStrategyGuidePage() {
-  const [isPdfDialogOpen, setIsPdfDialogOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-black text-white">
       {/* SITE HEADER */}
@@ -105,25 +96,11 @@ export default function TorqueAIStrategyGuidePage() {
                     Book Strategy Session <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Dialog open={isPdfDialogOpen} onOpenChange={setIsPdfDialogOpen}>
-                  <DialogTrigger asChild>
-                    <Button variant="secondary" className="bg-white text-black hover:bg-white/90" size="lg">
-                      <Download className="mr-2 h-4 w-4" /> Download PDF
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl bg-black text-white border-white/10">
-                    <DialogHeader>
-                      <DialogTitle>AI Strategy & Deployment Guide</DialogTitle>
-                    </DialogHeader>
-                    <div className="w-full aspect-[4/3]">
-                      <iframe 
-                        src="https://docsend.com/view/wfwimczj3re9dute" 
-                        allow="fullscreen" 
-                        className="w-full h-full rounded-lg"
-                      />
-                    </div>
-                  </DialogContent>
-                </Dialog>
+                <Button asChild variant="secondary" className="bg-white text-black hover:bg-white/90">
+                  <a href={pdfHref} download>
+                    <Download className="mr-2 h-4 w-4" /> Download PDF
+                  </a>
+                </Button>
               </div>
               <p className="mt-4 text-sm text-white/50">By Chris Dessi, Founder of Torque AI</p>
             </motion.div>
@@ -451,25 +428,11 @@ export default function TorqueAIStrategyGuidePage() {
                   Book Strategy Session <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Dialog open={isPdfDialogOpen} onOpenChange={setIsPdfDialogOpen}>
-                <DialogTrigger asChild>
-                  <Button variant="secondary" className="bg-white text-black hover:bg-white/90" size="lg">
-                    <Download className="mr-2 h-4 w-4" /> Download PDF
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl bg-black text-white border-white/10">
-                  <DialogHeader>
-                    <DialogTitle>AI Strategy & Deployment Guide</DialogTitle>
-                  </DialogHeader>
-                  <div className="w-full aspect-[4/3]">
-                    <iframe 
-                      src="https://docsend.com/view/wfwimczj3re9dute" 
-                      allow="fullscreen" 
-                      className="w-full h-full rounded-lg"
-                    />
-                  </div>
-                </DialogContent>
-              </Dialog>
+              <Button asChild variant="secondary" className="bg-white text-black hover:bg-white/90">
+                <a href={pdfHref} download>
+                  <Download className="mr-2 h-4 w-4" /> Download PDF
+                </a>
+              </Button>
             </div>
             <p className="mt-6 text-sm text-white/50">
               © {new Date().getFullYear()} Torque AI. All rights reserved.
@@ -484,9 +447,9 @@ export default function TorqueAIStrategyGuidePage() {
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <p className="text-sm text-white/60">© {new Date().getFullYear()} Torque AI. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-              <button onClick={() => setIsPdfDialogOpen(true)} className="hover:text-white">
+              <a href={pdfHref} download className="hover:text-white">
                 Download the PDF
-              </button>
+              </a>
               <a href="https://www.torqueapp.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                 Website
               </a>

@@ -100,6 +100,7 @@ const Assessment = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          subject: "Execution Leak",
           executionLeakScore: bpScore,
           riskTier: calculatedTier,
           whatThisMeans: whatThisMeans,

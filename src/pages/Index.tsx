@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
@@ -49,120 +50,8 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white min-h-screen flex items-center overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-slate-900/50 to-blue-950/50 gradient-animate"></div>
-        </div>
-        {/* Floating gradient orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_6s_ease-in-out_infinite]"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-900 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_8s_ease-in-out_infinite]"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-blue-950 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-[float_7s_ease-in-out_infinite]"></div>
-        <div className="section-padding w-full py-32 relative z-10">
-          <motion.div 
-            className="max-w-5xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="block text-cyan-400 font-black text-6xl md:text-7xl lg:text-8xl mb-4">
-                AI Transformation Is Breaking Leaders
-              </span>
-              <span className="block text-white font-bold text-4xl md:text-5xl lg:text-6xl">
-                —Unless They Evolve
-              </span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Boards are replacing executives who can't deliver AI strategy and culture at scale.
-              <br />
-              <span className="text-cyan-400 font-semibold">The future belongs to those who lead with alignment</span>—of systems, teams, and consciousness.
-            </motion.p>
-
-            <motion.div
-              className="bg-black/40 backdrop-blur-sm border-2 border-cyan-500/40 rounded-2xl p-8 max-w-4xl mx-auto mb-8"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
-                <strong className="text-white">Torque AI</strong> builds the infrastructure for intelligent transformation.
-                <br />
-                <strong className="text-white">Memento</strong> builds alignment through radical transparency and accountability.
-                <br />
-                <strong className="text-white">The Quantum Shift</strong> builds awareness — helping leaders evolve beyond reaction into resonance.
-              </p>
-              
-              <div className="border-t border-white/20 pt-6">
-                <p className="text-3xl md:text-4xl text-white font-bold mb-2">
-                  <span className="text-cyan-400 text-5xl md:text-6xl font-black">
-                    <AnimatedCounter end={31} suffix="%" />
-                  </span>
-                  <span className="block mt-2">of CEOs lose their roles for failed transformation efforts.</span>
-                </p>
-                <p className="text-xl text-cyan-400 font-semibold mt-4">
-                  It's not a technology problem — it's a leadership evolution problem.
-                </p>
-              </div>
-            </motion.div>
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-6 justify-center mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Button 
-                  size="lg"
-                  className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-10 py-7 text-lg shadow-2xl shadow-cyan-500/30"
-                  onClick={() => setIsContactFormOpen(true)}
-                >
-                  🔹 Meet With Us — Create your AI Leadership Blueprint
-                </Button>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="bg-white/10 hover:bg-white/20 text-white font-semibold px-10 py-7 text-lg border-2 border-white/30"
-                  asChild
-                >
-                  <a href="/torque-ai-guide">🔹 Download the AI Strategy Guide</a>
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            <motion.p 
-              className="text-lg md:text-xl text-white/70 italic max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
-            >
-              The next era of leadership isn't just artificial intelligence. It's awakened intelligence.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section with animated waves */}
+      <Hero />
       
       {/* As Seen On Section */}
       <section className="relative py-24 overflow-hidden border-b border-border">

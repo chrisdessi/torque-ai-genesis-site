@@ -247,14 +247,26 @@ const About = () => {
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
               Partner with Torque AI to develop and implement a comprehensive AI strategy
             </p>
-            <Button 
-              size="lg" 
-              className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg"
-              onClick={() => setIsContactFormOpen(true)}
-            >
-              Get Started
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg"
+                onClick={() => setIsContactFormOpen(true)}
+              >
+                Schedule Consultation
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-12 py-6 text-lg"
+                asChild
+              >
+                <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
+                  Start with 2-Week AI Audit — $297
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>

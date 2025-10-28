@@ -311,13 +311,23 @@ const Index = () => {
               <p className="text-lg text-gray-600">of margins silently taxed by meeting and tool overload</p>
             </motion.div>
           </div>
-          <motion.div {...fadeInUp} className="text-center mt-12">
+          <motion.div {...fadeInUp} className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
               className="bg-black hover:bg-black/90 text-white px-10 py-7"
               asChild
             >
               <a href="/assessment">Quantify Your Execution Leak</a>
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-black text-black hover:bg-black hover:text-white px-10 py-7"
+              asChild
+            >
+              <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
+                Start with 2-Week AI Audit — $297
+              </a>
             </Button>
           </motion.div>
         </div>

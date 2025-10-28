@@ -196,6 +196,31 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 text-center bg-gradient-to-br from-cyan-50 to-blue-50 p-12 rounded-2xl border-2 border-cyan-200"
+          >
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              Not Sure Where to Start?
+            </h3>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Get a comprehensive 2-week AI audit of your business and discover high-impact opportunities
+            </p>
+            <Button 
+              size="lg"
+              className="bg-black hover:bg-gray-800 text-white font-semibold px-12 py-6 text-lg"
+              asChild
+            >
+              <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
+                Get Started with 2-Week AI Audit — Just $297
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+            </Button>
+          </motion.div>
         </div>
       </section>
 

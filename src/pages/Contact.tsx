@@ -133,12 +133,24 @@ const Contact = () => {
             <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
               Limited availability for enterprise clients serious about AI transformation
             </p>
-            <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
-                Schedule Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
+                  Schedule Consultation
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </a>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="bg-white/10 hover:bg-white/20 text-white font-semibold px-12 py-6 text-lg border-2 border-white/30"
+                asChild
+              >
+                <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
+                  2-Week AI Audit — $297
+                </a>
               </Button>
-            </a>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -164,10 +164,10 @@ const Index = () => {
       <section className="bg-white py-32">
         <div className="section-padding max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
               The Hidden Cost of Misalignment
             </h2>
-            <p className="text-2xl text-gray-600">
+            <p className="text-2xl text-muted-foreground">
               Every day without alignment costs you real revenue
             </p>
           </motion.div>
@@ -179,31 +179,31 @@ const Index = () => {
                 <AnimatedCounter end={10} decimals={0} />
                 <span>%</span>
               </div>
-              <p className="text-lg text-gray-600">of annual revenue wiped out by strategy failures</p>
+              <p className="text-lg text-muted-foreground">of annual revenue wiped out by strategy failures</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100">
               <div className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={80} suffix="%" />
               </div>
-              <p className="text-lg text-gray-600">of employees lack time or energy to do their best work</p>
+              <p className="text-lg text-muted-foreground">of employees lack time or energy to do their best work</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100">
               <div className="text-6xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={40} suffix="%" />
               </div>
-              <p className="text-lg text-gray-600">of productive time stolen by context switching each week</p>
+              <p className="text-lg text-muted-foreground">of productive time stolen by context switching each week</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center p-8 bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl border border-pink-100">
               <div className="text-6xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={100} suffix="%" />
               </div>
-              <p className="text-lg text-gray-600">of margins silently taxed by meeting and tool overload</p>
+              <p className="text-lg text-muted-foreground">of margins silently taxed by meeting and tool overload</p>
             </motion.div>
           </div>
           <motion.div {...fadeInUp} className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="bg-black hover:bg-black/90 text-white px-10 py-7"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-7"
               asChild
             >
               <a href="/assessment">Quantify Your Execution Leak</a>
@@ -211,7 +211,7 @@ const Index = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-2 border-black text-black hover:bg-black hover:text-white px-10 py-7"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-10 py-7"
               asChild
             >
               <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
@@ -276,10 +276,10 @@ const Index = () => {
       <section className="bg-white py-32">
         <div className="section-padding max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
               Your Competition Isn't Waiting
             </h2>
-            <p className="text-2xl text-gray-600">
+            <p className="text-2xl text-muted-foreground">
               Leading enterprises are already leveraging AI for measurable growth
             </p>
           </motion.div>
@@ -288,23 +288,23 @@ const Index = () => {
               <div className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={93} suffix="%" />
               </div>
-              <p className="text-lg text-gray-600">of CMOs already report positive ROI from Gen AI</p>
+              <p className="text-lg text-muted-foreground">of CMOs already report positive ROI from Gen AI</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl border border-cyan-100">
               <div className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent mb-4">Revenue Lift</div>
-              <p className="text-lg text-gray-600">Business units using Gen AI see measurable revenue lift (McKinsey 2025)</p>
+              <p className="text-lg text-muted-foreground">Business units using Gen AI see measurable revenue lift (McKinsey 2025)</p>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gradient-to-br from-indigo-50 to-pink-50 rounded-2xl border border-indigo-100">
               <div className="text-6xl font-bold bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent mb-4">
                 <AnimatedCounter end={40} suffix="%" />
               </div>
-              <p className="text-lg text-gray-600">of enterprise apps will embed AI agents by 2026 (Gartner)</p>
+              <p className="text-lg text-muted-foreground">of enterprise apps will embed AI agents by 2026 (Gartner)</p>
             </motion.div>
           </div>
           <motion.div {...fadeInUp} className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
-              className="bg-black hover:bg-black/90 text-white px-10 py-7"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-7"
               onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
             >
               Catch Up Now
@@ -312,7 +312,7 @@ const Index = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-2 border-black text-black hover:bg-black hover:text-white px-10 py-7"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-10 py-7"
               asChild
             >
               <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
@@ -329,18 +329,18 @@ const Index = () => {
         <div className="section-padding max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             <motion.div {...fadeInUp}>
-              <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+              <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
                 Our Approach: Comprehensive AI Strategy, AI Business and AI Software Solutions
               </h2>
-              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
                 We partner with enterprise businesses who have no AI strategy to transform their marketing, sales, and communications operations through strategic AI integration and proven methodologies.
               </p>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 We analyze your infrastructure, data, and industry trends to identify opportunities for transformative AI solutions that meet your unique business needs and drive measurable results.
               </p>
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-black mb-4">Areas of Expertise</h3>
-                <ul className="space-y-3 text-lg text-gray-600">
+                <h3 className="text-2xl font-bold text-foreground mb-4">Areas of Expertise</h3>
+                <ul className="space-y-3 text-lg text-muted-foreground">
                   <li className="flex items-start">
                     <span className="text-[#E5C07B] mr-3">•</span>
                     Business Analysis & Infrastructure Assessment

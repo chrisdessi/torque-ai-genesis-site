@@ -138,7 +138,8 @@ const Services = () => {
               Comprehensive AI Solutions
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              End-to-end AI services that turn emerging technology into business transformation
+              End-to-end AI services that turn emerging technology into business transformation.
+              <a href="/about" className="text-primary hover:underline ml-2">Meet our team →</a>
             </p>
           </motion.div>
 

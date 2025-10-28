@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import processAnalyze from "@/assets/process-analyze.jpg";
 import processStrategize from "@/assets/process-strategize.jpg";
 import processImplement from "@/assets/process-implement.jpg";
@@ -78,9 +79,11 @@ const Process = () => {
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             Join hundreds of businesses that have already revolutionized their growth with Torque AI.
           </p>
-          <button className="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors">
-            START YOUR JOURNEY TODAY
-          </button>
+          <Link to="/contact">
+            <button className="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+              START YOUR JOURNEY TODAY
+            </button>
+          </Link>
         </div>
       </div>
     </section>

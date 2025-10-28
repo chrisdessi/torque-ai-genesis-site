@@ -3,7 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { Calendar, User, ArrowLeft } from "lucide-react";
+import { Calendar, User, ArrowLeft, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { fetchBlogFeed, BlogPost as BlogPostType } from "@/utils/rssFeed";
 
 // Blog post data - matches Blog.tsx
 const blogPosts = [
@@ -510,7 +512,32 @@ const blogPosts = [
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = blogPosts.find(p => p.slug === slug);
+  const [post, setPost] = useState<BlogPostType | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPost = async () => {
+      setIsLoading(true);
+      const posts = await fetchBlogFeed();
+      const foundPost = posts.find(p => p.slug === slug);
+      setPost(foundPost || null);
+      setIsLoading(false);
+    };
+    
+    loadPost();
+  }, [slug]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="max-w-4xl mx-auto px-6 py-32 text-center">
+          <p className="text-xl text-muted-foreground">Loading article...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!post) {
     return <Navigate to="/blog" replace />;

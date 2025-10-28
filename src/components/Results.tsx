@@ -1,5 +1,7 @@
 import { TrendingUp, Users, DollarSign, Clock } from "lucide-react";
 import AnimatedCounter from "./AnimatedCounter";
+import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const Results = () => {
   const metrics = [
@@ -99,6 +101,21 @@ const Results = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="text-center mt-16">
+          <p className="text-lg text-muted-foreground mb-6">
+            Learn how we achieve these results through our proven methodology
+          </p>
+          <Button 
+            variant="outline"
+            className="border-2 font-semibold"
+            asChild
+          >
+            <Link to="/about">
+              Discover Our Approach
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

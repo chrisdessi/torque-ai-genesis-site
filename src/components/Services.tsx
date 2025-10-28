@@ -1,5 +1,6 @@
 
 import { Brain, Target, TrendingUp, Zap, BarChart3, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -45,6 +46,7 @@ const Services = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive AI marketing solutions designed to transform your business 
             and accelerate growth through intelligent automation and data-driven strategies.
+            <Link to="/services" className="text-primary hover:underline ml-2">View detailed services →</Link>
           </p>
         </div>
 

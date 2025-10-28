@@ -3,12 +3,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { motion } from "framer-motion";
-import { Brain, Linkedin, Youtube } from "lucide-react";
+import { Brain, Linkedin, Youtube, ArrowRight } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
 import ZapierContactForm from "@/components/ZapierContactForm";
+import { Link } from "react-router-dom";
+import Services from "@/components/Services";
+import Process from "@/components/Process";
+import Results from "@/components/Results";
 
 const Index = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -481,7 +485,8 @@ const Index = () => {
             Our Approach
           </motion.h2>
           <motion.p {...fadeInUp} className="text-2xl text-gray-600 text-center mb-20">
-            A proven methodology to transform your operations and empower your team
+            A proven methodology to transform your operations and empower your team.
+            <Link to="/services" className="text-primary hover:underline ml-2">Explore our services →</Link>
           </motion.p>
           <div className="grid md:grid-cols-4 gap-8">
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center">
@@ -505,6 +510,46 @@ const Index = () => {
               <p className="text-lg text-gray-600">Seamless transition to your empowered team with ongoing support as needed.</p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Services Component */}
+      <Services />
+      
+      {/* Process Component */}
+      <Process />
+      
+      {/* Results Component */}
+      <Results />
+      
+      {/* Blog Preview Section */}
+      <section className="py-20 bg-muted">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Latest AI Insights from Chris Dessi
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Stay ahead with the latest trends, strategies, and breakthroughs in AI transformation
+            </p>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 font-semibold"
+              asChild
+            >
+              <Link to="/blog">
+                Read All Articles
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 

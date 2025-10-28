@@ -245,7 +245,8 @@ const About = () => {
               Transform Your Leadership with AI
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Join our Executive 90-Day Cohort for comprehensive AI education and The Quantum Shift methodology
+              Join our Executive 90-Day Cohort for comprehensive AI education and The Quantum Shift methodology.
+              <a href="/blog" className="text-primary hover:underline ml-2">Explore our AI insights →</a>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

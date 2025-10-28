@@ -79,60 +79,57 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-[float_12s_ease-in-out_infinite]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto section-padding py-32 text-center text-white">
+      <div className="relative z-10 max-w-7xl mx-auto section-padding py-32 text-white">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-6 max-w-3xl"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="mb-6"
-          >
-            <h2 className="text-2xl md:text-3xl font-light text-cyan-300 mb-2 tracking-wide">
-              Quantum Shift - AI by Torque
-            </h2>
-          </motion.div>
-
           <motion.h1 
-            className="text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-[1.1] mb-8 tracking-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
           >
             Artificial Intelligence
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed font-light"
+            className="text-lg md:text-xl text-white/90 leading-relaxed font-light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Learn how we help you capture the power of AI
+            Learn how we're helping capture the opportunity of generative AI
           </motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex items-center gap-2"
           >
             <Button 
-              size="lg" 
-              className="group bg-cyan-500 hover:bg-cyan-600 text-white border-0 font-semibold px-10 py-7 text-lg"
+              variant="link"
+              className="group text-white hover:text-cyan-300 p-0 h-auto font-normal text-base"
               onClick={() => setIsContactFormOpen(true)}
             >
-              Learn More
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Learn more
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 pt-8"
+          >
             <Button 
               variant="outline"
               size="lg" 
-              className="group bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:text-white font-semibold px-10 py-7 text-lg"
+              className="group bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:text-white font-semibold px-8 py-6 text-base"
               asChild
             >
               <a href="/torque-ai-guide">

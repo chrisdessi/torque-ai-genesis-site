@@ -76,6 +76,23 @@ const Assessment = () => {
     setTier(calculatedTier);
     setShowResults(true);
 
+    // Get the personalized messages before sending
+    const whatThisMeans = calculatedTier === "Critical" 
+      ? "You're likely losing $500K–$5M+ annually through execution drift, rework, and misaligned priorities."
+      : calculatedTier === "High"
+      ? "Expect 5–10% of annual revenue to be silently wasted on internal friction, duplication, and context-switching."
+      : calculatedTier === "Moderate"
+      ? "You're stable but vulnerable. Small inefficiencies compound quickly without active governance."
+      : "You're in good shape, but optimization opportunities remain to future-proof your operations.";
+
+    const recommendedNextStep = calculatedTier === "Critical"
+      ? "Book a 90-minute AI Strategy Workshop to diagnose your highest-impact gaps and build a 90-day roadmap."
+      : calculatedTier === "High"
+      ? "Schedule a 90-minute Executive AI Briefing to align leadership and identify quick wins."
+      : calculatedTier === "Moderate"
+      ? "Book a 60-minute Strategic Consult to identify optimization opportunities and prevent future drift."
+      : "Book a 30-minute Alignment Check-In to review your current state and identify any hidden risks.";
+
     try {
       await fetch(WEBHOOK_URL, {
         method: "POST",
@@ -83,8 +100,10 @@ const Assessment = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          score: bpScore,
-          tier: calculatedTier,
+          executionLeakScore: bpScore,
+          riskTier: calculatedTier,
+          whatThisMeans: whatThisMeans,
+          recommendedNextStep: recommendedNextStep,
           timestamp: new Date().toISOString(),
         }),
       });

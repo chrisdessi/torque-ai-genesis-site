@@ -93,7 +93,7 @@ const Hero = () => {
             className="mb-6"
           >
             <h2 className="text-2xl md:text-3xl font-light text-cyan-300 mb-2 tracking-wide">
-              Quantum Shift - AI by Torque
+              Torque AI - The Quantum Shift
             </h2>
           </motion.div>
 

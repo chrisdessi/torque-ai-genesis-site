@@ -89,11 +89,28 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-4 leading-relaxed font-light">
-            Build, Scale & Automate with Confidence — Learn the Playbook Inside Torque Academy
+            Build, Scale & Automate with Confidence — Learn the Playbook Inside{" "}
+            <a 
+              href="https://www.torqueacademy.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline hover:text-accent transition-colors"
+            >
+              Torque Academy
+            </a>
           </p>
 
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-            Torque AI helps forward-thinking teams integrate AI across Sales, Marketing & Communications — and trains them to master it through Torque Academy, your all-in-one AI education and execution hub.
+            Torque AI helps forward-thinking teams integrate AI across Sales, Marketing & Communications — and trains them to master it through{" "}
+            <a 
+              href="https://www.torqueacademy.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline hover:text-accent transition-colors"
+            >
+              Torque Academy
+            </a>
+            , your all-in-one AI education and execution hub.
           </p>
 
           {/* Feature highlights */}

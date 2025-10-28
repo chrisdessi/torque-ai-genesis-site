@@ -446,6 +446,11 @@ export default function TorqueAIStrategyGuidePage() {
                   Book Strategy Session <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/30">
+                <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
+                  Join 90-Day Executive Cohort
+                </a>
+              </Button>
               <Dialog open={isPdfDialogOpen} onOpenChange={setIsPdfDialogOpen}>
                 <DialogTrigger asChild>
                   <Button variant="secondary" size="lg" className="bg-white text-black hover:bg-white/90">

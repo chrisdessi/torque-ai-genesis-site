@@ -242,10 +242,10 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Let's Transform Your Business
+              Transform Your Leadership with AI
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Partner with Torque AI to develop and implement a comprehensive AI strategy
+              Join our Executive 90-Day Cohort for comprehensive AI education and The Quantum Shift methodology
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -262,8 +262,8 @@ const About = () => {
                 className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-12 py-6 text-lg"
                 asChild
               >
-                <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
-                  Start with 2-Week AI Audit — $297
+                <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
+                  Join 90-Day Executive Cohort
                 </a>
               </Button>
             </div>

@@ -147,7 +147,7 @@ const Assessment = () => {
                 <h3 className="text-2xl font-bold mb-4">Recommended Next Step:</h3>
                 <p className="text-lg mb-6">{getNextStep()}</p>
               </div>
-              <div className="text-center">
+              <div className="text-center space-y-4">
                 <Button
                   size="lg"
                   className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-10 py-7 text-lg"
@@ -155,6 +155,21 @@ const Assessment = () => {
                 >
                   Book Your Strategy Session
                 </Button>
+                <div className="pt-4">
+                  <p className="text-white/80 mb-4 text-lg">
+                    Or transform your leadership with our comprehensive program:
+                  </p>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-white/10 hover:bg-white/20 text-white font-semibold px-10 py-7 text-lg border-2 border-white/30"
+                    asChild
+                  >
+                    <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
+                      Join 90-Day Executive Cohort
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>

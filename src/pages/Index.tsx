@@ -412,13 +412,23 @@ const Index = () => {
               <p className="text-lg text-gray-600">of enterprise apps will embed AI agents by 2026 (Gartner)</p>
             </motion.div>
           </div>
-          <motion.div {...fadeInUp} className="text-center mt-12">
+          <motion.div {...fadeInUp} className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
               className="bg-black hover:bg-black/90 text-white px-10 py-7"
               onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
             >
               Catch Up Now
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-black text-black hover:bg-black hover:text-white px-10 py-7"
+              asChild
+            >
+              <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
+                Join 90-Day Executive Cohort
+              </a>
             </Button>
           </motion.div>
         </div>
@@ -553,13 +563,23 @@ const Index = () => {
               </div>
             </motion.div>
           </div>
-          <motion.div {...fadeInUp} className="text-center mt-12">
+          <motion.div {...fadeInUp} className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg"
               className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
               onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
             >
               Book Your Audit
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-7"
+              asChild
+            >
+              <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
+                Executive 90-Day Quantum Shift
+              </a>
             </Button>
           </motion.div>
         </div>

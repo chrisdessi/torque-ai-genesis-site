@@ -3,6 +3,7 @@ import { ArrowRight, Mail, MessageSquare, Clock, Linkedin, Youtube } from "lucid
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ZapierContactForm from "@/components/ZapierContactForm";
 
 const Contact = () => {
   const contactMethods = [
@@ -59,8 +60,18 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Methods */}
+      {/* Contact Form */}
       <section className="py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <ZapierContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and our team will respond within 24 hours"
+          />
+        </div>
+      </section>
+
+      {/* Contact Methods */}
+      <section className="py-24 bg-muted">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -69,7 +80,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Other Ways to Connect</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Choose the best way to connect with our team
             </p>
@@ -83,7 +94,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-muted p-10 rounded-xl text-center hover:shadow-2xl transition-all hover:-translate-y-2"
+                className="bg-white p-10 rounded-xl text-center hover:shadow-2xl transition-all hover:-translate-y-2"
               >
                 <method.icon className="w-16 h-16 mx-auto mb-6 text-primary" />
                 <h3 className="text-2xl font-bold mb-4">{method.title}</h3>

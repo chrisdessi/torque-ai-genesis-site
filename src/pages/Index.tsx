@@ -7,9 +7,11 @@ import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
+import ZapierContactForm from "@/components/ZapierContactForm";
 
 const Index = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -129,7 +131,7 @@ const Index = () => {
                 <Button 
                   size="lg"
                   className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-10 py-7 text-lg shadow-2xl shadow-cyan-500/30"
-                  onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+                  onClick={() => setIsContactFormOpen(true)}
                 >
                   🔹 Meet With Us — Create your AI Leadership Blueprint
                 </Button>
@@ -607,7 +609,7 @@ const Index = () => {
             <Button 
               size="lg"
               className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-12 py-8 text-xl"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
+              onClick={() => setIsContactFormOpen(true)}
             >
               Get in Touch
             </Button>
@@ -616,6 +618,17 @@ const Index = () => {
       </section>
 
       <Footer />
+      
+      {/* Contact Form Dialog */}
+      <Dialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen}>
+        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          <DialogTitle className="sr-only">Contact Form</DialogTitle>
+          <ZapierContactForm 
+            title="Create Your AI Leadership Blueprint"
+            description="Fill out the form and our team will reach out within 24 hours"
+          />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -3,8 +3,13 @@ import { ArrowRight, CheckCircle2, Target, Brain, Database, Rocket, Cog, Trendin
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ZapierContactForm from "@/components/ZapierContactForm";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const Services = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  
   const coreServices = [
     {
       icon: Target,
@@ -267,17 +272,30 @@ const Services = () => {
             <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
               Partner with Torque AI to transform your business with strategic AI implementation
             </p>
-            <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
-                Schedule Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+            <Button 
+              size="lg" 
+              className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
+              onClick={() => setIsContactFormOpen(true)}
+            >
+              Schedule Consultation
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
           </motion.div>
         </div>
       </section>
 
       <Footer />
+      
+      {/* Contact Form Dialog */}
+      <Dialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen}>
+        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          <DialogTitle className="sr-only">Contact Form</DialogTitle>
+          <ZapierContactForm 
+            title="Schedule Your Consultation"
+            description="Fill out the form and our team will reach out within 24 hours"
+          />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

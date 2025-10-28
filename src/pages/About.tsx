@@ -4,8 +4,13 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import chrisProfile from "@/assets/chris-bio.png";
+import ZapierContactForm from "@/components/ZapierContactForm";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const About = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  
   const credentials = [
     { icon: TrendingUp, text: "25+ years scaling organizations from startup to acquisition" },
     { icon: Award, text: "$32M revenue using Generative AI" },
@@ -242,17 +247,30 @@ const About = () => {
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
               Partner with Torque AI to develop and implement a comprehensive AI strategy
             </p>
-            <a href="mailto:info@torqueapp.ai">
-              <Button size="lg" className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg">
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+            <Button 
+              size="lg" 
+              className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg"
+              onClick={() => setIsContactFormOpen(true)}
+            >
+              Get Started
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
           </motion.div>
         </div>
       </section>
 
       <Footer />
+      
+      {/* Contact Form Dialog */}
+      <Dialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen}>
+        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          <DialogTitle className="sr-only">Contact Form</DialogTitle>
+          <ZapierContactForm 
+            title="Let's Get Started"
+            description="Fill out the form and our team will reach out within 24 hours"
+          />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

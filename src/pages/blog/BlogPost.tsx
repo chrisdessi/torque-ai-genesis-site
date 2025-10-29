@@ -623,18 +623,20 @@ const BlogPost = () => {
 
       {/* Article Content */}
       <article className="py-20">
-        <div className="section-padding max-w-3xl mx-auto">
+        <div className="section-padding max-w-5xl mx-auto">
           <motion.div
             {...fadeInUp}
-            className="prose prose-lg max-w-none
+            className="prose prose-xl max-w-none
               prose-headings:text-gray-900 prose-headings:font-bold
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-              prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
-              prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
-              prose-li:text-gray-700 prose-li:mb-2
-              prose-strong:text-gray-900 prose-strong:font-semibold"
+              prose-h2:text-4xl prose-h2:mt-16 prose-h2:mb-8
+              prose-h3:text-3xl prose-h3:mt-12 prose-h3:mb-6
+              prose-h4:text-2xl prose-h4:mt-8 prose-h4:mb-4
+              prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-8 prose-p:text-lg
+              prose-ul:my-8 prose-ul:list-disc prose-ul:pl-8
+              prose-ol:my-8 prose-ol:list-decimal prose-ol:pl-8
+              prose-li:text-gray-700 prose-li:mb-3 prose-li:text-lg
+              prose-strong:text-gray-900 prose-strong:font-semibold
+              prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

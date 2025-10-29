@@ -37,6 +37,53 @@ export const fetchBlogFeed = async (): Promise<BlogPost[]> => {
       const textContent = tempDiv.textContent || '';
       const excerpt = textContent.substring(0, 200).trim() + '...';
       
+      // Add internal blog links to first paragraph
+      const firstParagraph = tempDiv.querySelector('p');
+      if (firstParagraph && index < 3) {
+        // Get other posts to link to (avoid linking to self)
+        const otherPosts = Array.from(items)
+          .map((item, idx) => {
+            const postTitle = item.querySelector('title')?.textContent || '';
+            const postSlug = postTitle
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-|-$/g, '');
+            return { title: postTitle, slug: postSlug, index: idx };
+          })
+          .filter(p => p.index !== index)
+          .slice(0, 3);
+        
+        // Add links naturally within the first paragraph
+        if (otherPosts.length >= 3 && firstParagraph.textContent) {
+          const originalText = firstParagraph.innerHTML;
+          const linkTexts = [
+            'AI transformation strategies',
+            'latest AI insights',
+            'enterprise AI implementation'
+          ];
+          
+          let modifiedText = originalText;
+          otherPosts.slice(0, 3).forEach((post, linkIdx) => {
+            if (linkIdx < linkTexts.length) {
+              const linkHtml = `<a href="/blog/${post.slug}" class="text-primary hover:underline font-medium">${linkTexts[linkIdx]}</a>`;
+              // Insert link naturally in the text if possible
+              if (linkIdx === 0 && !modifiedText.includes('<a')) {
+                modifiedText = modifiedText.replace(/\b(AI|artificial intelligence)\b/i, linkHtml);
+              } else if (linkIdx === 1 && modifiedText.split('<a').length < 2) {
+                modifiedText = modifiedText.replace(/\b(insights?|strategies?|approaches?)\b/i, linkHtml);
+              } else if (linkIdx === 2 && modifiedText.split('<a').length < 3) {
+                modifiedText = modifiedText.replace(/\b(implementation|transformation|adoption)\b/i, linkHtml);
+              }
+            }
+          });
+          
+          firstParagraph.innerHTML = modifiedText;
+        }
+      }
+      
+      // Get the modified content with internal links
+      const modifiedContent = tempDiv.innerHTML;
+      
       // Create slug from title
       const slug = title
         .toLowerCase()
@@ -47,7 +94,7 @@ export const fetchBlogFeed = async (): Promise<BlogPost[]> => {
         id: `rss-${index + 1}`,
         title,
         excerpt,
-        content,
+        content: modifiedContent,
         author: 'Christopher Dessi',
         date: new Date(pubDate).toLocaleDateString('en-US', {
           year: 'numeric',

@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Target, Brain, Database, Rocket, Cog, Trendin
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import ZapierContactForm from "@/components/ZapierContactForm";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -95,6 +96,12 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="AI Consulting & Development Services"
+        description="Comprehensive AI solutions for enterprise transformation. AI strategy consulting, custom model development, data engineering, automation, and 90-day implementation programs. Proven methodology for measurable ROI."
+        keywords="AI consulting services, AI development, AI model development, data engineering, AI automation, AI strategy, enterprise AI solutions, custom AI development, AI implementation"
+        url="/services"
+      />
       <Header />
       
       {/* Hero Section */}

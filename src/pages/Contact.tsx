@@ -3,6 +3,7 @@ import { ArrowRight, Mail, MessageSquare, Clock, Linkedin, Youtube } from "lucid
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import ZapierContactForm from "@/components/ZapierContactForm";
 
 const Contact = () => {
@@ -39,6 +40,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Contact Us - AI Strategy Consultation"
+        description="Get in touch with Torque AI for enterprise AI consulting. Schedule a strategic planning session, book an executive briefing, or start your AI transformation journey. We respond within 24 hours."
+        keywords="contact AI consultant, AI consultation, schedule AI strategy session, enterprise AI consulting, AI transformation consultation, book AI expert"
+        url="/contact"
+      />
       <Header />
       
       {/* Hero Section */}

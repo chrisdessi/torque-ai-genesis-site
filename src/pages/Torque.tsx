@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
 import processDiscovery from "@/assets/process-discovery.jpg";
@@ -41,6 +42,12 @@ const Torque = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Torque AI - Strategic AI Implementation & Consulting"
+        description="Torque AI delivers end-to-end AI strategy and implementation for enterprise businesses. From 90-minute executive briefings to 90-day accelerators with measurable ROI in marketing, sales, and communications."
+        keywords="Torque AI, AI implementation, AI strategy, executive AI briefing, 90-day AI accelerator, AI consulting, enterprise AI transformation, AI business strategy"
+        url="/torque"
+      />
       <Header />
       
       {/* Hero Section with brand color */}

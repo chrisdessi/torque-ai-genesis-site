@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Calendar, User, ArrowLeft, ArrowRight } from "lucide-react";
@@ -528,9 +529,21 @@ const BlogPost = () => {
   }, [slug]);
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Header />
+  return (
+    <div className="min-h-screen bg-background">
+      {post && (
+        <SEO 
+          title={post.title}
+          description={post.excerpt}
+          keywords={`${post.category}, AI insights, ChatGPT, AI strategy, enterprise AI, Christopher Dessi`}
+          image={post.image}
+          url={`/blog/${post.slug}`}
+          type="article"
+          author={post.author}
+          publishedTime={new Date(post.date).toISOString()}
+        />
+      )}
+      <Header />
         <div className="max-w-4xl mx-auto px-6 py-32 text-center">
           <p className="text-xl text-muted-foreground">Loading article...</p>
         </div>

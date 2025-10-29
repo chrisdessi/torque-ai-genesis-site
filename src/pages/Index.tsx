@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube, ArrowRight } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
@@ -52,6 +53,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Enterprise AI Strategy & Implementation"
+        description="Transform your business with strategic AI consulting. From executive briefings to 90-day accelerators, Torque AI delivers measurable ROI through AI-driven marketing, sales, and communications solutions."
+        keywords="AI consulting, enterprise AI strategy, AI implementation, AI transformation, business AI solutions, ChatGPT for enterprise, AI-driven marketing, AI sales automation"
+        url="/"
+      />
       <Header />
 
       {/* Hero Section with animated waves */}

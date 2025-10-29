@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Mic, Youtube, BookOpen, Compass, Radio, Music, Apple, Video } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const QuantumShift = () => {
   const fadeInUp = {
@@ -41,6 +42,27 @@ const QuantumShift = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <script>
+          {`
+            // Helper function to delay opening a URL until a gtag event is sent.
+            // Call it in response to an action that should navigate to a URL.
+            function gtagSendEvent(url) {
+              var callback = function () {
+                if (typeof url === 'string') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'purchase', {
+                'event_callback': callback,
+                'event_timeout': 2000,
+                // <event_parameters>
+              });
+              return false;
+            }
+          `}
+        </script>
+      </Helmet>
       <Header />
       
       {/* Hero Section with brand color */}

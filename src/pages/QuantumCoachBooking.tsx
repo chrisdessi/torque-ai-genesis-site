@@ -155,31 +155,6 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="bg-gradient-to-br from-gray-900 to-black py-32">
-        <div className="section-padding max-w-4xl mx-auto text-center">
-          <motion.div {...fadeInUp}>
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Join Chris's Newsletter
-            </h2>
-            <p className="text-xl text-gray-300 mb-12">
-              Get exclusive insights, strategies, and stories delivered directly to your inbox
-            </p>
-            <div className="w-full max-w-2xl mx-auto">
-              <iframe 
-                src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9" 
-                data-test-id="beehiiv-embed" 
-                width="100%" 
-                height="320" 
-                frameBorder="0" 
-                scrolling="no"
-                style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Featured Videos Section */}
       <section className="bg-black py-32">
         <div className="section-padding max-w-7xl mx-auto">
@@ -338,6 +313,31 @@ const QuantumShift = () => {
               >
                 First Session - $199
               </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="bg-gradient-to-br from-gray-900 to-black py-32">
+        <div className="section-padding max-w-4xl mx-auto text-center">
+          <motion.div {...fadeInUp}>
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Join Chris's Newsletter
+            </h2>
+            <p className="text-xl text-gray-300 mb-12">
+              Get exclusive insights, strategies, and stories delivered directly to your inbox
+            </p>
+            <div className="w-full max-w-2xl mx-auto">
+              <iframe 
+                src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9" 
+                data-test-id="beehiiv-embed" 
+                width="100%" 
+                height="320" 
+                frameBorder="0" 
+                scrolling="no"
+                style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
+              />
             </div>
           </motion.div>
         </div>

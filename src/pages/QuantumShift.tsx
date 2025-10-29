@@ -79,7 +79,7 @@ const QuantumShift = () => {
               Transform Your<br />Leadership Today
             </h1>
             <p className="text-xl md:text-3xl text-gray-300 mb-12 max-w-3xl leading-relaxed font-light">
-              Work directly with Chris Dessi—the coach who helped close $32M in enterprise deals
+              Work directly with Chris Dessi
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Button 
@@ -117,15 +117,22 @@ const QuantumShift = () => {
               <blockquote className="text-3xl md:text-5xl font-bold text-black mb-12 leading-tight">
                 One 15 minute meeting with Chris made me millions
               </blockquote>
-              <div className="flex items-center gap-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-3xl font-bold">
-                  GV
-                </div>
+              <a 
+                href="https://www.instagram.com/stories/highlights/17984836850668488/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-6 hover:opacity-80 transition-opacity"
+              >
+                <img 
+                  src={new URL('../assets/gary-vee.jpg', import.meta.url).href}
+                  alt="Gary Vaynerchuk" 
+                  className="w-20 h-20 rounded-full object-cover"
+                />
                 <div>
                   <div className="text-2xl font-bold text-black">Gary Vaynerchuk</div>
                   <div className="text-lg text-gray-600">Entrepreneur & CEO, VaynerMedia</div>
                 </div>
-              </div>
+              </a>
             </div>
             <div className="absolute -bottom-8 -right-8 text-purple-200 text-9xl font-serif leading-none">"</div>
           </motion.div>
@@ -138,6 +145,30 @@ const QuantumShift = () => {
               <Calendar className="mr-3 h-6 w-6" />
               Book Your Complimentary Session
             </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="bg-gradient-to-br from-gray-900 to-black py-32">
+        <div className="section-padding max-w-4xl mx-auto text-center">
+          <motion.div {...fadeInUp}>
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Join Chris's Newsletter
+            </h2>
+            <p className="text-xl text-gray-300 mb-12">
+              Get exclusive insights, strategies, and stories delivered directly to your inbox
+            </p>
+            <div className="bg-white rounded-3xl p-2">
+              <iframe 
+                src="https://embeds.beehiiv.com/your-newsletter-id?slim=true" 
+                data-test-id="beehiiv-embed" 
+                height="52" 
+                frameBorder="0" 
+                scrolling="no"
+                className="w-full rounded-2xl"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -189,6 +220,39 @@ const QuantumShift = () => {
             >
               <Youtube className="mr-3 h-6 w-6" />
               Watch The Quantum Shift Podcast
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Keynote Videos Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+              Keynote Speaking
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Transformative presentations that inspire action
+            </p>
+          </motion.div>
+          <motion.div {...fadeInUp} className="aspect-video rounded-2xl overflow-hidden shadow-2xl mb-12">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/videoseries?list=PL1uIG3i2RBhEC7ZrhpvuGzvbc3W6JgopX"
+              title="Chris Dessi Keynote Videos"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </motion.div>
+          <motion.div {...fadeInUp} className="text-center">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl"
+              onClick={() => window.open('https://www.youtube.com/playlist?list=PL1uIG3i2RBhEC7ZrhpvuGzvbc3W6JgopX', '_blank')}
+            >
+              <Youtube className="mr-3 h-6 w-6" />
+              View All Keynote Videos
             </Button>
           </motion.div>
         </div>

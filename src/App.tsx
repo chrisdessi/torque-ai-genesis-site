@@ -22,6 +22,7 @@ import Torque from "./pages/Torque";
 import MementoHub from "./pages/MementoHub";
 import MementoLanding from "./pages/MementoLanding";
 import QuantumShift from "./pages/QuantumShift";
+import QuantumCoachBooking from "./pages/QuantumCoachBooking";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/blog/BlogPost";
 import TorqueAIGuide from "./pages/TorqueAIGuide";
@@ -58,11 +59,12 @@ const App = () => (
           <Route path="/memento-landing" element={<MementoLanding />} />
           <Route path="/momento-council" element={<MomentoCouncil />} />
           <Route path="/quantum-shift" element={<QuantumShift />} />
+          <Route path="/quantum-shift/coach" element={<QuantumCoachBooking />} />
           <Route path="/brand" element={<BrandIdentity />} />
           <Route path="/creator-launch" element={<CreatorLaunch />} />
           <Route path="/events" element={<Events />} />
           <Route path="/executive-coaching" element={<ExecutiveCoaching />} />
-          <Route path="/quantum-shift/coach" element={<QuantumCoach />} />
+          <Route path="/quantum-coach" element={<QuantumCoach />} />
           <Route path="/assessment" element={<Assessment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

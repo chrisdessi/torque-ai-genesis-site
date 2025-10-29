@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Check, Target, TrendingUp, Users, Zap, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import garyVeeImage from "@/assets/gary-vee.png";
 
 const QuantumCoach = () => {
@@ -305,6 +306,7 @@ const QuantumCoach = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

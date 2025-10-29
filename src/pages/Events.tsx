@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 
 const Events = () => {
   const events = [
@@ -211,6 +212,7 @@ const Events = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

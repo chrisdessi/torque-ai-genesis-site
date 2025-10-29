@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -301,6 +302,7 @@ const MomentoCouncil = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

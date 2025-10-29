@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 
 const Momento = () => {
   const [email, setEmail] = useState("");
@@ -170,6 +171,7 @@ const Momento = () => {
         </div>
       </main>
 
+      <Newsletter />
       <Footer />
     </div>
   );

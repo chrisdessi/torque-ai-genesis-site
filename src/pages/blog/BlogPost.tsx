@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link, useParams, Navigate } from "react-router-dom";
@@ -681,6 +682,7 @@ const BlogPost = () => {
         </div>
       </article>
 
+      <Newsletter />
       <Footer />
     </div>
   );

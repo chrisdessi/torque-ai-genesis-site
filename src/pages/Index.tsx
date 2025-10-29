@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import Hero from "@/components/Hero";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
@@ -588,6 +589,7 @@ const Index = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
       
       {/* Contact Form Dialog */}

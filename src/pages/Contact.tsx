@@ -3,6 +3,7 @@ import { ArrowRight, Mail, MessageSquare, Clock, Linkedin, Youtube } from "lucid
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import ZapierContactForm from "@/components/ZapierContactForm";
 
@@ -162,6 +163,7 @@ const Contact = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

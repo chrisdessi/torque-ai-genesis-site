@@ -3,6 +3,7 @@ import { ArrowRight, Award, BookOpen, Mic, TrendingUp, Users, Target, Linkedin, 
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import chrisProfile from "@/assets/chris-bio.png";
 import ZapierContactForm from "@/components/ZapierContactForm";
@@ -279,6 +280,7 @@ const About = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
       
       {/* Contact Form Dialog */}

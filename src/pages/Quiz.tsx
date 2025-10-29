@@ -5,6 +5,7 @@ import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -246,6 +247,7 @@ const Quiz = () => {
         </div>
       </div>
 
+      <Newsletter />
       <Footer />
     </div>
   );

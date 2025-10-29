@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
@@ -303,6 +304,7 @@ const EnterpriseAccelerator = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

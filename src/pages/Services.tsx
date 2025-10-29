@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Target, Brain, Database, Rocket, Cog, Trendin
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import ZapierContactForm from "@/components/ZapierContactForm";
 import { useState } from "react";
@@ -329,6 +330,7 @@ const Services = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
       
       {/* Contact Form Dialog */}

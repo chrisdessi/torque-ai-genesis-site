@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -148,6 +149,7 @@ const Blog = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import { motion } from "framer-motion";
 import { Users, Calendar, Code, Heart } from "lucide-react";
 
@@ -138,6 +139,7 @@ const MementoHub = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

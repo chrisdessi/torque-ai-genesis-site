@@ -12,7 +12,11 @@ export interface BlogPost {
 
 export const fetchBlogFeed = async (): Promise<BlogPost[]> => {
   try {
-    const response = await fetch('https://rss.beehiiv.com/feeds/fl7hNCGWCO.xml');
+    const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/fetch-blog-rss`, {
+      headers: {
+        'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`
+      }
+    });
     const text = await response.text();
     const parser = new DOMParser();
     const xml = parser.parseFromString(text, 'text/xml');

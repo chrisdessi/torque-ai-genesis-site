@@ -35,7 +35,7 @@ export const fetchBlogFeed = async (): Promise<BlogPost[]> => {
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = content;
       const imgElement = tempDiv.querySelector('img');
-      const image = imgElement?.src || '/lovable-uploads/85521d42-7840-4d81-b8ca-c002ab15932e.png';
+      const image = imgElement?.src || 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop';
       
       // Create excerpt from content
       const textContent = tempDiv.textContent || '';

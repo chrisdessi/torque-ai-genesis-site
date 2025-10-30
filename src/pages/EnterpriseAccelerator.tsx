@@ -17,9 +17,9 @@ const EnterpriseAccelerator = () => {
 
   const solutions = [
     {
-      title: "Executive AI Briefing",
-      description: "90-minute strategy session to align leadership and identify growth opportunities.",
-      price: "$10,000"
+      title: "$297 AI Audit",
+      description: "Comprehensive AI readiness assessment for your organization.",
+      price: "$297"
     },
     {
       title: "AI Strategy Workshop",

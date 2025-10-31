@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Mic, Youtube, BookOpen, Calendar, Star, Play } from "lucide-react";
 import { Helmet } from "react-helmet";
 import quantumCoachLogo from "@/assets/quantum-coach-logo.png";
-import chrisBio from "@/assets/chris-bio.png";
+import chrisFire from "@/assets/chris-fire.jpg";
 
 const QuantumShift = () => {
   const fadeInUp = {
@@ -132,23 +132,27 @@ const QuantumShift = () => {
               </p>
             </div>
             <div className="relative flex justify-center items-center">
-              <motion.div
-                animate={{ 
-                  rotateY: [0, 360],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                className="w-full max-w-md"
-              >
-                <img 
-                  src={chrisBio} 
+              <div className="w-full max-w-md relative">
+                <motion.img 
+                  src={chrisFire} 
                   alt="Chris Dessi" 
                   className="w-full h-auto rounded-2xl shadow-2xl"
+                  animate={{
+                    filter: [
+                      "brightness(1) contrast(1)",
+                      "brightness(1.1) contrast(1.05)",
+                      "brightness(0.95) contrast(0.98)",
+                      "brightness(1.05) contrast(1.02)",
+                      "brightness(1) contrast(1)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                 />
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

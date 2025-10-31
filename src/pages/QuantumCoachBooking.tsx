@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Mic, Youtube, BookOpen, Calendar, Star, Play } from "lucide-react";
 import { Helmet } from "react-helmet";
 import quantumCoachLogo from "@/assets/quantum-coach-logo.png";
+import chrisBio from "@/assets/chris-bio.png";
 
 const QuantumShift = () => {
   const fadeInUp = {
@@ -73,11 +74,6 @@ const QuantumShift = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <img 
-              src={quantumCoachLogo} 
-              alt="Quantum Coach Logo" 
-              className="h-20 mb-8"
-            />
             <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-6 py-3 mb-8">
               <span className="text-sm font-bold uppercase tracking-wider">Executive Coaching</span>
             </div>
@@ -104,6 +100,43 @@ const QuantumShift = () => {
               >
                 First Session - $199
               </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Chris Dessi Bio Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src={quantumCoachLogo} 
+                alt="Quantum Coach Logo" 
+                className="h-16 mb-6"
+              />
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                Meet Chris Dessi
+              </h2>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                Chris Dessi is a business leader, author, and television commentator who has personally closed 
+                <span className="font-bold text-black"> $32 million in enterprise deals</span> over two years.
+              </p>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                As a frequent Fox 5 contributor and thought leader, Chris brings battle-tested frameworks and 
+                real-world experience to every coaching session.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                His approach is direct, actionable, and focused on results—helping executives and entrepreneurs 
+                cut through the noise and execute with clarity.
+              </p>
+            </div>
+            <div className="relative">
+              <img 
+                src={chrisBio} 
+                alt="Chris Dessi" 
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
             </div>
           </motion.div>
         </div>

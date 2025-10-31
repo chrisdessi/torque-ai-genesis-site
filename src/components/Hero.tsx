@@ -2,12 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import ZapierContactForm from "@/components/ZapierContactForm";
 
 const Hero = () => {
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -124,10 +120,12 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="group bg-cyan-500 hover:bg-cyan-600 text-white border-0 font-semibold px-10 py-7 text-lg"
-              onClick={() => setIsContactFormOpen(true)}
+              asChild
             >
-              Learn More
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a href="mailto:info@torqueapp.ai">
+                Learn More
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <Button 
               variant="outline"
@@ -154,16 +152,6 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      {/* Contact Form Dialog */}
-      <Dialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen}>
-        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-          <DialogTitle className="sr-only">Contact Form</DialogTitle>
-          <ZapierContactForm 
-            title="Learn More About AI Solutions"
-            description="Fill out the form and our team will reach out within 24 hours"
-          />
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };

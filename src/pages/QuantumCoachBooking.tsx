@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Mic, Youtube, BookOpen, Calendar, Star, Play } from "lucide-react";
 import { Helmet } from "react-helmet";
+import quantumCoachLogo from "@/assets/quantum-coach-logo.png";
 
 const QuantumShift = () => {
   const fadeInUp = {
@@ -72,6 +73,11 @@ const QuantumShift = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <img 
+              src={quantumCoachLogo} 
+              alt="Quantum Coach Logo" 
+              className="h-20 mb-8"
+            />
             <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-6 py-3 mb-8">
               <span className="text-sm font-bold uppercase tracking-wider">Executive Coaching</span>
             </div>

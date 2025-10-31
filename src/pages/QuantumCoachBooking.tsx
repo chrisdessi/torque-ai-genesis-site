@@ -119,8 +119,8 @@ const QuantumShift = () => {
                 Meet Chris Dessi
               </h2>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                Chris Dessi is a business leader, author, and television commentator who has personally closed 
-                <span className="font-bold text-black"> $32 million in enterprise deals</span> over two years.
+                Chris Dessi is a business leader, author, and television commentator who has closed 
+                <span className="font-bold text-black"> over $100 million in enterprise sales</span> in his nearly 30 year career.
               </p>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
                 As a frequent Fox 5 contributor and thought leader, Chris brings battle-tested frameworks and 
@@ -131,12 +131,24 @@ const QuantumShift = () => {
                 cut through the noise and execute with clarity.
               </p>
             </div>
-            <div className="relative">
-              <img 
-                src={chrisBio} 
-                alt="Chris Dessi" 
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
+            <div className="relative flex justify-center items-center">
+              <motion.div
+                animate={{ 
+                  rotateY: [0, 360],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                className="w-full max-w-md"
+              >
+                <img 
+                  src={chrisBio} 
+                  alt="Chris Dessi" 
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                />
+              </motion.div>
             </div>
           </motion.div>
         </div>

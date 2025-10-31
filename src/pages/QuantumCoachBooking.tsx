@@ -110,10 +110,16 @@ const QuantumShift = () => {
         <div className="section-padding max-w-6xl mx-auto">
           <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
+              <motion.img 
                 src={quantumCoachLogo} 
                 alt="Quantum Coach Logo" 
                 className="h-16 mb-6"
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
               />
               <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
                 Meet Chris Dessi

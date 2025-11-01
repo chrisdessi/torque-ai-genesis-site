@@ -27,11 +27,13 @@ const ZapierContactForm = ({
       )}
       <div className="w-full max-w-3xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
         <iframe
-          src="https://contact-form-aaeb36.zapier.app/"
-          className="w-full h-[600px] border-0"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSflUTnHPK6zQsZKkoxv-_RpCVvMoR2aMlFYT_H5LoXW8pdLSA/viewform?embedded=true"
+          className="w-full h-[585px] border-0"
           title="Contact Form"
           loading="lazy"
-        />
+        >
+          Loading…
+        </iframe>
       </div>
     </motion.div>
   );

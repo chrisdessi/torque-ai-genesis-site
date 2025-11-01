@@ -206,6 +206,28 @@ const QuantumCoach = () => {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-16 px-6 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">See What Quantum Coaching Can Do</h2>
+            <p className="text-xl text-muted-foreground">
+              Watch Chris break down the frameworks that drive real results
+            </p>
+          </div>
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <iframe 
+              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl"
+              src="https://www.youtube.com/embed/p2RwQVKvRbQ?si=pTNKfb73unZudx24" 
+              title="YouTube video player" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Outcomes Section */}
       <section id="outcomes" className="py-16 px-6">
         <div className="max-w-4xl mx-auto">

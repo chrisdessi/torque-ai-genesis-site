@@ -93,7 +93,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="mb-6">
               <h4 className="text-lg font-bold mb-4 text-purple-400">THE QUANTUM SHIFT</h4>
               <p className="text-gray-400 text-sm mb-3">Podcast & Philosophy</p>
               <ul className="space-y-2 text-gray-300">
@@ -115,6 +115,16 @@ const Footer = () => {
                 <li>
                   <a href="/about" className="hover:text-white transition-colors text-sm">
                     About
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mb-4 text-orange-400">CONTACT</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <a href="/contact" className="hover:text-white transition-colors text-sm">
+                    Get In Touch
                   </a>
                 </li>
               </ul>

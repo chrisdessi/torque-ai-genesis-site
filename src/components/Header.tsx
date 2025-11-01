@@ -53,6 +53,10 @@ const Header = () => {
       name: "Blog", 
       href: "/blog"
     },
+    { 
+      name: "Contact", 
+      href: "/contact"
+    },
   ];
 
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);

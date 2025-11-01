@@ -301,12 +301,19 @@ const QuantumCoach = () => {
             Book your first Quantum Coach session with Chris Dessi. 
             Walk away with a clear roadmap and the confidence to execute.
           </p>
-          <Button size="lg" asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
-            <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
-              Book Your Session — $199
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+              <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
+                Book Your Session — $199
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="https://forms.gle/AxBiRBtCXsAgRfKN7" target="_blank" rel="noopener noreferrer">
+                Contact Us
+              </a>
+            </Button>
+          </div>
           <p className="mt-6 text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">{slotsRemaining} spots</span> remain this month · 
             First session is 60 minutes · Recorded for your reference

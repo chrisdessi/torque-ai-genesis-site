@@ -369,6 +369,14 @@ const QuantumShift = () => {
               >
                 First Session - $199
               </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="bg-transparent hover:bg-white/10 text-white border-white/50 backdrop-blur-sm font-bold px-12 py-8 text-xl"
+                onClick={() => window.open('https://forms.gle/AxBiRBtCXsAgRfKN7', '_blank')}
+              >
+                Contact Us
+              </Button>
             </div>
           </motion.div>
         </div>

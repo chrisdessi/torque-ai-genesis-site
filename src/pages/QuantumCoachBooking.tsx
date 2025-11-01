@@ -31,8 +31,14 @@ const QuantumShift = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YB4QY7TVK"></script>
         <script>
           {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3YB4QY7TVK');
+            
             // Helper function to delay opening a URL until a gtag event is sent.
             // Call it in response to an action that should navigate to a URL.
             function gtagSendEvent(url) {

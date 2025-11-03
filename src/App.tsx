@@ -27,7 +27,6 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/blog/BlogPost";
 import TorqueAIGuide from "./pages/TorqueAIGuide";
 import ExecutiveCoaching from "./pages/ExecutiveCoaching";
-import QuantumCoach from "./pages/QuantumCoach";
 import Assessment from "./pages/Assessment";
 import NotFound from "./pages/NotFound";
 
@@ -64,7 +63,6 @@ const App = () => (
           <Route path="/creator-launch" element={<CreatorLaunch />} />
           <Route path="/events" element={<Events />} />
           <Route path="/executive-coaching" element={<ExecutiveCoaching />} />
-          <Route path="/quantum-coach" element={<QuantumCoach />} />
           <Route path="/assessment" element={<Assessment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

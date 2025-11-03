@@ -23,67 +23,35 @@ const QuantumShift = () => {
 
   const pricingTiers = [
     {
-      name: "Growth Leader",
-      price: "$15,000",
-      cadence: "6 months",
-      bestFor: "Rising executives ready for structured momentum.",
+      name: "6-Month Executive Coaching Program",
+      price: "$18,000",
+      cadence: "flat fee",
+      bestFor: "Your core executive coaching offer with serious commitment.",
       features: [
-        "12 biweekly 60‑min sessions",
-        "Strategic goal mapping",
-        "Leadership assessment",
-        "Asynchronous support between sessions",
-      ],
-      highlight: false,
-    },
-    {
-      name: "High‑Impact Executive",
-      price: "$20,000",
-      cadence: "6 months",
-      bestFor: "Operators who need speed, clarity, and stakeholder alignment.",
-      features: [
-        "12 sessions + 2 emergency calls",
-        "360° feedback process",
-        "Stakeholder communication strategy",
-        "Quarterly strategy review",
+        "12 sessions (2 per month, 60-75 minutes each)",
+        "Leadership assessment and personalized development plan",
+        "Unlimited email/text support between sessions",
+        "Optional stakeholder alignment call at midpoint",
       ],
       highlight: true,
       badge: "Most Popular",
+      paymentNote: "Paid upfront or split in 2 payments of $9,000"
     },
     {
-      name: "Elite CEO",
-      price: "$25,000",
-      cadence: "6 months",
-      bestFor: "CEOs who want hands‑on alignment and priority access.",
+      name: "Startup Leadership Team Coaching",
+      price: "$2,500",
+      cadence: "per person",
+      bestFor: "Group coaching program for leadership teams.",
       features: [
-        "12 sessions + 1 in‑person strategy day",
-        "Org alignment audit",
-        "Unlimited messaging + priority access",
-        "Executive communications coaching",
+        "6 weekly 90-min sessions",
+        "Team dynamics assessment & communication audit",
+        "Action-focused accountability tracking",
+        "Minimum 4 participants ($10,000 total per cohort)",
       ],
       highlight: false,
     },
   ];
 
-  const addOns = [
-    {
-      title: "Offsite Facilitation",
-      price: "$5,000–$10,000",
-      desc: "Half or full‑day leadership strategy retreat with clear outcomes.",
-      icon: CalendarDays,
-    },
-    {
-      title: "Team 360 Review",
-      price: "$3,000",
-      desc: "Confidential stakeholder interviews, synthesis, and recommendations.",
-      icon: Users,
-    },
-    {
-      title: "Keynote Workshop",
-      price: "$7,500+",
-      desc: "High‑energy, practical session tailored to your team's priorities.",
-      icon: MessageSquare,
-    },
-  ];
 
   const benefits = [
     {
@@ -213,18 +181,10 @@ const QuantumShift = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl"
-                onClick={() => window.open('https://calendar.app.google/1GCqw7DmuSSQmLZBA', '_blank')}
-              >
-                <Calendar className="mr-3 h-6 w-6" />
-                Book Complimentary Session
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm font-bold px-12 py-8 text-xl"
                 onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}
               >
-                First Session - $199
+                <Calendar className="mr-3 h-6 w-6" />
+                Book First Session - $199
               </Button>
             </div>
           </motion.div>
@@ -303,7 +263,7 @@ const QuantumShift = () => {
                 <Mail className="mr-2 w-4 h-4" /> Email Chris
               </Button>
             </div>
-            <p className="text-sm text-white/60">Median market rate: $717/hr — You're buying outcomes, not hours.</p>
+            
           </motion.div>
         </div>
       </section>
@@ -330,10 +290,10 @@ const QuantumShift = () => {
               transition={{ duration: 0.5 }}
             >
               <Card className="p-8 bg-card border-border h-full">
-                <h3 className="text-2xl font-semibold mb-3">Power Session (Hourly)</h3>
-                <p className="text-muted-foreground mb-4">60–90 minute intensive to get unstuck fast.</p>
+                <h3 className="text-2xl font-semibold mb-3">Executive Strategy Intensive</h3>
+                <p className="text-muted-foreground mb-4">90-minute session including pre-session questionnaire and follow-up summary with action plan.</p>
                 <div className="text-4xl font-bold mb-6">
-                  $950–$1,250 <span className="text-base font-normal text-muted-foreground">per hour</span>
+                  $1,200 <span className="text-base font-normal text-muted-foreground">per 90-minute session</span>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -367,20 +327,25 @@ const QuantumShift = () => {
             >
               <Card className="p-8 bg-card border-border h-full">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-2xl font-semibold">Executive Advisory Retainer</h3>
+                  <h3 className="text-2xl font-semibold">12-Month CEO Mastery Partnership</h3>
                   <div className="inline-flex items-center gap-2 rounded-full border border-purple-600/30 bg-purple-600/10 px-3 py-1 text-xs font-medium">
                     <Crown className="w-3.5 h-3.5" /> Premium
                   </div>
                 </div>
-                <p className="text-muted-foreground mb-4">Two calls per month + ongoing support. Be decisive, faster.</p>
+                <p className="text-muted-foreground mb-4">White-glove advisory model for C-suite leaders and founders.</p>
                 <div className="text-4xl font-bold mb-6">
-                  $3,500–$5,000 <span className="text-base font-normal text-muted-foreground">per month</span>
+                  $36,000 <span className="text-base font-normal text-muted-foreground">annual retainer</span>
+                </div>
+                <div className="text-sm text-muted-foreground mb-6">
+                  or $3,500/month if paid monthly
                 </div>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Two 60‑min calls / month",
-                    "On‑demand Slack/email access",
-                    "Quarterly strategy review & recalibration",
+                    "24 sessions (2 per month)",
+                    "Full assessment suite + quarterly business reviews",
+                    "On-call access via phone/text",
+                    "One in-person strategy day (NYC)",
+                    "Optional team facilitation or board prep support",
                   ].map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
@@ -402,15 +367,15 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* 6-Month Packages */}
+      {/* Coaching Packages */}
       <section className="py-16 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
             <Target className="w-6 h-6 text-purple-600" />
-            <h2 className="text-3xl md:text-4xl font-bold">6‑Month Executive Packages</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Executive Coaching Packages</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {pricingTiers.map((tier, idx) => (
               <motion.div
                 key={tier.name}
@@ -432,10 +397,13 @@ const QuantumShift = () => {
                   )}
                   <h3 className="text-2xl font-semibold mb-2">{tier.name}</h3>
                   <p className="text-muted-foreground mb-4">{tier.bestFor}</p>
-                  <div className="text-4xl font-bold mb-6">
+                  <div className="text-4xl font-bold mb-2">
                     {tier.price} <span className="text-base font-normal text-muted-foreground">/{tier.cadence}</span>
                   </div>
-                  <ul className="space-y-3 mb-8">
+                  {tier.paymentNote && (
+                    <p className="text-sm text-muted-foreground mb-6">{tier.paymentNote}</p>
+                  )}
+                  <ul className="space-y-3 mb-8 mt-6">
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
@@ -449,41 +417,6 @@ const QuantumShift = () => {
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Add-Ons */}
-      <section className="py-16 px-6 bg-background">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Add-On Services</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {addOns.map((addon, idx) => {
-              const Icon = addon.icon;
-              return (
-                <motion.div
-                  key={addon.title}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
-                >
-                  <Card className="p-6 bg-card border-border h-full">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white mb-4">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{addon.title}</h3>
-                    <div className="text-2xl font-bold text-purple-600 mb-3">{addon.price}</div>
-                    <p className="text-muted-foreground">{addon.desc}</p>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </div>
-          <div className="mt-10 text-center">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://forms.gle/AxBiRBtCXsAgRfKN7', '_blank')}>
-              Inquire About Add-Ons <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
           </div>
         </div>
       </section>

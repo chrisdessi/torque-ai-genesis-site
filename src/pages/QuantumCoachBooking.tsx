@@ -256,7 +256,7 @@ const QuantumShift = () => {
               within 90 days through clearer decisions, tighter operating rhythms, and courageous communication.
             </p>
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <Button size="lg" className="bg-white text-purple-900 hover:bg-white/90" onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}>
+              <Button size="lg" className="bg-white text-purple-900 hover:bg-white/90" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', '_blank')}>
                 Book a Discovery Call <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10" onClick={() => window.location.href = 'mailto:chris@torqueapp.ai?subject=Coaching%20Inquiry'}>
@@ -308,7 +308,7 @@ const QuantumShift = () => {
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-3">
-                  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}>
+                  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', '_blank')}>
                     Book a Session <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                   <Button variant="outline" onClick={() => window.open('https://forms.gle/AxBiRBtCXsAgRfKN7', '_blank')}>
@@ -354,7 +354,7 @@ const QuantumShift = () => {
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-3">
-                  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}>
+                  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', '_blank')}>
                     Discuss Retainer <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                   <Button variant="outline" onClick={() => window.open('https://forms.gle/AxBiRBtCXsAgRfKN7', '_blank')}>
@@ -411,7 +411,7 @@ const QuantumShift = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}>
+                  <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', '_blank')}>
                     Start {tier.name} <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Card>

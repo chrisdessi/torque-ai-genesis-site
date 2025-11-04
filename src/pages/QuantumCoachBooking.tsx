@@ -222,10 +222,7 @@ const QuantumShift = () => {
       <section className="py-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">See What Quantum Coaching Can Do</h2>
-            <p className="text-xl text-muted-foreground">
-              Watch Chris break down the frameworks that drive real results
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Who is The Quantum Coach?</h2>
           </div>
           <div className="rounded-lg shadow-xl overflow-hidden" style={{ position: 'relative', aspectRatio: '1920/1080' }}>
             <iframe 

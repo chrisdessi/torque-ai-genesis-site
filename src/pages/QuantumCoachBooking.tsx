@@ -217,28 +217,6 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What You'll Transform</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real coaching for leaders who want results, not theory.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="p-6 bg-card border-border hover:border-purple-500/50 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white mb-4">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Video Section */}
       <section className="py-16 px-6 bg-background">
@@ -311,7 +289,7 @@ const QuantumShift = () => {
             {...fadeInUp}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Discovery Call</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Individual Coaching Packages</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Start your leadership transformation journey
             </p>
@@ -319,27 +297,6 @@ const QuantumShift = () => {
           <div className="w-full">
             <stripe-pricing-table 
               pricing-table-id="prctbl_1SPrv1G7cympBc4IJGTMAD9R"
-              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
-            </stripe-pricing-table>
-          </div>
-        </div>
-      </section>
-
-      {/* Executive Coaching Packages with Stripe Pricing */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Executive Coaching Packages</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Choose the coaching program that fits your leadership journey
-            </p>
-          </motion.div>
-          <div className="w-full">
-            <stripe-pricing-table 
-              pricing-table-id="prctbl_1SPrcCG7cympBc4IRUlov840"
               publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
             </stripe-pricing-table>
           </div>
@@ -394,7 +351,6 @@ const QuantumShift = () => {
         </div>
       </section>
 
-
       {/* Testimonials */}
       <section className="py-16 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
@@ -411,6 +367,75 @@ const QuantumShift = () => {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What You'll Transform</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Real coaching for leaders who want results, not theory.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="p-6 bg-card border-border hover:border-purple-500/50 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white mb-4">
+                  {benefit.icon}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-muted-foreground">{benefit.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Watch The Quantum Shift Podcast */}
+      <section className="py-16 px-6 bg-muted/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Watch The Quantum Shift Podcast</h2>
+            <p className="text-xl text-muted-foreground">
+              Real conversations with leaders who drive change
+            </p>
+          </div>
+          <div className="relative w-full rounded-lg overflow-hidden shadow-xl" style={{ paddingBottom: '56.25%' }}>
+            <iframe 
+              className="absolute top-0 left-0 w-full h-full"
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/videoseries?si=_NiTeulHQDy5E7kZ&amp;list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Executive Coaching Packages with Stripe Pricing */}
+      <section className="py-16 px-6 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            {...fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Executive Coaching Packages</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Choose the coaching program that fits your leadership journey
+            </p>
+          </motion.div>
+          <div className="w-full">
+            <stripe-pricing-table 
+              pricing-table-id="prctbl_1SPrcCG7cympBc4IRUlov840"
+              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
+            </stripe-pricing-table>
           </div>
         </div>
       </section>

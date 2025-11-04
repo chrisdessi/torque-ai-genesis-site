@@ -11,6 +11,18 @@ import quantumCoachLogo from "@/assets/quantum-coach-logo.png";
 import chrisFire from "@/assets/chris-fire.jpg";
 import garyVeeImage from "@/assets/gary-vee.png";
 
+// Declare Stripe pricing table custom elements
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'stripe-pricing-table': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'pricing-table-id': string;
+        'publishable-key': string;
+      };
+    }
+  }
+}
+
 const QuantumShift = () => {
   const [slotsRemaining] = useState(8);
   
@@ -120,6 +132,7 @@ const QuantumShift = () => {
     <div className="min-h-screen bg-white">
       <Helmet>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YB4QY7TVK"></script>
+        <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
         <script>
           {`
             window.dataLayer = window.dataLayer || [];
@@ -759,6 +772,48 @@ const QuantumShift = () => {
             <span className="font-semibold text-foreground">{slotsRemaining} spots</span> remain this month · 
             First session is 60 minutes · Recorded for your reference
           </p>
+        </div>
+      </section>
+
+      {/* Executive Strategy Intensive Pricing */}
+      <section className="py-16 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            {...fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Executive Strategy Intensive</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              90-minute strategy session with follow-up action plan
+            </p>
+          </motion.div>
+          <div className="max-w-4xl mx-auto">
+            <stripe-pricing-table 
+              pricing-table-id="prctbl_1SPrv1G7cympBc4IJGTMAD9R"
+              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
+            </stripe-pricing-table>
+          </div>
+        </div>
+      </section>
+
+      {/* Group Coaching Pricing */}
+      <section className="py-16 px-6 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            {...fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Group Coaching</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Transform your leadership team together
+            </p>
+          </motion.div>
+          <div className="max-w-4xl mx-auto">
+            <stripe-pricing-table 
+              pricing-table-id="prctbl_1SPrcCG7cympBc4IRUlov840"
+              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
+            </stripe-pricing-table>
+          </div>
         </div>
       </section>
 

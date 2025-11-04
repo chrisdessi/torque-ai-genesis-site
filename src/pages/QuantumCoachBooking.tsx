@@ -343,11 +343,32 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Hourly & Retainer */}
+      {/* Discovery Call with Stripe Pricing */}
       <section className="py-16 px-6 bg-background">
         <div className="max-w-6xl mx-auto">
+          <motion.div 
+            {...fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Discovery Call</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Start your leadership transformation journey
+            </p>
+          </motion.div>
+          <div className="max-w-4xl mx-auto">
+            <stripe-pricing-table 
+              pricing-table-id="prctbl_1SPrv1G7cympBc4IJGTMAD9R"
+              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
+            </stripe-pricing-table>
+          </div>
+        </div>
+      </section>
+
+      {/* Executive Strategy Intensive & CEO Mastery Partnership */}
+      <section className="py-16 px-6 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10">
-            {/* Hourly */}
+            {/* Executive Strategy Intensive */}
             <motion.div 
               initial={{ opacity: 0, y: 12 }} 
               whileInView={{ opacity: 1, y: 0 }} 
@@ -383,7 +404,7 @@ const QuantumShift = () => {
               </Card>
             </motion.div>
 
-            {/* Retainer */}
+            {/* 12-Month CEO Mastery Partnership */}
             <motion.div 
               initial={{ opacity: 0, y: 12 }} 
               whileInView={{ opacity: 1, y: 0 }} 
@@ -486,8 +507,8 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Outcomes Section */}
-      <section id="outcomes" className="py-16 px-6 bg-muted/30">
+      {/* What's Included in Your First Session */}
+      <section id="outcomes" className="py-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -775,37 +796,16 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Executive Strategy Intensive Pricing */}
-      <section className="py-16 px-6 bg-background">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Executive Strategy Intensive</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              90-minute strategy session with follow-up action plan
-            </p>
-          </motion.div>
-          <div className="max-w-4xl mx-auto">
-            <stripe-pricing-table 
-              pricing-table-id="prctbl_1SPrv1G7cympBc4IJGTMAD9R"
-              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
-            </stripe-pricing-table>
-          </div>
-        </div>
-      </section>
-
-      {/* Group Coaching Pricing */}
+      {/* Startup Leadership Team Coaching with Stripe Pricing */}
       <section className="py-16 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             {...fadeInUp}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Group Coaching</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Startup Leadership Team Coaching</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Transform your leadership team together
+              Group coaching program for leadership teams
             </p>
           </motion.div>
           <div className="max-w-4xl mx-auto">

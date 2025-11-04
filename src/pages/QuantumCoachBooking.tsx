@@ -5,20 +5,180 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import { motion } from "framer-motion";
-import { Mic, Youtube, BookOpen, Calendar, Star, Play, Target, TrendingUp, Users, Zap, ArrowRight, Sparkles, Crown, CalendarDays, Mail, MessageSquare, Check } from "lucide-react";
+import { Mic, Youtube, BookOpen, Calendar, Star, Play, Target, TrendingUp, Users, Zap, ArrowRight, Sparkles, Crown, CalendarDays, Mail, MessageSquare, Check, Download } from "lucide-react";
 import { Helmet } from "react-helmet";
 import quantumCoachLogo from "@/assets/quantum-coach-logo.png";
 import chrisFire from "@/assets/chris-fire.jpg";
 import garyVeeImage from "@/assets/gary-vee.png";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 const QuantumShift = () => {
   const [slotsRemaining] = useState(8);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
     transition: { duration: 0.6 }
+  };
+
+  const generatePDF = async () => {
+    setIsGeneratingPDF(true);
+    
+    try {
+      const pdf = new jsPDF('p', 'pt', 'a4');
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const margin = 40;
+      let yPosition = margin;
+
+      // Helper to add text with word wrap
+      const addText = (text: string, fontSize: number, isBold: boolean = false, color: string = '#000000') => {
+        pdf.setFontSize(fontSize);
+        pdf.setFont('helvetica', isBold ? 'bold' : 'normal');
+        pdf.setTextColor(color);
+        const lines = pdf.splitTextToSize(text, pageWidth - (margin * 2));
+        
+        lines.forEach((line: string) => {
+          if (yPosition > pageHeight - margin) {
+            pdf.addPage();
+            yPosition = margin;
+          }
+          pdf.text(line, margin, yPosition);
+          yPosition += fontSize * 1.2;
+        });
+      };
+
+      // Helper to add clickable link
+      const addLink = (text: string, url: string, fontSize: number = 12) => {
+        pdf.setFontSize(fontSize);
+        pdf.setFont('helvetica', 'normal');
+        pdf.setTextColor('#8b5cf6'); // Purple color for links
+        
+        if (yPosition > pageHeight - margin) {
+          pdf.addPage();
+          yPosition = margin;
+        }
+        
+        const textWidth = pdf.getTextWidth(text);
+        pdf.textWithLink(text, margin, yPosition, { url });
+        pdf.setDrawColor(139, 92, 246);
+        pdf.line(margin, yPosition + 2, margin + textWidth, yPosition + 2);
+        yPosition += fontSize * 1.5;
+      };
+
+      // Title
+      addText('EXECUTIVE COACHING WITH CHRIS DESSI', 24, true, '#6b21a8');
+      yPosition += 10;
+      addText('Transform Your Leadership Today', 18, true);
+      yPosition += 20;
+
+      // First Session
+      addText('BOOK YOUR FIRST SESSION - $199', 14, true);
+      addLink('Click here to book: https://buy.stripe.com/5kQdR983q9n90gd1w78g000', 'https://buy.stripe.com/5kQdR983q9n90gd1w78g000');
+      yPosition += 20;
+
+      // Gary Vaynerchuk Quote
+      addText('TESTIMONIAL', 16, true, '#6b21a8');
+      yPosition += 5;
+      addText('"One 15 minute meeting with Chris made me millions"', 14, false, '#333333');
+      addText('- Gary Vaynerchuk, Entrepreneur & CEO, VaynerMedia', 12, false, '#666666');
+      addLink('Watch Gary\'s Story: https://www.instagram.com/stories/highlights/17984836850668488/', 'https://www.instagram.com/stories/highlights/17984836850668488/');
+      yPosition += 20;
+
+      // What You'll Transform
+      addText('WHAT YOU\'LL TRANSFORM', 16, true, '#6b21a8');
+      yPosition += 5;
+      benefits.forEach(benefit => {
+        addText(`• ${benefit.title}`, 12, true);
+        addText(`  ${benefit.description}`, 11, false, '#666666');
+        yPosition += 5;
+      });
+      yPosition += 20;
+
+      // Pricing Tiers
+      addText('EXECUTIVE COACHING PACKAGES', 16, true, '#6b21a8');
+      yPosition += 5;
+
+      // Executive Strategy Intensive
+      addText('Executive Strategy Intensive', 14, true);
+      addText('$1,200 per 90-minute session', 12, false);
+      addText('Includes: pre-session questionnaire and follow-up summary with action plan', 11, false, '#666666');
+      addText('Features:', 12, true);
+      addText('• Rapid clarity & decision support', 11);
+      addText('• Executive-level frameworks you can use immediately', 11);
+      addText('• Action plan within 24 hours', 11);
+      addLink('Book this session: https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', 'https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform');
+      yPosition += 15;
+
+      // 12-Month CEO Mastery Partnership
+      addText('12-Month CEO Mastery Partnership', 14, true);
+      addText('$36,000 annual retainer (or $3,500/month if paid monthly)', 12, false);
+      addText('Features:', 12, true);
+      addText('• 24 sessions (2 per month)', 11);
+      addText('• Full assessment suite + quarterly business reviews', 11);
+      addText('• On-call access via phone/text', 11);
+      addText('• One in-person strategy day (NYC)', 11);
+      addText('• Optional team facilitation or board prep support', 11);
+      addLink('Book this program: https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', 'https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform');
+      yPosition += 15;
+
+      // 6-Month Executive Coaching Program
+      pricingTiers.forEach(tier => {
+        addText(tier.name, 14, true);
+        addText(`${tier.price} ${tier.cadence}`, 12, false);
+        if (tier.paymentNote) {
+          addText(tier.paymentNote, 11, false, '#666666');
+        }
+        addText('Features:', 12, true);
+        tier.features.forEach(feature => {
+          addText(`• ${feature}`, 11);
+        });
+        addLink('Book this program: https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', 'https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform');
+        yPosition += 15;
+      });
+
+      // Testimonials
+      addText('CLIENT TESTIMONIALS', 16, true, '#6b21a8');
+      yPosition += 5;
+      testimonials.forEach(testimonial => {
+        addText(`"${testimonial.quote}"`, 11, false, '#333333');
+        addText(`- ${testimonial.author}, ${testimonial.role}`, 10, false, '#666666');
+        yPosition += 10;
+      });
+      yPosition += 10;
+
+      // Featured Videos
+      addText('FEATURED CONTENT', 16, true, '#6b21a8');
+      yPosition += 5;
+      featuredVideos.forEach(video => {
+        addText(video.title, 12, true);
+        addLink(video.url, video.url);
+      });
+      yPosition += 10;
+
+      // Additional video
+      addText('Quantum Coaching Framework', 12, true);
+      addLink('https://www.youtube.com/embed/p2RwQVKvRbQ', 'https://www.youtube.com/embed/p2RwQVKvRbQ');
+      yPosition += 20;
+
+      // Contact Information
+      addText('CONTACT', 16, true, '#6b21a8');
+      yPosition += 5;
+      addText('Email: chris@torqueapp.ai', 12);
+      addLink('Book a discovery call: https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', 'https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform');
+      addLink('Ask a question: https://forms.gle/AxBiRBtCXsAgRfKN7', 'https://forms.gle/AxBiRBtCXsAgRfKN7');
+
+      // Save the PDF
+      pdf.save('Chris-Dessi-Executive-Coaching.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('There was an error generating the PDF. Please try again.');
+    } finally {
+      setIsGeneratingPDF(false);
+    }
   };
 
   const pricingTiers = [
@@ -185,6 +345,16 @@ const QuantumShift = () => {
               >
                 <Calendar className="mr-3 h-6 w-6" />
                 Book First Session - $199
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-purple-900 font-bold px-12 py-8 text-xl"
+                onClick={generatePDF}
+                disabled={isGeneratingPDF}
+              >
+                <Download className="mr-3 h-6 w-6" />
+                {isGeneratingPDF ? 'Generating PDF...' : 'Download as PDF'}
               </Button>
             </div>
           </motion.div>

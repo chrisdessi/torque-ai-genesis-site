@@ -33,37 +33,6 @@ const QuantumShift = () => {
     transition: { duration: 0.6 }
   };
 
-  const pricingTiers = [
-    {
-      name: "6-Month Executive Coaching Program",
-      price: "$18,000",
-      cadence: "flat fee",
-      bestFor: "Your core executive coaching offer with serious commitment.",
-      features: [
-        "12 sessions (2 per month, 60-75 minutes each)",
-        "Leadership assessment and personalized development plan",
-        "Unlimited email/text support between sessions",
-        "Optional stakeholder alignment call at midpoint",
-      ],
-      highlight: true,
-      badge: "Most Popular",
-      paymentNote: "Paid upfront or split in 2 payments of $9,000"
-    },
-    {
-      name: "Startup Leadership Team Coaching",
-      price: "$2,500",
-      cadence: "per person",
-      bestFor: "Group coaching program for leadership teams.",
-      features: [
-        "6 weekly 90-min sessions",
-        "Team dynamics assessment & communication audit",
-        "Action-focused accountability tracking",
-        "Minimum 4 participants ($10,000 total per cohort)",
-      ],
-      highlight: false,
-    },
-  ];
-
 
   const benefits = [
     {
@@ -88,14 +57,6 @@ const QuantumShift = () => {
     }
   ];
 
-  const outcomes = [
-    "Clear 90-day action plan with measurable milestones",
-    "Weekly accountability and strategic guidance",
-    "Access to proven frameworks from $32M in closed deals",
-    "Direct feedback on your toughest leadership challenges",
-    "Private executive roundtable invitations",
-    "Recorded sessions for your leadership team"
-  ];
 
   const testimonials = [
     {
@@ -364,176 +325,23 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Executive Strategy Intensive & CEO Mastery Partnership */}
+      {/* Executive Coaching Packages with Stripe Pricing */}
       <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-10">
-            {/* Executive Strategy Intensive */}
-            <motion.div 
-              initial={{ opacity: 0, y: 12 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }} 
-              transition={{ duration: 0.5 }}
-            >
-              <Card className="p-8 bg-card border-border h-full">
-                <h3 className="text-2xl font-semibold mb-3">Executive Strategy Intensive</h3>
-                <p className="text-muted-foreground mb-4">90-minute session including pre-session questionnaire and follow-up summary with action plan.</p>
-                <div className="text-4xl font-bold mb-6">
-                  $1,200 <span className="text-base font-normal text-muted-foreground">per 90-minute session</span>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "Rapid clarity & decision support",
-                    "Executive‑level frameworks you can use immediately",
-                    "Action plan within 24 hours",
-                  ].map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-3">
-                  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', '_blank')}>
-                    Book a Session <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                  <Button variant="outline" onClick={() => window.open('https://forms.gle/AxBiRBtCXsAgRfKN7', '_blank')}>
-                    Ask a Question
-                  </Button>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* 12-Month CEO Mastery Partnership */}
-            <motion.div 
-              initial={{ opacity: 0, y: 12 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }} 
-              transition={{ duration: 0.5, delay: 0.05 }}
-            >
-              <Card className="p-8 bg-card border-border h-full">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-2xl font-semibold">12-Month CEO Mastery Partnership</h3>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-purple-600/30 bg-purple-600/10 px-3 py-1 text-xs font-medium">
-                    <Crown className="w-3.5 h-3.5" /> Premium
-                  </div>
-                </div>
-                <p className="text-muted-foreground mb-4">White-glove advisory model for C-suite leaders and founders.</p>
-                <div className="text-4xl font-bold mb-6">
-                  $36,000 <span className="text-base font-normal text-muted-foreground">annual retainer</span>
-                </div>
-                <div className="text-sm text-muted-foreground mb-6">
-                  or $3,500/month if paid monthly
-                </div>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "24 sessions (2 per month)",
-                    "Full assessment suite + quarterly business reviews",
-                    "On-call access via phone/text",
-                    "One in-person strategy day (NYC)",
-                    "Optional team facilitation or board prep support",
-                  ].map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-3">
-                  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', '_blank')}>
-                    Discuss Retainer <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                  <Button variant="outline" onClick={() => window.open('https://forms.gle/AxBiRBtCXsAgRfKN7', '_blank')}>
-                    Request Details
-                  </Button>
-                </div>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Coaching Packages */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-8">
-            <Target className="w-6 h-6 text-purple-600" />
-            <h2 className="text-3xl md:text-4xl font-bold">Executive Coaching Packages</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {pricingTiers.map((tier, idx) => (
-              <motion.div
-                key={tier.name}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-              >
-                <Card className={
-                  "relative p-8 h-full " +
-                  (tier.highlight
-                    ? "border-purple-600/50 bg-gradient-to-br from-purple-900/20 to-pink-900/20"
-                    : "bg-card border-border")
-                }>
-                  {tier.badge && (
-                    <div className="absolute -top-3 left-6 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-1 text-xs font-medium text-white">
-                      {tier.badge}
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-semibold mb-2">{tier.name}</h3>
-                  <p className="text-muted-foreground mb-4">{tier.bestFor}</p>
-                  <div className="text-4xl font-bold mb-2">
-                    {tier.price} <span className="text-base font-normal text-muted-foreground">/{tier.cadence}</span>
-                  </div>
-                  {tier.paymentNote && (
-                    <p className="text-sm text-muted-foreground mb-6">{tier.paymentNote}</p>
-                  )}
-                  <ul className="space-y-3 mb-8 mt-6">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', '_blank')}>
-                    Start {tier.name} <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What's Included in Your First Session */}
-      <section id="outcomes" className="py-16 px-6 bg-background">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                What's Included in Your First Session
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                This isn't a sales call. This isn't a therapy session. This is a strategic deep dive 
-                that produces a clear action plan you can start executing immediately.
-              </p>
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}>
-                Claim Your Spot — $199
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
-            <Card className="p-8 bg-card border-border">
-              <ul className="space-y-4">
-                {outcomes.map((outcome, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{outcome}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            {...fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Executive Coaching Packages</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Choose the coaching program that fits your leadership journey
+            </p>
+          </motion.div>
+          <div className="w-full">
+            <stripe-pricing-table 
+              pricing-table-id="prctbl_1SPrcCG7cympBc4IRUlov840"
+              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
+            </stripe-pricing-table>
           </div>
         </div>
       </section>

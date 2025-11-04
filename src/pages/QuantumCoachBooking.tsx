@@ -345,7 +345,7 @@ const QuantumShift = () => {
 
       {/* Discovery Call with Stripe Pricing */}
       <section className="py-16 px-6 bg-background">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div 
             {...fadeInUp}
             className="text-center mb-12"
@@ -355,7 +355,7 @@ const QuantumShift = () => {
               Start your leadership transformation journey
             </p>
           </motion.div>
-          <div className="max-w-4xl mx-auto">
+          <div className="w-full">
             <stripe-pricing-table 
               pricing-table-id="prctbl_1SPrv1G7cympBc4IJGTMAD9R"
               publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
@@ -798,7 +798,7 @@ const QuantumShift = () => {
 
       {/* Startup Leadership Team Coaching with Stripe Pricing */}
       <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div 
             {...fadeInUp}
             className="text-center mb-12"
@@ -808,7 +808,7 @@ const QuantumShift = () => {
               Group coaching program for leadership teams
             </p>
           </motion.div>
-          <div className="max-w-4xl mx-auto">
+          <div className="w-full">
             <stripe-pricing-table 
               pricing-table-id="prctbl_1SPrcCG7cympBc4IRUlov840"
               publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">

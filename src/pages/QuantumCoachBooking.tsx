@@ -810,7 +810,7 @@ const QuantumShift = () => {
           </motion.div>
           <div className="w-full">
             <stripe-pricing-table 
-              pricing-table-id="prctbl_1SPrcCG7cympBc4IRUlov840"
+              pricing-table-id="prctbl_1SPrv1G7cympBc4IJGTMAD9R"
               publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
             </stripe-pricing-table>
           </div>

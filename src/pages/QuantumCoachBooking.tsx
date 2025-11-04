@@ -227,14 +227,14 @@ const QuantumShift = () => {
               Watch Chris break down the frameworks that drive real results
             </p>
           </div>
-          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+          <div className="rounded-lg shadow-xl overflow-hidden" style={{ position: 'relative', aspectRatio: '1920/1080' }}>
             <iframe 
-              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl"
-              src="https://www.youtube.com/embed/p2RwQVKvRbQ?si=pTNKfb73unZudx24" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerPolicy="strict-origin-when-cross-origin" 
-              allowFullScreen
+              src="https://share.synthesia.io/embeds/videos/cd9016f8-5b14-47d0-9fec-e893be33ccc9" 
+              loading="lazy" 
+              title="Synthesia video player - Copy of Copy of Embrace the AI Revolution" 
+              allowFullScreen 
+              allow="encrypted-media; fullscreen; microphone;" 
+              style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, border: 'none', padding: 0, margin: 0, overflow: 'hidden' }}
             />
           </div>
         </div>

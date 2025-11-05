@@ -304,8 +304,39 @@ const ExecutiveCoaching = () => {
         </div>
       </section>
 
-      <Newsletter />
-      <PricingTable />
+      {/* Newsletter and Pricing Side by Side */}
+      <section className="bg-background py-20">
+        <div className="section-padding max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="text-center">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Join Chris's Newsletter
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Get exclusive insights, strategies, and stories delivered directly to your inbox
+              </p>
+              <div className="w-full mx-auto">
+                <iframe 
+                  src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9" 
+                  data-test-id="beehiiv-embed" 
+                  width="100%" 
+                  height="320" 
+                  frameBorder="0" 
+                  scrolling="no"
+                  style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
+                />
+              </div>
+            </div>
+            <div className="border-t border-border pt-8">
+              <h3 className="text-3xl font-bold text-center mb-6">7 Day Free Trial</h3>
+              <stripe-pricing-table 
+                pricing-table-id="prctbl_1SQ9v7G7cympBc4IoqBe5mIF"
+                publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
+              </stripe-pricing-table>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );

@@ -567,7 +567,7 @@ const BlogPost = () => {
                     height="52" 
                     frameBorder="0" 
                     scrolling="no"
-                    style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
+                    style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
                   />
                 </div>
               </div>
@@ -687,8 +687,8 @@ const BlogPost = () => {
               data-test-id="beehiiv-embed" 
               height="52" 
               frameBorder="0" 
-              scrolling="no" 
-              style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
+              scrolling="no"
+              style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
             />
           </motion.div>
 
@@ -732,7 +732,7 @@ const BlogPost = () => {
                   height="52" 
                   frameBorder="0" 
                   scrolling="no"
-                  style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
+                  style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
                 />
               </div>
             </div>

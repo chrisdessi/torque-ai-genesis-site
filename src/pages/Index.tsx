@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Results from "@/components/Results";
+import PricingTable from "@/components/PricingTable";
 
 const Index = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -590,6 +591,7 @@ const Index = () => {
       </section>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
       
       {/* Contact Form Dialog */}

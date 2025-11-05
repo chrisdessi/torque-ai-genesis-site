@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import PricingTable from "@/components/PricingTable";
 
 const MEETING_URL = "https://calendar.app.google/rAZmF5kNNCsfMyBf7";
 const WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/20826352/2e5d6n0/";
@@ -195,6 +196,7 @@ const Assessment = () => {
             </div>
           </motion.div>
         </div>
+        <PricingTable />
         <Footer />
       </div>
     );
@@ -422,6 +424,7 @@ const Assessment = () => {
         </motion.div>
       </div>
       <Newsletter />
+      <PricingTable />
       <Footer />
     </div>
   );

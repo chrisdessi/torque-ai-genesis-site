@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import PricingTable from "@/components/PricingTable";
 import { motion } from "framer-motion";
 import { Play, BookOpen, Video, Music, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -296,6 +297,7 @@ const QuantumShift = () => {
       </section>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
     </div>
   );

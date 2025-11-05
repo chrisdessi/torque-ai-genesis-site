@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import PricingTable from "@/components/PricingTable";
 import chrisProfile from "@/assets/chris-bio.png";
 import ZapierContactForm from "@/components/ZapierContactForm";
 import { useState } from "react";
@@ -281,6 +282,7 @@ const About = () => {
       </section>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
       
       {/* Contact Form Dialog */}

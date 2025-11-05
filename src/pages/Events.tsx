@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import PricingTable from "@/components/PricingTable";
 
 const Events = () => {
   const events = [
@@ -213,6 +214,7 @@ const Events = () => {
       </section>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
     </div>
   );

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import PricingTable from "@/components/PricingTable";
 import ZapierContactForm from "@/components/ZapierContactForm";
 
 const Contact = () => {
@@ -164,6 +165,7 @@ const Contact = () => {
       </section>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
     </div>
   );

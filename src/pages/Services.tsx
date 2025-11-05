@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import PricingTable from "@/components/PricingTable";
 import ZapierContactForm from "@/components/ZapierContactForm";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -331,6 +332,7 @@ const Services = () => {
       </section>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
       
       {/* Contact Form Dialog */}

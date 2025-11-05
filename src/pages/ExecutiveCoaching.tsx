@@ -5,6 +5,7 @@ import { Check, Target, TrendingUp, Users, Zap, ArrowRight } from "lucide-react"
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import PricingTable from "@/components/PricingTable";
 import garyVeeImage from "@/assets/gary-vee.png";
 
 const ExecutiveCoaching = () => {
@@ -304,6 +305,7 @@ const ExecutiveCoaching = () => {
       </section>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
     </div>
   );

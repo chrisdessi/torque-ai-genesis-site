@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import PricingTable from "@/components/PricingTable";
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
 import processDiscovery from "@/assets/process-discovery.jpg";
@@ -305,6 +306,7 @@ const Torque = () => {
       </section>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
     </div>
   );

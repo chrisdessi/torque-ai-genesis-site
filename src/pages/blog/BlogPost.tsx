@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import PricingTable from "@/components/PricingTable";
 import { Button } from "@/components/ui/button";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Calendar, User, ArrowLeft, ArrowRight } from "lucide-react";
@@ -548,6 +549,7 @@ const BlogPost = () => {
         <div className="max-w-4xl mx-auto px-6 py-32 text-center">
           <p className="text-xl text-muted-foreground">Loading article...</p>
         </div>
+        <PricingTable />
         <Footer />
       </div>
     );
@@ -683,6 +685,7 @@ const BlogPost = () => {
       </article>
 
       <Newsletter />
+      <PricingTable />
       <Footer />
     </div>
   );

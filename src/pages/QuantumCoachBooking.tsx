@@ -11,18 +11,6 @@ import quantumCoachLogo from "@/assets/quantum-coach-logo.png";
 import chrisFire from "@/assets/chris-fire.jpg";
 import garyVeeImage from "@/assets/gary-vee.png";
 
-// Declare Stripe pricing table custom elements
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'stripe-pricing-table': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        'pricing-table-id': string;
-        'publishable-key': string;
-      };
-    }
-  }
-}
-
 const QuantumShift = () => {
   const [slotsRemaining] = useState(8);
   

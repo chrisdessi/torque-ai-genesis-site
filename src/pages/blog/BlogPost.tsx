@@ -562,13 +562,12 @@ const BlogPost = () => {
                 </p>
                 <div className="w-full mx-auto">
                   <iframe 
-                    src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9" 
+                    src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9?slim=true" 
                     data-test-id="beehiiv-embed" 
-                    width="100%" 
-                    height="320" 
+                    height="52" 
                     frameBorder="0" 
                     scrolling="no"
-                    style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
+                    style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
                   />
                 </div>
               </div>
@@ -684,13 +683,12 @@ const BlogPost = () => {
               Stay Updated with AI Insights
             </h3>
             <iframe 
-              src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9" 
+              src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9?slim=true" 
               data-test-id="beehiiv-embed" 
-              width="100%" 
-              height="320" 
+              height="52" 
               frameBorder="0" 
               scrolling="no" 
-              style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
+              style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
             />
           </motion.div>
 
@@ -729,13 +727,12 @@ const BlogPost = () => {
               </p>
               <div className="w-full mx-auto">
                 <iframe 
-                  src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9" 
+                  src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9?slim=true" 
                   data-test-id="beehiiv-embed" 
-                  width="100%" 
-                  height="320" 
+                  height="52" 
                   frameBorder="0" 
                   scrolling="no"
-                  style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
+                  style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
                 />
               </div>
             </div>

@@ -226,38 +226,6 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Pricing Hero */}
-      <section className="py-16 px-6 bg-gradient-to-br from-purple-900 via-pink-800 to-orange-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full blur-3xl opacity-30 bg-fuchsia-600" />
-          <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full blur-3xl opacity-30 bg-indigo-600" />
-        </div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-2 text-sm font-medium mb-6">
-              <Sparkles className="w-4 h-4" /> Premium Executive Coaching
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Lead with alignment. Deliver with velocity.
-            </h2>
-            <p className="text-xl text-white/90 max-w-3xl mb-8">
-              I help founders and executives turn difficult moments into decisive moves. Most clients see a
-              <span className="font-semibold"> 5–10× ROI </span>
-              within 90 days through clearer decisions, tighter operating rhythms, and courageous communication.
-            </p>
-            <div className="flex flex-wrap items-center gap-4 mb-6">
-              <Button size="lg" className="bg-white text-purple-900 hover:bg-white/90" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNpkn0hXvTXng4RJMiXoubwmRKZFKhh0gd1Q_EFMdyOufbRQ/viewform', '_blank')}>
-                Book a Discovery Call <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10" onClick={() => window.location.href = 'mailto:chris@torqueapp.ai?subject=Coaching%20Inquiry'}>
-                <Mail className="mr-2 w-4 h-4" /> Email Chris
-              </Button>
-            </div>
-            
-          </motion.div>
-        </div>
-      </section>
-
       {/* Credibility Bar */}
       <section className="border-y border-border bg-muted/30">
         <div className="max-w-6xl mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-sm text-muted-foreground">

@@ -323,7 +323,7 @@ const EnterpriseAccelerator = () => {
                   height="52" 
                   frameBorder="0" 
                   scrolling="no"
-                  style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
+                  style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
                 />
               </div>
             </div>

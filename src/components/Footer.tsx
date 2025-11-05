@@ -132,6 +132,14 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Stripe Pricing Table */}
+        <div className="border-t border-gray-800 pt-12 mb-8">
+          <stripe-pricing-table 
+            pricing-table-id="prctbl_1SQ9v7G7cympBc4IoqBe5mIF"
+            publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
+          </stripe-pricing-table>
+        </div>
+
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-400 text-sm">

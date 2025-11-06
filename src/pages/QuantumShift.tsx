@@ -150,7 +150,7 @@ const QuantumShift = () => {
                 <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 text-center">
                   <p className="text-sm text-gray-600 mb-2">First Session</p>
                   <p className="text-6xl font-bold text-black mb-2">$199</p>
-                  <p className="text-gray-600 mb-6">60 minutes · Recorded for reference</p>
+                  <p className="text-gray-600 mb-6">15 minute exploratory call</p>
                   <Button 
                     size="lg"
                     className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-8 py-6 text-lg w-full"

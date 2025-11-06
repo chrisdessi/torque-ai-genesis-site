@@ -286,6 +286,9 @@ const About = () => {
         <div className="section-padding max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="text-center">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Your success starts here
+              </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Get exclusive insights, strategies, and stories delivered directly to your inbox
               </p>

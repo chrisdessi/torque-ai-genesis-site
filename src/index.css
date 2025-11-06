@@ -117,6 +117,31 @@
   .section-padding {
     @apply px-6 md:px-12 lg:px-24;
   }
+
+  /* Hide Beehiiv CSS code snippets that appear as text */
+  .bh__table, 
+  .bh__table_header, 
+  .bh__table_cell {
+    border: 1px solid hsl(var(--border)) !important;
+    border-collapse: collapse;
+  }
+
+  /* Style Beehiiv tables properly */
+  .bh__table {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .bh__table_header {
+    background-color: hsl(var(--muted));
+    font-weight: 600;
+    padding: 0.75rem;
+  }
+
+  .bh__table_cell {
+    padding: 0.75rem;
+    text-align: left;
+  }
 }
 
 @keyframes gradient-shift {

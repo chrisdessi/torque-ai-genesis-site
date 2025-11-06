@@ -34,6 +34,25 @@ export const fetchBlogFeed = async (): Promise<BlogPost[]> => {
       // Extract image from content if available
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = content;
+      
+      // Remove Beehiiv CSS code snippets that appear as text
+      const textNodes = document.createTreeWalker(tempDiv, NodeFilter.SHOW_TEXT, null);
+      const nodesToRemove: Node[] = [];
+      while (textNodes.nextNode()) {
+        const node = textNodes.currentNode;
+        if (node.textContent && (
+          node.textContent.includes('.bh__table') ||
+          node.textContent.includes('border: 1px solid') ||
+          node.textContent.match(/\.\w+\s*\{[\s\S]*?\}/)
+        )) {
+          nodesToRemove.push(node);
+        }
+      }
+      nodesToRemove.forEach(node => node.parentNode?.removeChild(node));
+      
+      // Remove style tags
+      tempDiv.querySelectorAll('style').forEach(el => el.remove());
+      
       const imgElement = tempDiv.querySelector('img');
       const image = imgElement?.src || 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop';
       

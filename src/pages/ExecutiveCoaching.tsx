@@ -91,7 +91,7 @@ const ExecutiveCoaching = () => {
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Work 1-on-1 with Chris Dessi—author, TV commentator, and the leader who personally closed 
-                <span className="font-semibold text-foreground"> over $100million in enterprise deals</span> in two years.
+                <span className="font-semibold text-foreground"> over $100million in enterprise deals</span>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">

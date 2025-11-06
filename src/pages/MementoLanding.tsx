@@ -272,7 +272,7 @@ const MementoLanding = () => {
             <h3 className="text-2xl font-semibold">Founder</h3>
             <p className="mt-4 text-gray-300">
               <span className="font-semibold">Chris Dessi</span> — author, television commentator, and growth leader who has built and led high-performing sales teams.
-              Over two years, Chris personally closed <span className="font-semibold">$32 million</span> in enterprise deals.
+              Over two years, Chris personally closed <span className="font-semibold">over $100million</span> in enterprise deals.
               He has seen first-hand what destroys momentum: confusion, misalignment, and fear of hard conversations.
             </p>
             <p className="mt-3 text-gray-300">Memento is his solution: a simple weekly rhythm that restores clarity and speed.</p>

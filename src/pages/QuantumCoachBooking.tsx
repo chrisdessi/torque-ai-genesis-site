@@ -491,7 +491,7 @@ const QuantumShift = () => {
                   television commentator, and growth leader who has built and led high-performing sales teams.
                 </p>
                 <p>
-                  Over two years, Chris personally closed <span className="font-semibold text-foreground">$32 million</span> in 
+                  Over two years, Chris personally closed <span className="font-semibold text-foreground">over $100million</span> in 
                   enterprise deals. He's been in the trenches—navigating complex sales cycles, building teams from scratch, 
                   and scaling revenue in competitive markets.
                 </p>

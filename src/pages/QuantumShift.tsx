@@ -127,7 +127,7 @@ const QuantumShift = () => {
               <div className="flex-1">
                 <h3 className="text-3xl font-bold text-black mb-6">Executive Coaching Sessions</h3>
                 <p className="text-lg text-gray-700 mb-8">
-                  Work directly with Chris Dessi—author, TV commentator, and the leader who personally closed <span className="font-bold text-black">$32 million in enterprise deals</span> in two years.
+                  Work directly with Chris Dessi—author, TV commentator, and the leader who personally closed <span className="font-bold text-black">over $100million in enterprise deals</span> in two years.
                 </p>
                 <div className="space-y-4 mb-8">
                   {[

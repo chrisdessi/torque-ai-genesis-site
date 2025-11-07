@@ -3,6 +3,7 @@ import { ArrowRight, Award, BookOpen, Mic, TrendingUp, Users, Target, Linkedin, 
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import PricingTable from "@/components/PricingTable";
@@ -280,6 +281,9 @@ const About = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Calendly Booking */}
+      <CalendlyEmbed />
 
       {/* Newsletter and Pricing Side by Side */}
       <section className="bg-background py-20">

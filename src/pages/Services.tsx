@@ -7,6 +7,7 @@ import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import PricingTable from "@/components/PricingTable";
 import ZapierContactForm from "@/components/ZapierContactForm";
+import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
@@ -330,6 +331,9 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Calendly Booking */}
+      <CalendlyEmbed />
 
       {/* Newsletter and Pricing Side by Side */}
       <section className="bg-background py-20">

@@ -21,6 +21,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Helmet } from "react-helmet";
 
 /**
  * Torque AI – Strategy & Deployment Guide
@@ -51,6 +52,12 @@ export default function TorqueAIStrategyGuidePage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <Helmet>
+        <title>Torque AI Strategy & Deployment Guide - Complete AI Implementation Framework</title>
+        <meta name="description" content="Comprehensive AI strategy guide featuring the Torque Flywheel framework. Learn AI adoption, implementation workshops, and measurable deployment strategies for enterprise transformation." />
+        <meta name="keywords" content="AI strategy guide, AI implementation framework, AI deployment strategy, Torque Flywheel, AI adoption roadmap, enterprise AI workshops, AI transformation guide, AI readiness assessment, AI strategy consulting, AI business transformation" />
+        <link rel="canonical" href="https://torqueapp.ai/torque-ai-guide" />
+      </Helmet>
       {/* SITE HEADER */}
       <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-black/60 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">

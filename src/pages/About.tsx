@@ -48,7 +48,7 @@ const About = () => {
       <SEO 
         title="About Christopher Dessi - AI Strategy Expert"
         description="Meet Christopher Dessi, founder of Torque AI. 25+ years scaling organizations, $32M in revenue using AI, TEDx speaker, and author of ChatGPT for Profit. Enterprise AI consulting and transformation."
-        keywords="Christopher Dessi, Chris Dessi, AI consultant, AI strategy expert, TEDx speaker, ChatGPT for Profit, enterprise AI transformation, AI thought leader"
+        keywords="Christopher Dessi, Chris Dessi, AI consultant, AI strategy expert, TEDx speaker, ChatGPT for Profit, enterprise AI transformation, AI thought leader, AI business advisor, generative AI expert, AI keynote speaker, AI implementation specialist, enterprise technology strategist, business automation consultant, AI revenue growth, AI leadership training, executive AI coaching"
         url="/about"
       />
       <Header />

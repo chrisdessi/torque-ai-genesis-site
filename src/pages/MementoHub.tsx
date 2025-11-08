@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import PricingTable from "@/components/PricingTable";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Users, Calendar, Code, Heart } from "lucide-react";
 
@@ -43,6 +44,12 @@ const MementoHub = () => {
 
   return (
     <div className="min-h-screen bg-[#0b0b0b] text-[#f4f4f5]">
+      <SEO 
+        title="Memento Hub - Executive Events, Coaching & Transparency Software"
+        description="People first. Truth second. Tools third. Memento offers intimate executive dinners, offsite events, coaching, and software designed for transparent leadership and team accountability."
+        keywords="Memento, executive events, leadership dinners, executive coaching, team alignment software, transparency tools, executive retreats, leadership accountability, VP executive network, business offsite events, executive development"
+        url="/memento-hub"
+      />
       <Header />
       
       {/* Hero Section with Memento brand color */}

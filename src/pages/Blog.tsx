@@ -37,7 +37,7 @@ const Blog = () => {
       <SEO 
         title="AI Insights & Strategy Blog"
         description="Expert insights on AI transformation, ChatGPT strategies, enterprise AI implementation, and business innovation from Christopher Dessi. Stay ahead with the latest AI trends and practical advice for leaders."
-        keywords="AI blog, AI insights, ChatGPT strategies, AI transformation, enterprise AI, AI business strategies, AI trends, AI thought leadership, Christopher Dessi blog"
+        keywords="AI blog, AI insights, ChatGPT strategies, AI transformation, enterprise AI, AI business strategies, AI trends, AI thought leadership, Christopher Dessi blog, generative AI, AI automation, machine learning, AI adoption, responsible AI, AI productivity, AI marketing strategies, AI sales optimization, digital transformation blog, business AI applications"
         url="/blog"
       />
       <Header />

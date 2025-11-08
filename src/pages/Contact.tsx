@@ -46,7 +46,7 @@ const Contact = () => {
       <SEO 
         title="Contact Us - AI Strategy Consultation"
         description="Get in touch with Torque AI for enterprise AI consulting. Schedule a strategic planning session, book an executive briefing, or start your AI transformation journey. We respond within 24 hours."
-        keywords="contact AI consultant, AI consultation, schedule AI strategy session, enterprise AI consulting, AI transformation consultation, book AI expert"
+        keywords="contact AI consultant, AI consultation, schedule AI strategy session, enterprise AI consulting, AI transformation consultation, book AI expert, AI advisory services, business AI implementation, AI strategic planning meeting, enterprise technology consultation, AI business solutions, AI readiness assessment"
         url="/contact"
       />
       <Header />

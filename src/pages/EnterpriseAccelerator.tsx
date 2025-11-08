@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import PricingTable from "@/components/PricingTable";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
@@ -43,6 +44,12 @@ const EnterpriseAccelerator = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="90-Day AI Accelerator - Enterprise AI Transformation Program"
+        description="Transform your enterprise with our 90-Day AI Accelerator. Comprehensive AI strategy, implementation, and measurable ROI in marketing, sales, and communications. From $297 audit to full transformation."
+        keywords="90-day AI accelerator, enterprise AI transformation, AI implementation program, AI readiness assessment, AI adoption roadmap, AI compliance framework, AI-driven automation, enterprise AI solutions, business process automation, AI GTM strategy, AI analytics implementation, rapid AI deployment"
+        url="/enterprise-accelerator"
+      />
       <Header />
       
       {/* Hero Section */}

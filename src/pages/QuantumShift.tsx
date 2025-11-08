@@ -59,8 +59,10 @@ const QuantumShift = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>The Quantum Shift | Philosophy, Podcast & Movement</title>
-        <meta name="description" content="A philosophy and content platform exploring how leaders can thrive in an AI-driven world while staying grounded in human truth and transparency." />
+        <title>The Quantum Shift | Philosophy, Podcast & Movement by Chris Dessi</title>
+        <meta name="description" content="A philosophy and content platform exploring how leaders can thrive in an AI-driven world while staying grounded in human truth and transparency. Featuring the Quantum Coach executive coaching program." />
+        <meta name="keywords" content="Quantum Shift, leadership podcast, AI leadership, executive coaching, Chris Dessi podcast, business philosophy, AI-driven leadership, human-centered AI, leadership transformation, executive development, business podcast, entrepreneurship, leadership principles, AI ethics, authentic leadership, business strategy podcast" />
+        <link rel="canonical" href="https://torqueapp.ai/quantum-shift" />
       </Helmet>
       <Header />
       

@@ -102,7 +102,7 @@ const Services = () => {
       <SEO 
         title="AI Consulting & Development Services"
         description="Comprehensive AI solutions for enterprise transformation. AI strategy consulting, custom model development, data engineering, automation, and 90-day implementation programs. Proven methodology for measurable ROI."
-        keywords="AI consulting services, AI development, AI model development, data engineering, AI automation, AI strategy, enterprise AI solutions, custom AI development, AI implementation"
+        keywords="AI consulting services, AI development, AI model development, data engineering, AI automation, AI strategy, enterprise AI solutions, custom AI development, AI implementation, machine learning consulting, generative AI solutions, AI workflow optimization, intelligent automation, AI system integration, predictive analytics, AI security solutions, business process automation, AI transformation services"
         url="/services"
       />
       <Header />

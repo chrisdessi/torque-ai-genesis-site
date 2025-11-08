@@ -82,6 +82,10 @@ const QuantumShift = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
+        <title>Quantum Coach - Executive Coaching with Chris Dessi | $199 First Session</title>
+        <meta name="description" content="Work 1-on-1 with Chris Dessi, the leader who closed $100M+ in enterprise deals. 60-minute strategic deep dives, clear 30-day action plans, and battle-tested frameworks. First session $199." />
+        <meta name="keywords" content="executive coaching, business coaching, leadership coaching, Chris Dessi coach, executive development, strategic coaching, revenue growth coaching, enterprise sales coaching, business strategy coaching, CEO coaching, executive advisor, leadership development, business mentor, sales coaching, executive performance coaching" />
+        <link rel="canonical" href="https://torqueapp.ai/quantum-shift/coach" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YB4QY7TVK"></script>
         <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
         <script>

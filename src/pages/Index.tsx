@@ -59,7 +59,7 @@ const Index = () => {
       <SEO 
         title="Enterprise AI Strategy & Implementation"
         description="Transform your business with strategic AI consulting. From executive briefings to 90-day accelerators, Torque AI delivers measurable ROI through AI-driven marketing, sales, and communications solutions."
-        keywords="AI consulting, enterprise AI strategy, AI implementation, AI transformation, business AI solutions, ChatGPT for enterprise, AI-driven marketing, AI sales automation"
+        keywords="AI consulting, enterprise AI strategy, AI implementation, AI transformation, business AI solutions, ChatGPT for enterprise, AI-driven marketing, AI sales automation, generative AI, AI adoption, business automation, AI workflow optimization, responsible AI governance, AI-powered content creation, machine learning consulting, AI integration services, digital transformation, AI productivity tools, enterprise technology consulting, AI strategic planning"
         url="/"
       />
       <Header />

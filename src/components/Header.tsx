@@ -108,7 +108,7 @@ const Header = () => {
                   {item.subItems && <ChevronDown className="w-4 h-4" />}
                 </Link>
                 {item.subItems && openDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-xl py-2 z-50">
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-2xl py-2 z-[100] backdrop-blur-sm">
                     {item.subItems.map((subItem) => (
                       subItem.href.startsWith('http') ? (
                         <a
@@ -116,7 +116,7 @@ const Header = () => {
                           href={subItem.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                          className="block px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 font-medium"
                         >
                           {subItem.name}
                         </a>
@@ -124,7 +124,7 @@ const Header = () => {
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                          className="block px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 font-medium"
                         >
                           {subItem.name}
                         </Link>

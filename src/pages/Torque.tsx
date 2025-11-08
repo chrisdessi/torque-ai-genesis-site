@@ -47,7 +47,7 @@ const Torque = () => {
       <SEO 
         title="Torque AI - Strategic AI Implementation & Consulting"
         description="Torque AI delivers end-to-end AI strategy and implementation for enterprise businesses. From 90-minute executive briefings to 90-day accelerators with measurable ROI in marketing, sales, and communications."
-        keywords="Torque AI, AI implementation, AI strategy, executive AI briefing, 90-day AI accelerator, AI consulting, enterprise AI transformation, AI business strategy"
+        keywords="Torque AI, AI implementation, AI strategy, executive AI briefing, 90-day AI accelerator, AI consulting, enterprise AI transformation, AI business strategy, AI-driven marketing automation, enterprise technology solutions, AI revenue growth, business process automation, AI adoption roadmap, AI compliance framework"
         url="/torque"
       />
       <Header />

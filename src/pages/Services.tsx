@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Target, Brain, Database, Rocket, Cog, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
@@ -226,10 +227,10 @@ const Services = () => {
               className="bg-black hover:bg-gray-800 text-white font-semibold px-12 py-6 text-lg"
               asChild
             >
-              <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
+              <Link to="/ai-audit">
                 Get Started with 2-Week AI Audit — Just $297
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
+              </Link>
             </Button>
           </motion.div>
         </div>

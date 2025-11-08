@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Results from "@/components/Results";
-import PricingTable from "@/components/PricingTable";
+
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 
 const Index = () => {
@@ -597,9 +597,7 @@ const Index = () => {
       {/* Newsletter and Pricing Side by Side */}
       <section className="bg-background py-20">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Newsletter */}
-            <motion.div {...fadeInUp} className="text-center">
+          <motion.div {...fadeInUp} className="max-w-2xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Join Chris's Newsletter
               </h2>
@@ -617,16 +615,6 @@ const Index = () => {
                 />
               </div>
             </motion.div>
-            
-            {/* Pricing Table */}
-            <motion.div {...fadeInUp} className="border-t border-border pt-8">
-              <h3 className="text-3xl font-bold text-center mb-6">7 Day Free Trial</h3>
-              <stripe-pricing-table 
-                pricing-table-id="prctbl_1SQ9v7G7cympBc4IoqBe5mIF"
-                publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
-              </stripe-pricing-table>
-            </motion.div>
-          </div>
         </div>
       </section>
       <Footer />

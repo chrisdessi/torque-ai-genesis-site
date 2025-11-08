@@ -5,7 +5,7 @@ import { Check, Target, TrendingUp, Users, Zap, ArrowRight } from "lucide-react"
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
-import PricingTable from "@/components/PricingTable";
+
 import garyVeeImage from "@/assets/gary-vee.png";
 
 const ExecutiveCoaching = () => {
@@ -307,7 +307,7 @@ const ExecutiveCoaching = () => {
       {/* Newsletter and Pricing Side by Side */}
       <section className="bg-background py-20">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="max-w-2xl mx-auto">
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Join Chris's Newsletter
@@ -325,13 +325,6 @@ const ExecutiveCoaching = () => {
                   style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
                 />
               </div>
-            </div>
-            <div className="border-t border-border pt-8">
-              <h3 className="text-3xl font-bold text-center mb-6">7 Day Free Trial</h3>
-              <stripe-pricing-table 
-                pricing-table-id="prctbl_1SQ9v7G7cympBc4IoqBe5mIF"
-                publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
-              </stripe-pricing-table>
             </div>
           </div>
         </div>

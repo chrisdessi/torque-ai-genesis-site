@@ -1,13 +1,26 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Clock, BarChart3, Target, Zap, Brain } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ZapierContactForm from "@/components/ZapierContactForm";
-import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 
 const AIAudit = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://js.stripe.com/v3/pricing-table.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   const benefits = [
     {
       icon: Target,
@@ -103,7 +116,7 @@ const AIAudit = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('payment')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-lg px-8"
                 >
                   Get Started Now
@@ -111,10 +124,10 @@ const AIAudit = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  onClick={() => document.getElementById('calendly')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-lg px-8"
                 >
-                  Schedule a Call
+                  Contact Us
                 </Button>
               </div>
             </motion.div>
@@ -206,41 +219,31 @@ const AIAudit = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-br from-primary/10 via-primary/5 to-background">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* Payment Section */}
+        <section id="payment" className="section-padding bg-gradient-to-br from-primary/10 via-primary/5 to-background">
+          <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="text-center mb-12"
             >
               <Clock className="w-16 h-16 text-primary mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Join hundreds of businesses that have discovered their AI advantage. 
-                Get started today for just $297 and receive your custom roadmap in 2 weeks.
+                Get started today and receive your custom roadmap in 2 weeks.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="text-lg px-8"
-                  onClick={() => window.open('https://buy.stripe.com/your-payment-link', '_blank')}
-                >
-                  Pay Now & Get Started
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => document.getElementById('calendly')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-lg px-8"
-                >
-                  Schedule Discovery Call
-                </Button>
-              </div>
             </motion.div>
+            <div className="bg-background rounded-xl shadow-2xl overflow-hidden">
+              <stripe-pricing-table 
+                pricing-table-id="prctbl_1SRFiFG7cympBc4Ioh5IdMtK"
+                publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
+              </stripe-pricing-table>
+            </div>
           </div>
         </section>
 
@@ -249,14 +252,6 @@ const AIAudit = () => {
           <ZapierContactForm 
             title="Have Questions? Let's Talk"
             description="Fill out the form below and we'll get back to you within 24 hours to discuss your AI audit"
-          />
-        </section>
-
-        {/* Calendly Section */}
-        <section id="calendly" className="section-padding bg-card/50">
-          <CalendlyEmbed 
-            title="Schedule Your Discovery Call"
-            description="Book a 30-minute call to discuss your business goals and how our AI audit can help"
           />
         </section>
 

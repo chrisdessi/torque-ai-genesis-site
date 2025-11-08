@@ -33,6 +33,36 @@ const Services = () => {
       icon: Users,
       title: "Customer Journey Mapping",
       description: "AI-powered customer journey analysis to maximize conversion at every touchpoint."
+    },
+    {
+      icon: Brain,
+      title: "AI Agent Workflows",
+      description: "Build custom chat agent workflows with specialized logic and tools for your business needs."
+    },
+    {
+      icon: Target,
+      title: "Data Enrichment Agents",
+      description: "Pull together data to answer user questions and provide comprehensive insights automatically."
+    },
+    {
+      icon: Users,
+      title: "Customer Service Agents",
+      description: "Resolve customer queries with custom AI policies and automated response systems."
+    },
+    {
+      icon: Brain,
+      title: "Structured Data Q/A",
+      description: "Query databases using natural language and get instant, accurate answers from your data."
+    },
+    {
+      icon: BarChart3,
+      title: "Document Comparison",
+      description: "Analyze and highlight differences across uploaded documents with AI precision."
+    },
+    {
+      icon: Users,
+      title: "Internal Knowledge Assistant",
+      description: "Triage and answer questions from employees using your organization's knowledge base."
     }
   ];
 

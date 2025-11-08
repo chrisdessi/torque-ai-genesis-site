@@ -28,6 +28,7 @@ import BlogPost from "./pages/blog/BlogPost";
 import TorqueAIGuide from "./pages/TorqueAIGuide";
 import ExecutiveCoaching from "./pages/ExecutiveCoaching";
 import Assessment from "./pages/Assessment";
+import AIAudit from "./pages/AIAudit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/executive-coaching" element={<ExecutiveCoaching />} />
           <Route path="/assessment" element={<Assessment />} />
+          <Route path="/ai-audit" element={<AIAudit />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

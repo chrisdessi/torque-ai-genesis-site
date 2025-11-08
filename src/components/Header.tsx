@@ -24,6 +24,7 @@ const Header = () => {
       href: "/torque",
       subItems: [
         { name: "AI Consulting", href: "/torque" },
+        { name: "2-Week AI Audit", href: "/ai-audit" },
         { name: "AI Strategy Guide", href: "/torque-ai-guide" },
         { name: "Services", href: "/services" },
         { name: "90-Day Accelerator", href: "/enterprise-accelerator" }
@@ -142,11 +143,11 @@ const Header = () => {
               asChild 
               variant="default"
               size="sm"
-              className="bg-primary hover:bg-primary/90"
+              className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg"
             >
-              <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
-                Meet With Us
-              </a>
+              <Link to="/ai-audit">
+                Get Your AI Audit Now
+              </Link>
             </Button>
           </div>
 
@@ -211,11 +212,11 @@ const Header = () => {
               <div className="pt-4 px-4 space-y-2">
                 <Button 
                   asChild 
-                  className="w-full"
+                  className="w-full bg-gradient-to-r from-primary to-purple-600"
                 >
-                  <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
-                    Meet With Us
-                  </a>
+                  <Link to="/ai-audit" onClick={() => setIsMenuOpen(false)}>
+                    Get Your AI Audit Now
+                  </Link>
                 </Button>
               </div>
             </nav>

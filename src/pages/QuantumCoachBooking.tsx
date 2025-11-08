@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import PricingTable from "@/components/PricingTable";
+import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { motion } from "framer-motion";
 import { Mic, Youtube, BookOpen, Calendar, Star, Play, Target, TrendingUp, Users, Zap, ArrowRight, Sparkles, Crown, CalendarDays, Mail, MessageSquare, Check } from "lucide-react";
 import { Helmet } from "react-helmet";
@@ -603,6 +604,9 @@ const QuantumShift = () => {
           </div>
         </div>
       </section>
+
+      {/* Calendly Booking */}
+      <CalendlyEmbed />
 
       {/* Newsletter and Pricing Side by Side */}
       <section className="bg-background py-20">

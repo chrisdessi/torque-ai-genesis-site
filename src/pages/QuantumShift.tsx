@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import PricingTable from "@/components/PricingTable";
+import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { motion } from "framer-motion";
 import { Play, BookOpen, Video, Music, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -295,6 +296,9 @@ const QuantumShift = () => {
           </div>
         </div>
       </section>
+
+      {/* Calendly Booking */}
+      <CalendlyEmbed />
 
       {/* Newsletter and Pricing Side by Side */}
       <section className="bg-background py-20">

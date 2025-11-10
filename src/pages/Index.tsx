@@ -543,7 +543,7 @@ const Index = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Latest AI Insights from Chris Dessi
+              Latest AI Insights
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Stay ahead with the latest trends, strategies, and breakthroughs in AI transformation

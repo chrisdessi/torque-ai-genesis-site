@@ -13,19 +13,20 @@ const Newsletter = () => {
       <div className="section-padding max-w-4xl mx-auto text-center">
         <motion.div {...fadeInUp}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Join Chris's Newsletter
+            Join Torque AI's Newsletter
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Get exclusive insights, strategies, and stories delivered directly to your inbox
+            Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
           </p>
           <div className="w-full max-w-2xl mx-auto">
             <iframe 
-              src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9?slim=true" 
+              src="https://embeds.beehiiv.com/0c0565a9-66ec-4225-a021-87a3562337b7" 
               data-test-id="beehiiv-embed" 
-              height="52" 
+              width="100%" 
+              height="320" 
               frameBorder="0" 
               scrolling="no"
-              style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
+              style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
             />
           </div>
         </motion.div>

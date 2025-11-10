@@ -298,12 +298,13 @@ const About = () => {
               </p>
               <div className="w-full mx-auto">
                 <iframe 
-                  src="https://embeds.beehiiv.com/ed4d369b-b9a6-4dfc-9698-32ed638ae5f9?slim=true" 
+                  src="https://embeds.beehiiv.com/0c0565a9-66ec-4225-a021-87a3562337b7" 
                   data-test-id="beehiiv-embed" 
-                  height="52" 
+                  width="100%" 
+                  height="320" 
                   frameBorder="0" 
                   scrolling="no"
-                  style={{ margin: 0, borderRadius: '0px', backgroundColor: 'transparent' }}
+                  style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
                 />
               </div>
             </div>

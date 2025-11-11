@@ -12,6 +12,14 @@ import { Helmet } from "react-helmet";
 import quantumCoachLogo from "@/assets/quantum-coach-logo.png";
 import chrisFire from "@/assets/chris-fire.jpg";
 import garyVeeImage from "@/assets/gary-vee.png";
+import testimonialsGrid1 from "@/assets/testimonials-grid-1.webp";
+import testimonialsGrid2 from "@/assets/testimonials-grid-2.webp";
+import testimonialsGrid3 from "@/assets/testimonials-grid-3.webp";
+import testimonialsGrid4 from "@/assets/testimonials-grid-4.webp";
+import testimonialsGrid5 from "@/assets/testimonials-grid-5.webp";
+import testimonialsGrid6 from "@/assets/testimonials-grid-6.webp";
+import testimonialsGrid7 from "@/assets/testimonials-grid-7.webp";
+import testimonialsGrid8 from "@/assets/testimonials-grid-8.webp";
 
 const QuantumShift = () => {
   const [slotsRemaining] = useState(8);
@@ -211,6 +219,57 @@ const QuantumShift = () => {
         </div>
       </section>
 
+      {/* Client Testimonials Grid */}
+      <section className="py-20 bg-white">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+              Trusted by Industry Leaders
+            </h2>
+            <p className="text-xl text-gray-600">
+              Hear what executives and entrepreneurs say about working with Chris
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              testimonialsGrid1,
+              testimonialsGrid2,
+              testimonialsGrid3,
+              testimonialsGrid4,
+              testimonialsGrid5,
+              testimonialsGrid6,
+              testimonialsGrid7,
+              testimonialsGrid8
+            ].map((image, index) => (
+              <motion.div
+                key={index}
+                {...fadeInUp}
+                transition={{ delay: index * 0.1 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              >
+                <img 
+                  src={image} 
+                  alt={`Client testimonials ${index + 1}`}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.8 }} className="text-center mt-16">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl"
+              onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}
+            >
+              <Calendar className="mr-3 h-6 w-6" />
+              Start Your Transformation
+            </Button>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Video Section */}
       <section className="py-16 px-6 bg-background">

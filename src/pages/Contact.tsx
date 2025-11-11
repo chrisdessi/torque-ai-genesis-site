@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, MessageSquare, Clock, Linkedin, Youtube } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare, Clock, Linkedin, Youtube, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,6 +11,13 @@ import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 
 const Contact = () => {
   const contactMethods = [
+    {
+      icon: Phone,
+      title: "Call Us",
+      description: "Speak directly with our team about your AI strategy",
+      action: "+1 (646) 760-6991",
+      href: "tel:+16467606991"
+    },
     {
       icon: Mail,
       title: "Email Us",

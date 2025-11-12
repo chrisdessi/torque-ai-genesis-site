@@ -219,55 +219,34 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Client Testimonials Grid */}
-      <section className="py-20 bg-white">
+      {/* Featured Testimonials - First Pair */}
+      <section className="py-16 bg-gradient-to-br from-purple-50/30 to-pink-50/30">
         <div className="section-padding max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Trusted by Industry Leaders
-            </h2>
-            <p className="text-xl text-gray-600">
-              Hear what executives and entrepreneurs say about working with Chris
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              testimonialsGrid1,
-              testimonialsGrid2,
-              testimonialsGrid3,
-              testimonialsGrid4,
-              testimonialsGrid5,
-              testimonialsGrid6,
-              testimonialsGrid7,
-              testimonialsGrid8
-            ].map((image, index) => (
-              <motion.div
-                key={index}
-                {...fadeInUp}
-                transition={{ delay: index * 0.1 }}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              >
-                <img 
-                  src={image} 
-                  alt={`Client testimonials ${index + 1}`}
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div {...fadeInUp} transition={{ delay: 0.8 }} className="text-center mt-16">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl"
-              onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              {...fadeInUp}
+              className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-white"
             >
-              <Calendar className="mr-3 h-6 w-6" />
-              Start Your Transformation
-            </Button>
-          </motion.div>
+              <img 
+                src={testimonialsGrid1} 
+                alt="Client testimonial"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </motion.div>
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.2 }}
+              className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-white"
+            >
+              <img 
+                src={testimonialsGrid2} 
+                alt="Client testimonial"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -290,6 +269,25 @@ const QuantumShift = () => {
         </div>
       </section>
 
+      {/* Featured Testimonial - Large */}
+      <section className="py-16 bg-white">
+        <div className="section-padding max-w-5xl mx-auto">
+          <motion.div
+            {...fadeInUp}
+            className="rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 bg-gradient-to-br from-purple-50 to-white p-2"
+          >
+            <div className="bg-white rounded-2xl overflow-hidden">
+              <img 
+                src={testimonialsGrid3} 
+                alt="Client testimonial"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Credibility Bar */}
       <section className="border-y border-border bg-muted/30">
         <div className="max-w-6xl mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-sm text-muted-foreground">
@@ -297,6 +295,37 @@ const QuantumShift = () => {
           <div>Led $32M+ sales impact</div>
           <div>Coached CEOs & Founders</div>
           <div>Keynotes & Offsites</div>
+        </div>
+      </section>
+
+      {/* Testimonials - Offset Layout */}
+      <section className="py-20 bg-gradient-to-br from-pink-50/30 to-purple-50/30">
+        <div className="section-padding max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              {...fadeInUp}
+              className="md:translate-y-12 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+            >
+              <img 
+                src={testimonialsGrid4} 
+                alt="Client testimonial"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </motion.div>
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.2 }}
+              className="md:-translate-y-12 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+            >
+              <img 
+                src={testimonialsGrid5} 
+                alt="Client testimonial"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -365,6 +394,68 @@ const QuantumShift = () => {
                 />
               </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials - Side by Side with Title */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-white">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
+              Trusted by Industry Leaders
+            </h2>
+            <p className="text-lg text-gray-600">
+              Real results from real executives
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.1 }}
+              className="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            >
+              <img 
+                src={testimonialsGrid6} 
+                alt="Client testimonial"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </motion.div>
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.2 }}
+              className="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            >
+              <img 
+                src={testimonialsGrid7} 
+                alt="Client testimonial"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </motion.div>
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.3 }}
+              className="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            >
+              <img 
+                src={testimonialsGrid8} 
+                alt="Client testimonial"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
+          <motion.div {...fadeInUp} transition={{ delay: 0.5 }} className="text-center mt-16">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl shadow-xl hover:shadow-2xl transition-all"
+              onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}
+            >
+              <Calendar className="mr-3 h-6 w-6" />
+              Start Your Transformation
+            </Button>
           </motion.div>
         </div>
       </section>

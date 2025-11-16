@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 
-import ZapierContactForm from "@/components/ZapierContactForm";
+import ZohoContactForm from "@/components/ZohoContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 
 const Contact = () => {
@@ -80,7 +80,7 @@ const Contact = () => {
       {/* Contact Form */}
       <section className="py-32 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <ZapierContactForm 
+          <ZohoContactForm 
             title="Get In Touch"
             description="Fill out the form below and our team will respond within 24 hours"
           />

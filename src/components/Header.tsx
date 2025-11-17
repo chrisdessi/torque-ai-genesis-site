@@ -109,7 +109,7 @@ const Header = () => {
                   {item.subItems && <ChevronDown className="w-4 h-4" />}
                 </Link>
                 {item.subItems && openDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-popover border border-border rounded-lg shadow-2xl py-2 z-[100]">
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-2xl py-2 z-[9999] pointer-events-auto backdrop-blur-sm">
                     {item.subItems.map((subItem) => (
                       subItem.href.startsWith('http') ? (
                         <a

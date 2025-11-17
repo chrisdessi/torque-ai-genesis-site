@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
-
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { Brain, Zap, Target, TrendingUp, Linkedin, Youtube } from "lucide-react";
+import { Brain, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import ZohoEnterpriseForm from "@/components/ZohoEnterpriseForm";
 
 const EnterpriseAccelerator = () => {
   const fadeInUp = {
@@ -17,23 +16,6 @@ const EnterpriseAccelerator = () => {
     transition: { duration: 0.6 }
   };
 
-  const solutions = [
-    {
-      title: "$297 AI Audit",
-      description: "Comprehensive AI readiness assessment for your organization.",
-      price: "$297"
-    },
-    {
-      title: "AI Strategy Workshop",
-      description: "1-day onsite/virtual workshop to design AI adoption roadmaps and compliance frameworks.",
-      price: "$25,000"
-    },
-    {
-      title: "90-Day AI Accelerator",
-      description: "Implementation of AI-driven GTM, automation, and analytics systems for measurable ROI.",
-      price: "$75,000–$150,000"
-    }
-  ];
 
   const metrics = [
     { value: 100, suffix: "%", label: "Leadership Alignment within 4 Weeks" },
@@ -101,6 +83,29 @@ const EnterpriseAccelerator = () => {
         </div>
       </section>
 
+      {/* Zoho Form Section */}
+      <section className="bg-white py-20">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div 
+            {...fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+              Join the AI Transformation
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Be part of the next generation of enterprises leveraging AI for measurable growth.
+            </p>
+          </motion.div>
+          <motion.div 
+            {...fadeInUp}
+            className="flex justify-center"
+          >
+            <ZohoEnterpriseForm />
+          </motion.div>
+        </div>
+      </section>
+
       {/* The Problem Section */}
       <section className="bg-white py-32">
         <div className="section-padding max-w-7xl mx-auto">
@@ -131,49 +136,6 @@ const EnterpriseAccelerator = () => {
               <Brain className="w-64 h-64 text-gray-400 relative z-10" strokeWidth={0.5} />
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* The Solution Section */}
-      <section className="bg-black text-white py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E5C07B] to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#E5C07B] to-transparent"></div>
-        </div>
-        <div className="section-padding max-w-7xl mx-auto relative z-10">
-          <motion.h2 
-            {...fadeInUp}
-            className="text-5xl md:text-6xl font-bold text-center mb-20"
-          >
-            Enterprise AI, Delivered as a System
-          </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                {...fadeInUp}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -10 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-10 hover:border-[#0074FF]/50 transition-all duration-300"
-              >
-                <h3 className="text-2xl font-bold mb-6">{solution.title}</h3>
-                <p className="text-gray-400 mb-8 leading-relaxed text-lg">{solution.description}</p>
-                <div className="text-3xl font-bold text-[#E5C07B]">{solution.price}</div>
-              </motion.div>
-            ))}
-          </div>
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mt-16"
-          >
-            <Button 
-              size="lg"
-              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
-              onClick={() => window.location.href = 'mailto:info@torqueapp.ai?subject=Enterprise Briefing Request'}
-            >
-              Book My Enterprise Briefing
-            </Button>
-          </motion.div>
         </div>
       </section>
 
@@ -312,32 +274,6 @@ const EnterpriseAccelerator = () => {
         </div>
       </section>
 
-      {/* Newsletter and Pricing Side by Side */}
-      <section className="bg-background py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="w-full mx-auto">
-                <iframe 
-                  src="https://embeds.beehiiv.com/0c0565a9-66ec-4225-a021-87a3562337b7" 
-                  data-test-id="beehiiv-embed" 
-                  width="100%" 
-                  height="320" 
-                  frameBorder="0" 
-                  scrolling="no"
-                  style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <Footer />
     </div>
   );

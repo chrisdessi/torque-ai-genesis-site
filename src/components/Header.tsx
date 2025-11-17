@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import torqueLogo from "@/assets/torque-ai-logo-white.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -108,9 +108,16 @@ const Header = () => {
                   {item.name}
                   {item.subItems && <ChevronDown className="w-4 h-4" />}
                 </Link>
-                {item.subItems && openDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-2xl py-2 z-[9999] pointer-events-auto backdrop-blur-sm">
-                    {item.subItems.map((subItem) => (
+                <AnimatePresence>
+                  {item.subItems && openDropdown === item.name && (
+                    <motion.div 
+                      className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-2xl py-2 z-[9999] pointer-events-auto backdrop-blur-sm"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                    >
+                      {item.subItems.map((subItem) => (
                       subItem.href.startsWith('http') ? (
                         <a
                           key={subItem.name}
@@ -131,8 +138,9 @@ const Header = () => {
                         </Link>
                       )
                     ))}
-                  </div>
-                )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </nav>

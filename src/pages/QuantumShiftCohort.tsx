@@ -5,6 +5,7 @@ import { Check, X } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import ZohoQuantumShiftForm from "@/components/ZohoQuantumShiftForm";
 
 const QuantumShiftCohort = () => {
   const fadeInUp = {
@@ -462,9 +463,7 @@ const QuantumShiftCohort = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join the waitlist today and be the first to know when the next cohort opens.
             </p>
-            <Button size="lg" className="text-lg px-12 py-8" asChild>
-              <Link to="/contact">Join the Waitlist</Link>
-            </Button>
+            <ZohoQuantumShiftForm />
           </motion.div>
         </div>
       </section>

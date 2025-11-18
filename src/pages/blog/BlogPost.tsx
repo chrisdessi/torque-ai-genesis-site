@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import DOMPurify from "dompurify";
 
 import { Button } from "@/components/ui/button";
 import { Link, useParams, Navigate } from "react-router-dom";
@@ -665,7 +666,7 @@ const BlogPost = () => {
               prose-li:text-muted-foreground prose-li:mb-2
               prose-strong:text-foreground prose-strong:font-semibold
               prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
           />
 
           {/* Newsletter Signup */}

@@ -28,7 +28,7 @@ const EnterpriseAccelerator = () => {
     <div className="min-h-screen bg-white">
       <SEO 
         title="90-Day AI Accelerator - Enterprise AI Transformation Program"
-        description="Transform your enterprise with our 90-Day AI Accelerator. Comprehensive AI strategy, implementation, and measurable ROI in marketing, sales, and communications. From $297 audit to full transformation."
+        description="Transform your enterprise with our 90-Day AI Accelerator. Comprehensive AI strategy, implementation, and measurable ROI in marketing, sales, and communications. From $1,987 audit to full transformation."
         keywords="90-day AI accelerator, enterprise AI transformation, AI implementation program, AI readiness assessment, AI adoption roadmap, AI compliance framework, AI-driven automation, enterprise AI solutions, business process automation, AI GTM strategy, AI analytics implementation, rapid AI deployment"
         url="/enterprise-accelerator"
       />

@@ -5,6 +5,7 @@ import { Check, Target, TrendingUp, Users, Zap, ArrowRight } from "lucide-react"
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import SEO from "@/components/SEO";
 
 import garyVeeImage from "@/assets/gary-vee.png";
 
@@ -63,6 +64,13 @@ const ExecutiveCoaching = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Executive Coaching with Chris Dessi"
+        description="Transform your leadership with 1-on-1 executive coaching from Chris Dessi. 60-minute strategic sessions focused on decision velocity, revenue growth, and leadership impact. Chris personally closed over $100M in enterprise deals and brings battle-tested frameworks to help you execute faster and win bigger."
+        keywords="executive coaching, business coaching, leadership coaching, executive coach, CEO coaching, sales leadership coaching, enterprise sales coaching, executive development, strategic leadership, decision-making coaching, Chris Dessi coaching, revenue growth coaching, executive performance coaching, C-suite coaching, senior executive coaching"
+        url="/executive-coaching"
+        type="website"
+      />
       <Header />
       
       {/* Sticky CTA Bar */}

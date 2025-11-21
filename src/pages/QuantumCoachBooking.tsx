@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import ZohoQuantumCoachForm from "@/components/ZohoQuantumCoachForm";
 import { motion } from "framer-motion";
 import { Mic, Youtube, BookOpen, Calendar, Star, Play, Target, TrendingUp, Users, Zap, ArrowRight, Sparkles, Crown, CalendarDays, Mail, MessageSquare, Check } from "lucide-react";
 import { Helmet } from "react-helmet";
@@ -761,6 +762,21 @@ const QuantumShift = () => {
 
       {/* Calendly Booking */}
       <CalendlyEmbed />
+
+      {/* Contact Form */}
+      <section className="bg-background py-20">
+        <div className="section-padding max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Get In Touch
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Have questions? Let's talk about how Quantum Coach can help you
+            </p>
+          </div>
+          <ZohoQuantumCoachForm />
+        </div>
+      </section>
 
       {/* Newsletter and Pricing Side by Side */}
       <section className="bg-background py-20">

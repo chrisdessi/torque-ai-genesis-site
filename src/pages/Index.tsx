@@ -228,8 +228,8 @@ const Index = () => {
               className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-10 py-7"
               asChild
             >
-              <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
-                Start with 2-Week AI Audit — $297
+              <a href="/ai-audit">
+                Start with 2-Week AI Audit — $1,987
               </a>
             </Button>
           </motion.div>

@@ -163,8 +163,8 @@ const Contact = () => {
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-12 py-6 text-lg border-2 border-white/30"
                 asChild
               >
-                <a href="https://buy.stripe.com/6oU6oHgzWdDp1kheiT8g005" target="_blank" rel="noopener noreferrer">
-                  2-Week AI Audit — $297
+                <a href="/ai-audit">
+                  2-Week AI Audit — $1,987
                 </a>
               </Button>
             </div>

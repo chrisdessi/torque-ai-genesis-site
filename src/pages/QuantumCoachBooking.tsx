@@ -167,6 +167,29 @@ const QuantumShift = () => {
         </div>
       </section>
 
+      {/* Urgency Notice */}
+      <section className="bg-black py-8">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div 
+            {...fadeInUp}
+            className="text-center"
+          >
+            <p className="text-xl md:text-2xl font-bold mb-6" style={{ color: '#dc2626' }}>
+              ⚠️ Limited spaces left! Enrollment closes on December 31st — or as soon as all spots are gone.
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Discover How Executives Have Turned Their Businesses and Lives Around:
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+              Shifting failing businesses to Generating $20K–$100K/Month (without hiring an agency), to leading fulfilling lives with renewed clarity and mission alignment.
+            </p>
+            <p className="text-lg text-gray-400 mt-4 max-w-4xl mx-auto">
+              Proven growth systems, coaching, and AI marketing that turns into consistent sales and a life transformed.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Video Section */}
       <section className="py-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">

@@ -148,7 +148,7 @@ const QuantumShift = () => {
               <span className="text-sm font-bold uppercase tracking-wider">Executive Coaching</span>
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-              Transform Your<br />Leadership Today
+              Transform Your<br />Life Today
             </h1>
             <p className="text-xl md:text-3xl text-gray-300 mb-12 max-w-3xl leading-relaxed font-light">
               Work directly with Chris Dessi
@@ -164,6 +164,25 @@ const QuantumShift = () => {
               </Button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-16 px-6 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Who is The Quantum Coach?</h2>
+          </div>
+          <div className="rounded-lg shadow-xl overflow-hidden" style={{ position: 'relative', aspectRatio: '1920/1080' }}>
+            <iframe 
+              src="https://share.synthesia.io/embeds/videos/cd9016f8-5b14-47d0-9fec-e893be33ccc9" 
+              loading="lazy" 
+              title="Synthesia video player - Copy of Copy of Embrace the AI Revolution" 
+              allowFullScreen 
+              allow="encrypted-media; fullscreen; microphone;" 
+              style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, border: 'none', padding: 0, margin: 0, overflow: 'hidden' }}
+            />
+          </div>
         </div>
       </section>
 
@@ -800,116 +819,6 @@ const QuantumShift = () => {
               When you apply, results like these become possible: "$10K in 7 days after launch" • "My team now runs the whole system while I focus on strategy" • "I built a lead engine that works while I sleep"
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Featured Testimonials - First Pair */}
-      <section className="py-16 bg-gradient-to-br from-purple-50/30 to-pink-50/30">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              {...fadeInUp}
-              className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-white"
-            >
-              <img 
-                src={testimonialsGrid1} 
-                alt="Client testimonial"
-                className="w-full h-auto"
-                loading="lazy"
-              />
-            </motion.div>
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.2 }}
-              className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-white"
-            >
-              <img 
-                src={testimonialsGrid2} 
-                alt="Client testimonial"
-                className="w-full h-auto"
-                loading="lazy"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-16 px-6 bg-background">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Who is The Quantum Coach?</h2>
-          </div>
-          <div className="rounded-lg shadow-xl overflow-hidden" style={{ position: 'relative', aspectRatio: '1920/1080' }}>
-            <iframe 
-              src="https://share.synthesia.io/embeds/videos/cd9016f8-5b14-47d0-9fec-e893be33ccc9" 
-              loading="lazy" 
-              title="Synthesia video player - Copy of Copy of Embrace the AI Revolution" 
-              allowFullScreen 
-              allow="encrypted-media; fullscreen; microphone;" 
-              style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, border: 'none', padding: 0, margin: 0, overflow: 'hidden' }}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Testimonial - Large */}
-      <section className="py-16 bg-white">
-        <div className="section-padding max-w-5xl mx-auto">
-          <motion.div
-            {...fadeInUp}
-            className="rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 bg-gradient-to-br from-purple-50 to-white p-2"
-          >
-            <div className="bg-white rounded-2xl overflow-hidden">
-              <img 
-                src={testimonialsGrid3} 
-                alt="Client testimonial"
-                className="w-full h-auto"
-                loading="lazy"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Credibility Bar */}
-      <section className="border-y border-border bg-muted/30">
-        <div className="max-w-6xl mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-sm text-muted-foreground">
-          <div>Author & TV Commentator</div>
-          <div>Led $32M+ sales impact</div>
-          <div>Coached CEOs & Founders</div>
-          <div>Keynotes & Offsites</div>
-        </div>
-      </section>
-
-      {/* Testimonials - Offset Layout */}
-      <section className="py-20 bg-gradient-to-br from-pink-50/30 to-purple-50/30">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              {...fadeInUp}
-              className="md:translate-y-12 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-            >
-              <img 
-                src={testimonialsGrid4} 
-                alt="Client testimonial"
-                className="w-full h-auto"
-                loading="lazy"
-              />
-            </motion.div>
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.2 }}
-              className="md:-translate-y-12 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-            >
-              <img 
-                src={testimonialsGrid5} 
-                alt="Client testimonial"
-                className="w-full h-auto"
-                loading="lazy"
-              />
-            </motion.div>
-          </div>
         </div>
       </section>
 

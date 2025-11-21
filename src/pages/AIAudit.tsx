@@ -187,7 +187,7 @@ const AIAudit = () => {
                 <Button 
                   size="lg" 
                   onClick={() => document.getElementById('payment')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-lg px-8 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg hover:shadow-xl transition-all"
+                  className="text-lg px-8 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg hover:shadow-xl transition-all text-white"
                 >
                   Get Your AI Audit Now
                   <Zap className="ml-2 w-5 h-5" />

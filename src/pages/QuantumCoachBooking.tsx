@@ -449,64 +449,357 @@ const QuantumShift = () => {
         </div>
       </section>
 
+      {/* AI Business Growth System Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
+              Create a Quantum Shift for Your Business <span className="italic text-purple-600">and</span> Life
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
+              The Proven 90-Day System to Grow Your Business Using AI—Without Getting Technical
+            </h3>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+              The step-by-step AI growth system for entrepreneurs and small business owners who want more leads, 
+              more time, and more freedom—without burning out or hiring a massive team.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="mb-16">
+            <Card className="p-10 bg-gradient-to-br from-orange-50 to-red-50 border-orange-200">
+              <h3 className="text-3xl font-bold text-black mb-8 text-center">Does This Sound Like You?</h3>
+              <ul className="space-y-4 text-lg text-gray-700 max-w-3xl mx-auto">
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-600 mt-1">•</span>
+                  <span>You know your business has potential, but growth has stalled</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-600 mt-1">•</span>
+                  <span>You're tired of spending money on marketing that doesn't convert</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-600 mt-1">•</span>
+                  <span>You keep hearing about AI, but it feels overwhelming or "not for you"</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-600 mt-1">•</span>
+                  <span>You're doing everything right, but not seeing the results you deserve</span>
+                </li>
+              </ul>
+              <div className="mt-8 text-center">
+                <p className="text-xl font-bold text-gray-800 mb-2">You're not alone.</p>
+                <p className="text-lg text-gray-700 italic">
+                  Trying to grow a business in 2025 without AI is like trying to win a Formula 1 race on a bicycle.
+                </p>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* I Built a System Section */}
+      <section className="bg-gradient-to-br from-purple-900 to-black text-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="max-w-4xl mx-auto space-y-6 text-lg">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">I Built a System That Finally Changed Everything</h2>
+            <p>After helping businesses of all sizes for the past 20 years, I hit a wall. AI was everywhere, but most of what I saw was hype or snake oil.</p>
+            <p>So I spent a full year testing every AI tool I could find, figuring out what actually works for small businesses. Then I built a system—simple, repeatable, and wildly effective.</p>
+            <p className="font-bold text-2xl text-purple-300 mb-4">In 90 days, it helped:</p>
+            <ul className="space-y-3 text-gray-200 mb-8">
+              <li className="flex items-start gap-3">
+                <Check className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                <span>A real estate agent triple her monthly leads</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                <span>A gym owner automate follow-ups and double new member sign-ups</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                <span>A consultant close $50k in new business using nothing but email + AI</span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Most Fail Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">Why Most Entrepreneurs Fail with AI</h2>
+            <p className="text-xl text-gray-700 mb-8">Because they fall into the trap of one of the 3 AIs:</p>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="p-6 bg-red-50 border-red-200">
+              <h4 className="text-2xl font-bold text-red-600 mb-4">Avoid it</h4>
+              <p className="text-gray-700">"This is too technical."</p>
+            </Card>
+            <Card className="p-6 bg-red-50 border-red-200">
+              <h4 className="text-2xl font-bold text-red-600 mb-4">Ignore it</h4>
+              <p className="text-gray-700">"It won't affect my industry."</p>
+            </Card>
+            <Card className="p-6 bg-red-50 border-red-200">
+              <h4 className="text-2xl font-bold text-red-600 mb-4">Abuse it</h4>
+              <p className="text-gray-700">Using generic tools that spit out trash content</p>
+            </Card>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-black mb-8">Instead, I'll teach you to AIM:</h3>
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <Card className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
+                <h4 className="text-2xl font-bold text-green-600 mb-4">Automate</h4>
+                <p className="text-gray-700">your time-wasting tasks</p>
+              </Card>
+              <Card className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
+                <h4 className="text-2xl font-bold text-green-600 mb-4">Improve</h4>
+                <p className="text-gray-700">the systems you already use</p>
+              </Card>
+              <Card className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
+                <h4 className="text-2xl font-bold text-green-600 mb-4">Monetize</h4>
+                <p className="text-gray-700">everything you do online</p>
+              </Card>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What You Get Section */}
+      <section className="bg-gradient-to-br from-purple-50 to-pink-50 py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">Inside The AI Growth System, You'll Get:</h2>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="grid md:grid-cols-2 gap-8">
+            <Card className="p-8 bg-white shadow-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <Target className="w-10 h-10 text-purple-600 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-bold text-black mb-2">Growth Systems for Lead Generation</h4>
+                  <p className="text-gray-700">Use AI to attract clients on autopilot—even if you hate marketing.</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white shadow-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <BookOpen className="w-10 h-10 text-pink-600 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-bold text-black mb-2">Copy & Content Systems</h4>
+                  <p className="text-gray-700">Steal my frameworks for emails, landing pages, and social posts that convert.</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white shadow-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <TrendingUp className="w-10 h-10 text-purple-600 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-bold text-black mb-2">Sales Automation Systems</h4>
+                  <p className="text-gray-700">Turn conversations into conversions with AI-driven DMs and email sequences.</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white shadow-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <Zap className="w-10 h-10 text-pink-600 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-bold text-black mb-2">AI Toolkit Walkthroughs</h4>
+                  <p className="text-gray-700">I'll show you exactly which tools to use, where to click, and how to delegate them to your team.</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white shadow-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <Calendar className="w-10 h-10 text-purple-600 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-bold text-black mb-2">Weekly Coaching Calls</h4>
+                  <p className="text-gray-700">Live Q&As to answer your questions and review your campaigns.</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white shadow-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <Play className="w-10 h-10 text-pink-600 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-bold text-black mb-2">On-Demand Training</h4>
+                  <p className="text-gray-700">Binge-ready video lessons you can access any time.</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white shadow-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <Mail className="w-10 h-10 text-purple-600 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-bold text-black mb-2">Plug & Play Templates</h4>
+                  <p className="text-gray-700">Landing pages. Email sequences. Outreach messages. Done-for-you.</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white shadow-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <Users className="w-10 h-10 text-pink-600 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-bold text-black mb-2">Private Community Access</h4>
+                  <p className="text-gray-700">Network, collaborate, and stay motivated with like-minded founders.</p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Real Results Section */}
+      <section className="bg-black text-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-12">Real Results from Real Entrepreneurs:</h2>
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <Card className="p-8 bg-gradient-to-br from-purple-600 to-pink-600 border-0 text-white">
+                <p className="text-2xl font-bold mb-4">"$18K from one email sequence."</p>
+                <p className="text-gray-200">– Maya, coach</p>
+              </Card>
+              <Card className="p-8 bg-gradient-to-br from-purple-600 to-pink-600 border-0 text-white">
+                <p className="text-2xl font-bold mb-4">"3x my revenue in 90 days."</p>
+                <p className="text-gray-200">– John, e-commerce owner</p>
+              </Card>
+              <Card className="p-8 bg-gradient-to-br from-purple-600 to-pink-600 border-0 text-white">
+                <p className="text-2xl font-bold mb-4">"Leads coming in while I'm on vacation."</p>
+                <p className="text-gray-200">– Sofia, consultant</p>
+              </Card>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* For You / Not For You Section */}
       <section className="bg-white py-32">
         <div className="section-padding max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">This System Is For You If You Want To:</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
             <motion.div {...fadeInUp}>
               <Card className="p-8 bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 h-full">
-                <h3 className="text-3xl font-bold text-black mb-6">This Is For You If…</h3>
+                <h3 className="text-2xl font-bold text-black mb-6">Personal Transformation</h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start gap-3">
                     <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span>You've built a life that looks fine on the outside, but inside you feel restless and unfulfilled.</span>
+                    <span>Live a life that feels lighter, calmer, and aligned with your deepest values</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span>You keep repeating the same patterns—relationships, habits, choices—that never lead to real change.</span>
+                    <span>Break free from patterns that keep you stuck</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span>You feel the cracks: stress, burnout, or emptiness creeping in, even when things "should" feel good.</span>
+                    <span>Find clarity on your purpose and next chapter</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span>You know you're meant for more, but fear, doubt, or overwhelm keeps you stuck.</span>
+                    <span>Build rituals that create lasting change</span>
                   </li>
                 </ul>
-                <p className="mt-6 text-gray-700 font-semibold">
-                  If that's you—you're not broken, you're just ready for your <span className="text-purple-600">Quantum Shift</span>.
-                </p>
               </Card>
             </motion.div>
 
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-              <Card className="p-8 bg-gradient-to-br from-red-50 to-orange-50 border-red-200 h-full">
-                <h3 className="text-3xl font-bold text-black mb-6">This Is <span className="italic">Not</span> For You If…</h3>
+              <Card className="p-8 bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200 h-full">
+                <h3 className="text-2xl font-bold text-black mb-6">Business Growth</h3>
                 <ul className="space-y-4 text-gray-700">
                   <li className="flex items-start gap-3">
-                    <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
-                    <span>You're comfortable staying on autopilot and don't want to question old patterns.</span>
+                    <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                    <span>Save 10+ hours a week with automations</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
-                    <span>You're chasing quick fixes, hacks, or shortcuts instead of real transformation.</span>
+                    <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                    <span>Get more high-quality leads without paid ads</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
-                    <span>You resist change, even when you know your current path isn't working.</span>
+                    <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                    <span>Stop guessing and start scaling</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
-                    <span>You're looking for surface-level inspiration but aren't willing to do the inner work.</span>
+                    <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                    <span>Build marketing systems that work even when you're offline</span>
                   </li>
                 </ul>
-                <p className="mt-6 text-gray-700 font-semibold">
-                  If that's where you are, this probably isn't your moment. But if you're ready to step into deeper alignment—your <span className="text-purple-600">Quantum Shift</span> is waiting.
-                </p>
               </Card>
             </motion.div>
           </div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="mb-16">
+            <Card className="p-10 bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
+              <h3 className="text-3xl font-bold text-black mb-6 text-center">We Can Help:</h3>
+              <ul className="space-y-4 text-lg text-gray-700 max-w-3xl mx-auto">
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                  <span>Business owners with at least one offer ready to sell</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                  <span>Entrepreneurs with 5+ hours a week to focus on growth</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                  <span>Coaches, consultants, service providers, and course creators</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                  <span>People ready to do the inner work for lasting transformation</span>
+                </li>
+              </ul>
+            </Card>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
+            <Card className="p-10 bg-gradient-to-br from-red-50 to-orange-50 border-red-200">
+              <h3 className="text-3xl font-bold text-black mb-6 text-center">We Can't Help:</h3>
+              <ul className="space-y-4 text-lg text-gray-700 max-w-3xl mx-auto">
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
+                  <span>People looking for get-rich-quick schemes</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
+                  <span>Total beginners with no business or product idea</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
+                  <span>Those comfortable staying on autopilot who don't want to question old patterns</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
+                  <span>People chasing quick fixes instead of real transformation</span>
+                </li>
+              </ul>
+            </Card>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.5 }} className="text-center mt-16">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-16 py-10 text-2xl"
+              onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Apply Now — Let's Build Your AI-Powered Quantum Shift
+            </Button>
+            <p className="mt-6 text-gray-600 text-lg">
+              This program isn't open year-round. We cap enrollment to maintain personal support and high quality.
+            </p>
+            <p className="mt-4 text-gray-700 font-semibold text-lg">
+              When you apply, results like these become possible: "$10K in 7 days after launch" • "My team now runs the whole system while I focus on strategy" • "I built a lead engine that works while I sleep"
+            </p>
+          </motion.div>
         </div>
       </section>
 

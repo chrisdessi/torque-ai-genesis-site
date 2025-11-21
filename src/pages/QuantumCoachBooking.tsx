@@ -145,7 +145,7 @@ const QuantumShift = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-6 py-3 mb-8">
-              <span className="text-sm font-bold uppercase tracking-wider">Executive Coaching</span>
+              <span className="text-sm font-bold tracking-wider">Quantum Coaching for Executives Who Steer Complex Businesses & Lives</span>
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
               Transform Your<br />Life Today

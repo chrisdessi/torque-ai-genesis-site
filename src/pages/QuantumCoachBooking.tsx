@@ -219,6 +219,302 @@ const QuantumShift = () => {
         </div>
       </section>
 
+      {/* Quantum Shift Content Section */}
+      <section className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-32 text-white">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">Does This Sound Like You?</h2>
+            <ul className="space-y-4 text-lg text-gray-300 mb-8">
+              <li className="flex items-start gap-3">
+                <span className="text-purple-400 mt-1">•</span>
+                <span>You feel like you're living on autopilot, checking boxes instead of following your calling.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-purple-400 mt-1">•</span>
+                <span>You've achieved things on paper, but deep down you know something's missing.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-purple-400 mt-1">•</span>
+                <span>You sense you're out of alignment, but you can't name exactly what feels "off."</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-purple-400 mt-1">•</span>
+                <span>You fill your days with busy work, but at night you wonder what it's all for.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-purple-400 mt-1">•</span>
+                <span>You long for deeper meaning, but you're unsure where to begin.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-purple-400 mt-1">•</span>
+                <span>You've tried quick fixes, but nothing seems to create lasting change.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-purple-400 mt-1">•</span>
+                <span>You know you're meant for more—but fear, doubt, or overwhelm keeps you stuck.</span>
+              </li>
+            </ul>
+            <p className="text-xl text-gray-300 mb-8">
+              If any of this resonates—you're not broken, and you're not alone. You're standing at the doorway of your Quantum Shift.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Intervention Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-8">
+              This is Not a Course. This is an <span className="italic">Intervention.</span>
+            </h2>
+          </motion.div>
+          
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <img 
+                src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161680133/settings_images/046dc10-b74f-13fc-aa81-1a4c0126acc_5695d0ee-a334-4d4c-b987-c70a03f031b0.png"
+                alt="Person in meditation"
+                className="w-full rounded-2xl shadow-2xl"
+              />
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-3xl font-bold text-black">You're Not Crazy — It is harder than it should be.</h3>
+              <p className="text-lg text-gray-700">The cracks you're noticing in your life? They're real.</p>
+              <p className="text-lg text-gray-700">And if you ignore them—they'll cost you your peace, your relationships, or your sense of purpose.</p>
+              <p className="text-lg text-gray-700">It doesn't have to be this way.</p>
+              <p className="text-lg text-gray-700">I'll give you the guidance, tools, and support to break old cycles and realign with who you truly are.</p>
+              <p className="text-lg text-gray-700">Whether you're a high achiever who feels empty, or someone quietly wondering if this is all life has to offer...</p>
+              <p className="text-lg text-gray-700 font-bold">It ends here.</p>
+              <p className="text-lg text-gray-700">I don't patch over the pain. I cut to the root—so you can release what's not working and step fully into alignment.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What We Do Section */}
+      <section className="bg-gradient-to-br from-purple-50 to-pink-50 py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+              Tear Down. Realign. Rise. Without Burning Out.
+            </h2>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+              You could spend years repeating the same patterns, reading the same books, trying quick fixes that don't stick. 
+              Or you can step into a guided process I've lived myself—rooted in spiritual practices, personal reinvention, 
+              and a community that lifts you higher.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="grid md:grid-cols-2 gap-12">
+            <Card className="p-8 bg-white shadow-xl">
+              <h3 className="text-2xl font-bold text-black mb-6">Here's what we do:</h3>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                  <span>Pinpoint the beliefs and patterns that keep you stuck</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                  <span>Break them down with proven tools and practices</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                  <span>Build rituals that create clarity, calm, and courage</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                  <span>Design a vision and a 90-day plan aligned with your true self</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                  <span>Anchor new habits so change lasts beyond the course</span>
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-8 bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-xl">
+              <h3 className="text-2xl font-bold mb-6">Here's what you get:</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>A life that feels lighter, calmer, and aligned with your deepest values</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>Clarity on your purpose and next chapter</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>Spiritual tools you can return to any time stress or doubt creeps in</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>A supportive community walking the same path</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Sparkles className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>A renewed sense of possibility—you're not drifting, you're directing</span>
+                </li>
+              </ul>
+              <p className="mt-8 text-white/90 font-semibold">
+                This isn't theory. It's a lived, tested process designed to awaken you and move you forward, starting from day one.
+              </p>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Fixer Section */}
+      <section className="bg-black text-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4">
+              You Don't Need a <span className="italic text-purple-400">Guru</span>.
+            </h2>
+            <h2 className="text-4xl md:text-6xl font-bold">
+              You Need a <span className="italic text-pink-400">Fixer</span>.
+            </h2>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="mb-16">
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/9J1Kauiq42g"
+                title="AI Expert Chris Dessi Highlight Reel"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="max-w-4xl mx-auto space-y-6 text-lg text-gray-300">
+            <h3 className="text-3xl font-bold text-white mb-6">Not a Guru. Just the Guy Who Burned It Down and Rebuilt His Life.</h3>
+            <p>In the Summer of 2025, I hit a wall.</p>
+            <p>On the outside? Success. Books published. Media appearances. A shiny career in tech and marketing.</p>
+            <p>Behind the scenes? Chaos.</p>
+            <p>I was running on fumes. My health suffered, my family felt the strain, and no matter how much I achieved, it never felt like enough. I was living on autopilot—patched together by adrenaline and busy work—surviving, not thriving.</p>
+            <p className="font-bold text-white">So I did the only thing that made sense.</p>
+            <p className="font-bold text-white">I tore it all down.</p>
+            <p>I walked away from the career I had built, and in the rubble I asked the hardest question of my life: <span className="italic">Who am I, really—and what am I here to do?</span></p>
+            <p>That question cracked me open. It led me to the practices, teachers, and tools that became my lifeline: meditation, journaling, breathwork, alignment rituals. Slowly, I rebuilt—not my old life, but an entirely new way of being.</p>
+            <p>What emerged is <span className="font-bold text-purple-400">The Quantum Shift</span>—a framework for awakening and reinvention. Not theory. Not guru-speak. Just the lived, battle-tested process of someone who's been through the fire and came out clearer, calmer, and more aligned.</p>
+            <p>Because here's the truth: if you're holding it together with duct tape—ignoring the cracks in your relationships, your work, or your soul—no quick fix will save you.</p>
+            <p>You don't need more noise. You need a system for realignment. A process to release what's broken and rebuild from the inside out.</p>
+            <p className="font-bold text-white">Now, I bring that process to people like you—those ready to stop patching and start living in alignment.</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Framework Section */}
+      <section className="bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900 text-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">Introducing The Quantum Shift Framework</h2>
+            <p className="text-xl text-gray-200 max-w-4xl mx-auto mb-8">
+              The <span className="font-bold">Quantum Shift</span> shows you how to let go of what no longer serves you, 
+              uncover the practices that truly create transformation, and rebuild your life with clarity, alignment, and purpose.
+            </p>
+            <p className="text-xl text-gray-200 max-w-4xl mx-auto">
+              It's the framework behind countless personal breakthroughs—now available to you through guided programs, 
+              live experiences, and a global community of seekers walking the same path.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
+              <BookOpen className="w-12 h-12 text-purple-300 mb-4" />
+              <h4 className="text-xl font-bold mb-2">Courses</h4>
+              <p className="text-gray-300">Bite-sized programs for clarity, calm, and reinvention</p>
+            </Card>
+            <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
+              <Users className="w-12 h-12 text-pink-300 mb-4" />
+              <h4 className="text-xl font-bold mb-2">Workshops</h4>
+              <p className="text-gray-300">Live, interactive sessions with practical tools you can use immediately</p>
+            </Card>
+            <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
+              <MessageSquare className="w-12 h-12 text-purple-300 mb-4" />
+              <h4 className="text-xl font-bold mb-2">Community</h4>
+              <p className="text-gray-300">A global network of people committed to growth and awakening</p>
+            </Card>
+            <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
+              <CalendarDays className="w-12 h-12 text-pink-300 mb-4" />
+              <h4 className="text-xl font-bold mb-2">Events</h4>
+              <p className="text-gray-300">Immersive retreats and gatherings designed to accelerate your shift</p>
+            </Card>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center">
+            <p className="text-xl text-gray-200 mb-8 max-w-4xl mx-auto">
+              👉 <span className="italic">This isn't theory. It's a lived process—tested through fire, refined through practice, 
+              and shared with a community that will support you every step of the way.</span>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* For You / Not For You Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            <motion.div {...fadeInUp}>
+              <Card className="p-8 bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 h-full">
+                <h3 className="text-3xl font-bold text-black mb-6">This Is For You If…</h3>
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <span>You've built a life that looks fine on the outside, but inside you feel restless and unfulfilled.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <span>You keep repeating the same patterns—relationships, habits, choices—that never lead to real change.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <span>You feel the cracks: stress, burnout, or emptiness creeping in, even when things "should" feel good.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                    <span>You know you're meant for more, but fear, doubt, or overwhelm keeps you stuck.</span>
+                  </li>
+                </ul>
+                <p className="mt-6 text-gray-700 font-semibold">
+                  If that's you—you're not broken, you're just ready for your <span className="text-purple-600">Quantum Shift</span>.
+                </p>
+              </Card>
+            </motion.div>
+
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
+              <Card className="p-8 bg-gradient-to-br from-red-50 to-orange-50 border-red-200 h-full">
+                <h3 className="text-3xl font-bold text-black mb-6">This Is <span className="italic">Not</span> For You If…</h3>
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
+                    <span>You're comfortable staying on autopilot and don't want to question old patterns.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
+                    <span>You're chasing quick fixes, hacks, or shortcuts instead of real transformation.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
+                    <span>You resist change, even when you know your current path isn't working.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-red-600 text-2xl leading-none mt-1">✕</span>
+                    <span>You're looking for surface-level inspiration but aren't willing to do the inner work.</span>
+                  </li>
+                </ul>
+                <p className="mt-6 text-gray-700 font-semibold">
+                  If that's where you are, this probably isn't your moment. But if you're ready to step into deeper alignment—your <span className="text-purple-600">Quantum Shift</span> is waiting.
+                </p>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Testimonials - First Pair */}
       <section className="py-16 bg-gradient-to-br from-purple-50/30 to-pink-50/30">
         <div className="section-padding max-w-7xl mx-auto">

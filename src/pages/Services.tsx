@@ -228,7 +228,7 @@ const Services = () => {
               asChild
             >
               <Link to="/ai-audit">
-                Get Started with 2-Week AI Audit — Just $297
+                Get Started with 2-Week AI Audit — $1,987
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>

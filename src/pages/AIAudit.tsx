@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, Clock, BarChart3, Target, Zap, Brain } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ZapierContactForm from "@/components/ZapierContactForm";
+import ZohoAIAuditForm from "@/components/ZohoAIAuditForm";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 
@@ -483,10 +483,11 @@ const AIAudit = () => {
 
         {/* Contact Form Section */}
         <section id="contact-form" className="section-padding bg-card/30">
-          <ZapierContactForm 
-            title="Not Ready Yet? We Get It."
-            description="Book a free 15-minute consultation. No pitch, no pressure—just honest answers about whether AI is right for your business right now."
-          />
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Not Ready Yet? We Get It.</h2>
+            <p className="text-lg text-muted-foreground">Book a free 15-minute consultation. No pitch, no pressure—just honest answers about whether AI is right for your business right now.</p>
+          </div>
+          <ZohoAIAuditForm />
         </section>
 
         <Footer />

@@ -96,7 +96,6 @@ const QuantumShift = () => {
         <meta name="keywords" content="executive coaching, business coaching, leadership coaching, Chris Dessi coach, executive development, strategic coaching, revenue growth coaching, enterprise sales coaching, business strategy coaching, CEO coaching, executive advisor, leadership development, business mentor, sales coaching, executive performance coaching" />
         <link rel="canonical" href="https://torqueapp.ai/quantum-shift/coach" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YB4QY7TVK"></script>
-        <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
         <script>
           {`
             window.dataLayer = window.dataLayer || [];

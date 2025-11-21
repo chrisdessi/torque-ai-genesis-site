@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,6 +23,7 @@ import MementoLanding from "./pages/MementoLanding";
 import QuantumShift from "./pages/QuantumShift";
 import QuantumCoachBooking from "./pages/QuantumCoachBooking";
 import QuantumShiftCohort from "./pages/QuantumShiftCohort";
+import QuantumShiftCohort90Day from "./pages/QuantumShiftCohort90Day";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/blog/BlogPost";
 import TorqueAIGuide from "./pages/TorqueAIGuide";
@@ -62,6 +62,7 @@ const App = () => (
           <Route path="/quantum-shift" element={<QuantumShift />} />
           <Route path="/quantum-shift/coach" element={<QuantumCoachBooking />} />
           <Route path="/quantum-shift-cohort" element={<QuantumShiftCohort />} />
+          <Route path="/quantum-shift-cohort-90" element={<QuantumShiftCohort90Day />} />
           <Route path="/brand" element={<BrandIdentity />} />
           <Route path="/creator-launch" element={<CreatorLaunch />} />
           <Route path="/events" element={<Events />} />

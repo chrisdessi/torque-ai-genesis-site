@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 const AIAudit = () => {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://js.stripe.com/v3/pricing-table.js';
+    // Stripe script removed
     script.async = true;
     document.body.appendChild(script);
 
@@ -453,19 +453,6 @@ const AIAudit = () => {
               </div>
             </motion.div>
             
-            <motion.div 
-              className="bg-background rounded-2xl shadow-2xl overflow-hidden border-2 border-primary/20"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <stripe-pricing-table 
-                pricing-table-id="prctbl_1SRFiFG7cympBc4Ioh5IdMtK"
-                publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
-              </stripe-pricing-table>
-            </motion.div>
-
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -474,7 +461,7 @@ const AIAudit = () => {
               className="mt-12 text-center"
             >
               <p className="text-muted-foreground mb-6">
-                🔒 Secure payment powered by Stripe • 🎯 Results guaranteed or money back
+                🎯 Results guaranteed or money back
               </p>
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <div className="flex items-center gap-2">

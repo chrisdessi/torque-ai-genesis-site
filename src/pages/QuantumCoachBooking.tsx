@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Calendar, Star, Check, X } from "lucide-react";
-import { Helmet } from "react-helmet";
 
 const QuantumShift = () => {
   const fadeInUp = {
@@ -132,21 +132,13 @@ const QuantumShift = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Quantum Coaching + AI Optimization - Transform Your Life and Business in 90 Days</title>
-        <meta name="description" content="Work directly with Chris Dessi. Upgrade your human operating system AND your business operating system. From personal transformation to AI-powered business growth." />
-        <meta name="keywords" content="quantum coaching, AI business optimization, executive coaching, business transformation, Chris Dessi, personal development, AI growth systems, torque AI" />
-        <link rel="canonical" href="https://torqueapp.ai/quantum-shift/coach" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YB4QY7TVK"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-3YB4QY7TVK');
-          `}
-        </script>
-      </Helmet>
+      <SEO
+        title="Quantum Coaching + AI Optimization - Transform Your Life and Business in 90 Days"
+        description="Work directly with Chris Dessi. Upgrade your human operating system AND your business operating system. 90-day cohort programs combining quantum coaching for personal transformation with Torque AI for business growth. Break old patterns and scale with AI-powered systems."
+        keywords="quantum coaching, AI business optimization, executive coaching, business transformation, Chris Dessi, personal development, AI growth systems, torque AI, 90-day transformation, quantum shift coaching, AI automation, business coaching programs, mindset coaching, AI business strategy"
+        url="/quantum-coach"
+        type="website"
+      />
       <Header />
       
       {/* Hero Section */}

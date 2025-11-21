@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import SEO from "@/components/SEO";
 
 
 const Events = () => {
@@ -69,6 +70,13 @@ const Events = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Events - AI Summit & Quantum Shift Summit by Chris Dessi"
+        description="Join transformative summits hosted by Chris Dessi. AI Summit NYC 2025 - Executive AI alignment and innovation. The Quantum Shift Summit 2026 - Personal transformation and meaningful growth. Network with AI founders, VCs, and executives."
+        keywords="AI summit, AI conference, executive AI events, Chris Dessi events, quantum shift summit, AI NYC, business transformation events, AI networking, executive events, AI leadership summit, personal transformation summit, AI startup contest"
+        url="/events"
+        type="website"
+      />
       <Header />
       
       {/* Hero Section */}

@@ -191,11 +191,11 @@ const QuantumShift = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl shadow-2xl"
                 onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Calendar className="mr-3 h-6 w-6" />
-                Join the Waiting List
+                Apply Now
               </Button>
             </div>
           </motion.div>
@@ -492,6 +492,17 @@ const QuantumShift = () => {
                 This isn't theory. It's a <strong>lived, tested process</strong> designed to awaken you and move you forward, starting from day one.
               </p>
             </div>
+
+            <div className="text-center">
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-6 text-xl"
+                onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Calendar className="mr-3 h-6 w-6" />
+                Apply for Quantum Coaching Now
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -662,7 +673,7 @@ const QuantumShift = () => {
               </div>
             </div>
 
-            <div className="bg-white text-black rounded-2xl p-12">
+            <div className="bg-white text-black rounded-2xl p-12 mb-12">
               <h3 className="text-3xl font-bold mb-6 text-center">Real Results from Real Entrepreneurs:</h3>
               <div className="space-y-4">
                 {results.map((result, index) => (
@@ -672,6 +683,17 @@ const QuantumShift = () => {
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="text-center">
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold px-12 py-6 text-xl"
+                onClick={() => document.getElementById('ai-form')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Calendar className="mr-3 h-6 w-6" />
+                Apply for AI Growth System Now
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -753,7 +775,7 @@ const QuantumShift = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-12 text-center">
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-12 text-center mb-12">
               <h3 className="text-3xl font-bold mb-6">We can:</h3>
               <div className="space-y-4 text-xl">
                 <p><strong>Just work on you</strong> (Quantum Coaching)</p>
@@ -764,6 +786,17 @@ const QuantumShift = () => {
                 </p>
                 <p className="text-2xl mt-6 font-bold">That's where the real shift happens.</p>
               </div>
+            </div>
+
+            <div className="text-center">
+              <Button 
+                size="lg"
+                className="bg-white text-purple-900 hover:bg-gray-100 font-bold px-12 py-6 text-xl shadow-xl"
+                onClick={() => window.scrollTo({ top: document.getElementById('quantum-form')?.offsetTop || 0, behavior: 'smooth' })}
+              >
+                <Calendar className="mr-3 h-6 w-6" />
+                Apply for Combined Program Now
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -828,6 +861,17 @@ const QuantumShift = () => {
                 </li>
               </ul>
             </div>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center mt-16">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-6 text-xl shadow-xl"
+              onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Calendar className="mr-3 h-6 w-6" />
+              Yes, I'm Ready to Transform - Apply Now
+            </Button>
           </motion.div>
         </div>
       </section>
@@ -899,6 +943,17 @@ const QuantumShift = () => {
               </div>
             </div>
           </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center mt-16">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-6 text-xl shadow-xl"
+              onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Calendar className="mr-3 h-6 w-6" />
+              Apply to Work With Chris Now
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -922,11 +977,11 @@ const QuantumShift = () => {
             </div>
             <Button 
               size="lg"
-              className="bg-white text-purple-600 hover:bg-gray-100 font-bold px-12 py-8 text-xl"
+              className="bg-white text-purple-600 hover:bg-gray-100 font-bold px-12 py-8 text-xl shadow-2xl"
               onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Calendar className="mr-3 h-6 w-6" />
-              Join the Waiting List
+              Apply Now - Start Your Transformation
             </Button>
           </motion.div>
         </div>

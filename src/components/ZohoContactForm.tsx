@@ -15,7 +15,7 @@ const ZohoContactForm = ({
   useEffect(() => {
     // Load Zoho Campaigns script
     const script = document.createElement('script');
-    script.src = 'https://idzlf-zgpm.maillist-manage.com/js/optin.min.js';
+    script.src = 'https://idzlf-zgpl.maillist-manage.com/js/optin.min.js';
     script.onload = () => {
       // @ts-ignore
       if (window.setupSF) {
@@ -23,6 +23,13 @@ const ZohoContactForm = ({
         window.setupSF('sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b','ZCFORMVIEW',false,'acc',false,'2');
       }
     };
+    
+    // Add onsubmit function
+    // @ts-ignore
+    window.runOnFormSubmit_sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b = function(th) {
+      /* Before submit trigger */
+    };
+    
     document.body.appendChild(script);
 
     return () => {
@@ -83,8 +90,7 @@ width:69.5% !important;
 #sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #captcha{
 width:69.5% !important;
 }
-#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #recapDiv
-{
+#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #recapDiv{
 margin-left: 0px !important;
 max-width: 100% !important;
 overflow: hidden !important;
@@ -124,8 +130,7 @@ width:76% !important;
 #sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #captcha{
 width:76% !important;
 }
-#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #recapDiv
-{
+#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #recapDiv{
 margin-left: 0px !important;
 max-width: 100% !important;
 overflow: hidden !important;
@@ -169,8 +174,7 @@ width:95% !important;
 #sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #captcha{
 width:84.4% !important;
 }
-#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #recapDiv
-{
+#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #recapDiv{
 margin-left: 0px !important;
 max-width: 100% !important;
 overflow: hidden !important;
@@ -229,8 +233,7 @@ width:96% !important;
 #sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #relCaptcha{
 margin-right:14px !important;
 }
-#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #recapDiv
-{
+#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #recapDiv{
 margin-left: 0px !important;
 max-width: 100% !important;
 overflow: hidden !important;
@@ -304,10 +307,10 @@ width:500px !important;
 min-width:240px !important;
 margin: 0px auto !important;
 }
-#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b 	#imgBlock{
+#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #imgBlock{
 width:500px !important;
 }
-#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b 	#captchaDiv{
+#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #captchaDiv{
 width:81.4% !important;
 }
 #sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #captcha{
@@ -316,7 +319,7 @@ width:81.4% !important;
 #sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b #relCaptcha{
 margin-right:3px !important;
 }
-#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b 	.recaptcha{
+#sf3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b .recaptcha{
 transform:scale(0.72);-webkit-transform:scale(0.75);transform-origin:0 0;-webkit-transform-origin:0 0;margin-left:0px}
 }
 @media only screen and (min-width : 768px) and (max-width : 1024px){
@@ -353,10 +356,10 @@ transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit
             <input type="hidden" id="signupFormType" value="LargeForm_Vertical" />
             <input type="hidden" id="recapModeTheme" value="" />
             
-            <div className="large_form_1_css" id="SIGNUP_PAGE" style={{padding: '30px', backgroundColor: 'rgb(1, 20, 135)', fontFamily: 'Arial', color: 'rgb(255, 255, 255)', textAlign: 'center', fontSize: '14px'}}>
+            <div className="large_form_1_css" id="SIGNUP_PAGE" style={{padding: '40px 30px 30px', backgroundColor: 'rgb(255, 255, 255)', fontFamily: 'Verdana', color: 'rgb(255, 255, 255)', textAlign: 'center', fontSize: '8px'}}>
               <div style={{margin:'0px auto'}}>
-                <div id="imgBlock" style={{width: '600px', margin: '0px auto', paddingBottom: '10px', textAlign: 'left', paddingTop: '10px'}}>
-                  <img src="https://stratus.campaign-image.com/images/1316ccdc8_color_logo_with_background.png" id="iframeImg" style={{width: '100px', maxWidth: '100%', height: 'auto'}} alt="Torque AI Logo" />
+                <div id="imgBlock" style={{width: '600px', margin: '0px auto', fontFamily: 'Arial, Helvetica, sans-serif', paddingBottom: '10px', color: 'rgb(68, 68, 68)', textAlign: 'left', fontSize: '12px', paddingTop: '10px', fontWeight: 'bold'}}>
+                  <img src="https://stratus.campaign-image.com/images/1316ccdc8_nobgblack.png" id="iframeImg" style={{width: '164px', maxWidth: '100%', height: 'auto'}} alt="Logo" />
                 </div>
               </div>
               <br />
@@ -368,7 +371,7 @@ transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit
                         <tbody>
                           <tr>
                             <td width="10%">
-                              <img className="successicon" src="https://idzlf-zgpm.maillist-manage.com/images/challangeiconenable.jpg" alt="Success" />
+                              <img className="successicon" src="https://idzlf-zgpl.maillist-manage.com/images/challangeiconenable.jpg" alt="Success" />
                             </td>
                             <td>
                               <span id="signupSuccessMsg" style={{color: 'rgb(73, 140, 132)', fontFamily: 'sans-serif', fontSize: '14px',wordBreak:'break-word'}}>&nbsp;&nbsp;Thank you for Signing Up</span>
@@ -378,54 +381,86 @@ transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit
                       </table>
                     </div>
                   </div>
-                  <form method="POST" id="zcampaignOptinForm" style={{margin:'0px'}} action="https://idzlf-zgpm.maillist-manage.com/weboptin.zc" target="_zcSignup">
+                  <form method="POST" id="zcampaignOptinForm" style={{margin:'0px'}} action="https://idzlf-zgpl.maillist-manage.com/weboptin.zc" target="_zcSignup">
                     <div id="SIGNUP_BODY_ALL" style={{border: '1px none rgb(218, 216, 216)'}}>
-                      <h1 style={{color: 'rgb(255, 255, 255)', fontSize: '17px', fontFamily: 'Arial', margin: '0px', textAlign: 'left', padding: '20px', backgroundColor: 'rgb(1, 20, 135)', wordBreak: 'break-word', borderColor: 'rgb(21, 111, 137)', borderWidth: '1px', borderStyle: 'none'}} id="SIGNUP_HEADING"></h1>
-                      <div style={{padding: '20px', textAlign: 'center', backgroundColor: 'rgb(255, 255, 255)', opacity: 1, fontFamily: 'Arial', color: 'rgb(68, 68, 68)', fontSize: '11px'}} id="SIGNUP_BODY">
+                      <h1 style={{color: 'rgb(255, 255, 255)', fontSize: '14px', fontFamily: 'Verdana', margin: '0px', textAlign: 'left', padding: '20px', backgroundColor: 'rgb(255, 255, 255)', wordBreak: 'break-word', borderColor: 'rgb(255, 255, 255)', borderWidth: '5px', borderStyle: 'none'}} id="SIGNUP_HEADING">GET I</h1>
+                      <div style={{padding: '20px', textAlign: 'center', backgroundColor: 'rgb(255, 255, 255)', fontFamily: 'Verdana', color: 'rgb(68, 68, 68)', bottom: '2px', fontSize: '14px', opacity: 1}} id="SIGNUP_BODY">
                         <div style={{margin:'0px auto',textAlign:'left'}}>
-                          <div style={{lineHeight:'1.6'}} id="SIGNUP_DESCRIPTION">Torque AI, Inc</div>
+                          <div style={{lineHeight:'1.6'}} className="" id="SIGNUP_DESCRIPTION"></div>
                           <div style={{display:'none',backgroundColor:'#FFEBE8',padding:'10px 10px', color:'#d20000', fontSize:'11px', margin:'10px 0px',border:'solid 1px #ffd9d3', marginTop:'20px'}} id="errorMsgDiv">&nbsp;&nbsp;Please correct the marked field(s) below.</div>
                           <div>
                             <div style={{fontSize:'12px', marginTop:'10px'}} className="zcsffieldsdiv">
                               <div style={{padding:'10px 0px 10px 0px'}}>
-                                <div>
-                                  <div style={{width: '130px', float: 'left', marginTop: '5px', marginRight: '5px', textAlign: 'left', fontFamily: 'Arial', color: 'rgb(51, 51, 51)', fontSize: '12px'}}>Email&nbsp;
+                                <div style={{}}>
+                                  <div style={{width: '130px', float: 'left', marginTop: '5px', marginRight: '5px', textAlign: 'left', fontFamily: 'Arial', color: 'rgb(51, 51, 51)', fontSize: '14px'}}>Email&nbsp;
                                     <span style={{color: 'rgb(180, 0, 0)', fontSize: '11px', fontFamily: 'Arial, Helvetica, sans-serif'}}>*</span>
                                   </div>
                                   <div style={{width:'60%', float:'left', minWidth:'170px', maxWidth:'70%'}} className="zcinputbox">
-                                    <input name="CONTACT_EMAIL" style={{height:'28px',padding:'2px', width:'97%',color:'#444444',backgroundColor:'#fff',borderWidth:'1px',border:'solid 1px #dedede',fontFamily:'Arial',fontSize:'12px',boxSizing:'border-box'}} maxLength={100} type="email" />
+                                    <input name="CONTACT_EMAIL" style={{height: '28px', padding: '2px', width: '97%', color: 'rgb(68, 68, 68)', backgroundColor: 'rgb(255, 255, 255)', border: '1px solid rgb(222, 222, 222)', fontFamily: 'Verdana', fontSize: '14px', boxSizing: 'border-box'}} maxLength={100} type="email" />
                                     <span style={{display:'none'}} id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
                                   </div>
                                 </div>
                                 <div style={{clear:'both'}}></div>
                               </div>
                               <div style={{padding:'10px 0px 10px 0px'}}>
-                                <div>
-                                  <div style={{width: '130px', float: 'left', marginTop: '5px', marginRight: '5px', textAlign: 'left', fontFamily: 'Arial', color: 'rgb(51, 51, 51)', fontSize: '12px'}}>First Name&nbsp;</div>
+                                <div style={{}}>
+                                  <div style={{width: '130px', float: 'left', marginTop: '5px', marginRight: '5px', textAlign: 'left', fontFamily: 'Arial', color: 'rgb(51, 51, 51)', fontSize: '14px'}}>First Name&nbsp;</div>
                                   <div style={{width:'60%', float:'left', minWidth:'170px', maxWidth:'70%'}} className="zcinputbox">
-                                    <input name="FIRSTNAME" style={{height:'28px',padding:'2px', width:'97%',color:'#444444',backgroundColor:'#fff',borderWidth:'1px',border:'solid 1px #dedede',fontFamily:'Arial',fontSize:'12px',boxSizing:'border-box'}} maxLength={100} type="text" />
+                                    <input name="FIRSTNAME" style={{height: '28px', padding: '2px', width: '97%', color: 'rgb(68, 68, 68)', backgroundColor: 'rgb(255, 255, 255)', border: '1px solid rgb(222, 222, 222)', fontFamily: 'Verdana', fontSize: '14px', boxSizing: 'border-box'}} maxLength={100} type="text" />
                                     <span style={{display:'none'}} id="dt_FIRSTNAME">1,false,1,First Name,2</span>
                                   </div>
                                 </div>
                                 <div style={{clear:'both'}}></div>
                               </div>
                               <div style={{padding:'10px 0px 10px 0px'}}>
-                                <div>
-                                  <div style={{width: '130px', float: 'left', marginTop: '5px', marginRight: '5px', textAlign: 'left', fontFamily: 'Arial', color: 'rgb(51, 51, 51)', fontSize: '12px'}}>Last Name&nbsp;</div>
+                                <div style={{}}>
+                                  <div style={{width: '130px', float: 'left', marginTop: '5px', marginRight: '5px', textAlign: 'left', fontFamily: 'Arial', color: 'rgb(51, 51, 51)', fontSize: '14px'}}>Cell Phone&nbsp;</div>
                                   <div style={{width:'60%', float:'left', minWidth:'170px', maxWidth:'70%'}} className="zcinputbox">
-                                    <input name="LASTNAME" style={{height:'28px',padding:'2px', width:'97%',color:'#444444',backgroundColor:'#fff',borderWidth:'1px',border:'solid 1px #dedede',fontFamily:'Arial',fontSize:'12px',boxSizing:'border-box'}} maxLength={50} type="text" />
-                                    <span style={{display:'none'}} id="dt_LASTNAME">1,false,1,Last Name,2</span>
+                                    <input name="PHONE" style={{height: '28px', padding: '2px', width: '97%', color: 'rgb(68, 68, 68)', backgroundColor: 'rgb(255, 255, 255)', border: '1px solid rgb(222, 222, 222)', fontFamily: 'Verdana', fontSize: '14px', boxSizing: 'border-box'}} maxLength={20} type="text" />
+                                    <span style={{display:'none'}} id="dt_PHONE">1,false,1,Phone,2</span>
+                                  </div>
+                                </div>
+                                <div style={{clear:'both'}}></div>
+                              </div>
+                              <div style={{padding:'10px 0px 10px 0px'}}>
+                                <div style={{}}>
+                                  <div style={{width: '130px', float: 'left', marginTop: '5px', textAlign: 'left', marginRight: '5px', fontFamily: 'Arial', color: 'rgb(51, 51, 51)', fontSize: '14px'}}>What would you like to discuss? &nbsp;</div>
+                                  <div style={{width:'60%', float:'left', minWidth:'170px', maxWidth:'70%',position:'relative'}} className="zcinputbox">
+                                    <textarea name="NOTE" maxLength={300} style={{padding: '2px', width: '95%', color: 'rgb(68, 68, 68)', backgroundColor: 'rgb(255, 255, 255)', border: '1px solid rgb(222, 222, 222)', fontFamily: 'Verdana', fontSize: '14px', boxSizing: 'border-box', height: '84px'}}></textarea>
+                                    <span style={{display:'none'}} id="dt_NOTE">1,false,5,Note,2</span>
+                                  </div>
+                                </div>
+                                <div style={{clear:'both'}}></div>
+                              </div>
+                              <div style={{display:'none'}}>
+                                <div>
+                                  <div style={{width: '130px', float: 'left', marginTop: '5px', textAlign: 'left', marginRight: '5px', fontFamily: 'Arial', color: 'rgb(51, 51, 51)', fontSize: '14px'}}>Lead Source&nbsp;</div>
+                                  <div style={{width:'60%', float:'left', minWidth:'170px', maxWidth:'70%',position:'relative'}} className="zcinputbox">
+                                    <select name="LEAD_SOURCE" style={{height: '28px', padding: '2px', width: '97%', color: 'rgb(68, 68, 68)', backgroundColor: 'rgb(255, 255, 255)', border: '1px solid rgb(222, 222, 222)', fontFamily: 'Verdana', fontSize: '14px', boxSizing: 'border-box'}}>
+                                      <option value="Networking">Networking</option>
+                                      <option value="Contact Us">Contact Us</option>
+                                      <option value="Cold call">Cold call</option>
+                                      <option value="Social Media">Social Media</option>
+                                      <option value="Web Forms">Web Forms</option>
+                                      <option value="Trade Shows">Trade Shows</option>
+                                      <option value="Webinars">Webinars</option>
+                                      <option value="Organic Search">Organic Search</option>
+                                      <option value="Referrals">Referrals</option>
+                                      <option value="Chat">Chat</option>
+                                      <option value="Advertisements">Advertisements</option>
+                                    </select>
+                                    <span style={{display:'none'}} id="dt_LEAD_SOURCE">1,false,3,Lead Source,2</span>
                                   </div>
                                 </div>
                                 <div style={{clear:'both'}}></div>
                               </div>
                             </div>
                             <div style={{padding: '10px 0px 10px 15px'}} id="captchaOld" className="recaptcha">
-                              <div>
+                              <div style={{}}>
                                 <div style={{width: '59%', float: 'left', minWidth: '170px', maxWidth: '70%'}} id="captchaParent">
-                                  <img src="//campaigns.zoho.com/images/refresh_icon.png" style={{cursor: 'pointer',float:'right',marginRight:'4px'}} alt="Refresh Captcha" id="relCaptcha" />
+                                  <img src="//campaigns.zoho.com/images/refresh_icon.png" style={{cursor: 'pointer',float:'right',marginRight:'4px'}} id="relCaptcha" alt="Refresh Captcha" />
                                   <div id="captchaDiv" style={{padding: '20px',background:'#fff',border: '1px solid rgb(222, 222, 222)',boxSizing: 'border-box',width:'98.8%'}}></div>
-                                  <input placeholder="Captcha" id="captchaText" name="captchaText" style={{marginTop: '5px', height: '28px', padding: '2px', width: '98.7%', color: 'rgb(68, 68, 68)', backgroundColor: 'rgb(255, 255, 255)', border: '1px solid rgb(222, 222, 222)', fontSize: '12px', boxSizing: 'border-box', fontFamily: 'Arial'}} maxLength={100} type="text" />
+                                  <input placeholder="Captcha" id="captchaText" name="captchaText" style={{marginTop: '5px', height: '28px', padding: '2px', width: '98.7%', color: 'rgb(68, 68, 68)', backgroundColor: 'rgb(255, 255, 255)', border: '1px solid rgb(222, 222, 222)', fontSize: '14px', boxSizing: 'border-box', fontFamily: 'Verdana'}} maxLength={100} type="text" />
                                   <span id="capRequired" style={{color:'#B40000',fontSize:'11px',fontFamily:'Arial, Helvetica, sans-serif',marginTop: '-16px',marginRight: '-2px',float:'right'}}>*</span>
                                 </div>
                               </div>
@@ -435,7 +470,7 @@ transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit
                             <div style={{borderBottom:'#ebebeb dotted 1px', marginTop:'10px', clear:'both'}}></div>
                             <div id="REQUIRED_FIELD_TEXT" style={{color: 'rgb(180, 0, 0)', fontSize: '11px', fontFamily: 'Arial, Helvetica, sans-serif', padding: '10px 10px 10px 0px'}}>*Required Fields</div>
                             <div style={{padding:'10px', textAlign:'center'}}>
-                              <input type="button" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" style={{cursor: 'pointer', appearance: 'none', borderRadius: '3px', backgroundPosition: 'center bottom', backgroundRepeat: 'repeat-x', outline: 'none', padding: '5px 15px', textAlign: 'center', color: 'rgb(255, 255, 255)', fontSize: '14px', backgroundColor: 'rgb(147, 189, 59)', borderStyle: 'none', borderColor: 'rgb(166, 246, 0)', fontFamily: 'Arial', borderWidth: '5px', whiteSpace: 'normal'}} value="Join Now" />
+                              <input type="button" id="zcWebOptin" style={{cursor: 'pointer', appearance: 'none', borderRadius: '3px', backgroundPosition: 'center bottom', backgroundRepeat: 'repeat-x', outline: 'none', padding: '5px 15px', textAlign: 'center', color: 'rgb(255, 255, 255)', fontSize: '22px', backgroundColor: 'rgb(79, 211, 158)', borderStyle: 'none', borderColor: 'rgb(166, 246, 0)', fontFamily: 'Verdana', borderWidth: '5px', whiteSpace: 'normal'}} value="Let's Talk" />
                             </div>
                           </div>
                         </div>
@@ -453,7 +488,7 @@ transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit
                       <input type="hidden" id="zcld" name="zcld" value="110489827e27f88fe" />
                       <input type="hidden" id="zctd" name="zctd" value="110489827e26e63c1" />
                       <input type="hidden" id="document_domain" value="" />
-                      <input type="hidden" id="zc_Url" value="idzlf-zgpm.maillist-manage.com" />
+                      <input type="hidden" id="zc_Url" value="idzlf-zgpl.maillist-manage.com" />
                       <input type="hidden" id="new_optin_response_in" value="0" />
                       <input type="hidden" id="duplicate_optin_response_in" value="0" />
                       <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zd04ad9fa89b95972b091a05b76d380379e08af79f9e77c67eb1bfcd900887f2b" />
@@ -467,13 +502,13 @@ transform:scale(0.90);-webkit-transform:scale(0.90);transform-origin:0 0;-webkit
             </div>
             <input type="hidden" id="isCaptchaNeeded" value="true" />
             <input type="hidden" id="superAdminCap" value="0" />
-            <img src="https://idzlf-zgpm.maillist-manage.com/images/spacer.gif" id="refImage" style={{display:'none'}} alt="" />
+            <img src="https://idzlf-zgpl.maillist-manage.com/images/spacer.gif" id="refImage" style={{display:'none'}} alt="" />
           </div>
         </div>
         <div id="zcOptinOverLay" style={{display:'none',textAlign: 'center', backgroundColor: 'rgb(0, 0, 0)', opacity: 0.5, zIndex: 100, position: 'fixed', width: '100%', top: '0px', left: '0px', height: '988px'}}></div>
         <div id="zcOptinSuccessPopup" style={{display:'none',zIndex: 9999,width: '800px', height: '40%',top: '84px',position: 'fixed', left: '26%',backgroundColor: '#FFFFFF',borderColor: '#E6E6E6', borderStyle: 'solid', borderWidth: '1px', boxShadow: '0 1px 10px #424242',padding: '35px'}}>
           <span style={{position: 'absolute',top: '-16px',right:'-14px',zIndex:99999,cursor: 'pointer'}} id="closeSuccess">
-            <img src="https://idzlf-zgpm.maillist-manage.com/images/videoclose.png" alt="Close" />
+            <img src="https://idzlf-zgpl.maillist-manage.com/images/videoclose.png" alt="Close" />
           </span>
           <div id="zcOptinSuccessPanel"></div>
         </div>

@@ -302,9 +302,6 @@ const QuantumShift = () => {
       {/* Video Section */}
       <section className="py-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Who is The Quantum Coach?</h2>
-          </div>
           <div className="rounded-lg shadow-xl overflow-hidden" style={{ position: 'relative', aspectRatio: '1920/1080' }}>
             <iframe 
               src="https://share.synthesia.io/embeds/videos/cd9016f8-5b14-47d0-9fec-e893be33ccc9" 

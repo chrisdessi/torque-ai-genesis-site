@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ZohoQuantumCoachWaitlistForm } from "@/components/ZohoQuantumCoachWaitlistForm";
 import { ZohoAI90DayForm } from "@/components/ZohoAI90DayForm";
+import ZohoCombinedForm from "@/components/ZohoCombinedForm";
 import { motion } from "framer-motion";
 import { Calendar, Star, Check, X } from "lucide-react";
 import { Helmet } from "react-helmet";
@@ -404,7 +405,12 @@ const QuantumShift = () => {
 
       {/* Quantum Form */}
       <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
-        <ZohoQuantumCoachWaitlistForm />
+        <div className="section-padding max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
+            Quantum Coaching - Personal Transformation
+          </h2>
+          <ZohoQuantumCoachWaitlistForm />
+        </div>
       </section>
 
       {/* Track 2: Torque AI */}
@@ -580,7 +586,22 @@ const QuantumShift = () => {
 
       {/* AI Form */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
-        <ZohoAI90DayForm />
+        <div className="section-padding max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
+            Torque AI - Business Growth with AI
+          </h2>
+          <ZohoAI90DayForm />
+        </div>
+      </section>
+
+      {/* Combined Form */}
+      <section className="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="section-padding max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">
+            COMBINED Coaching & AI Integration
+          </h2>
+          <ZohoCombinedForm />
+        </div>
       </section>
 
       {/* Combined Offer */}

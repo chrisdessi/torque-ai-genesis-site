@@ -422,12 +422,7 @@ const QuantumShift = () => {
             </p>
           </motion.div>
 
-          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
-              <BookOpen className="w-12 h-12 text-purple-300 mb-4" />
-              <h4 className="text-xl font-bold mb-2">Courses</h4>
-              <p className="text-gray-300">Bite-sized programs for clarity, calm, and reinvention</p>
-            </Card>
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="grid md:grid-cols-3 gap-6 mb-12">
             <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
               <Users className="w-12 h-12 text-pink-300 mb-4" />
               <h4 className="text-xl font-bold mb-2">Workshops</h4>

@@ -145,10 +145,10 @@ const QuantumShift = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-6 py-3 mb-8">
-              <span className="text-sm font-bold tracking-wider">Quantum Coaching for Executives Who Steer Complex Businesses & Lives</span>
+              <span className="text-sm font-bold tracking-wider">Quantum Coaching</span>
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-              Transform Your<br />Life Today
+              Transform Your Life<br />and Your Business Today
             </h1>
             <p className="text-xl md:text-3xl text-gray-300 mb-12 max-w-3xl leading-relaxed font-light">
               Work directly with Chris Dessi
@@ -261,11 +261,15 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Quantum Shift Content Section */}
+      {/* Quantum Shift Personal Transformation Section */}
       <section className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-32 text-white">
         <div className="section-padding max-w-6xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">The Quantum Coach: Personal Transformation</h2>
+            <p className="text-xl text-gray-300">Transform your inner life to transform your leadership</p>
+          </motion.div>
           <motion.div {...fadeInUp}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Does This Sound Like You?</h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-8">Does This Sound Like You?</h3>
             <ul className="space-y-4 text-lg text-gray-300 mb-8">
               <li className="flex items-start gap-3">
                 <span className="text-purple-400 mt-1">•</span>
@@ -491,12 +495,12 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* AI Business Growth System Section */}
+      {/* Torque AI: Business Growth with AI Section */}
       <section className="bg-white py-32">
         <div className="section-padding max-w-6xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-16">
+          <motion.div {...fadeInUp} className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
-              Create a Quantum Shift for Your Business <span className="italic text-purple-600">and</span> Life
+              Torque AI: Business Growth with AI
             </h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
               The Proven 90-Day System to Grow Your Business Using AI—Without Getting Technical
@@ -509,7 +513,7 @@ const QuantumShift = () => {
 
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="mb-16">
             <Card className="p-10 bg-gradient-to-br from-orange-50 to-red-50 border-orange-200">
-              <h3 className="text-3xl font-bold text-black mb-8 text-center">Does This Sound Like You?</h3>
+              <h3 className="text-3xl font-bold text-black mb-8 text-center">Struggling with Business Growth?</h3>
               <ul className="space-y-4 text-lg text-gray-700 max-w-3xl mx-auto">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-600 mt-1">•</span>
@@ -898,7 +902,8 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Testimonials - Side by Side with Title */}
+
+      {/* Testimonials - Consolidated */}
       <section className="py-20 bg-gradient-to-br from-purple-50 to-white">
         <div className="section-padding max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-12">
@@ -909,7 +914,7 @@ const QuantumShift = () => {
               Real results from real executives
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <motion.div
               {...fadeInUp}
               transition={{ delay: 0.1 }}
@@ -947,25 +952,6 @@ const QuantumShift = () => {
               />
             </motion.div>
           </div>
-          <motion.div {...fadeInUp} transition={{ delay: 0.5 }} className="text-center mt-16">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl shadow-xl hover:shadow-2xl transition-all"
-              onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}
-            >
-              <Calendar className="mr-3 h-6 w-6" />
-              Start Your Transformation
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            What Leaders Are Saying
-          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="p-6 bg-card border-border">
@@ -977,8 +963,19 @@ const QuantumShift = () => {
               </Card>
             ))}
           </div>
+          <motion.div {...fadeInUp} transition={{ delay: 0.5 }} className="text-center mt-16">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl shadow-xl hover:shadow-2xl transition-all"
+              onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Calendar className="mr-3 h-6 w-6" />
+              Join the Waiting List
+            </Button>
+          </motion.div>
         </div>
       </section>
+
 
       {/* Benefits Section */}
       <section className="py-16 px-6 bg-background">

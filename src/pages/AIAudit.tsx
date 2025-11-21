@@ -7,10 +7,21 @@ import ZohoAIAuditForm from "@/components/ZohoAIAuditForm";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'stripe-buy-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'buy-button-id': string;
+        'publishable-key': string;
+      };
+    }
+  }
+}
+
 const AIAudit = () => {
   useEffect(() => {
     const script = document.createElement('script');
-    // Stripe script removed
+    script.src = 'https://js.stripe.com/v3/buy-button.js';
     script.async = true;
     document.body.appendChild(script);
 
@@ -89,7 +100,7 @@ const AIAudit = () => {
     <>
       <SEO
         title="2-Week AI Audit - Transform Your Business with AI"
-        description="Get a comprehensive AI audit for just $297. Discover high-impact AI opportunities, receive a custom implementation roadmap, and identify quick wins for your business in just 2 weeks."
+        description="Get a comprehensive AI audit for $1,987. Discover high-impact AI opportunities, receive a custom implementation roadmap, and identify quick wins for your business in just 2 weeks."
         keywords="AI audit, AI assessment, AI strategy, business AI transformation, AI implementation roadmap, AI consulting, enterprise AI audit, AI opportunities analysis"
         url="/ai-audit"
       />
@@ -149,9 +160,9 @@ const AIAudit = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 <div className="text-left">
-                  <div className="text-sm text-muted-foreground line-through">Regular: $997</div>
+                  <div className="text-sm text-muted-foreground line-through">Regular: $6,999</div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-6xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">$297</span>
+                    <span className="text-6xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">$1,987</span>
                     <span className="text-muted-foreground">limited time</span>
                   </div>
                 </div>
@@ -365,7 +376,7 @@ const AIAudit = () => {
                 viewport={{ once: true }}
               >
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary to-purple-600 text-white rounded-full mb-6 font-semibold">
-                  $3,500+ Value • Yours for $297
+                  $10,000+ Value • Yours for $1,987
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
                   Your Complete AI Transformation Package
@@ -454,13 +465,28 @@ const AIAudit = () => {
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="mt-12 text-center"
+              transition={{ delay: 0.3 }}
+              className="bg-background rounded-3xl p-12 shadow-2xl border-2 border-primary/20 max-w-2xl mx-auto"
             >
-              <p className="text-muted-foreground mb-6">
+              <div className="text-center mb-8">
+                <div className="text-sm text-muted-foreground line-through mb-2">Regular: $6,999</div>
+                <div className="text-6xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-4">
+                  $1,987
+                </div>
+                <p className="text-muted-foreground mb-8">One-time investment • Lifetime impact</p>
+              </div>
+
+              <div className="flex justify-center mb-8">
+                <stripe-buy-button
+                  buy-button-id="buy_btn_1SW31bG7cympBc4I7jfVqYYW"
+                  publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a"
+                />
+              </div>
+
+              <p className="text-center text-sm text-muted-foreground mb-6">
                 🎯 Results guaranteed or money back
               </p>
               <div className="flex flex-wrap justify-center gap-6 text-sm">

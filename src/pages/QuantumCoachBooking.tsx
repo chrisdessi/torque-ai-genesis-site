@@ -18,19 +18,112 @@ const QuantumShift = () => {
 
   const testimonials = [
     {
-      quote: "Chris helped me see the gaps in my decision-making process. Revenue jumped 40% in six months.",
-      author: "Sarah Chen",
-      role: "CEO, SaaS Platform"
+      quote: "Chris moves beyond platitudes and drills down to what matters to smart executives",
+      author: "John Dokes"
     },
     {
-      quote: "The clarity I gained in our first session was worth 10x the investment. Chris doesn't pull punches.",
-      author: "Michael Roberts",
-      role: "VP Sales"
+      quote: "Two huge likeable thumbs up!",
+      author: "David Kerpin"
     },
     {
-      quote: "Best coaching investment I've made. Chris brings real-world battle scars and actionable frameworks.",
-      author: "Jennifer Martinez",
-      role: "Chief Revenue Officer"
+      quote: "If you want to succeed you need to be REMARKABLE! Dessi just wrote the 'How To' guide!",
+      author: "Jeffrey Hazlett"
+    },
+    {
+      quote: "Chris Dessi offers authentic examples and great advice for the modern executive",
+      author: "John Hall"
+    },
+    {
+      quote: "Chris provided an excellent presentation at our company sales meeting which I found to be highly motivational and enlightening",
+      author: "Beck Cross"
+    },
+    {
+      quote: "Chris intimately understands both the technological and interpersonal aspects of the field. His passion is nothing short of inspiring and contagious.",
+      author: "Holly Alexander"
+    },
+    {
+      quote: "Chris knows his craft like the Pope knows the church.",
+      author: "Jamie Narcott"
+    },
+    {
+      quote: "Chris created a whole new style and substance for our presentations, successfully bringing our message to a new audience.",
+      author: "Rob Roe"
+    },
+    {
+      quote: "I got to see first hand his dedication, product knowledge, and understanding of how to service fortune 500 clients in the online space.",
+      author: "Sean Meehan"
+    },
+    {
+      quote: "Chris has a dynamic personality and is one of the more professional online marketers in the industry.",
+      author: "Marc Porcelli"
+    },
+    {
+      quote: "He really knew what he was talking about and explained it in a clear and understandable way. I definitely recommend working with him!",
+      author: "Kathleen McCarthy"
+    },
+    {
+      quote: "Chris is smart, straightforward, he knows his business and he's a heck of a nice guy.",
+      author: "Nelson Wakefield"
+    },
+    {
+      quote: "I've never met a more positive force of nature than that which we call Chris Dessi. He builds measurable, repeatable, processes that elevate his teams.",
+      author: "Nathan Milford"
+    },
+    {
+      quote: "His energy is infectious, even to normally cynical programmers. As a technologist, I felt very lucky and honored to have Chris speak for our products.",
+      author: "Sean Conrad"
+    },
+    {
+      quote: "Chris is an outstanding leader with great vision, passion and work ethic.",
+      author: "Michael Hines"
+    },
+    {
+      quote: "Chris is smart, hard-working and driven, but he is also compassionate, understanding and possesses remarkable foresight.",
+      author: "Jeffrey Hitchcock"
+    },
+    {
+      quote: "Chris was extremely insightful, informative, relevant and funny.",
+      author: "Mike Talbot"
+    },
+    {
+      quote: "Chris is truly an expert in the field. I would highly recommend Chris for any speaking engagement or other program",
+      author: "Tim Lockwood"
+    },
+    {
+      quote: "Chris' leadership, expertise, and charisma are a must for any organization!",
+      author: "Alex Krylov"
+    },
+    {
+      quote: "His ability to communicate with tact and sophistication are emblematic to his outstanding achievements.",
+      author: "Chantelle S. White"
+    },
+    {
+      quote: "Chris is highly knowledgeable in the field and brings an understanding that very few can do the needs of the advertiser.",
+      author: "Matthew Stern"
+    },
+    {
+      quote: "Chris is an incredibly driven professional who can always be counted on to deliver results!",
+      author: "Mark Fiske"
+    },
+    {
+      quote: "Chris is a person you can look up to, learn from and emulate",
+      author: "Ed O'Brien"
+    },
+    {
+      quote: "Awesome energy, and the personal touch put it over the edge!",
+      author: "Jan Kinsella"
+    },
+    {
+      quote: "Chris Dessi is a GENIUS!! I have had the opportunity to attend three of Chris' presentations. Each time I learned something new",
+      author: "Jason C. Starzyk"
+    },
+    {
+      quote: "I highly recommend Chris to come into your company or personally teach you",
+      author: "Derek Brown"
+    },
+    {
+      quote: "Chris has done an excellent job in helping my organization",
+      author: "Rich Gerszberg"
     }
   ];
 
@@ -739,6 +832,31 @@ const QuantumShift = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900 py-32 text-white">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Here are some people who trust me to help them.
+            </h2>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
+            <div className="grid md:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <div className="flex items-start gap-3 mb-4">
+                    <Star className="w-5 h-5 text-yellow-400 fill-yellow-400 flex-shrink-0 mt-1" />
+                    <p className="text-sm italic leading-relaxed">"{testimonial.quote}"</p>
+                  </div>
+                  <p className="text-xs font-semibold text-gray-300">— {testimonial.author}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Meet Chris */}
       <section className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-32 text-white">
         <div className="section-padding max-w-6xl mx-auto">
@@ -769,13 +887,15 @@ const QuantumShift = () => {
                 <footer className="text-gray-400 mt-2">— Chris Dessi</footer>
               </blockquote>
               <div className="space-y-4 pt-6">
-                <p className="text-white font-bold">Trusted by industry leaders:</p>
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                    <p className="italic mb-2">"{testimonial.quote}"</p>
-                    <p className="text-sm text-gray-400">– {testimonial.author}, {testimonial.role}</p>
-                  </div>
-                ))}
+                <p className="text-white font-bold text-xl mb-6">Trusted by industry leaders:</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {testimonials.slice(0, 6).map((testimonial, index) => (
+                    <div key={index} className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                      <p className="italic mb-2 text-sm">"{testimonial.quote}"</p>
+                      <p className="text-xs text-gray-400">– {testimonial.author}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>

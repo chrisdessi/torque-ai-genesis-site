@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 
-import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import { ZohoQuantumCoachWaitlistForm } from "@/components/ZohoQuantumCoachWaitlistForm";
 import ZohoQuantumCoachForm from "@/components/ZohoQuantumCoachForm";
 import { motion } from "framer-motion";
 import { Mic, Youtube, BookOpen, Calendar, Star, Play, Target, TrendingUp, Users, Zap, ArrowRight, Sparkles, Crown, CalendarDays, Mail, MessageSquare, Check } from "lucide-react";
@@ -91,8 +91,8 @@ const QuantumShift = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Quantum Coach - Executive Coaching with Chris Dessi | $199 First Session</title>
-        <meta name="description" content="Work 1-on-1 with Chris Dessi, the leader who closed $100M+ in enterprise deals. 60-minute strategic deep dives, clear 30-day action plans, and battle-tested frameworks. First session $199." />
+        <title>Quantum Coach - Executive Coaching with Chris Dessi | Join the Waiting List</title>
+        <meta name="description" content="Work 1-on-1 with Chris Dessi, the leader who closed $100M+ in enterprise deals. Join the waiting list for exclusive executive coaching opportunities." />
         <meta name="keywords" content="executive coaching, business coaching, leadership coaching, Chris Dessi coach, executive development, strategic coaching, revenue growth coaching, enterprise sales coaching, business strategy coaching, CEO coaching, executive advisor, leadership development, business mentor, sales coaching, executive performance coaching" />
         <link rel="canonical" href="https://torqueapp.ai/quantum-shift/coach" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YB4QY7TVK"></script>
@@ -157,10 +157,10 @@ const QuantumShift = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl"
-                onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}
+                onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Calendar className="mr-3 h-6 w-6" />
-                Book First Session - $199
+                Join the Waiting List
               </Button>
             </div>
           </motion.div>
@@ -206,14 +206,14 @@ const QuantumShift = () => {
             </div>
             <div className="absolute -bottom-8 -right-8 text-purple-200 text-9xl font-serif leading-none">"</div>
           </motion.div>
-          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center mt-16">
+           <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center mt-16">
             <Button 
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl"
-              onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}
+              onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Calendar className="mr-3 h-6 w-6" />
-              Book Your Session
+              Join the Waiting List
             </Button>
           </motion.div>
         </div>
@@ -329,26 +329,10 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Discovery Call with Stripe Pricing */}
-      <section className="py-16 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Individual Coaching Packages</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Start your leadership transformation journey
-            </p>
-          </motion.div>
-          <div className="w-full">
-            <stripe-pricing-table 
-              pricing-table-id="prctbl_1SPrv1G7cympBc4IJGTMAD9R"
-              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
-            </stripe-pricing-table>
-          </div>
-        </div>
-      </section>
+      {/* Waitlist Form */}
+      <div id="waitlist-form">
+        <ZohoQuantumCoachWaitlistForm />
+      </div>
 
       {/* Chris Dessi Bio Section */}
       <section className="bg-white py-32">
@@ -528,23 +512,27 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Executive Coaching Packages with Stripe Pricing */}
+      {/* Executive Coaching Section */}
       <section className="py-16 px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.div 
             {...fadeInUp}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Executive Coaching Packages</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Choose the coaching program that fits your leadership journey
+              Join the waitlist to get notified when enrollment opens
             </p>
           </motion.div>
-          <div className="w-full">
-            <stripe-pricing-table 
-              pricing-table-id="prctbl_1SPrcCG7cympBc4IRUlov840"
-              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
-            </stripe-pricing-table>
+          <div className="text-center">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl"
+              onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Calendar className="mr-3 h-6 w-6" />
+              Join the Waiting List
+            </Button>
           </div>
         </div>
       </section>
@@ -723,8 +711,12 @@ const QuantumShift = () => {
             Walk away with a clear roadmap and the confidence to execute.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" onClick={() => window.open('https://buy.stripe.com/5kQdR983q9n90gd1w78g000', '_blank')}>
-              Book Your Session — $199
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" 
+              onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Join the Waiting List
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button size="lg" variant="outline" onClick={() => window.open('https://forms.gle/AxBiRBtCXsAgRfKN7', '_blank')}>
@@ -737,30 +729,6 @@ const QuantumShift = () => {
           </p>
         </div>
       </section>
-
-      {/* Startup Leadership Team Coaching with Stripe Pricing */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Startup Leadership Team Coaching</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Group coaching program for leadership teams
-            </p>
-          </motion.div>
-          <div className="w-full">
-            <stripe-pricing-table 
-              pricing-table-id="prctbl_1SPrv1G7cympBc4IJGTMAD9R"
-              publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a">
-            </stripe-pricing-table>
-          </div>
-        </div>
-      </section>
-
-      {/* Calendly Booking */}
-      <CalendlyEmbed />
 
       {/* Contact Form */}
       <section className="bg-background py-20">

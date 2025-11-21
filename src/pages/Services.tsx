@@ -8,6 +8,7 @@ import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 
 import ZapierContactForm from "@/components/ZapierContactForm";
+import { ZohoAI90DayForm } from "@/components/ZohoAI90DayForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -124,7 +125,7 @@ const Services = () => {
               strategic AI implementation that delivers measurable results and lasting impact.
             </p>
             <div className="mt-10">
-              <a href="mailto:info@torqueapp.ai">
+              <a href="/ai-audit">
                 <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
                   Start Your AI Journey
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -367,11 +368,8 @@ const Services = () => {
       {/* Contact Form Dialog */}
       <Dialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen}>
         <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-          <DialogTitle className="sr-only">Contact Form</DialogTitle>
-          <ZapierContactForm 
-            title="Schedule Your Consultation"
-            description="Fill out the form and our team will reach out within 24 hours"
-          />
+          <DialogTitle className="sr-only">90-Day AI Workshop Form</DialogTitle>
+          <ZohoAI90DayForm />
         </DialogContent>
       </Dialog>
     </div>

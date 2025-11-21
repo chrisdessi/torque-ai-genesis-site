@@ -122,7 +122,7 @@ const Hero = () => {
               className="group bg-cyan-500 hover:bg-cyan-600 text-white border-0 font-semibold px-10 py-7 text-lg"
               asChild
             >
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSflUTnHPK6zQsZKkoxv-_RpCVvMoR2aMlFYT_H5LoXW8pdLSA/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+              <a href="https://torqueapp.ai/services">
                 Learn More
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>

@@ -167,7 +167,45 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Quantum Shift Personal Transformation Section */}
+      {/* Urgency Notice */}
+      <section className="bg-black py-12">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <motion.p 
+              className="text-3xl md:text-5xl font-black mb-6 animate-pulse" 
+              style={{ color: '#dc2626' }}
+              animate={{ scale: [1, 1.02, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              ⚠️ Limited spaces left! Enrollment closes on December 31st — or as soon as all spots are gone.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Discover How Executives Have Turned Their Businesses and Lives Around:
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+                Shifting failing businesses to Generating $20K–$100K/Month (without hiring an agency), to leading fulfilling lives with renewed clarity and mission alignment.
+              </p>
+              <p className="text-lg text-gray-400 mt-4 max-w-4xl mx-auto">
+                Proven growth systems, coaching, and AI marketing that turns into consistent sales and a life transformed.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Gary Vaynerchuk Testimonial */}
       <section className="bg-gradient-to-br from-purple-50 to-pink-50 py-32">
         <div className="section-padding max-w-6xl mx-auto">
           <motion.div {...fadeInUp} className="relative">
@@ -238,44 +276,7 @@ const QuantumShift = () => {
         </div>
       </section>
 
-      {/* Urgency Notice */}
-      <section className="bg-black py-12">
-        <div className="section-padding max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <motion.p 
-              className="text-3xl md:text-5xl font-black mb-6 animate-pulse" 
-              style={{ color: '#dc2626' }}
-              animate={{ scale: [1, 1.02, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              ⚠️ Limited spaces left! Enrollment closes on December 31st — or as soon as all spots are gone.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Discover How Executives Have Turned Their Businesses and Lives Around:
-              </h2>
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                Shifting failing businesses to Generating $20K–$100K/Month (without hiring an agency), to leading fulfilling lives with renewed clarity and mission alignment.
-              </p>
-              <p className="text-lg text-gray-400 mt-4 max-w-4xl mx-auto">
-                Proven growth systems, coaching, and AI marketing that turns into consistent sales and a life transformed.
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
+      {/* Quantum Shift Personal Transformation Section */}
       <section className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-32 text-white">
         <div className="section-padding max-w-6xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-12">

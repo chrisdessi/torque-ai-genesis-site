@@ -749,8 +749,8 @@ const QuantumShift = () => {
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src={new URL('../assets/chris-fox5-news.png', import.meta.url).href}
-                alt="Chris Dessi on Fox 5 News" 
+                src={new URL('../assets/chris-profile.jpg', import.meta.url).href}
+                alt="Chris Dessi" 
                 className="w-full rounded-2xl shadow-2xl"
               />
             </div>

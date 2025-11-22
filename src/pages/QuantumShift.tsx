@@ -164,11 +164,9 @@ const QuantumShift = () => {
               size="lg"
               variant="outline"
               className="border-2 border-gray-300 hover:border-purple-600 text-black hover:text-purple-600 font-bold px-10 py-6 text-lg bg-white"
-              asChild
+              onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
             >
-              <Link to="/quantum-shift/coach">
-                APPLY to the next Cohort
-              </Link>
+              APPLY to the next Cohort
             </Button>
           </motion.div>
         </div>

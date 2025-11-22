@@ -181,7 +181,7 @@ const QuantumShift = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-8 text-xl shadow-2xl"
-                onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
               >
                 <Calendar className="mr-3 h-6 w-6" />
                 Apply Now
@@ -483,7 +483,7 @@ const QuantumShift = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-6 text-xl"
-                onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
               >
                 <Calendar className="mr-3 h-6 w-6" />
                 Apply for Quantum Coaching Now
@@ -502,7 +502,7 @@ const QuantumShift = () => {
           <Button 
             size="lg"
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-6 text-lg"
-            onClick={() => window.open('https://zc.vg/7wAsh', '_blank')}
+            onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
           >
             APPLY NOW - Quantum Shift 90 Day Workshop
           </Button>
@@ -717,7 +717,7 @@ const QuantumShift = () => {
             <Button 
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-10 py-6 text-lg"
-              onClick={() => window.open('https://zc.vg/7wAsh', '_blank')}
+              onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
             >
               Quantum Shift Workshop
             </Button>
@@ -805,7 +805,7 @@ const QuantumShift = () => {
               <Button 
                 size="lg"
                 className="bg-white text-purple-900 hover:bg-gray-100 font-bold px-12 py-6 text-xl shadow-xl"
-                onClick={() => window.scrollTo({ top: document.getElementById('quantum-form')?.offsetTop || 0, behavior: 'smooth' })}
+                onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
               >
                 <Calendar className="mr-3 h-6 w-6" />
                 Apply for Combined Program Now
@@ -880,7 +880,7 @@ const QuantumShift = () => {
             <Button 
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-6 text-xl shadow-xl"
-              onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
             >
               <Calendar className="mr-3 h-6 w-6" />
               Yes, I'm Ready to Transform - Apply Now
@@ -961,7 +961,7 @@ const QuantumShift = () => {
             <Button 
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold px-12 py-6 text-xl shadow-xl"
-              onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
             >
               <Calendar className="mr-3 h-6 w-6" />
               Apply to Work With Chris Now
@@ -991,7 +991,7 @@ const QuantumShift = () => {
             <Button 
               size="lg"
               className="bg-white text-purple-600 hover:bg-gray-100 font-bold px-12 py-8 text-xl shadow-2xl"
-              onClick={() => document.getElementById('quantum-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
             >
               <Calendar className="mr-3 h-6 w-6" />
               Apply Now - Start Your Transformation

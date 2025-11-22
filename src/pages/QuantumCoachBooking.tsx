@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import { Calendar, Star, Check, X } from "lucide-react";
 
@@ -965,6 +966,163 @@ const QuantumShift = () => {
             >
               <Calendar className="mr-3 h-6 w-6" />
               Apply to Work With Chris Now
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-gradient-to-br from-gray-50 to-white py-32">
+        <div className="section-padding max-w-4xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600">
+              Everything you need to know about the Quantum Coaching program
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="what-is-included" className="bg-white rounded-xl border-2 border-gray-200 px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                  What's included in the 90-day program?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 space-y-3">
+                  <p>The 90-Day Quantum Coaching program includes:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Weekly 1-on-1 coaching sessions with Chris Dessi</li>
+                    <li>Personal transformation work (Quantum Coaching track)</li>
+                    <li>AI business systems implementation (Torque AI track)</li>
+                    <li>Custom strategy and action plans</li>
+                    <li>Email and messaging support between sessions</li>
+                    <li>Access to proven frameworks and templates</li>
+                    <li>Accountability and progress tracking</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="pricing" className="bg-white rounded-xl border-2 border-gray-200 px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                  What is the investment for this program?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 space-y-3">
+                  <p>Investment details are shared during the application process. The program is designed for executives and business owners who are serious about transformation and understand the value of working directly with Chris Dessi.</p>
+                  <p>Consider this: clients have generated $18K–$100K+ in new revenue within the 90 days. The ROI typically far exceeds the investment.</p>
+                  <p><strong>Payment plans are available</strong> to make the program accessible to committed participants.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="who-is-this-for" className="bg-white rounded-xl border-2 border-gray-200 px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                  Who is this program for?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 space-y-3">
+                  <p>This program is ideal for:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Executives and entrepreneurs</strong> ready to scale their business</li>
+                    <li><strong>Leaders</strong> feeling stuck or out of alignment with their mission</li>
+                    <li><strong>Business owners</strong> who want to leverage AI without getting technical</li>
+                    <li><strong>High-performers</strong> seeking both inner transformation and outer results</li>
+                    <li>Anyone committed to doing the work and taking action</li>
+                  </ul>
+                  <p className="font-semibold">This is NOT for: people looking for quick fixes, passive learners, or those unwilling to implement.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="time-commitment" className="bg-white rounded-xl border-2 border-gray-200 px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                  What's the time commitment required?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 space-y-3">
+                  <p>You'll need to commit:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>1 hour per week</strong> for your coaching session with Chris</li>
+                    <li><strong>3-5 hours per week</strong> for implementation work (building systems, content, automation)</li>
+                    <li><strong>Daily reflection</strong> for personal transformation work (10-15 minutes)</li>
+                  </ul>
+                  <p>Total: approximately <strong>5-7 hours per week</strong> over 90 days.</p>
+                  <p>This is an intensive, results-driven program. If you can't commit the time, you won't get the results.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="quantum-vs-ai" className="bg-white rounded-xl border-2 border-gray-200 px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                  Can I do just Quantum Coaching OR just Torque AI?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 space-y-3">
+                  <p><strong>Yes.</strong> You can choose to focus on one track:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Quantum Coaching only</strong> – Personal transformation, mindset, alignment, leadership</li>
+                    <li><strong>Torque AI only</strong> – Business systems, lead generation, AI automation, marketing</li>
+                  </ul>
+                  <p><strong>However,</strong> the combined program delivers exponentially better results. Inner transformation without business systems leaves money on the table. Business systems without inner alignment leads to burnout.</p>
+                  <p className="font-semibold text-black">Most successful clients do BOTH.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="technical-skills" className="bg-white rounded-xl border-2 border-gray-200 px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                  Do I need technical skills or AI experience?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 space-y-3">
+                  <p><strong>No.</strong> You don't need to be technical at all.</p>
+                  <p>Chris will guide you through every step of building AI-powered systems for your business. The tools and platforms used are user-friendly and designed for non-technical users.</p>
+                  <p>What you DO need:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Willingness to learn</li>
+                    <li>Openness to new approaches</li>
+                    <li>Commitment to implementation</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="results" className="bg-white rounded-xl border-2 border-gray-200 px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                  What kind of results can I expect?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 space-y-3">
+                  <p>Results vary based on your starting point and effort, but past clients have achieved:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>$18K–$100K+ in new revenue within 90 days</li>
+                    <li>Lead generation systems that run on autopilot</li>
+                    <li>3x revenue growth</li>
+                    <li>Greater clarity, purpose, and alignment in life and business</li>
+                    <li>Breaking through long-standing mental blocks and patterns</li>
+                    <li>Automated marketing and sales systems</li>
+                  </ul>
+                  <p className="font-semibold">The key: you must do the work. This is not passive learning. Results come from implementation.</p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="enrollment" className="bg-white rounded-xl border-2 border-gray-200 px-6">
+                <AccordionTrigger className="text-lg font-semibold text-left hover:no-underline">
+                  How do I enroll? What's the process?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 space-y-3">
+                  <p>The enrollment process:</p>
+                  <ol className="list-decimal list-inside space-y-2 ml-4">
+                    <li><strong>Apply</strong> using the application form on this page</li>
+                    <li><strong>Brief review</strong> – Chris reviews your application</li>
+                    <li><strong>Discovery call</strong> – If it's a good fit, you'll have a call with Chris to discuss your goals</li>
+                    <li><strong>Enrollment</strong> – If we both agree it's the right fit, you'll be invited to join the next cohort</li>
+                  </ol>
+                  <p className="font-semibold text-red-600 mt-4">⚠️ Enrollment closes December 31st or when all spots are filled.</p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
+
+          <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="text-center mt-12">
+            <p className="text-gray-600 mb-6">Still have questions?</p>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-bold px-10 py-6 text-lg"
+              onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
+            >
+              Apply Now & We'll Answer Them
             </Button>
           </motion.div>
         </div>

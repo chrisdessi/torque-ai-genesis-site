@@ -102,9 +102,9 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="AI Consulting & Development Services"
-        description="Comprehensive AI solutions for enterprise transformation. AI strategy consulting, custom model development, data engineering, automation, and 90-day implementation programs. Proven methodology for measurable ROI."
-        keywords="AI consulting services, AI development, AI model development, data engineering, AI automation, AI strategy, enterprise AI solutions, custom AI development, AI implementation, machine learning consulting, generative AI solutions, AI workflow optimization, intelligent automation, AI system integration, predictive analytics, AI security solutions, business process automation, AI transformation services"
+        title="Westchester AI Services & Consulting - Chris Dessi Torque AI"
+        description="Comprehensive AI consulting and implementation services in Westchester, NY. Chris Dessi, master marketer and AI consultant, offers AI strategy, custom development, automation, and 90-day workshops. Transform your Westchester business with proven AI solutions."
+        keywords="AI services Westchester, AI consulting Westchester NY, Chris Dessi AI, AI strategy Westchester, AI development New York, AI automation Westchester, custom AI solutions, AI implementation Westchester, AI workshops Westchester, enterprise AI consulting, machine learning services Westchester, AI transformation Westchester, business process automation New York"
         url="/services"
       />
       <Header />

@@ -64,10 +64,10 @@ const ExecutiveCoaching = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="Executive Coaching with Chris Dessi"
-        description="Transform your leadership with 1-on-1 executive coaching from Chris Dessi. 60-minute strategic sessions focused on decision velocity, revenue growth, and leadership impact. Chris personally closed over $100M in enterprise deals and brings battle-tested frameworks to help you execute faster and win bigger."
-        keywords="executive coaching, business coaching, leadership coaching, executive coach, CEO coaching, sales leadership coaching, enterprise sales coaching, executive development, strategic leadership, decision-making coaching, Chris Dessi coaching, revenue growth coaching, executive performance coaching, C-suite coaching, senior executive coaching"
+      <SEO 
+        title="Westchester Executive Coaching Sessions - Chris Dessi Master Marketer"
+        description="1-on-1 executive coaching with Chris Dessi in Westchester, NY. Master marketer and consultant who closed over $100 million in deals. Strategic clarity, leadership development, and revenue growth frameworks. Featured on Fox, Forbes, and CNN. Limited spots available."
+        keywords="executive coaching Westchester, Chris Dessi coaching, Westchester business coach, executive coaching New York, leadership coaching Westchester NY, business coaching Westchester, sales coaching, strategic planning coach, revenue growth coaching, master marketer consultant, executive development Westchester, C-suite coaching, business strategy Westchester"
         url="/executive-coaching"
         type="website"
       />

@@ -134,9 +134,9 @@ const QuantumShift = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Quantum Coaching + AI Optimization - Transform Your Life and Business in 90 Days"
-        description="Work directly with Chris Dessi. Upgrade your human operating system AND your business operating system. 90-day cohort programs combining quantum coaching for personal transformation with Torque AI for business growth. Break old patterns and scale with AI-powered systems."
-        keywords="quantum coaching, AI business optimization, executive coaching, business transformation, Chris Dessi, personal development, AI growth systems, torque AI, 90-day transformation, quantum shift coaching, AI automation, business coaching programs, mindset coaching, AI business strategy"
+        title="Westchester Executive Coaching & AI Workshops - Chris Dessi Quantum Coach"
+        description="Transform your life and business with Chris Dessi, master marketer and quantum coach serving Westchester, NY. 90-day coaching programs combining personal transformation with AI business optimization. Featured on Fox, Forbes, and CNN. Work directly with a nationally recognized consultant."
+        keywords="Westchester executive coaching, quantum coaching Westchester NY, Chris Dessi coach, AI workshops Westchester, business transformation Westchester, personal development coaching New York, AI business coaching, 90-day coaching program, Westchester leadership coaching, master marketer Chris Dessi, executive coach New York, AI optimization coaching, quantum shift coaching, mindset transformation Westchester"
         url="/quantum-coach"
         type="website"
       />

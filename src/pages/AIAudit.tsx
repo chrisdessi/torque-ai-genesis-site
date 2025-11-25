@@ -99,9 +99,9 @@ const AIAudit = () => {
   return (
     <>
       <SEO
-        title="2-Week AI Audit - Transform Your Business with AI"
-        description="Get a comprehensive AI audit for $1,987. Discover high-impact AI opportunities, receive a custom implementation roadmap, and identify quick wins for your business in just 2 weeks."
-        keywords="AI audit, AI assessment, AI strategy, business AI transformation, AI implementation roadmap, AI consulting, enterprise AI audit, AI opportunities analysis"
+        title="Westchester AI Audit - 2-Week Business Assessment by Chris Dessi"
+        description="Get a comprehensive AI audit for your Westchester business. Chris Dessi, master marketer and AI consultant, delivers actionable insights in 2 weeks. $1,987 for AI strategy roadmap, ROI analysis, and quick-win opportunities. Serving businesses in Westchester County and New York."
+        keywords="AI audit Westchester, AI assessment Westchester NY, Chris Dessi AI consulting, business AI transformation Westchester, AI strategy consultant New York, AI audit New York, Westchester AI consultant, enterprise AI audit, AI implementation Westchester, business technology assessment, AI opportunities analysis Westchester, AI consulting services New York"
         url="/ai-audit"
       />
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">

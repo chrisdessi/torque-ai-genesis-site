@@ -57,9 +57,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEO 
-        title="Enterprise AI Strategy & Implementation"
-        description="Transform your business with strategic AI consulting. From executive briefings to 90-day accelerators, Torque AI delivers measurable ROI through AI-driven marketing, sales, and communications solutions."
-        keywords="AI consulting, enterprise AI strategy, AI implementation, AI transformation, business AI solutions, ChatGPT for enterprise, AI-driven marketing, AI sales automation, generative AI, AI adoption, business automation, AI workflow optimization, responsible AI governance, AI-powered content creation, machine learning consulting, AI integration services, digital transformation, AI productivity tools, enterprise technology consulting, AI strategic planning"
+        title="Westchester AI Consulting & Business Coaching - Chris Dessi"
+        description="Chris Dessi, master marketer and AI consultant, offers AI strategy workshops and executive coaching in Westchester, NY. Transform your business with proven AI solutions and expert guidance from a nationally recognized consultant featured on Fox, Forbes, and CNN."
+        keywords="Westchester AI consulting, Westchester AI coach, Chris Dessi, AI workshops Westchester NY, executive coaching Westchester, AI business transformation, master marketer, AI consultant New York, enterprise AI strategy, AI implementation Westchester, business AI coaching, Westchester digital transformation, AI training Westchester, ChatGPT for business, AI-driven marketing Westchester, AI sales automation, generative AI consulting, AI strategy consultant New York"
         url="/"
       />
       <Header />

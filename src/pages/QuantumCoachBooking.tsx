@@ -47,40 +47,33 @@ const QuantumCoachBooking = () => {
       <a id="top"></a>
 
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-950/95 to-slate-950"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/20 via-transparent to-transparent"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 py-14 lg:py-20">
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
-            {/* Left: Copy + Welcome Video */}
-            <div>
-              <p className="text-xs font-semibold tracking-[0.3em] text-sky-400 uppercase">
-                The Quantum Shift Project
-              </p>
-              <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
-                Start Your <span className="text-sky-400">Quantum Shift</span>
-              </h1>
-              <p className="mt-4 text-sm sm:text-base text-slate-200 max-w-xl">
-                A free 30-minute guided transformation session to help you break a limiting pattern,
-                get clear on what you really want, and leave with an aligned action plan for your life and business.
-              </p>
+        <div className="relative max-w-6xl mx-auto px-6 py-16 lg:py-24">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 mb-6">
+              <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></div>
+              <span className="text-sm font-medium text-sky-300">The Quantum Shift Project</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Welcome to Your<br />
+              <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Quantum Shift</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Join a community of people who are ready to break old patterns, discover what they really want, 
+              and create aligned action for their life and business.
+            </p>
+          </div>
 
-              <ul className="mt-5 space-y-2 text-sm text-slate-200">
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-sky-500/20 text-[11px] text-sky-300">1</span>
-                  <span><strong>Step 1:</strong> Join the Quantum Shift email list for weekly reflections, tools, and updates.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-emerald-500/20 text-[11px] text-emerald-300">2</span>
-                  <span><strong>Step 2:</strong> Reserve your free 30-minute Quantum Shift Starter Session.</span>
-                </li>
-              </ul>
-
-              <div className="mt-6">
-                <h2 className="text-sm font-semibold mb-3">Welcome message from Chris</h2>
-                <div className="aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-black">
+          <div className="grid lg:grid-cols-2 gap-10 items-start mt-12">
+            {/* Left: Welcome Video */}
+            <div className="space-y-6">
+              <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-6 shadow-2xl">
+                <h2 className="text-xl font-semibold mb-4 text-slate-100">A Message from Chris</h2>
+                <div className="aspect-video rounded-2xl overflow-hidden border border-slate-700/50 bg-black shadow-lg">
                   <iframe 
                     width="100%" 
                     height="100%" 
@@ -91,6 +84,32 @@ const QuantumCoachBooking = () => {
                     referrerPolicy="strict-origin-when-cross-origin" 
                     allowFullScreen
                   />
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-emerald-500/10 to-sky-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-2xl p-6">
+                <h3 className="text-lg font-semibold mb-4 text-slate-100">How to Get Started</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 border-2 border-emerald-400/40 flex items-center justify-center">
+                      <span className="text-sm font-bold text-emerald-300">1</span>
+                    </div>
+                    <div>
+                      <p className="text-base text-slate-200 leading-relaxed">
+                        <strong className="text-slate-100">Join the Community</strong> — Get weekly reflections, tools, and updates from Chris
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-sky-500/20 border-2 border-sky-400/40 flex items-center justify-center">
+                      <span className="text-sm font-bold text-sky-300">2</span>
+                    </div>
+                    <div>
+                      <p className="text-base text-slate-200 leading-relaxed">
+                        <strong className="text-slate-100">Book Your Free Session</strong> — 30 minutes to explore what's next for you
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -171,39 +190,52 @@ const QuantumCoachBooking = () => {
       </section>
 
       {/* WHAT YOU'LL EXPERIENCE */}
-      <section className="bg-slate-950 py-12 lg:py-16 border-t border-slate-800/60">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-            What Happens in a Quantum Shift Starter Session
-          </h2>
-          <p className="text-slate-300 mb-8 max-w-2xl text-sm sm:text-base">
-            This isn't therapy, and it isn't hype. It's a grounded, honest conversation designed to
-            help you see where you're stuck, what's really driving your patterns, and what wants to
-            emerge through you next.
-          </p>
+      <section className="bg-slate-950 py-16 lg:py-24 border-t border-slate-800/60">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
+              What Happens in Your Starter Session
+            </h2>
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              This isn't therapy, and it isn't hype. It's a grounded, honest conversation designed to
+              help you see where you're stuck and what wants to emerge through you next.
+            </p>
+          </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
-            <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4">
-              <h3 className="font-semibold mb-2 text-sm">Break One Limiting Pattern</h3>
-              <p className="text-xs text-slate-300">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-sky-500/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
+                <span className="text-2xl">🔓</span>
+              </div>
+              <h3 className="font-semibold mb-3 text-base text-slate-100">Break One Limiting Pattern</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Get curious about the story running your life and gently dismantle a belief that's no longer serving you.
               </p>
             </div>
-            <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4">
-              <h3 className="font-semibold mb-2 text-sm">Clarify What You Really Want</h3>
-              <p className="text-xs text-slate-300">
+            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4">
+                <span className="text-2xl">🎯</span>
+              </div>
+              <h3 className="font-semibold mb-3 text-base text-slate-100">Clarify What You Really Want</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Move beyond vague goals into a felt sense of the life, business, or creative work you're actually called to.
               </p>
             </div>
-            <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4">
-              <h3 className="font-semibold mb-2 text-sm">Design an Aligned Next Step</h3>
-              <p className="text-xs text-slate-300">
+            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
+                <span className="text-2xl">✨</span>
+              </div>
+              <h3 className="font-semibold mb-3 text-base text-slate-100">Design an Aligned Next Step</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
                 Leave with one concrete, doable action that matches who you're becoming — not who you've been.
               </p>
             </div>
-            <div className="bg-slate-900/70 border border-slate-800 rounded-xl p-4">
-              <h3 className="font-semibold mb-2 text-sm">Get the Quantum Shift Guidebook</h3>
-              <p className="text-xs text-slate-300">
+            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-amber-500/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                <span className="text-2xl">📖</span>
+              </div>
+              <h3 className="font-semibold mb-3 text-base text-slate-100">Get the Quantum Shift Guidebook</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
                 A short PDF with core frameworks, questions, and practices to revisit whenever you feel yourself drifting.
               </p>
             </div>
@@ -212,90 +244,129 @@ const QuantumCoachBooking = () => {
       </section>
 
       {/* ABOUT CHRIS */}
-      <section className="bg-slate-950 py-12 lg:py-16 border-t border-slate-800/60">
-        <div className="max-w-5xl mx-auto px-4 grid lg:grid-cols-3 gap-10 items-center">
-          <div className="lg:col-span-1">
-            <div className="relative w-40 h-40 rounded-2xl overflow-hidden border border-slate-700 shadow-xl mx-auto lg:mx-0">
-              <img
-                src={chrisPortrait}
-                alt="Chris Dessi"
-                className="w-full h-full object-cover"
-              />
+      <section className="bg-gradient-to-b from-slate-950 to-slate-900 py-16 lg:py-24 border-t border-slate-800/60">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-8 lg:p-12">
+            <div className="grid lg:grid-cols-3 gap-10 items-center">
+              <div className="lg:col-span-1">
+                <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-slate-700/50 shadow-2xl mx-auto lg:mx-0">
+                  <img
+                    src={chrisPortrait}
+                    alt="Chris Dessi"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="lg:col-span-2">
+                <h2 className="text-3xl font-bold mb-6 text-slate-100">Meet Your Guide, Chris Dessi</h2>
+                <div className="space-y-4 text-base text-slate-300 leading-relaxed">
+                  <p>
+                    Chris is the creator of the Quantum Shift podcast and project — a conversation series
+                    exploring what happens when we stop living from fear and start living from truth.
+                  </p>
+                  <p>
+                    After decades in high-pressure leadership roles, building companies, writing books,
+                    and navigating his own unraveling, Chris has become obsessed with one question:
+                    <span className="italic text-slate-200"> What actually creates lasting change?</span>
+                  </p>
+                  <p>
+                    The Quantum Shift Starter Session is his way of offering a grounded, no-fluff starting
+                    point for that journey — whether your next move is a career reinvention, a business
+                    pivot, or simply finding a calmer, truer way to move through your day.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="lg:col-span-2 text-sm">
-            <h2 className="text-2xl font-semibold mb-3">Meet Your Guide, Chris Dessi</h2>
-            <p className="text-slate-300 mb-3">
-              Chris is the creator of the Quantum Shift podcast and project — a conversation series
-              exploring what happens when we stop living from fear and start living from truth.
-            </p>
-            <p className="text-slate-300 mb-3">
-              After decades in high-pressure leadership roles, building companies, writing books,
-              and navigating his own unraveling, Chris has become obsessed with one question:
-              <span className="italic"> What actually creates lasting change?</span>
-            </p>
-            <p className="text-slate-300">
-              The Quantum Shift Starter Session is his way of offering a grounded, no-fluff starting
-              point for that journey — whether your next move is a career reinvention, a business
-              pivot, or simply finding a calmer, truer way to move through your day.
-            </p>
           </div>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-slate-950 py-12 lg:py-16 border-t border-slate-800/60">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
-            What People Say About Quantum Shift Conversations
-          </h2>
+      <section className="bg-slate-950 py-16 lg:py-24 border-t border-slate-800/60">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-slate-100">
+              What the Community Is Saying
+            </h2>
+            <p className="text-lg text-slate-400">Real conversations, real transformations</p>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-6 text-sm">
-            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between">
-              <p className="text-slate-200 mb-3">
-                "One conversation with Chris felt like someone finally turned the lights on in a room I'd been pacing in for years."
-              </p>
-              <p className="text-xs text-slate-400 mt-2">— Name, Role / Description</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-sky-500/30 transition-all duration-300">
+              <div className="mb-4">
+                <div className="text-sky-400 text-3xl mb-4">"</div>
+                <p className="text-base text-slate-200 leading-relaxed mb-4">
+                  One conversation with Chris felt like someone finally turned the lights on in a room I'd been pacing in for years.
+                </p>
+              </div>
+              <p className="text-sm text-slate-400">— Name, Role / Description</p>
             </div>
-            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between">
-              <p className="text-slate-200 mb-3">
-                "He asks the questions I've been afraid to ask myself. I walked away with clarity and an action I could actually take."
-              </p>
-              <p className="text-xs text-slate-400 mt-2">— Name, Role / Description</p>
+            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300">
+              <div className="mb-4">
+                <div className="text-emerald-400 text-3xl mb-4">"</div>
+                <p className="text-base text-slate-200 leading-relaxed mb-4">
+                  He asks the questions I've been afraid to ask myself. I walked away with clarity and an action I could actually take.
+                </p>
+              </div>
+              <p className="text-sm text-slate-400">— Name, Role / Description</p>
             </div>
-            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between">
-              <p className="text-slate-200 mb-3">
-                "It wasn't hype. It was honest, grounded, and strangely calming. I left feeling more like myself."
-              </p>
-              <p className="text-xs text-slate-400 mt-2">— Name, Role / Description</p>
+            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/30 transition-all duration-300">
+              <div className="mb-4">
+                <div className="text-purple-400 text-3xl mb-4">"</div>
+                <p className="text-base text-slate-200 leading-relaxed mb-4">
+                  It wasn't hype. It was honest, grounded, and strangely calming. I left feeling more like myself.
+                </p>
+              </div>
+              <p className="text-sm text-slate-400">— Name, Role / Description</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* STEP 2: BOOKING CALENDAR */}
-      <section id="booking" className="bg-slate-950 py-12 lg:py-16 border-t border-slate-800/60">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 items-start text-sm">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-                Step 2 – Reserve Your Free 30-Minute Quantum Shift Starter Session
-              </h2>
-              <p className="text-slate-300 mb-4">
-                Sessions are limited each week so there's space for real conversation, not rushed calls.
-                Pick a time that works for you and you'll get a confirmation email with all the details.
-              </p>
-              <ul className="space-y-2 text-slate-300 mb-6">
-                <li>• 30 minutes on Zoom</li>
-                <li>• No pitch required — just honest exploration</li>
-                <li>• If it makes sense to go deeper, we'll talk about that at the end</li>
-              </ul>
-              <p className="text-xs text-slate-500">
-                Pro tip: Bring a question you've been circling around but avoiding. That's usually where the shift lives.
-              </p>
+      <section id="booking" className="bg-gradient-to-b from-slate-950 to-slate-900 py-16 lg:py-24 border-t border-slate-800/60">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-slate-100">
+              Reserve Your Free 30-Minute Session
+            </h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+              Sessions are limited each week so there's space for real conversation, not rushed calls.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            <div className="bg-gradient-to-br from-emerald-500/10 to-sky-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-3xl p-8 lg:p-10">
+              <h3 className="text-2xl font-bold mb-6 text-slate-100">What to Expect</h3>
+              <div className="space-y-4 text-base text-slate-200">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
+                    <span className="text-emerald-400">✓</span>
+                  </div>
+                  <p>30 minutes on Zoom — your space to explore</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
+                    <span className="text-emerald-400">✓</span>
+                  </div>
+                  <p>No pitch required — just honest exploration</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
+                    <span className="text-emerald-400">✓</span>
+                  </div>
+                  <p>If it makes sense to go deeper, we'll talk about that at the end</p>
+                </div>
+              </div>
+              <div className="mt-8 p-4 bg-slate-900/50 border border-slate-700/50 rounded-xl">
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  <strong className="text-emerald-400">Pro tip:</strong> Bring a question you've been circling around but avoiding. 
+                  That's usually where the shift lives.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-3 lg:p-4">
+            <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-4 lg:p-6 shadow-2xl">
               {/* Calendly inline widget begin */}
               <div 
                 className="calendly-inline-widget" 
@@ -309,16 +380,23 @@ const QuantumCoachBooking = () => {
       </section>
 
       {/* FOOTER / BRIDGE TO AI */}
-      <footer className="bg-slate-950 border-t border-slate-800/60 py-8">
-        <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>
-            Once you're clear on who you are and what you want, AI becomes a powerful tool to help you create it.
-            Inside the Quantum Shift list, you'll also get invitations to learn how we use AI to build the systems
-            that support your new direction.
-          </p>
-          <a href="#top" className="text-sky-300 hover:text-sky-200 underline underline-offset-4">
-            Back to top
-          </a>
+      <footer className="bg-slate-950 border-t border-slate-800/60 py-12">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800/50 rounded-2xl p-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <p className="text-base text-slate-300 leading-relaxed max-w-2xl">
+                Once you're clear on who you are and what you want, AI becomes a powerful tool to help you create it.
+                Inside the Quantum Shift community, you'll also get invitations to learn how we use AI to build the systems
+                that support your new direction.
+              </p>
+              <a 
+                href="#top" 
+                className="flex-shrink-0 px-6 py-3 bg-sky-500/10 border border-sky-500/30 text-sky-300 hover:bg-sky-500/20 hover:text-sky-200 rounded-xl transition-all duration-300 font-medium"
+              >
+                Back to top ↑
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
 

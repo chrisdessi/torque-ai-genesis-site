@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import chrisDessi from "@/assets/chris-dessi-headshot.jpg";
 
 const QuantumShiftStarter = () => {
   useEffect(() => {
@@ -37,37 +38,84 @@ const QuantumShiftStarter = () => {
       <Header />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-slate-950">
-        {/* Background image overlay */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-purple-900/20 via-slate-950 to-blue-900/20">
+        {/* Dynamic background effects */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-950/90 to-slate-950"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent"></div>
+          <motion.div 
+            className="absolute inset-0 opacity-30"
+            animate={{
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+            style={{
+              backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.2) 0%, transparent 50%)',
+              backgroundSize: '200% 200%',
+            }}
+          />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 py-16 lg:py-24">
+        <div className="relative max-w-6xl mx-auto px-4 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Copy */}
             <motion.div {...fadeInUp}>
-              <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">
-                The Quantum Shift Project
-              </p>
-              <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-foreground">
-                Start Your <span className="text-primary">Quantum Shift</span>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                className="inline-block mb-4"
+              >
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 blur-lg opacity-50"></div>
+                  <p className="relative text-sm font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-300 to-blue-400 uppercase px-4 py-2">
+                    The Quantum Shift Project
+                  </p>
+                </div>
+              </motion.div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="block text-foreground">Start Your</span>
+                <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 animate-gradient">
+                  Quantum Shift
+                </span>
               </h1>
-              <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-xl">
-                A free 30-minute guided transformation session to help you break a limiting pattern,
+              
+              <motion.p 
+                className="mt-6 text-lg sm:text-xl text-slate-200 max-w-xl leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                A free 30-minute guided transformation session to help you <span className="text-purple-300 font-semibold">break a limiting pattern</span>,
                 get clear on what you really want, and leave with an aligned action plan for your life and business.
-              </p>
+              </motion.p>
 
-              <div className="mt-6 space-y-2 text-sm text-muted-foreground">
-                <p className="flex items-center gap-2">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/20 text-xs text-primary">1</span>
-                  Join the Quantum Shift email list for weekly reflections, tools, and invitations.
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent/20 text-xs text-accent-foreground">2</span>
-                  Reserve your free 30-minute Quantum Shift Starter Session.
-                </p>
-              </div>
+              <motion.div 
+                className="mt-8 space-y-4 text-base text-slate-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <div className="flex items-start gap-3 group">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-purple-500/20 blur-md group-hover:bg-purple-500/40 transition-all"></div>
+                    <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-purple-700 text-sm font-bold text-white shadow-lg">1</span>
+                  </div>
+                  <p className="flex-1 pt-1">Join the Quantum Shift email list for weekly reflections, tools, and invitations.</p>
+                </div>
+                <div className="flex items-start gap-3 group">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-blue-500/20 blur-md group-hover:bg-blue-500/40 transition-all"></div>
+                    <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-sm font-bold text-white shadow-lg">2</span>
+                  </div>
+                  <p className="flex-1 pt-1">Reserve your free 30-minute Quantum Shift Starter Session.</p>
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Right: Opt-in Card */}
@@ -446,11 +494,12 @@ const QuantumShiftStarter = () => {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <div className="relative w-40 h-40 rounded-2xl overflow-hidden border border-border shadow-xl mx-auto lg:mx-0">
+            <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-purple-500/30 shadow-2xl mx-auto lg:mx-0">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 z-10"></div>
               <img
-                src="/lovable-uploads/85521d42-7840-4d81-b8ca-c002ab15932e.png"
-                alt="Chris Dessi - Westchester Executive Coach and AI Consultant"
-                className="w-full h-full object-cover"
+                src={chrisDessi}
+                alt="Chris Dessi - Quantum Shift Guide and Transformation Coach"
+                className="w-full h-full object-cover relative z-0"
               />
             </div>
           </motion.div>

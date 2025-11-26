@@ -3,8 +3,24 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const QuantumShiftStarter = () => {
+  useEffect(() => {
+    // Load Zoho Campaigns script
+    const script = document.createElement('script');
+    script.src = 'https://idzlf-zgpl.maillist-manage.com/js/optin.min.js';
+    script.onload = () => {
+      if (window.setupSF) {
+        window.setupSF('sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa', 'ZCFORMVIEW', false, 'light', false, '0');
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -60,59 +76,267 @@ const QuantumShiftStarter = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="bg-card/80 border border-border rounded-2xl p-6 shadow-2xl backdrop-blur"
             >
-              <h2 className="text-xl font-semibold mb-2 text-foreground">Step 1 – Join the Quantum Shift List</h2>
-              <p className="text-sm text-muted-foreground mb-4">
-                Drop your name and email to get weekly Quantum Shift insights, podcast highlights,
-                and early access to live sessions—then you'll be able to book your free 30-minute session.
-              </p>
-
-              {/* Zoho Form Embed */}
-              <div id="sf3z57e6a3f1fc4ef70c70b2fc3abcc7af8c9c25ce2e7cd5cb92f2d15dc4d5fbe37" data-type="signupform" style={{opacity: 1}}>
+              {/* Zoho Campaigns Web-Optin Form */}
+              <div 
+                id="sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa" 
+                data-type="signupform" 
+                style={{ opacity: 1 }}
+              >
                 <div id="customForm">
-                  <input type="hidden" id="recapTheme" value="2" />
-                  <input type="hidden" id="isRecapIntegDone" value="false" />
-                  <input type="hidden" id="recapMode" value=""></input>
-                  <div className="space-y-4" id="sf3z57e6a3f1fc4ef70c70b2fc3abcc7af8c9c25ce2e7cd5cb92f2d15dc4d5fbe37_rows">
-                    <div>
-                      <label htmlFor="CONTACT_FIRST_NAME" className="block text-xs font-medium text-muted-foreground mb-1">
-                        First Name<span style={{color: 'rgb(255, 0, 0)'}}>*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="CONTACT_FIRST_NAME"
-                        name="CONTACT_FIRST_NAME"
-                        required
-                        className="w-full rounded-lg bg-background border border-border px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-                        placeholder="Chris"
-                      />
+                  <div 
+                    className="quick_form_2_css" 
+                    style={{ 
+                      border: '3px solid rgb(0, 0, 0)', 
+                      backgroundColor: 'rgb(220, 220, 220)', 
+                      width: '100%',
+                      maxWidth: '574px',
+                      zIndex: 2, 
+                      fontFamily: 'Arial', 
+                      overflow: 'hidden',
+                      margin: '0 auto'
+                    }} 
+                    data-name="SIGNUP_BODY"
+                  >
+                    <div style={{ textAlign: 'center' }}>
+                      <div 
+                        style={{ 
+                          fontSize: '24px', 
+                          fontFamily: 'Calibri', 
+                          fontWeight: 'bold', 
+                          color: 'rgb(0, 0, 0)', 
+                          textAlign: 'center', 
+                          padding: '15px 0px', 
+                          width: '100%', 
+                          display: 'block', 
+                          backgroundColor: 'rgb(235, 235, 235)' 
+                        }} 
+                        id="SIGNUP_HEADING"
+                      >
+                        Step 1 – Join the Quantum Shift List
+                        <br />
+                        <br />
+                        Drop your name and email to get weekly Quantum Shift insights, podcast highlights, and early access to live sessions—then you'll be able to book your free 30-minute session.
+                        <br />
+                        <br />
+                      </div>
+                      <div style={{ position: 'relative' }}>
+                        <div 
+                          id="Zc_SignupSuccess" 
+                          style={{ 
+                            display: 'none', 
+                            position: 'absolute', 
+                            marginLeft: '4%', 
+                            width: '90%', 
+                            backgroundColor: 'white', 
+                            padding: '3px', 
+                            border: '3px solid rgb(194, 225, 154)', 
+                            marginTop: '10px', 
+                            marginBottom: '10px', 
+                            wordBreak: 'break-all' 
+                          }}
+                        >
+                          <table width="100%" cellPadding="0" cellSpacing="0" border={0}>
+                            <tbody>
+                              <tr>
+                                <td width="10%">
+                                  <img 
+                                    className="successicon" 
+                                    src="https://idzlf-zgpl.maillist-manage.com/images/challangeiconenable.jpg" 
+                                    alt="Success"
+                                  />
+                                </td>
+                                <td>
+                                  <span 
+                                    id="signupSuccessMsg" 
+                                    style={{ 
+                                      color: 'rgb(73, 140, 132)', 
+                                      fontFamily: 'sans-serif', 
+                                      fontSize: '14px', 
+                                      wordBreak: 'break-word' 
+                                    }}
+                                  >
+                                    &nbsp;&nbsp;Thank you for Signing Up
+                                  </span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <form 
+                        method="POST" 
+                        id="zcampaignOptinForm" 
+                        style={{ margin: '0px', width: '100%', color: 'rgb(255, 255, 255)' }} 
+                        action="https://idzlf-zgpl.maillist-manage.com/weboptin.zc" 
+                        target="_zcSignup"
+                      >
+                        <div 
+                          style={{ 
+                            backgroundColor: 'rgb(255, 235, 232)', 
+                            padding: '10px', 
+                            color: 'rgb(210, 0, 0)', 
+                            fontSize: '11px', 
+                            margin: '20px 10px 0px', 
+                            border: '1px solid rgb(255, 217, 211)', 
+                            opacity: 1, 
+                            display: 'none' 
+                          }} 
+                          id="errorMsgDiv"
+                        >
+                          Please correct the marked field(s) below.
+                        </div>
+                        <div style={{ position: 'relative', width: '218px', height: '30px', marginTop: '20px', display: 'inline-block' }}>
+                          <input 
+                            type="text" 
+                            style={{ 
+                              fontSize: '12px', 
+                              borderWidth: '1px', 
+                              borderColor: 'rgb(235, 235, 235)', 
+                              borderStyle: 'solid', 
+                              width: '100%', 
+                              height: '100%', 
+                              zIndex: 4, 
+                              outline: 'none', 
+                              boxSizing: 'border-box', 
+                              padding: '5px 10px', 
+                              color: 'rgb(136, 136, 136)', 
+                              textAlign: 'center', 
+                              fontFamily: 'Arial', 
+                              borderRadius: '5px' 
+                            }} 
+                            placeholder="Email" 
+                            name="CONTACT_EMAIL" 
+                            id="EMBED_FORM_EMAIL_LABEL" 
+                          />
+                        </div>
+                        <div style={{ position: 'relative', width: '218px', height: '30px', marginTop: '20px', display: 'inline-block' }}>
+                          <input 
+                            type="text" 
+                            style={{ 
+                              fontSize: '12px', 
+                              borderWidth: '1px', 
+                              borderColor: 'rgb(235, 235, 235)', 
+                              borderStyle: 'solid', 
+                              width: '100%', 
+                              height: '100%', 
+                              zIndex: 4, 
+                              outline: 'none', 
+                              padding: '5px 10px', 
+                              boxSizing: 'border-box', 
+                              color: 'rgb(136, 136, 136)', 
+                              textAlign: 'center', 
+                              fontFamily: 'Arial', 
+                              borderRadius: '5px' 
+                            }} 
+                            placeholder="Name" 
+                            name="FIRSTNAME" 
+                            id="FIRSTNAME" 
+                          />
+                        </div>
+                        <div style={{ position: 'relative', width: '100%', maxWidth: '516px', height: '48px', margin: '20px auto 15px', display: 'block' }}>
+                          <input 
+                            type="button" 
+                            style={{ 
+                              textAlign: 'center', 
+                              width: '100%', 
+                              height: '100%', 
+                              zIndex: 5, 
+                              border: '0px', 
+                              color: 'rgb(255, 255, 255)', 
+                              borderRadius: '2px', 
+                              cursor: 'pointer', 
+                              outline: 'none', 
+                              fontSize: '14px', 
+                              backgroundColor: 'rgb(0, 0, 0)' 
+                            }} 
+                            name="SIGNUP_SUBMIT_BUTTON" 
+                            id="zcWebOptin" 
+                            value="Join the Quantum Shift List" 
+                          />
+                        </div>
+                        <input type="hidden" id="fieldBorder" value="" />
+                        <input type="hidden" id="submitType" name="submitType" value="optinCustomView" />
+                        <input type="hidden" id="emailReportId" name="emailReportId" value="" />
+                        <input type="hidden" id="formType" name="formType" value="QuickForm" />
+                        <input type="hidden" name="zx" id="cmpZuid" value="1316ccdc8" />
+                        <input type="hidden" name="zcvers" value="3.0" />
+                        <input type="hidden" name="oldListIds" id="allCheckedListIds" value="" />
+                        <input type="hidden" id="mode" name="mode" value="OptinCreateView" />
+                        <input type="hidden" id="zcld" name="zcld" value="110489827e27f87e8" />
+                        <input type="hidden" id="zctd" name="zctd" value="110489827e26e63c1" />
+                        <input type="hidden" id="document_domain" value="" />
+                        <input type="hidden" id="zc_Url" value="idzlf-zgpl.maillist-manage.com" />
+                        <input type="hidden" id="new_optin_response_in" value="0" />
+                        <input type="hidden" id="duplicate_optin_response_in" value="0" />
+                        <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW" />
+                        <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa" />
+                        <input type="hidden" id="viewFrom" value="URL_ACTION" />
+                        <span style={{ display: 'none' }} id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
+                        <span style={{ display: 'none' }} id="dt_FIRSTNAME">1,false,1,First Name,2</span>
+                        <span style={{ display: 'none' }} id="dt_LASTNAME">1,false,1,Last Name,2</span>
+                      </form>
                     </div>
-                    <div>
-                      <label htmlFor="CONTACT_EMAIL" className="block text-xs font-medium text-muted-foreground mb-1">
-                        Email<span style={{color: 'rgb(255, 0, 0)'}}>*</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="CONTACT_EMAIL"
-                        name="CONTACT_EMAIL"
-                        required
-                        className="w-full rounded-lg bg-background border border-border px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-                        placeholder="you@example.com"
-                      />
-                    </div>
-
-                    <button
-                      type="button"
-                      id="zcWebOptin"
-                      className="w-full inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition"
-                    >
-                      Join the Quantum Shift List
-                    </button>
-
-                    <p className="text-[11px] text-muted-foreground">
-                      No spam. Just grounded, honest reflections, tools, and invitations to go deeper.
-                    </p>
                   </div>
                 </div>
+                <img 
+                  src="https://idzlf-zgpl.maillist-manage.com/images/spacer.gif" 
+                  id="refImage" 
+                  onLoad={(e) => {
+                    if ((window as any).referenceSetter) {
+                      (window as any).referenceSetter(e.target);
+                    }
+                  }}
+                  style={{ display: 'none' }} 
+                />
+              </div>
+              <input type="hidden" id="signupFormType" value="QuickForm_Vertical" />
+              <div 
+                id="zcOptinOverLay" 
+                onContextMenu={() => false} 
+                style={{ 
+                  display: 'none', 
+                  textAlign: 'center', 
+                  backgroundColor: 'rgb(0, 0, 0)', 
+                  opacity: 0.5, 
+                  zIndex: 100, 
+                  position: 'fixed', 
+                  width: '100%', 
+                  top: '0px', 
+                  left: '0px', 
+                  height: '988px' 
+                }}
+              />
+              <div 
+                id="zcOptinSuccessPopup" 
+                style={{ 
+                  display: 'none', 
+                  zIndex: 9999, 
+                  width: '800px', 
+                  height: '40%', 
+                  top: '84px', 
+                  position: 'fixed', 
+                  left: '26%', 
+                  backgroundColor: '#FFFFFF', 
+                  borderColor: '#E6E6E6', 
+                  borderStyle: 'solid', 
+                  borderWidth: '1px', 
+                  boxShadow: '0 1px 10px #424242', 
+                  padding: '35px' 
+                }}
+              >
+                <span 
+                  style={{ 
+                    position: 'absolute', 
+                    top: '-16px', 
+                    right: '-14px', 
+                    zIndex: 99999, 
+                    cursor: 'pointer' 
+                  }} 
+                  id="closeSuccess"
+                >
+                  <img src="https://idzlf-zgpl.maillist-manage.com/images/videoclose.png" alt="Close" />
+                </span>
+                <div id="zcOptinSuccessPanel"></div>
               </div>
 
               <div className="mt-6 border-t border-border pt-4">

@@ -1,36 +1,49 @@
-import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Clock, BarChart3, Target, Zap, Brain } from "lucide-react";
+import { CheckCircle2, Clock, BarChart3, Target, Zap, Brain, Mail, MessageSquare, Phone, Linkedin, Youtube, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ZohoAIAuditForm from "@/components/ZohoAIAuditForm";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'stripe-buy-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        'buy-button-id': string;
-        'publishable-key': string;
-      };
-    }
-  }
-}
-
 const AIAudit = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://js.stripe.com/v3/buy-button.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+  const contactMethods = [
+    {
+      icon: Phone,
+      title: "Call Us",
+      description: "Speak directly with our team about your AI strategy",
+      action: "+1 (646) 760-6991",
+      href: "tel:+16467606991"
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      description: "Send us an email and we'll respond within 24 hours",
+      action: "info@torqueapp.ai",
+      href: "mailto:info@torqueapp.ai"
+    },
+    {
+      icon: MessageSquare,
+      title: "Schedule Consultation",
+      description: "Book a strategic planning session with our team",
+      action: "Schedule Meeting",
+      href: "https://calendar.app.google/rAZmF5kNNCsfMyBf7"
+    },
+    {
+      icon: Linkedin,
+      title: "Connect on LinkedIn",
+      description: "Follow Chris Dessi for AI insights and industry updates",
+      action: "View Profile",
+      href: "https://www.linkedin.com/in/chrisdessi/"
+    },
+    {
+      icon: Youtube,
+      title: "The Quantum Shift Podcast",
+      description: "Watch our podcast series on AI transformation",
+      action: "Watch Now",
+      href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_"
+    }
+  ];
 
   const benefits = [
     {
@@ -425,95 +438,61 @@ const AIAudit = () => {
           </div>
         </section>
 
-        {/* Payment Section */}
-        <section id="payment" className="section-padding relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/20 to-pink-500/20 -z-10" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/30 rounded-full blur-3xl -z-10 animate-pulse" />
-          
-          <div className="max-w-5xl mx-auto">
+        {/* Contact Form Section */}
+        <section id="contact-form" className="section-padding bg-white">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="text-lg text-muted-foreground">Fill out the form below and we'll get back to you within 24 hours to discuss your AI audit.</p>
+          </div>
+          <ZohoAIAuditForm />
+        </section>
+
+        {/* Other Ways to Connect */}
+        <section className="section-padding bg-muted">
+          <div className="max-w-6xl mx-auto px-6">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <motion.div
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="inline-block mb-6"
-              >
-                <Zap className="w-20 h-20 text-primary" />
-              </motion.div>
-              
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  Stop Watching.
-                </span>
-                <br />
-                <span className="text-foreground">Start Leading.</span>
-              </h2>
-              
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-                Your competitors are making their move. <span className="text-foreground font-semibold">Every day you wait costs you more.</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Other Ways to Connect</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Choose the best way to connect with our team
               </p>
-              
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full mb-8">
-                <Clock className="w-4 h-4 text-red-500" />
-                <span className="text-red-500 font-semibold text-sm">Limited slots available this month</span>
-              </div>
             </motion.div>
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-background rounded-3xl p-12 shadow-2xl border-2 border-primary/20 max-w-2xl mx-auto"
-            >
-              <div className="text-center mb-8">
-                <div className="text-sm text-muted-foreground line-through mb-2">Regular: $6,999</div>
-                <div className="text-6xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-4">
-                  $1,987
-                </div>
-                <p className="text-muted-foreground mb-8">One-time investment • Lifetime impact</p>
-              </div>
-
-              <div className="flex justify-center mb-8">
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1SW31bG7cympBc4I7jfVqYYW"
-                  publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a"
-                />
-              </div>
-
-              <p className="text-center text-sm text-muted-foreground mb-6">
-                🎯 Results guaranteed or money back
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <span>2-Week Turnaround</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <span>20+ Page Report</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <span>Implementation Ready</span>
-                </div>
-              </div>
-            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {contactMethods.map((method, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  className="bg-white p-10 rounded-xl text-center hover:shadow-2xl transition-all hover:-translate-y-2"
+                >
+                  <method.icon className="w-16 h-16 mx-auto mb-6 text-primary" />
+                  <h3 className="text-2xl font-bold mb-4">{method.title}</h3>
+                  <p className="text-muted-foreground mb-8 text-lg">{method.description}</p>
+                  {method.href ? (
+                    <a
+                      href={method.href}
+                      target={method.href.startsWith('http') ? '_blank' : undefined}
+                      rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="inline-flex items-center gap-2 text-lg font-semibold hover:underline"
+                    >
+                      {method.action}
+                      {method.href.startsWith('http') && <ArrowRight className="w-4 h-4" />}
+                    </a>
+                  ) : (
+                    <span className="text-lg font-semibold text-primary">{method.action}</span>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </section>
-
-        {/* Contact Form Section */}
-        <section id="contact-form" className="section-padding bg-card/30">
-          <div className="max-w-3xl mx-auto text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Not Ready Yet? We Get It.</h2>
-            <p className="text-lg text-muted-foreground">Book a free 15-minute consultation. No pitch, no pressure—just honest answers about whether AI is right for your business right now.</p>
-          </div>
-          <ZohoAIAuditForm />
         </section>
 
         <Footer />

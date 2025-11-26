@@ -30,6 +30,7 @@ import TorqueAIGuide from "./pages/TorqueAIGuide";
 import ExecutiveCoaching from "./pages/ExecutiveCoaching";
 import Assessment from "./pages/Assessment";
 import AIAudit from "./pages/AIAudit";
+import QuantumShiftStarter from "./pages/QuantumShiftStarter";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/momento-council" element={<MomentoCouncil />} />
           <Route path="/quantum-shift" element={<QuantumShift />} />
           <Route path="/quantum-shift/coach" element={<QuantumCoachBooking />} />
+          <Route path="/quantum-shift/starter" element={<QuantumShiftStarter />} />
           <Route path="/quantum-shift-cohort" element={<QuantumShiftCohort />} />
           <Route path="/quantum-shift-cohort-90" element={<QuantumShiftCohort90Day />} />
           <Route path="/brand" element={<BrandIdentity />} />

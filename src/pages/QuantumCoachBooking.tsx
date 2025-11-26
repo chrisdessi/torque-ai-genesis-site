@@ -12,7 +12,7 @@ const QuantumCoachBooking = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6 }
     }
   };
 
@@ -24,14 +24,6 @@ const QuantumCoachBooking = () => {
         staggerChildren: 0.15,
         delayChildren: 0.1
       }
-    }
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
     }
   };
 
@@ -427,7 +419,7 @@ const QuantumCoachBooking = () => {
             <p className="text-lg text-slate-300 max-w-2xl mx-auto">
               Sessions are limited each week so there's space for real conversation, not rushed calls.
             </p>
-          </div>
+          </motion.div>
 
           <motion.div 
             className="grid lg:grid-cols-2 gap-10 items-start"

@@ -1,10 +1,51 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import chrisPortrait from "@/assets/chris-dessi-headshot.jpg";
 
 const QuantumCoachBooking = () => {
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  // Refs for scroll animations
+  const experienceRef = useRef(null);
+  const aboutRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  const bookingRef = useRef(null);
+
+  const experienceInView = useInView(experienceRef, { once: true, margin: "-100px" });
+  const aboutInView = useInView(aboutRef, { once: true, margin: "-100px" });
+  const testimonialsInView = useInView(testimonialsRef, { once: true, margin: "-100px" });
+  const bookingInView = useInView(bookingRef, { once: true, margin: "-100px" });
+
   useEffect(() => {
     // Load Zoho Campaigns script
     const zohoScript = document.createElement('script');
@@ -192,9 +233,14 @@ const QuantumCoachBooking = () => {
       </section>
 
       {/* WHAT YOU'LL EXPERIENCE */}
-      <section className="bg-slate-950 py-16 lg:py-24 border-t border-slate-800/60">
+      <section ref={experienceRef} className="bg-slate-950 py-16 lg:py-24 border-t border-slate-800/60">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial="hidden"
+            animate={experienceInView ? "visible" : "hidden"}
+            variants={fadeInUp}
+          >
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
               What Happens in Your Starter Session
             </h2>
@@ -202,10 +248,18 @@ const QuantumCoachBooking = () => {
               This isn't therapy, and it isn't hype. It's a grounded, honest conversation designed to
               help you see where you're stuck and what wants to emerge through you next.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-sky-500/30 transition-all duration-300">
+          <motion.div 
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial="hidden"
+            animate={experienceInView ? "visible" : "hidden"}
+            variants={staggerContainer}
+          >
+            <motion.div 
+              className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-sky-500/30 transition-all duration-300"
+              variants={fadeInUp}
+            >
               <div className="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
                 <span className="text-2xl">🔓</span>
               </div>
@@ -213,8 +267,11 @@ const QuantumCoachBooking = () => {
               <p className="text-sm text-slate-300 leading-relaxed">
                 Get curious about the story running your life and gently dismantle a belief that's no longer serving you.
               </p>
-            </div>
-            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300">
+            </motion.div>
+            <motion.div 
+              className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-emerald-500/30 transition-all duration-300"
+              variants={fadeInUp}
+            >
               <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4">
                 <span className="text-2xl">🎯</span>
               </div>
@@ -222,8 +279,11 @@ const QuantumCoachBooking = () => {
               <p className="text-sm text-slate-300 leading-relaxed">
                 Move beyond vague goals into a felt sense of the life, business, or creative work you're actually called to.
               </p>
-            </div>
-            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300">
+            </motion.div>
+            <motion.div 
+              className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300"
+              variants={fadeInUp}
+            >
               <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
                 <span className="text-2xl">✨</span>
               </div>
@@ -231,8 +291,11 @@ const QuantumCoachBooking = () => {
               <p className="text-sm text-slate-300 leading-relaxed">
                 Leave with one concrete, doable action that matches who you're becoming — not who you've been.
               </p>
-            </div>
-            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-amber-500/30 transition-all duration-300">
+            </motion.div>
+            <motion.div 
+              className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-amber-500/30 transition-all duration-300"
+              variants={fadeInUp}
+            >
               <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
                 <span className="text-2xl">📖</span>
               </div>
@@ -240,15 +303,20 @@ const QuantumCoachBooking = () => {
               <p className="text-sm text-slate-300 leading-relaxed">
                 A short PDF with core frameworks, questions, and practices to revisit whenever you feel yourself drifting.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* ABOUT CHRIS */}
-      <section className="bg-gradient-to-b from-slate-950 to-slate-900 py-16 lg:py-24 border-t border-slate-800/60">
+      <section ref={aboutRef} className="bg-gradient-to-b from-slate-950 to-slate-900 py-16 lg:py-24 border-t border-slate-800/60">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-8 lg:p-12">
+          <motion.div 
+            className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-8 lg:p-12"
+            initial="hidden"
+            animate={aboutInView ? "visible" : "hidden"}
+            variants={fadeInUp}
+          >
             <div className="grid lg:grid-cols-3 gap-10 items-center">
               <div className="lg:col-span-1">
                 <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-slate-700/50 shadow-2xl mx-auto lg:mx-0">
@@ -279,22 +347,35 @@ const QuantumCoachBooking = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-slate-950 py-16 lg:py-24 border-t border-slate-800/60">
+      <section ref={testimonialsRef} className="bg-slate-950 py-16 lg:py-24 border-t border-slate-800/60">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial="hidden"
+            animate={testimonialsInView ? "visible" : "hidden"}
+            variants={fadeInUp}
+          >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-slate-100">
               What the Community Is Saying
             </h2>
             <p className="text-lg text-slate-400">Real conversations, real transformations</p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-sky-500/30 transition-all duration-300">
+          <motion.div 
+            className="grid md:grid-cols-3 gap-6"
+            initial="hidden"
+            animate={testimonialsInView ? "visible" : "hidden"}
+            variants={staggerContainer}
+          >
+            <motion.div 
+              className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-sky-500/30 transition-all duration-300"
+              variants={fadeInUp}
+            >
               <div className="mb-4">
                 <div className="text-sky-400 text-3xl mb-4">"</div>
                 <p className="text-base text-slate-200 leading-relaxed mb-4">
@@ -302,8 +383,11 @@ const QuantumCoachBooking = () => {
                 </p>
               </div>
               <p className="text-sm text-slate-400">— Name, Role / Description</p>
-            </div>
-            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300">
+            </motion.div>
+            <motion.div 
+              className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300"
+              variants={fadeInUp}
+            >
               <div className="mb-4">
                 <div className="text-emerald-400 text-3xl mb-4">"</div>
                 <p className="text-base text-slate-200 leading-relaxed mb-4">
@@ -311,8 +395,11 @@ const QuantumCoachBooking = () => {
                 </p>
               </div>
               <p className="text-sm text-slate-400">— Name, Role / Description</p>
-            </div>
-            <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/30 transition-all duration-300">
+            </motion.div>
+            <motion.div 
+              className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/30 transition-all duration-300"
+              variants={fadeInUp}
+            >
               <div className="mb-4">
                 <div className="text-purple-400 text-3xl mb-4">"</div>
                 <p className="text-base text-slate-200 leading-relaxed mb-4">
@@ -320,15 +407,20 @@ const QuantumCoachBooking = () => {
                 </p>
               </div>
               <p className="text-sm text-slate-400">— Name, Role / Description</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* STEP 2: BOOKING CALENDAR */}
-      <section id="booking" className="bg-gradient-to-b from-slate-950 to-slate-900 py-16 lg:py-24 border-t border-slate-800/60">
+      <section ref={bookingRef} id="booking" className="bg-gradient-to-b from-slate-950 to-slate-900 py-16 lg:py-24 border-t border-slate-800/60">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial="hidden"
+            animate={bookingInView ? "visible" : "hidden"}
+            variants={fadeInUp}
+          >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-slate-100">
               Reserve Your Free 30-Minute Session
             </h2>
@@ -337,8 +429,16 @@ const QuantumCoachBooking = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
-            <div className="bg-gradient-to-br from-emerald-500/10 to-sky-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-3xl p-8 lg:p-10">
+          <motion.div 
+            className="grid lg:grid-cols-2 gap-10 items-start"
+            initial="hidden"
+            animate={bookingInView ? "visible" : "hidden"}
+            variants={staggerContainer}
+          >
+            <motion.div 
+              className="bg-gradient-to-br from-emerald-500/10 to-sky-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-3xl p-8 lg:p-10"
+              variants={fadeInUp}
+            >
               <h3 className="text-2xl font-bold mb-6 text-slate-100">What to Expect</h3>
               <div className="space-y-4 text-base text-slate-200">
                 <div className="flex items-start gap-3">
@@ -366,9 +466,12 @@ const QuantumCoachBooking = () => {
                   That's usually where the shift lives.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-4 lg:p-6 shadow-2xl">
+            <motion.div 
+              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-4 lg:p-6 shadow-2xl"
+              variants={fadeInUp}
+            >
               {/* Calendly inline widget begin */}
               <div 
                 className="calendly-inline-widget" 
@@ -376,8 +479,8 @@ const QuantumCoachBooking = () => {
                 style={{ minWidth: '320px', height: '700px' }}
               />
               {/* Calendly inline widget end */}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

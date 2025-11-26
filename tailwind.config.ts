@@ -146,6 +146,14 @@ export default {
 						transform: 'translateY(-5px) scale(1.05)',
 						opacity: '0.9'
 					}
+				},
+				'gradient': {
+					'0%, 100%': {
+						backgroundPosition: '0% 50%'
+					},
+					'50%': {
+						backgroundPosition: '100% 50%'
+					}
 				}
 			},
 			animation: {
@@ -156,7 +164,8 @@ export default {
 				'scroll-x': 'scroll-x 20s linear infinite',
 				'float': 'float 3s ease-in-out infinite',
 				'wiggle': 'wiggle 2s ease-in-out infinite',
-				'bounce-slow': 'bounce-slow 4s ease-in-out infinite'
+				'bounce-slow': 'bounce-slow 4s ease-in-out infinite',
+				'gradient': 'gradient 8s ease infinite'
 			}
 		}
 	},

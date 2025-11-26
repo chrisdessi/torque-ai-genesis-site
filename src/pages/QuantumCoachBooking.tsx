@@ -119,16 +119,16 @@ const QuantumCoachBooking = () => {
               {/*Zoho Campaigns Web-Optin Form Starts Here*/}
               <div id="sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa" data-type="signupform" style={{ opacity: 1 }}>
                 <div id="customForm">
-                  <div className="quick_form_2_css" style={{ border: '3px solid rgb(0, 0, 0)', backgroundColor: 'rgb(220, 220, 220)', width: '100%', maxWidth: '574px', zIndex: 2, fontFamily: 'Arial', overflow: 'hidden', height: 'auto' }} data-name="SIGNUP_BODY">
-                    <div style={{ textAlign: 'center' }}>
-                      <div style={{ fontSize: '26px', fontFamily: 'Calibri', fontWeight: 'bold', color: 'rgb(255, 255, 255)', textAlign: 'center', padding: '15px 0px', width: '100%', display: 'block', backgroundColor: 'rgb(0, 0, 0)', height: 'auto' }} id="SIGNUP_HEADING">Step 1 – Join the List</div>
+                  <div className="quick_form_7_css" style={{ backgroundColor: 'rgb(255, 255, 255)', width: '500px', maxWidth: '100%', zIndex: 2, fontFamily: 'Arial', border: '1px solid rgb(206, 206, 206)', overflow: 'hidden' }} data-name="SIGNUP_BODY">
+                    <div>
+                      <div style={{ fontSize: '14px', fontFamily: 'Arial', fontWeight: 'bold', color: 'rgb(85, 85, 85)', textAlign: 'left', padding: '15px 15px 5px', width: '100%', display: 'block', boxSizing: 'border-box' }} id="SIGNUP_HEADING">Step 1: Join The Quantum Shift List</div>
                       <div style={{ position: 'relative' }}>
                         <div id="Zc_SignupSuccess" style={{ display: 'none', position: 'absolute', marginLeft: '4%', width: '90%', backgroundColor: 'white', padding: '3px', border: '3px solid rgb(194, 225, 154)', marginTop: '10px', marginBottom: '10px', wordBreak: 'break-all' }}>
                           <table width="100%" cellPadding="0" cellSpacing="0" border={0}>
                             <tbody>
                               <tr>
                                 <td width="10%">
-                                  <img className="successicon" src="https://idzlf-zgpl.maillist-manage.com/images/challangeiconenable.jpg" alt="Success" />
+                                  <img className="successicon" src="https://idzlf-zgpl.maillist-manage.com/images/challangeiconenable.jpg" alt="Success" style={{ verticalAlign: 'middle' }} />
                                 </td>
                                 <td>
                                   <span id="signupSuccessMsg" style={{ color: 'rgb(73, 140, 132)', fontFamily: 'sans-serif', fontSize: '14px', wordBreak: 'break-word' }}>&nbsp;&nbsp;Thank you for Signing Up</span>
@@ -138,16 +138,18 @@ const QuantumCoachBooking = () => {
                           </table>
                         </div>
                       </div>
-                      <form method="POST" id="zcampaignOptinForm" style={{ margin: '0px', width: '100%', color: 'rgb(255, 255, 255)' }} action="https://idzlf-zgpl.maillist-manage.com/weboptin.zc" target="_zcSignup">
+                      <form method="POST" id="zcampaignOptinForm" style={{ margin: '0px', width: '100%', textAlign: 'center' }} action="https://idzlf-zgpl.maillist-manage.com/weboptin.zc" target="_zcSignup">
                         <div style={{ backgroundColor: 'rgb(255, 235, 232)', padding: '10px', color: 'rgb(210, 0, 0)', fontSize: '11px', margin: '20px 10px 0px', border: '1px solid rgb(255, 217, 211)', opacity: 1, display: 'none' }} id="errorMsgDiv">Please correct the marked field(s) below.</div>
-                        <div style={{ position: 'relative', width: '90%', maxWidth: '218px', height: '30px', marginTop: '20px', display: 'inline-block' }}>
-                          <input type="text" style={{ fontSize: '12px', borderWidth: '1px', borderColor: 'rgb(235, 235, 235)', borderStyle: 'solid', width: '100%', height: '100%', zIndex: 4, outline: 'none', boxSizing: 'border-box', padding: '5px 10px', color: 'rgb(136, 136, 136)', textAlign: 'center', fontFamily: 'Arial', borderRadius: '5px' }} placeholder="Email" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" />
+                        <div style={{ position: 'relative', width: '170px', height: '28px', display: 'inline-block' }} className="SIGNUP_FLD">
+                          <div style={{ padding: '5px 0px', color: 'rgb(85, 85, 85)', fontSize: '12px', fontFamily: 'Arial', display: 'block', textAlign: 'left' }}>Email</div>
+                          <input type="text" style={{ fontSize: '12px', borderWidth: '1px', borderColor: 'rgb(214, 205, 205)', borderStyle: 'solid', width: '100%', height: '100%', zIndex: 4, outline: 'none', padding: '5px 10px', color: 'rgb(113, 106, 106)', textAlign: 'left', fontFamily: 'Arial', borderRadius: '4px', backgroundColor: 'rgb(246, 246, 246)', boxSizing: 'border-box' }} name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" />
                         </div>
-                        <div style={{ position: 'relative', width: '90%', maxWidth: '218px', height: '30px', marginTop: '20px', display: 'inline-block' }}>
-                          <input type="text" style={{ fontSize: '12px', borderWidth: '1px', borderColor: 'rgb(235, 235, 235)', borderStyle: 'solid', width: '100%', height: '100%', zIndex: 4, outline: 'none', padding: '5px 10px', boxSizing: 'border-box', color: 'rgb(136, 136, 136)', textAlign: 'center', fontFamily: 'Arial', borderRadius: '5px' }} placeholder="Name" name="FIRSTNAME" id="FIRSTNAME" />
+                        <div style={{ position: 'relative', margin: '5px 0 40px 10px', width: '170px', height: '28px', display: 'inline-block' }} className="SIGNUP_FLD">
+                          <div style={{ padding: '5px 0px', color: 'rgb(85, 85, 85)', fontSize: '12px', fontFamily: 'Arial', display: 'block', textAlign: 'left' }}>Name</div>
+                          <input type="text" style={{ fontSize: '12px', borderWidth: '1px', borderColor: 'rgb(214, 205, 205)', borderStyle: 'solid', width: '100%', height: '100%', zIndex: 4, outline: 'none', padding: '5px 10px', color: 'rgb(113, 106, 106)', textAlign: 'left', fontFamily: 'Arial', borderRadius: '4px', backgroundColor: 'rgb(246, 246, 246)', boxSizing: 'border-box' }} name="LASTNAME" id="EMBED_FORM_NAME_LABEL" />
                         </div>
-                        <div style={{ position: 'relative', width: '90%', maxWidth: '516px', height: '48px', margin: '20px 0px 15px', display: 'inline-block' }}>
-                          <input type="button" style={{ textAlign: 'center', width: '100%', height: '100%', zIndex: 5, border: '0px', color: 'rgb(255, 255, 255)', borderRadius: '2px', cursor: 'pointer', outline: 'none', fontSize: '26px', backgroundColor: 'rgb(0, 0, 0)' }} name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now" />
+                        <div style={{ position: 'relative', width: '100px', height: '28px', margin: '0 0 15px 12px', display: 'inline-block' }} className="SIGNUP_FLD">
+                          <input type="button" style={{ textAlign: 'center', width: '100%', height: '100%', zIndex: 5, border: 0, color: 'rgb(255, 255, 255)', cursor: 'pointer', outline: 'none', fontSize: '14px', backgroundColor: 'rgb(255, 97, 97)', borderRadius: '4px' }} name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now" />
                         </div>
                         <input type="hidden" id="fieldBorder" value="" />
                         <input type="hidden" id="submitType" name="submitType" value="optinCustomView" />
@@ -175,7 +177,7 @@ const QuantumCoachBooking = () => {
                 </div>
                 <img src="https://idzlf-zgpl.maillist-manage.com/images/spacer.gif" id="refImage" style={{ display: 'none' }} alt="" />
               </div>
-              <input type="hidden" id="signupFormType" value="QuickForm_Vertical" />
+              <input type="hidden" id="signupFormType" value="QuickForm_Horizontal" />
               <div id="zcOptinOverLay" style={{ display: 'none', textAlign: 'center', backgroundColor: 'rgb(0, 0, 0)', opacity: 0.5, zIndex: 100, position: 'fixed', width: '100%', top: '0px', left: '0px', height: '988px' }}></div>
               <div id="zcOptinSuccessPopup" style={{ display: 'none', zIndex: 9999, width: '800px', height: '40%', top: '84px', position: 'fixed', left: '26%', backgroundColor: '#FFFFFF', borderColor: '#E6E6E6', borderStyle: 'solid', borderWidth: '1px', boxShadow: '0 1px 10px #424242', padding: '35px' }}>
                 <span style={{ position: 'absolute', top: '-16px', right: '-14px', zIndex: 99999, cursor: 'pointer' }} id="closeSuccess">

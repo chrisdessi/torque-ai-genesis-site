@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, Clock, BarChart3, Target, Zap, Brain, Mail, MessageSquare, Phone, Linkedin, Youtube, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ZohoAIAuditForm from "@/components/ZohoAIAuditForm";
+import ZohoContactForm from "@/components/ZohoContactForm";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 
@@ -166,22 +166,7 @@ const AIAudit = () => {
                 <span className="text-foreground font-semibold">Are you one of them?</span>
               </motion.p>
 
-              <motion.div 
-                className="flex items-center justify-center gap-3 mb-8"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <div className="text-left">
-                  <div className="text-sm text-muted-foreground line-through">Regular: $6,999</div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-6xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">$1,987</span>
-                    <span className="text-muted-foreground">limited time</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.p 
+              <motion.p
                 className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -389,7 +374,7 @@ const AIAudit = () => {
                 viewport={{ once: true }}
               >
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary to-purple-600 text-white rounded-full mb-6 font-semibold">
-                  $10,000+ Value • Yours for $1,987
+                  Complete AI Transformation Package
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
                   Your Complete AI Transformation Package
@@ -444,7 +429,10 @@ const AIAudit = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-lg text-muted-foreground">Fill out the form below and we'll get back to you within 24 hours to discuss your AI audit.</p>
           </div>
-          <ZohoAIAuditForm />
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and our team will respond within 24 hours"
+          />
         </section>
 
         {/* Other Ways to Connect */}

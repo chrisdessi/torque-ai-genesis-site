@@ -85,76 +85,35 @@ const QuantumCoachBooking = () => {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/20 via-transparent to-transparent"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-6 py-16 lg:py-24">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 mb-6">
-              <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></div>
-              <span className="text-sm font-medium text-sky-300">The Quantum Shift Project</span>
+        <div className="relative max-w-5xl mx-auto px-6 py-16 lg:py-24">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
+              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+              <span className="text-sm font-medium text-emerald-300">100% Free • No Commitment</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Welcome to Your<br />
-              <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Quantum Shift</span>
+              Join the<br />
+              <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Quantum Shift Community</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Join a community of people who are ready to break old patterns, discover what they really want, 
-              and create aligned action for their life and business.
+            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
+              Get weekly insights, reflection tools, and guidance from Chris Dessi as you break old patterns 
+              and create the life and business you actually want.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 items-start mt-12">
-            {/* Left: Welcome Video */}
-            <div className="space-y-6">
-              <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-6 shadow-2xl">
-                <h2 className="text-xl font-semibold mb-4 text-slate-100">A Message from Chris</h2>
-                <div className="aspect-video rounded-2xl overflow-hidden border border-slate-700/50 bg-black shadow-lg">
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/GqyALozg1_4?si=Cion5GrWZGyOrJjW" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    allowFullScreen
-                  />
-                </div>
+          {/* Main Signup Form */}
+          <div className="max-w-xl mx-auto">
+            <div className="bg-gradient-to-br from-slate-900/90 to-slate-900/60 border-2 border-emerald-500/30 rounded-3xl p-8 lg:p-10 shadow-2xl backdrop-blur">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold mb-3 text-slate-100">Start Your Shift Today</h2>
+                <p className="text-base text-slate-300">Enter your email to join the community</p>
               </div>
 
-              <div className="bg-gradient-to-br from-emerald-500/10 to-sky-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold mb-4 text-slate-100">How to Get Started</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 border-2 border-emerald-400/40 flex items-center justify-center">
-                      <span className="text-sm font-bold text-emerald-300">1</span>
-                    </div>
-                    <div>
-                      <p className="text-base text-slate-200 leading-relaxed">
-                        <strong className="text-slate-100">Join the Community</strong> — Get weekly reflections, tools, and updates from Chris
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-sky-500/20 border-2 border-sky-400/40 flex items-center justify-center">
-                      <span className="text-sm font-bold text-sky-300">2</span>
-                    </div>
-                    <div>
-                      <p className="text-base text-slate-200 leading-relaxed">
-                        <strong className="text-slate-100">Book Your Free Session</strong> — 30 minutes to explore what's next for you
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Zoho Opt-in Form (Step 1) */}
-            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 lg:p-6 shadow-xl backdrop-blur">
               {/*Zoho Campaigns Web-Optin Form Starts Here*/}
               <div id="sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa" data-type="signupform" style={{ opacity: 1 }}>
                 <div id="customForm">
-                  <div className="quick_form_7_css" style={{ backgroundColor: 'rgb(255, 255, 255)', width: '500px', maxWidth: '100%', zIndex: 2, fontFamily: 'Arial', border: '1px solid rgb(206, 206, 206)', overflow: 'hidden' }} data-name="SIGNUP_BODY">
+                  <div className="quick_form_7_css" style={{ backgroundColor: 'transparent', width: '100%', maxWidth: '100%', zIndex: 2, fontFamily: 'Arial' }} data-name="SIGNUP_BODY">
                     <div>
-                      <div style={{ fontSize: '14px', fontFamily: 'Arial', fontWeight: 'bold', color: 'rgb(85, 85, 85)', textAlign: 'left', padding: '15px 15px 5px', width: '100%', display: 'block', boxSizing: 'border-box' }} id="SIGNUP_HEADING">Step 1: Join The Quantum Shift List</div>
                       <div style={{ position: 'relative' }}>
                         <div id="Zc_SignupSuccess" style={{ display: 'none', position: 'absolute', marginLeft: '4%', width: '90%', backgroundColor: 'white', padding: '3px', border: '3px solid rgb(194, 225, 154)', marginTop: '10px', marginBottom: '10px', wordBreak: 'break-all' }}>
                           <table width="100%" cellPadding="0" cellSpacing="0" border={0}>
@@ -171,19 +130,76 @@ const QuantumCoachBooking = () => {
                           </table>
                         </div>
                       </div>
-                      <form method="POST" id="zcampaignOptinForm" style={{ margin: '0px', width: '100%', textAlign: 'center' }} action="https://idzlf-zgpl.maillist-manage.com/weboptin.zc" target="_zcSignup">
+                      <form method="POST" id="zcampaignOptinForm" style={{ margin: '0px', width: '100%' }} action="https://idzlf-zgpl.maillist-manage.com/weboptin.zc" target="_zcSignup">
                         <div style={{ backgroundColor: 'rgb(255, 235, 232)', padding: '10px', color: 'rgb(210, 0, 0)', fontSize: '11px', margin: '20px 10px 0px', border: '1px solid rgb(255, 217, 211)', opacity: 1, display: 'none' }} id="errorMsgDiv">Please correct the marked field(s) below.</div>
-                        <div style={{ position: 'relative', width: '170px', height: '28px', display: 'inline-block' }} className="SIGNUP_FLD">
-                          <div style={{ padding: '5px 0px', color: 'rgb(85, 85, 85)', fontSize: '12px', fontFamily: 'Arial', display: 'block', textAlign: 'left' }}>Email</div>
-                          <input type="text" style={{ fontSize: '12px', borderWidth: '1px', borderColor: 'rgb(214, 205, 205)', borderStyle: 'solid', width: '100%', height: '100%', zIndex: 4, outline: 'none', padding: '5px 10px', color: 'rgb(113, 106, 106)', textAlign: 'left', fontFamily: 'Arial', borderRadius: '4px', backgroundColor: 'rgb(246, 246, 246)', boxSizing: 'border-box' }} name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" />
+                        
+                        <div className="space-y-4">
+                          <div className="SIGNUP_FLD">
+                            <label style={{ display: 'block', color: 'rgb(203, 213, 225)', fontSize: '14px', fontFamily: 'Arial', marginBottom: '8px', fontWeight: 500 }}>Email</label>
+                            <input 
+                              type="text" 
+                              style={{ 
+                                fontSize: '15px', 
+                                borderWidth: '1px', 
+                                borderColor: 'rgb(71, 85, 105)', 
+                                borderStyle: 'solid', 
+                                width: '100%', 
+                                padding: '12px 16px', 
+                                color: 'rgb(226, 232, 240)', 
+                                fontFamily: 'Arial', 
+                                borderRadius: '10px', 
+                                backgroundColor: 'rgb(15, 23, 42)', 
+                                outline: 'none'
+                              }} 
+                              name="CONTACT_EMAIL" 
+                              id="EMBED_FORM_EMAIL_LABEL" 
+                            />
+                          </div>
+                          
+                          <div className="SIGNUP_FLD">
+                            <label style={{ display: 'block', color: 'rgb(203, 213, 225)', fontSize: '14px', fontFamily: 'Arial', marginBottom: '8px', fontWeight: 500 }}>Name</label>
+                            <input 
+                              type="text" 
+                              style={{ 
+                                fontSize: '15px', 
+                                borderWidth: '1px', 
+                                borderColor: 'rgb(71, 85, 105)', 
+                                borderStyle: 'solid', 
+                                width: '100%', 
+                                padding: '12px 16px', 
+                                color: 'rgb(226, 232, 240)', 
+                                fontFamily: 'Arial', 
+                                borderRadius: '10px', 
+                                backgroundColor: 'rgb(15, 23, 42)', 
+                                outline: 'none'
+                              }} 
+                              name="LASTNAME" 
+                              id="EMBED_FORM_NAME_LABEL" 
+                            />
+                          </div>
+
+                          <div className="SIGNUP_FLD pt-2">
+                            <input 
+                              type="button" 
+                              style={{ 
+                                width: '100%', 
+                                padding: '14px', 
+                                border: 0, 
+                                color: 'rgb(255, 255, 255)', 
+                                cursor: 'pointer', 
+                                fontSize: '16px', 
+                                fontWeight: 600,
+                                backgroundColor: 'rgb(16, 185, 129)', 
+                                borderRadius: '10px',
+                                transition: 'all 0.2s'
+                              }} 
+                              name="SIGNUP_SUBMIT_BUTTON" 
+                              id="zcWebOptin" 
+                              value="Join the Community — It's Free" 
+                            />
+                          </div>
                         </div>
-                        <div style={{ position: 'relative', margin: '5px 0 40px 10px', width: '170px', height: '28px', display: 'inline-block' }} className="SIGNUP_FLD">
-                          <div style={{ padding: '5px 0px', color: 'rgb(85, 85, 85)', fontSize: '12px', fontFamily: 'Arial', display: 'block', textAlign: 'left' }}>Name</div>
-                          <input type="text" style={{ fontSize: '12px', borderWidth: '1px', borderColor: 'rgb(214, 205, 205)', borderStyle: 'solid', width: '100%', height: '100%', zIndex: 4, outline: 'none', padding: '5px 10px', color: 'rgb(113, 106, 106)', textAlign: 'left', fontFamily: 'Arial', borderRadius: '4px', backgroundColor: 'rgb(246, 246, 246)', boxSizing: 'border-box' }} name="LASTNAME" id="EMBED_FORM_NAME_LABEL" />
-                        </div>
-                        <div style={{ position: 'relative', width: '100px', height: '28px', margin: '0 0 15px 12px', display: 'inline-block' }} className="SIGNUP_FLD">
-                          <input type="button" style={{ textAlign: 'center', width: '100%', height: '100%', zIndex: 5, border: 0, color: 'rgb(255, 255, 255)', cursor: 'pointer', outline: 'none', fontSize: '14px', backgroundColor: 'rgb(255, 97, 97)', borderRadius: '4px' }} name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now" />
-                        </div>
+
                         <input type="hidden" id="fieldBorder" value="" />
                         <input type="hidden" id="submitType" name="submitType" value="optinCustomView" />
                         <input type="hidden" id="emailReportId" name="emailReportId" value="" />
@@ -221,10 +237,50 @@ const QuantumCoachBooking = () => {
               {/*Zoho Campaigns Web-Optin Form Ends Here*/}
             </div>
           </div>
+
+          {/* What You'll Get */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <div className="grid sm:grid-cols-3 gap-6 text-center">
+              <div className="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6">
+                <div className="text-3xl mb-3">📬</div>
+                <h3 className="font-semibold text-slate-100 mb-2">Weekly Insights</h3>
+                <p className="text-sm text-slate-400">Reflections and frameworks from Chris to help you stay aligned</p>
+              </div>
+              <div className="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6">
+                <div className="text-3xl mb-3">🛠️</div>
+                <h3 className="font-semibold text-slate-100 mb-2">Practical Tools</h3>
+                <p className="text-sm text-slate-400">Exercises and questions to help you navigate your own shift</p>
+              </div>
+              <div className="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6">
+                <div className="text-3xl mb-3">🎯</div>
+                <h3 className="font-semibold text-slate-100 mb-2">Community Access</h3>
+                <p className="text-sm text-slate-400">Invitations to workshops, sessions, and deeper conversations</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Video Section */}
+          <div className="max-w-3xl mx-auto mt-16">
+            <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-6 lg:p-8 shadow-2xl">
+              <h2 className="text-2xl font-semibold mb-4 text-center text-slate-100">A Message from Chris</h2>
+              <div className="aspect-video rounded-2xl overflow-hidden border border-slate-700/50 bg-black shadow-lg">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/GqyALozg1_4?si=Cion5GrWZGyOrJjW" 
+                  title="YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* WHAT YOU'LL EXPERIENCE */}
+      {/* WANT TO GO DEEPER - OPTIONAL SESSION */}
       <section ref={experienceRef} className="bg-slate-950 py-16 lg:py-24 border-t border-slate-800/60">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div 
@@ -233,12 +289,15 @@ const QuantumCoachBooking = () => {
             animate={experienceInView ? "visible" : "hidden"}
             variants={fadeInUp}
           >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 mb-4">
+              <span className="text-sm font-medium text-sky-300">Optional • No Pressure</span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
-              What Happens in Your Starter Session
+              Want to Go Deeper?<br />Book a Free 30-Minute Session
             </h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              This isn't therapy, and it isn't hype. It's a grounded, honest conversation designed to
-              help you see where you're stuck and what wants to emerge through you next.
+              Once you're in the community, you can schedule a free one-on-one session with Chris. 
+              It's a grounded conversation designed to help you see where you're stuck and what wants to emerge next.
             </p>
           </motion.div>
 
@@ -296,6 +355,21 @@ const QuantumCoachBooking = () => {
                 A short PDF with core frameworks, questions, and practices to revisit whenever you feel yourself drifting.
               </p>
             </motion.div>
+          </motion.div>
+
+          <motion.div 
+            className="text-center mt-10"
+            initial="hidden"
+            animate={experienceInView ? "visible" : "hidden"}
+            variants={fadeInUp}
+          >
+            <a 
+              href="#booking"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-sky-500/10 border border-sky-500/30 text-sky-300 hover:bg-sky-500/20 hover:text-sky-200 rounded-xl transition-all duration-300 font-medium text-lg"
+            >
+              Book Your Free Session
+              <span className="text-xl">→</span>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -404,9 +478,9 @@ const QuantumCoachBooking = () => {
         </div>
       </section>
 
-      {/* STEP 2: BOOKING CALENDAR */}
+      {/* BOOKING CALENDAR */}
       <section ref={bookingRef} id="booking" className="bg-gradient-to-b from-slate-950 to-slate-900 py-16 lg:py-24 border-t border-slate-800/60">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <motion.div 
             className="text-center mb-12"
             initial="hidden"
@@ -414,56 +488,20 @@ const QuantumCoachBooking = () => {
             variants={fadeInUp}
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-slate-100">
-              Reserve Your Free 30-Minute Session
+              Schedule Your Free Session
             </h2>
             <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              Sessions are limited each week so there's space for real conversation, not rushed calls.
+              Choose a time that works for you. Sessions are limited each week so there's space for real conversation.
             </p>
           </motion.div>
 
           <motion.div 
-            className="grid lg:grid-cols-2 gap-10 items-start"
+            className="max-w-4xl mx-auto"
             initial="hidden"
             animate={bookingInView ? "visible" : "hidden"}
-            variants={staggerContainer}
+            variants={fadeInUp}
           >
-            <motion.div 
-              className="bg-gradient-to-br from-emerald-500/10 to-sky-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-3xl p-8 lg:p-10"
-              variants={fadeInUp}
-            >
-              <h3 className="text-2xl font-bold mb-6 text-slate-100">What to Expect</h3>
-              <div className="space-y-4 text-base text-slate-200">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
-                    <span className="text-emerald-400">✓</span>
-                  </div>
-                  <p>30 minutes on Zoom — your space to explore</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
-                    <span className="text-emerald-400">✓</span>
-                  </div>
-                  <p>No pitch required — just honest exploration</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
-                    <span className="text-emerald-400">✓</span>
-                  </div>
-                  <p>If it makes sense to go deeper, we'll talk about that at the end</p>
-                </div>
-              </div>
-              <div className="mt-8 p-4 bg-slate-900/50 border border-slate-700/50 rounded-xl">
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  <strong className="text-emerald-400">Pro tip:</strong> Bring a question you've been circling around but avoiding. 
-                  That's usually where the shift lives.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-4 lg:p-6 shadow-2xl"
-              variants={fadeInUp}
-            >
+            <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-6 lg:p-8 shadow-2xl">
               {/* Calendly inline widget begin */}
               <div 
                 className="calendly-inline-widget" 
@@ -471,28 +509,38 @@ const QuantumCoachBooking = () => {
                 style={{ minWidth: '320px', height: '700px' }}
               />
               {/* Calendly inline widget end */}
-            </motion.div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-sm text-slate-400 max-w-2xl mx-auto">
+                <strong className="text-emerald-400">Haven't joined the community yet?</strong> That's okay! 
+                <a href="#top" className="text-sky-400 hover:text-sky-300 ml-1 underline">
+                  Join first to stay connected
+                </a> and get the most value from your session.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* FOOTER / BRIDGE TO AI */}
-      <footer className="bg-slate-950 border-t border-slate-800/60 py-12">
+      {/* FINAL CTA / FOOTER */}
+      <footer className="bg-slate-950 border-t border-slate-800/60 py-16">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800/50 rounded-2xl p-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <p className="text-base text-slate-300 leading-relaxed max-w-2xl">
-                Once you're clear on who you are and what you want, AI becomes a powerful tool to help you create it.
-                Inside the Quantum Shift community, you'll also get invitations to learn how we use AI to build the systems
-                that support your new direction.
-              </p>
-              <a 
-                href="#top" 
-                className="flex-shrink-0 px-6 py-3 bg-sky-500/10 border border-sky-500/30 text-sky-300 hover:bg-sky-500/20 hover:text-sky-200 rounded-xl transition-all duration-300 font-medium"
-              >
-                Back to top ↑
-              </a>
-            </div>
+          <div className="bg-gradient-to-br from-emerald-500/10 to-sky-500/10 border-2 border-emerald-500/20 rounded-3xl p-10 lg:p-12 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-slate-100">
+              Ready to Start Your Quantum Shift?
+            </h2>
+            <p className="text-base text-slate-300 leading-relaxed max-w-2xl mx-auto mb-8">
+              Join the community for free and start receiving weekly insights, tools, and invitations 
+              to go deeper — including how we use AI to build the systems that support your new direction.
+            </p>
+            <a 
+              href="#top" 
+              className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl transition-all duration-300 font-semibold text-lg shadow-lg shadow-emerald-500/20"
+            >
+              Join the Community — It's Free
+              <span className="text-xl">↑</span>
+            </a>
           </div>
         </div>
       </footer>

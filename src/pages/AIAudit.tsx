@@ -350,6 +350,45 @@ const AIAudit = () => {
           </div>
         </section>
 
+        {/* AI Strategy Guide CTA */}
+        <section className="py-12 lg:py-16 border-t border-slate-800/60 bg-gradient-to-b from-slate-900 to-slate-950">
+          <div className="max-w-4xl mx-auto px-4">
+            <motion.div
+              className="bg-gradient-to-br from-sky-500/10 via-slate-900/50 to-violet-500/10 border border-sky-500/20 rounded-2xl p-8 lg:p-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-center">
+                <p className="text-xs font-semibold tracking-[0.3em] text-sky-400 uppercase mb-3">
+                  Free Resource
+                </p>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4">
+                  Get Your Free AI Strategy & Deployment Guide
+                </h2>
+                <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6">
+                  Discover the proven framework to identify AI opportunities, deploy workflows, 
+                  train your team, and track measurable impact — without getting overwhelmed.
+                </p>
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
+                >
+                  <a 
+                    href="https://www.torqueapp.ai/torque-ai-guide" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Download Free Guide
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Booking Section - Step 2 */}
         <section id="booking" className="py-12 lg:py-16 border-t border-slate-800/60">
           <div className="max-w-5xl mx-auto px-4">

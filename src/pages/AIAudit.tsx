@@ -75,10 +75,10 @@ const AIAudit = () => {
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:items-center">
                   <Button
-                    onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                     className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
                   >
-                    Book My Free AI Audit and Get a Free Torque AI Strategy and Deployment Guide
+                    Book My Free AI Audit
                   </Button>
                   <p className="text-xs text-slate-400">
                     No pitch required. If there's a high-impact opportunity, I'll tell you. If not, you still leave with a clear plan.
@@ -125,9 +125,159 @@ const AIAudit = () => {
           </div>
         </section>
 
-        {/* Newsletter CTA Section - Moved Higher */}
-        <section id="newsletter" className="py-12 lg:py-16 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 to-slate-900">
-          <div className="max-w-5xl mx-auto px-4">
+        {/* Three CTAs Section */}
+        <section className="py-16 lg:py-24 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+          <div className="max-w-7xl mx-auto px-4">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+                Three Ways to Get Started <span className="text-sky-400">Today</span>
+              </h2>
+              <p className="text-slate-300 text-base max-w-3xl mx-auto">
+                Choose your path: join our community, get a personalized audit, or download our comprehensive guide.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* CTA 1: Join AI Community */}
+              <motion.div
+                className="bg-gradient-to-br from-violet-500/10 via-slate-900/90 to-slate-900/50 border border-violet-500/30 rounded-2xl p-8 flex flex-col"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <div className="flex-1">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-violet-500/20 text-violet-400 mb-4">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-3">Join Our AI Community</h3>
+                  <p className="text-slate-300 text-sm mb-4">
+                    Get actionable AI insights delivered to your inbox. Be the first to know about AI trends, tools, and strategies.
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-300 mb-6">
+                    <li className="flex items-start gap-2">
+                      <span className="text-violet-400 mt-0.5">✓</span>
+                      <span>Weekly AI insights & tips</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-violet-400 mt-0.5">✓</span>
+                      <span>Exclusive community access</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-violet-400 mt-0.5">✓</span>
+                      <span>Early access to resources</span>
+                    </li>
+                  </ul>
+                </div>
+                <Button
+                  onClick={() => document.getElementById('newsletter-form')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full bg-violet-500 hover:bg-violet-400 text-white font-semibold"
+                >
+                  Join The Community
+                </Button>
+              </motion.div>
+
+              {/* CTA 2: Free AI Revenue Audit */}
+              <motion.div
+                className="bg-gradient-to-br from-sky-500/10 via-slate-900/90 to-slate-900/50 border-2 border-sky-500/50 rounded-2xl p-8 flex flex-col relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-sky-500 text-slate-950 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+                    Most Popular
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-sky-500/20 text-sky-400 mb-4">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-3">Free AI Revenue Audit</h3>
+                  <p className="text-slate-300 text-sm mb-4">
+                    Get a personalized 10-minute audit revealing exactly where AI can increase your revenue or save 10+ hours/week.
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-300 mb-6">
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-400 mt-0.5">✓</span>
+                      <span>Bottleneck diagnosis</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-400 mt-0.5">✓</span>
+                      <span>AI system recommendation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-400 mt-0.5">✓</span>
+                      <span>14-day action plan</span>
+                    </li>
+                  </ul>
+                </div>
+                <Button
+                  onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-base"
+                >
+                  Book My Free Audit
+                </Button>
+              </motion.div>
+
+              {/* CTA 3: Free Strategy Guide */}
+              <motion.div
+                className="bg-gradient-to-br from-emerald-500/10 via-slate-900/90 to-slate-900/50 border border-emerald-500/30 rounded-2xl p-8 flex flex-col"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="flex-1">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-emerald-500/20 text-emerald-400 mb-4">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-3">AI Strategy Guide</h3>
+                  <p className="text-slate-300 text-sm mb-4">
+                    Download our comprehensive Torque AI Strategy & Deployment Guide to start implementing AI today.
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-300 mb-6">
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-400 mt-0.5">✓</span>
+                      <span>Step-by-step implementation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-400 mt-0.5">✓</span>
+                      <span>Real-world case studies</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-400 mt-0.5">✓</span>
+                      <span>Tool recommendations</span>
+                    </li>
+                  </ul>
+                </div>
+                <Button
+                  onClick={() => window.open('https://www.torqueapp.ai/torque-ai-guide', '_blank')}
+                  className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold"
+                >
+                  Download Free Guide
+                </Button>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Form Section */}
+        <section id="newsletter-form" className="py-12 lg:py-16 border-t border-slate-800/60 bg-slate-900/50">
+          <div className="max-w-3xl mx-auto px-4">
             <motion.div
               className="text-center mb-8"
               initial={{ opacity: 0, y: 20 }}
@@ -136,10 +286,10 @@ const AIAudit = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
-                Join The List
+                Step 1: Join The List
               </h2>
               <p className="text-slate-300 text-sm max-w-2xl mx-auto">
-                Sign up to receive your <span className="text-primary font-semibold">free AI Strategy & Deployment Guide</span> and book your <span className="text-primary font-semibold">free AI Revenue Audit</span> — plus get actionable AI insights delivered to your inbox.
+                Sign up below to receive actionable AI insights and get instant access to our community.
               </p>
             </motion.div>
 
@@ -349,44 +499,6 @@ const AIAudit = () => {
           </div>
         </section>
 
-        {/* AI Strategy Guide CTA */}
-        <section className="py-12 lg:py-16 border-t border-slate-800/60 bg-gradient-to-b from-slate-900 to-slate-950">
-          <div className="max-w-4xl mx-auto px-4">
-            <motion.div
-              className="bg-gradient-to-br from-sky-500/10 via-slate-900/50 to-violet-500/10 border border-sky-500/20 rounded-2xl p-8 lg:p-10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="text-center">
-                <p className="text-xs font-semibold tracking-[0.3em] text-sky-400 uppercase mb-3">
-                  Free Resource
-                </p>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4">
-                  Get Your Free AI Strategy & Deployment Guide
-                </h2>
-                <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6">
-                  Discover the proven framework to identify AI opportunities, deploy workflows, 
-                  train your team, and track measurable impact — without getting overwhelmed.
-                </p>
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
-                >
-                  <a 
-                    href="https://www.torqueapp.ai/torque-ai-guide" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Download Free Guide
-                  </a>
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
 
         {/* Booking Section - Step 2 */}
         <section id="booking" className="py-12 lg:py-16 border-t border-slate-800/60">

@@ -105,8 +105,8 @@ const AIAudit = () => {
                 <div className="aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-black shadow-2xl">
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/GqyALozg1_4?si=Cion5GrWZGyOrJjW"
-                    title="Torque AI Overview"
+                    src="https://www.youtube.com/embed/HuqJCKx6_3c?si=Xl2uMvR3Lt-Tjr9g"
+                    title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"

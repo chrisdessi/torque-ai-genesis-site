@@ -75,10 +75,10 @@ const AIAudit = () => {
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:items-center">
                   <Button
-                    onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
                     className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
                   >
-                    Book My Free AI Audit
+                    Book My Free AI Audit and Get a Free Torque AI Strategy and Deployment Guide
                   </Button>
                   <p className="text-xs text-slate-400">
                     No pitch required. If there's a high-impact opportunity, I'll tell you. If not, you still leave with a clear plan.
@@ -310,7 +310,7 @@ const AIAudit = () => {
         </section>
 
         {/* Newsletter CTA Section */}
-        <section className="py-12 lg:py-16 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 to-slate-900">
+        <section id="newsletter" className="py-12 lg:py-16 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 to-slate-900">
           <div className="max-w-5xl mx-auto px-4">
             <motion.div
               className="text-center mb-8"

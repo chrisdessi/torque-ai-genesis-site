@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import ZohoAIAuditNewsletter from "@/components/ZohoAIAuditNewsletter";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
@@ -308,7 +309,48 @@ const AIAudit = () => {
           </div>
         </section>
 
-        {/* Booking Section */}
+        {/* Newsletter CTA Section */}
+        <section className="py-12 lg:py-16 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 to-slate-900">
+          <div className="max-w-5xl mx-auto px-4">
+            <motion.div
+              className="text-center mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
+                Get Free AI Insights & Resources
+              </h2>
+              <p className="text-slate-300 text-sm max-w-2xl mx-auto">
+                Join our newsletter to receive actionable AI strategies, case studies, and exclusive tips 
+                to help you grow your business with AI — delivered straight to your inbox.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="flex justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <ZohoAIAuditNewsletter />
+            </motion.div>
+
+            <motion.p
+              className="text-center text-xs text-slate-500 mt-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              No spam. Unsubscribe anytime. We respect your privacy.
+            </motion.p>
+          </div>
+        </section>
+
+        {/* Booking Section - Step 2 */}
         <section id="booking" className="py-12 lg:py-16 border-t border-slate-800/60">
           <div className="max-w-5xl mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-8 items-start text-sm">
@@ -319,7 +361,7 @@ const AIAudit = () => {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-                  Book Your Free AI Revenue Audit
+                  Step 2: Book Your Free AI Revenue Audit
                 </h2>
                 <p className="text-slate-300 mb-4">
                   Choose a time that works for you. We'll meet for ~10–20 minutes on Zoom, look at your current funnel or operations, and map out where AI can plug in for the biggest impact.

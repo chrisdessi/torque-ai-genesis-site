@@ -343,7 +343,7 @@ const AIAudit = () => {
               >
                 <div
                   className="calendly-inline-widget"
-                  data-url="https://calendly.com/chris-torqueapp/ai-audit?hide_gdpr_banner=1"
+                  data-url="https://calendly.com/chris-torqueapp/quantum-shift-starter-session-clone"
                   style={{ minWidth: '320px', height: '700px' }}
                 ></div>
               </motion.div>

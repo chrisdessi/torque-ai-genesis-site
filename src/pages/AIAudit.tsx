@@ -34,76 +34,65 @@ const AIAudit = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/90 to-slate-900/80"></div>
+        <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/20 via-transparent to-transparent"></div>
           </div>
 
-          <div className="relative max-w-6xl mx-auto px-4 py-14 lg:py-20">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              {/* Left: Copy */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <p className="text-xs font-semibold tracking-[0.3em] text-sky-400 uppercase">
-                  Torque AI • Free Audit
-                </p>
-                <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
-                  Free <span className="text-sky-400">AI Revenue Audit</span> for Your Business
-                </h1>
-                <p className="mt-4 text-sm sm:text-base text-slate-200 max-w-xl">
-                  In 10 minutes, I'll show you exactly where AI can increase your revenue or save you
-                  10+ hours a week — without you having to learn any tech, hire a team, or rebuild your business.
-                </p>
+          <div className="relative max-w-5xl mx-auto px-6 py-16 lg:py-24">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 mb-6">
+                <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></div>
+                <span className="text-sm font-medium text-sky-300">100% Free • Get Started Now</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Get Your<br />
+                <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Free AI Strategy Guide</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
+                Join our AI community and get weekly insights on how to increase revenue, save time, 
+                and implement AI in your business — without learning code or rebuilding everything.
+              </p>
+            </div>
 
-                <ul className="mt-5 space-y-2 text-sm text-slate-200">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-sky-500/20 text-[11px] text-sky-300">1</span>
-                    <span>Find the #1 bottleneck slowing your revenue or wasting your time.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-emerald-500/20 text-[11px] text-emerald-300">2</span>
-                    <span>See the exact AI system that fixes it.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-violet-500/20 text-[11px] text-violet-300">3</span>
-                    <span>Leave with a simple 14-day implementation roadmap.</span>
-                  </li>
-                </ul>
-
-                <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:items-center">
-                  <Button
-                    onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
-                  >
-                    Book My Free AI Audit
-                  </Button>
-                  <p className="text-xs text-slate-400">
-                    No pitch required. If there's a high-impact opportunity, I'll tell you. If not, you still leave with a clear plan.
-                  </p>
+            {/* Main Signup Form */}
+            <div className="max-w-xl mx-auto">
+              <div className="bg-gradient-to-br from-slate-900/90 to-slate-900/60 border-2 border-sky-500/30 rounded-3xl p-8 lg:p-10 shadow-2xl backdrop-blur">
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl font-bold mb-3 text-slate-100">Start Growing with AI Today</h2>
+                  <p className="text-base text-slate-300">Get instant access to our AI Strategy & Deployment Guide</p>
                 </div>
 
-                {/* Trust bar */}
-                <div className="mt-6">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500 mb-2">Seen on</p>
-                  <div className="flex flex-wrap items-center gap-3 opacity-80">
-                    <span className="text-xs text-slate-400 border border-slate-700 rounded-full px-3 py-1">Fox 5</span>
-                    <span className="text-xs text-slate-400 border border-slate-700 rounded-full px-3 py-1">Yahoo Finance</span>
-                    <span className="text-xs text-slate-400 border border-slate-700 rounded-full px-3 py-1">CNBC</span>
-                  </div>
-                </div>
-              </motion.div>
+                <ZohoAIAuditNewsletter />
+              </div>
+            </div>
 
-              {/* Right: Video */}
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <div className="aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-black shadow-2xl">
+            {/* What You'll Get */}
+            <div className="max-w-4xl mx-auto mt-12">
+              <div className="grid sm:grid-cols-3 gap-6 text-center">
+                <div className="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6">
+                  <div className="text-3xl mb-3">📚</div>
+                  <h3 className="font-semibold text-slate-100 mb-2">Free Strategy Guide</h3>
+                  <p className="text-sm text-slate-400">Step-by-step AI implementation roadmap</p>
+                </div>
+                <div className="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6">
+                  <div className="text-3xl mb-3">💡</div>
+                  <h3 className="font-semibold text-slate-100 mb-2">Weekly AI Insights</h3>
+                  <p className="text-sm text-slate-400">Practical tips and real-world case studies</p>
+                </div>
+                <div className="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6">
+                  <div className="text-3xl mb-3">🎯</div>
+                  <h3 className="font-semibold text-slate-100 mb-2">Early Access</h3>
+                  <p className="text-sm text-slate-400">Be first to know about new tools and workshops</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Video Section */}
+            <div className="max-w-3xl mx-auto mt-16">
+              <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-3xl p-6 lg:p-8 shadow-2xl">
+                <h2 className="text-2xl font-semibold mb-4 text-center text-slate-100">See How AI Can Transform Your Business</h2>
+                <div className="aspect-video rounded-2xl overflow-hidden border border-slate-700/50 bg-black shadow-lg">
                   <iframe
                     className="w-full h-full"
                     src="https://www.youtube.com/embed/HuqJCKx6_3c?si=Xl2uMvR3Lt-Tjr9g"
@@ -112,204 +101,72 @@ const AIAudit = () => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                  ></iframe>
+                  />
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-xs text-slate-200 shadow-lg max-w-xs">
-                  <p className="font-semibold text-sky-300">Quick call. Real numbers.</p>
-                  <p className="mt-1 text-[11px] text-slate-400">
-                    We look at your actual funnel and show you where AI can plug in — not vague theory.
-                  </p>
-                </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Main CTA - Join The List */}
-        <section className="py-16 lg:py-24 border-t border-slate-800/60 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-          <div className="max-w-4xl mx-auto px-4">
-            <motion.div
-              className="bg-gradient-to-br from-sky-500/10 via-slate-900/90 to-violet-500/10 border-2 border-sky-500/40 rounded-3xl p-10 lg:p-16 text-center relative overflow-hidden"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                <span className="bg-sky-500 text-slate-950 text-xs font-bold px-6 py-2 rounded-full uppercase tracking-wider shadow-lg">
-                  Start Here
-                </span>
-              </div>
-              
-              <div className="relative z-10">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                    Join <span className="text-sky-400">The List</span>
-                  </h2>
-                  <p className="text-slate-200 text-lg sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-                    Get your <span className="text-sky-400 font-semibold">free AI Strategy & Deployment Guide</span>, 
-                    plus actionable AI insights delivered weekly to help you grow your business.
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  className="flex justify-center mb-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                  <ZohoAIAuditNewsletter />
-                </motion.div>
-
-                <motion.div
-                  className="grid sm:grid-cols-3 gap-6 text-sm max-w-3xl mx-auto"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-sky-500/20 flex items-center justify-center">
-                      <span className="text-sky-400">✓</span>
-                    </div>
-                    <div className="text-left">
-                      <p className="font-semibold text-slate-200">Free Strategy Guide</p>
-                      <p className="text-slate-400 text-xs">Instant download</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-sky-500/20 flex items-center justify-center">
-                      <span className="text-sky-400">✓</span>
-                    </div>
-                    <div className="text-left">
-                      <p className="font-semibold text-slate-200">Weekly AI Insights</p>
-                      <p className="text-slate-400 text-xs">Trends & tools</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-sky-500/20 flex items-center justify-center">
-                      <span className="text-sky-400">✓</span>
-                    </div>
-                    <div className="text-left">
-                      <p className="font-semibold text-slate-200">Early Access</p>
-                      <p className="text-slate-400 text-xs">New resources</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.p
-                  className="text-xs text-slate-500 mt-8"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  No spam. Unsubscribe anytime. We respect your privacy.
-                </motion.p>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Secondary CTAs */}
-        <section className="py-12 lg:py-16 border-t border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4">
-            <motion.div
-              className="text-center mb-10"
+        {/* Optional - Want More? */}
+        <section className="py-16 lg:py-24 border-t border-slate-800/60">
+          <div className="max-w-6xl mx-auto px-6">
+            <motion.div 
+              className="text-center mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl sm:text-3xl font-semibold mb-3">
-                Ready for More?
-              </h3>
-              <p className="text-slate-300 text-sm max-w-2xl mx-auto">
-                Take the next step with a personalized audit or download our comprehensive guide.
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-4">
+                <span className="text-sm font-medium text-emerald-300">Optional • No Pressure</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-slate-100">
+                Ready to Take Action?<br />Book Your Free AI Revenue Audit
+              </h2>
+              <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                Once you're on the list, you can schedule a free 10-minute audit. 
+                I'll show you exactly where AI can increase your revenue or save you 10+ hours a week.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Free AI Revenue Audit */}
-              <motion.div
-                className="bg-gradient-to-br from-slate-900/90 to-slate-900/50 border border-slate-700 rounded-2xl p-6 flex flex-col"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="flex-1">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 mb-4">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Free AI Revenue Audit</h3>
-                  <p className="text-slate-300 text-sm mb-4">
-                    10-minute personalized audit showing exactly where AI can boost your revenue.
-                  </p>
-                  <ul className="space-y-2 text-sm text-slate-300 mb-6">
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-400 mt-0.5 text-xs">✓</span>
-                      <span>Bottleneck diagnosis</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sky-400 mt-0.5 text-xs">✓</span>
-                      <span>14-day action plan</span>
-                    </li>
-                  </ul>
+            <motion.div 
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-sky-500/30 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
+                  <span className="text-2xl">🎯</span>
                 </div>
-                <Button
-                  onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
-                >
-                  Book My Free Audit
-                </Button>
-              </motion.div>
+                <h3 className="font-semibold mb-3 text-base text-slate-100">Find Your #1 Bottleneck</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Identify the one thing slowing your revenue or wasting your time.
+                </p>
+              </div>
 
-              {/* Strategy Guide */}
-              <motion.div
-                className="bg-gradient-to-br from-slate-900/90 to-slate-900/50 border border-slate-700 rounded-2xl p-6 flex flex-col"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="flex-1">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 mb-4">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">AI Strategy Guide</h3>
-                  <p className="text-slate-300 text-sm mb-4">
-                    Comprehensive guide with step-by-step implementation and real case studies.
-                  </p>
-                  <ul className="space-y-2 text-sm text-slate-300 mb-6">
-                    <li className="flex items-start gap-2">
-                      <span className="text-emerald-400 mt-0.5 text-xs">✓</span>
-                      <span>Implementation roadmap</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-emerald-400 mt-0.5 text-xs">✓</span>
-                      <span>Tool recommendations</span>
-                    </li>
-                  </ul>
+              <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-sky-500/30 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4">
+                  <span className="text-2xl">🤖</span>
                 </div>
-                <Button
-                  onClick={() => window.open('https://www.torqueapp.ai/torque-ai-guide', '_blank')}
-                  className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold"
-                >
-                  Download Free Guide
-                </Button>
-              </motion.div>
-            </div>
+                <h3 className="font-semibold mb-3 text-base text-slate-100">See the AI Solution</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Get the exact AI system that fixes it — no technical jargon.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 hover:border-sky-500/30 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mb-4">
+                  <span className="text-2xl">📋</span>
+                </div>
+                <h3 className="font-semibold mb-3 text-base text-slate-100">14-Day Action Plan</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Leave with a simple roadmap you can implement immediately.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
 

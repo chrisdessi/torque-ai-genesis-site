@@ -1,482 +1,395 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Clock, BarChart3, Target, Zap, Brain, Mail, MessageSquare, Phone, Linkedin, Youtube, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ZohoContactForm from "@/components/ZohoContactForm";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const AIAudit = () => {
-  const contactMethods = [
-    {
-      icon: Phone,
-      title: "Call Us",
-      description: "Speak directly with our team about your AI strategy",
-      action: "+1 (646) 760-6991",
-      href: "tel:+16467606991"
-    },
-    {
-      icon: Mail,
-      title: "Email Us",
-      description: "Send us an email and we'll respond within 24 hours",
-      action: "info@torqueapp.ai",
-      href: "mailto:info@torqueapp.ai"
-    },
-    {
-      icon: MessageSquare,
-      title: "Schedule Consultation",
-      description: "Book a strategic planning session with our team",
-      action: "Schedule Meeting",
-      href: "https://calendar.app.google/rAZmF5kNNCsfMyBf7"
-    },
-    {
-      icon: Linkedin,
-      title: "Connect on LinkedIn",
-      description: "Follow Chris Dessi for AI insights and industry updates",
-      action: "View Profile",
-      href: "https://www.linkedin.com/in/chrisdessi/"
-    },
-    {
-      icon: Youtube,
-      title: "The Quantum Shift Podcast",
-      description: "Watch our podcast series on AI transformation",
-      action: "Watch Now",
-      href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_"
-    }
-  ];
+  useEffect(() => {
+    // Load Calendly widget script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
 
-  const benefits = [
-    {
-      icon: Target,
-      title: "Uncover Hidden AI Opportunities",
-      description: "We analyze every department and workflow to find the highest-ROI automation opportunities your competitors are missing.",
-      stat: "Average 40% time savings",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: BarChart3,
-      title: "Data-Driven Implementation Plan",
-      description: "No fluff, no theory. Get a step-by-step roadmap with specific tools, timelines, and projected cost savings.",
-      stat: "Avg $120K saved annually",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: Zap,
-      title: "30-Day Quick Win Strategy",
-      description: "Walk away with 3-5 AI implementations you can deploy immediately—no technical team required.",
-      stat: "Deploy in 30 days",
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      icon: Brain,
-      title: "Competitive Intelligence Report",
-      description: "See exactly how your competitors are using AI and where you can leapfrog them in your market.",
-      stat: "Beat 80% of competitors",
-      color: "from-green-500 to-emerald-500"
-    }
-  ];
-
-  const process = [
-    {
-      step: "1",
-      title: "Discovery Call",
-      description: "We start with a comprehensive discussion about your business challenges, goals, and current processes."
-    },
-    {
-      step: "2",
-      title: "Deep Dive Analysis",
-      description: "Our team conducts a thorough analysis of your operations, identifying AI opportunities across all departments."
-    },
-    {
-      step: "3",
-      title: "Strategy Session",
-      description: "We present our findings in a detailed strategy session with prioritized recommendations and ROI projections."
-    },
-    {
-      step: "4",
-      title: "Implementation Roadmap",
-      description: "Receive a custom roadmap with timeline, budget estimates, and clear next steps for AI adoption."
-    }
-  ];
-
-  const deliverables = [
-    "Comprehensive AI Opportunity Assessment Report (20+ pages)",
-    "Custom AI Implementation Roadmap with Timeline & Milestones",
-    "ROI Analysis & Budget Projections (Year 1-3)",
-    "Technology Stack Recommendations with Vendor Comparison",
-    "Quick Wins Implementation Guide (Deploy Within 30 Days)",
-    "60-Minute Strategy Presentation & Recording",
-    "Competitive AI Intelligence Brief"
-  ];
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <>
       <SEO
-        title="Westchester AI Audit - 2-Week Business Assessment by Chris Dessi"
-        description="Get a comprehensive AI audit for your Westchester business. Chris Dessi, master marketer and AI consultant, delivers actionable insights in 2 weeks. $1,987 for AI strategy roadmap, ROI analysis, and quick-win opportunities. Serving businesses in Westchester County and New York."
-        keywords="AI audit Westchester, AI assessment Westchester NY, Chris Dessi AI consulting, business AI transformation Westchester, AI strategy consultant New York, AI audit New York, Westchester AI consultant, enterprise AI audit, AI implementation Westchester, business technology assessment, AI opportunities analysis Westchester, AI consulting services New York"
+        title="Free AI Revenue Audit | Torque AI"
+        description="Get a free 10-minute AI Revenue Audit for your business. Discover exactly where AI can increase your revenue or save you 10+ hours a week, without learning any tech."
+        keywords="free AI audit, AI revenue audit, business AI consultation, AI strategy, AI automation, AI for business"
         url="/ai-audit"
       />
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+      
+      <div className="min-h-screen bg-slate-950 text-slate-50">
         <Header />
         
         {/* Hero Section */}
-        <section className="section-padding pt-32 pb-20 relative overflow-hidden">
-          {/* Animated background gradients */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/90 to-slate-900/80"></div>
           </div>
 
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <motion.div 
-                className="inline-block px-4 py-2 bg-gradient-to-r from-primary to-purple-600 rounded-full mb-6"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
+          <div className="relative max-w-6xl mx-auto px-4 py-14 lg:py-20">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              {/* Left: Copy */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
               >
-                <span className="text-white font-semibold">⚡ While Your Competitors Wait, You Act</span>
+                <p className="text-xs font-semibold tracking-[0.3em] text-sky-400 uppercase">
+                  Torque AI • Free Audit
+                </p>
+                <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
+                  Free <span className="text-sky-400">AI Revenue Audit</span> for Your Business
+                </h1>
+                <p className="mt-4 text-sm sm:text-base text-slate-200 max-w-xl">
+                  In 10 minutes, I'll show you exactly where AI can increase your revenue or save you
+                  10+ hours a week — without you having to learn any tech, hire a team, or rebuild your business.
+                </p>
+
+                <ul className="mt-5 space-y-2 text-sm text-slate-200">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-sky-500/20 text-[11px] text-sky-300">1</span>
+                    <span>Find the #1 bottleneck slowing your revenue or wasting your time.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-emerald-500/20 text-[11px] text-emerald-300">2</span>
+                    <span>See the exact AI system that fixes it.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-violet-500/20 text-[11px] text-violet-300">3</span>
+                    <span>Leave with a simple 14-day implementation roadmap.</span>
+                  </li>
+                </ul>
+
+                <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:items-center">
+                  <Button
+                    onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
+                  >
+                    Book My Free AI Audit
+                  </Button>
+                  <p className="text-xs text-slate-400">
+                    No pitch required. If there's a high-impact opportunity, I'll tell you. If not, you still leave with a clear plan.
+                  </p>
+                </div>
+
+                {/* Trust bar */}
+                <div className="mt-6">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500 mb-2">Seen on</p>
+                  <div className="flex flex-wrap items-center gap-3 opacity-80">
+                    <span className="text-xs text-slate-400 border border-slate-700 rounded-full px-3 py-1">Fox 5</span>
+                    <span className="text-xs text-slate-400 border border-slate-700 rounded-full px-3 py-1">Yahoo Finance</span>
+                    <span className="text-xs text-slate-400 border border-slate-700 rounded-full px-3 py-1">CNBC</span>
+                  </div>
+                </div>
               </motion.div>
-              
-              <motion.h1 
-                className="text-5xl md:text-7xl font-bold mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+
+              {/* Right: Video */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  Is Your Business Being Left Behind
-                </span>
-                <br />
-                <span className="text-foreground">by the AI Revolution?</span>
-              </motion.h1>
-              
-              <motion.p 
-                className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <span className="font-semibold text-foreground">76% of businesses</span> are already using AI to cut costs and scale faster.
-                <br />
-                <span className="text-foreground font-semibold">Are you one of them?</span>
-              </motion.p>
-
-              <motion.p
-                className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                In just 2 weeks, discover the <span className="text-primary font-semibold">exact AI opportunities</span> hiding in your business—
-                and get a battle-tested roadmap to implement them <span className="text-primary font-semibold">before your competitors do.</span>
-              </motion.p>
-
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1 }}
-              >
-                <Button 
-                  size="lg" 
-                  onClick={() => document.getElementById('payment')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-lg px-8 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg hover:shadow-xl transition-all text-white"
-                >
-                  Get Your AI Audit Now
-                  <Zap className="ml-2 w-5 h-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-lg px-8 border-2 hover:bg-primary/10"
-                >
-                  Have Questions? Talk to Us
-                </Button>
-              </motion.div>
-
-              <motion.div 
-                className="mt-12 flex items-center justify-center gap-8 text-sm text-muted-foreground"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-              >
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <span>2-Week Delivery</span>
+                <div className="aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-black shadow-2xl">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/GqyALozg1_4?si=Cion5GrWZGyOrJjW"
+                    title="Torque AI Overview"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <span>No Technical Team Required</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <span>Actionable From Day 1</span>
+                <div className="absolute -bottom-4 -right-4 bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-xs text-slate-200 shadow-lg max-w-xs">
+                  <p className="font-semibold text-sky-300">Quick call. Real numbers.</p>
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    We look at your actual funnel and show you where AI can plug in — not vague theory.
+                  </p>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Who This Is For */}
+        <section className="py-10 lg:py-14 border-t border-slate-800/60">
+          <div className="max-w-5xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
+                Is This AI Audit for You?
+              </h2>
+              <p className="text-sm text-slate-300 mb-6 max-w-2xl">
+                This isn't for people who want to "play" with AI tools. It's for business owners who want
+                AI to translate into **revenue, time back, and better systems.**
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-6 text-sm">
+                <motion.div
+                  className="bg-slate-900/70 border border-slate-800 rounded-xl p-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h3 className="font-semibold mb-2 text-sm">You'll get the most from this if:</h3>
+                  <ul className="space-y-1.5 text-xs text-slate-300">
+                    <li>• You run a small or mid-sized business, agency, gym, or ecom brand.</li>
+                    <li>• You know AI matters, but you're not sure where to start.</li>
+                    <li>• You don't want another course — you want someone to implement for you.</li>
+                    <li>• You care about ROI more than shiny tools.</li>
+                  </ul>
+                </motion.div>
+                <motion.div
+                  className="bg-slate-900/40 border border-slate-800 rounded-xl p-4"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h3 className="font-semibold mb-2 text-sm">This is probably not for you if:</h3>
+                  <ul className="space-y-1.5 text-xs text-slate-300">
+                    <li>• You're just curious about AI but not ready to change anything.</li>
+                    <li>• You want to DIY everything and don't value your time.</li>
+                    <li>• You're looking for a free chat about "the future of AI" with no action attached.</li>
+                  </ul>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="section-padding bg-gradient-to-b from-background to-card/50">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  Here's What You're Actually Getting
-                </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  No generic advice. No cookie-cutter templates. Just <span className="text-primary font-semibold">battle-tested strategies</span> tailored to your business.
-                </p>
-              </motion.div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                  className="relative bg-background rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-border/50 group overflow-hidden"
-                >
-                  {/* Gradient background on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                  
-                  <div className="relative z-10">
-                    <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${benefit.color} mb-4`}>
-                      <benefit.icon className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-3">
-                      {benefit.stat}
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+        {/* What You'll Get */}
+        <section className="py-10 lg:py-14 border-t border-slate-800/60">
+          <div className="max-w-5xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
+                What You'll Get in Your Free AI Revenue Audit
+              </h2>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs sm:text-sm">
+                {[
+                  {
+                    title: "1. Bottleneck Diagnosis",
+                    description: "We pinpoint the part of your funnel or ops that's leaking time or money."
+                  },
+                  {
+                    title: "2. AI System Recommendation",
+                    description: "You'll see the one AI automation I'd install first to unlock the most leverage."
+                  },
+                  {
+                    title: "3. 14-Day Action Plan",
+                    description: "A simple, non-technical roadmap you can follow yourself or have me implement."
+                  },
+                  {
+                    title: "4. Next Steps (Optional)",
+                    description: "If there's a strong opportunity, I'll explain how my 14-Day AI Fast Track works. No pressure."
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-slate-900/70 border border-slate-800 rounded-xl p-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -4 }}
+                  >
+                    <h3 className="font-semibold mb-2 text-sm">{item.title}</h3>
+                    <p className="text-slate-300">{item.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Why Now Section */}
-        <section className="section-padding relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-yellow-500/10 -z-10" />
-          
-          <div className="max-w-4xl mx-auto text-center">
+        {/* About Chris */}
+        <section className="py-10 lg:py-14 border-t border-slate-800/60">
+          <div className="max-w-5xl mx-auto px-4 grid lg:grid-cols-3 gap-10 items-center">
             <motion.div
+              className="lg:col-span-1"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Clock className="w-16 h-16 text-red-500 mx-auto mb-6 animate-pulse" />
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Why You Need This <span className="text-red-500">Right Now</span>
-              </h2>
-              <div className="bg-background rounded-2xl p-8 shadow-xl border-2 border-red-500/20">
-                <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-                  The businesses dominating your industry aren't smarter than you. They just <span className="text-foreground font-semibold">moved faster on AI.</span>
-                </p>
-                <div className="grid md:grid-cols-3 gap-6 mt-8">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">40%</div>
-                    <p className="text-sm text-muted-foreground">Average efficiency gain in first 90 days</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-purple-500 mb-2">$120K+</div>
-                    <p className="text-sm text-muted-foreground">Average annual savings from AI automation</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-orange-500 mb-2">2 Years</div>
-                    <p className="text-sm text-muted-foreground">How far behind you'll be if you wait</p>
-                  </div>
-                </div>
+              <div className="relative w-40 h-40 rounded-2xl overflow-hidden border border-slate-700 shadow-xl mx-auto lg:mx-0">
+                <img
+                  src="/lovable-uploads/85521d42-7840-4d81-b8ca-c002ab15932e.png"
+                  alt="Chris Dessi"
+                  className="w-full h-full object-cover"
+                />
               </div>
+            </motion.div>
+            <motion.div
+              className="lg:col-span-2 text-sm"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl font-semibold mb-3">Who You'll Be Talking To</h2>
+              <p className="text-slate-300 mb-3">
+                I'm Chris Dessi, founder of Torque AI. Over the last decade, I've led sales and marketing teams, built tech companies, and generated more than <span className="font-semibold">over $100 million</span> in deals — including helping one e-commerce client grow <span className="font-semibold">92% year over year</span> by using AI and automation the right way.
+              </p>
+              <p className="text-slate-300 mb-3">
+                I appear on Fox5, Yahoo Finance, and other networks to help business leaders cut through the noise and actually use AI in the real world.
+              </p>
+              <p className="text-slate-300">
+                I'm not here to impress you with jargon. I'm here to help you find practical leverage so your business runs smoother and grows faster.
+              </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="section-padding bg-card/30">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">The 2-Week Process</h2>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Fast, focused, and designed to get you <span className="text-primary font-semibold">results you can implement immediately</span>
-                </p>
-              </motion.div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {process.map((item, index) => (
+        {/* Testimonials */}
+        <section className="py-10 lg:py-14 border-t border-slate-800/60">
+          <div className="max-w-5xl mx-auto px-4">
+            <motion.h2
+              className="text-2xl sm:text-3xl font-semibold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              What Others Are Saying
+            </motion.h2>
+
+            <div className="grid md:grid-cols-3 gap-6 text-sm">
+              {[
+                {
+                  quote: "Chris helped us uncover an obvious gap we'd been staring at for months. The AI follow-up system he recommended paid for itself in weeks.",
+                  author: "Client Name, Role / Company"
+                },
+                {
+                  quote: "I'm not technical at all. He showed us one automation that saves my team a full day of work every week.",
+                  author: "Client Name, Industry"
+                },
+                {
+                  quote: "It wasn't theory. It was: here's where you're leaking, here's the system to fix it, here's what it will likely be worth.",
+                  author: "Client Name, Founder"
+                }
+              ].map((testimonial, index) => (
                 <motion.div
                   key={index}
+                  className="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative"
                 >
-                  {/* Connection line */}
-                  {index < process.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-gradient-to-r from-primary to-purple-500" />
-                  )}
-                  
-                  <motion.div 
-                    className="bg-gradient-to-br from-primary to-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 mx-auto shadow-lg relative z-10"
-                    whileHover={{ scale: 1.1, rotate: 360 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {item.step}
-                  </motion.div>
-                  
-                  <div className="bg-background rounded-xl p-6 shadow-md hover:shadow-xl transition-all">
-                    <h3 className="text-xl font-semibold mb-3 text-center">{item.title}</h3>
-                    <p className="text-muted-foreground text-center text-sm leading-relaxed">{item.description}</p>
-                  </div>
+                  <p className="text-slate-200 mb-3">"{testimonial.quote}"</p>
+                  <p className="text-xs text-slate-400 mt-2">— {testimonial.author}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Deliverables Section */}
-        <section className="section-padding relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-pink-500/5 -z-10" />
-          
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
+        {/* Booking Section */}
+        <section id="booking" className="py-12 lg:py-16 border-t border-slate-800/60">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-8 items-start text-sm">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary to-purple-600 text-white rounded-full mb-6 font-semibold">
-                  Complete AI Transformation Package
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  Your Complete AI Transformation Package
+                <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
+                  Book Your Free AI Revenue Audit
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  Everything you need to leapfrog your competition—delivered in <span className="text-primary font-semibold">14 days or less</span>
+                <p className="text-slate-300 mb-4">
+                  Choose a time that works for you. We'll meet for ~10–20 minutes on Zoom, look at your current funnel or operations, and map out where AI can plug in for the biggest impact.
+                </p>
+                <ul className="space-y-2 text-slate-300 mb-6 text-xs sm:text-sm">
+                  <li>• 100% free — no obligation.</li>
+                  <li>• Focused on your actual numbers, not generic advice.</li>
+                  <li>• If there's no strong opportunity, I'll tell you that, too.</li>
+                </ul>
+                <p className="text-xs text-slate-500">
+                  Most calls end with 1–2 simple, high-leverage ideas you can implement immediately — with or without me.
                 </p>
               </motion.div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-4">
-              {deliverables.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  whileHover={{ x: 8 }}
-                  className="flex items-start gap-4 bg-background p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-border/50 group"
-                >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <CheckCircle2 className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-foreground font-medium leading-relaxed">{item}</span>
-                </motion.div>
-              ))}
-            </div>
 
-            <motion.div
+              <motion.div
+                className="bg-slate-900/80 border border-slate-800 rounded-2xl p-3 lg:p-4"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/chris-torqueapp/ai-audit?hide_gdpr_banner=1"
+                  style={{ minWidth: '320px', height: '700px' }}
+                ></div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-10 lg:py-14 border-t border-slate-800/60">
+          <div className="max-w-5xl mx-auto px-4 text-sm">
+            <motion.h2
+              className="text-2xl sm:text-3xl font-semibold mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="mt-12 text-center"
             >
-              <div className="inline-block bg-background rounded-2xl p-8 shadow-xl border-2 border-primary/20">
-                <p className="text-lg text-muted-foreground mb-2">
-                  <span className="text-foreground font-semibold">Plus:</span> Direct access to our team via email during your audit
-                </p>
-                <p className="text-sm text-primary font-semibold">
-                  ⚡ No question left unanswered. No roadblock unresolved.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Contact Form Section */}
-        <section id="contact-form" className="section-padding bg-white">
-          <div className="max-w-3xl mx-auto text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-lg text-muted-foreground">Fill out the form below and we'll get back to you within 24 hours to discuss your AI audit.</p>
-          </div>
-          <ZohoContactForm 
-            title="Get In Touch"
-            description="Fill out the form below and our team will respond within 24 hours"
-          />
-        </section>
-
-        {/* Other Ways to Connect */}
-        <section className="section-padding bg-muted">
-          <div className="max-w-6xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Other Ways to Connect</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Choose the best way to connect with our team
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {contactMethods.map((method, index) => (
+              FAQs
+            </motion.h2>
+            <div className="space-y-4">
+              {[
+                {
+                  question: "Is this really free?",
+                  answer: "Yes. The audit is 100% free. If we see a strong opportunity, I'll explain how I can help implement it. If not, you still walk away with clarity and a plan."
+                },
+                {
+                  question: "Will you pitch me?",
+                  answer: "I'll only make an offer if I'm confident I can create a clear ROI. No pressure, no scripts. Just an honest conversation."
+                },
+                {
+                  question: "Do I need to be technical?",
+                  answer: "Not at all. Most of my clients aren't technical. My job is to translate AI into plain English and plug it into your business for you."
+                },
+                {
+                  question: "What kinds of businesses do you work with?",
+                  answer: "I work with service businesses, agencies, gyms, coaches, local businesses, and e-commerce brands that are already selling something and want to grow or get time back."
+                }
+              ].map((faq, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="bg-white p-10 rounded-xl text-center hover:shadow-2xl transition-all hover:-translate-y-2"
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <method.icon className="w-16 h-16 mx-auto mb-6 text-primary" />
-                  <h3 className="text-2xl font-bold mb-4">{method.title}</h3>
-                  <p className="text-muted-foreground mb-8 text-lg">{method.description}</p>
-                  {method.href ? (
-                    <a
-                      href={method.href}
-                      target={method.href.startsWith('http') ? '_blank' : undefined}
-                      rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="inline-flex items-center gap-2 text-lg font-semibold hover:underline"
-                    >
-                      {method.action}
-                      {method.href.startsWith('http') && <ArrowRight className="w-4 h-4" />}
-                    </a>
-                  ) : (
-                    <span className="text-lg font-semibold text-primary">{method.action}</span>
-                  )}
+                  <p className="font-semibold text-slate-100">{faq.question}</p>
+                  <p className="text-slate-300 text-xs sm:text-sm mt-1">{faq.answer}</p>
                 </motion.div>
               ))}
             </div>

@@ -139,7 +139,7 @@ const AIAudit = () => {
                 Join The List
               </h2>
               <p className="text-slate-300 text-sm max-w-2xl mx-auto">
-                Sign up to receive your free AI Strategy & Deployment Guide and get actionable AI insights delivered to your inbox.
+                Sign up to receive your <span className="text-primary font-semibold">free AI Strategy & Deployment Guide</span> and book your <span className="text-primary font-semibold">free AI Revenue Audit</span> — plus get actionable AI insights delivered to your inbox.
               </p>
             </motion.div>
 

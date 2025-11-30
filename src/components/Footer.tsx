@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Youtube } from "lucide-react";
+import { Mail, Linkedin, Youtube, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -18,6 +18,12 @@ const Footer = () => {
               Helping leaders recover lost revenue, de-risk AI, and rebuild human alignment in an algorithmic world.
             </p>
             <div className="space-y-3 mt-6">
+              <div className="flex items-center text-gray-300">
+                <Phone className="w-5 h-5 mr-3" />
+                <a href="tel:+16467606991" className="hover:text-white transition-colors">
+                  +1 (646) 760-6991
+                </a>
+              </div>
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-3" />
                 <a href="mailto:info@torqueapp.ai" className="hover:text-white transition-colors">

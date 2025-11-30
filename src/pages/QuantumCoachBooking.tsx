@@ -127,10 +127,9 @@ const QuantumCoachBooking = () => {
               <h2 className="text-2xl font-semibold mb-4 text-center text-slate-100">A Message from Chris</h2>
               <div className="aspect-video rounded-2xl overflow-hidden border border-slate-700/50 bg-black shadow-lg">
                 <iframe 
-                  width="100%" 
-                  height="100%" 
-                  src="https://www.youtube.com/embed/GqyALozg1_4?si=Cion5GrWZGyOrJjW" 
-                  title="YouTube video player" 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/GqyALozg1_4" 
+                  title="A Message from Chris Dessi" 
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 

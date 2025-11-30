@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { ZohoQuantumCoachWaitlistForm } from "@/components/ZohoQuantumCoachWaitlistForm";
 import chrisPortrait from "@/assets/chris-dessi-headshot.jpg";
 
 const QuantumCoachBooking = () => {
@@ -39,17 +40,6 @@ const QuantumCoachBooking = () => {
   const bookingInView = useInView(bookingRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
-    // Load Zoho Campaigns script
-    const zohoScript = document.createElement('script');
-    zohoScript.src = 'https://idzlf-zgpl.maillist-manage.com/js/optin.min.js';
-    zohoScript.async = true;
-    zohoScript.onload = () => {
-      if ((window as any).setupSF) {
-        (window as any).setupSF('sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa', 'ZCFORMVIEW', false, 'light', false, '0');
-      }
-    };
-    document.body.appendChild(zohoScript);
-
     // Load Calendly script
     const calendlyScript = document.createElement('script');
     calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
@@ -57,9 +47,6 @@ const QuantumCoachBooking = () => {
     document.body.appendChild(calendlyScript);
 
     return () => {
-      if (document.body.contains(zohoScript)) {
-        document.body.removeChild(zohoScript);
-      }
       if (document.body.contains(calendlyScript)) {
         document.body.removeChild(calendlyScript);
       }
@@ -109,132 +96,7 @@ const QuantumCoachBooking = () => {
                 <p className="text-base text-slate-300">Enter your email to join the community</p>
               </div>
 
-              {/*Zoho Campaigns Web-Optin Form Starts Here*/}
-              <div id="sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa" data-type="signupform" style={{ opacity: 1 }}>
-                <div id="customForm">
-                  <div className="quick_form_7_css" style={{ backgroundColor: 'transparent', width: '100%', maxWidth: '100%', zIndex: 2, fontFamily: 'Arial' }} data-name="SIGNUP_BODY">
-                    <div>
-                      <div style={{ position: 'relative' }}>
-                        <div id="Zc_SignupSuccess" style={{ display: 'none', position: 'absolute', marginLeft: '4%', width: '90%', backgroundColor: 'white', padding: '3px', border: '3px solid rgb(194, 225, 154)', marginTop: '10px', marginBottom: '10px', wordBreak: 'break-all' }}>
-                          <table width="100%" cellPadding="0" cellSpacing="0" border={0}>
-                            <tbody>
-                              <tr>
-                                <td width="10%">
-                                  <img className="successicon" src="https://idzlf-zgpl.maillist-manage.com/images/challangeiconenable.jpg" alt="Success" style={{ verticalAlign: 'middle' }} />
-                                </td>
-                                <td>
-                                  <span id="signupSuccessMsg" style={{ color: 'rgb(73, 140, 132)', fontFamily: 'sans-serif', fontSize: '14px', wordBreak: 'break-word' }}>&nbsp;&nbsp;Thank you for Signing Up</span>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                      <form method="POST" id="zcampaignOptinForm" style={{ margin: '0px', width: '100%' }} action="https://idzlf-zgpl.maillist-manage.com/weboptin.zc" target="_zcSignup">
-                        <div style={{ backgroundColor: 'rgb(255, 235, 232)', padding: '10px', color: 'rgb(210, 0, 0)', fontSize: '11px', margin: '20px 10px 0px', border: '1px solid rgb(255, 217, 211)', opacity: 1, display: 'none' }} id="errorMsgDiv">Please correct the marked field(s) below.</div>
-                        
-                        <div className="space-y-4">
-                          <div className="SIGNUP_FLD">
-                            <label style={{ display: 'block', color: 'rgb(203, 213, 225)', fontSize: '14px', fontFamily: 'Arial', marginBottom: '8px', fontWeight: 500 }}>Email</label>
-                            <input 
-                              type="text" 
-                              style={{ 
-                                fontSize: '15px', 
-                                borderWidth: '1px', 
-                                borderColor: 'rgb(71, 85, 105)', 
-                                borderStyle: 'solid', 
-                                width: '100%', 
-                                padding: '12px 16px', 
-                                color: 'rgb(226, 232, 240)', 
-                                fontFamily: 'Arial', 
-                                borderRadius: '10px', 
-                                backgroundColor: 'rgb(15, 23, 42)', 
-                                outline: 'none'
-                              }} 
-                              name="CONTACT_EMAIL" 
-                              id="EMBED_FORM_EMAIL_LABEL" 
-                            />
-                          </div>
-                          
-                          <div className="SIGNUP_FLD">
-                            <label style={{ display: 'block', color: 'rgb(203, 213, 225)', fontSize: '14px', fontFamily: 'Arial', marginBottom: '8px', fontWeight: 500 }}>Name</label>
-                            <input 
-                              type="text" 
-                              style={{ 
-                                fontSize: '15px', 
-                                borderWidth: '1px', 
-                                borderColor: 'rgb(71, 85, 105)', 
-                                borderStyle: 'solid', 
-                                width: '100%', 
-                                padding: '12px 16px', 
-                                color: 'rgb(226, 232, 240)', 
-                                fontFamily: 'Arial', 
-                                borderRadius: '10px', 
-                                backgroundColor: 'rgb(15, 23, 42)', 
-                                outline: 'none'
-                              }} 
-                              name="LASTNAME" 
-                              id="EMBED_FORM_NAME_LABEL" 
-                            />
-                          </div>
-
-                          <div className="SIGNUP_FLD pt-2">
-                            <input 
-                              type="button" 
-                              style={{ 
-                                width: '100%', 
-                                padding: '14px', 
-                                border: 0, 
-                                color: 'rgb(255, 255, 255)', 
-                                cursor: 'pointer', 
-                                fontSize: '16px', 
-                                fontWeight: 600,
-                                backgroundColor: 'rgb(16, 185, 129)', 
-                                borderRadius: '10px',
-                                transition: 'all 0.2s'
-                              }} 
-                              name="SIGNUP_SUBMIT_BUTTON" 
-                              id="zcWebOptin" 
-                              value="Join the Community — It's Free" 
-                            />
-                          </div>
-                        </div>
-
-                        <input type="hidden" id="fieldBorder" value="" />
-                        <input type="hidden" id="submitType" name="submitType" value="optinCustomView" />
-                        <input type="hidden" id="emailReportId" name="emailReportId" value="" />
-                        <input type="hidden" id="formType" name="formType" value="QuickForm" />
-                        <input type="hidden" name="zx" id="cmpZuid" value="1316ccdc8" />
-                        <input type="hidden" name="zcvers" value="3.0" />
-                        <input type="hidden" name="oldListIds" id="allCheckedListIds" value="" />
-                        <input type="hidden" id="mode" name="mode" value="OptinCreateView" />
-                        <input type="hidden" id="zcld" name="zcld" value="110489827e27f87e8" />
-                        <input type="hidden" id="zctd" name="zctd" value="110489827e26e63c1" />
-                        <input type="hidden" id="document_domain" value="" />
-                        <input type="hidden" id="zc_Url" value="idzlf-zgpl.maillist-manage.com" />
-                        <input type="hidden" id="new_optin_response_in" value="0" />
-                        <input type="hidden" id="duplicate_optin_response_in" value="0" />
-                        <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW" />
-                        <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa" />
-                        <input type="hidden" id="viewFrom" value="URL_ACTION" />
-                        <span style={{ display: 'none' }} id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
-                        <span style={{ display: 'none' }} id="dt_FIRSTNAME">1,false,1,First Name,2</span>
-                        <span style={{ display: 'none' }} id="dt_LASTNAME">1,false,1,Last Name,2</span>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <img src="https://idzlf-zgpl.maillist-manage.com/images/spacer.gif" id="refImage" style={{ display: 'none' }} alt="" />
-              </div>
-              <input type="hidden" id="signupFormType" value="QuickForm_Horizontal" />
-              <div id="zcOptinOverLay" style={{ display: 'none', textAlign: 'center', backgroundColor: 'rgb(0, 0, 0)', opacity: 0.5, zIndex: 100, position: 'fixed', width: '100%', top: '0px', left: '0px', height: '988px' }}></div>
-              <div id="zcOptinSuccessPopup" style={{ display: 'none', zIndex: 9999, width: '800px', height: '40%', top: '84px', position: 'fixed', left: '26%', backgroundColor: '#FFFFFF', borderColor: '#E6E6E6', borderStyle: 'solid', borderWidth: '1px', boxShadow: '0 1px 10px #424242', padding: '35px' }}>
-                <span style={{ position: 'absolute', top: '-16px', right: '-14px', zIndex: 99999, cursor: 'pointer' }} id="closeSuccess">
-                  <img src="https://idzlf-zgpl.maillist-manage.com/images/videoclose.png" alt="Close" />
-                </span>
-                <div id="zcOptinSuccessPanel"></div>
-              </div>
-              {/*Zoho Campaigns Web-Optin Form Ends Here*/}
+              <ZohoQuantumCoachWaitlistForm />
             </div>
           </div>
 

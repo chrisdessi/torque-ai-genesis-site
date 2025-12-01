@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import DOMPurify from "dompurify";
+import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 
 import { Button } from "@/components/ui/button";
 import { Link, useParams, Navigate } from "react-router-dom";
@@ -561,16 +562,8 @@ const BlogPost = () => {
                 <p className="text-lg text-muted-foreground mb-8">
                   Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
                 </p>
-                <div className="w-full mx-auto">
-                  <iframe 
-                    src="https://embeds.beehiiv.com/0c0565a9-66ec-4225-a021-87a3562337b7" 
-                    data-test-id="beehiiv-embed" 
-                    width="100%" 
-                    height="320" 
-                    frameBorder="0" 
-                    scrolling="no"
-                    style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
-                  />
+                <div className="flex justify-center">
+                  <ZohoTorqueAIForm />
                 </div>
               </div>
             </div>
@@ -677,15 +670,9 @@ const BlogPost = () => {
             <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
               Stay Updated with AI Insights
             </h3>
-            <iframe 
-              src="https://embeds.beehiiv.com/0c0565a9-66ec-4225-a021-87a3562337b7" 
-              data-test-id="beehiiv-embed" 
-              width="100%" 
-              height="320" 
-              frameBorder="0" 
-              scrolling="no"
-              style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
-            />
+            <div className="flex justify-center">
+              <ZohoTorqueAIForm />
+            </div>
           </motion.div>
 
           {/* Share & CTA */}
@@ -721,16 +708,8 @@ const BlogPost = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
               </p>
-              <div className="w-full mx-auto">
-                <iframe 
-                  src="https://embeds.beehiiv.com/0c0565a9-66ec-4225-a021-87a3562337b7" 
-                  data-test-id="beehiiv-embed" 
-                  width="100%" 
-                  height="320" 
-                  frameBorder="0" 
-                  scrolling="no"
-                  style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
-                />
+              <div className="flex justify-center">
+                <ZohoTorqueAIForm />
               </div>
             </div>
           </div>

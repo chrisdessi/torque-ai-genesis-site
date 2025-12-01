@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
-
+import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -314,16 +314,8 @@ const MomentoCouncil = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
               </p>
-              <div className="w-full mx-auto">
-                <iframe 
-                  src="https://embeds.beehiiv.com/0c0565a9-66ec-4225-a021-87a3562337b7" 
-                  data-test-id="beehiiv-embed" 
-                  width="100%" 
-                  height="320" 
-                  frameBorder="0" 
-                  scrolling="no"
-                  style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
-                />
+              <div className="flex justify-center">
+                <ZohoTorqueAIForm />
               </div>
             </div>
           </div>

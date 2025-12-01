@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 
 const Hero = () => {
   
@@ -137,6 +138,18 @@ const Hero = () => {
                 Download the AI Strategy Guide
               </a>
             </Button>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            className="max-w-2xl mx-auto mt-12"
+          >
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold mb-4 text-white text-left">Join the Torque AI Newsletter</h3>
+              <ZohoTorqueAIForm />
+            </div>
           </motion.div>
         </motion.div>
       </div>

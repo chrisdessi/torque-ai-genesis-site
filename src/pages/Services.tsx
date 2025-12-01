@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 
 import ZapierContactForm from "@/components/ZapierContactForm";
 import { ZohoAI90DayForm } from "@/components/ZohoAI90DayForm";
@@ -131,6 +132,13 @@ const Services = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
+            </div>
+            
+            <div className="mt-12 max-w-2xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+                <h3 className="text-xl font-semibold mb-4 text-white text-left">Join the Torque AI Newsletter</h3>
+                <ZohoTorqueAIForm />
+              </div>
             </div>
           </motion.div>
         </div>

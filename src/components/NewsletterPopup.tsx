@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
+import { ZohoTorqueAIForm } from "./ZohoTorqueAIForm";
 
 interface NewsletterPopupProps {
   trigger?: React.ReactNode;
@@ -34,16 +35,8 @@ const NewsletterPopup = ({ trigger }: NewsletterPopupProps) => {
             Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
           </DialogDescription>
         </DialogHeader>
-        <div className="mt-4">
-          <iframe 
-            src="https://embeds.beehiiv.com/0c0565a9-66ec-4225-a021-87a3562337b7" 
-            data-test-id="beehiiv-embed" 
-            width="100%" 
-            height="320" 
-            frameBorder="0" 
-            scrolling="no"
-            style={{ borderRadius: '4px', border: '2px solid #e5e7eb', margin: 0, backgroundColor: 'transparent' }}
-          />
+        <div className="mt-4 flex justify-center">
+          <ZohoTorqueAIForm />
         </div>
       </DialogContent>
     </Dialog>

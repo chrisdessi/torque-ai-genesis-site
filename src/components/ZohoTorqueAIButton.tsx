@@ -16,7 +16,7 @@ export const ZohoTorqueAIButton = () => {
       script.src = 'https://idzlf-cmpzourl.maillist-manage.com/js/optin.min.js';
       script.onload = () => {
         if (window.setupSF) {
-          window.setupSF('sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6', 'ZCFORMVIEW', false, 'acc', false, '2');
+          window.setupSF('sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6', 'ZCFORMVIEW', false, 'light', false, '0');
         }
       };
       document.body.appendChild(script);
@@ -64,7 +64,7 @@ export const ZohoTorqueAIButton = () => {
           <div id="customForm">
             <div className="quick_form_7_css" style={{ backgroundColor: 'rgb(255, 255, 255)', width: '500px', zIndex: 2, fontFamily: '"Arial"', border: '1px solid rgb(206, 206, 206)', overflow: 'hidden' }} data-name="SIGNUP_BODY">
               <div>
-                <div style={{ fontSize: '14px', fontFamily: '"Arial"', fontWeight: 'bold', color: 'rgb(85, 85, 85)', textAlign: 'left', padding: '15px 15px 5px', width: '100%', display: 'block', boxSizing: 'border-box' }} id="SIGNUP_HEADING">Step 1: Join The List</div>
+                <div style={{ fontSize: '14px', fontFamily: 'Tahoma', fontWeight: 'bold', color: 'rgb(85, 85, 85)', textAlign: 'left', padding: '15px 15px 5px', width: '100%', display: 'block', boxSizing: 'border-box', backgroundColor: 'rgb(255, 255, 255)' }} id="SIGNUP_HEADING">FREE Torque AI Community</div>
                 <div style={{ position: 'relative' }}>
                   <div id="Zc_SignupSuccess" style={{ display: 'none', position: 'absolute', marginLeft: '4%', width: '90%', backgroundColor: 'white', padding: '3px', border: '3px solid rgb(194, 225, 154)', marginTop: '10px', marginBottom: '10px', wordBreak: 'break-all' }}>
                     <table width="100%" cellPadding="0" cellSpacing="0" border={0}>
@@ -92,7 +92,7 @@ export const ZohoTorqueAIButton = () => {
                     <input type="text" style={{ fontSize: '12px', borderWidth: '1px', borderColor: 'rgb(214, 205, 205)', borderStyle: 'solid', width: '100%', height: '100%', zIndex: 4, outline: 'none', padding: '5px 10px', color: 'rgb(113, 106, 106)', textAlign: 'left', fontFamily: '"Arial"', borderRadius: '4px', backgroundColor: 'rgb(246, 246, 246)', boxSizing: 'border-box' }} name="LASTNAME" id="EMBED_FORM_NAME_LABEL" />
                   </div>
                   <div style={{ position: 'relative', width: '100px', height: '28px', margin: '0 0 15px 12px', display: 'inline-block' }} className="SIGNUP_FLD">
-                    <input type="button" style={{ textAlign: 'center', width: '100%', height: '100%', zIndex: 5, border: 0, color: 'rgb(255, 255, 255)', cursor: 'pointer', outline: 'none', fontSize: '14px', backgroundColor: 'rgb(255, 97, 97)', borderRadius: '4px' }} name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now" />
+                    <input type="button" style={{ textAlign: 'center', width: '100%', height: '100%', zIndex: 5, border: '0px', color: 'rgb(255, 255, 255)', cursor: 'pointer', outline: 'none', fontSize: '14px', backgroundColor: 'rgb(38, 165, 118)', borderRadius: '4px' }} name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join us" />
                   </div>
                   <input type="hidden" id="fieldBorder" value="" />
                   <input type="hidden" id="submitType" name="submitType" value="optinCustomView" />

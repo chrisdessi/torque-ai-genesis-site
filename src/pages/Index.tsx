@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import Hero from "@/components/Hero";
 import SEO from "@/components/SEO";
+import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube, ArrowRight } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
@@ -333,6 +334,15 @@ const Index = () => {
                 Join 90-Day Executive Cohort
               </a>
             </Button>
+          </motion.div>
+          
+          <motion.div 
+            {...fadeInUp} 
+            className="mt-16 max-w-2xl mx-auto bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20 rounded-2xl p-8"
+          >
+            <h3 className="text-2xl font-bold text-center mb-4">Get Weekly AI Insights</h3>
+            <p className="text-muted-foreground text-center mb-6">Join thousands getting practical AI strategies delivered to their inbox</p>
+            <ZohoTorqueAIButton />
           </motion.div>
         </div>
       </section>

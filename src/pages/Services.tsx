@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 
 import ZapierContactForm from "@/components/ZapierContactForm";
 import { ZohoAI90DayForm } from "@/components/ZohoAI90DayForm";
@@ -241,6 +242,11 @@ const Services = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
+            
+            <div className="mt-12 pt-8 border-t border-cyan-300">
+              <p className="text-base text-gray-700 mb-4 font-medium">Or join our community for free AI insights:</p>
+              <ZohoTorqueAIButton />
+            </div>
           </motion.div>
         </div>
       </section>

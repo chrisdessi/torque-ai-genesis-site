@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoAIAuditNewsletter from "@/components/ZohoAIAuditNewsletter";
 import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 

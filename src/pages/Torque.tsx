@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
@@ -245,6 +246,11 @@ const Torque = () => {
                     <span>Change management and adoption strategies</span>
                   </li>
                 </ul>
+                
+                <div className="mt-8 p-6 bg-blue-50 border border-blue-100 rounded-xl">
+                  <p className="text-sm text-gray-700 mb-4 font-medium">Get AI insights and exclusive updates:</p>
+                  <ZohoTorqueAIButton />
+                </div>
               </div>
               <div className="order-1 md:order-2">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">

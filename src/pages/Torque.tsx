@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
@@ -90,6 +91,13 @@ const Torque = () => {
               >
                 View Solutions
               </Button>
+            </div>
+            
+            <div className="mt-12 max-w-2xl">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+                <h3 className="text-xl font-semibold mb-4 text-white">Join the Torque AI Community</h3>
+                <ZohoTorqueAIForm />
+              </div>
             </div>
           </motion.div>
         </div>

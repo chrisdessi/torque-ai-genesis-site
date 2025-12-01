@@ -22,6 +22,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Helmet } from "react-helmet";
+import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 
 /**
  * Torque AI – Strategy & Deployment Guide
@@ -466,6 +467,14 @@ export default function TorqueAIStrategyGuidePage() {
                 </DialogTrigger>
               </Dialog>
             </div>
+            
+            <div className="mt-12 max-w-2xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+                <h4 className="text-xl font-semibold mb-4 text-white text-left">Join the Torque AI Newsletter</h4>
+                <ZohoTorqueAIForm />
+              </div>
+            </div>
+            
             <p className="mt-6 text-sm text-white/50">
               © {new Date().getFullYear()} Torque AI. All rights reserved.
             </p>

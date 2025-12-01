@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoAIAuditNewsletter from "@/components/ZohoAIAuditNewsletter";
+import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
@@ -308,6 +309,11 @@ const AIAudit = () => {
               <p className="text-slate-300">
                 I'm not here to impress you with jargon. I'm here to help you find practical leverage so your business runs smoother and grows faster.
               </p>
+              
+              <div className="mt-8 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6">
+                <h3 className="text-lg font-semibold mb-4 text-slate-100">Join the Torque AI Community</h3>
+                <ZohoTorqueAIForm />
+              </div>
             </motion.div>
           </div>
         </section>

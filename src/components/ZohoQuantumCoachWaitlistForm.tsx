@@ -10,10 +10,10 @@ export const ZohoQuantumCoachWaitlistForm = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://idzlf-zgpl.maillist-manage.com/js/optin.min.js';
-    script.async = false;
+    script.async = true;
     script.onload = () => {
       if (window.setupSF) {
-        window.setupSF('sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa', 'ZCFORMVIEW', false, 'light', false, '0');
+        window.setupSF('sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa', 'ZCFORMVIEW', false, 'acc', false, '2');
       }
     };
     document.body.appendChild(script);

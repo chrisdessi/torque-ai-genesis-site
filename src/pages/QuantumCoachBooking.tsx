@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { ZohoQuantumCoachWaitlistForm } from "@/components/ZohoQuantumCoachWaitlistForm";
+import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
 import chrisPortrait from "@/assets/chris-dessi-headshot.jpg";
 
 const QuantumCoachBooking = () => {
@@ -102,6 +103,9 @@ const QuantumCoachBooking = () => {
 
           {/* What You'll Get */}
           <div className="max-w-4xl mx-auto mt-12">
+            <div className="text-center mb-6">
+              <ZohoQuantumShiftButton />
+            </div>
             <div className="grid sm:grid-cols-3 gap-6 text-center">
               <div className="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6">
                 <div className="text-3xl mb-3">📬</div>

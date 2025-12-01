@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
 
 
 const Events = () => {
@@ -179,7 +180,7 @@ const Events = () => {
                 )}
 
                 {/* CTA */}
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 items-start">
                   <Button 
                     asChild 
                     size="lg"
@@ -190,6 +191,9 @@ const Events = () => {
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>
+                  {event.title.includes("Quantum Shift") && (
+                    <ZohoQuantumShiftButton />
+                  )}
                 </div>
               </div>
             </motion.div>

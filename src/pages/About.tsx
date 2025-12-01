@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
 
 import chrisProfile from "@/assets/chris-bio.png";
 import ZapierContactForm from "@/components/ZapierContactForm";
@@ -180,6 +181,7 @@ const About = () => {
                     The Quantum Shift Podcast
                   </Button>
                 </a>
+                <ZohoQuantumShiftButton />
               </div>
             </motion.div>
           </div>
@@ -258,7 +260,7 @@ const About = () => {
               Join our Executive 90-Day Cohort for comprehensive AI education and The Quantum Shift methodology.
               <a href="/blog" className="text-primary hover:underline ml-2">Explore our AI insights →</a>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
                 className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg"
@@ -267,7 +269,7 @@ const About = () => {
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button 
+              <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-12 py-6 text-lg"
@@ -277,6 +279,7 @@ const About = () => {
                   Join 90-Day Executive Cohort
                 </a>
               </Button>
+              <ZohoQuantumShiftButton />
             </div>
           </motion.div>
         </div>

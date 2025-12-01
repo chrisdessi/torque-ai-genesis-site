@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
+import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
 
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { motion } from "framer-motion";
@@ -106,6 +107,9 @@ const QuantumShift = () => {
                   Explore Events
                 </Link>
               </Button>
+              <div className="flex items-center">
+                <ZohoQuantumShiftButton />
+              </div>
             </div>
           </motion.div>
         </div>
@@ -160,14 +164,17 @@ const QuantumShift = () => {
           </motion.div>
 
           <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center mt-8">
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-gray-300 hover:border-purple-600 text-black hover:text-purple-600 font-bold px-10 py-6 text-lg bg-white"
-              onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
-            >
-              APPLY to the next Cohort
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-2 border-gray-300 hover:border-purple-600 text-black hover:text-purple-600 font-bold px-10 py-6 text-lg bg-white"
+                onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
+              >
+                APPLY to the next Cohort
+              </Button>
+              <ZohoQuantumShiftButton />
+            </div>
           </motion.div>
         </div>
       </section>

@@ -87,7 +87,7 @@ export const ZohoTorqueAIButton = () => {
             color: 'rgb(255, 255, 255)',
             border: '1px solid rgb(153, 153, 153)',
             fontSize: '14px',
-            padding: '6px 10px',
+            padding: '10px 20px',
             borderRadius: '5px',
             fontFamily: 'Tahoma',
             textAlign: 'center',
@@ -95,7 +95,7 @@ export const ZohoTorqueAIButton = () => {
             cursor: 'pointer'
           }}
         >
-          <span>FREE AI Community</span>
+          <span>Learn More</span>
         </button>
       </a>
       

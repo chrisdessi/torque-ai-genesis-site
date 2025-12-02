@@ -68,6 +68,79 @@ const Index = () => {
 
       {/* Hero Section with animated waves */}
       <Hero />
+
+      {/* Manifesto Section */}
+      <section className="bg-black text-white py-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-blue-600 to-purple-600 gradient-animate"></div>
+        </div>
+        <div className="section-padding max-w-5xl mx-auto relative z-10">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              Torque AI isn't an "AI consulting firm."<br />
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">We're building something different.</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Most AI companies sell prompts, theory, or hype. Torque AI builds <strong className="text-white">systems</strong> — real ones — that fix bottlenecks, automate work, grow revenue, and permanently change how companies operate.
+            </p>
+          </motion.div>
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center">
+            <p className="text-2xl text-gray-400 mb-4">Our mission is simple:</p>
+            <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+              Make AI real for the people who actually need it:<br />
+              <span className="text-cyan-400">the doers, the builders, the small businesses, the leaders who don't have time to figure this stuff out alone.</span>
+            </h3>
+            <p className="text-lg text-gray-400 mb-4">
+              If you're looking for "AI magic," LinkedIn pontificating, or innovation theater, this isn't it.
+            </p>
+            <p className="text-xl text-white font-semibold">
+              If you want <span className="text-cyan-400">clarity, execution, and results</span>, welcome.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What We Do Section */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              What We Do
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              We help organizations move from "we should use AI" to real results:
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-5 gap-6 mb-12">
+            {[
+              "Automated follow-up",
+              "AI-powered lead flow",
+              "Content engines",
+              "Operational systems",
+              "Revenue acceleration"
+            ].map((item, index) => (
+              <motion.div
+                key={item}
+                {...fadeInUp}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-xl p-6 text-center"
+              >
+                <span className="text-primary text-2xl mb-2 block">→</span>
+                <p className="font-semibold text-foreground">{item}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div {...fadeInUp} className="text-center bg-muted rounded-2xl p-8">
+            <p className="text-lg text-muted-foreground mb-2">No buzzwords. No filler decks.</p>
+            <p className="text-xl font-semibold text-foreground">
+              Just real AI integrated into your real business so you can grow faster, spend less, and work smarter.
+            </p>
+            <div className="mt-8">
+              <ZohoTorqueAIButton />
+            </div>
+          </motion.div>
+        </div>
+      </section>
       
       {/* As Seen On Section */}
       <section className="relative py-24 overflow-hidden border-b border-border">
@@ -325,16 +398,6 @@ const Index = () => {
             >
               Catch Up Now
             </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-10 py-7"
-              asChild
-            >
-              <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
-                Join 90-Day Executive Cohort
-              </a>
-            </Button>
           </motion.div>
           
           <motion.div 
@@ -427,6 +490,152 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Work Looks Like This */}
+      <section className="bg-muted py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              Our Work Looks Like This
+            </h2>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-background rounded-2xl p-10 border border-border">
+              <h3 className="text-2xl font-bold text-foreground mb-4">AI Revenue Engines for Small & Mid-Market Teams</h3>
+              <p className="text-muted-foreground text-lg">We build AI systems that drive leads, follow-up, and conversions — without hiring more staff.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-background rounded-2xl p-10 border border-border">
+              <h3 className="text-2xl font-bold text-foreground mb-4">Workshops That Actually Transform How Your Team Works</h3>
+              <p className="text-muted-foreground text-lg">Tactical, hands-on sessions where we redesign workflows, build custom GPTs, and install automation that sticks.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="bg-background rounded-2xl p-10 border border-border">
+              <h3 className="text-2xl font-bold text-foreground mb-4">AI Audits That Diagnose Your Real Bottlenecks</h3>
+              <p className="text-muted-foreground text-lg">We don't just suggest tools; we show you where money is leaking and install the systems that fix it.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="bg-background rounded-2xl p-10 border border-border">
+              <h3 className="text-2xl font-bold text-foreground mb-4">Done-With-You and Done-For-You AI Implementation</h3>
+              <p className="text-muted-foreground text-lg">We don't hand you a strategy and disappear. We build the system, install it, refine it, and ensure it's adopted.</p>
+            </motion.div>
+          </div>
+          <motion.div {...fadeInUp} className="text-center mt-12">
+            <ZohoTorqueAIButton />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What Makes Torque AI Different */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              What Makes Torque AI Different
+            </h2>
+            <p className="text-xl text-muted-foreground">This is where we distance ourselves from generic AI consultants.</p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-100">
+              <div className="text-4xl font-bold text-cyan-600 mb-4">1</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">We're in the Trenches, Not the Echo Chamber</h3>
+              <p className="text-muted-foreground">We build with you, not for you. We touch the tools, write the workflows, and integrate directly into your stack.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100">
+              <div className="text-4xl font-bold text-purple-600 mb-4">2</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">We Create Business Outcomes — Not Content for Content's Sake</h3>
+              <p className="text-muted-foreground">If it doesn't increase revenue, reduce workload, or improve operations, we don't care.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
+              <div className="text-4xl font-bold text-green-600 mb-4">3</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">We're Allergic to AI Theater</h3>
+              <p className="text-muted-foreground">No endless decks. No "thought leadership" fluff. No hype cycles. Just working systems.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl p-8 border border-orange-100">
+              <div className="text-4xl font-bold text-orange-600 mb-4">4</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">We Work Directly With Founders, Executives, and Operators</h3>
+              <p className="text-muted-foreground">Real businesses. Real constraints. Real urgency.</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.5 }} className="bg-gradient-to-br from-indigo-50 to-violet-50 rounded-2xl p-8 border border-indigo-100 md:col-span-2 lg:col-span-1">
+              <div className="text-4xl font-bold text-indigo-600 mb-4">5</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">We Deliver — Ruthlessly</h3>
+              <p className="text-muted-foreground">We don't promise what we can't build. We don't disappear after kickoff. We don't hide behind hand-wavy jargon. Just results.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We're Built For */}
+      <section className="bg-black text-white py-32">
+        <div className="section-padding max-w-5xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Who We're Built For
+            </h2>
+            <p className="text-xl text-gray-400">Torque AI is for leaders who:</p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {[
+              "Want speed, clarity, and transformation",
+              "Don't have time to experiment",
+              "Want the system built right the first time",
+              "Understand that AI is not a trend — it's infrastructure",
+              "Want a partner they can trust in the unknown"
+            ].map((item, index) => (
+              <motion.div
+                key={item}
+                {...fadeInUp}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+              >
+                <span className="text-cyan-400 text-2xl">✓</span>
+                <p className="text-lg text-gray-200">{item}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div {...fadeInUp} className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+            <p className="text-lg text-gray-400 mb-2">If you want a hype machine, look elsewhere.</p>
+            <p className="text-xl font-semibold text-white">If you want a partner who executes, let's talk.</p>
+            <div className="mt-6">
+              <ZohoTorqueAIButton />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Companies Work With Us */}
+      <section className="bg-white py-32">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              Why Companies Work With Us
+            </h2>
+            <p className="text-xl text-muted-foreground">Because we've helped:</p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center p-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-100">
+              <div className="text-5xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">92%</div>
+              <p className="text-lg text-muted-foreground">eCommerce clients grow YoY</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center p-8 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100">
+              <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">$32M+</div>
+              <p className="text-lg text-muted-foreground">in deals closed using AI-driven workflows</p>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border border-purple-100">
+              <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">Dozens</div>
+              <p className="text-lg text-muted-foreground">of hours/week replaced in manual tasks</p>
+            </motion.div>
+          </div>
+          <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-8">
+            <div className="bg-muted rounded-2xl p-8">
+              <p className="text-lg text-muted-foreground">Founders install content systems that operate 24/7</p>
+            </div>
+            <div className="bg-muted rounded-2xl p-8">
+              <p className="text-lg text-muted-foreground">Entrepreneurs create AI-powered businesses from scratch</p>
+            </div>
+          </motion.div>
+          <motion.div {...fadeInUp} className="text-center mt-12">
+            <p className="text-2xl font-bold text-foreground">We don't sell AI. We install leverage.</p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* The Torque AI Difference */}
       <section className="bg-black text-white py-32 relative overflow-hidden">
         {/* Animated gradient background */}
@@ -484,16 +693,6 @@ const Index = () => {
               onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
             >
               Book Your Audit
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-7"
-              asChild
-            >
-              <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
-                Executive 90-Day Quantum Shift
-              </a>
             </Button>
           </motion.div>
         </div>
@@ -574,7 +773,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Want to Work With Us / Final CTA */}
       <section className="bg-black text-white py-32 relative overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0 opacity-30">
@@ -585,20 +784,55 @@ const Index = () => {
         <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-[float_9s_ease-in-out_infinite]"></div>
         <div className="section-padding max-w-5xl mx-auto text-center relative z-10">
           <motion.h2 {...fadeInUp} className="text-5xl md:text-6xl font-bold mb-8">
-            Ready to Transform Your Business?
+            Want to Work With Us?
           </motion.h2>
-          <motion.p {...fadeInUp} className="text-2xl text-gray-400 mb-12">
-            Limited availability for enterprise clients who are serious about leveraging AI to drive measurable results and sustainable growth.
+          <motion.p {...fadeInUp} className="text-xl text-gray-400 mb-6">
+            Torque AI chooses clients carefully. We want aligned leaders who:
           </motion.p>
-          <motion.div {...fadeInUp}>
+          <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12 text-left">
+            {[
+              "Want transformation, not tactics",
+              "Are willing to adopt change",
+              "Have real business challenges we can solve",
+              "Want partnership, not a vendor relationship"
+            ].map((item, index) => (
+              <div key={item} className="flex items-center gap-3 text-gray-300">
+                <span className="text-cyan-400">✓</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </motion.div>
+          <motion.p {...fadeInUp} className="text-xl text-gray-300 mb-8">If that's you:</motion.p>
+          <motion.div {...fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <Button 
               size="lg"
-              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-12 py-8 text-xl"
+              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-8 py-7"
+              asChild
+            >
+              <Link to="/ai-audit">Get a Free AI Audit</Link>
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-7"
               onClick={() => setIsContactFormOpen(true)}
             >
-              Get in Touch
+              Book a Strategy Call
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-7"
+              asChild
+            >
+              <a href="https://www.westchesteraialliance.com" target="_blank" rel="noopener noreferrer">
+                Join the Westchester AI Alliance
+              </a>
             </Button>
           </motion.div>
+          <motion.p {...fadeInUp} className="text-sm text-gray-500 mt-4">
+            Our educational & community arm, owned by Dessi Ventures, and powered by Torque AI's frameworks.
+          </motion.p>
         </div>
       </section>
 

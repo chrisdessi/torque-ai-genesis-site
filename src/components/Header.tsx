@@ -103,7 +103,7 @@ const Header = () => {
               >
                 <Link
                   to={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                  className="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors flex items-center gap-1"
                 >
                   {item.name}
                   {item.subItems && <ChevronDown className="w-4 h-4" />}
@@ -111,7 +111,7 @@ const Header = () => {
                 <AnimatePresence>
                   {item.subItems && openDropdown === item.name && (
                     <motion.div 
-                      className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-2xl py-2 z-[9999] pointer-events-auto backdrop-blur-sm"
+                      className="absolute top-full left-0 mt-2 w-56 bg-slate-900 border border-slate-700 rounded-lg shadow-2xl py-2 z-[9999] pointer-events-auto backdrop-blur-sm"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -124,7 +124,7 @@ const Header = () => {
                           href={subItem.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-3 text-sm text-popover-foreground hover:text-primary hover:bg-accent transition-all duration-200 font-medium"
+                          className="block px-4 py-3 text-sm text-slate-200 hover:text-sky-400 hover:bg-slate-800 transition-all duration-200 font-medium"
                         >
                           {subItem.name}
                         </a>
@@ -132,7 +132,7 @@ const Header = () => {
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-4 py-3 text-sm text-popover-foreground hover:text-primary hover:bg-accent transition-all duration-200 font-medium"
+                          className="block px-4 py-3 text-sm text-slate-200 hover:text-sky-400 hover:bg-slate-800 transition-all duration-200 font-medium"
                         >
                           {subItem.name}
                         </Link>
@@ -149,9 +149,8 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-3">
             <Button 
               asChild 
-              variant="default"
               size="sm"
-              className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg"
+              className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
             >
               <Link to="/ai-audit">
                 Get Your AI Audit Now
@@ -220,7 +219,7 @@ const Header = () => {
               <div className="pt-4 px-4 space-y-2">
                 <Button 
                   asChild 
-                  className="w-full bg-gradient-to-r from-primary to-purple-600"
+                  className="w-full bg-sky-500 hover:bg-sky-400 text-slate-950"
                 >
                   <Link to="/ai-audit" onClick={() => setIsMenuOpen(false)}>
                     Get Your AI Audit Now

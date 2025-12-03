@@ -172,36 +172,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* As Seen On - Social Proof with Fox5 image */}
-      <section className="bg-slate-50 py-16 border-t border-slate-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div {...fadeInUp} className="text-center mb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 mb-2">As Seen On</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <span className="border border-slate-300 rounded-full px-4 py-2 text-sm text-slate-600 bg-white">Fox 5</span>
-              <span className="border border-slate-300 rounded-full px-4 py-2 text-sm text-slate-600 bg-white">CNBC</span>
-              <span className="border border-slate-300 rounded-full px-4 py-2 text-sm text-slate-600 bg-white">Yahoo Finance</span>
-            </div>
-          </motion.div>
-          <motion.div 
-            {...fadeInUp}
-            transition={{ delay: 0.2 }}
-            className="max-w-2xl mx-auto"
-          >
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200">
-              <img 
-                src={chrisFox5Image} 
-                alt="Chris Dessi on Fox 5 News" 
-                className="w-full h-auto"
-              />
-            </div>
-            <p className="text-center mt-4 text-sm text-slate-500">
-              Chris Dessi, Founder of Torque AI, on Fox 5 discussing AI strategy for businesses
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Services */}
       <section id="services" className="bg-white py-20 border-t border-slate-100">
         <div className="max-w-6xl mx-auto px-4">
@@ -300,31 +270,45 @@ const Index = () => {
 
       {/* About Chris */}
       <section id="about" className="bg-slate-50 py-20 border-t border-slate-100">
-        <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-3 gap-10 items-start">
-          <motion.div {...fadeInUp} className="lg:col-span-1">
-            <div className="w-48 h-48 rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
-              <img src={chrisBioImage} alt="Chris Dessi" className="w-full h-full object-cover" />
-            </div>
-          </motion.div>
-          <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="lg:col-span-2">
-            <h2 className="text-3xl sm:text-4xl font-black mb-5 tracking-tight text-slate-900">
-              Meet Chris Dessi, founder of Torque AI
-            </h2>
-            <p className="text-base text-slate-600 mb-4 leading-relaxed">
-              Chris has spent his career at the intersection of technology, sales and storytelling. He's led
-              teams, driven tens of millions in revenue, written books on AI and social media, and appeared on
-              outlets like Fox 5, CNBC and Yahoo Finance to explain what these tools actually mean for
-              business.
-            </p>
-            <p className="text-base text-slate-600 mb-4 leading-relaxed">
-              Torque AI is his answer to a simple question: how do we help real companies use AI in ways that
-              are grounded, ethical and profitable—without requiring them to rebuild everything from scratch?
-            </p>
-            <p className="text-base text-slate-600 leading-relaxed">
-              You don't need another guru. You need someone who will sit with your team, understand your
-              world, and collaborate on systems that work in practice, not just on paper.
-            </p>
-          </motion.div>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <motion.div {...fadeInUp}>
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200">
+                <img 
+                  src={chrisFox5Image} 
+                  alt="Chris Dessi on Fox 5 News" 
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="mt-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 mb-3">As Seen On</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="border border-slate-300 rounded-full px-4 py-2 text-sm text-slate-600 bg-white">Fox 5</span>
+                  <span className="border border-slate-300 rounded-full px-4 py-2 text-sm text-slate-600 bg-white">CNBC</span>
+                  <span className="border border-slate-300 rounded-full px-4 py-2 text-sm text-slate-600 bg-white">Yahoo Finance</span>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
+              <h2 className="text-3xl sm:text-4xl font-black mb-5 tracking-tight text-slate-900">
+                Meet Chris Dessi, founder of Torque AI
+              </h2>
+              <p className="text-base text-slate-600 mb-4 leading-relaxed">
+                Chris has spent his career at the intersection of technology, sales and storytelling. He's led
+                teams, driven tens of millions in revenue, written books on AI and social media, and appeared on
+                outlets like Fox 5, CNBC and Yahoo Finance to explain what these tools actually mean for
+                business.
+              </p>
+              <p className="text-base text-slate-600 mb-4 leading-relaxed">
+                Torque AI is his answer to a simple question: how do we help real companies use AI in ways that
+                are grounded, ethical and profitable—without requiring them to rebuild everything from scratch?
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                You don't need another guru. You need someone who will sit with your team, understand your
+                world, and collaborate on systems that work in practice, not just on paper.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

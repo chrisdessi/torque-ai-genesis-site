@@ -35,6 +35,30 @@ const EnterpriseAccelerator = () => {
       />
       <Header />
       
+      {/* Video Section */}
+      <section className="bg-black pt-24 pb-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="aspect-video w-full"
+          >
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/MYX6N3m5y_I?si=CRZBlAGV9KWGzeRD" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+              className="rounded-xl shadow-2xl"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative bg-black text-white min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 opacity-10">

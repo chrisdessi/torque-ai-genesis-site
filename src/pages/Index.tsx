@@ -7,6 +7,7 @@ import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, Mail, Phone, Calendar, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
+import chrisFox5Image from "@/assets/chris-fox5.jpg";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
 import ZapierContactForm from "@/components/ZapierContactForm";
@@ -129,25 +130,34 @@ const Index = () => {
               </motion.p>
             </div>
 
-            {/* Social proof block */}
+            {/* Social proof block with Fox5 image */}
             <motion.div 
               {...fadeInUp}
               transition={{ delay: 0.3 }}
-              className="bg-slate-950/90 border border-slate-800 rounded-2xl p-5 shadow-xl"
+              className="bg-slate-950/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl"
             >
-              <p className="text-slate-400 mb-3 font-semibold uppercase tracking-[0.2em] text-[10px]">As seen on</p>
-              <div className="flex flex-wrap gap-2 text-xs text-slate-300">
-                <span className="border border-slate-700 rounded-full px-3 py-1">Fox 5</span>
-                <span className="border border-slate-700 rounded-full px-3 py-1">CNBC</span>
-                <span className="border border-slate-700 rounded-full px-3 py-1">Yahoo Finance</span>
+              <div className="aspect-video overflow-hidden">
+                <img 
+                  src={chrisFox5Image} 
+                  alt="Chris Dessi on Fox 5 News" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="mt-5 border-t border-slate-800 pt-4">
-                <p className="text-[10px] text-slate-400 mb-2 font-semibold uppercase tracking-[0.2em]">Trusted for</p>
-                <ul className="space-y-1 text-sm text-slate-200">
-                  <li>• AI marketing strategy</li>
-                  <li>• Sales & funnel automation</li>
-                  <li>• AI training for teams</li>
-                </ul>
+              <div className="p-4">
+                <p className="text-slate-400 mb-3 font-semibold uppercase tracking-[0.2em] text-[10px]">As seen on</p>
+                <div className="flex flex-wrap gap-2 text-xs text-slate-300">
+                  <span className="border border-slate-700 rounded-full px-3 py-1 bg-slate-800">Fox 5</span>
+                  <span className="border border-slate-700 rounded-full px-3 py-1">CNBC</span>
+                  <span className="border border-slate-700 rounded-full px-3 py-1">Yahoo Finance</span>
+                </div>
+                <div className="mt-4 border-t border-slate-800 pt-3">
+                  <p className="text-[10px] text-slate-400 mb-2 font-semibold uppercase tracking-[0.2em]">Trusted for</p>
+                  <ul className="space-y-1 text-sm text-slate-200">
+                    <li>• AI marketing strategy</li>
+                    <li>• Sales & funnel automation</li>
+                    <li>• AI training for teams</li>
+                  </ul>
+                </div>
               </div>
             </motion.div>
           </div>

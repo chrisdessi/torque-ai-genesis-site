@@ -2,12 +2,31 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ZohoEnterpriseForm from "@/components/ZohoEnterpriseForm";
+
+const APPLY_URL = "https://idzlf-cmpzourl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a";
+
+const ApplyButton = ({ className = "" }: { className?: string }) => (
+  <motion.a
+    href={APPLY_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.2 }}
+    className={className}
+  >
+    <Button 
+      size="lg"
+      className="bg-[#4fd39e] hover:bg-[#4fd39e]/90 text-white font-semibold px-10 py-7 text-lg"
+    >
+      APPLY
+    </Button>
+  </motion.a>
+);
 
 const EnterpriseAccelerator = () => {
   const fadeInUp = {
@@ -78,31 +97,7 @@ const EnterpriseAccelerator = () => {
               In 90 days, Torque AI helps enterprise teams design and implement measurable, compliant AI systems that increase efficiency, accelerate growth, and enhance decision-making.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Button 
-                  size="lg"
-                  className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7 text-lg"
-                  onClick={() => window.location.href = 'mailto:info@torqueapp.ai?subject=Executive Briefing Request'}
-                >
-                  Book Executive Briefing
-                </Button>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white/10 px-10 py-7 text-lg"
-                  onClick={() => window.location.href = 'mailto:info@torqueapp.ai?subject=AI Transformation Inquiry'}
-                >
-                  Start AI Transformation
-                </Button>
-              </motion.div>
+              <ApplyButton />
             </div>
           </motion.div>
         </div>
@@ -145,13 +140,7 @@ const EnterpriseAccelerator = () => {
               <p className="text-2xl font-semibold text-black mb-8 italic">
                 Torque AI changes that.
               </p>
-              <Button 
-                size="lg"
-                className="bg-black hover:bg-black/90 text-white px-10 py-7"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Schedule Consultation
-              </Button>
+              <ApplyButton />
             </motion.div>
             <motion.div 
               {...fadeInUp}
@@ -192,13 +181,7 @@ const EnterpriseAccelerator = () => {
             {...fadeInUp}
             className="text-center mt-16"
           >
-            <Button 
-              size="lg"
-              className="bg-black hover:bg-black/90 text-white px-10 py-7"
-              onClick={() => window.location.href = 'mailto:info@torqueapp.ai?subject=Results Discussion'}
-            >
-              Discuss Results
-            </Button>
+            <ApplyButton />
           </motion.div>
         </div>
       </section>
@@ -259,13 +242,7 @@ const EnterpriseAccelerator = () => {
                   </Button>
                 </a>
               </div>
-              <Button 
-                size="lg"
-                className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-10 py-7"
-                onClick={() => window.location.href = 'mailto:info@torqueapp.ai?subject=Executive Briefing with Chris'}
-              >
-                Book Chris for an Executive Briefing
-              </Button>
+              <ApplyButton />
             </motion.div>
           </div>
         </div>
@@ -288,13 +265,7 @@ const EnterpriseAccelerator = () => {
             Your competitors are using AI to scale. Don't get left behind.
           </motion.p>
           <motion.div {...fadeInUp}>
-            <Button 
-              size="lg"
-              className="bg-[#E5C07B] hover:bg-[#E5C07B]/90 text-black font-semibold px-12 py-8 text-xl"
-              onClick={() => window.location.href = 'mailto:info@torqueapp.ai?subject=Start AI Transformation'}
-            >
-              Start AI Transformation
-            </Button>
+            <ApplyButton />
           </motion.div>
         </div>
       </section>

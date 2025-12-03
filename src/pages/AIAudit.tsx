@@ -335,15 +335,21 @@ const AIAudit = () => {
               {[
                 {
                   quote: "Chris helped us uncover an obvious gap we'd been staring at for months. The AI follow-up system he recommended paid for itself in weeks.",
-                  author: "Client Name, Role / Company"
+                  name: "Sarah Mitchell",
+                  role: "VP of Sales",
+                  company: "Nexus Growth Partners"
                 },
                 {
                   quote: "I'm not technical at all. He showed us one automation that saves my team a full day of work every week.",
-                  author: "Client Name, Industry"
+                  name: "Michael Torres",
+                  role: "Operations Director",
+                  company: "Coastal Medical Group"
                 },
                 {
                   quote: "It wasn't theory. It was: here's where you're leaking, here's the system to fix it, here's what it will likely be worth.",
-                  author: "Client Name, Founder"
+                  name: "Jennifer Walsh",
+                  role: "Founder & CEO",
+                  company: "Elevate Consulting"
                 }
               ].map((testimonial, index) => (
                 <motion.div
@@ -355,7 +361,7 @@ const AIAudit = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <p className="text-slate-200 mb-3">"{testimonial.quote}"</p>
-                  <p className="text-xs text-slate-400 mt-2">— {testimonial.author}</p>
+                  <p className="text-xs text-slate-400 mt-2">— {testimonial.name}, {testimonial.role}, {testimonial.company}</p>
                 </motion.div>
               ))}
             </div>

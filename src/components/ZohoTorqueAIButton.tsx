@@ -81,7 +81,7 @@ export const ZohoTorqueAIButton = () => {
         <button 
           type="button"
           onClick={handleClick}
-          className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors"
+          className="bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors"
         >
           <span>Learn More</span>
         </button>

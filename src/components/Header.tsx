@@ -1,9 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import torqueLogo from "@/assets/torque-ai-logo-white.png";
+import torqueLogo from "@/assets/torque-ai-logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
@@ -64,7 +63,11 @@ const Header = () => {
 
   return (
     <header 
-      className="fixed top-0 w-full z-50 bg-black border-b border-white/10"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-slate-200" 
+          : "bg-white border-b border-slate-100"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
@@ -73,21 +76,10 @@ const Header = () => {
             <motion.img 
               src={torqueLogo} 
               alt="Torque AI" 
-              className="h-14 w-auto"
-              animate={{
-                y: [0, -4, 0],
-                rotate: [0, 3, 0, -3, 0],
-                scale: [1, 1.02, 1]
-              }}
-              transition={{ 
-                duration: 3.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
+              className="h-12 w-auto"
               whileHover={{ 
-                scale: 1.08,
-                rotate: [0, -5, 5, -5, 0],
-                transition: { duration: 0.5 }
+                scale: 1.05,
+                transition: { duration: 0.3 }
               }}
             />
           </Link>
@@ -103,7 +95,7 @@ const Header = () => {
               >
                 <Link
                   to={item.href}
-                  className="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors flex items-center gap-1"
+                  className="text-sm font-medium text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1"
                 >
                   {item.name}
                   {item.subItems && <ChevronDown className="w-4 h-4" />}
@@ -111,7 +103,7 @@ const Header = () => {
                 <AnimatePresence>
                   {item.subItems && openDropdown === item.name && (
                     <motion.div 
-                      className="absolute top-full left-0 mt-2 w-56 bg-slate-900 border border-slate-700 rounded-lg shadow-2xl py-2 z-[9999] pointer-events-auto backdrop-blur-sm"
+                      className="absolute top-full left-0 mt-2 w-56 bg-white border border-slate-200 rounded-lg shadow-xl py-2 z-[9999] pointer-events-auto"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -124,7 +116,7 @@ const Header = () => {
                           href={subItem.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-3 text-sm text-slate-200 hover:text-sky-400 hover:bg-slate-800 transition-all duration-200 font-medium"
+                          className="block px-4 py-3 text-sm text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-all duration-200 font-medium"
                         >
                           {subItem.name}
                         </a>
@@ -132,7 +124,7 @@ const Header = () => {
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-4 py-3 text-sm text-slate-200 hover:text-sky-400 hover:bg-slate-800 transition-all duration-200 font-medium"
+                          className="block px-4 py-3 text-sm text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-all duration-200 font-medium"
                         >
                           {subItem.name}
                         </Link>
@@ -150,7 +142,7 @@ const Header = () => {
             <Button 
               asChild 
               size="sm"
-              className="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold"
+              className="bg-sky-600 hover:bg-sky-700 text-white font-semibold"
             >
               <Link to="/ai-audit">
                 Get Your AI Audit Now
@@ -161,7 +153,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:bg-muted rounded-lg transition-colors"
+            className="lg:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -171,7 +163,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <motion.div 
-            className="lg:hidden border-t border-border"
+            className="lg:hidden border-t border-slate-200 bg-white"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -182,7 +174,7 @@ const Header = () => {
                 <div key={item.name}>
                   <Link
                     to={item.href}
-                    className="block px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                    className="block px-4 py-2 text-sm font-medium text-slate-600 hover:text-sky-600 hover:bg-slate-50 rounded-lg transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -196,7 +188,7 @@ const Header = () => {
                             href={subItem.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block px-4 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                            className="block px-4 py-2 text-xs text-slate-500 hover:text-sky-600 hover:bg-slate-50 rounded-lg transition-colors"
                             onClick={() => setIsMenuOpen(false)}
                           >
                             {subItem.name}
@@ -205,7 +197,7 @@ const Header = () => {
                           <Link
                             key={subItem.name}
                             to={subItem.href}
-                            className="block px-4 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                            className="block px-4 py-2 text-xs text-slate-500 hover:text-sky-600 hover:bg-slate-50 rounded-lg transition-colors"
                             onClick={() => setIsMenuOpen(false)}
                           >
                             {subItem.name}
@@ -219,7 +211,7 @@ const Header = () => {
               <div className="pt-4 px-4 space-y-2">
                 <Button 
                   asChild 
-                  className="w-full bg-sky-500 hover:bg-sky-400 text-slate-950"
+                  className="w-full bg-sky-600 hover:bg-sky-700 text-white"
                 >
                   <Link to="/ai-audit" onClick={() => setIsMenuOpen(false)}>
                     Get Your AI Audit Now

@@ -74,20 +74,11 @@ const EnterpriseAccelerator = () => {
             </p>
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center mb-16"
-          >
-            <ZohoEnterpriseForm />
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="aspect-video w-full"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="aspect-video w-full mb-16"
           >
             <iframe 
               width="100%" 
@@ -100,6 +91,15 @@ const EnterpriseAccelerator = () => {
               allowFullScreen
               className="rounded-xl shadow-2xl"
             />
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex justify-center"
+          >
+            <ZohoEnterpriseForm />
           </motion.div>
 
           <motion.div 

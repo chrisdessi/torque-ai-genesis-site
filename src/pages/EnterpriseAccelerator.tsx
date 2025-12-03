@@ -54,13 +54,39 @@ const EnterpriseAccelerator = () => {
       />
       <Header />
       
-      {/* Video Section */}
+      {/* Hero + Form Section */}
       <section className="bg-black pt-24 pb-12">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+              Transform How Your<br />Organization Works<br />with AI
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
+              Join the AI Transformation
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Be part of the next generation of enterprises leveraging AI for measurable growth.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex justify-center mb-16"
+          >
+            <ZohoEnterpriseForm />
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="aspect-video w-full"
           >
             <iframe 
@@ -75,53 +101,14 @@ const EnterpriseAccelerator = () => {
               className="rounded-xl shadow-2xl"
             />
           </motion.div>
-        </div>
-      </section>
 
-      {/* Hero Section */}
-      <section className="relative bg-black text-white min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-yellow-600/20"></div>
-        </div>
-        <div className="section-padding w-full py-32 relative z-10">
           <motion.div 
-            className="max-w-5xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex justify-center mt-12"
           >
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-              Transform How Your<br />Organization Works<br />with AI
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-              In 90 days, Torque AI helps enterprise teams design and implement measurable, compliant AI systems that increase efficiency, accelerate growth, and enhance decision-making.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <ApplyButton />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Zoho Form Section */}
-      <section className="bg-white py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-              Join the AI Transformation
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Be part of the next generation of enterprises leveraging AI for measurable growth.
-            </p>
-          </motion.div>
-          <motion.div 
-            {...fadeInUp}
-            className="flex justify-center"
-          >
-            <ZohoEnterpriseForm />
+            <ApplyButton />
           </motion.div>
         </div>
       </section>

@@ -313,7 +313,7 @@ const QuantumCoachBooking = () => {
                   One conversation with Chris felt like someone finally turned the lights on in a room I'd been pacing in for years.
                 </p>
               </div>
-              <p className="text-sm text-slate-400">— Name, Role / Description</p>
+              <p className="text-sm text-slate-400">— David Chen, Executive Coach & Entrepreneur</p>
             </motion.div>
             <motion.div 
               className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300"
@@ -325,7 +325,7 @@ const QuantumCoachBooking = () => {
                   He asks the questions I've been afraid to ask myself. I walked away with clarity and an action I could actually take.
                 </p>
               </div>
-              <p className="text-sm text-slate-400">— Name, Role / Description</p>
+              <p className="text-sm text-slate-400">— Rachel Simmons, Marketing Director</p>
             </motion.div>
             <motion.div 
               className="bg-gradient-to-br from-slate-900/70 to-slate-900/40 border border-slate-800/50 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/30 transition-all duration-300"
@@ -337,7 +337,7 @@ const QuantumCoachBooking = () => {
                   It wasn't hype. It was honest, grounded, and strangely calming. I left feeling more like myself.
                 </p>
               </div>
-              <p className="text-sm text-slate-400">— Name, Role / Description</p>
+              <p className="text-sm text-slate-400">— Marcus Thompson, Founder & CEO</p>
             </motion.div>
           </motion.div>
         </div>

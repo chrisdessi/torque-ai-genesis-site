@@ -4,19 +4,57 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, Check, Mail, Phone, Calendar, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import chrisFox5Image from "@/assets/chris-fox5.jpg";
 import heroGraphic from "@/assets/hero-enterprise-graphic.jpg";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import ZapierContactForm from "@/components/ZapierContactForm";
 import { Link } from "react-router-dom";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 
 const Index = () => {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+  
+  // Scroll-based parallax
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
+  const backgroundScale = useTransform(scrollY, [0, 500], [1, 1.1]);
+  const textY = useTransform(scrollY, [0, 300], [0, 50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
+  
+  // Mouse tracking
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  // Smooth spring animation for mouse movement
+  const springConfig = { damping: 25, stiffness: 150 };
+  const smoothMouseX = useSpring(mouseX, springConfig);
+  const smoothMouseY = useSpring(mouseY, springConfig);
+  
+  // Transform mouse position to movement values
+  const rotateX = useTransform(smoothMouseY, [-300, 300], [5, -5]);
+  const rotateY = useTransform(smoothMouseX, [-300, 300], [-5, 5]);
+  const moveX = useTransform(smoothMouseX, [-300, 300], [-20, 20]);
+  const moveY = useTransform(smoothMouseY, [-300, 300], [-20, 20]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (heroRef.current) {
+        const rect = heroRef.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        mouseX.set(e.clientX - centerX);
+        mouseY.set(e.clientY - centerY);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [mouseX, mouseY]);
   
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -69,36 +107,83 @@ const Index = () => {
       />
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
-        {/* Dynamic background graphic */}
-        <div className="absolute inset-0">
-          <img 
+      {/* Hero Section with Parallax and Mouse Tracking */}
+      <section ref={heroRef} className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white min-h-[90vh] flex items-center">
+        {/* Animated background layers */}
+        <motion.div 
+          className="absolute inset-0"
+          style={{ y: backgroundY, scale: backgroundScale }}
+        >
+          <motion.img 
             src={heroGraphic} 
             alt="" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover"
+            style={{ 
+              x: moveX, 
+              y: moveY,
+              opacity: 0.4
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/70"></div>
-        </div>
+        </motion.div>
+        
+        {/* Floating geometric shapes that respond to mouse */}
+        <motion.div 
+          className="absolute top-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-sky-200/30 to-blue-300/20 blur-3xl"
+          style={{ 
+            x: useTransform(smoothMouseX, [-300, 300], [30, -30]),
+            y: useTransform(smoothMouseY, [-300, 300], [30, -30]),
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-gradient-to-tr from-indigo-200/20 to-sky-200/30 blur-3xl"
+          style={{ 
+            x: useTransform(smoothMouseX, [-300, 300], [-40, 40]),
+            y: useTransform(smoothMouseY, [-300, 300], [-40, 40]),
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/3 left-1/3 w-32 h-32 rounded-full bg-sky-400/10 blur-2xl"
+          style={{ 
+            x: useTransform(smoothMouseX, [-300, 300], [50, -50]),
+            y: useTransform(smoothMouseY, [-300, 300], [50, -50]),
+          }}
+        />
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/80"></div>
 
-        <div className="relative max-w-6xl mx-auto px-4 py-20 lg:py-32">
-          <div className="max-w-3xl">
+        <motion.div 
+          className="relative max-w-6xl mx-auto px-4 py-20 lg:py-32"
+          style={{ y: textY, opacity }}
+        >
+          <motion.div 
+            className="max-w-3xl"
+            style={{ 
+              rotateX,
+              rotateY,
+              transformPerspective: 1000
+            }}
+          >
             <motion.p 
-              {...fadeInUp}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-600"
             >
               Enterprise AI Strategy & Implementation
             </motion.p>
             <motion.h1 
-              {...fadeInUp}
-              transition={{ delay: 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900"
             >
               Turn AI Headlines<br/>Into Real Revenue.
             </motion.h1>
             <motion.p 
-              {...fadeInUp}
-              transition={{ delay: 0.2 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl leading-relaxed"
             >
               Torque AI helps businesses move beyond AI experimentation into measurable results—more leads,
@@ -107,35 +192,56 @@ const Index = () => {
             </motion.p>
 
             <motion.div 
-              {...fadeInUp}
-              transition={{ delay: 0.3 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-8 flex flex-wrap gap-4"
             >
-              <Button 
-                className="bg-sky-600 hover:bg-sky-700 text-white font-semibold px-6 py-3 text-base"
-                onClick={() => setIsContactFormOpen(true)}
-              >
-                Book a Strategy Call
-              </Button>
-              <Button 
-                variant="outline"
-                className="border-slate-300 text-slate-700 hover:bg-slate-100 px-6 py-3 text-base"
-                asChild
-              >
-                <a href="#services">See What We Do</a>
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Button 
+                  className="bg-sky-600 hover:bg-sky-700 text-white font-semibold px-6 py-3 text-base"
+                  onClick={() => setIsContactFormOpen(true)}
+                >
+                  Book a Strategy Call
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Button 
+                  variant="outline"
+                  className="border-slate-300 text-slate-700 hover:bg-slate-100 px-6 py-3 text-base"
+                  asChild
+                >
+                  <a href="#services">See What We Do</a>
+                </Button>
+              </motion.div>
             </motion.div>
 
             <motion.p 
-              {...fadeInUp}
-              transition={{ delay: 0.4 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-6 text-sm text-slate-500 max-w-md"
             >
               Led by Chris Dessi — author, consultant, and marketer who has driven over $32M in revenue and
               92% YoY growth for clients using AI and automation.
             </motion.p>
+          </motion.div>
+        </motion.div>
+        
+        {/* Scroll indicator */}
+        <motion.div 
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center">
+            <motion.div 
+              className="w-1.5 h-3 bg-sky-500 rounded-full mt-2"
+              animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Who It's For */}

@@ -374,7 +374,7 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-lg sm:text-xl lg:text-2xl text-slate-600 max-w-2xl mb-6 leading-relaxed"
               >
-                Torque is an AI-powered marketing agency, training partner, and coaching platform. We help you grow revenue, upskill your teams, and support your leadership.
+                Grow Revenue. Upskill Your Teams. Transform Leadership.
               </motion.p>
 
               <motion.div 
@@ -513,26 +513,26 @@ const Index = () => {
 
       {/* Three Paths Section */}
       <section id="paths" className="py-24 bg-gradient-to-b from-slate-100 to-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1400px] mx-auto px-6">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <p className="text-base sm:text-lg font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-4">
-              Three paths, one ecosystem
+              Choose Your Path
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-6">
-              Choose where you need the most help.
+              Three Ways We Drive Results
             </h2>
             <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Most clients work with Torque across multiple tracks over time. But you don't have to do everything at once. Start with the path that solves your biggest bottleneck today.
+              Whether you need to grow revenue, develop your team, or transform yourself — we have a proven path for you.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid lg:grid-cols-3 gap-8 mt-12">
             {paths.map((path, index) => (
               <motion.article
                 key={path.title}
                 {...fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-3xl border border-slate-200 bg-white p-8 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 transition-all font-inter"
+                className="rounded-3xl border border-slate-200 bg-white p-10 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 transition-all font-inter"
               >
                 {/* Animated Icon Illustration */}
                 <PathIllustration 
@@ -543,13 +543,13 @@ const Index = () => {
                   bgColor={path.bgColor}
                 />
                 
-                <div className="flex justify-between items-start mb-3">
-                  <span className="text-sm tracking-[0.14em] uppercase text-slate-500 font-medium">{path.label}</span>
-                  <span className="text-sm text-indigo-600 font-semibold">{path.brand}</span>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-base tracking-[0.1em] uppercase text-slate-500 font-semibold">{path.label}</span>
+                  <span className="text-base text-indigo-600 font-bold">{path.brand}</span>
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">{path.title}</h3>
+                <h3 className="text-2xl lg:text-3xl xl:text-4xl font-black text-slate-900 mb-4">{path.title}</h3>
                 <p className="text-lg lg:text-xl text-slate-600 mb-6 leading-relaxed">{path.copy}</p>
-                <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-6">
+                <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-8">
                   {path.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="text-green-500 mt-1 text-xl">•</span>
@@ -559,12 +559,12 @@ const Index = () => {
                 </ul>
                 <Link 
                   to={path.link}
-                  className="mt-auto inline-flex items-center gap-3 px-6 py-4 rounded-full border-2 border-blue-400 bg-white text-blue-600 text-lg font-semibold hover:bg-blue-50 hover:border-blue-500 hover:-translate-y-0.5 transition-all"
+                  className="mt-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border-2 border-blue-400 bg-white text-blue-600 text-lg font-bold hover:bg-blue-50 hover:border-blue-500 hover:-translate-y-0.5 transition-all"
                 >
                   {path.cta}
                   <span className="text-xl">→</span>
                 </Link>
-                <p className="text-base text-slate-500 mt-4">{path.tagline}</p>
+                <p className="text-base text-slate-500 mt-4 text-center">{path.tagline}</p>
               </motion.article>
             ))}
           </div>

@@ -1,31 +1,41 @@
-import { useEffect } from "react";
+import { useEffect, useId } from "react";
 
 const ZohoAIAuditNewsletter = () => {
+  const uniqueId = useId().replace(/:/g, '');
+  const formId = `sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6_${uniqueId}`;
+
   useEffect(() => {
     // Load Zoho Campaigns script
     const script = document.createElement('script');
     script.src = 'https://idzlf-cmpzourl.maillist-manage.com/js/optin.min.js';
     script.onload = () => {
-      // @ts-ignore
-      if (window.setupSF) {
-        // @ts-ignore
-        window.setupSF('sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6','ZCFORMVIEW',false,'acc',false,'2');
-      }
+      // Initialize form after script loads
+      setTimeout(() => {
+        const formContainer = document.getElementById(formId);
+        if (formContainer) {
+          const form = formContainer.querySelector('form');
+          const submitBtn = formContainer.querySelector('[name="SIGNUP_SUBMIT_BUTTON"]') as HTMLInputElement;
+          
+          if (submitBtn && form) {
+            submitBtn.onclick = () => {
+              const emailInput = formContainer.querySelector('[name="CONTACT_EMAIL"]') as HTMLInputElement;
+              
+              if (emailInput && emailInput.value) {
+                (form as HTMLFormElement).submit();
+              }
+            };
+          }
+        }
+      }, 100);
     };
     document.body.appendChild(script);
-
-    // Add custom form submit handler
-    // @ts-ignore
-    window.runOnFormSubmit_sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6 = (th) => {
-      // Before submit hook - can add custom logic here
-    };
 
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
     };
-  }, []);
+  }, [formId]);
 
   return (
     <>
@@ -55,15 +65,16 @@ const ZohoAIAuditNewsletter = () => {
       `}} />
 
       <div 
-        id="sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6" 
+        id={formId}
         data-type="signupform"
       >
-        <div id="customForm">
+        <div id={`customForm_${uniqueId}`}>
           <div 
             className="quick_form_7_css" 
             style={{
               backgroundColor: 'rgb(255, 255, 255)', 
-              width: '500px', 
+              width: '500px',
+              maxWidth: '100%',
               zIndex: 2, 
               fontFamily: '"Arial"', 
               border: '1px solid rgb(206, 206, 206)', 
@@ -84,13 +95,12 @@ const ZohoAIAuditNewsletter = () => {
                   display: 'block', 
                   boxSizing: 'border-box'
                 }} 
-                id="SIGNUP_HEADING"
               >
                 Step 1: Join The List
               </div>
               <div style={{position: 'relative'}}>
                 <div 
-                  id="Zc_SignupSuccess" 
+                  id={`Zc_SignupSuccess_${uniqueId}`}
                   style={{
                     display: 'none',
                     position: 'absolute',
@@ -117,7 +127,6 @@ const ZohoAIAuditNewsletter = () => {
                         </td>
                         <td>
                           <span 
-                            id="signupSuccessMsg" 
                             style={{
                               color: 'rgb(73, 140, 132)', 
                               fontFamily: 'sans-serif', 
@@ -135,7 +144,7 @@ const ZohoAIAuditNewsletter = () => {
               </div>
               <form 
                 method="POST" 
-                id="zcampaignOptinForm" 
+                id={`zcampaignOptinForm_${uniqueId}`}
                 style={{margin: '0px', width: '100%', textAlign: 'center'}} 
                 action="https://idzlf-cmpzourl.maillist-manage.com/weboptin.zc" 
                 target="_zcSignup"
@@ -151,7 +160,7 @@ const ZohoAIAuditNewsletter = () => {
                     opacity: 1, 
                     display: 'none'
                   }} 
-                  id="errorMsgDiv"
+                  id={`errorMsgDiv_${uniqueId}`}
                 >
                   Please correct the marked field(s) below.
                 </div>
@@ -191,7 +200,7 @@ const ZohoAIAuditNewsletter = () => {
                       boxSizing: 'border-box'
                     }} 
                     name="CONTACT_EMAIL" 
-                    id="EMBED_FORM_EMAIL_LABEL"
+                    id={`EMBED_FORM_EMAIL_LABEL_${uniqueId}`}
                   />
                 </div>
                 <div 
@@ -236,7 +245,7 @@ const ZohoAIAuditNewsletter = () => {
                       boxSizing: 'border-box'
                     }} 
                     name="LASTNAME" 
-                    id="EMBED_FORM_NAME_LABEL"
+                    id={`EMBED_FORM_NAME_LABEL_${uniqueId}`}
                   />
                 </div>
                 <div 
@@ -265,96 +274,42 @@ const ZohoAIAuditNewsletter = () => {
                       borderRadius: '4px'
                     }} 
                     name="SIGNUP_SUBMIT_BUTTON" 
-                    id="zcWebOptin" 
+                    id={`zcWebOptin_${uniqueId}`}
                     value="Join Now"
                   />
                 </div>
-                <input type="hidden" id="fieldBorder" value="" />
-                <input type="hidden" id="submitType" name="submitType" value="optinCustomView" />
-                <input type="hidden" id="emailReportId" name="emailReportId" value="" />
-                <input type="hidden" id="formType" name="formType" value="QuickForm" />
-                <input type="hidden" name="zx" id="cmpZuid" value="1316ccdc8" />
+                <input type="hidden" id={`fieldBorder_${uniqueId}`} value="" />
+                <input type="hidden" id={`submitType_${uniqueId}`} name="submitType" value="optinCustomView" />
+                <input type="hidden" id={`emailReportId_${uniqueId}`} name="emailReportId" value="" />
+                <input type="hidden" id={`formType_${uniqueId}`} name="formType" value="QuickForm" />
+                <input type="hidden" name="zx" id={`cmpZuid_${uniqueId}`} value="1316ccdc8" />
                 <input type="hidden" name="zcvers" value="3.0" />
-                <input type="hidden" name="oldListIds" id="allCheckedListIds" value="" />
-                <input type="hidden" id="mode" name="mode" value="OptinCreateView" />
-                <input type="hidden" id="zcld" name="zcld" value="110489827e27f3fc3" />
-                <input type="hidden" id="zctd" name="zctd" value="110489827e26e63c1" />
-                <input type="hidden" id="document_domain" value="" />
-                <input type="hidden" id="zc_Url" value="idzlf-cmpzourl.maillist-manage.com" />
-                <input type="hidden" id="new_optin_response_in" value="0" />
-                <input type="hidden" id="duplicate_optin_response_in" value="0" />
-                <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW" />
-                <input type="hidden" id="zc_formIx" name="zc_formIx" value="3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6" />
-                <input type="hidden" id="viewFrom" value="URL_ACTION" />
-                <span style={{display: 'none'}} id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
-                <span style={{display: 'none'}} id="dt_FIRSTNAME">1,false,1,First Name,2</span>
-                <span style={{display: 'none'}} id="dt_LASTNAME">1,false,1,Last Name,2</span>
+                <input type="hidden" name="oldListIds" id={`allCheckedListIds_${uniqueId}`} value="" />
+                <input type="hidden" id={`mode_${uniqueId}`} name="mode" value="OptinCreateView" />
+                <input type="hidden" id={`zcld_${uniqueId}`} name="zcld" value="110489827e27f3fc3" />
+                <input type="hidden" id={`zctd_${uniqueId}`} name="zctd" value="110489827e26e63c1" />
+                <input type="hidden" id={`document_domain_${uniqueId}`} value="" />
+                <input type="hidden" id={`zc_Url_${uniqueId}`} value="idzlf-cmpzourl.maillist-manage.com" />
+                <input type="hidden" id={`new_optin_response_in_${uniqueId}`} value="0" />
+                <input type="hidden" id={`duplicate_optin_response_in_${uniqueId}`} value="0" />
+                <input type="hidden" name="zc_trackCode" id={`zc_trackCode_${uniqueId}`} value="ZCFORMVIEW" />
+                <input type="hidden" id={`zc_formIx_${uniqueId}`} name="zc_formIx" value="3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6" />
+                <input type="hidden" id={`viewFrom_${uniqueId}`} value="URL_ACTION" />
+                <span style={{display: 'none'}} id={`dt_CONTACT_EMAIL_${uniqueId}`}>1,true,6,Contact Email,2</span>
+                <span style={{display: 'none'}} id={`dt_FIRSTNAME_${uniqueId}`}>1,false,1,First Name,2</span>
+                <span style={{display: 'none'}} id={`dt_LASTNAME_${uniqueId}`}>1,false,1,Last Name,2</span>
               </form>
             </div>
           </div>
         </div>
         <img 
           src="https://idzlf-cmpzourl.maillist-manage.com/images/spacer.gif" 
-          id="refImage" 
-          onLoad={() => {
-            // @ts-ignore
-            if (window.referenceSetter) {
-              // @ts-ignore
-              window.referenceSetter(document.getElementById('refImage'));
-            }
-          }}
+          id={`refImage_${uniqueId}`}
           style={{display: 'none'}}
+          alt=""
         />
       </div>
-      <input type="hidden" id="signupFormType" value="QuickForm_Horizontal" />
-      <div 
-        id="zcOptinOverLay" 
-        onContextMenu={() => false} 
-        style={{
-          display: 'none',
-          textAlign: 'center', 
-          backgroundColor: 'rgb(0, 0, 0)', 
-          opacity: 0.5, 
-          zIndex: 100, 
-          position: 'fixed', 
-          width: '100%', 
-          top: '0px', 
-          left: '0px', 
-          height: '988px'
-        }}
-      />
-      <div 
-        id="zcOptinSuccessPopup" 
-        style={{
-          display: 'none',
-          zIndex: 9999,
-          width: '800px', 
-          height: '40%',
-          top: '84px',
-          position: 'fixed', 
-          left: '26%',
-          backgroundColor: '#FFFFFF',
-          borderColor: '#E6E6E6', 
-          borderStyle: 'solid', 
-          borderWidth: '1px',  
-          boxShadow: '0 1px 10px #424242',
-          padding: '35px'
-        }}
-      >
-        <span 
-          style={{
-            position: 'absolute',
-            top: '-16px',
-            right: '-14px',
-            zIndex: 99999,
-            cursor: 'pointer'
-          }} 
-          id="closeSuccess"
-        >
-          <img src="https://idzlf-cmpzourl.maillist-manage.com/images/videoclose.png" />
-        </span>
-        <div id="zcOptinSuccessPanel"></div>
-      </div>
+      <input type="hidden" id={`signupFormType_${uniqueId}`} value="QuickForm_Horizontal" />
     </>
   );
 };

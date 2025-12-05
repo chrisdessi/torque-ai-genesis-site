@@ -101,7 +101,7 @@ const Platform = () => {
             {modules.map((module, index) => (
               <Link 
                 key={index} 
-                to={`/products/${module.title.toLowerCase().replace(/\s+/g, '-')}`}
+                to="/contact"
                 className="group"
               >
                 <div className="bg-white border-2 border-gray-100 rounded-xl p-8 hover:border-black transition-all duration-300 hover:shadow-lg">

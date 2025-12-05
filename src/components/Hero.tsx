@@ -124,7 +124,7 @@ const Hero = () => {
               className="group bg-cyan-500 hover:bg-cyan-600 text-white border-0 font-semibold px-10 py-7 text-lg"
               asChild
             >
-              <a href="https://torqueapp.ai/services">
+              <a href="/contact">
                 Learn More
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>

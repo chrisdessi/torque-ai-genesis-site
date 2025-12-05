@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoAIAuditNewsletter from "@/components/ZohoAIAuditNewsletter";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
@@ -313,7 +312,17 @@ const AIAudit = () => {
               
               <div className="mt-8 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6">
                 <h3 className="text-lg font-semibold mb-4 text-slate-100">Join the Torque AI Community</h3>
-                <ZohoTorqueAIForm />
+                <Button 
+                  onClick={() => {
+                    const form = document.getElementById('sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6');
+                    if (form) {
+                      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                  }}
+                  className="bg-sky-600 hover:bg-sky-700 text-white font-semibold"
+                >
+                  Get Your Free AI Strategy Guide
+                </Button>
               </div>
             </motion.div>
           </div>

@@ -2,112 +2,94 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Users, User, Zap, Target, BarChart3, MessageSquare, Award, Lightbulb, Heart, Compass } from "lucide-react";
+import { Sparkles, Rocket, LineChart, DollarSign, Users, Presentation, GraduationCap, User, Compass, Heart, type LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Animated Icon Component for Path Cards
-const AnimatedPathIcon = ({ 
+// Clean Animated Illustration for Path Cards
+const PathIllustration = ({ 
   icon: Icon, 
   secondaryIcon: SecondaryIcon,
   tertiaryIcon: TertiaryIcon,
-  gradient 
+  accentColor,
+  bgColor
 }: { 
-  icon: any; 
-  secondaryIcon: any;
-  tertiaryIcon: any;
-  gradient: string;
+  icon: LucideIcon; 
+  secondaryIcon: LucideIcon;
+  tertiaryIcon: LucideIcon;
+  accentColor: string;
+  bgColor: string;
 }) => (
-  <div className="relative w-full h-48 mb-6 overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100">
-    {/* Background animated shapes */}
+  <div className={`relative w-full h-44 mb-8 overflow-hidden rounded-2xl ${bgColor}`}>
+    {/* Subtle animated gradient background */}
     <motion.div
-      className={`absolute inset-0 opacity-20 ${gradient}`}
-      animate={{ 
-        scale: [1, 1.1, 1],
-        rotate: [0, 5, -5, 0]
+      className="absolute inset-0 opacity-30"
+      style={{
+        background: `radial-gradient(circle at 30% 70%, ${accentColor}20 0%, transparent 50%)`
       }}
-      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-    />
-    
-    {/* Floating circles */}
-    <motion.div
-      className="absolute w-32 h-32 rounded-full bg-gradient-to-r from-sky-200/40 to-blue-300/30 blur-xl"
-      style={{ top: '10%', right: '10%' }}
       animate={{ 
-        x: [0, 20, -10, 0],
-        y: [0, -15, 10, 0],
-        scale: [1, 1.2, 0.9, 1]
+        scale: [1, 1.2, 1],
+        opacity: [0.2, 0.35, 0.2]
       }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
     />
-    <motion.div
-      className="absolute w-24 h-24 rounded-full bg-gradient-to-r from-emerald-200/30 to-green-300/20 blur-lg"
-      style={{ bottom: '15%', left: '5%' }}
-      animate={{ 
-        x: [0, -15, 20, 0],
-        y: [0, 10, -20, 0]
-      }}
-      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-    />
     
-    {/* Main icon */}
+    {/* Main icon - center */}
     <motion.div
       className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
       animate={{ 
-        y: [0, -8, 0],
-        scale: [1, 1.05, 1]
+        y: [0, -6, 0]
       }}
-      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
     >
-      <div className={`w-20 h-20 rounded-2xl ${gradient} flex items-center justify-center shadow-lg`}>
+      <div 
+        className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg"
+        style={{ backgroundColor: accentColor }}
+      >
         <Icon className="w-10 h-10 text-white" strokeWidth={1.5} />
       </div>
     </motion.div>
     
-    {/* Secondary floating icon */}
+    {/* Secondary icon - top left */}
     <motion.div
-      className="absolute"
-      style={{ top: '20%', left: '15%' }}
+      className="absolute top-6 left-8"
       animate={{ 
-        y: [0, -12, 0],
-        x: [0, 8, 0],
-        rotate: [0, 10, -10, 0]
+        y: [0, -8, 0],
+        x: [0, 4, 0]
       }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
     >
-      <div className="w-12 h-12 rounded-xl bg-white shadow-md flex items-center justify-center">
-        <SecondaryIcon className="w-6 h-6 text-slate-600" strokeWidth={1.5} />
+      <div className="w-11 h-11 rounded-xl bg-white shadow-md flex items-center justify-center border border-slate-100">
+        <SecondaryIcon className="w-5 h-5 text-slate-700" strokeWidth={1.5} />
       </div>
     </motion.div>
     
-    {/* Tertiary floating icon */}
+    {/* Tertiary icon - bottom right */}
     <motion.div
-      className="absolute"
-      style={{ bottom: '20%', right: '15%' }}
+      className="absolute bottom-6 right-8"
       animate={{ 
-        y: [0, 10, 0],
-        x: [0, -8, 0],
-        rotate: [0, -15, 15, 0]
+        y: [0, 6, 0],
+        x: [0, -4, 0]
       }}
-      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
     >
-      <div className="w-10 h-10 rounded-lg bg-white shadow-md flex items-center justify-center">
-        <TertiaryIcon className="w-5 h-5 text-slate-500" strokeWidth={1.5} />
+      <div className="w-10 h-10 rounded-lg bg-white shadow-md flex items-center justify-center border border-slate-100">
+        <TertiaryIcon className="w-5 h-5 text-slate-600" strokeWidth={1.5} />
       </div>
     </motion.div>
     
-    {/* Animated lines/connections */}
-    <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-      <motion.path
-        d="M 30% 30% Q 50% 20% 70% 40%"
-        stroke="currentColor"
-        strokeWidth="1"
-        fill="none"
-        className="text-slate-300"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.5 }}
-        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-      />
-    </svg>
+    {/* Decorative dots */}
+    <motion.div
+      className="absolute top-8 right-16 w-2 h-2 rounded-full"
+      style={{ backgroundColor: accentColor, opacity: 0.4 }}
+      animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
+      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+    />
+    <motion.div
+      className="absolute bottom-10 left-16 w-1.5 h-1.5 rounded-full"
+      style={{ backgroundColor: accentColor, opacity: 0.3 }}
+      animate={{ scale: [1, 1.8, 1], opacity: [0.2, 0.5, 0.2] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+    />
   </div>
 );
 
@@ -134,10 +116,11 @@ const Index = () => {
       cta: "Grow your revenue with AI",
       tagline: "Best for founders, CMOs, and revenue leaders.",
       link: "/services",
-      icon: TrendingUp,
-      secondaryIcon: BarChart3,
-      tertiaryIcon: Target,
-      gradient: "bg-gradient-to-br from-sky-500 to-blue-600"
+      icon: Rocket,
+      secondaryIcon: LineChart,
+      tertiaryIcon: DollarSign,
+      accentColor: "#0284c7",
+      bgColor: "bg-gradient-to-br from-sky-50 to-blue-100"
     },
     {
       label: "For Your Team",
@@ -154,9 +137,10 @@ const Index = () => {
       tagline: "Best for HR, L&D, and executive sponsors.",
       link: "/quantum-shift/coach",
       icon: Users,
-      secondaryIcon: MessageSquare,
-      tertiaryIcon: Award,
-      gradient: "bg-gradient-to-br from-emerald-500 to-green-600"
+      secondaryIcon: Presentation,
+      tertiaryIcon: GraduationCap,
+      accentColor: "#059669",
+      bgColor: "bg-gradient-to-br from-emerald-50 to-green-100"
     },
     {
       label: "For You",
@@ -173,9 +157,10 @@ const Index = () => {
       tagline: "Best for individuals ready for change.",
       link: "/quantum-shift/coach",
       icon: User,
-      secondaryIcon: Lightbulb,
-      tertiaryIcon: Compass,
-      gradient: "bg-gradient-to-br from-violet-500 to-purple-600"
+      secondaryIcon: Compass,
+      tertiaryIcon: Heart,
+      accentColor: "#7c3aed",
+      bgColor: "bg-gradient-to-br from-violet-50 to-purple-100"
     }
   ];
 
@@ -212,7 +197,7 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans">
+    <div className="min-h-screen bg-white text-slate-800 font-inter">
       <SEO 
         title="Torque | AI-Powered Growth for Business, Teams & Leaders"
         description="Torque is an AI-powered marketing agency, training partner, and coaching platform. We help you grow revenue with AI-driven marketing, upskill your teams, and support your leadership."
@@ -469,14 +454,15 @@ const Index = () => {
                 key={path.title}
                 {...fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-3xl border border-slate-200 bg-white p-8 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 transition-all"
+                className="rounded-3xl border border-slate-200 bg-white p-8 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 transition-all font-inter"
               >
                 {/* Animated Icon Illustration */}
-                <AnimatedPathIcon 
+                <PathIllustration 
                   icon={path.icon}
                   secondaryIcon={path.secondaryIcon}
                   tertiaryIcon={path.tertiaryIcon}
-                  gradient={path.gradient}
+                  accentColor={path.accentColor}
+                  bgColor={path.bgColor}
                 />
                 
                 <div className="flex justify-between items-start mb-3">

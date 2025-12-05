@@ -327,22 +327,22 @@ const Index = () => {
                 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-8"
               >
                 Transform:{" "}
-                <span className="relative inline-block h-[1.2em] overflow-hidden align-bottom">
+                <span className="relative inline-block h-[1.15em] overflow-hidden align-bottom">
                   <motion.span
                     className="block text-indigo-600"
                     animate={{
-                      y: ["0%", "0%", "-100%", "-100%", "-200%", "-200%", "0%"]
+                      y: ["0em", "0em", "-1.15em", "-1.15em", "-2.3em", "-2.3em", "0em"]
                     }}
                     transition={{
-                      duration: 12,
+                      duration: 9,
                       repeat: Infinity,
                       ease: "easeInOut",
                       times: [0, 0.30, 0.33, 0.63, 0.66, 0.96, 1]
                     }}
                   >
-                    <span className="block h-[1.2em]">Your Business</span>
-                    <span className="block h-[1.2em]">Your Team</span>
-                    <span className="block h-[1.2em]">You</span>
+                    <span className="block h-[1.15em] leading-[1.15]">Your Business</span>
+                    <span className="block h-[1.15em] leading-[1.15]">Your Team</span>
+                    <span className="block h-[1.15em] leading-[1.15]">You</span>
                   </motion.span>
                 </span>
               </motion.div>
@@ -352,19 +352,19 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-wrap gap-4 sm:gap-6 mb-8"
+                className="flex flex-wrap gap-6 sm:gap-10 mb-10"
               >
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-sky-500"></div>
-                  <span className="text-lg sm:text-xl font-semibold text-slate-700">Marketing</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-4 h-4 rounded-full bg-sky-500"></div>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-700">Marketing</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                  <span className="text-lg sm:text-xl font-semibold text-slate-700">Training</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-4 h-4 rounded-full bg-emerald-500"></div>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-700">Training</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-violet-500"></div>
-                  <span className="text-lg sm:text-xl font-semibold text-slate-700">Coaching</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-4 h-4 rounded-full bg-violet-500"></div>
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-700">Coaching</span>
                 </div>
               </motion.div>
               

@@ -324,9 +324,24 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-6 text-slate-900"
               >
-                One ecosystem to level up{" "}
-                <span className="bg-gradient-to-r from-sky-600 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                  your business, your team, and you.
+                Transform:{" "}
+                <span className="relative inline-block h-[1.2em] overflow-hidden align-bottom">
+                  <motion.span
+                    className="block bg-gradient-to-r from-sky-600 via-emerald-500 to-green-600 bg-clip-text text-transparent"
+                    animate={{
+                      y: ["0%", "0%", "-100%", "-100%", "-200%", "-200%", "0%"]
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      times: [0, 0.3, 0.33, 0.63, 0.66, 0.96, 1]
+                    }}
+                  >
+                    <span className="block h-[1.2em]">YOUR BUSINESS</span>
+                    <span className="block h-[1.2em]">YOUR TEAM</span>
+                    <span className="block h-[1.2em]">YOU</span>
+                  </motion.span>
                 </span>
               </motion.h1>
               

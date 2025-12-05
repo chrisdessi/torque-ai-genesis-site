@@ -19,10 +19,11 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
-				'serif': ['Playfair Display', 'serif'],
-			},
+		fontFamily: {
+			'space': ['"Space Grotesk"', 'system-ui', '-apple-system', 'sans-serif'],
+			'inter': ['Inter', 'sans-serif'],
+			'serif': ['Playfair Display', 'serif'],
+		},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

@@ -342,7 +342,7 @@ const Index = () => {
                   >
                     <span className="block h-[1.15em] leading-[1.15]">Your Business</span>
                     <span className="block h-[1.15em] leading-[1.15]">Your Team</span>
-                    <span className="block h-[1.15em] leading-[1.15]">You</span>
+                    <span className="block h-[1.15em] leading-[1.15]">Yourself</span>
                   </motion.span>
                 </span>
               </motion.div>

@@ -138,7 +138,7 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans">
+    <div className="min-h-screen bg-white text-slate-800 font-sans">
       <SEO 
         title="Torque | Strategy, Marketing & Training"
         description="Torque helps you clarify what to build, design modern marketing & sales systems, and train your team to use them. Strategy Sprints, Revenue Engines, and Workshops."
@@ -148,28 +148,28 @@ const Index = () => {
       <Header />
 
       {/* Hero Section with Animated Background */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-800 via-slate-950 to-black pt-24 pb-20 min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 pt-24 pb-20 min-h-[90vh] flex items-center">
         {/* Animated Background Orbs */}
         <div className="absolute inset-0 overflow-hidden">
           <FloatingOrb 
-            className="top-10 right-[10%] bg-gradient-to-br from-sky-500/30 to-blue-600/20" 
+            className="top-10 right-[10%] bg-gradient-to-br from-sky-400/20 to-blue-500/10" 
             size="w-96 h-96"
             duration={25}
           />
           <FloatingOrb 
-            className="bottom-20 left-[5%] bg-gradient-to-tr from-emerald-500/25 to-green-400/15" 
+            className="bottom-20 left-[5%] bg-gradient-to-tr from-emerald-400/15 to-green-300/10" 
             size="w-[500px] h-[500px]"
             delay={2}
             duration={30}
           />
           <FloatingOrb 
-            className="top-1/3 left-1/4 bg-gradient-to-r from-indigo-500/20 to-purple-500/15" 
+            className="top-1/3 left-1/4 bg-gradient-to-r from-indigo-400/15 to-purple-400/10" 
             size="w-72 h-72"
             delay={4}
             duration={22}
           />
           <FloatingOrb 
-            className="bottom-1/3 right-[20%] bg-gradient-to-bl from-cyan-400/20 to-teal-500/15" 
+            className="bottom-1/3 right-[20%] bg-gradient-to-bl from-cyan-300/15 to-teal-400/10" 
             size="w-56 h-56"
             delay={1}
             duration={18}
@@ -177,11 +177,11 @@ const Index = () => {
           
           {/* Grid pattern overlay */}
           <div 
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute inset-0 opacity-[0.04]"
             style={{
               backgroundImage: `
-                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+                linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)
               `,
               backgroundSize: '60px 60px'
             }}
@@ -194,7 +194,7 @@ const Index = () => {
               stroke="url(#gradient1)"
               strokeWidth="1"
               initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.3 }}
+              animate={{ pathLength: 1, opacity: 0.4 }}
               transition={{ duration: 3, delay: 0.5, ease: "easeInOut" }}
             />
             <motion.line
@@ -202,19 +202,19 @@ const Index = () => {
               stroke="url(#gradient2)"
               strokeWidth="1"
               initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.2 }}
+              animate={{ pathLength: 1, opacity: 0.3 }}
               transition={{ duration: 3.5, delay: 1, ease: "easeInOut" }}
             />
             <defs>
               <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0" />
-                <stop offset="50%" stopColor="#38bdf8" stopOpacity="1" />
-                <stop offset="100%" stopColor="#22c55e" stopOpacity="0" />
+                <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0" />
+                <stop offset="50%" stopColor="#0ea5e9" stopOpacity="1" />
+                <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
               </linearGradient>
               <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#a78bfa" stopOpacity="0" />
-                <stop offset="50%" stopColor="#a78bfa" stopOpacity="1" />
-                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0" />
+                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="1" />
+                <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>
@@ -223,14 +223,14 @@ const Index = () => {
           {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-white/40 rounded-full"
+              className="absolute w-1 h-1 bg-slate-400/60 rounded-full"
               style={{
                 left: `${10 + (i * 7)}%`,
                 top: `${20 + (i * 5) % 60}%`,
               }}
               animate={{
                 y: [-20, 20, -20],
-                opacity: [0.2, 0.6, 0.2],
+                opacity: [0.3, 0.7, 0.3],
               }}
               transition={{
                 duration: 4 + i * 0.5,
@@ -250,11 +250,11 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.p 
+            <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-indigo-300 mb-4"
+                className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-4"
               >
                 Strategy • Marketing & Sales • Training
               </motion.p>
@@ -263,21 +263,21 @@ const Index = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.05] mb-8 text-white"
+                className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.05] mb-8 text-slate-900"
               >
-                <span className="bg-gradient-to-r from-sky-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-sky-600 via-emerald-500 to-green-600 bg-clip-text text-transparent">
                   Work smarter,
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-emerald-400 to-lime-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-emerald-500 to-lime-500 bg-clip-text text-transparent">
                   sell more,
                 </span>
                 <br />
-                <span className="text-white">
+                <span className="text-slate-900">
                   and level up
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-indigo-600 to-sky-500 bg-clip-text text-transparent">
                   your people.
                 </span>
               </motion.h1>
@@ -286,7 +286,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="text-lg sm:text-xl lg:text-2xl text-slate-300 max-w-2xl mb-8 leading-relaxed"
+                className="text-lg sm:text-xl lg:text-2xl text-slate-600 max-w-2xl mb-8 leading-relaxed"
               >
                 Torque helps you clarify what to build, design modern marketing & sales systems, and train your team to use them.
               </motion.p>
@@ -295,7 +295,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/85 border border-slate-600/45 text-base text-indigo-200 mb-8"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-base text-indigo-600 mb-8 shadow-sm"
               >
                 <Sparkles className="w-5 h-5" />
                 <span>Built and optimized systems behind $32M+ in influenced revenue</span>
@@ -309,7 +309,7 @@ const Index = () => {
               >
                 <Button
                   onClick={() => scrollToForm("Strategy Sprint")}
-                  className="px-8 py-4 text-lg rounded-full bg-gradient-to-r from-green-500 to-lime-400 text-green-950 font-bold hover:opacity-95 shadow-xl shadow-green-500/40 hover:shadow-green-500/60 transition-all"
+                  className="px-8 py-4 text-lg rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold hover:opacity-95 shadow-xl shadow-green-500/30 hover:shadow-green-500/50 transition-all"
                 >
                   Book a Strategy Sprint Call
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -317,7 +317,7 @@ const Index = () => {
                 <Button
                   variant="outline"
                   onClick={scrollToPillars}
-                  className="px-6 py-4 text-lg rounded-full border-slate-500/60 bg-slate-900/85 text-slate-200 hover:bg-slate-900 hover:border-slate-400"
+                  className="px-6 py-4 text-lg rounded-full border-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-400"
                 >
                   View all services
                   <ArrowDown className="w-5 h-5 ml-2" />
@@ -330,45 +330,37 @@ const Index = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="rounded-3xl border border-slate-600/40 p-6 lg:p-8"
-              style={{
-                background: `
-                  radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 58%),
-                  radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.16), transparent 60%),
-                  rgba(15, 23, 42, 0.98)
-                `,
-                boxShadow: "0 30px 90px rgba(15, 23, 42, 0.95)"
-              }}
+              className="rounded-3xl border border-slate-200 p-6 lg:p-8 bg-white shadow-xl"
             >
-              <div className="font-bold text-xl text-slate-100 mb-4">Where Torque fits in your business</div>
+              <div className="font-bold text-xl text-slate-900 mb-4">Where Torque fits in your business</div>
               
               <div className="space-y-6">
                 <div>
                   <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-100">1. Strategy Sprints</span>
-                    <span className="text-indigo-300 text-sm">3–4 weeks to a clear roadmap</span>
+                    <span className="text-lg font-semibold text-slate-900">1. Strategy Sprints</span>
+                    <span className="text-indigo-600 text-sm">3–4 weeks to a clear roadmap</span>
                   </div>
-                  <p className="text-slate-400 text-base">
+                  <p className="text-slate-500 text-base">
                     We map your funnel, systems, and workflows, then prioritize what to do now, next, and never.
                   </p>
                 </div>
                 
                 <div>
                   <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-100">2. Marketing & Sales Engines</span>
-                    <span className="text-indigo-300 text-sm">Systems, automation & execution</span>
+                    <span className="text-lg font-semibold text-slate-900">2. Marketing & Sales Engines</span>
+                    <span className="text-indigo-600 text-sm">Systems, automation & execution</span>
                   </div>
-                  <p className="text-slate-400 text-base">
+                  <p className="text-slate-500 text-base">
                     From content and ads to CRM and follow-up, we design and implement revenue systems that compound.
                   </p>
                 </div>
                 
                 <div>
                   <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-100">3. Training & Workshops</span>
-                    <span className="text-indigo-300 text-sm">Teams that actually adopt the work</span>
+                    <span className="text-lg font-semibold text-slate-900">3. Training & Workshops</span>
+                    <span className="text-indigo-600 text-sm">Teams that actually adopt the work</span>
                   </div>
-                  <p className="text-slate-400 text-base">
+                  <p className="text-slate-500 text-base">
                     Live and virtual training so your people know how to use the tools, systems, and playbooks built for them.
                   </p>
                 </div>
@@ -383,9 +375,9 @@ const Index = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="w-8 h-12 border-2 border-slate-500 rounded-full flex justify-center">
+          <div className="w-8 h-12 border-2 border-slate-300 rounded-full flex justify-center">
             <motion.div 
-              className="w-2 h-4 bg-sky-400 rounded-full mt-2"
+              className="w-2 h-4 bg-sky-500 rounded-full mt-2"
               animate={{ y: [0, 14, 0], opacity: [1, 0.3, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -394,16 +386,16 @@ const Index = () => {
       </section>
 
       {/* Pillar Overview */}
-      <section ref={pillarsRef} id="pillars" className="py-20 bg-gradient-to-b from-black to-slate-950">
+      <section ref={pillarsRef} id="pillars" className="py-20 bg-gradient-to-b from-slate-100 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div {...fadeInUp} className="text-center mb-12">
-            <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-indigo-300 mb-3">
+            <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-3">
               Three core pillars
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
               Start where the leverage is highest.
             </h2>
-            <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
               Most clients work with Torque across all three pillars over time. But you don't have to do everything at once. Start with the pillar that solves the biggest bottleneck today.
             </p>
           </motion.div>
@@ -414,16 +406,15 @@ const Index = () => {
                 key={pillar.title}
                 {...fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-3xl border border-slate-600/40 bg-slate-900/96 p-6 lg:p-8 flex flex-col gap-4 hover:border-blue-400/90 hover:bg-slate-900/99 hover:-translate-y-1 transition-all duration-150"
-                style={{ boxShadow: "0 18px 55px rgba(15, 23, 42, 0.95)" }}
+                className="rounded-3xl border border-slate-200 bg-white p-6 lg:p-8 flex flex-col gap-4 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-150 shadow-lg"
               >
-                <div className="text-sm uppercase tracking-[0.14em] text-slate-400">{pillar.label}</div>
-                <h3 className="text-xl lg:text-2xl font-bold text-slate-100">{pillar.title}</h3>
-                <p className="text-base lg:text-lg text-slate-400 flex-grow">{pillar.summary}</p>
+                <div className="text-sm uppercase tracking-[0.14em] text-slate-500">{pillar.label}</div>
+                <h3 className="text-xl lg:text-2xl font-bold text-slate-900">{pillar.title}</h3>
+                <p className="text-base lg:text-lg text-slate-600 flex-grow">{pillar.summary}</p>
                 <Button
                   variant="outline"
                   onClick={() => scrollToForm(pillar.service)}
-                  className="mt-3 w-full rounded-full border-blue-500/85 bg-slate-900/96 text-blue-100 hover:bg-blue-600/25 hover:border-blue-500 text-base py-3"
+                  className="mt-3 w-full rounded-full border-blue-500 bg-white text-blue-600 hover:bg-blue-50 hover:border-blue-600 text-base py-3"
                 >
                   {pillar.cta}
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -435,30 +426,30 @@ const Index = () => {
       </section>
 
       {/* Detail: Strategy Sprint */}
-      <section id="strategy" className="py-16 border-t border-slate-700/25 bg-slate-950">
+      <section id="strategy" className="py-16 border-t border-slate-200 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
             <motion.div {...fadeInUp}>
-              <div className="text-sm uppercase tracking-[0.16em] text-indigo-300 mb-3">Pillar 1</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100 mb-4">Strategy Sprint</h2>
-              <p className="text-lg lg:text-xl text-slate-400 mb-6">
+              <div className="text-sm uppercase tracking-[0.16em] text-indigo-600 mb-3">Pillar 1</div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Strategy Sprint</h2>
+              <p className="text-lg lg:text-xl text-slate-600 mb-6">
                 A 3–4 week engagement to step back, see the whole system, and decide what to build now, later, or never.
               </p>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-200 mb-6">
+              <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-6">
                 {strategyDetails.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-slate-500 text-xl">•</span>
+                    <span className="text-slate-400 text-xl">•</span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-base lg:text-lg text-slate-400 mb-6">
-                <strong className="text-slate-200">Outcome:</strong> {strategyDetails.outcome}
+              <p className="text-base lg:text-lg text-slate-600 mb-6">
+                <strong className="text-slate-900">Outcome:</strong> {strategyDetails.outcome}
               </p>
               <div className="flex flex-wrap gap-4 items-center">
                 <Button
                   onClick={() => scrollToForm("Strategy Sprint")}
-                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-500 to-lime-400 text-green-950 font-semibold hover:opacity-95 shadow-lg shadow-green-500/40"
+                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold hover:opacity-95 shadow-lg shadow-green-500/30"
                 >
                   Book a Strategy Sprint Call
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -467,10 +458,10 @@ const Index = () => {
               </div>
             </motion.div>
 
-            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-600/40 bg-slate-900/96 p-6 lg:p-8">
-              <div className="font-bold text-xl text-slate-100 mb-2">What we often uncover</div>
-              <div className="text-sm text-indigo-300 mb-4">Common patterns</div>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-400">
+            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
+              <div className="font-bold text-xl text-slate-900 mb-2">What we often uncover</div>
+              <div className="text-sm text-indigo-600 mb-4">Common patterns</div>
+              <ul className="space-y-3 text-base lg:text-lg text-slate-600">
                 {strategyDetails.patterns.map((pattern, i) => (
                   <li key={i}>{pattern}</li>
                 ))}
@@ -481,30 +472,30 @@ const Index = () => {
       </section>
 
       {/* Detail: Marketing & Sales */}
-      <section id="marketing-sales" className="py-16 border-t border-slate-700/25 bg-slate-950">
+      <section id="marketing-sales" className="py-16 border-t border-slate-200 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
             <motion.div {...fadeInUp}>
-              <div className="text-sm uppercase tracking-[0.16em] text-indigo-300 mb-3">Pillar 2</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100 mb-4">Marketing & Sales Engine</h2>
-              <p className="text-lg lg:text-xl text-slate-400 mb-6">
+              <div className="text-sm uppercase tracking-[0.16em] text-indigo-600 mb-3">Pillar 2</div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Marketing & Sales Engine</h2>
+              <p className="text-lg lg:text-xl text-slate-600 mb-6">
                 We design and build the marketing and sales systems that turn your strategy into consistent revenue.
               </p>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-200 mb-6">
+              <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-6">
                 {marketingDetails.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-slate-500 text-xl">•</span>
+                    <span className="text-slate-400 text-xl">•</span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-base lg:text-lg text-slate-400 mb-6">
-                <strong className="text-slate-200">Outcome:</strong> {marketingDetails.outcome}
+              <p className="text-base lg:text-lg text-slate-600 mb-6">
+                <strong className="text-slate-900">Outcome:</strong> {marketingDetails.outcome}
               </p>
               <div className="flex flex-wrap gap-4 items-center">
                 <Button
                   onClick={() => scrollToForm("Marketing & Sales Engine")}
-                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-500 to-lime-400 text-green-950 font-semibold hover:opacity-95 shadow-lg shadow-green-500/40"
+                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold hover:opacity-95 shadow-lg shadow-green-500/30"
                 >
                   Talk about your revenue systems
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -513,10 +504,10 @@ const Index = () => {
               </div>
             </motion.div>
 
-            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-600/40 bg-slate-900/96 p-6 lg:p-8">
-              <div className="font-bold text-xl text-slate-100 mb-2">How we work</div>
-              <div className="text-sm text-indigo-300 mb-4">Implementation rhythm</div>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-400">
+            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-200 bg-white p-6 lg:p-8 shadow-sm">
+              <div className="font-bold text-xl text-slate-900 mb-2">How we work</div>
+              <div className="text-sm text-indigo-600 mb-4">Implementation rhythm</div>
+              <ul className="space-y-3 text-base lg:text-lg text-slate-600">
                 {marketingDetails.howWeWork.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
@@ -527,30 +518,30 @@ const Index = () => {
       </section>
 
       {/* Detail: Training & Workshops */}
-      <section id="training-workshops" className="py-16 border-t border-slate-700/25 bg-slate-950">
+      <section id="training-workshops" className="py-16 border-t border-slate-200 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
             <motion.div {...fadeInUp}>
-              <div className="text-sm uppercase tracking-[0.16em] text-indigo-300 mb-3">Pillar 3</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100 mb-4">Training & Workshops</h2>
-              <p className="text-lg lg:text-xl text-slate-400 mb-6">
+              <div className="text-sm uppercase tracking-[0.16em] text-indigo-600 mb-3">Pillar 3</div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Training & Workshops</h2>
+              <p className="text-lg lg:text-xl text-slate-600 mb-6">
                 If you want the work to stick, your people need to know how to use it. Training and workshops turn strategy and systems into new habits.
               </p>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-200 mb-6">
+              <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-6">
                 {trainingDetails.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-slate-500 text-xl">•</span>
+                    <span className="text-slate-400 text-xl">•</span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-base lg:text-lg text-slate-400 mb-6">
-                <strong className="text-slate-200">Outcome:</strong> {trainingDetails.outcome}
+              <p className="text-base lg:text-lg text-slate-600 mb-6">
+                <strong className="text-slate-900">Outcome:</strong> {trainingDetails.outcome}
               </p>
               <div className="flex flex-wrap gap-4 items-center">
                 <Button
                   onClick={() => scrollToForm("Training & Workshops")}
-                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-500 to-lime-400 text-green-950 font-semibold hover:opacity-95 shadow-lg shadow-green-500/40"
+                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold hover:opacity-95 shadow-lg shadow-green-500/30"
                 >
                   Book a training session
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -559,10 +550,10 @@ const Index = () => {
               </div>
             </motion.div>
 
-            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-600/40 bg-slate-900/96 p-6 lg:p-8">
-              <div className="font-bold text-xl text-slate-100 mb-2">Popular formats</div>
-              <div className="text-sm text-indigo-300 mb-4">What clients choose</div>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-400">
+            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
+              <div className="font-bold text-xl text-slate-900 mb-2">Popular formats</div>
+              <div className="text-sm text-indigo-600 mb-4">What clients choose</div>
+              <ul className="space-y-3 text-base lg:text-lg text-slate-600">
                 {trainingDetails.formats.map((format, i) => (
                   <li key={i}>{format}</li>
                 ))}
@@ -573,27 +564,19 @@ const Index = () => {
       </section>
 
       {/* Contact Form */}
-      <section ref={formRef} id="form" className="py-20 border-t border-slate-700/25 bg-slate-950">
+      <section ref={formRef} id="form" className="py-20 border-t border-slate-200 bg-slate-100">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div
             {...fadeInUp}
-            className="rounded-3xl border border-slate-600/45 p-8 sm:p-10"
-            style={{
-              background: `
-                radial-gradient(circle at top left, rgba(37, 99, 235, 0.17), transparent 55%),
-                radial-gradient(circle at bottom right, rgba(22, 163, 74, 0.18), transparent 55%),
-                rgba(15, 23, 42, 0.98)
-              `,
-              boxShadow: "0 26px 70px rgba(15, 23, 42, 0.95)"
-            }}
+            className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 shadow-xl"
           >
             <div className="mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-100 mb-2">Work with Torque</h2>
-              <p className="text-lg text-slate-300">
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-2">Work with Torque</h2>
+              <p className="text-lg text-slate-600">
                 Share a few details and we'll follow up within one business day to schedule a call and recommend a starting point.
               </p>
               {selectedService && (
-                <div className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-full border border-slate-500/70 bg-slate-900/90 text-sm text-slate-200">
+                <div className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-full border border-indigo-200 bg-indigo-50 text-sm text-indigo-700">
                   <Sparkles className="w-4 h-4" />
                   <span>Selected service: {selectedService}</span>
                 </div>

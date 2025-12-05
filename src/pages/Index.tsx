@@ -105,62 +105,29 @@ const Index = () => {
     {
       label: "For Your Business",
       brand: "Torque AI",
-      title: "AI-Powered Marketing & Revenue Systems",
-      copy: "We build and optimize marketing engines that drive predictable revenue — using AI to accelerate what works.",
-      items: [
-        "AI-powered content & ad systems",
-        "Funnel optimization & CRM automation",
-        "Revenue dashboards & reporting",
-        "Strategy sprints & implementation"
-      ],
-      cta: "Grow your revenue with AI",
-      tagline: "Best for founders, CMOs, and revenue leaders.",
+      title: "Revenue & Marketing Systems",
+      copy: "AI-powered marketing engines that drive predictable revenue.",
+      cta: "GROW",
       link: "/services",
-      icon: Rocket,
-      secondaryIcon: LineChart,
-      tertiaryIcon: DollarSign,
-      accentColor: "#0284c7",
-      bgColor: "bg-gradient-to-br from-sky-50 to-blue-100"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop&q=80"
     },
     {
       label: "For Your Team",
       brand: "Quantum Shift",
-      title: "Leadership Training & Team Development",
-      copy: "We train sales teams, leadership groups, and cross-functional orgs to perform at the next level — with workshops, coaching, and programs.",
-      items: [
-        "Sales kickoffs & team intensives",
-        "Leadership development programs",
-        "Generational & communication workshops",
-        "Train-the-trainer for internal champions"
-      ],
-      cta: "Level up your team",
-      tagline: "Best for HR, L&D, and executive sponsors.",
+      title: "Leadership & Team Development",
+      copy: "Workshops and programs that elevate performance.",
+      cta: "TRAIN",
       link: "/quantum-shift/coach",
-      icon: Users,
-      secondaryIcon: Presentation,
-      tertiaryIcon: GraduationCap,
-      accentColor: "#059669",
-      bgColor: "bg-gradient-to-br from-emerald-50 to-green-100"
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop&q=80"
     },
     {
-      label: "For You",
+      label: "For Yourself",
       brand: "Quantum Coaching",
-      title: "1:1 Coaching & Personal Growth",
-      copy: "Whether you're navigating a career pivot, building new habits, or seeking clarity in chaos — Quantum Coaching is your personal development partner.",
-      items: [
-        "1:1 executive and life coaching",
-        "Career reinvention & transition support",
-        "AI-enabled personal productivity systems",
-        "Community access & accountability"
-      ],
-      cta: "Start your transformation",
-      tagline: "Best for individuals ready for change.",
+      title: "1:1 Coaching & Growth",
+      copy: "Personal transformation with executive coaching.",
+      cta: "TRANSFORM",
       link: "/quantum-shift/coach",
-      icon: User,
-      secondaryIcon: Compass,
-      tertiaryIcon: Heart,
-      accentColor: "#7c3aed",
-      bgColor: "bg-gradient-to-br from-violet-50 to-purple-100"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop&q=80"
     }
   ];
 
@@ -532,39 +499,32 @@ const Index = () => {
                 key={path.title}
                 {...fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-3xl border border-slate-200 bg-white p-10 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 transition-all font-inter"
+                className="rounded-3xl border border-slate-200 bg-white overflow-hidden flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 transition-all font-inter"
               >
-                {/* Animated Icon Illustration */}
-                <PathIllustration 
-                  icon={path.icon}
-                  secondaryIcon={path.secondaryIcon}
-                  tertiaryIcon={path.tertiaryIcon}
-                  accentColor={path.accentColor}
-                  bgColor={path.bgColor}
-                />
-                
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-base tracking-[0.1em] uppercase text-slate-500 font-semibold">{path.label}</span>
-                  <span className="text-base text-indigo-600 font-bold">{path.brand}</span>
+                {/* Stock Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src={path.image} 
+                    alt={path.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl xl:text-4xl font-black text-slate-900 mb-4">{path.title}</h3>
-                <p className="text-lg lg:text-xl text-slate-600 mb-6 leading-relaxed">{path.copy}</p>
-                <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-8">
-                  {path.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="text-green-500 mt-1 text-xl">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link 
-                  to={path.link}
-                  className="mt-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border-2 border-blue-400 bg-white text-blue-600 text-lg font-bold hover:bg-blue-50 hover:border-blue-500 hover:-translate-y-0.5 transition-all"
-                >
-                  {path.cta}
-                  <span className="text-xl">→</span>
-                </Link>
-                <p className="text-base text-slate-500 mt-4 text-center">{path.tagline}</p>
+                
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="text-base tracking-[0.1em] uppercase text-slate-500 font-semibold">{path.label}</span>
+                    <span className="text-base text-indigo-600 font-bold">{path.brand}</span>
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl xl:text-4xl font-black text-slate-900 mb-4">{path.title}</h3>
+                  <p className="text-lg lg:text-xl text-slate-600 mb-8 leading-relaxed">{path.copy}</p>
+                  <Link 
+                    to={path.link}
+                    className="mt-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white text-xl font-black tracking-wide hover:from-emerald-600 hover:to-green-700 hover:-translate-y-0.5 transition-all shadow-lg"
+                  >
+                    {path.cta}
+                  </Link>
+                </div>
               </motion.article>
             ))}
           </div>

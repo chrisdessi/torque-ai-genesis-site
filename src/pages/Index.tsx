@@ -61,16 +61,16 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#020617] text-gray-200 font-inter" style={{ background: 'radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%)' }}>
+    <div className="min-h-screen flex flex-col bg-background font-space">
       <SEO 
-        title="Torque | Grow. Train. Transform."
+        title="Torque AI | Grow. Train. Transform."
         description="Torque is an AI-powered marketing agency, training partner, and coaching platform. We help you grow revenue with AI-driven marketing, upskill your teams, and support your leadership."
         keywords="AI marketing, business growth, team training, executive coaching, leadership development, revenue systems, AI consulting"
         url="/"
       />
       <Header />
 
-      <main className="flex-1">
+      <main className="flex-1 bg-background">
         {/* Hero Section */}
         <section className="max-w-[1120px] mx-auto px-6 py-11 grid grid-cols-1 lg:grid-cols-[1.5fr_1.1fr] gap-10 items-center">
           {/* Left Content */}
@@ -79,35 +79,35 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xs tracking-[0.18em] uppercase text-indigo-300 mb-3">
+            <p className="text-xs tracking-[0.18em] uppercase text-primary mb-3">
               Grow • Train • Transform
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold leading-[1.1] mb-3">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold leading-[1.1] mb-3 text-foreground">
               AI-powered support for{" "}
-              <span className="bg-gradient-to-r from-sky-400 to-green-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 your business, your team, and your own leadership.
               </span>
             </h1>
-            <p className="text-base text-gray-400 max-w-[34rem] mb-5">
+            <p className="text-base text-muted-foreground max-w-[34rem] mb-5">
               Torque is a marketing agency, training partner, and coaching platform. We build AI-driven revenue systems, train your teams on AI and modern sales, and coach you through the transformation as a leader.
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-600/50 text-sm text-indigo-200 mb-4 flex-wrap">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border text-sm text-foreground mb-4 flex-wrap">
               <span>Torque AI • Quantum Shift • Memento</span>
-              <span className="text-xs text-gray-400">Used to influence $32M+ in revenue and support dozens of leadership teams</span>
+              <span className="text-xs text-muted-foreground">Used to influence $32M+ in revenue and support dozens of leadership teams</span>
             </div>
 
             <div className="flex flex-wrap gap-3 items-center">
               <button
                 onClick={() => scrollToSection('paths')}
-                className="px-5 py-3 rounded-full bg-gradient-to-r from-green-500 to-lime-400 text-green-950 text-sm font-semibold inline-flex items-center gap-2 shadow-[0_14px_40px_rgba(22,163,74,0.55)] hover:shadow-[0_18px_50px_rgba(22,163,74,0.65)] hover:-translate-y-0.5 transition-all cursor-pointer"
+                className="px-5 py-3 rounded-full bg-gradient-to-r from-accent to-[hsl(84,81%,44%)] text-accent-foreground text-sm font-semibold inline-flex items-center gap-2 shadow-[0_14px_40px_hsl(142_71%_45%/0.35)] hover:shadow-[0_18px_50px_hsl(142_71%_45%/0.45)] hover:-translate-y-0.5 transition-all cursor-pointer"
               >
                 Choose Grow, Train, or Transform
                 <span>↓</span>
               </button>
               <button
                 onClick={() => scrollToSection('grow')}
-                className="px-4 py-2.5 rounded-full border border-slate-500/60 bg-slate-900/85 text-gray-200 text-sm inline-flex items-center gap-2 hover:bg-slate-900 hover:border-slate-400 hover:-translate-y-0.5 transition-all cursor-pointer"
+                className="px-4 py-2.5 rounded-full border border-border bg-secondary text-foreground text-sm inline-flex items-center gap-2 hover:bg-secondary/80 hover:-translate-y-0.5 transition-all cursor-pointer"
               >
                 Go straight to growth
                 <span>→</span>
@@ -120,43 +120,36 @@ const Index = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-[1.4rem] border border-slate-600/40 p-5 text-sm flex flex-col gap-3 shadow-[0_30px_90px_rgba(15,23,42,0.95)]"
-            style={{
-              background: `
-                radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 58%),
-                radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.16), transparent 60%),
-                rgba(15, 23, 42, 0.98)
-              `
-            }}
+            className="rounded-[22px] border border-border bg-card p-5 text-sm flex flex-col gap-3 shadow-[0_10px_30px_hsl(222_47%_11%/0.06)]"
           >
-            <h3 className="font-semibold text-base mb-1">How the ecosystem fits together</h3>
+            <h3 className="font-semibold text-base mb-1 text-foreground">How the ecosystem fits together</h3>
 
             <div>
               <div className="flex justify-between items-center gap-2 flex-wrap">
-                <span className="font-medium">Grow</span>
-                <span className="text-xs text-indigo-300">Torque AI • Memento</span>
+                <span className="font-medium text-foreground">Grow</span>
+                <span className="text-xs text-primary">Torque AI • Memento</span>
               </div>
-              <p className="text-sm text-gray-400 mt-1">
+              <p className="text-sm text-muted-foreground mt-1">
                 We build and optimize revenue and marketing systems with AI baked in, then keep your exec team aligned with Memento.
               </p>
             </div>
 
             <div>
               <div className="flex justify-between items-center gap-2 flex-wrap">
-                <span className="font-medium">Train</span>
-                <span className="text-xs text-indigo-300">Quantum Shift Workshops</span>
+                <span className="font-medium text-foreground">Train</span>
+                <span className="text-xs text-primary">Quantum Shift Workshops</span>
               </div>
-              <p className="text-sm text-gray-400 mt-1">
+              <p className="text-sm text-muted-foreground mt-1">
                 We train your sales teams, leaders, and cross-generational groups to use AI and modern frameworks in the real world.
               </p>
             </div>
 
             <div>
               <div className="flex justify-between items-center gap-2 flex-wrap">
-                <span className="font-medium">Transform</span>
-                <span className="text-xs text-indigo-300">Quantum Shift Coaching</span>
+                <span className="font-medium text-foreground">Transform</span>
+                <span className="text-xs text-primary">Quantum Shift Coaching</span>
               </div>
-              <p className="text-sm text-gray-400 mt-1">
+              <p className="text-sm text-muted-foreground mt-1">
                 We work 1:1 with you as an executive or founder to reinvent how you lead, sell, and work with AI in this next chapter.
               </p>
             </div>
@@ -166,13 +159,13 @@ const Index = () => {
         {/* Path Cards Section */}
         <section id="paths" className="max-w-[1120px] mx-auto px-6 py-9">
           <div className="text-center mb-7">
-            <p className="text-xs tracking-[0.18em] uppercase text-indigo-300 mb-2">
+            <p className="text-xs tracking-[0.18em] uppercase text-primary mb-2">
               Pick your starting point
             </p>
-            <h2 className="text-2xl font-bold mb-1.5">
+            <h2 className="text-2xl font-bold mb-1.5 text-foreground">
               Do you need to grow, train, or transform?
             </h2>
-            <p className="text-sm text-gray-400 max-w-[38rem] mx-auto">
+            <p className="text-sm text-muted-foreground max-w-[38rem] mx-auto">
               All three matter. But today, one of them is loudest. Start there. You can always layer in the others once the first fire is handled.
             </p>
           </div>
@@ -186,21 +179,21 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-[1.4rem] border border-slate-600/40 bg-slate-900/95 p-5 flex flex-col gap-3 hover:-translate-y-1 hover:shadow-[0_18px_55px_rgba(15,23,42,0.95)] hover:border-blue-400/90 transition-all"
+                className="rounded-[22px] border border-border bg-card p-5 flex flex-col gap-3 hover:-translate-y-1 hover:shadow-[0_18px_55px_hsl(222_47%_11%/0.08)] hover:border-primary/50 transition-all"
               >
-                <div className="text-xs tracking-[0.14em] uppercase text-gray-400">
+                <div className="text-xs tracking-[0.14em] uppercase text-muted-foreground">
                   {card.label}
                 </div>
-                <div className="text-sm text-indigo-300 font-medium">
+                <div className="text-sm text-primary font-medium">
                   {card.brand}
                 </div>
-                <h3 className="text-lg font-bold text-gray-100">
+                <h3 className="text-lg font-bold text-foreground">
                   {card.title}
                 </h3>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-muted-foreground">
                   {card.copy}
                 </p>
-                <ul className="text-sm text-gray-200 flex flex-col gap-1.5">
+                <ul className="text-sm text-foreground flex flex-col gap-1.5">
                   {card.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span>•</span>
@@ -210,12 +203,12 @@ const Index = () => {
                 </ul>
                 <Link
                   to={card.link}
-                  className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/85 bg-slate-900/95 text-sm font-medium text-blue-100 hover:bg-blue-600/25 hover:border-blue-500 hover:-translate-y-0.5 transition-all self-start"
+                  className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/80 bg-background text-sm font-medium text-primary hover:bg-primary/10 hover:border-primary hover:-translate-y-0.5 transition-all self-start"
                 >
                   {card.cta}
                   <span>→</span>
                 </Link>
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-muted-foreground mt-1">
                   {card.tagline}
                 </p>
               </motion.article>

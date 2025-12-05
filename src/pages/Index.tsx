@@ -411,45 +411,85 @@ const Index = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Card */}
+            {/* Right Card - Dynamic & Creative */}
             <motion.aside
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="rounded-3xl border border-slate-200 p-6 lg:p-8 bg-white shadow-xl"
+              className="rounded-3xl border border-slate-200 p-8 lg:p-10 bg-gradient-to-br from-white via-slate-50 to-white shadow-2xl relative overflow-hidden"
             >
-              <div className="font-bold text-xl text-slate-900 mb-4">Where Torque fits in your business</div>
+              {/* Animated background elements */}
+              <motion.div 
+                className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-100 to-blue-200 rounded-full blur-3xl opacity-50"
+                animate={{ scale: [1, 1.2, 1], x: [0, 10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div 
+                className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-emerald-100 to-green-200 rounded-full blur-3xl opacity-40"
+                animate={{ scale: [1, 1.3, 1], y: [0, -10, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              />
               
-              <div className="space-y-5">
-                <div>
-                  <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-900">1. For Your Business</span>
-                    <span className="text-indigo-600 text-sm font-medium">Torque AI</span>
+              <div className="relative z-10 space-y-8">
+                {/* Item 1 */}
+                <motion.div 
+                  className="group"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-center gap-4 mb-2">
+                    <span className="text-4xl lg:text-5xl font-black text-sky-500">1.</span>
+                    <div>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-900">For Your Business</h3>
+                      <span className="text-lg font-semibold text-sky-600">Torque AI</span>
+                    </div>
                   </div>
-                  <p className="text-slate-500 text-base">
+                  <p className="text-lg lg:text-xl text-slate-600 pl-14 lg:pl-16">
                     AI-powered marketing, revenue systems, and growth strategy.
                   </p>
-                </div>
+                </motion.div>
                 
-                <div>
-                  <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-900">2. For Your Team</span>
-                    <span className="text-indigo-600 text-sm font-medium">Quantum Shift</span>
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+                
+                {/* Item 2 */}
+                <motion.div 
+                  className="group"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-center gap-4 mb-2">
+                    <span className="text-4xl lg:text-5xl font-black text-emerald-500">2.</span>
+                    <div>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-900">For Your Team</h3>
+                      <span className="text-lg font-semibold text-emerald-600">Quantum Shift</span>
+                    </div>
                   </div>
-                  <p className="text-slate-500 text-base">
+                  <p className="text-lg lg:text-xl text-slate-600 pl-14 lg:pl-16">
                     Leadership training, team development, and workshops.
                   </p>
-                </div>
+                </motion.div>
                 
-                <div>
-                  <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-900">3. For You</span>
-                    <span className="text-indigo-600 text-sm font-medium">Memento</span>
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+                
+                {/* Item 3 */}
+                <motion.div 
+                  className="group"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="flex items-center gap-4 mb-2">
+                    <span className="text-4xl lg:text-5xl font-black text-violet-500">3.</span>
+                    <div>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-900">For Yourself</h3>
+                      <span className="text-lg font-semibold text-violet-600">Memento</span>
+                    </div>
                   </div>
-                  <p className="text-slate-500 text-base">
+                  <p className="text-lg lg:text-xl text-slate-600 pl-14 lg:pl-16">
                     1:1 coaching, career reinvention, and personal growth.
                   </p>
-                </div>
+                </motion.div>
               </div>
             </motion.aside>
           </div>

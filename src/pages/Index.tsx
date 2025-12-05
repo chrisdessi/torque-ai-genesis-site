@@ -324,25 +324,25 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-8"
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-8"
               >
                 Transform:{" "}
-                <span className="relative inline-block h-[1.3em] overflow-hidden align-bottom">
+                <span className="relative inline-block h-[1.2em] overflow-hidden align-bottom">
                   <motion.span
                     className="block text-indigo-600"
                     animate={{
                       y: ["0%", "0%", "-100%", "-100%", "-200%", "-200%", "0%"]
                     }}
                     transition={{
-                      duration: 6,
+                      duration: 12,
                       repeat: Infinity,
                       ease: "easeInOut",
-                      times: [0, 0.28, 0.33, 0.61, 0.66, 0.95, 1]
+                      times: [0, 0.30, 0.33, 0.63, 0.66, 0.96, 1]
                     }}
                   >
-                    <span className="block h-[1.3em]">Your Business</span>
-                    <span className="block h-[1.3em]">Your Team</span>
-                    <span className="block h-[1.3em]">You</span>
+                    <span className="block h-[1.2em]">Your Business</span>
+                    <span className="block h-[1.2em]">Your Team</span>
+                    <span className="block h-[1.2em]">You</span>
                   </motion.span>
                 </span>
               </motion.div>

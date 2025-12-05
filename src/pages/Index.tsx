@@ -1,26 +1,11 @@
-import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowDown, Sparkles } from "lucide-react";
-import { useState, useRef } from "react";
-import ZohoContactForm from "@/components/ZohoContactForm";
+import { Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
-  const [selectedService, setSelectedService] = useState<string>("");
-  const formRef = useRef<HTMLDivElement>(null);
-  const pillarsRef = useRef<HTMLDivElement>(null);
-
-  const scrollToForm = (service?: string) => {
-    if (service) setSelectedService(service);
-    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  const scrollToPillars = () => {
-    pillarsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -28,85 +13,56 @@ const Index = () => {
     transition: { duration: 0.6 }
   };
 
-  const pillars = [
+  const paths = [
     {
-      label: "Pillar 1",
-      title: "Strategy Sprint (3–4 Weeks)",
-      summary: "A short, intense engagement to identify your highest-ROI opportunities and build a roadmap you can execute immediately.",
-      cta: "Book a Strategy Sprint Call",
-      service: "Strategy Sprint"
+      label: "For Your Business",
+      brand: "Torque AI",
+      title: "AI-Powered Marketing & Revenue Systems",
+      copy: "We build and optimize marketing engines that drive predictable revenue — using AI to accelerate what works.",
+      items: [
+        "AI-powered content & ad systems",
+        "Funnel optimization & CRM automation",
+        "Revenue dashboards & reporting",
+        "Strategy sprints & implementation"
+      ],
+      cta: "Grow your revenue with AI",
+      tagline: "Best for founders, CMOs, and revenue leaders.",
+      link: "/services"
     },
     {
-      label: "Pillar 2",
-      title: "Marketing & Sales Engine",
-      summary: "We design and implement modern marketing and sales systems — content, ads, funnels, CRM, and follow-up — that drive consistent revenue.",
-      cta: "Talk about your revenue systems",
-      service: "Marketing & Sales Engine"
+      label: "For Your Team",
+      brand: "Quantum Shift",
+      title: "Leadership Training & Team Development",
+      copy: "We train sales teams, leadership groups, and cross-functional orgs to perform at the next level — with workshops, coaching, and programs.",
+      items: [
+        "Sales kickoffs & team intensives",
+        "Leadership development programs",
+        "Generational & communication workshops",
+        "Train-the-trainer for internal champions"
+      ],
+      cta: "Level up your team",
+      tagline: "Best for HR, L&D, and executive sponsors.",
+      link: "/quantum-shift/coach"
     },
     {
-      label: "Pillar 3",
-      title: "Training & Workshops",
-      summary: "Live and virtual training to get your team using modern tools, workflows, and playbooks in their day-to-day work.",
-      cta: "Book a training session",
-      service: "Training & Workshops"
+      label: "For You",
+      brand: "Memento",
+      title: "1:1 Coaching & Personal Growth",
+      copy: "Whether you're navigating a career pivot, building new habits, or seeking clarity in chaos — Memento is your personal development partner.",
+      items: [
+        "1:1 executive and life coaching",
+        "Career reinvention & transition support",
+        "AI-enabled personal productivity systems",
+        "Community access & accountability"
+      ],
+      cta: "Start your transformation",
+      tagline: "Best for individuals ready for change.",
+      link: "/quantum-shift/coach"
     }
   ];
 
-  const strategyDetails = {
-    features: [
-      "Executive workshop to align on goals, constraints, and reality.",
-      "Deep dive into your funnel, systems, processes, and data.",
-      "Opportunity assessment across efficiency, revenue, automation, and modern tools.",
-      "Prioritized roadmap with a clear Now / Next / Later / Never plan.",
-      "Quick wins implemented during the sprint, not just slides and ideas.",
-      "Recommended tech stack and implementation plan for the next 90–180 days."
-    ],
-    outcome: "Everyone on your leadership team sees the same picture of where you are, where you're going, and the shortest path to get there.",
-    patterns: [
-      "Leads leaking between marketing, sales, and operations.",
-      "Teams using 10 tools when 3 would do more, better.",
-      "No clear owner for revenue-critical workflows.",
-      "Opportunities to automate 10–30% of repetitive work.",
-      "No shared roadmap everyone can actually follow."
-    ]
-  };
-
-  const marketingDetails = {
-    features: [
-      "Content creation workflows (social, email, long-form, video support).",
-      "Paid advertising structure, creative frameworks, and optimization cycles.",
-      "Funnel design and automation from first touch to booked call to closed deal.",
-      "CRM setup and automation (HubSpot, Salesforce, Zoho, GoHighLevel & more).",
-      "Lead nurturing, follow-up sequences, and pipeline hygiene systems.",
-      "Reporting dashboards for marketing, sales, and leadership to see what's working."
-    ],
-    outcome: "A modern revenue engine that captures, nurtures, and closes more of the opportunities you already have — and scales with you as you grow.",
-    howWeWork: [
-      "We start from your Strategy Sprint or do a focused diagnostic.",
-      "We map your existing funnel and tools before adding new ones.",
-      "We prioritize the smallest changes that move the biggest numbers.",
-      "We build, test, and iterate in short, focused cycles.",
-      "Your team is involved, so they can own the systems long term."
-    ]
-  };
-
-  const trainingDetails = {
-    features: [
-      "Foundations: training for non-technical teams on modern tools and workflows.",
-      "Department-specific sessions for marketing, sales, operations, and customer success.",
-      "Leadership workshops on decision-making, communication, and change management.",
-      "Role-specific playbooks your team can reference after the session.",
-      "Live, virtual, or on-site delivery depending on the size and needs of your organization.",
-      "Optional ongoing office hours and Q&A support."
-    ],
-    outcome: "Your team becomes confident and capable using the systems you've invested in — instead of reverting back to the old way of doing things.",
-    formats: [
-      "Half-day executive offsites.",
-      "Full-day team intensives.",
-      "Multi-week virtual training series.",
-      "Department-specific breakout sessions.",
-      "\"Train the trainer\" programs for internal champions."
-    ]
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   // Floating orb component
@@ -140,9 +96,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white text-slate-800 font-sans">
       <SEO 
-        title="Torque | Strategy, Marketing & Training"
-        description="Torque helps you clarify what to build, design modern marketing & sales systems, and train your team to use them. Strategy Sprints, Revenue Engines, and Workshops."
-        keywords="business strategy, marketing systems, sales automation, team training, workshops, CRM setup, funnel design, leadership training, revenue growth, business consulting"
+        title="Torque | AI-Powered Growth for Business, Teams & Leaders"
+        description="Torque is an AI-powered marketing agency, training partner, and coaching platform. We help you grow revenue with AI-driven marketing, upskill your teams, and support your leadership."
+        keywords="AI marketing, business growth, team training, executive coaching, leadership development, revenue systems, AI consulting"
         url="/"
       />
       <Header />
@@ -243,42 +199,31 @@ const Index = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 w-full">
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
+          <div className="grid lg:grid-cols-[1.5fr_1.1fr] gap-12 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-            <motion.p 
+              <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-4"
               >
-                Strategy • Marketing & Sales • Training
+                AI-powered growth • Marketing • Training • Coaching
               </motion.p>
               
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.05] mb-8 text-slate-900"
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-6 text-slate-900"
               >
+                One ecosystem to level up{" "}
                 <span className="bg-gradient-to-r from-sky-600 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                  Work smarter,
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-emerald-500 to-lime-500 bg-clip-text text-transparent">
-                  sell more,
-                </span>
-                <br />
-                <span className="text-slate-900">
-                  and level up
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-indigo-600 to-sky-500 bg-clip-text text-transparent">
-                  your people.
+                  your business, your team, and you.
                 </span>
               </motion.h1>
               
@@ -286,19 +231,20 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="text-lg sm:text-xl lg:text-2xl text-slate-600 max-w-2xl mb-8 leading-relaxed"
+                className="text-lg sm:text-xl lg:text-2xl text-slate-600 max-w-2xl mb-6 leading-relaxed"
               >
-                Torque helps you clarify what to build, design modern marketing & sales systems, and train your team to use them.
+                Torque is an AI-powered marketing agency, training partner, and coaching platform. We help you grow revenue with AI-driven marketing, upskill your teams, and support your leadership in the middle of all this change.
               </motion.p>
 
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-base text-indigo-600 mb-8 shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-sm sm:text-base text-slate-700 mb-6 shadow-sm flex-wrap"
               >
-                <Sparkles className="w-5 h-5" />
-                <span>Built and optimized systems behind $32M+ in influenced revenue</span>
+                <Sparkles className="w-5 h-5 text-indigo-500" />
+                <span className="font-medium">Torque AI • Quantum Shift • Memento</span>
+                <span className="text-slate-500 text-xs sm:text-sm">Used to influence $100M+ in revenue</span>
               </motion.div>
 
               <motion.div 
@@ -307,21 +253,20 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="flex flex-wrap gap-4 items-center"
               >
-                <Button
-                  onClick={() => scrollToForm("Strategy Sprint")}
-                  className="px-8 py-4 text-lg rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold hover:opacity-95 shadow-xl shadow-green-500/30 hover:shadow-green-500/50 transition-all"
+                <button
+                  onClick={() => scrollToSection('paths')}
+                  className="px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold hover:opacity-95 shadow-xl shadow-green-500/30 hover:shadow-green-500/50 transition-all flex items-center gap-2"
                 >
-                  Book a Strategy Sprint Call
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={scrollToPillars}
-                  className="px-6 py-4 text-lg rounded-full border-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-400"
+                  Start by choosing your path
+                  <span>↓</span>
+                </button>
+                <button
+                  onClick={() => scrollToSection('business')}
+                  className="px-5 py-3 sm:px-6 sm:py-4 text-base sm:text-lg rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-400 transition-all flex items-center gap-2"
                 >
-                  View all services
-                  <ArrowDown className="w-5 h-5 ml-2" />
-                </Button>
+                  See what we do
+                  <span>→</span>
+                </button>
               </motion.div>
             </motion.div>
 
@@ -334,34 +279,34 @@ const Index = () => {
             >
               <div className="font-bold text-xl text-slate-900 mb-4">Where Torque fits in your business</div>
               
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <div>
                   <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-900">1. Strategy Sprints</span>
-                    <span className="text-indigo-600 text-sm">3–4 weeks to a clear roadmap</span>
+                    <span className="text-lg font-semibold text-slate-900">1. For Your Business</span>
+                    <span className="text-indigo-600 text-sm font-medium">Torque AI</span>
                   </div>
                   <p className="text-slate-500 text-base">
-                    We map your funnel, systems, and workflows, then prioritize what to do now, next, and never.
+                    AI-powered marketing, revenue systems, and growth strategy.
                   </p>
                 </div>
                 
                 <div>
                   <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-900">2. Marketing & Sales Engines</span>
-                    <span className="text-indigo-600 text-sm">Systems, automation & execution</span>
+                    <span className="text-lg font-semibold text-slate-900">2. For Your Team</span>
+                    <span className="text-indigo-600 text-sm font-medium">Quantum Shift</span>
                   </div>
                   <p className="text-slate-500 text-base">
-                    From content and ads to CRM and follow-up, we design and implement revenue systems that compound.
+                    Leadership training, team development, and workshops.
                   </p>
                 </div>
                 
                 <div>
                   <div className="flex justify-between items-center gap-2 flex-wrap mb-1">
-                    <span className="text-lg font-semibold text-slate-900">3. Training & Workshops</span>
-                    <span className="text-indigo-600 text-sm">Teams that actually adopt the work</span>
+                    <span className="text-lg font-semibold text-slate-900">3. For You</span>
+                    <span className="text-indigo-600 text-sm font-medium">Memento</span>
                   </div>
                   <p className="text-slate-500 text-base">
-                    Live and virtual training so your people know how to use the tools, systems, and playbooks built for them.
+                    1:1 coaching, career reinvention, and personal growth.
                   </p>
                 </div>
               </div>
@@ -385,205 +330,129 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Pillar Overview */}
-      <section ref={pillarsRef} id="pillars" className="py-20 bg-gradient-to-b from-slate-100 to-white">
+      {/* Three Paths Section */}
+      <section id="paths" className="py-20 bg-gradient-to-b from-slate-100 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div {...fadeInUp} className="text-center mb-12">
             <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-3">
-              Three core pillars
+              Three paths, one ecosystem
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Start where the leverage is highest.
+              Choose where you need the most help.
             </h2>
             <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
-              Most clients work with Torque across all three pillars over time. But you don't have to do everything at once. Start with the pillar that solves the biggest bottleneck today.
+              Most clients work with Torque across multiple tracks over time. But you don't have to do everything at once. Start with the path that solves your biggest bottleneck today.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            {pillars.map((pillar, index) => (
+            {paths.map((path, index) => (
               <motion.article
-                key={pillar.title}
+                key={path.title}
                 {...fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-3xl border border-slate-200 bg-white p-6 lg:p-8 flex flex-col gap-4 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-150 shadow-lg"
+                className="rounded-3xl border border-slate-200 bg-white p-6 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-blue-300 transition-all"
               >
-                <div className="text-sm uppercase tracking-[0.14em] text-slate-500">{pillar.label}</div>
-                <h3 className="text-xl lg:text-2xl font-bold text-slate-900">{pillar.title}</h3>
-                <p className="text-base lg:text-lg text-slate-600 flex-grow">{pillar.summary}</p>
-                <Button
-                  variant="outline"
-                  onClick={() => scrollToForm(pillar.service)}
-                  className="mt-3 w-full rounded-full border-blue-500 bg-white text-blue-600 hover:bg-blue-50 hover:border-blue-600 text-base py-3"
+                <div className="flex justify-between items-start">
+                  <span className="text-xs tracking-[0.14em] uppercase text-slate-500">{path.label}</span>
+                  <span className="text-xs text-indigo-600 font-medium">{path.brand}</span>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-slate-900">{path.title}</h3>
+                <p className="text-base lg:text-lg text-slate-600">{path.copy}</p>
+                <ul className="space-y-2 text-sm lg:text-base text-slate-700">
+                  {path.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-green-500 mt-0.5">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link 
+                  to={path.link}
+                  className="mt-auto inline-flex items-center gap-2 px-5 py-3 rounded-full border border-blue-400 bg-white text-blue-600 text-base font-medium hover:bg-blue-50 hover:border-blue-500 hover:-translate-y-0.5 transition-all"
                 >
-                  {pillar.cta}
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
+                  {path.cta}
+                  <span>→</span>
+                </Link>
+                <p className="text-sm text-slate-500">{path.tagline}</p>
               </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Detail: Strategy Sprint */}
-      <section id="strategy" className="py-16 border-t border-slate-200 bg-white">
+      {/* About / Reassurance Section */}
+      <section id="business" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
-            <motion.div {...fadeInUp}>
-              <div className="text-sm uppercase tracking-[0.16em] text-indigo-600 mb-3">Pillar 1</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Strategy Sprint</h2>
-              <p className="text-lg lg:text-xl text-slate-600 mb-6">
-                A 3–4 week engagement to step back, see the whole system, and decide what to build now, later, or never.
+          <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-12 text-base lg:text-lg text-slate-600">
+            <div>
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-slate-900">Why Torque?</h3>
+              <p className="mb-6">
+                We've spent the last decade building marketing systems, training teams, and coaching leaders through change. Now, we combine that experience with AI to help you move faster without losing what makes your business human.
               </p>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-6">
-                {strategyDetails.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-slate-400 text-xl">•</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 mt-1 text-xl">✓</span>
+                  <span>$100M+ in influenced revenue across clients</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 mt-1 text-xl">✓</span>
+                  <span>Dozens of leadership teams trained and transformed</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 mt-1 text-xl">✓</span>
+                  <span>AI-native approach that amplifies (not replaces) your team</span>
+                </li>
               </ul>
-              <p className="text-base lg:text-lg text-slate-600 mb-6">
-                <strong className="text-slate-900">Outcome:</strong> {strategyDetails.outcome}
-              </p>
-              <div className="flex flex-wrap gap-4 items-center">
-                <Button
-                  onClick={() => scrollToForm("Strategy Sprint")}
-                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold hover:opacity-95 shadow-lg shadow-green-500/30"
-                >
-                  Book a Strategy Sprint Call
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <span className="text-base text-slate-500">Ideal for founders, CEOs, CMOs, CROs, and operators.</span>
-              </div>
-            </motion.div>
-
-            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
-              <div className="font-bold text-xl text-slate-900 mb-2">What we often uncover</div>
-              <div className="text-sm text-indigo-600 mb-4">Common patterns</div>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-600">
-                {strategyDetails.patterns.map((pattern, i) => (
-                  <li key={i}>{pattern}</li>
-                ))}
-              </ul>
-            </motion.aside>
-          </div>
-        </div>
-      </section>
-
-      {/* Detail: Marketing & Sales */}
-      <section id="marketing-sales" className="py-16 border-t border-slate-200 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
-            <motion.div {...fadeInUp}>
-              <div className="text-sm uppercase tracking-[0.16em] text-indigo-600 mb-3">Pillar 2</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Marketing & Sales Engine</h2>
-              <p className="text-lg lg:text-xl text-slate-600 mb-6">
-                We design and build the marketing and sales systems that turn your strategy into consistent revenue.
-              </p>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-6">
-                {marketingDetails.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-slate-400 text-xl">•</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-base lg:text-lg text-slate-600 mb-6">
-                <strong className="text-slate-900">Outcome:</strong> {marketingDetails.outcome}
-              </p>
-              <div className="flex flex-wrap gap-4 items-center">
-                <Button
-                  onClick={() => scrollToForm("Marketing & Sales Engine")}
-                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold hover:opacity-95 shadow-lg shadow-green-500/30"
-                >
-                  Talk about your revenue systems
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <span className="text-base text-slate-500">Best for teams ready to implement, not just ideate.</span>
-              </div>
-            </motion.div>
-
-            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-200 bg-white p-6 lg:p-8 shadow-sm">
-              <div className="font-bold text-xl text-slate-900 mb-2">How we work</div>
-              <div className="text-sm text-indigo-600 mb-4">Implementation rhythm</div>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-600">
-                {marketingDetails.howWeWork.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </motion.aside>
-          </div>
-        </div>
-      </section>
-
-      {/* Detail: Training & Workshops */}
-      <section id="training-workshops" className="py-16 border-t border-slate-200 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 items-start">
-            <motion.div {...fadeInUp}>
-              <div className="text-sm uppercase tracking-[0.16em] text-indigo-600 mb-3">Pillar 3</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Training & Workshops</h2>
-              <p className="text-lg lg:text-xl text-slate-600 mb-6">
-                If you want the work to stick, your people need to know how to use it. Training and workshops turn strategy and systems into new habits.
-              </p>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-6">
-                {trainingDetails.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-slate-400 text-xl">•</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-base lg:text-lg text-slate-600 mb-6">
-                <strong className="text-slate-900">Outcome:</strong> {trainingDetails.outcome}
-              </p>
-              <div className="flex flex-wrap gap-4 items-center">
-                <Button
-                  onClick={() => scrollToForm("Training & Workshops")}
-                  className="rounded-full px-6 py-3 text-base bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold hover:opacity-95 shadow-lg shadow-green-500/30"
-                >
-                  Book a training session
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <span className="text-base text-slate-500">Great for sales kickoffs, leadership retreats, and rollout phases.</span>
-              </div>
-            </motion.div>
-
-            <motion.aside {...fadeInUp} transition={{ delay: 0.2 }} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:p-8">
-              <div className="font-bold text-xl text-slate-900 mb-2">Popular formats</div>
-              <div className="text-sm text-indigo-600 mb-4">What clients choose</div>
-              <ul className="space-y-3 text-base lg:text-lg text-slate-600">
-                {trainingDetails.formats.map((format, i) => (
-                  <li key={i}>{format}</li>
-                ))}
-              </ul>
-            </motion.aside>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section ref={formRef} id="form" className="py-20 border-t border-slate-200 bg-slate-100">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.div
-            {...fadeInUp}
-            className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 shadow-xl"
-          >
-            <div className="mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-2">Work with Torque</h2>
-              <p className="text-lg text-slate-600">
-                Share a few details and we'll follow up within one business day to schedule a call and recommend a starting point.
-              </p>
-              {selectedService && (
-                <div className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-full border border-indigo-200 bg-indigo-50 text-sm text-indigo-700">
-                  <Sparkles className="w-4 h-4" />
-                  <span>Selected service: {selectedService}</span>
-                </div>
-              )}
             </div>
+            <div>
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-slate-900">How it works</h3>
+              <p className="mb-6">
+                Every engagement starts with understanding where you are, where you want to go, and what's blocking you. From there, we match you to the right track — or combination of tracks — and get to work.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1 text-xl font-bold">1.</span>
+                  <span>Choose your path (business, team, or personal)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1 text-xl font-bold">2.</span>
+                  <span>Book a free discovery call</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1 text-xl font-bold">3.</span>
+                  <span>Get a tailored plan and start moving</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-            <ZohoContactForm />
+      {/* CTA Section */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.div {...fadeInUp}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Ready to level up?
+            </h2>
+            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+              Whether you're growing revenue, training your team, or investing in yourself — Torque has a path for you.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link 
+                to="/contact"
+                className="px-8 py-4 text-lg rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold shadow-xl shadow-green-500/30 hover:shadow-green-500/50 hover:-translate-y-0.5 transition-all"
+              >
+                Book a Free Discovery Call
+              </Link>
+              <button 
+                onClick={() => scrollToSection('paths')}
+                className="px-8 py-4 text-lg rounded-full border border-slate-600 text-white font-medium hover:bg-slate-800 hover:-translate-y-0.5 transition-all"
+              >
+                Explore All Paths
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -144,9 +144,9 @@ const Index = () => {
     },
     {
       label: "For You",
-      brand: "Memento",
+      brand: "Quantum Coaching",
       title: "1:1 Coaching & Personal Growth",
-      copy: "Whether you're navigating a career pivot, building new habits, or seeking clarity in chaos — Memento is your personal development partner.",
+      copy: "Whether you're navigating a career pivot, building new habits, or seeking clarity in chaos — Quantum Coaching is your personal development partner.",
       items: [
         "1:1 executive and life coaching",
         "Career reinvention & transition support",
@@ -384,7 +384,7 @@ const Index = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-sm sm:text-base text-slate-700 mb-6 shadow-sm flex-wrap"
               >
                 <Sparkles className="w-5 h-5 text-indigo-500" />
-                <span className="font-medium">Torque AI • Quantum Shift • Memento</span>
+                <span className="font-medium">Torque AI • Quantum Shift • Quantum Coaching</span>
                 <span className="text-slate-500 text-xs sm:text-sm">$100M+ in influenced revenue</span>
               </motion.div>
 
@@ -483,7 +483,7 @@ const Index = () => {
                     <span className="text-4xl lg:text-5xl font-black text-violet-500">3.</span>
                     <div>
                       <h3 className="text-2xl lg:text-3xl font-bold text-slate-900">For Yourself</h3>
-                      <span className="text-lg font-semibold text-violet-600">Memento</span>
+                      <span className="text-lg font-semibold text-violet-600">Quantum Coaching</span>
                     </div>
                   </div>
                   <p className="text-lg lg:text-xl text-slate-600 pl-14 lg:pl-16">

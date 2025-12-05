@@ -95,10 +95,18 @@ const Torque = () => {
             </div>
             
             <div className="mt-12 max-w-2xl">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-                <h3 className="text-xl font-semibold mb-4 text-white">Join the Torque AI Community</h3>
-                <ZohoTorqueAIForm />
-              </div>
+              <Button 
+                size="lg"
+                className="bg-white/20 hover:bg-white/30 text-white border border-white/30 font-semibold px-10 py-6"
+                onClick={() => {
+                  const form = document.getElementById('sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6');
+                  if (form) {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+                }}
+              >
+                Join the Torque AI Community
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -247,10 +255,6 @@ const Torque = () => {
                   </li>
                 </ul>
                 
-                <div className="mt-8 p-6 bg-blue-50 border border-blue-100 rounded-xl">
-                  <p className="text-sm text-gray-700 mb-4 font-medium">Get AI insights and exclusive updates:</p>
-                  <ZohoTorqueAIButton />
-                </div>
               </div>
               <div className="order-1 md:order-2">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">

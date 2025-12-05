@@ -309,25 +309,27 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-4"
-              >
-                AI-powered growth • Marketing • Training • Coaching
-              </motion.p>
-              
+              {/* Main headline - AI Powered Growth */}
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-6 text-slate-900"
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.0] mb-6 bg-gradient-to-r from-sky-600 via-emerald-500 to-green-600 bg-clip-text text-transparent"
+              >
+                AI Powered Growth
+              </motion.h1>
+              
+              {/* Transform scrolling text */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-8"
               >
                 Transform:{" "}
-                <span className="relative inline-block h-[1.2em] overflow-hidden align-bottom">
+                <span className="relative inline-block h-[1.3em] overflow-hidden align-bottom">
                   <motion.span
-                    className="block bg-gradient-to-r from-sky-600 via-emerald-500 to-green-600 bg-clip-text text-transparent"
+                    className="block text-indigo-600"
                     animate={{
                       y: ["0%", "0%", "-100%", "-100%", "-200%", "-200%", "0%"]
                     }}
@@ -335,15 +337,36 @@ const Index = () => {
                       duration: 6,
                       repeat: Infinity,
                       ease: "easeInOut",
-                      times: [0, 0.3, 0.33, 0.63, 0.66, 0.96, 1]
+                      times: [0, 0.28, 0.33, 0.61, 0.66, 0.95, 1]
                     }}
                   >
-                    <span className="block h-[1.2em]">YOUR BUSINESS</span>
-                    <span className="block h-[1.2em]">YOUR TEAM</span>
-                    <span className="block h-[1.2em]">YOU</span>
+                    <span className="block h-[1.3em]">Your Business</span>
+                    <span className="block h-[1.3em]">Your Team</span>
+                    <span className="block h-[1.3em]">You</span>
                   </motion.span>
                 </span>
-              </motion.h1>
+              </motion.div>
+
+              {/* Three Pillars */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex flex-wrap gap-4 sm:gap-6 mb-8"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-sky-500"></div>
+                  <span className="text-lg sm:text-xl font-semibold text-slate-700">Marketing</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+                  <span className="text-lg sm:text-xl font-semibold text-slate-700">Training</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-violet-500"></div>
+                  <span className="text-lg sm:text-xl font-semibold text-slate-700">Coaching</span>
+                </div>
+              </motion.div>
               
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -351,7 +374,7 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-lg sm:text-xl lg:text-2xl text-slate-600 max-w-2xl mb-6 leading-relaxed"
               >
-                Torque is an AI-powered marketing agency, training partner, and coaching platform. We help you grow revenue with AI-driven marketing, upskill your teams, and support your leadership in the middle of all this change.
+                Torque is an AI-powered marketing agency, training partner, and coaching platform. We help you grow revenue, upskill your teams, and support your leadership.
               </motion.p>
 
               <motion.div 
@@ -362,7 +385,7 @@ const Index = () => {
               >
                 <Sparkles className="w-5 h-5 text-indigo-500" />
                 <span className="font-medium">Torque AI • Quantum Shift • Memento</span>
-                <span className="text-slate-500 text-xs sm:text-sm">Used to influence $100M+ in revenue</span>
+                <span className="text-slate-500 text-xs sm:text-sm">$100M+ in influenced revenue</span>
               </motion.div>
 
               <motion.div 

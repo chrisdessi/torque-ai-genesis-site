@@ -2,8 +2,114 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, TrendingUp, Users, User, Zap, Target, BarChart3, MessageSquare, Award, Lightbulb, Heart, Compass } from "lucide-react";
 import { Link } from "react-router-dom";
+
+// Animated Icon Component for Path Cards
+const AnimatedPathIcon = ({ 
+  icon: Icon, 
+  secondaryIcon: SecondaryIcon,
+  tertiaryIcon: TertiaryIcon,
+  gradient 
+}: { 
+  icon: any; 
+  secondaryIcon: any;
+  tertiaryIcon: any;
+  gradient: string;
+}) => (
+  <div className="relative w-full h-48 mb-6 overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100">
+    {/* Background animated shapes */}
+    <motion.div
+      className={`absolute inset-0 opacity-20 ${gradient}`}
+      animate={{ 
+        scale: [1, 1.1, 1],
+        rotate: [0, 5, -5, 0]
+      }}
+      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+    />
+    
+    {/* Floating circles */}
+    <motion.div
+      className="absolute w-32 h-32 rounded-full bg-gradient-to-r from-sky-200/40 to-blue-300/30 blur-xl"
+      style={{ top: '10%', right: '10%' }}
+      animate={{ 
+        x: [0, 20, -10, 0],
+        y: [0, -15, 10, 0],
+        scale: [1, 1.2, 0.9, 1]
+      }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+    />
+    <motion.div
+      className="absolute w-24 h-24 rounded-full bg-gradient-to-r from-emerald-200/30 to-green-300/20 blur-lg"
+      style={{ bottom: '15%', left: '5%' }}
+      animate={{ 
+        x: [0, -15, 20, 0],
+        y: [0, 10, -20, 0]
+      }}
+      transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+    />
+    
+    {/* Main icon */}
+    <motion.div
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+      animate={{ 
+        y: [0, -8, 0],
+        scale: [1, 1.05, 1]
+      }}
+      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+    >
+      <div className={`w-20 h-20 rounded-2xl ${gradient} flex items-center justify-center shadow-lg`}>
+        <Icon className="w-10 h-10 text-white" strokeWidth={1.5} />
+      </div>
+    </motion.div>
+    
+    {/* Secondary floating icon */}
+    <motion.div
+      className="absolute"
+      style={{ top: '20%', left: '15%' }}
+      animate={{ 
+        y: [0, -12, 0],
+        x: [0, 8, 0],
+        rotate: [0, 10, -10, 0]
+      }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+    >
+      <div className="w-12 h-12 rounded-xl bg-white shadow-md flex items-center justify-center">
+        <SecondaryIcon className="w-6 h-6 text-slate-600" strokeWidth={1.5} />
+      </div>
+    </motion.div>
+    
+    {/* Tertiary floating icon */}
+    <motion.div
+      className="absolute"
+      style={{ bottom: '20%', right: '15%' }}
+      animate={{ 
+        y: [0, 10, 0],
+        x: [0, -8, 0],
+        rotate: [0, -15, 15, 0]
+      }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+    >
+      <div className="w-10 h-10 rounded-lg bg-white shadow-md flex items-center justify-center">
+        <TertiaryIcon className="w-5 h-5 text-slate-500" strokeWidth={1.5} />
+      </div>
+    </motion.div>
+    
+    {/* Animated lines/connections */}
+    <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <motion.path
+        d="M 30% 30% Q 50% 20% 70% 40%"
+        stroke="currentColor"
+        strokeWidth="1"
+        fill="none"
+        className="text-slate-300"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 0.5 }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+      />
+    </svg>
+  </div>
+);
 
 const Index = () => {
   const fadeInUp = {
@@ -27,7 +133,11 @@ const Index = () => {
       ],
       cta: "Grow your revenue with AI",
       tagline: "Best for founders, CMOs, and revenue leaders.",
-      link: "/services"
+      link: "/services",
+      icon: TrendingUp,
+      secondaryIcon: BarChart3,
+      tertiaryIcon: Target,
+      gradient: "bg-gradient-to-br from-sky-500 to-blue-600"
     },
     {
       label: "For Your Team",
@@ -42,7 +152,11 @@ const Index = () => {
       ],
       cta: "Level up your team",
       tagline: "Best for HR, L&D, and executive sponsors.",
-      link: "/quantum-shift/coach"
+      link: "/quantum-shift/coach",
+      icon: Users,
+      secondaryIcon: MessageSquare,
+      tertiaryIcon: Award,
+      gradient: "bg-gradient-to-br from-emerald-500 to-green-600"
     },
     {
       label: "For You",
@@ -57,7 +171,11 @@ const Index = () => {
       ],
       cta: "Start your transformation",
       tagline: "Best for individuals ready for change.",
-      link: "/quantum-shift/coach"
+      link: "/quantum-shift/coach",
+      icon: User,
+      secondaryIcon: Lightbulb,
+      tertiaryIcon: Compass,
+      gradient: "bg-gradient-to-br from-violet-500 to-purple-600"
     }
   ];
 
@@ -331,50 +449,58 @@ const Index = () => {
       </section>
 
       {/* Three Paths Section */}
-      <section id="paths" className="py-20 bg-gradient-to-b from-slate-100 to-white">
+      <section id="paths" className="py-24 bg-gradient-to-b from-slate-100 to-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeInUp} className="text-center mb-12">
-            <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-3">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <p className="text-base sm:text-lg font-semibold uppercase tracking-[0.2em] text-indigo-600 mb-4">
               Three paths, one ecosystem
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-6">
               Choose where you need the most help.
             </h2>
-            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Most clients work with Torque across multiple tracks over time. But you don't have to do everything at once. Start with the path that solves your biggest bottleneck today.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {paths.map((path, index) => (
               <motion.article
                 key={path.title}
                 {...fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-3xl border border-slate-200 bg-white p-6 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-xl hover:border-blue-300 transition-all"
+                className="rounded-3xl border border-slate-200 bg-white p-8 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 transition-all"
               >
-                <div className="flex justify-between items-start">
-                  <span className="text-xs tracking-[0.14em] uppercase text-slate-500">{path.label}</span>
-                  <span className="text-xs text-indigo-600 font-medium">{path.brand}</span>
+                {/* Animated Icon Illustration */}
+                <AnimatedPathIcon 
+                  icon={path.icon}
+                  secondaryIcon={path.secondaryIcon}
+                  tertiaryIcon={path.tertiaryIcon}
+                  gradient={path.gradient}
+                />
+                
+                <div className="flex justify-between items-start mb-3">
+                  <span className="text-sm tracking-[0.14em] uppercase text-slate-500 font-medium">{path.label}</span>
+                  <span className="text-sm text-indigo-600 font-semibold">{path.brand}</span>
                 </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-slate-900">{path.title}</h3>
-                <p className="text-base lg:text-lg text-slate-600">{path.copy}</p>
-                <ul className="space-y-2 text-sm lg:text-base text-slate-700">
+                <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">{path.title}</h3>
+                <p className="text-lg lg:text-xl text-slate-600 mb-6 leading-relaxed">{path.copy}</p>
+                <ul className="space-y-3 text-base lg:text-lg text-slate-700 mb-6">
                   {path.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-green-500 mt-0.5">•</span>
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="text-green-500 mt-1 text-xl">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
                 <Link 
                   to={path.link}
-                  className="mt-auto inline-flex items-center gap-2 px-5 py-3 rounded-full border border-blue-400 bg-white text-blue-600 text-base font-medium hover:bg-blue-50 hover:border-blue-500 hover:-translate-y-0.5 transition-all"
+                  className="mt-auto inline-flex items-center gap-3 px-6 py-4 rounded-full border-2 border-blue-400 bg-white text-blue-600 text-lg font-semibold hover:bg-blue-50 hover:border-blue-500 hover:-translate-y-0.5 transition-all"
                 >
                   {path.cta}
-                  <span>→</span>
+                  <span className="text-xl">→</span>
                 </Link>
-                <p className="text-sm text-slate-500">{path.tagline}</p>
+                <p className="text-base text-slate-500 mt-4">{path.tagline}</p>
               </motion.article>
             ))}
           </div>
@@ -382,46 +508,46 @@ const Index = () => {
       </section>
 
       {/* About / Reassurance Section */}
-      <section id="business" className="py-20 bg-white">
+      <section id="business" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-12 text-base lg:text-lg text-slate-600">
+          <motion.div {...fadeInUp} className="grid md:grid-cols-2 gap-16 text-lg lg:text-xl text-slate-600">
             <div>
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-slate-900">Why Torque?</h3>
-              <p className="mb-6">
+              <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900">Why Torque?</h3>
+              <p className="mb-8 leading-relaxed text-xl">
                 We've spent the last decade building marketing systems, training teams, and coaching leaders through change. Now, we combine that experience with AI to help you move faster without losing what makes your business human.
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1 text-xl">✓</span>
-                  <span>$100M+ in influenced revenue across clients</span>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4">
+                  <span className="text-green-500 mt-1 text-2xl">✓</span>
+                  <span className="text-xl">$100M+ in influenced revenue across clients</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1 text-xl">✓</span>
-                  <span>Dozens of leadership teams trained and transformed</span>
+                <li className="flex items-start gap-4">
+                  <span className="text-green-500 mt-1 text-2xl">✓</span>
+                  <span className="text-xl">Dozens of leadership teams trained and transformed</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1 text-xl">✓</span>
-                  <span>AI-native approach that amplifies (not replaces) your team</span>
+                <li className="flex items-start gap-4">
+                  <span className="text-green-500 mt-1 text-2xl">✓</span>
+                  <span className="text-xl">AI-native approach that amplifies (not replaces) your team</span>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-slate-900">How it works</h3>
-              <p className="mb-6">
+              <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900">How it works</h3>
+              <p className="mb-8 leading-relaxed text-xl">
                 Every engagement starts with understanding where you are, where you want to go, and what's blocking you. From there, we match you to the right track — or combination of tracks — and get to work.
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <span className="text-blue-500 mt-1 text-xl font-bold">1.</span>
-                  <span>Choose your path (business, team, or personal)</span>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4">
+                  <span className="text-blue-500 mt-1 text-2xl font-black">1.</span>
+                  <span className="text-xl">Choose your path (business, team, or personal)</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-blue-500 mt-1 text-xl font-bold">2.</span>
-                  <span>Book a free discovery call</span>
+                <li className="flex items-start gap-4">
+                  <span className="text-blue-500 mt-1 text-2xl font-black">2.</span>
+                  <span className="text-xl">Book a free discovery call</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-blue-500 mt-1 text-xl font-bold">3.</span>
-                  <span>Get a tailored plan and start moving</span>
+                <li className="flex items-start gap-4">
+                  <span className="text-blue-500 mt-1 text-2xl font-black">3.</span>
+                  <span className="text-xl">Get a tailored plan and start moving</span>
                 </li>
               </ul>
             </div>
@@ -430,25 +556,25 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-slate-900 text-white">
+      <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.div {...fadeInUp}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
               Ready to level up?
             </h2>
-            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+            <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed">
               Whether you're growing revenue, training your team, or investing in yourself — Torque has a path for you.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-6 justify-center">
               <Link 
                 to="/contact"
-                className="px-8 py-4 text-lg rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold shadow-xl shadow-green-500/30 hover:shadow-green-500/50 hover:-translate-y-0.5 transition-all"
+                className="px-10 py-5 text-xl rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold shadow-xl shadow-green-500/30 hover:shadow-green-500/50 hover:-translate-y-0.5 transition-all"
               >
                 Book a Free Discovery Call
               </Link>
               <button 
                 onClick={() => scrollToSection('paths')}
-                className="px-8 py-4 text-lg rounded-full border border-slate-600 text-white font-medium hover:bg-slate-800 hover:-translate-y-0.5 transition-all"
+                className="px-10 py-5 text-xl rounded-full border-2 border-slate-600 text-white font-semibold hover:bg-slate-800 hover:-translate-y-0.5 transition-all"
               >
                 Explore All Paths
               </button>

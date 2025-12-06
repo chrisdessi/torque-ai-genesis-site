@@ -1,39 +1,41 @@
-import { useEffect, useId } from 'react';
+import { useId, useRef, FormEvent } from 'react';
 
 export const ZohoQuantumCoachWaitlistForm = () => {
   const uniqueId = useId().replace(/:/g, '');
-  const formId = `sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa_${uniqueId}`;
+  const formRef = useRef<HTMLFormElement>(null);
 
-  useEffect(() => {
-    const formContainer = document.getElementById(formId);
-    if (formContainer) {
-      const form = formContainer.querySelector('form') as HTMLFormElement;
-      const submitBtn = formContainer.querySelector('[name="SIGNUP_SUBMIT_BUTTON"]') as HTMLInputElement;
-      
-      if (submitBtn && form) {
-        submitBtn.onclick = (e) => {
-          e.preventDefault();
-          const emailInput = formContainer.querySelector('[name="CONTACT_EMAIL"]') as HTMLInputElement;
-          
-          if (emailInput && emailInput.value && emailInput.value.includes('@')) {
-            form.submit();
-          } else {
-            const errorDiv = formContainer.querySelector('[id^="errorMsgDiv"]') as HTMLElement;
-            if (errorDiv) {
-              errorDiv.style.display = 'block';
-              errorDiv.textContent = 'Please enter a valid email address.';
-            }
-          }
-        };
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+    
+    const emailInput = form.querySelector('[name="CONTACT_EMAIL"]') as HTMLInputElement;
+    const errorDiv = document.getElementById(`errorMsgDiv_${uniqueId}`);
+    
+    if (emailInput && emailInput.value && emailInput.value.includes('@')) {
+      if (errorDiv) errorDiv.style.display = 'none';
+      form.submit();
+    } else {
+      if (errorDiv) {
+        errorDiv.style.display = 'block';
+        errorDiv.textContent = 'Please enter a valid email address.';
       }
     }
-  }, [formId]);
+  };
 
   return (
     <div className="w-full">
-      <div id={formId} data-type="signupform" style={{ opacity: 1 }}>
+      <div id={`sf_${uniqueId}`} data-type="signupform" style={{ opacity: 1 }}>
         <div id={`customForm_${uniqueId}`}>
-          <form method="POST" id={`zcampaignOptinForm_${uniqueId}`} style={{ margin: '0px', width: '100%' }} action="https://idzlf-cmpzourl.maillist-manage.com/weboptin.zc" target="_zcSignup">
+          <form 
+            ref={formRef}
+            method="POST" 
+            id={`zcampaignOptinForm_${uniqueId}`} 
+            style={{ margin: '0px', width: '100%' }} 
+            action="https://idzlf-cmpzourl.maillist-manage.com/weboptin.zc" 
+            target="_zcSignup"
+            onSubmit={handleSubmit}
+          >
             <div className="bg-red-50 text-red-600 text-sm p-3 mb-4 rounded-lg border border-red-200 hidden" id={`errorMsgDiv_${uniqueId}`}>Please enter a valid email address.</div>
             
             <div className="flex flex-col sm:flex-row gap-3 items-stretch">
@@ -58,7 +60,7 @@ export const ZohoQuantumCoachWaitlistForm = () => {
               </div>
               <div className="sm:flex-shrink-0">
                 <input 
-                  type="button" 
+                  type="submit" 
                   className="w-full sm:w-auto px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg cursor-pointer transition-all duration-200 text-base shadow-md"
                   name="SIGNUP_SUBMIT_BUTTON" 
                   id={`zcWebOptin_${uniqueId}`} 

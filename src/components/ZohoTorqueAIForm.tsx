@@ -1,33 +1,27 @@
-import { useEffect, useId } from 'react';
+import { useId, useRef, FormEvent } from 'react';
 
 export const ZohoTorqueAIForm = () => {
   const uniqueId = useId().replace(/:/g, '');
-  const formId = `sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6_${uniqueId}`;
+  const formRef = useRef<HTMLFormElement>(null);
 
-  useEffect(() => {
-    const formContainer = document.getElementById(formId);
-    if (formContainer) {
-      const form = formContainer.querySelector('form') as HTMLFormElement;
-      const submitBtn = formContainer.querySelector('[name="SIGNUP_SUBMIT_BUTTON"]') as HTMLInputElement;
-      
-      if (submitBtn && form) {
-        submitBtn.onclick = (e) => {
-          e.preventDefault();
-          const emailInput = formContainer.querySelector('[name="CONTACT_EMAIL"]') as HTMLInputElement;
-          
-          if (emailInput && emailInput.value && emailInput.value.includes('@')) {
-            form.submit();
-          } else {
-            const errorDiv = formContainer.querySelector('[id^="errorMsgDiv"]') as HTMLElement;
-            if (errorDiv) {
-              errorDiv.style.display = 'block';
-              errorDiv.textContent = 'Please enter a valid email address.';
-            }
-          }
-        };
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+    
+    const emailInput = form.querySelector('[name="CONTACT_EMAIL"]') as HTMLInputElement;
+    const errorDiv = document.getElementById(`errorMsgDiv_${uniqueId}`);
+    
+    if (emailInput && emailInput.value && emailInput.value.includes('@')) {
+      if (errorDiv) errorDiv.style.display = 'none';
+      form.submit();
+    } else {
+      if (errorDiv) {
+        errorDiv.style.display = 'block';
+        errorDiv.textContent = 'Please enter a valid email address.';
       }
     }
-  }, [formId]);
+  };
 
   return (
     <div className="w-full">
@@ -58,7 +52,7 @@ export const ZohoTorqueAIForm = () => {
         }
       `}} />
       
-      <div id={formId} data-type="signupform" style={{ opacity: 1 }}>
+      <div id={`sf_${uniqueId}`} data-type="signupform" style={{ opacity: 1 }}>
         <div id={`customForm_${uniqueId}`}>
           <div className="quick_form_torque_css" style={{ backgroundColor: 'rgb(255, 255, 255)', width: '500px', maxWidth: '100%', zIndex: 2, fontFamily: '"Arial"', border: '1px solid rgb(206, 206, 206)', overflow: 'hidden', borderRadius: '8px' }} data-name="SIGNUP_BODY">
             <div>
@@ -79,7 +73,15 @@ export const ZohoTorqueAIForm = () => {
                   </table>
                 </div>
               </div>
-              <form method="POST" id={`zcampaignOptinForm_${uniqueId}`} style={{ margin: '0px', width: '100%', textAlign: 'center' }} action="https://idzlf-cmpzourl.maillist-manage.com/weboptin.zc" target="_zcSignup">
+              <form 
+                ref={formRef}
+                method="POST" 
+                id={`zcampaignOptinForm_${uniqueId}`} 
+                style={{ margin: '0px', width: '100%', textAlign: 'center' }} 
+                action="https://idzlf-cmpzourl.maillist-manage.com/weboptin.zc" 
+                target="_zcSignup"
+                onSubmit={handleSubmit}
+              >
                 <div style={{ backgroundColor: 'rgb(255, 235, 232)', padding: '10px', color: 'rgb(210, 0, 0)', fontSize: '11px', margin: '20px 10px 0px', border: '1px solid rgb(255, 217, 211)', opacity: 1, display: 'none' }} id={`errorMsgDiv_${uniqueId}`}>Please correct the marked field(s) below.</div>
                 <div style={{ position: 'relative', width: '170px', height: '28px', display: 'inline-block' }} className="SIGNUP_FLD_TQ">
                   <div style={{ padding: '5px 0px', color: 'rgb(85, 85, 85)', fontSize: '12px', fontFamily: 'Arial', display: 'block', textAlign: 'left' }}>Email</div>
@@ -90,7 +92,7 @@ export const ZohoTorqueAIForm = () => {
                   <input type="text" style={{ fontSize: '12px', borderWidth: '1px', borderColor: 'rgb(214, 205, 205)', borderStyle: 'solid', width: '100%', height: '100%', zIndex: 4, outline: 'none', padding: '5px 10px', color: 'rgb(113, 106, 106)', textAlign: 'left', fontFamily: '"Arial"', borderRadius: '4px', backgroundColor: 'rgb(246, 246, 246)', boxSizing: 'border-box' }} name="LASTNAME" id={`EMBED_FORM_NAME_LABEL_${uniqueId}`} />
                 </div>
                 <div style={{ position: 'relative', width: '100px', height: '28px', margin: '0 0 15px 12px', display: 'inline-block' }} className="SIGNUP_FLD_TQ">
-                  <input type="button" style={{ textAlign: 'center', width: '100%', height: '100%', zIndex: 5, border: '0px', color: 'rgb(255, 255, 255)', cursor: 'pointer', outline: 'none', fontSize: '14px', backgroundColor: 'rgb(38, 165, 118)', borderRadius: '4px' }} name="SIGNUP_SUBMIT_BUTTON" id={`zcWebOptin_${uniqueId}`} value="Join us" />
+                  <input type="submit" style={{ textAlign: 'center', width: '100%', height: '100%', zIndex: 5, border: '0px', color: 'rgb(255, 255, 255)', cursor: 'pointer', outline: 'none', fontSize: '14px', backgroundColor: 'rgb(38, 165, 118)', borderRadius: '4px' }} name="SIGNUP_SUBMIT_BUTTON" id={`zcWebOptin_${uniqueId}`} value="Join us" />
                 </div>
                 <input type="hidden" id={`fieldBorder_${uniqueId}`} value="" />
                 <input type="hidden" id={`submitType_${uniqueId}`} name="submitType" value="optinCustomView" />
@@ -119,7 +121,7 @@ export const ZohoTorqueAIForm = () => {
         <img src="https://idzlf-cmpzourl.maillist-manage.com/images/spacer.gif" id={`refImage_${uniqueId}`} style={{ display: 'none' }} alt="" />
       </div>
       <input type="hidden" id={`signupFormType_${uniqueId}`} value="QuickForm_Horizontal" />
-      <iframe name="_zcSignup" style={{ display: 'none' }} />
+      <iframe name="_zcSignup" style={{ display: 'none' }} title="Zoho Signup" />
     </div>
   );
 };

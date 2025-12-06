@@ -5,8 +5,8 @@ import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 
 const Quiz = () => {
@@ -229,11 +229,7 @@ const Quiz = () => {
                       <ArrowRight className="ml-3 w-5 h-5" />
                     </Button>
                   </a>
-                  <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" variant="outline" className="border-2 border-gray-300 text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
-                      Schedule Consultation
-                    </Button>
-                  </a>
+                  <ZohoLetsTalkButton size="large" />
                 </div>
                 
                 <Button 
@@ -249,22 +245,13 @@ const Quiz = () => {
         </div>
       </div>
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form */}
       <section className="bg-background py-20">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and our team will respond within 24 hours"
+          />
         </div>
       </section>
       <Footer />

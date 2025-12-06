@@ -4,9 +4,9 @@ import { Card } from "@/components/ui/card";
 import { Check, Target, TrendingUp, Users, Zap, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
-import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
 
 import garyVeeImage from "@/assets/gary-vee.png";
 
@@ -77,13 +77,9 @@ const ExecutiveCoaching = () => {
       {/* Sticky CTA Bar */}
       <div className="fixed bottom-0 inset-x-0 bg-card border-t border-border py-3 px-4 flex items-center justify-between z-40 backdrop-blur-sm">
         <div className="text-sm md:text-base font-medium">
-          First session: $199 · {slotsRemaining} slots remaining this month
+          {slotsRemaining} slots remaining this month
         </div>
-        <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-          <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
-            Book Your Session
-          </a>
-        </Button>
+        <ZohoLetsTalkButton />
       </div>
 
       {/* Hero Section */}
@@ -103,12 +99,7 @@ const ExecutiveCoaching = () => {
                 <span className="font-semibold text-foreground"> over $100million in enterprise deals</span>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                  <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
-                    Book First Session — $199
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
-                </Button>
+                <ZohoLetsTalkButton size="large" />
                 <Button size="lg" variant="outline" asChild>
                   <a href="#outcomes">See What You'll Get</a>
                 </Button>
@@ -217,12 +208,7 @@ const ExecutiveCoaching = () => {
                 This isn't a sales call. This isn't a therapy session. This is a strategic deep dive 
                 that produces a clear action plan you can start executing immediately.
               </p>
-              <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
-                  Claim Your Spot — $199
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-              </Button>
+              <ZohoLetsTalkButton size="large" />
             </div>
             <Card className="p-8 bg-card border-border">
               <ul className="space-y-4">
@@ -300,12 +286,7 @@ const ExecutiveCoaching = () => {
             Book your first executive coaching session with Chris Dessi. 
             Walk away with a clear roadmap and the confidence to execute.
           </p>
-          <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <a href="https://buy.stripe.com/5kQdR983q9n90gd1w78g000" target="_blank" rel="noopener noreferrer">
-              Book Your Session — $199
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </Button>
+          <ZohoLetsTalkButton size="large" />
           <p className="mt-6 text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">{slotsRemaining} spots</span> remain this month · 
             First session is 60 minutes · Recorded for your reference
@@ -313,22 +294,13 @@ const ExecutiveCoaching = () => {
         </div>
       </section>
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form */}
       <section className="bg-background py-20">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoQuantumShiftButton />
-              </div>
-            </div>
-          </div>
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and our team will respond within 24 hours"
+          />
         </div>
       </section>
       <Footer />

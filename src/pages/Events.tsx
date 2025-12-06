@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
-import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
 
 
 const Events = () => {
@@ -192,9 +191,6 @@ const Events = () => {
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>
-                  {event.title.includes("Quantum Shift") && (
-                    <ZohoQuantumShiftButton />
-                  )}
                 </div>
               </div>
             </motion.div>
@@ -217,31 +213,18 @@ const Events = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Get notified about upcoming events, early bird tickets, and exclusive opportunities.
             </p>
-            <Button asChild size="lg">
-              <Link to="/contact">
-                Contact Us for Event Info
-              </Link>
-            </Button>
+            <ZohoLetsTalkButton size="large" />
           </motion.div>
         </div>
       </section>
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form */}
       <section className="bg-background py-20">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and our team will respond within 24 hours"
+          />
         </div>
       </section>
       <Footer />

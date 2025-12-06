@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -35,19 +35,7 @@ const MomentoCouncil = () => {
               </span>
             </div>
             <div className="flex gap-3">
-              <Button 
-                className="bg-white hover:bg-white/90 text-black font-semibold"
-                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
-              >
-                Reserve Seat
-              </Button>
-              <Button 
-                variant="outline"
-                className="bg-[#161616] hover:bg-[#161616]/90 text-white border-[#2a2a2a]"
-                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
-              >
-                Reserve Duo Seats
-              </Button>
+              <ZohoLetsTalkButton />
             </div>
           </div>
         </div>
@@ -68,21 +56,7 @@ const MomentoCouncil = () => {
               We practice presence, say what we usually don't, and leave with three transparent commitments we'll keep in 30 days.
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Button 
-                size="lg"
-                className="bg-white hover:bg-white/90 text-black font-semibold px-8 py-6"
-                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
-              >
-                Reserve Seat
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="bg-[#161616] hover:bg-[#161616]/90 text-white border-[#2a2a2a] px-8 py-6"
-                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
-              >
-                Invite a Peer (Duo Bundle)
-              </Button>
+              <ZohoLetsTalkButton size="large" />
             </div>
           </motion.div>
         </div>
@@ -197,19 +171,7 @@ const MomentoCouncil = () => {
                    </span>
                 </p>
                 <div className="flex gap-3 flex-wrap">
-                  <Button 
-                    className="bg-white hover:bg-white/90 text-black font-semibold"
-                    onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
-                  >
-                    Reserve Seat
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="bg-[#161616] hover:bg-[#161616]/90 text-white border-[#2a2a2a]"
-                    onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
-                  >
-                    Reserve Duo Seats
-                  </Button>
+                  <ZohoLetsTalkButton />
                 </div>
               </div>
             </motion.div>
@@ -283,42 +245,19 @@ const MomentoCouncil = () => {
               Limited to <AnimatedCounter end={12} /> seats. Founding Cohort closes when full.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Button 
-                size="lg"
-                className="bg-white hover:bg-white/90 text-black font-semibold px-10 py-7 text-lg"
-                onClick={() => window.open('https://buy.stripe.com/cNi3cv1F2eHt2oldeP8g006', '_blank')}
-              >
-                Reserve Your Seat
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="bg-[#161616] hover:bg-[#161616]/90 text-white border-[#2a2a2a] px-10 py-7 text-lg"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Questions? Book a Call
-              </Button>
+              <ZohoLetsTalkButton size="large" />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form */}
       <section className="bg-background py-20">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and our team will respond within 24 hours"
+          />
         </div>
       </section>
       <Footer />

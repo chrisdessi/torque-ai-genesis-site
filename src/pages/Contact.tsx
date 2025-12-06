@@ -3,9 +3,7 @@ import { ArrowRight, Mail, MessageSquare, Clock, Linkedin, Youtube, Phone } from
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
@@ -25,13 +23,6 @@ const Contact = () => {
       description: "Send us an email and we'll respond within 24 hours",
       action: "info@torqueapp.ai",
       href: "mailto:info@torqueapp.ai"
-    },
-    {
-      icon: MessageSquare,
-      title: "Schedule Consultation",
-      description: "Book a strategic planning session with our team",
-      action: "Schedule Meeting",
-      href: "https://calendar.app.google/rAZmF5kNNCsfMyBf7"
     },
     {
       icon: Linkedin,
@@ -153,12 +144,6 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <ZohoLetsTalkButton size="large" />
-              <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
-                  Schedule Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </a>
             </div>
           </motion.div>
         </div>
@@ -167,24 +152,6 @@ const Contact = () => {
       {/* Calendly Booking */}
       <CalendlyEmbed />
 
-      {/* Newsletter and Pricing Side by Side */}
-      <section className="bg-background py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <Footer />
     </div>
   );

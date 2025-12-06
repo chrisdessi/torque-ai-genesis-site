@@ -6,27 +6,8 @@ import { motion } from "framer-motion";
 import { Brain, Linkedin, Youtube } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import ZohoEnterpriseForm from "@/components/ZohoEnterpriseForm";
-
-const APPLY_URL = "https://idzlf-cmpzourl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a";
-
-const ApplyButton = ({ className = "" }: { className?: string }) => (
-  <motion.a
-    href={APPLY_URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    whileHover={{ scale: 1.05 }}
-    transition={{ duration: 0.2 }}
-    className={className}
-  >
-    <Button 
-      size="lg"
-      className="bg-[#4fd39e] hover:bg-[#4fd39e]/90 text-white font-semibold px-10 py-7 text-lg"
-    >
-      APPLY
-    </Button>
-  </motion.a>
-);
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
 
 const EnterpriseAccelerator = () => {
   const fadeInUp = {
@@ -35,7 +16,6 @@ const EnterpriseAccelerator = () => {
     viewport: { once: true },
     transition: { duration: 0.6 }
   };
-
 
   const metrics = [
     { value: 100, suffix: "%", label: "Leadership Alignment within 4 Weeks" },
@@ -48,8 +28,8 @@ const EnterpriseAccelerator = () => {
     <div className="min-h-screen bg-white">
       <SEO 
         title="90-Day AI Accelerator - Enterprise AI Transformation Program"
-        description="Transform your enterprise with our 90-Day AI Accelerator. Comprehensive AI strategy, implementation, and measurable ROI in marketing, sales, and communications. From $1,987 audit to full transformation."
-        keywords="90-day AI accelerator, enterprise AI transformation, AI implementation program, AI readiness assessment, AI adoption roadmap, AI compliance framework, AI-driven automation, enterprise AI solutions, business process automation, AI GTM strategy, AI analytics implementation, rapid AI deployment"
+        description="Transform your enterprise with our 90-Day AI Accelerator. Comprehensive AI strategy, implementation, and measurable ROI in marketing, sales, and communications."
+        keywords="90-day AI accelerator, enterprise AI transformation, AI implementation program"
         url="/enterprise-accelerator"
       />
       <Header />
@@ -99,16 +79,7 @@ const EnterpriseAccelerator = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex justify-center"
           >
-            <ZohoEnterpriseForm />
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex justify-center mt-12"
-          >
-            <ApplyButton />
+            <ZohoLetsTalkButton size="large" />
           </motion.div>
         </div>
       </section>
@@ -127,7 +98,7 @@ const EnterpriseAccelerator = () => {
               <p className="text-2xl font-semibold text-black mb-8 italic">
                 Torque AI changes that.
               </p>
-              <ApplyButton />
+              <ZohoLetsTalkButton />
             </motion.div>
             <motion.div 
               {...fadeInUp}
@@ -168,7 +139,7 @@ const EnterpriseAccelerator = () => {
             {...fadeInUp}
             className="text-center mt-16"
           >
-            <ApplyButton />
+            <ZohoLetsTalkButton size="large" />
           </motion.div>
         </div>
       </section>
@@ -196,40 +167,21 @@ const EnterpriseAccelerator = () => {
               <p className="text-xl text-gray-400 mb-6 leading-relaxed">
                 A former CRO and enterprise SaaS growth leader, Chris has generated over <AnimatedCounter end={30} prefix="$" suffix="M" /> in new business using AI automation.
               </p>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                He's also a best-selling author, keynote speaker, and TV commentator featured on CNN, Fox Business, and Cheddar.
-              </p>
               <div className="flex flex-wrap gap-4 mb-8">
-                <a 
-                  href="https://www.linkedin.com/in/chrisdessi/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10"
-                  >
+                <a href="https://www.linkedin.com/in/chrisdessi/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
                     <Linkedin className="w-5 h-5 mr-2" />
                     Connect on LinkedIn
                   </Button>
                 </a>
-                <a 
-                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10"
-                  >
+                <a href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
                     <Youtube className="w-5 h-5 mr-2 text-red-500" />
                     The Quantum Shift
                   </Button>
                 </a>
               </div>
-              <ApplyButton />
+              <ZohoLetsTalkButton />
             </motion.div>
           </div>
         </div>
@@ -239,21 +191,22 @@ const EnterpriseAccelerator = () => {
       <section className="relative bg-black py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0074FF]/20 to-transparent"></div>
         <div className="section-padding max-w-5xl mx-auto text-center relative z-10">
-          <motion.h2 
-            {...fadeInUp}
-            className="text-6xl md:text-7xl font-bold text-white mb-8"
-          >
+          <motion.h2 {...fadeInUp} className="text-6xl md:text-7xl font-bold text-white mb-8">
             The Future of Work Isn't Coming. It's Already Here.
           </motion.h2>
-          <motion.p 
-            {...fadeInUp}
-            className="text-2xl text-gray-400 mb-12"
-          >
+          <motion.p {...fadeInUp} className="text-2xl text-gray-400 mb-12">
             Your competitors are using AI to scale. Don't get left behind.
           </motion.p>
           <motion.div {...fadeInUp}>
-            <ApplyButton />
+            <ZohoLetsTalkButton size="large" />
           </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="bg-background py-20">
+        <div className="section-padding max-w-4xl mx-auto">
+          <ZohoContactForm title="Get In Touch" description="Fill out the form below and we'll get back to you within 24 hours" />
         </div>
       </section>
 

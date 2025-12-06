@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
-
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
 
 const Momento = () => {
   const [email, setEmail] = useState("");
@@ -173,22 +172,13 @@ const Momento = () => {
         </div>
       </main>
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form Section */}
       <section className="bg-background py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
+        <div className="section-padding max-w-4xl mx-auto">
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and we'll get back to you within 24 hours"
+          />
         </div>
       </section>
       <Footer />

@@ -1,24 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Target, Brain, Database, Rocket, Cog, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, Target, Brain, Database, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
-import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
-
-import ZapierContactForm from "@/components/ZapierContactForm";
-import { ZohoAI90DayForm } from "@/components/ZohoAI90DayForm";
+import ZohoContactForm from "@/components/ZohoContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
-import { useState } from "react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const Services = () => {
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-  
   const coreServices = [
     {
       icon: Target,
@@ -127,20 +118,14 @@ const Services = () => {
               Torque AI transforms business challenges into competitive advantages through 
               strategic AI implementation that delivers measurable results and lasting impact.
             </p>
-            <div className="mt-10">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <ZohoLetsTalkButton size="large" />
               <a href="/ai-audit">
                 <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
                   Start Your AI Journey
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-            </div>
-            
-            <div className="mt-12 max-w-2xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-                <h3 className="text-xl font-semibold mb-4 text-white text-left">Join the Torque AI Newsletter</h3>
-                <ZohoTorqueAIForm />
-              </div>
             </div>
           </motion.div>
         </div>
@@ -233,20 +218,18 @@ const Services = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Get a comprehensive 2-week AI audit of your business and discover high-impact opportunities
             </p>
-            <Button 
-              size="lg"
-              className="bg-black hover:bg-gray-800 text-white font-semibold px-12 py-6 text-lg"
-              asChild
-            >
-              <Link to="/ai-audit">
-                Get Started with 2-Week AI Audit — $1,987
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-            
-            <div className="mt-12 pt-8 border-t border-cyan-300">
-              <p className="text-base text-gray-700 mb-4 font-medium">Or join our community for free AI insights:</p>
-              <ZohoTorqueAIButton />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <ZohoLetsTalkButton />
+              <Button 
+                size="lg"
+                className="bg-black hover:bg-gray-800 text-white font-semibold px-12 py-6 text-lg"
+                asChild
+              >
+                <Link to="/ai-audit">
+                  Learn About AI Audit
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -325,17 +308,7 @@ const Services = () => {
             <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
               Partner with Torque AI to transform your business with strategic AI implementation
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ZohoLetsTalkButton size="large" />
-              <Button 
-                size="lg" 
-                className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
-                onClick={() => setIsContactFormOpen(true)}
-              >
-                Schedule Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </div>
+            <ZohoLetsTalkButton size="large" />
           </motion.div>
         </div>
       </section>
@@ -343,33 +316,16 @@ const Services = () => {
       {/* Calendly Booking */}
       <CalendlyEmbed />
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form Section */}
       <section className="bg-background py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
+        <div className="section-padding max-w-4xl mx-auto">
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and we'll get back to you within 24 hours"
+          />
         </div>
       </section>
       <Footer />
-      
-      {/* Contact Form Dialog */}
-      <Dialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen}>
-        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-          <DialogTitle className="sr-only">90-Day AI Workshop Form</DialogTitle>
-          <ZohoAI90DayForm />
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };

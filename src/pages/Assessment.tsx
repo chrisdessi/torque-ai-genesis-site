@@ -7,8 +7,8 @@ import { toast } from "sonner";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 
 const MEETING_URL = "https://calendar.app.google/rAZmF5kNNCsfMyBf7";
@@ -171,48 +171,18 @@ const Assessment = () => {
                 <p className="text-lg mb-6">{getNextStep()}</p>
               </div>
               <div className="text-center space-y-4">
-                <Button
-                  size="lg"
-                  className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-10 py-7 text-lg"
-                  onClick={() => window.open(MEETING_URL, "_blank")}
-                >
-                  Book Your Strategy Session
-                </Button>
-                <div className="pt-4">
-                  <p className="text-white/80 mb-4 text-lg">
-                    Or transform your leadership with our comprehensive program:
-                  </p>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="bg-white/10 hover:bg-white/20 text-white font-semibold px-10 py-7 text-lg border-2 border-white/30"
-                    asChild
-                  >
-                    <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
-                      Join 90-Day Executive Cohort
-                    </a>
-                  </Button>
-                </div>
+                <ZohoLetsTalkButton size="large" />
               </div>
             </div>
           </motion.div>
         </div>
-        {/* Newsletter and Pricing Side by Side */}
+        {/* Contact Form */}
         <section className="bg-background py-20">
           <div className="section-padding max-w-7xl mx-auto">
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Join Torque AI's Newsletter
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-                </p>
-                <div className="flex justify-center">
-                  <ZohoTorqueAIForm />
-                </div>
-              </div>
-            </div>
+            <ZohoContactForm 
+              title="Get In Touch"
+              description="Fill out the form below and our team will respond within 24 hours"
+            />
           </div>
         </section>
         <Footer />
@@ -395,45 +365,45 @@ const Assessment = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="3" id="q5-3" />
-                    <Label htmlFor="q5-3" className="text-white">Not confident (3)</Label>
+                    <Label htmlFor="q5-3" className="text-white">Not very confident (3)</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="4" id="q5-4" />
-                    <Label htmlFor="q5-4" className="text-white">No framework in place (4)</Label>
+                    <Label htmlFor="q5-4" className="text-white">No governance in place (4)</Label>
                   </div>
                 </RadioGroup>
               </div>
 
               <div className="space-y-4">
                 <Label className="text-lg font-semibold text-white">
-                  6. How often do strategic initiatives fail to deliver expected ROI?
+                  6. How would you rate your organization's ability to adopt new technology quickly?
                 </Label>
                 <RadioGroup value={formData.q6} onValueChange={(value) => setFormData({ ...formData, q6: value })}>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="1" id="q6-1" />
-                    <Label htmlFor="q6-1" className="text-white">Rarely (1)</Label>
+                    <Label htmlFor="q6-1" className="text-white">Excellent (1)</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="2" id="q6-2" />
-                    <Label htmlFor="q6-2" className="text-white">Occasionally (2)</Label>
+                    <Label htmlFor="q6-2" className="text-white">Good (2)</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="3" id="q6-3" />
-                    <Label htmlFor="q6-3" className="text-white">Frequently (3)</Label>
+                    <Label htmlFor="q6-3" className="text-white">Fair (3)</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="4" id="q6-4" />
-                    <Label htmlFor="q6-4" className="text-white">Most of the time (4)</Label>
+                    <Label htmlFor="q6-4" className="text-white">Poor (4)</Label>
                   </div>
                 </RadioGroup>
               </div>
             </div>
 
-            <div className="text-center mt-8">
+            <div className="text-center pt-6">
               <Button
                 type="submit"
                 size="lg"
-                className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-10 py-7 text-lg"
+                className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-12 py-6 text-lg"
               >
                 Calculate My Score
               </Button>
@@ -441,24 +411,6 @@ const Assessment = () => {
           </form>
         </motion.div>
       </div>
-      {/* Newsletter and Pricing Side by Side */}
-      <section className="bg-background py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <Footer />
     </div>
   );

@@ -4,20 +4,13 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
-import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
-import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
 
 import chrisProfile from "@/assets/chris-bio.png";
-import ZapierContactForm from "@/components/ZapierContactForm";
-import { useState } from "react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const About = () => {
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-  
   const credentials = [
     { icon: TrendingUp, text: "25+ years scaling organizations from startup to acquisition" },
     { icon: Award, text: "$32M revenue using Generative AI" },
@@ -183,7 +176,6 @@ const About = () => {
                     The Quantum Shift Podcast
                   </Button>
                 </a>
-                <ZohoQuantumShiftButton />
               </div>
             </motion.div>
           </div>
@@ -259,20 +251,11 @@ const About = () => {
               Transform Your Leadership with AI
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Join our Executive 90-Day Cohort for comprehensive AI education and The Quantum Shift methodology.
+              Ready to take the next step? Let's discuss how we can help transform your business.
               <a href="/blog" className="text-primary hover:underline ml-2">Explore our AI insights →</a>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <ZohoLetsTalkButton size="large" />
-              <Button 
-                size="lg" 
-                className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg"
-                onClick={() => setIsContactFormOpen(true)}
-              >
-                Schedule Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <ZohoQuantumShiftButton />
             </div>
           </motion.div>
         </div>
@@ -281,36 +264,16 @@ const About = () => {
       {/* Calendly Booking */}
       <CalendlyEmbed />
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form */}
       <section className="bg-background py-20">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Your success starts here
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive insights, strategies, and stories delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and our team will respond within 24 hours"
+          />
         </div>
       </section>
       <Footer />
-      
-      {/* Contact Form Dialog */}
-      <Dialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen}>
-        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-          <DialogTitle className="sr-only">Contact Form</DialogTitle>
-          <ZapierContactForm 
-            title="Let's Get Started"
-            description="Fill out the form and our team will reach out within 24 hours"
-          />
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };

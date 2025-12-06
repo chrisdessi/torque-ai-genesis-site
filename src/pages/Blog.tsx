@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -138,35 +138,20 @@ const Blog = () => {
               Ready to Transform Your Business with AI?
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Schedule a consultation with Chris Dessi and the Torque AI team
+              Get in touch with Chris Dessi and the Torque AI team
             </p>
-            <Button 
-              size="lg"
-              className="bg-black hover:bg-black/90 text-white px-10 py-7 text-lg"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-            >
-              Book a Meeting
-            </Button>
+            <ZohoLetsTalkButton size="large" />
           </motion.div>
         </div>
       </section>
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form */}
       <section className="bg-background py-20">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and our team will respond within 24 hours"
+          />
         </div>
       </section>
       <Footer />

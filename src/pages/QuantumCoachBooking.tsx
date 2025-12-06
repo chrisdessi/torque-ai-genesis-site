@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { ZohoQuantumCoachWaitlistForm } from "@/components/ZohoQuantumCoachWaitlistForm";
 import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import chrisPortrait from "@/assets/chris-dessi-headshot.jpg";
 
 const QuantumCoachBooking = () => {

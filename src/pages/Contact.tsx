@@ -8,6 +8,7 @@ import SEO from "@/components/SEO";
 import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 const Contact = () => {
   const contactMethods = [
@@ -150,23 +151,14 @@ const Contact = () => {
             <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
               Limited availability for enterprise clients serious about AI transformation
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <ZohoLetsTalkButton size="large" />
               <a href="https://calendar.app.google/rAZmF5kNNCsfMyBf7" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
                   Schedule Consultation
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="bg-white/10 hover:bg-white/20 text-white font-semibold px-12 py-6 text-lg border-2 border-white/30"
-                asChild
-              >
-                <a href="/ai-audit">
-                  2-Week AI Audit — $1,987
-                </a>
-              </Button>
             </div>
           </motion.div>
         </div>

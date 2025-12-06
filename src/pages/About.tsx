@@ -8,6 +8,7 @@ import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
 import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 import chrisProfile from "@/assets/chris-bio.png";
 import ZapierContactForm from "@/components/ZapierContactForm";
@@ -262,6 +263,7 @@ const About = () => {
               <a href="/blog" className="text-primary hover:underline ml-2">Explore our AI insights →</a>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <ZohoLetsTalkButton size="large" />
               <Button 
                 size="lg" 
                 className="bg-black text-white hover:bg-gray-800 font-semibold px-12 py-6 text-lg"
@@ -269,16 +271,6 @@ const About = () => {
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-black text-black hover:bg-black hover:text-white font-semibold px-12 py-6 text-lg"
-                asChild
-              >
-                <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
-                  Join 90-Day Executive Cohort
-                </a>
               </Button>
               <ZohoQuantumShiftButton />
             </div>

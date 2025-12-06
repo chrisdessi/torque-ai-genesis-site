@@ -8,6 +8,7 @@ import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 import ZapierContactForm from "@/components/ZapierContactForm";
 import { ZohoAI90DayForm } from "@/components/ZohoAI90DayForm";
@@ -324,7 +325,8 @@ const Services = () => {
             <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
               Partner with Torque AI to transform your business with strategic AI implementation
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <ZohoLetsTalkButton size="large" />
               <Button 
                 size="lg" 
                 className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg"
@@ -332,16 +334,6 @@ const Services = () => {
               >
                 Schedule Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="bg-white/10 hover:bg-white/20 text-white font-semibold px-12 py-6 text-lg border-2 border-white/30"
-                asChild
-              >
-                <a href="https://buy.stripe.com/bJeeVdfvSeHtaURfmX8g004" target="_blank" rel="noopener noreferrer">
-                  Join Executive AI Cohort
-                </a>
               </Button>
             </div>
           </motion.div>

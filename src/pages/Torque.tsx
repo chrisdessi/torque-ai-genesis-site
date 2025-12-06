@@ -5,6 +5,7 @@ import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
 import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
 import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
@@ -77,6 +78,7 @@ const Torque = () => {
               From executive alignment to measurable ROI.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
+              <ZohoLetsTalkButton size="large" />
               <Button 
                 size="lg"
                 className="bg-white hover:bg-white/90 text-blue-600 font-semibold px-10 py-7 text-lg"

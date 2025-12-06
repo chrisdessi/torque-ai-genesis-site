@@ -4,6 +4,7 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Sparkles, Rocket, LineChart, DollarSign, Users, Presentation, GraduationCap, User, Compass, Heart, type LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 // Clean Animated Illustration for Path Cards
 const PathIllustration = ({ 
@@ -361,6 +362,7 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="flex flex-wrap gap-4 items-center"
               >
+                <ZohoLetsTalkButton size="large" />
                 <button
                   onClick={() => scrollToSection('paths')}
                   className="px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold hover:opacity-95 shadow-xl shadow-green-500/30 hover:shadow-green-500/50 transition-all flex items-center gap-2"

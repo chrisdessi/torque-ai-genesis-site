@@ -1,9 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
-import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 const Hero = () => {
   
@@ -119,16 +117,7 @@ const Hero = () => {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button 
-              size="lg" 
-              className="group bg-cyan-500 hover:bg-cyan-600 text-white border-0 font-semibold px-10 py-7 text-lg"
-              asChild
-            >
-              <a href="/contact">
-                Learn More
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
+            <ZohoLetsTalkButton size="large" />
             <Button 
               variant="outline"
               size="lg" 
@@ -139,18 +128,6 @@ const Hero = () => {
                 Download the AI Strategy Guide
               </a>
             </Button>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.6 }}
-            className="max-w-2xl mx-auto mt-12"
-          >
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <h3 className="text-xl font-semibold mb-4 text-white text-left">Join the Torque AI Newsletter</h3>
-              <ZohoTorqueAIForm />
-            </div>
           </motion.div>
         </motion.div>
       </div>

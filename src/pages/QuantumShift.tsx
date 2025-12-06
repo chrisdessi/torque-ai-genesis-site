@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
-import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
-
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { motion } from "framer-motion";
-import { Play, BookOpen, Video, Music, ArrowRight, Check } from "lucide-react";
+import { BookOpen, Video, Music, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const QuantumShift = () => {
@@ -107,9 +106,7 @@ const QuantumShift = () => {
                   Explore Events
                 </Link>
               </Button>
-              <div className="flex items-center">
-                <ZohoQuantumShiftButton />
-              </div>
+              <ZohoLetsTalkButton />
             </div>
           </motion.div>
         </div>
@@ -164,17 +161,7 @@ const QuantumShift = () => {
           </motion.div>
 
           <motion.div {...fadeInUp} transition={{ delay: 0.3 }} className="text-center mt-8">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-2 border-gray-300 hover:border-purple-600 text-black hover:text-purple-600 font-bold px-10 py-6 text-lg bg-white"
-                onClick={() => window.open('https://idzlf-zgpl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e287093a', '_blank')}
-              >
-                APPLY to the next Cohort
-              </Button>
-              <ZohoQuantumShiftButton />
-            </div>
+            <ZohoLetsTalkButton size="large" />
           </motion.div>
         </div>
       </section>
@@ -290,22 +277,13 @@ const QuantumShift = () => {
       {/* Calendly Booking */}
       <CalendlyEmbed />
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form Section */}
       <section className="bg-background py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Join our FREE community for transformational insights
-              </p>
-              <div className="flex justify-center">
-                <ZohoQuantumShiftButton />
-              </div>
-            </div>
-          </div>
+        <div className="section-padding max-w-4xl mx-auto">
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and we'll get back to you within 24 hours"
+          />
         </div>
       </section>
       <Footer />

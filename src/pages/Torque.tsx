@@ -1,11 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Newsletter from "@/components/Newsletter";
 import SEO from "@/components/SEO";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
-import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
 
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
@@ -81,33 +79,11 @@ const Torque = () => {
               <ZohoLetsTalkButton size="large" />
               <Button 
                 size="lg"
-                className="bg-white hover:bg-white/90 text-blue-600 font-semibold px-10 py-7 text-lg"
-                onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-              >
-                Book Strategy Session
-              </Button>
-              <Button 
-                size="lg"
                 variant="outline"
                 className="bg-transparent hover:bg-white/10 text-white border-white/30 font-semibold px-10 py-7 text-lg"
                 onClick={() => window.location.href = '/enterprise-accelerator'}
               >
                 View Solutions
-              </Button>
-            </div>
-            
-            <div className="mt-12 max-w-2xl">
-              <Button 
-                size="lg"
-                className="bg-white/20 hover:bg-white/30 text-white border border-white/30 font-semibold px-10 py-6"
-                onClick={() => {
-                  const form = document.getElementById('sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6');
-                  if (form) {
-                    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  }
-                }}
-              >
-                Join the Torque AI Community
               </Button>
             </div>
           </motion.div>
@@ -312,35 +288,20 @@ const Torque = () => {
               Ready to Transform Your Business with AI?
             </h2>
             <p className="text-2xl text-gray-200 mb-12 max-w-3xl mx-auto">
-              Book a complimentary strategy session to explore how AI can drive measurable results for your organization.
+              Let's explore how AI can drive measurable results for your organization.
             </p>
-            <Button 
-              size="lg"
-              className="bg-white hover:bg-white/90 text-blue-600 font-semibold px-12 py-8 text-xl"
-              onClick={() => window.open('https://calendar.app.google/rAZmF5kNNCsfMyBf7', '_blank')}
-            >
-              Book Your Strategy Session
-            </Button>
+            <ZohoLetsTalkButton size="large" />
           </motion.div>
         </div>
       </section>
 
-      {/* Newsletter and Pricing Side by Side */}
+      {/* Contact Form Section */}
       <section className="bg-background py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Join Torque AI's Newsletter
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
-              </p>
-              <div className="flex justify-center">
-                <ZohoTorqueAIForm />
-              </div>
-            </div>
-          </div>
+        <div className="section-padding max-w-4xl mx-auto">
+          <ZohoContactForm 
+            title="Get In Touch"
+            description="Fill out the form below and we'll get back to you within 24 hours"
+          />
         </div>
       </section>
       <Footer />

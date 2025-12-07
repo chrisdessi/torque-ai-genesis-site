@@ -22,8 +22,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Helmet } from "react-helmet";
-import { ZohoTorqueAIForm } from "@/components/ZohoTorqueAIForm";
-import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
 /**
  * Torque AI – Strategy & Deployment Guide
@@ -471,8 +471,8 @@ export default function TorqueAIStrategyGuidePage() {
             
             <div className="mt-12 max-w-2xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-                <h4 className="text-xl font-semibold mb-4 text-white text-left">Join the Torque AI Newsletter</h4>
-                <ZohoTorqueAIForm />
+                <h4 className="text-xl font-semibold mb-4 text-white text-left">Ready to Get Started?</h4>
+                <ZohoLetsTalkButton />
               </div>
             </div>
             

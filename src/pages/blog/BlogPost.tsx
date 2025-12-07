@@ -556,14 +556,12 @@ const BlogPost = () => {
             <div className="max-w-2xl mx-auto">
               <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Join Torque AI's Newsletter
+                  Ready to Transform Your Business?
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Get exclusive AI insights, strategies, and innovation updates delivered directly to your inbox
+                  Get in touch to discuss how AI can accelerate your growth
                 </p>
-                <div className="flex justify-center">
-                  <ZohoTorqueAIForm />
-                </div>
+                <ZohoContactForm />
               </div>
             </div>
           </div>
@@ -667,11 +665,9 @@ const BlogPost = () => {
             className="mt-16 pt-12 border-t border-border"
           >
             <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-              Stay Updated with AI Insights
+              Let's Talk About Your AI Strategy
             </h3>
-            <div className="flex justify-center">
-              <ZohoTorqueAIForm />
-            </div>
+            <ZohoContactForm />
           </motion.div>
 
           {/* Share & CTA */}

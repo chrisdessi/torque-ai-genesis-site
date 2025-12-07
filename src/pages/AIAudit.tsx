@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoAIAuditNewsletter from "@/components/ZohoAIAuditNewsletter";
-import { ZohoTorqueAIButton } from "@/components/ZohoTorqueAIButton";
+import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 

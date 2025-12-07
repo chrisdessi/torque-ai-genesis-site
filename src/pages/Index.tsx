@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Sparkles, Rocket, LineChart, DollarSign, Users, Presentation, GraduationCap, User, Compass, Heart, type LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import LeadershipEvaluator from "@/components/LeadershipEvaluator";
 
 // Clean Animated Illustration for Path Cards
 const PathIllustration = ({ 
@@ -530,6 +531,26 @@ const Index = () => {
               </motion.article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Leadership Skills Evaluator Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="text-center mb-12">
+            <p className="text-base sm:text-lg font-semibold uppercase tracking-[0.2em] text-emerald-600 mb-4">
+              Free Assessment
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6">
+              Evaluate Your Leadership Skills
+            </h2>
+            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Take our free leadership assessment to discover your strengths and areas for growth.
+            </p>
+          </motion.div>
+          <motion.div {...fadeInUp}>
+            <LeadershipEvaluator />
+          </motion.div>
         </div>
       </section>
 

@@ -157,7 +157,7 @@ export default function Index() {
 
           <div className="grid gap-6 md:grid-cols-3">
             {/* Strategy */}
-            <div className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
+            <div id="strategy" className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-300">
                 Pillar 1
               </p>
@@ -181,7 +181,7 @@ export default function Index() {
             </div>
 
             {/* Marketing */}
-            <div className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
+            <div id="marketing" className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-300">
                 Pillar 2
               </p>
@@ -206,7 +206,7 @@ export default function Index() {
             </div>
 
             {/* Training */}
-            <div className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
+            <div id="training" className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/80 p-6">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-300">
                 Pillar 3
               </p>
@@ -427,7 +427,7 @@ export default function Index() {
                 <li>
                   •{" "}
                   <a
-                    href="https://www.torqueacademy.com"
+                    href="https://www.torqueacademy.ai"
                     className="text-emerald-300 underline hover:text-emerald-200"
                     target="_blank"
                     rel="noreferrer"
@@ -442,7 +442,7 @@ export default function Index() {
                 </li>
               </ul>
               <a
-                href="https://www.torqueacademy.com"
+                href="https://www.torqueacademy.ai"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-5 inline-flex items-center justify-center rounded-full border border-slate-600 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-emerald-300 hover:text-emerald-200 transition-colors"

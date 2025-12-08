@@ -661,39 +661,37 @@ export default function Index() {
         className="border-b border-slate-200 bg-slate-50"
       >
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <div className="grid gap-10 md:grid-cols-2">
-            <div className="space-y-5">
-              <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-                Ready to See What AI Can Really Do for Your Business?
-              </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Tell us a bit about your business, and we'll follow up with a
-                strategy session to map out your first (or next) 90 days with
-                AI.
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+              Ready to See What AI Can Really Do for Your Business?
+            </h2>
+            <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+              Tell us a bit about your business, and we'll follow up with a
+              strategy session to map out your first (or next) 90 days with
+              AI.
+            </p>
+            <ul className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-base text-slate-600">
+              <li>• No generic pitch</li>
+              <li>• Strategy, Marketing, and Training</li>
+              <li>• Leave with clarity</li>
+            </ul>
+          </div>
+
+          <div className="space-y-10">
+            {/* ZOHO FORM */}
+            <div className="rounded-3xl border border-slate-200 bg-white p-8">
+              <p className="text-lg font-semibold text-slate-700 mb-4">
+                Step 1 — Share a Few Details
               </p>
-              <ul className="space-y-3 text-base text-slate-600">
-                <li>• No generic pitch — everything is tailored to your world.</li>
-                <li>• We'll talk Strategy, Marketing, and Training, not just tools.</li>
-                <li>• If we're not a fit, you still leave with clarity.</li>
-              </ul>
+              <ZohoContactForm />
             </div>
 
-            <div className="space-y-8">
-              {/* ZOHO FORM */}
-              <div className="rounded-3xl border border-slate-200 bg-white p-6">
-                <p className="text-sm font-semibold text-slate-700 mb-3">
-                  Step 1 — Share a Few Details
-                </p>
-                <ZohoContactForm />
-              </div>
-
-              {/* CALENDLY */}
-              <div className="rounded-3xl border border-slate-200 bg-white p-6">
-                <p className="text-sm font-semibold text-slate-700 mb-3">
-                  Step 2 — Book Your Strategy Call
-                </p>
-                <CalendlyEmbed />
-              </div>
+            {/* CALENDLY */}
+            <div className="rounded-3xl border border-slate-200 bg-white p-8">
+              <p className="text-lg font-semibold text-slate-700 mb-4">
+                Step 2 — Book Your Strategy Call
+              </p>
+              <CalendlyEmbed />
             </div>
           </div>
         </div>

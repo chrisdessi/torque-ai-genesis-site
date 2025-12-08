@@ -8,6 +8,7 @@ import SEO from "@/components/SEO";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import ServicesScoreApp from "@/components/ServicesScoreApp";
 
 const Services = () => {
   const coreServices = [
@@ -232,6 +233,27 @@ const Services = () => {
               </Button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ScoreApp Assessment */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Free AI Readiness Assessment
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Discover how prepared your business is for AI transformation
+            </p>
+          </motion.div>
+          <ServicesScoreApp />
         </div>
       </section>
 

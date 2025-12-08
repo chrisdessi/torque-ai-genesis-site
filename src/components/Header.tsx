@@ -18,7 +18,7 @@ const Header = () => {
   }, []);
 
   const academyLinks = [
-    { name: "Torque Academy", href: "https://www.torqueacademy.com" },
+    { name: "Torque Academy", href: "https://www.torqueacademy.ai" },
     { name: "Book Genius AI", href: "https://bookgenius.ai/" },
     { name: "Real Estate DataHub", href: "https://realtor-easy-button.lovable.app" },
     { name: "AI Summit NYC", href: "https://www.aisummit.nyc" },

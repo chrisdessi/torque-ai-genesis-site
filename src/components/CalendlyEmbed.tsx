@@ -35,7 +35,7 @@ export const CalendlyEmbed = ({
         </div>
         <div 
           className="calendly-inline-widget rounded-lg overflow-hidden shadow-lg bg-slate-800" 
-          data-url="https://calendly.com/chris-torqueapp/30min?primary_color=0ea5e9" 
+          data-url="https://calendly.com/chris-torqueapp/quantum-shift-starter-session-clone?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=0117b7" 
           style={{ minWidth: '320px', height: '700px' }}
         />
       </div>

@@ -19,43 +19,34 @@ const Header = () => {
 
   const navigation = [
     { 
-      name: "Torque", 
-      href: "/torque",
+      name: "AI Audit", 
+      href: "/ai-audit"
+    },
+    { 
+      name: "Fast Track", 
+      href: "/fast-track"
+    },
+    { 
+      name: "Solutions", 
+      href: "/solutions",
       subItems: [
-        { name: "AI Consulting", href: "/torque" },
-        { name: "2-Week AI Audit", href: "/ai-audit" },
-        { name: "AI Strategy Guide", href: "/torque-ai-guide" },
-        { name: "Services", href: "/services" },
-        { name: "90-Day Accelerator", href: "/enterprise-accelerator" }
+        { name: "Revenue Engine", href: "/solutions/revenue-engine" },
+        { name: "Workflow Automation", href: "/solutions/automation" },
+        { name: "Marketing Systems", href: "/solutions/marketing" },
+        { name: "Dashboards", href: "/solutions/dashboards" }
       ]
     },
     { 
-      name: "Memento", 
-      href: "/memento-hub",
-      subItems: [
-        { name: "Overview", href: "/memento-hub" },
-        { name: "Council Dinners", href: "/momento-council" },
-        { name: "Events", href: "/events" },
-        { name: "Software", href: "/momento" }
-      ]
+      name: "Workshops", 
+      href: "/workshops"
     },
     { 
-      name: "The Quantum Shift", 
-      href: "/quantum-shift",
-      subItems: [
-        { name: "Philosophy", href: "/quantum-shift" },
-        { name: "Podcast", href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" },
-        { name: "Quantum Coach", href: "/quantum-shift/coach" },
-        { name: "About", href: "/about" }
-      ]
+      name: "Results", 
+      href: "/results"
     },
     { 
-      name: "Blog", 
-      href: "/blog"
-    },
-    { 
-      name: "Contact", 
-      href: "/contact"
+      name: "About", 
+      href: "/about"
     },
   ];
 
@@ -144,8 +135,8 @@ const Header = () => {
               size="sm"
               className="bg-sky-600 hover:bg-sky-700 text-white font-semibold"
             >
-              <Link to="/ai-audit">
-                Get Your AI Audit Now
+              <Link to="/contact">
+                Contact
               </Link>
             </Button>
           </div>
@@ -213,8 +204,8 @@ const Header = () => {
                   asChild 
                   className="w-full bg-sky-600 hover:bg-sky-700 text-white"
                 >
-                  <Link to="/ai-audit" onClick={() => setIsMenuOpen(false)}>
-                    Get Your AI Audit Now
+                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                    Contact
                   </Link>
                 </Button>
               </div>

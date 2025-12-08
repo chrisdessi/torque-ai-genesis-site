@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import ZohoAIAuditNewsletter from "@/components/ZohoAIAuditNewsletter";
-import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoContactForm from "@/components/ZohoContactForm";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
@@ -56,15 +55,10 @@ const AIAudit = () => {
               </p>
             </div>
 
-            {/* Main Signup Form */}
-            <div className="max-w-xl mx-auto">
-              <div className="bg-gradient-to-br from-slate-900/90 to-slate-900/60 border-2 border-sky-500/30 rounded-3xl p-8 lg:p-10 shadow-2xl backdrop-blur">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold mb-3 text-slate-100">Start Growing with AI Today</h2>
-                  <p className="text-base text-slate-300">Get instant access to our AI Strategy & Deployment Guide</p>
-                </div>
-
-                <ZohoAIAuditNewsletter />
+            {/* Main Contact Form */}
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-gradient-to-br from-slate-900/90 to-slate-900/60 border-2 border-sky-500/30 rounded-3xl p-6 lg:p-8 shadow-2xl backdrop-blur">
+                <ZohoContactForm />
               </div>
             </div>
 
@@ -311,17 +305,17 @@ const AIAudit = () => {
               </p>
               
               <div className="mt-8 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold mb-4 text-slate-100">Join the Torque AI Community</h3>
+                <h3 className="text-lg font-semibold mb-4 text-slate-100">Ready to Get Started?</h3>
                 <Button 
                   onClick={() => {
-                    const form = document.getElementById('sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6');
-                    if (form) {
-                      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const booking = document.getElementById('booking');
+                    if (booking) {
+                      booking.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                   }}
                   className="bg-sky-600 hover:bg-sky-700 text-white font-semibold"
                 >
-                  Get Your Free AI Strategy Guide
+                  Book Your Free AI Audit
                 </Button>
               </div>
             </motion.div>

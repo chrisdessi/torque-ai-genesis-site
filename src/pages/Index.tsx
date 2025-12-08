@@ -256,7 +256,74 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Fast Track Section */}
+      {/* Leadership Section */}
+      <section id="leadership" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6">
+              AI for Leaders & Teams: Transform How Your Organization Works
+            </h2>
+            <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              AI isn't just a technical shift—it's a leadership shift. Torque AI helps organizations evolve not just their systems, but their people.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.1 }}
+              className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all"
+            >
+              <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
+                Leadership Workshops
+              </h3>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                High-impact sessions that teach leaders how to think, decide, delegate, and communicate in the AI era.
+              </p>
+            </motion.div>
+
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.2 }}
+              className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all"
+            >
+              <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
+                Team Training & Adoption
+              </h3>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We teach your staff how to use AI safely and effectively so workflows stick and adoption becomes effortless.
+              </p>
+            </motion.div>
+
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.3 }}
+              className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all"
+            >
+              <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
+                Executive AI Coaching
+              </h3>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                One-on-one guidance for founders and executives who want clarity, speed, and strategic advantage through AI.
+              </p>
+            </motion.div>
+
+            <motion.div
+              {...fadeInUp}
+              transition={{ delay: 0.4 }}
+              className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all"
+            >
+              <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
+                Organizational Reinvention
+              </h3>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We help teams restructure workflows, communication, and culture to match the speed of modern business.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <section id="fast-track" className="py-24 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <motion.div {...fadeInUp}>

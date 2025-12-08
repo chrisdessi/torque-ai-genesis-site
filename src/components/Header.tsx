@@ -33,16 +33,25 @@ const Header = () => {
         { name: "Revenue Engine", href: "/solutions/revenue-engine" },
         { name: "Workflow Automation", href: "/solutions/automation" },
         { name: "Marketing Systems", href: "/solutions/marketing" },
-        { name: "Dashboards", href: "/solutions/dashboards" }
+        { name: "Dashboards & Insights", href: "/solutions/dashboards" }
       ]
     },
     { 
-      name: "Workshops", 
-      href: "/workshops"
+      name: "Leadership & Training", 
+      href: "/leadership",
+      subItems: [
+        { name: "Executive Coaching", href: "/leadership/executive-coaching" },
+        { name: "Team Workshops", href: "/leadership/workshops" },
+        { name: "Keynotes & Summits", href: "/leadership/keynotes" }
+      ]
     },
     { 
-      name: "Results", 
-      href: "/results"
+      name: "Resources", 
+      href: "/resources",
+      subItems: [
+        { name: "Blog", href: "/blog" },
+        { name: "Free AI Score", href: "/score" }
+      ]
     },
     { 
       name: "About", 

@@ -3,8 +3,9 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
-import { Zap, Users, FileText, LayoutDashboard, GraduationCap, Target, Clock, TrendingUp, Cog, UserCheck, BookOpen } from "lucide-react";
+import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import ServicesScoreApp from "@/components/ServicesScoreApp";
+import { Clock, UserCheck, FileText, Cog, Users, BookOpen, TrendingUp, Zap, Target, LayoutDashboard, GraduationCap, UserCog, Building2, CheckCircle } from "lucide-react";
 
 const Index = () => {
   const fadeInUp = {
@@ -17,42 +18,93 @@ const Index = () => {
   const painPoints = [
     {
       title: "You're drowning in repetitive work.",
-      solution: "AI removes the busywork so your team can finally think again.",
+      description: "Your team is stuck in spreadsheets, inboxes, and manual tasks. AI removes the busywork so your people can finally think again.",
       icon: Clock
     },
     {
       title: "You're losing leads because follow-up is inconsistent.",
-      solution: "AI becomes your 24/7 sales engine.",
+      description: "You don't need more traffic. You need better follow-up. AI becomes your 24/7 sales engine.",
       icon: UserCheck
     },
     {
-      title: "Your content is slow or inconsistent.",
-      solution: "One idea → 50 assets. Speed without slop.",
+      title: "Your content is slow, chaotic, or nonexistent.",
+      description: "We use AI to turn one core idea into blogs, emails, social posts, and video scripts — without losing your voice.",
       icon: FileText
     },
     {
       title: "Your tools don't talk to each other.",
-      solution: "We unify your stack with AI-powered workflows that finally make sense.",
+      description: "Ten tools, zero integration. We unify your stack with AI-powered workflows that finally make sense.",
       icon: Cog
     },
     {
-      title: "You're overworked and understaffed.",
-      solution: "AI lets you scale without expanding payroll.",
+      title: "Your team is overworked and you're hiring to fix process problems.",
+      description: "AI lets you scale without inflating payroll. Work smarter, not bigger.",
       icon: Users
     },
     {
-      title: "Leadership is stuck in outdated playbooks.",
-      solution: "We train your team to adopt AI safely and effectively.",
+      title: "Leadership knows AI matters but doesn't know where to start.",
+      description: "We train leaders and teams to use AI safely, effectively, and confidently — without the hype or confusion.",
       icon: BookOpen
     }
   ];
 
   const solutions = [
-    { title: "AI Revenue Engines", description: "AI follow-up, lead scoring, and appointment funnels.", icon: TrendingUp },
-    { title: "Workflow Automation", description: "Remove repetitive tasks across the organization.", icon: Zap },
-    { title: "Marketing Systems", description: "One idea becomes a month of content.", icon: Target },
-    { title: "AI Dashboards", description: "Real-time visibility without digging for data.", icon: LayoutDashboard },
-    { title: "AI Workshops", description: "Train your team on safe and effective AI usage.", icon: GraduationCap }
+    { 
+      title: "AI Revenue Engines", 
+      description: "Automated follow-up, nurturing, appointment setting, and lead scoring that runs 24/7 so you stop leaking opportunities.", 
+      icon: TrendingUp 
+    },
+    { 
+      title: "Workflow Automation", 
+      description: "We map your processes and design AI automations that handle repetitive work across operations, marketing, and sales.", 
+      icon: Zap 
+    },
+    { 
+      title: "Marketing Systems", 
+      description: "One idea becomes blogs, emails, social media posts, and scripts — powered by AI and shaped by your expertise.", 
+      icon: Target 
+    },
+    { 
+      title: "Dashboards & Insights", 
+      description: "Real-time visibility into pipeline, marketing performance, and operations — without digging for data.", 
+      icon: LayoutDashboard 
+    }
+  ];
+
+  const leadershipItems = [
+    {
+      title: "Leadership Workshops",
+      description: "High-impact sessions for founders and executives who need to understand AI's impact on strategy, execution, and culture.",
+      icon: GraduationCap
+    },
+    {
+      title: "Team Training & Adoption",
+      description: "Hands-on training so your team knows how to use AI in their daily work — safely, effectively, and confidently.",
+      icon: Users
+    },
+    {
+      title: "Executive AI Coaching",
+      description: "1:1 support for leaders navigating growth, change, and the pressure to 'figure out AI' without a roadmap.",
+      icon: UserCog
+    },
+    {
+      title: "Organizational Reinvention",
+      description: "We help redesign workflows, communication, and expectations so your operating system matches the speed of modern business.",
+      icon: Building2
+    }
+  ];
+
+  const processSteps = [
+    { step: "Audit", description: "We diagnose bottlenecks, leaks, and opportunities in your business." },
+    { step: "Blueprint", description: "We design the AI workflows, systems, and training you need." },
+    { step: "Build", description: "We implement and integrate automations with your existing tools." },
+    { step: "Adopt & Scale", description: "We train your team, monitor performance, and expand what works." }
+  ];
+
+  const results = [
+    "Helped an eCommerce client grow 92% year-over-year using AI workflows.",
+    "Supported over $32M in deals driven by AI-powered pipelines.",
+    "Cut 15–20 hours per week of manual work for lean teams."
   ];
 
   // Floating orb component
@@ -86,9 +138,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white text-slate-800 font-inter">
       <SEO 
-        title="Torque AI | AI That Fixes Bottlenecks, Automates Work, and Unlocks Growth"
-        description="Torque AI installs the systems that remove the bottlenecks holding you back. More leads. Faster workflows. Fewer headaches. Better results."
-        keywords="AI automation, workflow automation, AI marketing, lead generation, AI consulting, business automation, AI revenue systems"
+        title="Torque AI | AI Systems for Real Businesses"
+        description="Torque AI installs AI-powered systems that fix bottlenecks, automate work, and unlock new growth for small and mid-market businesses. AI revenue engines, workflow automation, leadership workshops, and executive coaching."
+        keywords="AI automation, workflow automation, AI marketing, lead generation, AI consulting, business automation, AI revenue systems, AI workshops, executive coaching"
         url="/"
       />
       <Header />
@@ -140,7 +192,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-8 text-slate-900"
             >
-              AI That Fixes Bottlenecks, Automates Work, and Unlocks New Growth.
+              AI Systems That Fix Bottlenecks, Multiply Your Team, and Unlock New Growth.
             </motion.h1>
             
             <motion.p 
@@ -149,7 +201,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto mb-12 leading-relaxed"
             >
-              Torque AI installs the systems that remove the bottlenecks holding you back. More leads. Faster workflows. Fewer headaches. Better results.
+              Your people are smart. Your ideas are good. But your systems are stuck in manual mode. Torque AI installs the AI-powered workflows, revenue engines, and training your team needs to finally move faster — without burning out.
             </motion.p>
 
             <motion.div 
@@ -162,7 +214,7 @@ const Index = () => {
                 to="/ai-audit"
                 className="px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl rounded-full bg-gradient-to-r from-sky-600 to-blue-600 text-white font-bold hover:from-sky-700 hover:to-blue-700 shadow-xl shadow-sky-500/30 hover:shadow-sky-500/50 transition-all hover:-translate-y-0.5"
               >
-                Get Your AI Audit
+                Get an AI Audit
               </Link>
               <Link 
                 to="/fast-track"
@@ -195,7 +247,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6">
-              Why Companies Call Torque AI
+              Is This What Your Business Feels Like?
             </h2>
           </motion.div>
 
@@ -214,7 +266,7 @@ const Index = () => {
                   {pain.title}
                 </h3>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  {pain.solution}
+                  {pain.description}
                 </p>
               </motion.div>
             ))}
@@ -231,22 +283,22 @@ const Index = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (
               <motion.div
                 key={solution.title}
                 {...fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 rounded-xl bg-white border border-slate-200 hover:shadow-lg hover:border-emerald-200 transition-all flex items-start gap-4"
+                className="p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-xl hover:border-emerald-200 transition-all flex items-start gap-6"
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0">
-                  <solution.icon className="w-6 h-6 text-white" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center flex-shrink-0">
+                  <solution.icon className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-1">
+                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-2">
                     {solution.title}
                   </h3>
-                  <p className="text-base text-slate-600">
+                  <p className="text-lg text-slate-600 leading-relaxed">
                     {solution.description}
                   </p>
                 </div>
@@ -261,104 +313,135 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6">
-              AI for Leaders & Teams: Transform How Your Organization Works
+              AI for Leaders & Teams
             </h2>
             <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              AI isn't just a technical shift—it's a leadership shift. Torque AI helps organizations evolve not just their systems, but their people.
+              AI isn't just a technical shift. It's a leadership shift. We don't just install systems — we help your people evolve with them.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.1 }}
-              className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all"
-            >
-              <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
-                Leadership Workshops
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                High-impact sessions that teach leaders how to think, decide, delegate, and communicate in the AI era.
-              </p>
-            </motion.div>
-
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.2 }}
-              className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all"
-            >
-              <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
-                Team Training & Adoption
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                We teach your staff how to use AI safely and effectively so workflows stick and adoption becomes effortless.
-              </p>
-            </motion.div>
-
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.3 }}
-              className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all"
-            >
-              <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
-                Executive AI Coaching
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                One-on-one guidance for founders and executives who want clarity, speed, and strategic advantage through AI.
-              </p>
-            </motion.div>
-
-            <motion.div
-              {...fadeInUp}
-              transition={{ delay: 0.4 }}
-              className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all"
-            >
-              <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">
-                Organizational Reinvention
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                We help teams restructure workflows, communication, and culture to match the speed of modern business.
-              </p>
-            </motion.div>
+            {leadershipItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                {...fadeInUp}
+                transition={{ delay: index * 0.1 }}
+                className="p-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 hover:shadow-xl hover:border-violet-200 transition-all flex items-start gap-6"
+              >
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="fast-track" className="py-24 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <motion.div {...fadeInUp}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6">
-              The Torque AI Fast Track – 14 Days to Transformation
+      {/* Process Section */}
+      <section id="process" className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6">
+              How We Work With You
             </h2>
-            <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-              We audit your systems, rebuild your workflows, install automations, train your team, and deliver ROI you can measure.
+          </motion.div>
+
+          <div className="space-y-6">
+            {processSteps.map((item, index) => (
+              <motion.div
+                key={item.step}
+                {...fadeInUp}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-start gap-6 p-6 rounded-xl bg-white border border-slate-200 hover:shadow-lg transition-all"
+              >
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-600 to-blue-600 flex items-center justify-center flex-shrink-0 text-white font-bold text-lg">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-1">
+                    {item.step}
+                  </h3>
+                  <p className="text-lg text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Results Section */}
+      <section id="results" className="py-24 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6">
+              Results Our Clients See
+            </h2>
+          </motion.div>
+
+          <div className="space-y-4">
+            {results.map((result, index) => (
+              <motion.div
+                key={index}
+                {...fadeInUp}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10"
+              >
+                <CheckCircle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+                <p className="text-xl text-white/90" dangerouslySetInnerHTML={{ __html: result.replace(/(\d+%|\$\d+M|\d+–\d+ hours)/g, '<strong class="text-emerald-400">$1</strong>') }} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ScoreApp Section */}
+      <section id="score" className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6">
+              Get Your Torque AI Score
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Not sure where to start? Take our free 5-minute AI Score assessment and discover exactly where AI can save time and grow revenue in your business.
             </p>
-            <Link 
-              to="/fast-track"
-              className="inline-flex px-10 py-5 text-xl rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold hover:from-emerald-600 hover:to-green-700 shadow-xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all hover:-translate-y-0.5"
-            >
-              Learn More
-            </Link>
+          </motion.div>
+
+          <motion.div {...fadeInUp}>
+            <ServicesScoreApp />
           </motion.div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="cta" className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <motion.div {...fadeInUp}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-8">
+      {/* CTA Section with Calendly */}
+      <section id="cta" className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6">
               Ready to Transform Your Business?
             </h2>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link 
-                to="/ai-audit"
-                className="px-10 py-5 text-xl rounded-full bg-gradient-to-r from-sky-600 to-blue-600 text-white font-bold hover:from-sky-700 hover:to-blue-700 shadow-xl shadow-sky-500/30 hover:shadow-sky-500/50 transition-all hover:-translate-y-0.5"
-              >
-                Get Your AI Audit
-              </Link>
-              <ZohoLetsTalkButton size="large" />
-            </div>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+              Get an AI Audit or book a call and let's map out what AI can do for your business.
+            </p>
+            <Link 
+              to="/ai-audit"
+              className="inline-flex px-10 py-5 text-xl rounded-full bg-gradient-to-r from-sky-600 to-blue-600 text-white font-bold hover:from-sky-700 hover:to-blue-700 shadow-xl shadow-sky-500/30 hover:shadow-sky-500/50 transition-all hover:-translate-y-0.5"
+            >
+              Get Your AI Audit
+            </Link>
+          </motion.div>
+
+          <motion.div {...fadeInUp} className="mt-16">
+            <CalendlyEmbed />
           </motion.div>
         </div>
       </section>

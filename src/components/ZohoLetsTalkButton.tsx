@@ -1,4 +1,12 @@
 import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 interface ZohoLetsTalkButtonProps {
   className?: string;
@@ -11,7 +19,7 @@ const ZohoLetsTalkButton = ({
   variant = "default",
   size = "default"
 }: ZohoLetsTalkButtonProps) => {
-  const formUrl = "https://idzlf-cmpzourl.maillist-manage.com/ua/Optin?od=11287ecc66b9ae&zx=1316ccdc8&tD=110489827e26e63c1&sD=110489827e2870991";
+  const [open, setOpen] = useState(false);
 
   const baseStyles = "inline-flex items-center justify-center gap-2 font-medium rounded-lg cursor-pointer transition-all duration-200 text-center";
   
@@ -26,15 +34,29 @@ const ZohoLetsTalkButton = ({
   };
 
   return (
-    <a
-      href={formUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
-    >
-      <span>Let's Talk</span>
-      <ExternalLink className={size === "large" ? "w-6 h-6" : "w-5 h-5"} />
-    </a>
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <button
+          className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+        >
+          <span>Let's Talk</span>
+          <ExternalLink className={size === "large" ? "w-6 h-6" : "w-5 h-5"} />
+        </button>
+      </DialogTrigger>
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-bold text-center">Let's Talk</DialogTitle>
+        </DialogHeader>
+        <div className="w-full">
+          <iframe 
+            aria-label="TORQUE AI" 
+            frameBorder="0" 
+            style={{ height: '500px', width: '100%', border: 'none' }} 
+            src="https://forms.zohopublic.com/chris283/form/SimpleContactUs/formperma/fAQC0eeippMGIw07sbBkPm6eeu5OSEmylLzOgfF-4FA"
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 

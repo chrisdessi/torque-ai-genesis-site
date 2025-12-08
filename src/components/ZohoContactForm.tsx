@@ -29,7 +29,7 @@ const ZohoContactForm = ({
         <iframe 
           aria-label="TORQUE AI" 
           frameBorder="0" 
-          style={{ height: '500px', width: '99%', border: 'none' }} 
+          style={{ height: '700px', width: '100%', border: 'none' }} 
           src="https://forms.zohopublic.com/chris283/form/SimpleContactUs/formperma/fAQC0eeippMGIw07sbBkPm6eeu5OSEmylLzOgfF-4FA"
         />
       </div>

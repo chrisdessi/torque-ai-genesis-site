@@ -5,7 +5,7 @@ import ZohoContactForm from "@/components/ZohoContactForm";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Users, Calendar, Code, Heart } from "lucide-react";
-import ServicesScoreApp from "@/components/ServicesScoreApp";
+import MementoScoreApp from "@/components/MementoScoreApp";
 
 const MementoHub = () => {
   const fadeInUp = {
@@ -140,7 +140,7 @@ const MementoHub = () => {
               Discover your leadership strengths and growth opportunities
             </p>
           </motion.div>
-          <ServicesScoreApp />
+          <MementoScoreApp />
         </div>
       </section>
 

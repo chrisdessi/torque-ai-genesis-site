@@ -31,6 +31,12 @@ import ExecutiveCoaching from "./pages/ExecutiveCoaching";
 import Assessment from "./pages/Assessment";
 import AIAudit from "./pages/AIAudit";
 import NotFound from "./pages/NotFound";
+import TorqueAcademy from "./pages/partners/TorqueAcademy";
+import BookGeniusAI from "./pages/partners/BookGeniusAI";
+import RealEstateDataHub from "./pages/partners/RealEstateDataHub";
+import AISummitNYC from "./pages/partners/AISummitNYC";
+import WestchesterAIAlliance from "./pages/partners/WestchesterAIAlliance";
+import QuantumShiftSummit from "./pages/partners/QuantumShiftSummit";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +75,12 @@ const App = () => (
           <Route path="/executive-coaching" element={<ExecutiveCoaching />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/ai-audit" element={<AIAudit />} />
+          <Route path="/partners/torque-academy" element={<TorqueAcademy />} />
+          <Route path="/partners/book-genius-ai" element={<BookGeniusAI />} />
+          <Route path="/partners/real-estate-datahub" element={<RealEstateDataHub />} />
+          <Route path="/partners/ai-summit-nyc" element={<AISummitNYC />} />
+          <Route path="/partners/westchester-ai-alliance" element={<WestchesterAIAlliance />} />
+          <Route path="/partners/quantum-shift-summit" element={<QuantumShiftSummit />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

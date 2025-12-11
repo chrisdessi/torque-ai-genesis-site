@@ -87,6 +87,24 @@ const QuantumCoachBooking = () => {
             </p>
           </div>
 
+          {/* Video Section - moved above form */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <div className="bg-white border border-slate-200 rounded-3xl p-6 lg:p-8 shadow-lg">
+              <h2 className="text-2xl font-semibold mb-4 text-center text-slate-900">A Message from Chris</h2>
+              <div className="aspect-video rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-md">
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/GqyALozg1_4" 
+                  title="A Message from Chris Dessi" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Main Signup Form */}
           <div className="max-w-xl mx-auto">
             <div className="bg-white border-2 border-emerald-500/30 rounded-3xl p-8 lg:p-10 shadow-xl">
@@ -119,24 +137,6 @@ const QuantumCoachBooking = () => {
                 <div className="text-3xl mb-3">🎯</div>
                 <h3 className="font-semibold text-slate-900 mb-2">Community Access</h3>
                 <p className="text-sm text-slate-600">Invitations to workshops, sessions, and deeper conversations</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Video Section */}
-          <div className="max-w-3xl mx-auto mt-16">
-            <div className="bg-white border border-slate-200 rounded-3xl p-6 lg:p-8 shadow-lg">
-              <h2 className="text-2xl font-semibold mb-4 text-center text-slate-900">A Message from Chris</h2>
-              <div className="aspect-video rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-md">
-                <iframe 
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/GqyALozg1_4" 
-                  title="A Message from Chris Dessi" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  allowFullScreen
-                />
               </div>
             </div>
           </div>

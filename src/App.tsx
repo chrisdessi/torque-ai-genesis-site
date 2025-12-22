@@ -75,7 +75,7 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/executive-coaching" element={<ExecutiveCoaching />} />
           <Route path="/assessment" element={<Assessment />} />
-          <Route path="/ai-audit" element={<AIAudit />} />
+          <Route path="/ai-audit" element={<FreeAIAudit />} />
           <Route path="/freeaiaudit" element={<FreeAIAudit />} />
           <Route path="/partners/torque-academy" element={<TorqueAcademy />} />
           <Route path="/partners/book-genius-ai" element={<BookGeniusAI />} />

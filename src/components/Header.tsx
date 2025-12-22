@@ -100,10 +100,10 @@ const Header = () => {
 
           {/* CTA Button */}
           <Link
-            to="/contact"
+            to="/ai-audit"
             className="hidden md:inline-flex rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-600 transition-colors"
           >
-            Book Strategy Call
+            Free AI Audit
           </Link>
 
           {/* Mobile Menu Button */}
@@ -174,11 +174,11 @@ const Header = () => {
 
                 <div className="pt-4 px-4">
                   <Link 
-                    to="/contact"
+                    to="/ai-audit"
                     className="block w-full text-center rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-600 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Book Strategy Call
+                    Free AI Audit
                   </Link>
                 </div>
               </nav>

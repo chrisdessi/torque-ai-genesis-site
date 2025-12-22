@@ -30,6 +30,7 @@ import TorqueAIGuide from "./pages/TorqueAIGuide";
 import ExecutiveCoaching from "./pages/ExecutiveCoaching";
 import Assessment from "./pages/Assessment";
 import AIAudit from "./pages/AIAudit";
+import FreeAIAudit from "./pages/FreeAIAudit";
 import NotFound from "./pages/NotFound";
 import TorqueAcademy from "./pages/partners/TorqueAcademy";
 import BookGeniusAI from "./pages/partners/BookGeniusAI";
@@ -75,6 +76,7 @@ const App = () => (
           <Route path="/executive-coaching" element={<ExecutiveCoaching />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/ai-audit" element={<AIAudit />} />
+          <Route path="/freeaiaudit" element={<FreeAIAudit />} />
           <Route path="/partners/torque-academy" element={<TorqueAcademy />} />
           <Route path="/partners/book-genius-ai" element={<BookGeniusAI />} />
           <Route path="/partners/real-estate-datahub" element={<RealEstateDataHub />} />

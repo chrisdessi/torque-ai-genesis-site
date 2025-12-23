@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function FreeAIAudit() {
   // ✅ You'll replace this later with your real embed URL:
   // Example: https://www.youtube.com/embed/dQw4w9WgXcQ
@@ -10,45 +12,109 @@ export default function FreeAIAudit() {
   const videoIsPlaceholder = YOUTUBE_EMBED_URL.includes("VIDEO_ID_HERE");
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-200/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 -left-32 w-64 h-64 bg-blue-200/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-1/4 w-48 h-48 bg-amber-200/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.3, 0.2],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
       {/* Top bar / header */}
-      <header className="border-b bg-white">
+      <header className="border-b bg-white/80 backdrop-blur-sm relative z-10">
         <div className="mx-auto max-w-6xl px-6 py-10">
-          <p className="text-xs font-semibold tracking-widest text-gray-500">
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs font-semibold tracking-widest text-emerald-600"
+          >
             TORQUE AI
-          </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+          </motion.p>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-3 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
+          >
             Free AI Marketing Reality Check
-          </h1>
-          <p className="mt-3 max-w-3xl text-base leading-7 text-gray-600">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-3 max-w-3xl text-base leading-7 text-gray-600"
+          >
             Apply below and I'll send you a short, personalized video showing the
-            <span className="font-semibold text-gray-800"> #1 bottleneck </span>
+            <span className="font-semibold text-emerald-600"> #1 bottleneck </span>
             holding your marketing back and the
-            <span className="font-semibold text-gray-800"> fastest AI-enabled fix</span>.
-          </p>
+            <span className="font-semibold text-emerald-600"> fastest AI-enabled fix</span>.
+          </motion.p>
           {/* Value chips */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            <span className="rounded-full border px-3 py-1 text-xs font-medium text-gray-700">
-              ~12-minute video
-            </span>
-            <span className="rounded-full border px-3 py-1 text-xs font-medium text-gray-700">
-              Website + 1 channel review
-            </span>
-            <span className="rounded-full border px-3 py-1 text-xs font-medium text-gray-700">
-              Delivered in 48 business hours
-            </span>
-            <span className="rounded-full border px-3 py-1 text-xs font-medium text-gray-700">
-              Not a sales call
-            </span>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-6 flex flex-wrap gap-2"
+          >
+            {["~12-minute video", "Website + 1 channel review", "Delivered in 48 business hours", "Not a sales call"].map((chip, index) => (
+              <motion.span
+                key={chip}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+                className="rounded-full border border-emerald-200 bg-emerald-50/50 px-3 py-1 text-xs font-medium text-emerald-700"
+              >
+                {chip}
+              </motion.span>
+            ))}
+          </motion.div>
         </div>
       </header>
 
       {/* Main */}
-      <main className="mx-auto max-w-6xl px-6 py-10">
+      <main className="mx-auto max-w-6xl px-6 py-10 relative z-10">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
           {/* LEFT: Video card */}
-          <section className="rounded-2xl border bg-white p-6 shadow-sm">
+          <motion.section 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm p-6 shadow-lg shadow-emerald-100/20"
+          >
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-lg font-semibold text-gray-900">
@@ -58,25 +124,30 @@ export default function FreeAIAudit() {
                   A quick explanation of what you'll receive and how it works.
                 </p>
               </div>
-              <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+              <span className="rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 px-3 py-1 text-xs font-semibold text-emerald-700">
                 60 seconds
               </span>
             </div>
 
-            <div className="mt-5 overflow-hidden rounded-xl border bg-gray-50">
+            <div className="mt-5 overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100">
               {/* 16:9 responsive container */}
               <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                 {videoIsPlaceholder ? (
                   <div className="absolute inset-0 flex h-full w-full flex-col items-center justify-center px-6 text-center">
-                    <div className="rounded-full border bg-white px-3 py-1 text-xs font-semibold text-gray-700">
-                      YouTube video placeholder
-                    </div>
-                    <p className="mt-3 text-sm font-semibold text-gray-900">
-                      Your intro video will appear here.
+                    <motion.div
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg"
+                    >
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </motion.div>
+                    <p className="mt-4 text-sm font-semibold text-gray-900">
+                      Your intro video will appear here
                     </p>
-                    <p className="mt-1 text-sm text-gray-600">
-                      When it's ready, replace <span className="font-mono">VIDEO_ID_HERE</span>{" "}
-                      in the code with your YouTube embed ID.
+                    <p className="mt-1 text-xs text-gray-500">
+                      Replace <span className="font-mono bg-gray-200 px-1 rounded">VIDEO_ID_HERE</span> with your YouTube ID
                     </p>
                   </div>
                 ) : (
@@ -92,19 +163,22 @@ export default function FreeAIAudit() {
               </div>
             </div>
 
-            <div className="mt-5 rounded-xl bg-gray-50 p-4">
+            <div className="mt-5 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 p-4 border border-emerald-100">
               <p className="text-sm font-semibold text-gray-900">
                 What you'll get
               </p>
               <ul className="mt-2 space-y-2 text-sm text-gray-700">
-                <li>
-                  • The <span className="font-semibold">#1 bottleneck</span> I see
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  The <span className="font-semibold">#1 bottleneck</span> I see
                 </li>
-                <li>
-                  • The <span className="font-semibold">fastest fix</span> (with AI if it fits)
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  The <span className="font-semibold">fastest fix</span> (with AI if it fits)
                 </li>
-                <li>
-                  • What to do next (with or without me)
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  What to do next (with or without me)
                 </li>
               </ul>
             </div>
@@ -113,10 +187,15 @@ export default function FreeAIAudit() {
               Note: This is a free video review. If you want the full 30–90 day
               execution plan, that's the paid Strategic Diagnostic.
             </p>
-          </section>
+          </motion.section>
 
           {/* RIGHT: Form card */}
-          <section className="rounded-2xl border bg-white p-6 shadow-sm">
+          <motion.section 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm p-6 shadow-lg shadow-emerald-100/20"
+          >
             <h2 className="text-lg font-semibold text-gray-900">
               Apply for your Reality Check
             </h2>
@@ -124,7 +203,7 @@ export default function FreeAIAudit() {
               Answer a few quick questions so I know where to focus.
             </p>
 
-            <div className="mt-5 overflow-hidden rounded-xl border">
+            <div className="mt-5 overflow-hidden rounded-xl border border-gray-200">
               <iframe
                 aria-label="Free AI Marketing Reality Check – Intake"
                 title="Free AI Marketing Reality Check – Intake"
@@ -134,13 +213,13 @@ export default function FreeAIAudit() {
               />
             </div>
 
-            <div className="mt-5 rounded-xl bg-gray-50 p-4">
+            <div className="mt-5 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 p-4 border border-blue-100">
               <p className="text-sm font-semibold text-gray-900">
                 What happens next
               </p>
               <p className="mt-1 text-sm text-gray-600">
                 If it's a fit, you'll receive your personalized video within{" "}
-                <span className="font-semibold text-gray-800">48 business hours</span>.
+                <span className="font-semibold text-emerald-600">48 business hours</span>.
               </p>
             </div>
 
@@ -148,32 +227,38 @@ export default function FreeAIAudit() {
               By submitting, you agree to receive follow-ups from Torque AI.
               Unsubscribe anytime.
             </p>
-          </section>
+          </motion.section>
         </div>
 
         {/* Bottom reassurance bar */}
-        <section className="mt-10 rounded-2xl border bg-white p-6 shadow-sm">
-          <div className="grid gap-4 md:grid-cols-3">
-            <div>
-              <p className="text-sm font-semibold text-gray-900">No obligation</p>
-              <p className="mt-1 text-sm text-gray-600">
-                The video stands on its own. No pressure.
-              </p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">Clear scope</p>
-              <p className="mt-1 text-sm text-gray-600">
-                Website + one channel. Fast, focused, useful.
-              </p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">Next step (optional)</p>
-              <p className="mt-1 text-sm text-gray-600">
-                Paid Strategic Diagnostic for a full plan + implementation sequence.
-              </p>
-            </div>
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-10 rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm p-6 shadow-lg shadow-emerald-100/20"
+        >
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { title: "No obligation", desc: "The video stands on its own. No pressure." },
+              { title: "Clear scope", desc: "Website + one channel. Fast, focused, useful." },
+              { title: "Next step (optional)", desc: "Paid Strategic Diagnostic for a full plan + implementation sequence." },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                className="flex gap-3"
+              >
+                <div className="mt-1 w-2 h-2 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex-shrink-0"></div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">{item.title}</p>
+                  <p className="mt-1 text-sm text-gray-600">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </motion.section>
       </main>
     </div>
   );

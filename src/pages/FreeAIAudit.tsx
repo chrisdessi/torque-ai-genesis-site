@@ -265,6 +265,29 @@ export default function FreeAIAudit() {
           </div>
         </motion.section>
 
+        {/* Trusted By / Client Logos */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          className="mt-10 py-12 rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm shadow-lg shadow-emerald-100/20"
+        >
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold text-gray-900">
+              Trusted By
+            </h2>
+            <div className="mt-8 flex flex-wrap justify-center items-center gap-x-10 gap-y-8 px-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+              <img src="/logos/forbes-logo.png" alt="Forbes" className="h-8 object-contain" />
+              <img src="/logos/cnn-logo.png" alt="CNN" className="h-8 object-contain" />
+              <img src="/logos/fox-logo.png" alt="Fox" className="h-8 object-contain" />
+              <img src="/logos/nbc-logo.png" alt="NBC" className="h-8 object-contain" />
+              <img src="/logos/cbs-logo.png" alt="CBS" className="h-8 object-contain" />
+              <img src="/logos/abc-logo.png" alt="ABC" className="h-8 object-contain" />
+              <img src="/logos/fortune-logo.png" alt="Fortune" className="h-8 object-contain" />
+            </div>
+          </div>
+        </motion.section>
+
         {/* Bottom reassurance bar */}
         <motion.section 
           initial={{ opacity: 0, y: 30 }}

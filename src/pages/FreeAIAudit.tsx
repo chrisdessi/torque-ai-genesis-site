@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import aiMarketingAnalysis from "@/assets/ai-marketing-analysis.jpg";
+import aiDataFlow from "@/assets/ai-data-flow.jpg";
 
 export default function FreeAIAudit() {
   // ✅ You'll replace this later with your real embed URL:
@@ -230,11 +232,44 @@ export default function FreeAIAudit() {
           </motion.section>
         </div>
 
+        {/* Image showcase section */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-10 grid gap-6 md:grid-cols-2"
+        >
+          <div className="relative rounded-2xl overflow-hidden group">
+            <img 
+              src={aiMarketingAnalysis} 
+              alt="AI Marketing Analysis Dashboard" 
+              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <p className="text-white font-semibold">Data-Driven Insights</p>
+              <p className="text-white/80 text-sm mt-1">Get personalized analysis of your marketing performance</p>
+            </div>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden group">
+            <img 
+              src={aiDataFlow} 
+              alt="AI Data Flow Visualization" 
+              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <p className="text-white font-semibold">AI-Powered Solutions</p>
+              <p className="text-white/80 text-sm mt-1">Leverage cutting-edge technology for your growth</p>
+            </div>
+          </div>
+        </motion.section>
+
         {/* Bottom reassurance bar */}
         <motion.section 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-10 rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm p-6 shadow-lg shadow-emerald-100/20"
         >
           <div className="grid gap-6 md:grid-cols-3">

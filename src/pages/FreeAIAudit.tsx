@@ -4,15 +4,9 @@ import aiMarketingAnalysis from "@/assets/ai-marketing-analysis.jpg";
 import aiDataFlow from "@/assets/ai-data-flow.jpg";
 
 export default function FreeAIAudit() {
-  // ✅ You'll replace this later with your real embed URL:
-  // Example: https://www.youtube.com/embed/dQw4w9WgXcQ
-  const YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/VIDEO_ID_HERE";
-
   // ✅ Your Zoho form (already live)
   const ZOHO_FORM_IFRAME_SRC =
     "https://forms.zohopublic.com/chris283/form/FreeAIMarketingRealityCheckIntake/formperma/wVhFTbhVm9_H9pHB_CmXVfI6EwZvjXnaooAzDz4Rdik";
-
-  const videoIsPlaceholder = YOUTUBE_EMBED_URL.includes("VIDEO_ID_HERE");
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden">
@@ -156,36 +150,16 @@ export default function FreeAIAudit() {
             </div>
 
             <div className="mt-5 overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100">
-              {/* 16:9 responsive container */}
-              <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-                {videoIsPlaceholder ? (
-                  <div className="absolute inset-0 flex h-full w-full flex-col items-center justify-center px-6 text-center">
-                    <motion.div
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg"
-                    >
-                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </motion.div>
-                    <p className="mt-4 text-sm font-semibold text-gray-900">
-                      Your intro video will appear here
-                    </p>
-                    <p className="mt-1 text-xs text-gray-500">
-                      Replace <span className="font-mono bg-gray-200 px-1 rounded">VIDEO_ID_HERE</span> with your YouTube ID
-                    </p>
-                  </div>
-                ) : (
-                  <iframe
-                    className="absolute inset-0 h-full w-full"
-                    src={YOUTUBE_EMBED_URL}
-                    title="Torque AI Intro"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                )}
+              {/* Synthesia video embed */}
+              <div style={{ position: "relative", overflow: "hidden", aspectRatio: "1920/1080" }}>
+                <iframe 
+                  src="https://share.synthesia.io/embeds/videos/fbd70762-aeab-408e-978f-24a7ccb96f1c" 
+                  loading="lazy" 
+                  title="Synthesia video player - Torque AI Intro" 
+                  allowFullScreen 
+                  allow="encrypted-media; fullscreen; microphone;" 
+                  style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0, border: "none", padding: 0, margin: 0, overflow: "hidden" }}
+                />
               </div>
             </div>
 

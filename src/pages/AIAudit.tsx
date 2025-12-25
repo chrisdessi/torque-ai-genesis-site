@@ -24,9 +24,9 @@ const AIAudit = () => {
   return (
     <>
       <SEO
-        title="Free AI Revenue Audit | Torque AI"
-        description="Get a free 10-minute AI Revenue Audit for your business. Discover exactly where AI can increase your revenue or save you 10+ hours a week, without learning any tech."
-        keywords="free AI audit, AI revenue audit, business AI consultation, AI strategy, AI automation, AI for business"
+        title="Free AI Strategy Guide | AI Consulting for Business"
+        description="Get your free AI strategy guide from Torque AI. Discover how AI consulting can increase revenue, automate workflows, and transform your business operations. Expert AI strategy insights delivered weekly."
+        keywords="free AI strategy guide, AI consulting for business, AI revenue optimization, AI business strategy, AI automation guide, AI implementation strategy, free AI consultation, AI business transformation, AI workflow consulting"
         url="/ai-audit"
       />
       

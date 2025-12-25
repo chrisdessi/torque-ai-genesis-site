@@ -15,7 +15,7 @@ interface SEOProps {
 const SEO = ({
   title,
   description,
-  keywords = "AI consulting, AI strategy, enterprise AI, AI transformation, ChatGPT for business, AI implementation, Christopher Dessi",
+  keywords = "AI consulting, AI strategy consultant, AI business consulting, enterprise AI solutions, AI implementation services, AI transformation, AI automation consulting, ChatGPT for business, AI marketing strategy, AI workflow automation, Christopher Dessi, Torque AI",
   image = "https://torqueapp.ai/lovable-uploads/85521d42-7840-4d81-b8ca-c002ab15932e.png",
   url = "https://torqueapp.ai",
   type = "website",

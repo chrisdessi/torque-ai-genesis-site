@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import aiMarketingAnalysis from "@/assets/ai-marketing-analysis.jpg";
 import aiDataFlow from "@/assets/ai-data-flow.jpg";
 
@@ -106,6 +107,29 @@ export default function FreeAIAudit() {
           </motion.div>
         </div>
       </header>
+
+      {/* Trusted By / Client Logos - moved up */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.35 }}
+        className="py-10 bg-white/60 backdrop-blur-sm border-b border-gray-100 relative z-10"
+      >
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+            Trusted By
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-x-10 gap-y-6 opacity-60 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500">
+            <img src="/logos/forbes-logo.png" alt="Forbes" className="h-7 object-contain" />
+            <img src="/logos/cnn-logo.png" alt="CNN" className="h-7 object-contain" />
+            <img src="/logos/fox-logo.png" alt="Fox" className="h-7 object-contain" />
+            <img src="/logos/nbc-logo.png" alt="NBC" className="h-7 object-contain" />
+            <img src="/logos/cbs-logo.png" alt="CBS" className="h-7 object-contain" />
+            <img src="/logos/abc-logo.png" alt="ABC" className="h-7 object-contain" />
+            <img src="/logos/fortune-logo.png" alt="Fortune" className="h-7 object-contain" />
+          </div>
+        </div>
+      </motion.section>
 
       {/* Main */}
       <main className="mx-auto max-w-6xl px-6 py-10 relative z-10">
@@ -265,25 +289,37 @@ export default function FreeAIAudit() {
           </div>
         </motion.section>
 
-        {/* Trusted By / Client Logos */}
+        {/* CTA Section */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="mt-10 py-12 rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm shadow-lg shadow-emerald-100/20"
+          className="mt-10 py-12 rounded-2xl border border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-teal-50 shadow-lg shadow-emerald-100/30"
         >
-          <div className="text-center">
-            <h2 className="text-2xl font-semibold text-gray-900">
-              Trusted By
+          <div className="text-center px-6">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Ready to Transform Your Marketing?
             </h2>
-            <div className="mt-8 flex flex-wrap justify-center items-center gap-x-10 gap-y-8 px-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-              <img src="/logos/forbes-logo.png" alt="Forbes" className="h-8 object-contain" />
-              <img src="/logos/cnn-logo.png" alt="CNN" className="h-8 object-contain" />
-              <img src="/logos/fox-logo.png" alt="Fox" className="h-8 object-contain" />
-              <img src="/logos/nbc-logo.png" alt="NBC" className="h-8 object-contain" />
-              <img src="/logos/cbs-logo.png" alt="CBS" className="h-8 object-contain" />
-              <img src="/logos/abc-logo.png" alt="ABC" className="h-8 object-contain" />
-              <img src="/logos/fortune-logo.png" alt="Fortune" className="h-8 object-contain" />
+            <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+              Get your free AI Marketing Reality Check or schedule a call to discuss your specific needs.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <a
+                href="#apply"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('iframe[title*="Reality Check"]')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                Get Your Free Audit
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-6 py-3 rounded-full border-2 border-emerald-500 text-emerald-700 font-semibold hover:bg-emerald-50 transition-all duration-300"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </motion.section>

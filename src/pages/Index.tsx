@@ -29,9 +29,9 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-inter">
       <SEO 
-        title="Torque AI | AI Systems for Real Businesses"
-        description="Torque AI installs AI-powered systems that fix bottlenecks, automate work, and unlock new growth for small and mid-market businesses. AI revenue engines, workflow automation, leadership workshops, and executive coaching."
-        keywords="AI automation, workflow automation, AI marketing, lead generation, AI consulting, business automation, AI revenue systems, AI workshops, executive coaching"
+        title="AI Consulting & Strategy for Business Growth"
+        description="Torque AI is a leading AI consulting firm helping businesses implement AI strategy, marketing automation, and team training. Get expert AI consulting services to drive revenue growth and operational efficiency."
+        keywords="AI consulting, AI strategy consultant, AI consulting firm, AI business consulting, enterprise AI solutions, AI implementation services, AI marketing automation, AI workflow optimization, business AI transformation, ChatGPT consulting, AI training workshops, Christopher Dessi"
         url="/"
       />
       <Header />

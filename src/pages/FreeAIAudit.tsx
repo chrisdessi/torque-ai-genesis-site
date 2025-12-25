@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import aiMarketingAnalysis from "@/assets/ai-marketing-analysis.jpg";
 import aiDataFlow from "@/assets/ai-data-flow.jpg";
 
@@ -10,6 +11,12 @@ export default function FreeAIAudit() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden">
+      <SEO 
+        title="Free AI Marketing Audit | AI Consulting Services"
+        description="Get a free AI marketing audit from Torque AI. Our expert AI consultants will identify your #1 bottleneck and provide actionable AI strategy recommendations to grow your business."
+        keywords="free AI audit, AI marketing audit, AI consulting services, AI strategy assessment, marketing automation audit, AI business analysis, free AI consultation, AI implementation review"
+        url="/ai-audit"
+      />
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

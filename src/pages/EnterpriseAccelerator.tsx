@@ -3,11 +3,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
-import { Brain, Linkedin, Youtube } from "lucide-react";
+import { Brain, Linkedin } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import quantumShiftLogo from "@/assets/quantum-shift-podcast-logo.png";
 
 const EnterpriseAccelerator = () => {
   const fadeInUp = {
@@ -174,9 +175,9 @@ const EnterpriseAccelerator = () => {
                     Connect on LinkedIn
                   </Button>
                 </a>
-                <a href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
-                    <Youtube className="w-5 h-5 mr-2 text-red-500" />
+                <a href="https://www.youtube.com/@ChristopherDessi" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 flex items-center gap-2">
+                    <img src={quantumShiftLogo} alt="The Quantum Shift Podcast" className="w-6 h-6 rounded" />
                     The Quantum Shift
                   </Button>
                 </a>

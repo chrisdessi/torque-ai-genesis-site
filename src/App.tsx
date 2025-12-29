@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Platform from "./pages/Platform";
 import Audit from "./pages/Audit";
 import NinetyDay from "./pages/NinetyDay";
+import HowItWorks from "./pages/HowItWorks";
 import Insights from "./pages/Insights";
 import Dashboard from "./pages/Dashboard";
 import Websites from "./pages/products/Websites";
@@ -53,6 +54,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           {/* New primary navigation routes */}
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/audit" element={<Audit />} />
           <Route path="/90-day" element={<NinetyDay />} />
           <Route path="/platform" element={<Platform />} />

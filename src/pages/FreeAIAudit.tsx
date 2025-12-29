@@ -1,340 +1,406 @@
+import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
-import aiMarketingAnalysis from "@/assets/ai-marketing-analysis.jpg";
-import aiDataFlow from "@/assets/ai-data-flow.jpg";
+import { Section, Card, PrimaryButton, SecondaryLink } from "@/components/SiteChrome";
 
 export default function FreeAIAudit() {
-  // ✅ Your Zoho form (already live)
+  return (
+    <main className="bg-white">
+      <SEO
+        title="Free Executive Decision Audit | Torque AI"
+        description="Get a free Executive Decision Audit to uncover where decisions are breaking, why AI feels noisy, and what to fix first. For founders & executive teams."
+        keywords="executive decision audit, decision intelligence, AI strategy, leadership clarity, decision bottlenecks, executive coaching"
+        url="/audit"
+      />
+      <Hero />
+      <PainMirror />
+      <Reframe />
+      <WhatYouGet />
+      <Fit />
+      <Authority />
+      <CTARepeat />
+      <FormSection />
+      <FearRemoval />
+    </main>
+  );
+}
+
+/* ----------------------------- Sections ----------------------------- */
+
+function Hero() {
+  return (
+    <Section className="pt-24 md:pt-32">
+      <div className="grid gap-10 md:grid-cols-2 md:items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="mb-3 inline-flex rounded-full border border-zinc-200 px-3 py-1 text-xs font-semibold text-zinc-700">
+            Free Executive Clarity Session
+          </p>
+          <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
+            Stop Re-Deciding Your Business Every Week
+          </h1>
+          <p className="mt-4 text-lg text-zinc-700">
+            Get a free Executive Decision Audit to uncover where decisions are
+            breaking, why AI feels noisy, and what to fix first.
+          </p>
+          <p className="mt-4 text-sm text-zinc-700">
+            For founders & executive teams feeling busy, capable — and still
+            behind.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <PrimaryButton href="#request">Get My Free Decision Audit</PrimaryButton>
+            <SecondaryLink href="/how-it-works">How it works →</SecondaryLink>
+          </div>
+          <p className="mt-4 text-xs text-zinc-500">
+            20 minutes · No prep · No sales pitch
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <Card>
+            <h2 className="text-lg font-semibold text-zinc-900">What you'll get in 20 minutes</h2>
+            <ul className="mt-4 space-y-3 text-sm text-zinc-700">
+              <li>• A clear map of your biggest decision bottlenecks</li>
+              <li>• The repeated decisions draining leadership time</li>
+              <li>• Where AI actually helps (and where it adds noise)</li>
+              <li>• A "fix this first" priority path</li>
+            </ul>
+            <div className="mt-6 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
+              <p className="text-sm text-zinc-800">
+                If there's a fit, we'll outline next steps. If not, you'll still
+                leave clearer than you arrived.
+              </p>
+            </div>
+          </Card>
+        </motion.div>
+      </div>
+    </Section>
+  );
+}
+
+function PainMirror() {
+  return (
+    <Section>
+      <div className="grid gap-8 md:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">
+            This probably feels familiar…
+          </h2>
+          <p className="mt-4 text-zinc-700">
+            You're not lacking effort. You're drowning in decisions.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <Card>
+            <ul className="space-y-3 text-sm text-zinc-700">
+              <li>• You're involved in too many decisions that shouldn't reach you</li>
+              <li>• Meetings repeat, debates repeat, decisions repeat</li>
+              <li>• AI tools are everywhere — clarity is nowhere</li>
+              <li>• Execution is busy, but outcomes aren't compounding</li>
+            </ul>
+            <p className="mt-6 text-sm font-semibold text-zinc-900">
+              This isn't a productivity problem. It's a decision problem.
+            </p>
+          </Card>
+        </motion.div>
+      </div>
+    </Section>
+  );
+}
+
+function Reframe() {
+  return (
+    <Section>
+      <div className="grid gap-8 md:grid-cols-2 md:items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card>
+            <h3 className="text-xl font-semibold text-zinc-900">This is not a technical AI audit.</h3>
+            <p className="mt-4 text-sm text-zinc-700">
+              We don't review tools. We don't talk prompts. We don't pitch software.
+            </p>
+            <p className="mt-4 text-sm text-zinc-700">
+              This is an <span className="font-semibold text-zinc-900">executive-level decision audit</span> designed to show:
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-zinc-700">
+              <li>• Where decisions stall or escalate</li>
+              <li>• Where ownership is unclear</li>
+              <li>• Where AI is helping — and where it's adding noise</li>
+              <li>• What's costing you the most cognitive energy</li>
+            </ul>
+            <p className="mt-6 text-sm font-semibold text-zinc-900">
+              Clarity comes before automation.
+            </p>
+          </Card>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="rounded-2xl border border-zinc-200 bg-white p-6"
+        >
+          <p className="text-xs font-semibold text-zinc-500">WHY THIS WORKS</p>
+          <h4 className="mt-2 text-lg font-semibold text-zinc-900">It's low-risk, high-value.</h4>
+          <p className="mt-3 text-sm text-zinc-700">
+            Executives don't want more tools. They want fewer decisions, cleaner ownership,
+            and calmer execution.
+          </p>
+          <p className="mt-4 text-sm text-zinc-700">
+            This audit creates a fast, honest picture of what's actually happening — and what to fix first.
+          </p>
+          <div className="mt-6">
+            <SecondaryLink href="#request">Request the audit →</SecondaryLink>
+          </div>
+        </motion.div>
+      </div>
+    </Section>
+  );
+}
+
+function WhatYouGet() {
+  return (
+    <Section>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">What you'll walk away with</h2>
+        <p className="mt-3 max-w-2xl text-zinc-700">
+          Concrete takeaways — not generic advice.
+        </p>
+      </motion.div>
+      <div className="mt-10 grid gap-6 md:grid-cols-4">
+        {[
+          { title: "Bottleneck Map", desc: "A clear view of where decisions stall and why." },
+          { title: "Repeat Triggers", desc: "The recurring debates and escalations draining leadership time." },
+          { title: "AI Placement", desc: "Where AI actually earns leverage — and where it's adding noise." },
+          { title: "Fix-First Plan", desc: "A prioritized path forward you can act on immediately." },
+        ].map((item, index) => (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+          >
+            <Card>
+              <h3 className="text-lg font-semibold text-zinc-900">{item.title}</h3>
+              <p className="mt-3 text-sm text-zinc-700">{item.desc}</p>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+      <p className="mt-8 text-sm text-zinc-700">
+        If there's a fit, we'll outline next steps. If there's not, you'll still leave clearer than you arrived.
+      </p>
+    </Section>
+  );
+}
+
+function Fit() {
+  return (
+    <Section>
+      <div className="grid gap-8 md:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">This is for you if…</h2>
+          <ul className="mt-6 space-y-3 text-sm text-zinc-700">
+            <li>• You're a founder, CEO, or senior operator</li>
+            <li>• Your company is growing, but leadership feels heavier</li>
+            <li>• You're tired of being the default bottleneck</li>
+            <li>• You want clarity — not another dashboard</li>
+          </ul>
+          <p className="mt-6 text-sm text-zinc-700">
+            <span className="font-semibold text-zinc-900">Not a fit:</span>{" "}
+            early-stage founders or teams looking for hacks, prompts, or tactics.
+          </p>
+          <div className="mt-8">
+            <PrimaryButton href="#request">Get My Free Decision Audit</PrimaryButton>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <Card>
+            <h3 className="text-lg font-semibold text-zinc-900">What happens after the audit?</h3>
+            <p className="mt-3 text-sm text-zinc-700">
+              If the diagnosis points to a systemic decision breakdown, we'll recommend a structured 90-day reset.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-zinc-700">
+              <li>• Decision ownership + escalation rules</li>
+              <li>• Meeting redesign + execution lanes</li>
+              <li>• AI installed where it belongs (after priorities are set)</li>
+            </ul>
+            <div className="mt-6">
+              <SecondaryLink href="/90-day">Learn about the 90-Day Reset →</SecondaryLink>
+            </div>
+          </Card>
+        </motion.div>
+      </div>
+    </Section>
+  );
+}
+
+function Authority() {
+  return (
+    <Section>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 md:p-12"
+      >
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="text-xs font-semibold text-zinc-500">WHY THIS WORKS</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900">
+              Because we start where most platforms don't.
+            </h2>
+            <p className="mt-4 text-zinc-700">
+              Growth doesn't stall because leaders aren't smart. It stalls because decision flow breaks — and executives get dragged into everything.
+            </p>
+            <p className="mt-4 text-zinc-700">
+              Torque was built to fix the decision loop first — then deploy AI as leverage.
+            </p>
+          </div>
+          <Card>
+            <h3 className="text-lg font-semibold text-zinc-900">Prefer to learn first?</h3>
+            <p className="mt-3 text-sm text-zinc-700">
+              Explore the thinking behind Executive Decision Intelligence.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <SecondaryLink href="/insights">Go to Insights →</SecondaryLink>
+              <SecondaryLink href="/how-it-works">How Torque works →</SecondaryLink>
+            </div>
+          </Card>
+        </div>
+      </motion.div>
+    </Section>
+  );
+}
+
+function CTARepeat() {
+  return (
+    <Section>
+      <div className="grid gap-8 md:grid-cols-2 md:items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">
+            Ready to see where decisions are breaking?
+          </h2>
+          <p className="mt-3 text-zinc-700">
+            Get a free Executive Decision Audit. Confidential, fast, and built for real operators.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-wrap gap-4 md:justify-end"
+        >
+          <PrimaryButton href="#request">Get My Free Decision Audit</PrimaryButton>
+        </motion.div>
+      </div>
+    </Section>
+  );
+}
+
+function FormSection() {
   const ZOHO_FORM_IFRAME_SRC =
     "https://forms.zohopublic.com/chris283/form/FreeAIMarketingRealityCheckIntake/formperma/wVhFTbhVm9_H9pHB_CmXVfI6EwZvjXnaooAzDz4Rdik";
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 relative overflow-hidden">
-      <SEO 
-        title="Free AI Marketing Audit | AI Consulting Services"
-        description="Get a free AI marketing audit from Torque AI. Our expert AI consultants will identify your #1 bottleneck and provide actionable AI strategy recommendations to grow your business."
-        keywords="free AI audit, AI marketing audit, AI consulting services, AI strategy assessment, marketing automation audit, AI business analysis, free AI consultation, AI implementation review"
-        url="/ai-audit"
-      />
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-200/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 -left-32 w-64 h-64 bg-blue-200/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-1/4 w-48 h-48 bg-amber-200/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
-
-      {/* Top bar / header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm relative z-10">
-        <div className="mx-auto max-w-6xl px-6 py-10">
-          <motion.p 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-xs font-semibold tracking-widest text-emerald-600"
-          >
-            TORQUE AI
-          </motion.p>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-3 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl"
-          >
-            Free AI Marketing Reality Check
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-3 max-w-3xl text-base leading-7 text-gray-600"
-          >
-            Apply below and I'll send you a short, personalized video showing the
-            <span className="font-semibold text-emerald-600"> #1 bottleneck </span>
-            holding your marketing back and the
-            <span className="font-semibold text-emerald-600"> fastest AI-enabled fix</span>.
-          </motion.p>
-          {/* Value chips */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-6 flex flex-wrap gap-2"
-          >
-            {["~12-minute video", "Website + 1 channel review", "Delivered in 48 business hours", "Not a sales call"].map((chip, index) => (
-              <motion.span
-                key={chip}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
-                className="rounded-full border border-emerald-200 bg-emerald-50/50 px-3 py-1 text-xs font-medium text-emerald-700"
-              >
-                {chip}
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
-      </header>
-
-      {/* Trusted By / Client Logos - moved up */}
-      <motion.section
+    <Section id="request">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.35 }}
-        className="py-10 bg-white/60 backdrop-blur-sm border-b border-gray-100 relative z-10"
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="rounded-3xl border border-zinc-200 bg-white p-8 md:p-12"
       >
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">
-            Trusted By
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center items-center gap-x-10 gap-y-6 opacity-60 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500">
-            <img src="/logos/forbes-logo.png" alt="Forbes" className="h-7 object-contain" />
-            <img src="/logos/cnn-logo.png" alt="CNN" className="h-7 object-contain" />
-            <img src="/logos/fox-logo.png" alt="Fox" className="h-7 object-contain" />
-            <img src="/logos/nbc-logo.png" alt="NBC" className="h-7 object-contain" />
-            <img src="/logos/cbs-logo.png" alt="CBS" className="h-7 object-contain" />
-            <img src="/logos/abc-logo.png" alt="ABC" className="h-7 object-contain" />
-            <img src="/logos/fortune-logo.png" alt="Fortune" className="h-7 object-contain" />
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Main */}
-      <main className="mx-auto max-w-6xl px-6 py-10 relative z-10">
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
-          {/* LEFT: Video card */}
-          <motion.section 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm p-6 shadow-lg shadow-emerald-100/20"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900">
-                  Watch first (optional)
-                </h2>
-                <p className="mt-1 text-sm text-gray-600">
-                  A quick explanation of what you'll receive and how it works.
-                </p>
-              </div>
-              <span className="rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 px-3 py-1 text-xs font-semibold text-emerald-700">
-                60 seconds
-              </span>
-            </div>
-
-            <div className="mt-5 overflow-hidden rounded-xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100">
-              {/* Synthesia video embed */}
-              <div style={{ position: "relative", overflow: "hidden", aspectRatio: "1920/1080" }}>
-                <iframe 
-                  src="https://share.synthesia.io/embeds/videos/fbd70762-aeab-408e-978f-24a7ccb96f1c" 
-                  loading="lazy" 
-                  title="Synthesia video player - Torque AI Intro" 
-                  allowFullScreen 
-                  allow="encrypted-media; fullscreen; microphone;" 
-                  style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0, border: "none", padding: 0, margin: 0, overflow: "hidden" }}
-                />
-              </div>
-            </div>
-
-            <div className="mt-5 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 p-4 border border-emerald-100">
-              <p className="text-sm font-semibold text-gray-900">
-                What you'll get
-              </p>
-              <ul className="mt-2 space-y-2 text-sm text-gray-700">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  The <span className="font-semibold">#1 bottleneck</span> I see
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  The <span className="font-semibold">fastest fix</span> (with AI if it fits)
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  What to do next (with or without me)
-                </li>
-              </ul>
-            </div>
-
-            <p className="mt-4 text-xs text-gray-500">
-              Note: This is a free video review. If you want the full 30–90 day
-              execution plan, that's the paid Strategic Diagnostic.
-            </p>
-          </motion.section>
-
-          {/* RIGHT: Form card */}
-          <motion.section 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm p-6 shadow-lg shadow-emerald-100/20"
-          >
-            <h2 className="text-lg font-semibold text-gray-900">
-              Apply for your Reality Check
+        <div className="grid gap-10 md:grid-cols-2 md:items-start">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">
+              Request Your Executive Decision Audit
             </h2>
-            <p className="mt-1 text-sm text-gray-600">
-              Answer a few quick questions so I know where to focus.
+            <p className="mt-3 text-zinc-700">
+              Share a few details and we'll confirm fit and availability.
             </p>
-
-            <div className="mt-5 overflow-hidden rounded-xl border border-gray-200">
+            <p className="mt-6 text-sm text-zinc-700">
+              We review every request personally. If there's a fit, you'll receive a calendar link.
+              If not, we'll let you know.
+            </p>
+          </div>
+          <Card>
+            <div className="overflow-hidden rounded-xl border border-zinc-200">
               <iframe
-                aria-label="Free AI Marketing Reality Check – Intake"
-                title="Free AI Marketing Reality Check – Intake"
+                aria-label="Executive Decision Audit Request"
+                title="Executive Decision Audit Request"
                 frameBorder="0"
-                style={{ height: "560px", width: "100%", border: "none" }}
+                style={{ height: "500px", width: "100%", border: "none" }}
                 src={ZOHO_FORM_IFRAME_SRC}
               />
             </div>
-
-            <div className="mt-5 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 p-4 border border-blue-100">
-              <p className="text-sm font-semibold text-gray-900">
-                What happens next
-              </p>
-              <p className="mt-1 text-sm text-gray-600">
-                If it's a fit, you'll receive your personalized video within{" "}
-                <span className="font-semibold text-emerald-600">48 business hours</span>.
-              </p>
-            </div>
-
-            <p className="mt-4 text-xs text-gray-500">
-              By submitting, you agree to receive follow-ups from Torque AI.
-              Unsubscribe anytime.
-            </p>
-          </motion.section>
+          </Card>
         </div>
+      </motion.div>
+    </Section>
+  );
+}
 
-        {/* Image showcase section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 grid gap-6 md:grid-cols-2"
-        >
-          <div className="relative rounded-2xl overflow-hidden group">
-            <img 
-              src={aiMarketingAnalysis} 
-              alt="AI Marketing Analysis Dashboard" 
-              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4">
-              <p className="text-white font-semibold">Data-Driven Insights</p>
-              <p className="text-white/80 text-sm mt-1">Get personalized analysis of your marketing performance</p>
-            </div>
-          </div>
-          <div className="relative rounded-2xl overflow-hidden group">
-            <img 
-              src={aiDataFlow} 
-              alt="AI Data Flow Visualization" 
-              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4">
-              <p className="text-white font-semibold">AI-Powered Solutions</p>
-              <p className="text-white/80 text-sm mt-1">Leverage cutting-edge technology for your growth</p>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* CTA Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55 }}
-          className="mt-10 py-12 rounded-2xl border border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-teal-50 shadow-lg shadow-emerald-100/30"
-        >
-          <div className="text-center px-6">
-            <h2 className="text-2xl font-bold text-gray-900">
-              Ready to Transform Your Marketing?
-            </h2>
-            <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-              Get your free AI Marketing Reality Check or schedule a call to discuss your specific needs.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a
-                href="#apply"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('iframe[title*="Reality Check"]')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                Get Your Free Audit
-              </a>
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-6 py-3 rounded-full border-2 border-emerald-500 text-emerald-700 font-semibold hover:bg-emerald-50 transition-all duration-300"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Bottom reassurance bar */}
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-10 rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-sm p-6 shadow-lg shadow-emerald-100/20"
-        >
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              { title: "No obligation", desc: "The video stands on its own. No pressure." },
-              { title: "Clear scope", desc: "Website + one channel. Fast, focused, useful." },
-              { title: "Next step (optional)", desc: "Paid Strategic Diagnostic for a full plan + implementation sequence." },
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                className="flex gap-3"
-              >
-                <div className="mt-1 w-2 h-2 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex-shrink-0"></div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">{item.title}</p>
-                  <p className="mt-1 text-sm text-gray-600">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-      </main>
-    </div>
+function FearRemoval() {
+  return (
+    <Section className="pb-24">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="text-center"
+      >
+        <p className="text-sm text-zinc-700">
+          No spam. No hard pitch. Just clarity.
+        </p>
+        <p className="mt-2 text-xs text-zinc-500">
+          20 minutes · Confidential · No obligation
+        </p>
+      </motion.div>
+    </Section>
   );
 }

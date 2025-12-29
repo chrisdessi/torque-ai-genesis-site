@@ -51,7 +51,7 @@ const Header = () => {
           ))}
           <Link
             to="/audit"
-            className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 transition-colors"
+            className="rounded-full bg-success px-4 py-2 text-sm font-medium text-white hover:bg-success/90 transition-colors"
           >
             Start Here
           </Link>
@@ -61,7 +61,7 @@ const Header = () => {
         <div className="flex items-center gap-3 md:hidden">
           <Link
             to="/audit"
-            className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 transition-colors"
+            className="rounded-full bg-success px-4 py-2 text-sm font-medium text-white hover:bg-success/90 transition-colors"
           >
             Start
           </Link>

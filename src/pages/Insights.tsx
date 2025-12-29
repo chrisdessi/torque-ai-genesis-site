@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
+import quantumShiftLogo from "@/assets/quantum-shift-podcast-logo.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -112,22 +113,20 @@ export default function InsightsPage() {
                 Explore our video content and podcast episodes on executive decision-making and AI.
               </p>
               <div className="mt-6 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-zinc-200 flex items-center justify-center">
-                    <Play className="w-5 h-5 text-zinc-600" />
-                  </div>
+                <a 
+                  href="https://www.youtube.com/@ChristopherDessi" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+                >
+                  <img src={quantumShiftLogo} alt="The Quantum Shift Podcast" className="w-10 h-10 rounded-lg" />
                   <div>
                     <p className="text-xs font-semibold text-zinc-500 uppercase">YouTube</p>
-                    <a 
-                      href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-zinc-900 hover:underline"
-                    >
+                    <span className="text-sm font-medium text-zinc-900">
                       The Quantum Shift Podcast →
-                    </a>
+                    </span>
                   </div>
-                </div>
+                </a>
               </div>
               <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
                 <div className="flex items-center gap-3">
@@ -173,7 +172,7 @@ export default function InsightsPage() {
                 <p className="mt-3 text-sm text-zinc-700">{video.desc}</p>
                 <div className="mt-4">
                   <a 
-                    href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_"
+                    href="https://www.youtube.com/@ChristopherDessi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-semibold text-zinc-900 underline underline-offset-4 hover:text-zinc-700"

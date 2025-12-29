@@ -1,281 +1,45 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Award, BookOpen, Mic, TrendingUp, Users, Target, Linkedin, Youtube } from "lucide-react";
+import React from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import SEO from "@/components/SEO";
-import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
-import ZohoContactForm from "@/components/ZohoContactForm";
+import { Link } from "react-router-dom";
 
-import chrisProfile from "@/assets/chris-bio.png";
+function Section({ id, children, className = "" }: { id?: string; children: React.ReactNode; className?: string }) {
+  return <section id={id} className={`mx-auto max-w-6xl px-6 py-14 md:py-20 ${className}`}>{children}</section>;
+}
 
-const About = () => {
-  const credentials = [
-    { icon: TrendingUp, text: "25+ years scaling organizations from startup to acquisition" },
-    { icon: Award, text: "$32M revenue using Generative AI" },
-    { icon: Target, text: "Multiple successful exits & acquisitions" },
-    { icon: BookOpen, text: "Author: ChatGPT for Profit" },
-    { icon: Mic, text: "TEDx Speaker" },
-    { icon: Users, text: "Frequent TV/Media AI Expert" }
-  ];
+function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return <div className={`rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm ${className}`}>{children}</div>;
+}
 
-  const values = [
-    {
-      title: "Strategic Impact",
-      description: "We focus on AI implementations that deliver measurable business outcomes and competitive advantages."
-    },
-    {
-      title: "Enterprise Excellence",
-      description: "Working exclusively with businesses ready to embrace AI transformation at scale."
-    },
-    {
-      title: "Proven Methodology",
-      description: "Our approach combines technical expertise with business acumen for sustainable success."
-    },
-    {
-      title: "Continuous Innovation",
-      description: "Staying at the forefront of AI advancement to deliver cutting-edge solutions."
-    }
-  ];
-
+export default function About() {
   return (
-    <div className="min-h-screen bg-background">
-      <SEO 
-        title="About Christopher Dessi - AI Strategy Expert"
-        description="Meet Christopher Dessi, founder of Torque AI. 25+ years scaling organizations, $32M in revenue using AI, TEDx speaker, and author of ChatGPT for Profit. Enterprise AI consulting and transformation."
-        keywords="Christopher Dessi, Chris Dessi, AI consultant, AI strategy expert, TEDx speaker, ChatGPT for Profit, enterprise AI transformation, AI thought leader, AI business advisor, generative AI expert, AI keynote speaker, AI implementation specialist, enterprise technology strategist, business automation consultant, AI revenue growth, AI leadership training, executive AI coaching"
-        url="/about"
-      />
+    <main className="min-h-screen bg-white text-zinc-900">
+      <SEO title="About | Torque" description="Executives don't need more tools. They need fewer decisions — and better ones." url="/about" />
       <Header />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-black to-gray-900 text-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              About Torque AI
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Transforming enterprise businesses through strategic AI implementation and proven methodologies
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Mission Statement */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Our Mission
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-              Torque AI partners with enterprise businesses who lack an AI strategy to transform 
-              their marketing, sales, and communications operations. We deliver comprehensive AI 
-              strategy, AI business solutions, and AI software implementations that drive measurable 
-              results and sustainable competitive advantages.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Founder Section */}
-      <section className="py-24 bg-muted">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <img 
-                src={chrisProfile} 
-                alt="Christopher Dessi - Founder of Torque AI"
-                className="rounded-lg shadow-2xl w-full"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold">
-                Meet Christopher Dessi
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Founder and Chief Strategist of Torque AI
-              </p>
-              
-              <p className="text-lg leading-relaxed">
-                Christopher Dessi brings over 25 years of experience scaling organizations from 
-                startup to acquisition. As the founder of Torque AI, he specializes in helping 
-                enterprise businesses develop and implement comprehensive AI strategies that 
-                transform their operations.
-              </p>
-
-              <p className="text-lg leading-relaxed">
-                With a proven track record of generating $32M in revenue using Generative AI and 
-                leading multiple successful exits, Chris combines technical AI expertise with 
-                deep business acumen to deliver solutions that drive measurable results.
-              </p>
-
-              <div className="pt-6">
-                <h3 className="text-2xl font-bold mb-6">Credentials & Recognition</h3>
-                <div className="space-y-4">
-                  {credentials.map((credential, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-start space-x-4"
-                    >
-                      <credential.icon className="w-6 h-6 flex-shrink-0 mt-1" />
-                      <span className="text-lg">{credential.text}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-8 flex flex-wrap gap-4">
-                <a 
-                  href="https://www.linkedin.com/in/chrisdessi/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2"
-                >
-                  <Button size="lg" className="bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold">
-                    <Linkedin className="w-5 h-5" />
-                    Connect on LinkedIn
-                  </Button>
-                </a>
-                <a 
-                  href="https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2"
-                >
-                  <Button size="lg" variant="outline" className="border-2 font-semibold">
-                    <Youtube className="w-5 h-5 text-red-600" />
-                    The Quantum Shift Podcast
-                  </Button>
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Values
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The principles that guide our approach to AI consulting and implementation
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-muted p-8 rounded-lg"
-              >
-                <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-24 bg-black text-white">
-        <motion.div 
-          className="max-w-5xl mx-auto px-6 text-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <blockquote className="text-3xl md:text-5xl font-light leading-tight mb-8">
-            "One 15 minute meeting with Chris made me millions"
-          </blockquote>
-          <cite className="text-xl md:text-2xl text-gray-400 not-italic">
-            — Gary Vaynerchuk
-          </cite>
-        </motion.div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Transform Your Leadership with AI
-            </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Ready to take the next step? Let's discuss how we can help transform your business.
-              <a href="/blog" className="text-primary hover:underline ml-2">Explore our AI insights →</a>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ZohoLetsTalkButton size="large" />
+      <Section>
+        <motion.div className="grid gap-10 md:grid-cols-2" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+          <div>
+            <p className="mb-3 inline-flex rounded-full border border-zinc-200 px-3 py-1 text-xs font-semibold text-zinc-700">About</p>
+            <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Why Torque Exists</h1>
+            <p className="mt-4 text-lg text-zinc-700">Executives don't need more tools. They need fewer decisions — and better ones.</p>
+            <p className="mt-6 text-sm text-zinc-700">AI should reduce cognitive load, not increase it. Torque exists to rebuild the decision loop: clarity, ownership, and execution that sticks.</p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link to="/audit" className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white hover:bg-zinc-800">Start with the Audit <ArrowRight className="w-4 h-4" /></Link>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Calendly Booking */}
-      <CalendlyEmbed />
-
-      {/* Contact Form */}
-      <section className="bg-background py-20">
-        <div className="section-padding max-w-7xl mx-auto">
-          <ZohoContactForm 
-            title="Get In Touch"
-            description="Fill out the form below and our team will respond within 24 hours"
-          />
-        </div>
-      </section>
+          </div>
+          <Card>
+            <h2 className="text-lg font-semibold">The principle</h2>
+            <p className="mt-3 text-sm text-zinc-700">When decision flow is fixed, everything gets lighter: meetings, escalation, execution, and leadership.</p>
+            <div className="mt-6 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
+              <p className="text-sm text-zinc-800">Torque is built for leaders who want calm control — without losing speed.</p>
+            </div>
+          </Card>
+        </motion.div>
+      </Section>
       <Footer />
-    </div>
+    </main>
   );
-};
-
-export default About;
+}

@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Platform from "./pages/Platform";
+import Audit from "./pages/Audit";
+import NinetyDay from "./pages/NinetyDay";
+import Insights from "./pages/Insights";
 import Dashboard from "./pages/Dashboard";
 import Websites from "./pages/products/Websites";
 import Contact from "./pages/Contact";
@@ -49,13 +52,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* New primary navigation routes */}
+          <Route path="/audit" element={<Audit />} />
+          <Route path="/90-day" element={<NinetyDay />} />
+          <Route path="/platform" element={<Platform />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/about" element={<About />} />
+          {/* Legacy and additional routes */}
           <Route path="/torque" element={<Torque />} />
           <Route path="/torque-ai-guide" element={<TorqueAIGuide />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/platform" element={<Platform />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/products/websites" element={<Websites />} />
           <Route path="/contact" element={<Contact />} />
@@ -76,6 +84,7 @@ const App = () => (
           <Route path="/executive-coaching" element={<ExecutiveCoaching />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/ai-audit" element={<FreeAIAudit />} />
+          <Route path="/free-ai-audit" element={<FreeAIAudit />} />
           <Route path="/freeaiaudit" element={<FreeAIAudit />} />
           <Route path="/partners/torque-academy" element={<TorqueAcademy />} />
           <Route path="/partners/book-genius-ai" element={<BookGeniusAI />} />

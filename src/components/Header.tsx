@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import torqueLogo from "@/assets/torque-ai-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,8 +34,8 @@ const Header = () => {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link to="/" className="font-semibold tracking-tight text-zinc-900 text-lg">
-          Torque
+        <Link to="/" className="flex items-center">
+          <img src={torqueLogo} alt="Torque AI" className="h-8" />
         </Link>
 
         {/* Desktop Navigation */}

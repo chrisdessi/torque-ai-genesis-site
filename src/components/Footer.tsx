@@ -25,9 +25,9 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center text-slate-600 text-sm">
-                <Mail className="w-4 h-4 mr-2" />
-                <a href="mailto:chris@torqueapp.ai" className="hover:text-sky-600 transition-colors">
-                  chris@torqueapp.ai
+              <Mail className="w-4 h-4 mr-2" />
+                <a href="mailto:info@torqueapp.ai" className="hover:text-sky-600 transition-colors">
+                  info@torqueapp.ai
                 </a>
               </div>
               <div className="flex items-center gap-3 mt-3">

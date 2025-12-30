@@ -61,6 +61,11 @@ export default {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'
 				},
+				torque: {
+					blue: 'hsl(var(--torque-blue))',
+					silver: 'hsl(var(--torque-silver))',
+					dark: 'hsl(var(--torque-dark))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

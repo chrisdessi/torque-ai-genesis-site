@@ -53,12 +53,18 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     
-    /* Jasper-inspired vibrant gradients */
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-warm: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-cool: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --gradient-sunset: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    --gradient-ocean: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    /* Torque brand gradients - silver, black, blue */
+    --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 50%, #38bdf8 100%);
+    --gradient-warm: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+    --gradient-cool: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #7dd3fc 100%);
+    --gradient-sunset: linear-gradient(135deg, #334155 0%, #64748b 50%, #cbd5e1 100%);
+    --gradient-ocean: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0ea5e9 100%);
+    --gradient-metallic: linear-gradient(135deg, #1e293b 0%, #475569 25%, #94a3b8 50%, #475569 75%, #1e293b 100%);
+    
+    /* Brand accent colors */
+    --torque-blue: 210 100% 50%;
+    --torque-silver: 215 20% 65%;
+    --torque-dark: 222 47% 11%;
   }
 
   .dark {
@@ -213,4 +219,55 @@
 
 .animate-spin-slowest {
   animation: spin-slowest 40s linear infinite;
+}
+
+/* Scroll-triggered animations */
+@keyframes wave-flow {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-25px) translateY(10px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes aurora {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translateY(-30px) rotate(2deg);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translateY(15px) rotate(-1deg);
+    opacity: 0.4;
+  }
+}
+
+.animate-wave {
+  animation: wave-flow 8s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-aurora {
+  animation: aurora 12s ease-in-out infinite;
 }

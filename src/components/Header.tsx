@@ -48,7 +48,7 @@ const Header = () => {
       name: "Explore",
       children: [
         { name: "Events", href: "/events" },
-        { name: "Memento", href: "/memento" },
+        { name: "Memento", href: "/memento-landing" },
         { name: "Insights", href: "/insights" },
       ],
     },

@@ -21,7 +21,11 @@ const Header = () => {
     { name: "90-Day Reset", href: "/90-day" },
     { name: "Executive Audit", href: "/audit" },
     { name: "Platform", href: "/platform" },
+    { name: "Events", href: "/events" },
+    { name: "Memento", href: "/memento" },
+    { name: "About", href: "/about" },
     { name: "Insights", href: "/insights" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (

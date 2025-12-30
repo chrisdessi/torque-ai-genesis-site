@@ -659,6 +659,94 @@ function ExecutiveFit() {
   );
 }
 
+function QuantumCoachSection() {
+  return (
+    <section className="relative bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900 overflow-hidden py-24">
+      <FloatingOrb className="w-[600px] h-[600px] bg-emerald-500/15 -top-40 -right-40" delay={0} />
+      <FloatingOrb className="w-[400px] h-[400px] bg-teal-500/10 bottom-0 left-1/4" delay={2} />
+      
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      
+      <Section className="relative">
+        <motion.div
+          className="grid gap-12 lg:grid-cols-2 items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.div variants={fadeInLeft}>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-900/40 px-4 py-2 text-sm font-semibold text-emerald-400 mb-6">
+              <Users className="w-4 h-4" />
+              Quantum Coach
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-6">
+              Work 1-on-1 with 
+              <span className="text-transparent bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text"> Chris Dessi</span>
+            </h2>
+            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+              Stop wondering what to do next. Start executing with clarity and confidence. Get direct access to battle-tested frameworks from real deals.
+            </p>
+            <ul className="space-y-4 mb-10">
+              {[
+                "60-minute strategic deep dive",
+                "Clear 30-day action plan",
+                "Battle-tested frameworks from real deals",
+                "No fluff, just actionable insights"
+              ].map((item, i) => (
+                <motion.li 
+                  key={i}
+                  className="flex items-center gap-3 text-slate-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * i }}
+                >
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                  {item}
+                </motion.li>
+              ))}
+            </ul>
+            <motion.a
+              href="/quantum-shift/coach"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Start Your Quantum Shift
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </motion.a>
+          </motion.div>
+          
+          <motion.div variants={fadeInRight}>
+            <Card gradient className="relative overflow-hidden bg-gradient-to-br from-emerald-950/60 to-slate-900/80 border-emerald-500/20">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-full blur-2xl" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-sm font-semibold text-emerald-400 uppercase tracking-wide">For Leaders Ready to Transform</span>
+              </div>
+              <blockquote className="text-2xl md:text-3xl font-bold text-white italic leading-relaxed mb-6">
+                "Most leaders know what to do. They just don't know what to do first. That's what I solve."
+              </blockquote>
+              <p className="text-slate-400 font-semibold">— Chris Dessi</p>
+              <motion.div 
+                className="mt-8 rounded-2xl bg-gradient-to-r from-emerald-900/40 to-teal-900/30 border border-emerald-500/20 p-5"
+                whileHover={{ scale: 1.02 }}
+              >
+                <p className="text-slate-300">
+                  Work directly with Chris Dessi—author, TV commentator, and the leader who personally closed <span className="font-semibold text-emerald-400">over $100 million in enterprise deals</span>.
+                </p>
+              </motion.div>
+            </Card>
+          </motion.div>
+        </motion.div>
+      </Section>
+    </section>
+  );
+}
+
 function DecisionAuditCTA() {
   return (
     <section className="relative bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 overflow-hidden">
@@ -750,6 +838,7 @@ export default function Index() {
       <ReframeDecisionSystem />
       <DecisionLoop />
       <ExecutiveFit />
+      <QuantumCoachSection />
       <DecisionAuditCTA />
       <Footer />
     </main>

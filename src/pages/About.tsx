@@ -8,7 +8,9 @@ import { Link } from "react-router-dom";
 import chrisBioImage from "@/assets/chris-bio.png";
 import quantumShiftLogo from "@/assets/quantum-shift-podcast-logo.png";
 import { Button } from "@/components/ui/button";
-
+import VideoBackground from "@/components/VideoBackground";
+import torqueVideo17 from "@/assets/videos/torque-ai-17.mp4";
+import torqueVideo19 from "@/assets/videos/torque-ai-19.mp4";
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -107,31 +109,31 @@ export default function About() {
       <SEO title="About | Torque" description="Meet Chris Dessi and learn why Torque exists. Executives don't need more tools. They need fewer decisions — and better ones." url="/about" />
       <Header />
       
-      {/* Hero Section with Curious Browser-inspired gradient orbs */}
+      {/* Hero Section with video background */}
       <section 
         ref={heroRef}
         onMouseMove={handleMouseMove}
         className="relative min-h-[80vh] flex items-center overflow-hidden"
       >
+        {/* Video background */}
+        <VideoBackground 
+          src={torqueVideo17} 
+          overlay="dark" 
+          opacity={0.35}
+        />
+        
         {/* Large floating gradient orbs - Curious Browser style */}
-        <motion.div style={{ y: orbY }}>
+        <motion.div style={{ y: orbY }} className="pointer-events-none">
           <GradientOrb 
             className="w-[600px] h-[600px] -top-20 -right-40" 
-            colors="radial-gradient(circle, rgba(56,189,248,0.5) 0%, rgba(14,165,233,0.3) 50%, transparent 70%)"
+            colors="radial-gradient(circle, rgba(56,189,248,0.4) 0%, rgba(14,165,233,0.2) 50%, transparent 70%)"
             mouseX={mouseX}
             mouseY={mouseY}
           />
           <GradientOrb 
             className="w-[500px] h-[500px] top-1/2 -left-40" 
-            colors="radial-gradient(circle, rgba(99,102,241,0.4) 0%, rgba(79,70,229,0.2) 50%, transparent 70%)"
+            colors="radial-gradient(circle, rgba(99,102,241,0.3) 0%, rgba(79,70,229,0.15) 50%, transparent 70%)"
             delay={2}
-            mouseX={mouseX}
-            mouseY={mouseY}
-          />
-          <GradientOrb 
-            className="w-[400px] h-[400px] bottom-0 right-1/4" 
-            colors="radial-gradient(circle, rgba(148,163,184,0.3) 0%, rgba(71,85,105,0.2) 50%, transparent 70%)"
-            delay={4}
             mouseX={mouseX}
             mouseY={mouseY}
           />
@@ -223,6 +225,13 @@ export default function About() {
       
       {/* Meet Chris Dessi Section */}
       <section className="relative bg-gradient-to-b from-slate-950 to-slate-900 overflow-hidden py-20 md:py-32">
+        {/* Video background for this section */}
+        <VideoBackground 
+          src={torqueVideo19} 
+          overlay="dark" 
+          opacity={0.2}
+        />
+        
         {/* Accent orb */}
         <GradientOrb 
           className="w-[400px] h-[400px] top-20 -right-20" 

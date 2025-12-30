@@ -1,12 +1,20 @@
-import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import torqueLogo from "@/assets/torque-ai-logo.png";
 
+interface NavItem {
+  name: string;
+  href?: string;
+  children?: { name: string; href: string }[];
+}
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,17 +24,88 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const navItems: NavItem[] = [
     { name: "How It Works", href: "/#how-it-works" },
-    { name: "90-Day Reset", href: "/90-day" },
-    { name: "Executive Audit", href: "/audit" },
-    { name: "Platform", href: "/platform" },
-    { name: "Events", href: "/events" },
-    { name: "Memento", href: "/memento" },
+    {
+      name: "Services",
+      children: [
+        { name: "90-Day Reset", href: "/90-day" },
+        { name: "Executive Audit", href: "/audit" },
+        { name: "Platform", href: "/platform" },
+      ],
+    },
+    {
+      name: "Explore",
+      children: [
+        { name: "Events", href: "/events" },
+        { name: "Memento", href: "/memento" },
+        { name: "Insights", href: "/insights" },
+      ],
+    },
     { name: "About", href: "/about" },
-    { name: "Insights", href: "/insights" },
     { name: "Contact", href: "/contact" },
   ];
+
+  const renderNavItem = (item: NavItem) => {
+    if (item.children) {
+      return (
+        <div key={item.name} className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
+            className="flex items-center gap-1 text-sm text-zinc-700 hover:text-zinc-900 transition-colors"
+          >
+            {item.name}
+            <ChevronDown 
+              size={14} 
+              className={`transition-transform duration-200 ${openDropdown === item.name ? 'rotate-180' : ''}`} 
+            />
+          </button>
+          <AnimatePresence>
+            {openDropdown === item.name && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.15 }}
+                className="absolute top-full left-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-zinc-200 py-2 z-50"
+              >
+                {item.children.map((child) => (
+                  <Link
+                    key={child.name}
+                    to={child.href}
+                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"
+                    onClick={() => setOpenDropdown(null)}
+                  >
+                    {child.name}
+                  </Link>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      );
+    }
+
+    return (
+      <Link
+        key={item.name}
+        to={item.href!}
+        className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors"
+      >
+        {item.name}
+      </Link>
+    );
+  };
 
   return (
     <header 
@@ -44,15 +123,7 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navItems.map(renderNavItem)}
           <Link
             to="/audit"
             className="rounded-full bg-success px-4 py-2 text-sm font-medium text-white hover:bg-success/90 transition-colors"
@@ -90,15 +161,34 @@ const Header = () => {
             transition={{ duration: 0.2 }}
           >
             <nav className="py-4 space-y-1 px-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className="block py-2 text-sm font-medium text-zinc-700 hover:text-zinc-900 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
+              {navItems.map((item) => (
+                <div key={item.name}>
+                  {item.children ? (
+                    <div className="space-y-1">
+                      <span className="block py-2 text-xs font-semibold text-zinc-400 uppercase tracking-wide">
+                        {item.name}
+                      </span>
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          to={child.href}
+                          className="block py-2 pl-3 text-sm font-medium text-zinc-700 hover:text-zinc-900 transition-colors"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.href!}
+                      className="block py-2 text-sm font-medium text-zinc-700 hover:text-zinc-900 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
               ))}
             </nav>
           </motion.div>

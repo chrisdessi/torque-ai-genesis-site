@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import torqueLogo from "@/assets/torque-ai-logo.png";
+import torqueLogo from "@/assets/torque-ai-logo-new.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {

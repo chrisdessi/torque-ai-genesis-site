@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Youtube, Phone } from "lucide-react";
+import torqueLogo from "@/assets/torque-ai-logo-new.png";
 
 const Footer = () => {
   return (
@@ -7,9 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-black mb-3 text-slate-900">
-              Torque AI, Inc.
-            </h3>
+            <img src={torqueLogo} alt="Torque AI" className="h-10 w-auto mb-4" />
             <p className="text-slate-600 mb-4 max-w-md text-sm">
               Building the future through AI consulting, transparent leadership events, 
               and transformative content.

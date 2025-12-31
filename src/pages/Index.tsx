@@ -29,9 +29,9 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-inter">
       <SEO 
-        title="AI Consulting & Strategy for Business Growth"
-        description="Torque AI is a leading AI consulting firm helping businesses implement AI strategy, marketing automation, and team training. Get expert AI consulting services to drive revenue growth and operational efficiency."
-        keywords="AI consulting, AI strategy consultant, AI consulting firm, AI business consulting, enterprise AI solutions, AI implementation services, AI marketing automation, AI workflow optimization, business AI transformation, ChatGPT consulting, AI training workshops, Christopher Dessi"
+        title="Executive Decision Intelligence | AI Consulting for Leaders"
+        description="Torque helps founders and executive teams cut through noise, eliminate decision bottlenecks, and restore clarity — using AI as leverage, not distraction. Executive operating clarity in the age of AI."
+        keywords="executive decision intelligence, AI consulting, decision system, executive clarity, AI strategy, leadership consulting, decision bottlenecks, business AI, founder coaching, executive AI consulting, Christopher Dessi"
         url="/"
       />
       <Header />
@@ -114,16 +114,16 @@ export default function Index() {
               variants={fadeInUp}
               className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-5 py-2 text-base font-semibold uppercase tracking-wide text-primary"
             >
-              Strategy • Marketing • Training
+              Executive Decision Intelligence
             </motion.p>
             
             <motion.h1 
               variants={fadeInUp}
               className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl leading-[1.1]"
             >
-              <span className="text-foreground">AI That Grows Your Business —</span>
+              <span className="text-foreground">Make Fewer Decisions.</span>
               <span className="block mt-2 gradient-text">
-                Not Your Headaches
+                Make Better Ones.
               </span>
             </motion.h1>
             
@@ -131,12 +131,10 @@ export default function Index() {
               variants={fadeInUp}
               className="text-xl text-muted-foreground sm:text-2xl leading-relaxed max-w-xl"
             >
-              Torque AI helps business owners implement AI the{" "}
-              <span className="font-semibold text-primary">right</span> way:
-              <span className="font-semibold text-foreground">
-                {" "}Strategy → Marketing → Team Training.
-              </span>{" "}
-              More leads, more sales, and more efficient operations.
+              Torque helps founders and executive teams{" "}
+              <span className="font-semibold text-primary">cut through noise</span>,
+              eliminate decision bottlenecks, and restore clarity — using AI as{" "}
+              <span className="font-semibold text-foreground">leverage, not distraction.</span>
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-5">
@@ -146,7 +144,7 @@ export default function Index() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Book Your AI Strategy Call
+                Start with the Executive Decision Audit
                 <motion.span 
                   className="ml-2"
                   animate={{ x: [0, 5, 0] }}
@@ -161,17 +159,16 @@ export default function Index() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                See How It Works
+                Explore the Thinking
               </motion.a>
             </motion.div>
 
             <motion.p variants={fadeInUp} className="text-base text-muted-foreground">
-              Used by business owners, executives, and teams who want real
-              results from AI — not just another demo.
+              No hype. No tool soup. Just clarity, control, and execution that sticks.
             </motion.p>
           </motion.div>
 
-          {/* Hero Right: Torque AI System card */}
+          {/* Hero Right: Decision System card */}
           <motion.div 
             className="w-full max-w-lg"
             initial={{ opacity: 0, x: 50 }}
@@ -180,34 +177,31 @@ export default function Index() {
           >
             <div className="rounded-3xl glass-card p-8 animate-electric">
               <p className="mb-6 text-base font-semibold uppercase tracking-wide text-primary glow-text">
-                The Torque AI System™
+                If This Feels Familiar...
               </p>
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {[
-                  { num: "1", title: "Strategy", desc: "AI Audit & 90-day roadmap aligned to your business goals." },
-                  { num: "2", title: "Marketing", desc: "AI-powered funnels, campaigns, and automations that drive revenue." },
-                  { num: "3", title: "Training", desc: "We train your team so AI becomes part of how you work daily." }
+                  "You're over-involved in decisions that shouldn't reach you.",
+                  "AI tools are everywhere, but clarity is nowhere.",
+                  "Meetings repeat. Debates repeat. Decisions repeat.",
+                  "Execution is busy — but outcomes aren't moving."
                 ].map((item, i) => (
                   <motion.div 
-                    key={item.num}
-                    className="flex items-start gap-5"
+                    key={i}
+                    className="flex items-start gap-4"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 + i * 0.15 }}
+                    transition={{ delay: 0.5 + i * 0.1 }}
                   >
                     <motion.div 
-                      className="h-12 w-12 rounded-full bg-primary/20 ring-2 ring-primary flex items-center justify-center text-lg font-bold text-primary flex-shrink-0"
+                      className="h-3 w-3 mt-2 rounded-full bg-primary/60 flex-shrink-0"
                       animate={{ 
-                        boxShadow: ['0 0 20px hsl(217 91% 60% / 0.3)', '0 0 30px hsl(217 91% 60% / 0.5)', '0 0 20px hsl(217 91% 60% / 0.3)']
+                        scale: [1, 1.3, 1],
+                        opacity: [0.6, 1, 0.6]
                       }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                    >
-                      {item.num}
-                    </motion.div>
-                    <div>
-                      <p className="text-xl font-semibold text-foreground">{item.title}</p>
-                      <p className="text-lg text-muted-foreground mt-1">{item.desc}</p>
-                    </div>
+                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
+                    />
+                    <p className="text-lg text-muted-foreground">{item}</p>
                   </motion.div>
                 ))}
               </div>
@@ -217,9 +211,9 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 }}
               >
-                "In 2 years, we generated{" "}
-                <span className="font-bold text-primary glow-text">$32M</span> in
-                deals by implementing AI into a commodity business."
+                Torque starts with an executive-level diagnostic and ends with a{" "}
+                <span className="font-bold text-primary glow-text">decision system</span> your 
+                business can actually run on.
               </motion.div>
             </div>
           </motion.div>
@@ -244,12 +238,104 @@ export default function Index() {
         </div>
       </section>
 
-      {/* THREE PILLARS */}
-      <section id="pillars" className="border-b border-border bg-background relative overflow-hidden">
-        {/* Background glow */}
+      {/* THE REAL PROBLEM */}
+      <section id="problem" className="border-b border-border bg-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 py-24">
+          <motion.div 
+            className="mb-16 max-w-4xl mx-auto text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-base font-semibold uppercase tracking-wide text-primary mb-4">
+              The Real Problem
+            </p>
+            <h2 className="text-4xl font-bold text-foreground sm:text-5xl leading-tight">
+              The real problem isn't AI.{" "}
+              <span className="gradient-text">It's decision overload.</span>
+            </h2>
+            <p className="mt-6 text-xl text-muted-foreground sm:text-2xl leading-relaxed">
+              Executives today are surrounded by tools, dashboards, and opinions — yet clarity keeps slipping away.
+              AI promised relief. Instead, it multiplied noise.
+            </p>
+            <p className="mt-4 text-lg text-primary font-semibold">
+              This isn't a productivity issue. It's a decision issue.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            {/* Before */}
+            <motion.div 
+              className="group flex flex-col rounded-3xl glass-card p-10 border-destructive/30"
+              variants={scaleIn}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <p className="mb-4 text-base font-semibold uppercase tracking-wide text-destructive">
+                Before
+              </p>
+              <ul className="space-y-4 text-lg text-muted-foreground">
+                {[
+                  "Constant escalation and \"quick questions\"",
+                  "Recurring debates that never resolve",
+                  "Reactive priorities shifting daily",
+                  "Founder as the bottleneck for everything"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-destructive mt-1">✕</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* After */}
+            <motion.div 
+              className="group flex flex-col rounded-3xl glass-card p-10 border-primary/30"
+              variants={scaleIn}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <p className="mb-4 text-base font-semibold uppercase tracking-wide text-primary">
+                After
+              </p>
+              <ul className="space-y-4 text-lg text-muted-foreground">
+                {[
+                  "Clear ownership on every decision",
+                  "Stable priorities that hold",
+                  "Fewer meetings, faster execution",
+                  "Calmer leadership with more capacity"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-primary mt-1">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* DECISION SYSTEM */}
+      <section id="pillars" className="border-b border-border bg-secondary/30 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div 
+            className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"
+            animate={{ opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 6, repeat: Infinity }}
+          />
         </div>
         
         <div className="relative mx-auto max-w-7xl px-6 py-24">
@@ -261,167 +347,56 @@ export default function Index() {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
+            <p className="text-base font-semibold uppercase tracking-wide text-primary mb-4">
+              Decision System
+            </p>
             <h2 className="text-4xl font-bold text-foreground sm:text-5xl leading-tight">
-              The Three Pillars of <span className="gradient-text">Torque AI</span>
+              Torque is not a productivity tool.{" "}
+              <span className="gradient-text">It's a decision system for leaders.</span>
             </h2>
             <p className="mt-6 text-xl text-muted-foreground sm:text-2xl leading-relaxed">
-              AI isn't a single tool. It's a system. We help you build that
-              system across{" "}
-              <span className="font-semibold text-primary">
-                Strategy, Marketing, and Training
-              </span>{" "}
-              so the whole business moves forward.
+              AI should execute decisions — not create more of them.
             </p>
           </motion.div>
 
           <motion.div 
-            className="grid gap-8 lg:grid-cols-3"
+            className="grid gap-8 lg:grid-cols-5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            {/* Strategy */}
-            <motion.div 
-              id="strategy" 
-              className="group flex flex-col rounded-3xl glass-card p-10 hover:border-primary/50 transition-all duration-500"
-              variants={scaleIn}
-              whileHover={{ y: -8, scale: 1.02 }}
-            >
-              <motion.p 
-                className="mb-4 text-base font-semibold uppercase tracking-wide text-primary"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 2, repeat: Infinity }}
+            {[
+              { title: "Decide what actually matters", icon: "🎯" },
+              { title: "Ignore what doesn't", icon: "🚫" },
+              { title: "Eliminate repeated decisions", icon: "🔄" },
+              { title: "Remove founders from unnecessary loops", icon: "🔓" },
+              { title: "Execute without rework", icon: "⚡" }
+            ].map((item, i) => (
+              <motion.div 
+                key={item.title}
+                className="group flex flex-col items-center text-center rounded-3xl glass-card p-8 hover:border-primary/50 transition-all duration-500"
+                variants={scaleIn}
+                whileHover={{ y: -8, scale: 1.05 }}
               >
-                Pillar 1
-              </motion.p>
-              <h3 className="text-2xl font-bold text-foreground group-hover:gradient-text transition-all">Strategy</h3>
-              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Most businesses don't have an AI problem — they have a{" "}
-                <span className="font-semibold text-foreground">clarity problem</span>. We help
-                you decide what to build, what to automate, and what to ignore.
-              </p>
-              <ul className="mt-6 space-y-3 text-lg text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  AI Audit & current state assessment
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  90-day AI roadmap aligned to revenue
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  Funnel & messaging redesign
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  Workflow & automation planning
-                </li>
-              </ul>
-              <p className="mt-6 text-base font-semibold text-primary">
-                Outcome: Clarity, alignment, and no wasted money.
-              </p>
-            </motion.div>
-
-            {/* Marketing */}
-            <motion.div 
-              id="marketing" 
-              className="group flex flex-col rounded-3xl glass-card p-10 hover:border-primary/50 transition-all duration-500"
-              variants={scaleIn}
-              whileHover={{ y: -8, scale: 1.02 }}
-            >
-              <motion.p 
-                className="mb-4 text-base font-semibold uppercase tracking-wide text-primary"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-              >
-                Pillar 2
-              </motion.p>
-              <h3 className="text-2xl font-bold text-foreground group-hover:gradient-text transition-all">
-                Marketing & Automation
-              </h3>
-              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                We turn your AI strategy into a marketing engine that runs
-                every day — capturing leads, nurturing them, and driving sales.
-              </p>
-              <ul className="mt-6 space-y-3 text-lg text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  AI agents for lead capture & qualification
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  CRM, email, SMS & follow-up automation
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  Content & SEO systems powered by AI
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  Full-funnel performance dashboards
-                </li>
-              </ul>
-              <p className="mt-6 text-base font-semibold text-primary">
-                Outcome: More leads, more sales, less dependency on you.
-              </p>
-            </motion.div>
-
-            {/* Training */}
-            <motion.div 
-              id="training" 
-              className="group flex flex-col rounded-3xl glass-card p-10 hover:border-primary/50 transition-all duration-500"
-              variants={scaleIn}
-              whileHover={{ y: -8, scale: 1.02 }}
-            >
-              <motion.p 
-                className="mb-4 text-base font-semibold uppercase tracking-wide text-primary"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
-              >
-                Pillar 3
-              </motion.p>
-              <h3 className="text-2xl font-bold text-foreground group-hover:gradient-text transition-all">Training & Enablement</h3>
-              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Tools don't transform companies —{" "}
-                <span className="font-semibold text-foreground">people</span> do. We train your
-                team so AI becomes part of how you operate.
-              </p>
-              <ul className="mt-6 space-y-3 text-lg text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  Live workshops & team training (30–90 days)
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  Custom GPTs, SOPs & playbooks
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  Leadership coaching & Q&A
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  Ongoing support as you scale
-                </li>
-              </ul>
-              <p className="mt-6 text-base font-semibold text-primary">
-                Outcome: A confident team using AI every day.
-              </p>
-            </motion.div>
+                <motion.span 
+                  className="text-4xl mb-4"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
+                >
+                  {item.icon}
+                </motion.span>
+                <p className="text-lg font-semibold text-foreground">{item.title}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* CASE STUDIES */}
-      <section className="border-b border-border bg-secondary/30 relative overflow-hidden">
+      {/* CASE STUDIES - Updated */}
+      <section className="border-b border-border bg-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <motion.div 
-            className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"
-            animate={{ opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 6, repeat: Infinity }}
-          />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(217_91%_60%_/_0.05)_0%,_transparent_70%)]" />
         </div>
         
         <div className="relative mx-auto max-w-7xl px-6 py-24">
@@ -434,11 +409,10 @@ export default function Index() {
           >
             <div>
               <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
-                Real Results with <span className="gradient-text">Torque AI</span>
+                What changes when <span className="gradient-text">decision flow is fixed</span>
               </h2>
               <p className="mt-4 max-w-2xl text-xl text-muted-foreground leading-relaxed">
-                These are the kinds of outcomes you can expect when Strategy,
-                Marketing, and Training work together.
+                Real results from executives who restored clarity and took back their time.
               </p>
             </div>
             <motion.a
@@ -447,7 +421,7 @@ export default function Index() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Talk About Your Use Case
+              Start Your Decision Audit
             </motion.a>
           </motion.div>
 
@@ -459,9 +433,9 @@ export default function Index() {
             variants={staggerContainer}
           >
             {[
-              { tag: "E-Commerce", title: "92% Year-Over-Year Growth", desc: "We rebuilt their funnel, automated follow-up, and trained the team on daily AI usage — resulting in breakthrough growth." },
-              { tag: "B2B Commodity", title: "$32M in Closed Deals", desc: "By combining AI-powered outreach, messaging, and deal management, we helped drive $32M in sales in just 2 years." },
-              { tag: "Local Business", title: "More Leads, Less Admin", desc: "AI agents now handle lead capture, qualification, and follow-up, while the team focuses on serving customers." }
+              { tag: "Fewer Escalations", title: "Founder freed from daily fires", desc: "Decisions that used to require founder approval now flow through clear ownership structures — saving 10+ hours per week." },
+              { tag: "Faster Decisions", title: "$32M in Closed Deals", desc: "By combining clear decision ownership with AI-powered execution, we helped drive $32M in sales in just 2 years." },
+              { tag: "Less Churn", title: "Meetings cut by 60%", desc: "When decisions don't repeat and ownership is clear, recurring meetings become unnecessary. Execution speeds up dramatically." }
             ].map((item, i) => (
               <motion.div 
                 key={item.title}
@@ -488,10 +462,14 @@ export default function Index() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" className="border-b border-border bg-background relative overflow-hidden">
+      {/* HOW IT WORKS - Updated */}
+      <section id="how-it-works" className="border-b border-border bg-secondary/30 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(217_91%_60%_/_0.05)_0%,_transparent_70%)]" />
+          <motion.div 
+            className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 10, repeat: Infinity }}
+          />
         </div>
         
         <div className="relative mx-auto max-w-7xl px-6 py-24">
@@ -503,11 +481,10 @@ export default function Index() {
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
-              How the <span className="gradient-text">Torque AI System™</span> Works
+              How <span className="gradient-text">Torque</span> Works
             </h2>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              We keep this simple. No jargon. No endless pilots. Just a clear
-              path to value.
+              We don't start with tools. We start with the decision loop — then we install AI where it actually belongs.
             </p>
           </motion.div>
 
@@ -519,9 +496,9 @@ export default function Index() {
             variants={staggerContainer}
           >
             {[
-              { step: "Step 1", title: "Book Your Strategy Call", desc: "We learn about your business, numbers, constraints, and what \"success with AI\" actually means for you." },
-              { step: "Step 2", title: "Get Your 90-Day AI Roadmap", desc: "We map out quick wins, priority workflows, and the marketing systems to build first." },
-              { step: "Step 3", title: "Implement & Train Your Team", desc: "We build the systems with you or for you and train your team so results keep compounding." }
+              { step: "Step 01", title: "Diagnose", desc: "We identify where decisions stall, repeat, or escalate unnecessarily through an Executive Decision Audit.", cta: "See the Audit", href: "#book-call" },
+              { step: "Step 02", title: "Reset", desc: "In a structured 90-day intervention, we rebuild how decisions are made, owned, and executed.", cta: "Explore the 90-Day Reset", href: "#programs" },
+              { step: "Step 03", title: "Maintain", desc: "Torque becomes the system that preserves clarity — capturing decisions, learning patterns, and automating execution.", cta: "See the Platform", href: "#ecosystem" }
             ].map((item, i) => (
               <motion.div 
                 key={item.step}
@@ -529,7 +506,6 @@ export default function Index() {
                 variants={fadeInUp}
                 whileHover={{ y: -5, scale: 1.02 }}
               >
-                {/* Animated border glow */}
                 <motion.div 
                   className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ background: 'linear-gradient(135deg, hsl(217 91% 60% / 0.1) 0%, transparent 50%)' }}
@@ -548,14 +524,98 @@ export default function Index() {
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed relative z-10">
                   {item.desc}
                 </p>
+                <a 
+                  href={item.href}
+                  className="mt-4 inline-block text-primary font-semibold hover:underline relative z-10"
+                >
+                  {item.cta} →
+                </a>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* OFFERS / PROGRAMS */}
-      <section className="border-b border-border bg-secondary/30 relative overflow-hidden">
+      {/* WHO THIS IS FOR */}
+      <section className="border-b border-border bg-background relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_hsl(217_91%_60%_/_0.08)_0%,_transparent_60%)]" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 py-24">
+          <motion.div 
+            className="grid gap-12 lg:grid-cols-2 items-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            <motion.div className="space-y-8" variants={fadeInUp}>
+              <div>
+                <p className="text-base font-semibold uppercase tracking-wide text-primary mb-4">
+                  Who This Is For
+                </p>
+                <h2 className="text-4xl font-bold text-foreground sm:text-5xl leading-tight">
+                  Built for executives who feel <span className="gradient-text">stuck despite momentum.</span>
+                </h2>
+              </div>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Torque is designed for founders, CEOs, operators, and leadership teams who feel:
+              </p>
+              <ul className="space-y-4 text-lg text-muted-foreground">
+                {[
+                  "Over-involved in everything",
+                  "Behind despite effort",
+                  "Surrounded by tools but lacking clarity"
+                ].map((item, i) => (
+                  <motion.li 
+                    key={i}
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <span className="h-2 w-2 rounded-full bg-primary" />
+                    {item}
+                  </motion.li>
+                ))}
+              </ul>
+              <p className="text-lg text-muted-foreground border-l-4 border-primary pl-4">
+                If your company is growing but leadership feels heavier each quarter, you don't need more bandwidth — you need a better decision system.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="rounded-3xl glass-card p-10"
+              variants={fadeInUp}
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-6">Typical Outcomes</h3>
+              <ul className="space-y-5">
+                {[
+                  { icon: "📉", text: "Fewer escalations to the founder" },
+                  { icon: "⚡", text: "Faster decisions with clear ownership" },
+                  { icon: "🎯", text: "Less meeting churn, more execution" },
+                  { icon: "🤖", text: "AI deployed as leverage (not distraction)" }
+                ].map((item, i) => (
+                  <motion.li 
+                    key={i}
+                    className="flex items-center gap-4 text-lg text-muted-foreground"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <span className="text-2xl">{item.icon}</span>
+                    {item.text}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* PROGRAMS */}
+      <section id="programs" className="border-b border-border bg-secondary/30 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.div 
             className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"
@@ -573,11 +633,10 @@ export default function Index() {
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
-              Choose How You Want to Work with <span className="gradient-text">Torque AI</span>
+              Choose How You Want to Work with <span className="gradient-text">Torque</span>
             </h2>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              Different businesses, different starting points. The common thread
-              is always the same: Strategy → Marketing → Training.
+              The entry point is simple: we start with clarity.
             </p>
           </motion.div>
 
@@ -588,25 +647,24 @@ export default function Index() {
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            {/* Strategy Accelerator */}
+            {/* Executive Decision Audit */}
             <motion.div 
               className="flex flex-col rounded-3xl glass-card p-10"
               variants={fadeInUp}
               whileHover={{ y: -8, scale: 1.02 }}
             >
               <p className="text-base font-semibold uppercase tracking-wide text-primary">
-                30-Day Intensive
+                Entry Point
               </p>
               <h3 className="mt-3 text-2xl font-bold text-foreground">
-                AI Strategy Accelerator
+                Executive Decision Audit
               </h3>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                For leaders who want clarity, not more noise. In 30 days, we
-                deliver a tailored AI roadmap, quick wins, and a launch plan.
+                We identify where decisions stall, repeat, or escalate unnecessarily. 
+                Leave with a clear diagnosis and action plan.
               </p>
               <div className="mt-6 text-base text-muted-foreground">
-                Includes: AI Audit, 90-Day Roadmap, priority workflows, and
-                executive briefing.
+                Includes: Decision flow analysis, bottleneck identification, and priority recommendations.
               </div>
               <motion.a
                 href="#book-call"
@@ -614,11 +672,11 @@ export default function Index() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Apply for Strategy Accelerator
+                Start with the Audit
               </motion.a>
             </motion.div>
 
-            {/* 90-Day Growth - Featured */}
+            {/* 90-Day Reset - Featured */}
             <motion.div 
               className="flex flex-col rounded-3xl border-2 border-primary glass-card p-10 relative animate-electric"
               variants={fadeInUp}
@@ -629,20 +687,20 @@ export default function Index() {
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                Most Popular
+                Full Intervention
               </motion.div>
               <p className="text-base font-semibold uppercase tracking-wide text-primary mt-2">
                 90-Day Program
               </p>
               <h3 className="mt-3 text-2xl font-bold text-foreground">
-                90-Day AI Growth Program
+                90-Day Decision Reset
               </h3>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Done-with-you implementation. We build your AI-powered
-                marketing systems, fix your funnel, and train your team.
+                A structured intervention where we rebuild how decisions are made, 
+                owned, and executed across your leadership team.
               </p>
               <div className="mt-6 text-base text-muted-foreground">
-                Includes: Strategy, build-out, training, and ongoing support.
+                Includes: Audit, system design, team training, and ongoing support.
               </div>
               <motion.a
                 href="#book-call"
@@ -650,92 +708,76 @@ export default function Index() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                See If This Program Fits You
+                Explore the 90-Day Reset
               </motion.a>
             </motion.div>
 
-            {/* Platform / Academy */}
+            {/* Quantum Coach */}
             <motion.div 
               className="flex flex-col rounded-3xl glass-card p-10"
               variants={fadeInUp}
               whileHover={{ y: -8, scale: 1.02 }}
             >
               <p className="text-base font-semibold uppercase tracking-wide text-primary">
-                Platform & Learning
+                1-on-1 Executive Coaching
               </p>
               <h3 className="mt-3 text-2xl font-bold text-foreground">
-                Torque AI Platform & Academy
+                Quantum Coach
               </h3>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                For teams who want tools and training all in one place.
+                Work directly with Chris Dessi. Stop wondering what to do next. 
+                Start executing with clarity and confidence.
               </p>
-              <ul className="mt-6 space-y-3 text-lg text-muted-foreground">
-                <li>
-                  •{" "}
-                  <a
-                    href="https://www.torqueacademy.ai"
-                    className="text-primary underline hover:text-primary/80 transition-colors"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Torque Academy
-                  </a>{" "}
-                  — on-demand AI training
-                </li>
-                <li>
-                  • AI-powered marketing stack (chatbots, CRM, campaigns)
-                </li>
+              <ul className="mt-6 space-y-2 text-base text-muted-foreground">
+                <li>• 60-minute strategic deep dive</li>
+                <li>• Clear 30-day action plan</li>
+                <li>• Battle-tested frameworks from real deals</li>
               </ul>
               <motion.a
-                href="https://www.torqueacademy.ai"
-                target="_blank"
-                rel="noreferrer"
+                href="#book-call"
                 className="mt-8 inline-flex items-center justify-center rounded-full border-2 border-border px-6 py-4 text-lg font-semibold text-foreground hover:border-primary hover:text-primary transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore Torque Academy
+                Start Your Quantum Shift
               </motion.a>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* AI READINESS QUIZ */}
-      <section id="ai-quiz" className="border-b border-border bg-background relative overflow-hidden">
+      {/* AI READINESS QUIZ - Removed, replaced with Chris quote */}
+      <section className="border-b border-border bg-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_hsl(217_91%_60%_/_0.08)_0%,_transparent_60%)]" />
         </div>
         
-        <div className="relative mx-auto max-w-7xl px-6 py-24">
-          <motion.div 
-            className="max-w-4xl mb-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
-              Not Sure Where to <span className="gradient-text">Start?</span>
-            </h2>
-            <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              Take the AI Readiness Quiz. In a few minutes, you'll see where your 
-              business stands on Strategy, Marketing, and Training — and what to fix first.
-            </p>
-          </motion.div>
-
+        <div className="relative mx-auto max-w-4xl px-6 py-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="space-y-8"
           >
-            <ServicesScoreApp />
+            <p className="text-base font-semibold uppercase tracking-wide text-primary">
+              For Leaders Ready to Transform
+            </p>
+            <blockquote className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+              "Most leaders know what to do. They just don't know{" "}
+              <span className="gradient-text">what to do first.</span>{" "}
+              That's what I solve."
+            </blockquote>
+            <p className="text-xl text-muted-foreground">— Chris Dessi</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Work directly with Chris Dessi — author, TV commentator, and the leader who personally 
+              closed over $100 million in enterprise deals.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ABOUT CHRIS */}
+      {/* ABOUT CHRIS - Updated */}
       <section id="about" className="border-b border-border bg-secondary/30 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <motion.div 
@@ -758,19 +800,17 @@ export default function Index() {
                 Meet <span className="gradient-text">Chris Dessi</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                I'm Chris, a Chappaqua-based founder, author, and AI strategist.
+                I'm Chris, a Chappaqua-based founder, author, and executive strategist.
                 Over the past two decades, I've led global sales and marketing
-                teams, generated{" "}
-                <span className="font-bold text-primary glow-text">$32M</span>{" "}
-                using AI to sell a commodity product, and helped business owners
-                turn chaos into clarity with AI.
+                teams, personally closed over{" "}
+                <span className="font-bold text-primary glow-text">$100M</span>{" "}
+                in enterprise deals, and helped leaders cut through decision chaos to find clarity.
               </p>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                I created Torque AI because most AI advice is either too
-                technical or too theoretical. Business owners don't need more
-                theory — they need{" "}
-                <span className="font-semibold text-foreground">revenue, systems, and a team</span>{" "}
-                that knows how to use AI every day.
+                I created Torque because most AI advice is either too
+                technical or too theoretical. Executives don't need more
+                tools — they need{" "}
+                <span className="font-semibold text-foreground">clarity, control, and a system that works.</span>
               </p>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 I also write and speak about reinvention and the future of work,
@@ -827,7 +867,7 @@ export default function Index() {
       </section>
 
       {/* ECOSYSTEM & RELATED BRANDS */}
-      <section className="border-b border-border bg-background relative overflow-hidden">
+      <section id="ecosystem" className="border-b border-border bg-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
         </div>
@@ -841,10 +881,10 @@ export default function Index() {
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
-              The <span className="gradient-text">Torque AI</span> Ecosystem
+              The <span className="gradient-text">Torque</span> Ecosystem
             </h2>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              Torque AI powers and supports a broader ecosystem of events,
+              Torque powers and supports a broader ecosystem of events,
               communities, and tools designed to help leaders navigate this moment.
             </p>
           </motion.div>
@@ -923,7 +963,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* BOOK CALL / ZOHO / CALENDLY */}
+      {/* BOOK CALL / ZOHO / CALENDLY - Updated */}
       <section id="book-call" className="border-b border-border bg-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_hsl(217_91%_60%_/_0.1)_0%,_transparent_60%)]" />
@@ -943,11 +983,10 @@ export default function Index() {
             variants={fadeInUp}
           >
             <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
-              Ready to See What <span className="gradient-text">AI Can Really Do?</span>
+              <span className="gradient-text">Clarity always comes first.</span>
             </h2>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Tell us a bit about your business, and we'll follow up with a
-              strategy session to map out your first (or next) 90 days with AI.
+              Start with the Executive Decision Audit. We'll identify where decisions break down — and what to fix first.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-8 text-lg text-muted-foreground">
               <motion.span 
@@ -955,21 +994,21 @@ export default function Index() {
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <span className="text-primary">✓</span> No generic pitch
+                <span className="text-primary">✓</span> No hype
               </motion.span>
               <motion.span 
                 className="flex items-center gap-2"
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
               >
-                <span className="text-primary">✓</span> Strategy, Marketing, and Training
+                <span className="text-primary">✓</span> No tool soup
               </motion.span>
               <motion.span 
                 className="flex items-center gap-2"
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
               >
-                <span className="text-primary">✓</span> Leave with clarity
+                <span className="text-primary">✓</span> Just clarity
               </motion.span>
             </div>
           </motion.div>
@@ -983,7 +1022,7 @@ export default function Index() {
           >
             <div className="rounded-3xl glass-card p-8">
               <h3 className="text-2xl font-bold text-foreground mb-6">
-                Schedule a Call
+                Start with the Executive Decision Audit
               </h3>
               <CalendlyEmbed />
             </div>

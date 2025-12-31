@@ -57,6 +57,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				silver: {
+					DEFAULT: 'hsl(var(--silver))',
+					dark: 'hsl(var(--silver-dark))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -103,11 +107,13 @@ export default {
 				'pulse-glow': {
 					'0%, 100%': {
 						transform: 'scale(1)',
-						opacity: '1'
+						opacity: '0.6',
+						boxShadow: '0 0 20px hsl(217 91% 60% / 0.3)'
 					},
 					'50%': {
-						transform: 'scale(1.05)',
-						opacity: '0.8'
+						transform: 'scale(1.02)',
+						opacity: '1',
+						boxShadow: '0 0 40px hsl(217 91% 60% / 0.5)'
 					}
 				},
 				'scroll-x': {
@@ -123,7 +129,7 @@ export default {
 						transform: 'translateY(0) scale(1)'
 					},
 					'50%': {
-						transform: 'translateY(-10px) scale(1.02)'
+						transform: 'translateY(-15px) scale(1.02)'
 					}
 				},
 				'wiggle': {
@@ -143,7 +149,7 @@ export default {
 						opacity: '1'
 					},
 					'50%': {
-						transform: 'translateY(-5px) scale(1.05)',
+						transform: 'translateY(-8px) scale(1.05)',
 						opacity: '0.9'
 					}
 				},
@@ -153,6 +159,32 @@ export default {
 					},
 					'50%': {
 						backgroundPosition: '100% 50%'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0'
+					},
+					'100%': {
+						backgroundPosition: '200% 0'
+					}
+				},
+				'electric': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px hsl(217 91% 60% / 0.3), 0 0 40px hsl(217 91% 60% / 0.2)'
+					},
+					'50%': {
+						boxShadow: '0 0 30px hsl(217 91% 60% / 0.5), 0 0 60px hsl(217 91% 60% / 0.3)'
+					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						opacity: '0.5',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1.1)'
 					}
 				}
 			},
@@ -165,7 +197,10 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'wiggle': 'wiggle 2s ease-in-out infinite',
 				'bounce-slow': 'bounce-slow 4s ease-in-out infinite',
-				'gradient': 'gradient 8s ease infinite'
+				'gradient': 'gradient 8s ease infinite',
+				'shimmer': 'shimmer 3s linear infinite',
+				'electric': 'electric 2s ease-in-out infinite',
+				'glow-pulse': 'glow-pulse 3s ease-in-out infinite'
 			}
 		}
 	},

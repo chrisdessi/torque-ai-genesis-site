@@ -228,21 +228,24 @@ export default function Index() {
         </div>
       </section>
 
-      {/* SOCIAL PROOF */}
+      {/* SOCIAL PROOF - TV Logos */}
       <section className="border-b border-border bg-secondary/50">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-base font-semibold uppercase tracking-wide text-muted-foreground">
-            As Seen On & Trusted By
+            As Seen On
           </p>
-          <div className="flex flex-wrap items-center gap-6 text-base font-medium text-foreground">
-            <motion.span whileHover={{ color: 'hsl(217 91% 60%)' }} className="cursor-default transition-colors">Fox5 News</motion.span>
-            <span className="h-2 w-2 rounded-full bg-primary/50 animate-pulse" />
-            <motion.span whileHover={{ color: 'hsl(217 91% 60%)' }} className="cursor-default transition-colors">AI Summit NYC</motion.span>
-            <span className="h-2 w-2 rounded-full bg-primary/50 animate-pulse" />
-            <motion.span whileHover={{ color: 'hsl(217 91% 60%)' }} className="cursor-default transition-colors">Torque Academy</motion.span>
-            <span className="h-2 w-2 rounded-full bg-primary/50 animate-pulse" />
-            <motion.span whileHover={{ color: 'hsl(217 91% 60%)' }} className="cursor-default transition-colors">Westchester AI Alliance</motion.span>
-          </div>
+          <a 
+            href="https://www.youtube.com/watch?v=9J1Kauiq42g" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex flex-wrap items-center gap-8 opacity-70 hover:opacity-100 transition-opacity duration-300"
+          >
+            <img src="/logos/fox-logo.png" alt="Fox" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="/logos/nbc-logo.png" alt="NBC" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="/logos/cbs-logo.png" alt="CBS" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="/logos/abc-logo.png" alt="ABC" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="/logos/cnn-logo.png" alt="CNN" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+          </a>
         </div>
       </section>
 

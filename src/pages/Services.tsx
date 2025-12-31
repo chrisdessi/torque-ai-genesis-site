@@ -9,8 +9,6 @@ import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ServicesScoreApp from "@/components/ServicesScoreApp";
-import VideoBackground from "@/components/VideoBackground";
-import torqueVideo20 from "@/assets/videos/torque-ai-20.mp4";
 
 const Services = () => {
   const coreServices = [
@@ -106,14 +104,9 @@ const Services = () => {
       />
       <Header />
       
-      {/* Hero Section with Video */}
-      <section className="relative pt-32 pb-20 text-white overflow-hidden min-h-[70vh] flex items-center">
-        <VideoBackground 
-          src={torqueVideo20} 
-          overlay="gradient" 
-          opacity={0.45}
-        />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 bg-gradient-to-b from-black to-gray-900 text-white">
+        <div className="max-w-6xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

@@ -8,7 +8,6 @@ import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { motion } from "framer-motion";
 import { BookOpen, Video, Music, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import quantumShiftLogo from "@/assets/quantum-shift-podcast-logo.png";
 
 const QuantumShift = () => {
   const fadeInUp = {
@@ -23,7 +22,7 @@ const QuantumShift = () => {
       name: "YouTube",
       description: "Watch full episodes",
       icon: Video,
-      url: "https://www.youtube.com/@ChristopherDessi",
+      url: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_",
       iconColor: "#FF0000"
     },
     {
@@ -93,7 +92,7 @@ const QuantumShift = () => {
               <Button 
                 size="lg"
                 className="bg-white hover:bg-gray-100 text-purple-900 font-bold px-10 py-6 text-lg"
-                onClick={() => window.open('https://www.youtube.com/@ChristopherDessi', '_blank')}
+                onClick={() => window.open('https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_', '_blank')}
               >
                 Watch the Podcast
               </Button>
@@ -194,9 +193,6 @@ const QuantumShift = () => {
       <section className="bg-gradient-to-br from-gray-50 to-white py-32">
         <div className="section-padding max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-16">
-            <a href="https://www.youtube.com/@ChristopherDessi" target="_blank" rel="noopener noreferrer" className="inline-block mb-6">
-              <img src={quantumShiftLogo} alt="The Quantum Shift Podcast" className="w-48 h-48 mx-auto rounded-2xl shadow-lg hover:shadow-xl transition-shadow" />
-            </a>
             <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
               Listen & Watch
             </h2>

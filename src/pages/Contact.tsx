@@ -7,7 +7,6 @@ import SEO from "@/components/SEO";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
-import quantumShiftLogo from "@/assets/quantum-shift-podcast-logo.png";
 
 const Contact = () => {
   const contactMethods = [
@@ -33,11 +32,11 @@ const Contact = () => {
       href: "https://www.linkedin.com/in/chrisdessi/"
     },
     {
-      icon: () => <img src={quantumShiftLogo} alt="The Quantum Shift Podcast" className="w-16 h-16 rounded-lg" />,
+      icon: Youtube,
       title: "The Quantum Shift Podcast",
       description: "Watch our podcast series on AI transformation",
       action: "Watch Now",
-      href: "https://www.youtube.com/@ChristopherDessi"
+      href: "https://www.youtube.com/playlist?list=PL1uIG3i2RBhGE7WsBs1jD_Wy5awTA3NT_"
     }
   ];
 
@@ -97,40 +96,33 @@ const Contact = () => {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactMethods.map((method, index) => {
-              const IconComponent = method.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="bg-white p-10 rounded-xl text-center hover:shadow-2xl transition-all hover:-translate-y-2"
-                >
-                  {typeof IconComponent === 'function' && IconComponent.length === 0 ? (
-                    <div className="mx-auto mb-6">{(IconComponent as () => JSX.Element)()}</div>
-                  ) : (
-                    <IconComponent className="w-16 h-16 mx-auto mb-6 text-primary" />
-                  )}
-                  <h3 className="text-2xl font-bold mb-4">{method.title}</h3>
-                  <p className="text-muted-foreground mb-8 text-lg">{method.description}</p>
-                  {method.href ? (
-                    <a
-                      href={method.href}
-                      target={method.href.startsWith('http') ? '_blank' : undefined}
-                      rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="inline-flex items-center gap-2 text-lg font-semibold hover:underline"
-                    >
-                      {method.action}
-                      {method.href.startsWith('http') && <ArrowRight className="w-4 h-4" />}
-                    </a>
-                  ) : (
-                    <span className="text-lg font-semibold text-primary">{method.action}</span>
-                  )}
-                </motion.div>
-              );
-            })}
+            {contactMethods.map((method, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="bg-white p-10 rounded-xl text-center hover:shadow-2xl transition-all hover:-translate-y-2"
+              >
+                <method.icon className="w-16 h-16 mx-auto mb-6 text-primary" />
+                <h3 className="text-2xl font-bold mb-4">{method.title}</h3>
+                <p className="text-muted-foreground mb-8 text-lg">{method.description}</p>
+                {method.href ? (
+                  <a
+                    href={method.href}
+                    target={method.href.startsWith('http') ? '_blank' : undefined}
+                    rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="inline-flex items-center gap-2 text-lg font-semibold hover:underline"
+                  >
+                    {method.action}
+                    {method.href.startsWith('http') && <ArrowRight className="w-4 h-4" />}
+                  </a>
+                ) : (
+                  <span className="text-lg font-semibold text-primary">{method.action}</span>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

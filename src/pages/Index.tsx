@@ -6,6 +6,7 @@ import SEO from "@/components/SEO";
 import ServicesScoreApp from "@/components/ServicesScoreApp";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import ScrollingWord from "@/components/ScrollingWord";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -67,11 +68,9 @@ export default function Index() {
               variants={fadeInUp}
               className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl leading-[1.05]"
             >
-              <span className="text-foreground">Make Fewer Decisions.</span>
-              <br />
               <span className="text-foreground">Make </span>
-              <span className="highlight-text">Better</span>
-              <span className="text-foreground"> Ones.</span>
+              <ScrollingWord words={["Fewer", "Better"]} />
+              <span className="text-foreground"> Decisions.</span>
             </motion.h1>
             
             <motion.p 

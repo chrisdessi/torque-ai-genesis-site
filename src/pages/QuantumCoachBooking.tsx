@@ -106,7 +106,7 @@ const QuantumCoachBooking = () => {
           </div>
 
           {/* Main Signup Form */}
-          <div className="max-w-md mx-auto">
+          <div className="max-w-2xl mx-auto">
             <div className="bg-white border-2 border-emerald-500/30 rounded-3xl p-6 lg:p-8 shadow-xl">
               <div className="text-center mb-4">
                 <h2 className="text-xl font-bold mb-2 text-slate-900">Start Your Shift Today</h2>

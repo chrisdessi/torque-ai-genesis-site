@@ -19,10 +19,10 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
-				'serif': ['Playfair Display', 'serif'],
-			},
+		fontFamily: {
+			'lexend': ['Lexend', 'sans-serif'],
+			'inter': ['Inter', 'sans-serif'],
+		},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

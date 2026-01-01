@@ -35,7 +35,7 @@ const scaleIn: Variants = {
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-inter">
+    <div className="min-h-screen bg-background text-foreground font-lexend">
       <SEO 
         title="Executive Decision Intelligence | AI Consulting for Leaders"
         description="Torque helps founders and executive teams cut through noise, eliminate decision bottlenecks, and restore clarity — using AI as leverage, not distraction. Executive operating clarity in the age of AI."
@@ -47,70 +47,8 @@ export default function Index() {
       {/* HERO */}
       <section
         id="hero"
-        className="relative overflow-hidden border-b border-border"
+        className="relative overflow-hidden bg-background"
       >
-        {/* Dynamic animated background */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Main gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary to-background" />
-          
-          {/* Animated glow orbs */}
-          <motion.div 
-            className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/20 blur-[120px]"
-            animate={{ 
-              scale: [1, 1.3, 1],
-              opacity: [0.3, 0.6, 0.3],
-              x: [0, 50, 0],
-              y: [0, -30, 0]
-            }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div 
-            className="absolute -bottom-60 -left-40 w-[500px] h-[500px] rounded-full bg-primary/30 blur-[100px]"
-            animate={{ 
-              scale: [1.2, 1, 1.2],
-              opacity: [0.4, 0.7, 0.4],
-              x: [0, -30, 0]
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/10 blur-[150px]"
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.2, 0.4, 0.2]
-            }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          />
-          
-          {/* Floating particles */}
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-primary/40 rounded-full"
-              style={{
-                left: `${15 + i * 15}%`,
-                top: `${20 + (i % 3) * 25}%`,
-              }}
-              animate={{
-                y: [-20, 20, -20],
-                x: [-10, 10, -10],
-                opacity: [0.3, 0.8, 0.3],
-                scale: [1, 1.5, 1]
-              }}
-              transition={{
-                duration: 4 + i,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.5
-              }}
-            />
-          ))}
-          
-          {/* Grid pattern overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
-        </div>
-
         <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-6 py-28 lg:flex-row lg:items-center lg:justify-between lg:py-36">
           <motion.div 
             className="max-w-2xl space-y-10"
@@ -120,19 +58,20 @@ export default function Index() {
           >
             <motion.p 
               variants={fadeInUp}
-              className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-5 py-2 text-base font-semibold uppercase tracking-wide text-primary"
+              className="inline-flex items-center rounded-full border border-foreground/20 bg-foreground/5 px-5 py-2 text-sm font-bold uppercase tracking-widest text-foreground"
             >
               Executive Decision Intelligence
             </motion.p>
             
             <motion.h1 
               variants={fadeInUp}
-              className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl leading-[1.1]"
+              className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl leading-[1.05]"
             >
               <span className="text-foreground">Make Fewer Decisions.</span>
-              <span className="block mt-2 gradient-text">
-                Make Better Ones.
-              </span>
+              <br />
+              <span className="text-foreground">Make </span>
+              <span className="highlight-text">Better</span>
+              <span className="text-foreground"> Ones.</span>
             </motion.h1>
             
             <motion.p 
@@ -140,15 +79,15 @@ export default function Index() {
               className="text-xl text-muted-foreground sm:text-2xl leading-relaxed max-w-xl"
             >
               Torque helps founders and executive teams{" "}
-              <span className="font-semibold text-primary">cut through noise</span>,
+              <strong className="text-foreground">cut through noise</strong>,
               eliminate decision bottlenecks, and restore clarity — using AI as{" "}
-              <span className="font-semibold text-foreground">leverage, not distraction.</span>
+              <strong className="text-foreground">leverage, not distraction.</strong>
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-5">
               <motion.a
                 href="#book-call"
-                className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground shadow-xl shadow-primary/25 transition-all duration-300 hover:-translate-y-1 animate-electric"
+                className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -163,7 +102,7 @@ export default function Index() {
               </motion.a>
               <motion.a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center rounded-full border-2 border-border px-8 py-4 text-lg font-semibold text-foreground hover:border-primary hover:text-primary transition-all duration-300 glass"
+                className="inline-flex items-center justify-center rounded-full border-2 border-foreground px-8 py-4 text-lg font-bold text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -183,8 +122,8 @@ export default function Index() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="rounded-3xl glass-card p-8 animate-electric">
-              <p className="mb-6 text-base font-semibold uppercase tracking-wide text-primary glow-text">
+            <div className="rounded-3xl border-2 border-foreground/10 bg-secondary p-8">
+              <p className="mb-6 text-sm font-bold uppercase tracking-widest text-primary">
                 If This Feels Familiar...
               </p>
               <div className="space-y-5">
@@ -201,26 +140,19 @@ export default function Index() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + i * 0.1 }}
                   >
-                    <motion.div 
-                      className="h-3 w-3 mt-2 rounded-full bg-primary/60 flex-shrink-0"
-                      animate={{ 
-                        scale: [1, 1.3, 1],
-                        opacity: [0.6, 1, 0.6]
-                      }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
-                    />
-                    <p className="text-lg text-muted-foreground">{item}</p>
+                    <div className="h-3 w-3 mt-2 rounded-full bg-primary flex-shrink-0" />
+                    <p className="text-lg text-foreground/80">{item}</p>
                   </motion.div>
                 ))}
               </div>
               <motion.div 
-                className="mt-8 rounded-2xl bg-gradient-to-r from-primary/10 to-primary/5 p-5 text-lg text-foreground border border-primary/20"
+                className="mt-8 rounded-2xl bg-accent/30 p-5 text-lg text-foreground border-2 border-accent"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 }}
               >
                 Torque starts with an executive-level diagnostic and ends with a{" "}
-                <span className="font-bold text-primary glow-text">decision system</span> your 
+                <strong className="text-primary">decision system</strong> your 
                 business can actually run on.
               </motion.div>
             </div>
@@ -229,34 +161,29 @@ export default function Index() {
       </section>
 
       {/* SOCIAL PROOF - TV Logos */}
-      <section className="border-b border-border bg-secondary/50">
+      <section className="border-y border-border bg-background">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-base font-semibold uppercase tracking-wide text-muted-foreground">
+          <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
             As Seen On
           </p>
           <a 
             href="https://www.youtube.com/watch?v=9J1Kauiq42g" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex flex-wrap items-center gap-8 opacity-70 hover:opacity-100 transition-opacity duration-300"
+            className="flex flex-wrap items-center gap-8 opacity-60 hover:opacity-100 transition-opacity duration-300"
           >
-            <img src="/logos/fox-logo.png" alt="Fox" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="/logos/nbc-logo.png" alt="NBC" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="/logos/cbs-logo.png" alt="CBS" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="/logos/abc-logo.png" alt="ABC" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="/logos/cnn-logo.png" alt="CNN" className="h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="/logos/fox-logo.png" alt="Fox" className="h-8 object-contain" />
+            <img src="/logos/nbc-logo.png" alt="NBC" className="h-8 object-contain" />
+            <img src="/logos/cbs-logo.png" alt="CBS" className="h-8 object-contain" />
+            <img src="/logos/abc-logo.png" alt="ABC" className="h-8 object-contain" />
+            <img src="/logos/cnn-logo.png" alt="CNN" className="h-8 object-contain" />
           </a>
         </div>
       </section>
 
       {/* THE REAL PROBLEM */}
-      <section id="problem" className="border-b border-border bg-background relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
-        </div>
-        
-        <div className="relative mx-auto max-w-7xl px-6 py-24">
+      <section id="problem" className="dark-section py-24">
+        <div className="mx-auto max-w-7xl px-6">
           <motion.div 
             className="mb-16 max-w-4xl mx-auto text-center"
             initial="hidden"
@@ -265,18 +192,18 @@ export default function Index() {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-base font-semibold uppercase tracking-wide text-primary mb-4">
+            <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
               The Real Problem
             </p>
-            <h2 className="text-4xl font-bold text-foreground sm:text-5xl leading-tight">
+            <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-tight">
               The real problem isn't AI.{" "}
-              <span className="gradient-text">It's decision overload.</span>
+              <span className="highlight-text">It's decision overload.</span>
             </h2>
-            <p className="mt-6 text-xl text-muted-foreground sm:text-2xl leading-relaxed">
+            <p className="mt-8 text-xl text-white/70 sm:text-2xl leading-relaxed max-w-3xl mx-auto">
               Executives today are surrounded by tools, dashboards, and opinions — yet clarity keeps slipping away.
               AI promised relief. Instead, it multiplied noise.
             </p>
-            <p className="mt-4 text-lg text-primary font-semibold">
+            <p className="mt-4 text-xl text-primary font-bold">
               This isn't a productivity issue. It's a decision issue.
             </p>
           </motion.div>
@@ -290,14 +217,14 @@ export default function Index() {
           >
             {/* Before */}
             <motion.div 
-              className="group flex flex-col rounded-3xl glass-card p-10 border-destructive/30"
+              className="group flex flex-col rounded-3xl border-2 border-red-500/30 bg-white/5 p-10"
               variants={scaleIn}
               whileHover={{ y: -5, scale: 1.02 }}
             >
-              <p className="mb-4 text-base font-semibold uppercase tracking-wide text-destructive">
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-red-400">
                 Before
               </p>
-              <ul className="space-y-4 text-lg text-muted-foreground">
+              <ul className="space-y-4 text-lg text-white/80">
                 {[
                   "Constant escalation and \"quick questions\"",
                   "Recurring debates that never resolve",
@@ -305,7 +232,7 @@ export default function Index() {
                   "Founder as the bottleneck for everything"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-destructive mt-1">✕</span>
+                    <span className="text-red-400 mt-1">✕</span>
                     {item}
                   </li>
                 ))}
@@ -314,14 +241,14 @@ export default function Index() {
 
             {/* After */}
             <motion.div 
-              className="group flex flex-col rounded-3xl glass-card p-10 border-primary/30"
+              className="group flex flex-col rounded-3xl border-2 border-primary/30 bg-white/5 p-10"
               variants={scaleIn}
               whileHover={{ y: -5, scale: 1.02 }}
             >
-              <p className="mb-4 text-base font-semibold uppercase tracking-wide text-primary">
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">
                 After
               </p>
-              <ul className="space-y-4 text-lg text-muted-foreground">
+              <ul className="space-y-4 text-lg text-white/80">
                 {[
                   "Clear ownership on every decision",
                   "Stable priorities that hold",
@@ -340,16 +267,8 @@ export default function Index() {
       </section>
 
       {/* DECISION SYSTEM */}
-      <section id="pillars" className="border-b border-border bg-secondary/30 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div 
-            className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"
-            animate={{ opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 6, repeat: Infinity }}
-          />
-        </div>
-        
-        <div className="relative mx-auto max-w-7xl px-6 py-24">
+      <section id="pillars" className="bg-background py-24">
+        <div className="mx-auto max-w-7xl px-6">
           <motion.div 
             className="mb-16 max-w-4xl"
             initial="hidden"
@@ -358,20 +277,20 @@ export default function Index() {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-base font-semibold uppercase tracking-wide text-primary mb-4">
+            <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
               Decision System
             </p>
-            <h2 className="text-4xl font-bold text-foreground sm:text-5xl leading-tight">
+            <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl lg:text-6xl leading-tight">
               Torque is not a productivity tool.{" "}
-              <span className="gradient-text">It's a decision system for leaders.</span>
+              <span className="highlight-text">It's a decision system</span> for leaders.
             </h2>
-            <p className="mt-6 text-xl text-muted-foreground sm:text-2xl leading-relaxed">
+            <p className="mt-8 text-xl text-muted-foreground sm:text-2xl leading-relaxed">
               AI should execute decisions — not create more of them.
             </p>
           </motion.div>
 
           <motion.div 
-            className="grid gap-8 lg:grid-cols-5"
+            className="grid gap-6 lg:grid-cols-5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -386,18 +305,12 @@ export default function Index() {
             ].map((item, i) => (
               <motion.div 
                 key={item.title}
-                className="group flex flex-col items-center text-center rounded-3xl glass-card p-8 hover:border-primary/50 transition-all duration-500"
+                className="group flex flex-col items-center text-center rounded-3xl border-2 border-border bg-secondary p-8 hover:border-primary transition-all duration-300"
                 variants={scaleIn}
-                whileHover={{ y: -8, scale: 1.05 }}
+                whileHover={{ y: -8 }}
               >
-                <motion.span 
-                  className="text-4xl mb-4"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
-                >
-                  {item.icon}
-                </motion.span>
-                <p className="text-lg font-semibold text-foreground">{item.title}</p>
+                <span className="text-4xl mb-4">{item.icon}</span>
+                <p className="text-lg font-bold text-foreground">{item.title}</p>
               </motion.div>
             ))}
           </motion.div>

@@ -54,23 +54,23 @@ export default function Index() {
         id="hero"
         className="relative overflow-hidden bg-background"
       >
-        <div className="relative mx-auto flex max-w-7xl flex-col gap-16 px-6 py-28 lg:flex-row lg:items-center lg:justify-between lg:py-36">
+        <div className="relative mx-auto flex max-w-7xl flex-col gap-8 sm:gap-12 lg:gap-16 px-4 sm:px-6 py-20 sm:py-28 lg:flex-row lg:items-center lg:justify-between lg:py-36">
           <motion.div 
-            className="max-w-2xl space-y-10"
+            className="max-w-2xl space-y-6 sm:space-y-8 lg:space-y-10"
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
           >
             <motion.p 
               variants={fadeInUp}
-              className="inline-flex items-center rounded-full border border-foreground/20 bg-foreground/5 px-5 py-2 text-sm font-bold uppercase tracking-widest text-foreground"
+              className="inline-flex items-center rounded-full border border-foreground/20 bg-foreground/5 px-4 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-foreground"
             >
               Executive Decision Intelligence
             </motion.p>
             
             <motion.h1 
               variants={fadeInUp}
-              className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl leading-[1.05]"
+              className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.1] sm:leading-[1.05]"
             >
               <span className="text-foreground">Make </span>
               <ScrollingWord words={["Fewer", "Better"]} />
@@ -79,7 +79,7 @@ export default function Index() {
             
             <motion.p 
               variants={fadeInUp}
-              className="text-xl text-muted-foreground sm:text-2xl leading-relaxed max-w-xl"
+              className="text-base sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl"
             >
               Torque helps founders and executive teams{" "}
               <strong className="text-foreground">cut through noise</strong>,
@@ -87,16 +87,16 @@ export default function Index() {
               <strong className="text-foreground">leverage, not distraction.</strong>
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-wrap gap-5">
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-5">
               <motion.a
                 href="#book-call"
-                className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group inline-flex items-center justify-center rounded-full bg-primary px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Start with the Executive Decision Audit
+                <span className="text-center">Start with the Executive Decision Audit</span>
                 <motion.span 
-                  className="ml-2"
+                  className="ml-2 hidden sm:inline"
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
@@ -105,7 +105,7 @@ export default function Index() {
               </motion.a>
               <motion.a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center rounded-full border-2 border-foreground px-8 py-4 text-lg font-bold text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                className="inline-flex items-center justify-center rounded-full border-2 border-foreground px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-bold text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -113,7 +113,7 @@ export default function Index() {
               </motion.a>
             </motion.div>
 
-            <motion.p variants={fadeInUp} className="text-base text-muted-foreground">
+            <motion.p variants={fadeInUp} className="text-sm sm:text-base text-muted-foreground">
               No hype. No tool soup. Just clarity, control, and execution that sticks.
             </motion.p>
           </motion.div>
@@ -165,48 +165,48 @@ export default function Index() {
 
       {/* SOCIAL PROOF - TV Logos */}
       <section className="border-y border-border bg-background">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:gap-6 px-4 sm:px-6 py-6 sm:py-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-muted-foreground text-center sm:text-left">
             As Seen On
           </p>
           <a 
             href="https://www.youtube.com/watch?v=9J1Kauiq42g" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex flex-wrap items-center gap-8 opacity-60 hover:opacity-100 transition-opacity duration-300"
+            className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6 lg:gap-8 opacity-60 hover:opacity-100 transition-opacity duration-300"
           >
-            <img src="/logos/fox-logo.png" alt="Fox" className="h-8 object-contain" />
-            <img src="/logos/nbc-logo.png" alt="NBC" className="h-8 object-contain" />
-            <img src="/logos/cbs-logo.png" alt="CBS" className="h-8 object-contain" />
-            <img src="/logos/abc-logo.png" alt="ABC" className="h-8 object-contain" />
-            <img src="/logos/cnn-logo.png" alt="CNN" className="h-8 object-contain" />
+            <img src="/logos/fox-logo.png" alt="Fox" className="h-5 sm:h-6 lg:h-8 object-contain" />
+            <img src="/logos/nbc-logo.png" alt="NBC" className="h-5 sm:h-6 lg:h-8 object-contain" />
+            <img src="/logos/cbs-logo.png" alt="CBS" className="h-5 sm:h-6 lg:h-8 object-contain" />
+            <img src="/logos/abc-logo.png" alt="ABC" className="h-5 sm:h-6 lg:h-8 object-contain" />
+            <img src="/logos/cnn-logo.png" alt="CNN" className="h-5 sm:h-6 lg:h-8 object-contain" />
           </a>
         </div>
       </section>
 
       {/* THE REAL PROBLEM */}
-      <section id="problem" className="dark-section py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section id="problem" className="dark-section py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <motion.div 
-            className="mb-16 max-w-4xl mx-auto text-center"
+            className="mb-10 sm:mb-16 max-w-4xl mx-auto text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
               The Real Problem
             </p>
-            <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
               The real problem isn't AI.{" "}
               <span className="highlight-text">It's decision overload.</span>
             </h2>
-            <p className="mt-8 text-xl text-white/70 sm:text-2xl leading-relaxed max-w-3xl mx-auto">
+            <p className="mt-4 sm:mt-8 text-base sm:text-xl lg:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto">
               Executives today are surrounded by tools, dashboards, and opinions — yet clarity keeps slipping away.
               AI promised relief. Instead, it multiplied noise.
             </p>
-            <p className="mt-4 text-xl text-primary font-bold">
+            <p className="mt-3 sm:mt-4 text-base sm:text-xl text-primary font-bold">
               This isn't a productivity issue. It's a decision issue.
             </p>
           </motion.div>
@@ -276,30 +276,30 @@ export default function Index() {
       <SystemEvolutionSection />
 
       {/* DECISION SYSTEM */}
-      <section id="pillars" className="bg-background py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section id="pillars" className="bg-background py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <motion.div 
-            className="mb-16 max-w-4xl"
+            className="mb-10 sm:mb-16 max-w-4xl"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
               Decision System
             </p>
-            <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl lg:text-6xl leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-foreground leading-tight">
               Torque is not a productivity tool.{" "}
               <span className="highlight-text">It's a decision system</span> for leaders.
             </h2>
-            <p className="mt-8 text-xl text-muted-foreground sm:text-2xl leading-relaxed">
+            <p className="mt-4 sm:mt-8 text-base sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
               AI should execute decisions — not create more of them.
             </p>
           </motion.div>
 
           <motion.div 
-            className="grid gap-6 lg:grid-cols-5"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -314,12 +314,12 @@ export default function Index() {
             ].map((item, i) => (
               <motion.div 
                 key={item.title}
-                className="group flex flex-col items-center text-center rounded-3xl border-2 border-border bg-secondary p-8 hover:border-primary transition-all duration-300"
+                className="group flex flex-col items-center text-center rounded-2xl sm:rounded-3xl border-2 border-border bg-secondary p-4 sm:p-6 lg:p-8 hover:border-primary transition-all duration-300"
                 variants={scaleIn}
                 whileHover={{ y: -8 }}
               >
-                <span className="text-4xl mb-4">{item.icon}</span>
-                <p className="text-lg font-bold text-foreground">{item.title}</p>
+                <span className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">{item.icon}</span>
+                <p className="text-xs sm:text-sm lg:text-lg font-bold text-foreground">{item.title}</p>
               </motion.div>
             ))}
           </motion.div>

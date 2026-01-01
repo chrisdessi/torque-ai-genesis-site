@@ -106,11 +106,11 @@ const QuantumCoachBooking = () => {
           </div>
 
           {/* Main Signup Form */}
-          <div className="max-w-xl mx-auto">
-            <div className="bg-white border-2 border-emerald-500/30 rounded-3xl p-8 lg:p-10 shadow-xl">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold mb-3 text-slate-900">Start Your Shift Today</h2>
-                <p className="text-base text-slate-600">Enter your email to join the community</p>
+          <div className="max-w-md mx-auto">
+            <div className="bg-white border-2 border-emerald-500/30 rounded-3xl p-6 lg:p-8 shadow-xl">
+              <div className="text-center mb-4">
+                <h2 className="text-xl font-bold mb-2 text-slate-900">Start Your Shift Today</h2>
+                <p className="text-sm text-slate-600">Enter your email to join the community</p>
               </div>
 
               <ZohoQuantumCoachWaitlistForm />

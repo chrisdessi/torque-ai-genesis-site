@@ -8,6 +8,7 @@ import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import ScrollingWord from "@/components/ScrollingWord";
 import ScrollSpinLogo from "@/components/ScrollSpinLogo";
+import SystemFlowVisualization from "@/components/SystemFlowVisualization";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -266,6 +267,9 @@ export default function Index() {
           </motion.div>
         </div>
       </section>
+
+      {/* SYSTEM FLOW VISUALIZATION */}
+      <SystemFlowVisualization />
 
       {/* DECISION SYSTEM */}
       <section id="pillars" className="bg-background py-24">

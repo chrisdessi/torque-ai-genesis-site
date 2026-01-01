@@ -9,6 +9,7 @@ import ZohoContactForm from "@/components/ZohoContactForm";
 import ScrollingWord from "@/components/ScrollingWord";
 import ScrollSpinLogo from "@/components/ScrollSpinLogo";
 import SystemFlowVisualization from "@/components/SystemFlowVisualization";
+import SystemEvolutionSection from "@/components/SystemEvolutionSection";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -270,6 +271,9 @@ export default function Index() {
 
       {/* SYSTEM FLOW VISUALIZATION */}
       <SystemFlowVisualization />
+      
+      {/* SYSTEM EVOLUTION */}
+      <SystemEvolutionSection />
 
       {/* DECISION SYSTEM */}
       <section id="pillars" className="bg-background py-24">

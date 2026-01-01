@@ -7,6 +7,7 @@ import ServicesScoreApp from "@/components/ServicesScoreApp";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import ScrollingWord from "@/components/ScrollingWord";
+import ScrollSpinLogo from "@/components/ScrollSpinLogo";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -44,6 +45,7 @@ export default function Index() {
         url="/"
       />
       <Header />
+      <ScrollSpinLogo />
       
       {/* HERO */}
       <section

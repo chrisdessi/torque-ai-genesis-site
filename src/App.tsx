@@ -39,6 +39,7 @@ import AISummitNYC from "./pages/partners/AISummitNYC";
 import WestchesterAIAlliance from "./pages/partners/WestchesterAIAlliance";
 import QuantumShiftSummit from "./pages/partners/QuantumShiftSummit";
 import TooOldForThisShift from "./pages/partners/TooOldForThisShift";
+import MarketingAgencyServices from "./pages/MarketingAgencyServices";
 
 const queryClient = new QueryClient();
 
@@ -85,6 +86,7 @@ const App = () => (
           <Route path="/partners/westchester-ai-alliance" element={<WestchesterAIAlliance />} />
           <Route path="/partners/quantum-shift-summit" element={<QuantumShiftSummit />} />
           <Route path="/partners/too-old-for-this-shift" element={<TooOldForThisShift />} />
+          <Route path="/marketing-agency-services" element={<MarketingAgencyServices />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

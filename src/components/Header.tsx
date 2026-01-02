@@ -57,24 +57,24 @@ const Header = () => {
             </a>
 
             <a
-              href="#strategy"
+              href="#pillars"
               className="text-foreground hover:text-primary transition-colors"
             >
               AI Strategy
             </a>
 
             <a
-              href="#marketing"
+              href="#programs"
               className="text-foreground hover:text-primary transition-colors"
             >
               AI Marketing Systems
             </a>
 
             <a
-              href="#training"
+              href="#about"
               className="text-foreground hover:text-primary transition-colors"
             >
-              Team Training
+              About
             </a>
 
             {/* Dropdown: Academy & Resources */}
@@ -135,25 +135,25 @@ const Header = () => {
                   How It Works
                 </a>
                 <a
-                  href="#strategy"
+                  href="#pillars"
                   className="block px-4 py-2 text-sm font-bold text-foreground hover:text-primary hover:bg-secondary rounded-lg transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   AI Strategy
                 </a>
                 <a
-                  href="#marketing"
+                  href="#programs"
                   className="block px-4 py-2 text-sm font-bold text-foreground hover:text-primary hover:bg-secondary rounded-lg transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   AI Marketing Systems
                 </a>
                 <a
-                  href="#training"
+                  href="#about"
                   className="block px-4 py-2 text-sm font-bold text-foreground hover:text-primary hover:bg-secondary rounded-lg transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Team Training
+                  About
                 </a>
                 
                 <div className="px-4 py-2">

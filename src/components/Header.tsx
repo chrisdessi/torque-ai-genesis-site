@@ -17,7 +17,8 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const academyLinks = [
+  const servicesLinks = [
+    { name: "Marketing Agency Services", href: "/marketing-agency-services" },
     { name: "Torque Academy", href: "/partners/torque-academy" },
     { name: "Book Genius AI", href: "/partners/book-genius-ai" },
     { name: "Real Estate DataHub", href: "/partners/real-estate-datahub" },
@@ -77,15 +78,15 @@ const Header = () => {
               About
             </a>
 
-            {/* Dropdown: Academy & Resources */}
+            {/* Dropdown: Services */}
             <div className="group relative cursor-pointer">
               <span className="text-foreground hover:text-primary transition-colors">
-                Academy & Resources
+                Services
               </span>
 
               {/* Dropdown Menu */}
               <div className="invisible absolute left-0 top-full z-[100] mt-2 w-56 rounded-lg border border-border bg-background p-3 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
-                {academyLinks.map((link) => (
+                {servicesLinks.map((link) => (
                   <Link
                     key={link.name}
                     to={link.href}
@@ -157,9 +158,9 @@ const Header = () => {
                 </a>
                 
                 <div className="px-4 py-2">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Academy & Resources</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Services</p>
                   <div className="space-y-1">
-                    {academyLinks.map((link) => (
+                    {servicesLinks.map((link) => (
                       <Link
                         key={link.name}
                         to={link.href}

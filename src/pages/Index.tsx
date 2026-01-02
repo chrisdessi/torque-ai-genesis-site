@@ -430,7 +430,7 @@ export default function Index() {
           >
             {[
               { step: "Step 01", title: "Diagnose", desc: "We identify where decisions stall, repeat, or escalate unnecessarily through an Executive Decision Audit.", cta: "See the Audit", href: "#book-call" },
-              { step: "Step 02", title: "Reset", desc: "In a structured 90-day intervention, we rebuild how decisions are made, owned, and executed.", cta: "Explore the 90-Day Reset", href: "#programs" },
+              { step: "Step 02", title: "Reset", desc: "In a structured 90-day intervention, we rebuild how decisions are made, owned, and executed.", cta: "Apply for the 90-Day Cohort", href: "/enterprise-accelerator" },
               { step: "Step 03", title: "Maintain", desc: "Torque becomes the system that preserves clarity — capturing decisions, learning patterns, and automating execution.", cta: "See the Platform", href: "#ecosystem" }
             ].map((item, i) => (
               <motion.div 
@@ -636,12 +636,12 @@ export default function Index() {
                 Includes: Audit, system design, team training, and ongoing support.
               </div>
               <motion.a
-                href="#book-call"
+                href="/enterprise-accelerator"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-6 py-4 text-lg font-semibold text-primary-foreground transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore the 90-Day Reset
+                Apply for the Next Cohort
               </motion.a>
             </motion.div>
 

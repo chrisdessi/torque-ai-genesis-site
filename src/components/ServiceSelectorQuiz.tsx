@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { 
   ChevronRight, 
   ChevronLeft, 
@@ -13,7 +14,14 @@ import {
   Megaphone,
   BarChart3,
   Sparkles,
-  CheckCircle2
+  CheckCircle2,
+  Share2,
+  Mail,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Link2,
+  Copy
 } from "lucide-react";
 
 interface Question {
@@ -186,6 +194,7 @@ const ServiceSelectorQuiz = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
+  const { toast } = useToast();
 
   const handleAnswer = (questionId: string, value: string) => {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
@@ -210,6 +219,58 @@ const ServiceSelectorQuiz = () => {
   };
 
   const recommendations = showResults ? getRecommendations(answers) : [];
+
+  const generateShareText = () => {
+    const highPriority = recommendations.filter(r => r.priority === 'high');
+    const services = highPriority.flatMap(r => r.services).slice(0, 5);
+    return `I just discovered my personalized AI marketing strategy! My top recommended services: ${services.join(', ')}. Take the quiz to find yours!`;
+  };
+
+  const getShareUrl = () => {
+    return `${window.location.origin}/marketing-agency-services`;
+  };
+
+  const handleShare = async (platform: 'email' | 'twitter' | 'linkedin' | 'facebook' | 'copy') => {
+    const shareText = generateShareText();
+    const shareUrl = getShareUrl();
+
+    switch (platform) {
+      case 'email':
+        const emailSubject = encodeURIComponent('Check out my AI Marketing Strategy Results!');
+        const emailBody = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
+        window.open(`mailto:?subject=${emailSubject}&body=${emailBody}`, '_blank');
+        break;
+      
+      case 'twitter':
+        const twitterText = encodeURIComponent(`${shareText}`);
+        window.open(`https://twitter.com/intent/tweet?text=${twitterText}&url=${encodeURIComponent(shareUrl)}`, '_blank');
+        break;
+      
+      case 'linkedin':
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
+        break;
+      
+      case 'facebook':
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
+        break;
+      
+      case 'copy':
+        try {
+          await navigator.clipboard.writeText(`${shareText}\n\n${shareUrl}`);
+          toast({
+            title: "Copied to clipboard!",
+            description: "Share your results with anyone.",
+          });
+        } catch (err) {
+          toast({
+            title: "Failed to copy",
+            description: "Please try again.",
+            variant: "destructive",
+          });
+        }
+        break;
+    }
+  };
   const progress = ((currentStep + 1) / questions.length) * 100;
 
   const priorityColors = {
@@ -375,6 +436,63 @@ const ServiceSelectorQuiz = () => {
                   </div>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Share Section */}
+            <div className="mt-8 pt-6 border-t border-border">
+              <div className="text-center mb-4">
+                <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+                  <Share2 className="w-4 h-4" />
+                  Share your results
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3 justify-center">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleShare('email')}
+                  className="gap-2"
+                >
+                  <Mail className="w-4 h-4" />
+                  Email
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleShare('twitter')}
+                  className="gap-2"
+                >
+                  <Twitter className="w-4 h-4" />
+                  X / Twitter
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleShare('linkedin')}
+                  className="gap-2"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleShare('facebook')}
+                  className="gap-2"
+                >
+                  <Facebook className="w-4 h-4" />
+                  Facebook
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleShare('copy')}
+                  className="gap-2"
+                >
+                  <Copy className="w-4 h-4" />
+                  Copy Link
+                </Button>
+              </div>
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">

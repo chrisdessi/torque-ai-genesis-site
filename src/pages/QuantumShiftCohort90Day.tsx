@@ -325,9 +325,12 @@ const QuantumShiftCohort90Day = () => {
 
         {/* FINAL CTA */}
         <motion.section {...fadeInUp} className="mb-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            Spaces are limited, can you really afford to wait?
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Be the First to Know When Doors Open
           </h2>
+          <p className="text-[#c0c4cf] text-sm mb-6">
+            The next cohort is coming soon. Join the waitlist now to secure your spot and get early access pricing when enrollment opens.
+          </p>
 
           <a 
             href="https://www.globalquantumshift.com/offers/58ZR4Y8e/checkout" 
@@ -335,7 +338,7 @@ const QuantumShiftCohort90Day = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-br from-[#ffb347] to-[#ff7e5f] text-[#050816] font-semibold text-sm shadow-2xl hover:scale-105 transition-transform"
           >
-            Check Availability
+            Join the Waitlist
           </a>
         </motion.section>
 

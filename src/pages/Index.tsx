@@ -896,6 +896,107 @@ export default function Index() {
         </div>
       </section>
 
+      {/* MARKETING AGENCY SERVICES */}
+      <section id="marketing-services" className="border-b border-border bg-secondary relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--primary)_/_0.08)_0%,_transparent_50%)]" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 py-24">
+          <motion.div 
+            className="mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+              <div className="max-w-2xl">
+                <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
+                  Full-Service Marketing
+                </p>
+                <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
+                  Marketing that <span className="gradient-text">actually moves the needle</span>
+                </h2>
+                <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
+                  Beyond decision systems, Torque offers complete marketing agency services — 
+                  from strategy and positioning to content creation and conversion optimization.
+                </p>
+              </div>
+              
+              <motion.a
+                href="/marketing-agency-services"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300 whitespace-nowrap"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Explore All Services →
+              </motion.a>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {[
+              { title: "Marketing Strategy", desc: "User personas, positioning, and acquisition channels that actually work", icon: "🎯" },
+              { title: "Market Analysis", desc: "Competitor research, customer journey mapping, and actionable insights", icon: "📊" },
+              { title: "Conversion Optimization", desc: "Landing pages, pricing strategies, and email sequences that sell", icon: "📈" },
+              { title: "Content & SEO", desc: "High-quality blog articles, social posts, and keyword-optimized content", icon: "✍️" },
+              { title: "Paid Advertising", desc: "Profitable ad campaigns across Google, Meta, and LinkedIn", icon: "🚀" },
+              { title: "AI-Powered Execution", desc: "Save hours on marketing tasks with our AI assistant and research tools", icon: "🤖" }
+            ].map((service, i) => (
+              <motion.div 
+                key={service.title}
+                className="rounded-2xl bg-background border-2 border-border p-6 hover:border-primary/50 transition-all duration-300"
+                variants={fadeInUp}
+                whileHover={{ y: -3 }}
+              >
+                <span className="text-3xl mb-4 block">{service.icon}</span>
+                <h3 className="text-lg font-bold text-foreground mb-2">{service.title}</h3>
+                <p className="text-muted-foreground">{service.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Quiz Teaser */}
+          <motion.div 
+            className="rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border-2 border-primary/30 p-8 sm:p-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div className="max-w-xl">
+                <p className="text-sm font-bold uppercase tracking-widest text-primary mb-2">
+                  Interactive Quiz
+                </p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+                  Not sure which services you need?
+                </h3>
+                <p className="text-lg text-muted-foreground">
+                  Take our 2-minute quiz to get personalized recommendations based on your business goals, 
+                  challenges, and growth stage.
+                </p>
+              </div>
+              <motion.a
+                href="/marketing-agency-services#quiz"
+                className="inline-flex items-center justify-center rounded-full border-2 border-primary bg-primary/10 px-8 py-4 text-lg font-bold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 whitespace-nowrap"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="mr-2">🧠</span> Take the Quiz
+              </motion.a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* BOOK CALL / ZOHO / CALENDLY - Updated */}
       <section id="book-call" className="border-b border-border bg-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">

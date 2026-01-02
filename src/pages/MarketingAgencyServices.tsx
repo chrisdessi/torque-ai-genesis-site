@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import ServiceSelectorQuiz from "@/components/ServiceSelectorQuiz";
 import { 
   Briefcase, 
   Target, 
@@ -176,6 +177,30 @@ const MarketingAgencyServices = () => {
         </div>
       </section>
 
+      {/* Quiz Section */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-background to-secondary/20">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10"
+          >
+            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+              Find Your Perfect Fit
+            </span>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-lexend font-bold text-foreground mb-4">
+              Which Services Are Right for You?
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Answer 4 quick questions and get personalized recommendations based on your business goals.
+            </p>
+          </motion.div>
+          <ServiceSelectorQuiz />
+        </div>
+      </section>
+
       {/* Steps Section */}
       <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
@@ -284,6 +309,7 @@ const MarketingAgencyServices = () => {
 
             {/* Right: Contact Form */}
             <motion.div
+              id="contact-form"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}

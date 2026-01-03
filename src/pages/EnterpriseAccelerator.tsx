@@ -79,7 +79,7 @@ const EnterpriseAccelerator = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex justify-center"
           >
-            <ZohoLetsTalkButton size="large" />
+            <ZohoLetsTalkButton size="large" label="Apply Now" />
           </motion.div>
         </div>
       </section>
@@ -98,7 +98,7 @@ const EnterpriseAccelerator = () => {
               <p className="text-2xl font-semibold text-black mb-8 italic">
                 Torque AI changes that.
               </p>
-              <ZohoLetsTalkButton />
+              <ZohoLetsTalkButton label="Apply Now" />
             </motion.div>
             <motion.div 
               {...fadeInUp}
@@ -139,7 +139,7 @@ const EnterpriseAccelerator = () => {
             {...fadeInUp}
             className="text-center mt-16"
           >
-            <ZohoLetsTalkButton size="large" />
+            <ZohoLetsTalkButton size="large" label="Apply Now" />
           </motion.div>
         </div>
       </section>
@@ -181,7 +181,7 @@ const EnterpriseAccelerator = () => {
                   </Button>
                 </a>
               </div>
-              <ZohoLetsTalkButton />
+              <ZohoLetsTalkButton label="Apply Now" />
             </motion.div>
           </div>
         </div>
@@ -198,7 +198,7 @@ const EnterpriseAccelerator = () => {
             Your competitors are using AI to scale. Don't get left behind.
           </motion.p>
           <motion.div {...fadeInUp}>
-            <ZohoLetsTalkButton size="large" />
+            <ZohoLetsTalkButton size="large" label="Apply Now" />
           </motion.div>
         </div>
       </section>

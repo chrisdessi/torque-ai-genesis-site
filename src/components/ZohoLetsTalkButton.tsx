@@ -12,12 +12,14 @@ interface ZohoLetsTalkButtonProps {
   className?: string;
   variant?: "default" | "outline";
   size?: "default" | "large";
+  label?: string;
 }
 
 const ZohoLetsTalkButton = ({ 
   className = "", 
   variant = "default",
-  size = "default"
+  size = "default",
+  label = "Let's Talk"
 }: ZohoLetsTalkButtonProps) => {
   const [open, setOpen] = useState(false);
 
@@ -39,7 +41,7 @@ const ZohoLetsTalkButton = ({
         <button
           className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
         >
-          <span>Let's Talk</span>
+          <span>{label}</span>
           <ExternalLink className={size === "large" ? "w-6 h-6" : "w-5 h-5"} />
         </button>
       </DialogTrigger>

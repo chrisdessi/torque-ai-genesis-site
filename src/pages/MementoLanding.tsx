@@ -27,7 +27,6 @@ const MementoLanding = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Captured lead:', formData);
     setSubmitted(true);
     setFormData({ name: "", email: "", company: "" });
     toast({

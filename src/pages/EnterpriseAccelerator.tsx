@@ -9,6 +9,15 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
 
+// Testimonial images
+import testimonial1 from "@/assets/testimonials-grid-1.webp";
+import testimonial2 from "@/assets/testimonials-grid-2.webp";
+import testimonial3 from "@/assets/testimonials-grid-3.webp";
+import testimonial4 from "@/assets/testimonials-grid-4.webp";
+import testimonial5 from "@/assets/testimonials-grid-5.webp";
+import testimonial6 from "@/assets/testimonials-grid-6.webp";
+import testimonial7 from "@/assets/testimonials-grid-7.webp";
+import testimonial8 from "@/assets/testimonials-grid-8.webp";
 const EnterpriseAccelerator = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -84,6 +93,54 @@ const EnterpriseAccelerator = () => {
         </div>
       </section>
 
+      {/* As Featured In Section */}
+      <section className="bg-black py-12 border-t border-white/10">
+        <div className="section-padding max-w-7xl mx-auto">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8"
+          >
+            As Featured In
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
+          >
+            <img src="/logos/forbes-logo.png" alt="Forbes" className="h-6 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+            <img src="/logos/cnn-logo.png" alt="CNN" className="h-6 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+            <img src="/logos/fox-logo.png" alt="Fox" className="h-6 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+            <img src="/logos/nbc-logo.png" alt="NBC" className="h-6 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+            <img src="/logos/cbs-logo.png" alt="CBS" className="h-6 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+            <img src="/logos/abc-logo.png" alt="ABC" className="h-6 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+            <img src="/logos/fortune-logo.png" alt="Fortune" className="h-6 md:h-8 opacity-60 hover:opacity-100 transition-opacity" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Row 1 */}
+      <section className="bg-black py-16">
+        <div className="section-padding max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[testimonial1, testimonial2, testimonial3, testimonial4].map((img, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="rounded-lg overflow-hidden shadow-lg"
+              >
+                <img src={img} alt={`Testimonial ${index + 1}`} className="w-full h-full object-cover" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Problem Section */}
       <section className="bg-white py-32">
         <div className="section-padding max-w-7xl mx-auto">
@@ -141,6 +198,26 @@ const EnterpriseAccelerator = () => {
           >
             <ZohoLetsTalkButton size="large" label="Apply Now" />
           </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Row 2 */}
+      <section className="bg-white py-16">
+        <div className="section-padding max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[testimonial5, testimonial6, testimonial7, testimonial8].map((img, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="rounded-lg overflow-hidden shadow-lg"
+              >
+                <img src={img} alt={`Testimonial ${index + 5}`} className="w-full h-full object-cover" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -12,6 +12,16 @@ import processImplementation from "@/assets/process-implementation.jpg";
 import processTraining from "@/assets/process-training.jpg";
 import processResults from "@/assets/process-results.jpg";
 
+// Testimonial images
+import testimonial1 from "@/assets/testimonials-grid-1.webp";
+import testimonial2 from "@/assets/testimonials-grid-2.webp";
+import testimonial3 from "@/assets/testimonials-grid-3.webp";
+import testimonial4 from "@/assets/testimonials-grid-4.webp";
+import testimonial5 from "@/assets/testimonials-grid-5.webp";
+import testimonial6 from "@/assets/testimonials-grid-6.webp";
+import testimonial7 from "@/assets/testimonials-grid-7.webp";
+import testimonial8 from "@/assets/testimonials-grid-8.webp";
+
 const Torque = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -87,11 +97,58 @@ const Torque = () => {
               </Button>
             </div>
           </motion.div>
+
+          {/* Media Logos - As Featured In */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-16"
+          >
+            <p className="text-sm text-white/60 uppercase tracking-wider mb-6">As Featured In</p>
+            <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
+              <img src="/logos/forbes-logo.png" alt="Forbes" className="h-6 sm:h-8 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+              <img src="/logos/cnn-logo.png" alt="CNN" className="h-6 sm:h-8 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+              <img src="/logos/fox-logo.png" alt="Fox" className="h-6 sm:h-8 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+              <img src="/logos/nbc-logo.png" alt="NBC" className="h-6 sm:h-8 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+              <img src="/logos/cbs-logo.png" alt="CBS" className="h-6 sm:h-8 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+              <img src="/logos/abc-logo.png" alt="ABC" className="h-6 sm:h-8 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+              <img src="/logos/fortune-logo.png" alt="Fortune" className="h-6 sm:h-8 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonial Row 1 */}
+      <section className="py-12 bg-white">
+        <div className="section-padding max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h3 className="text-2xl font-bold text-black">What Clients Are Saying</h3>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[testimonial1, testimonial2, testimonial3, testimonial4].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="rounded-xl overflow-hidden shadow-lg border border-gray-200"
+              >
+                <img src={img} alt={`Client testimonial ${i + 1}`} className="w-full h-auto" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="bg-white py-32">
+      <section className="bg-gray-50 py-32">
         <div className="section-padding max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
@@ -114,6 +171,26 @@ const Torque = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-black mb-4">{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Row 2 */}
+      <section className="py-12 bg-white">
+        <div className="section-padding max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[testimonial5, testimonial6, testimonial7, testimonial8].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="rounded-xl overflow-hidden shadow-lg border border-gray-200"
+              >
+                <img src={img} alt={`Client testimonial ${i + 5}`} className="w-full h-auto" />
               </motion.div>
             ))}
           </div>

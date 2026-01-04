@@ -124,7 +124,7 @@ const EnterpriseAccelerator = () => {
       {/* Testimonials Row 1 */}
       <section className="bg-black py-16">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[testimonial1, testimonial2, testimonial3, testimonial4].map((img, index) => (
               <motion.div
                 key={index}
@@ -134,7 +134,7 @@ const EnterpriseAccelerator = () => {
                 transition={{ delay: index * 0.1 }}
                 className="rounded-lg overflow-hidden shadow-lg"
               >
-                <img src={img} alt={`Testimonial ${index + 1}`} className="w-full h-full object-cover" />
+                <img src={img} alt={`Testimonial ${index + 1}`} className="w-full h-auto" />
               </motion.div>
             ))}
           </div>
@@ -204,7 +204,7 @@ const EnterpriseAccelerator = () => {
       {/* Testimonials Row 2 */}
       <section className="bg-white py-16">
         <div className="section-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[testimonial5, testimonial6, testimonial7, testimonial8].map((img, index) => (
               <motion.div
                 key={index}
@@ -214,7 +214,7 @@ const EnterpriseAccelerator = () => {
                 transition={{ delay: index * 0.1 }}
                 className="rounded-lg overflow-hidden shadow-lg"
               >
-                <img src={img} alt={`Testimonial ${index + 5}`} className="w-full h-full object-cover" />
+                <img src={img} alt={`Testimonial ${index + 5}`} className="w-full h-auto" />
               </motion.div>
             ))}
           </div>

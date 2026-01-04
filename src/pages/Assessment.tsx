@@ -9,10 +9,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
-
+import { supabase } from "@/integrations/supabase/client";
 
 const MEETING_URL = "https://calendar.app.google/rAZmF5kNNCsfMyBf7";
-const WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/20826352/2e5d6n0/";
 
 const Assessment = () => {
   const [showResults, setShowResults] = useState(false);
@@ -97,19 +96,8 @@ const Assessment = () => {
       : "Book a 30-minute Alignment Check-In to review your current state and identify any hidden risks.";
 
     try {
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          subject: "Execution Leak",
-          executionLeakScore: bpScore,
-          riskTier: calculatedTier,
-          whatThisMeans: whatThisMeans,
-          recommendedNextStep: recommendedNextStep,
-          timestamp: new Date().toISOString(),
-        }),
+      await supabase.functions.invoke('submit-assessment', {
+        body: formData,
       });
     } catch {
       // Webhook errors are handled silently to avoid exposing internal details

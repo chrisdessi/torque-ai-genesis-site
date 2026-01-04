@@ -359,7 +359,7 @@ export default function Index() {
           </motion.div>
 
           <motion.div 
-            className="grid gap-8 lg:grid-cols-3"
+            className="flex flex-col gap-12 lg:gap-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -372,21 +372,17 @@ export default function Index() {
             ].map((item, i) => (
               <motion.div 
                 key={item.title}
-                className="group rounded-3xl glass-card p-8 hover:border-primary/50 transition-all duration-500"
+                className="group rounded-3xl glass-card p-10 lg:p-12 hover:border-primary/50 transition-all duration-500 max-w-3xl mx-auto w-full"
                 variants={fadeInUp}
-                whileHover={{ y: -5, scale: 1.02 }}
+                whileHover={{ y: -5 }}
               >
-                <motion.p 
-                  className="text-base font-semibold uppercase tracking-wide text-primary"
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
-                >
+                <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
                   {item.tag}
-                </motion.p>
-                <h3 className="mt-4 text-2xl font-bold text-foreground group-hover:gradient-text transition-all">
+                </p>
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-6 leading-tight">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed font-normal">
                   {item.desc}
                 </p>
               </motion.div>

@@ -25,6 +25,16 @@ import {
   Zap
 } from "lucide-react";
 
+// Testimonial images
+import testimonial1 from "@/assets/testimonials-grid-1.webp";
+import testimonial2 from "@/assets/testimonials-grid-2.webp";
+import testimonial3 from "@/assets/testimonials-grid-3.webp";
+import testimonial4 from "@/assets/testimonials-grid-4.webp";
+import testimonial5 from "@/assets/testimonials-grid-5.webp";
+import testimonial6 from "@/assets/testimonials-grid-6.webp";
+import testimonial7 from "@/assets/testimonials-grid-7.webp";
+import testimonial8 from "@/assets/testimonials-grid-8.webp";
+
 const MarketingAgencyServices = () => {
   const steps = [
     {
@@ -174,6 +184,45 @@ const MarketingAgencyServices = () => {
               Build systems that grow with your business, not against it.
             </p>
           </motion.div>
+
+          {/* Media Logos - As Seen On */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12"
+          >
+            <p className="text-sm text-muted-foreground uppercase tracking-wider mb-6">As Featured In</p>
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 opacity-70">
+              <img src="/logos/forbes-logo.png" alt="Forbes" className="h-6 sm:h-8 object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src="/logos/cnn-logo.png" alt="CNN" className="h-6 sm:h-8 object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src="/logos/fox-logo.png" alt="Fox" className="h-6 sm:h-8 object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src="/logos/nbc-logo.png" alt="NBC" className="h-6 sm:h-8 object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src="/logos/cbs-logo.png" alt="CBS" className="h-6 sm:h-8 object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src="/logos/abc-logo.png" alt="ABC" className="h-6 sm:h-8 object-contain grayscale hover:grayscale-0 transition-all" />
+              <img src="/logos/fortune-logo.png" alt="Fortune" className="h-6 sm:h-8 object-contain grayscale hover:grayscale-0 transition-all" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonial Row 1 */}
+      <section className="py-8 px-4 sm:px-6 bg-secondary/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[testimonial1, testimonial2, testimonial3, testimonial4].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="rounded-xl overflow-hidden shadow-lg border border-border"
+              >
+                <img src={img} alt={`Client testimonial ${i + 1}`} className="w-full h-auto" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -198,6 +247,26 @@ const MarketingAgencyServices = () => {
             </p>
           </motion.div>
           <ServiceSelectorQuiz />
+        </div>
+      </section>
+
+      {/* Testimonial Row 2 */}
+      <section className="py-8 px-4 sm:px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[testimonial5, testimonial6, testimonial7, testimonial8].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="rounded-xl overflow-hidden shadow-lg border border-border"
+              >
+                <img src={img} alt={`Client testimonial ${i + 5}`} className="w-full h-auto" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

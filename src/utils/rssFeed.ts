@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -31,9 +33,16 @@ export const fetchBlogFeed = async (): Promise<BlogPost[]> => {
       const pubDate = item.querySelector('pubDate')?.textContent || '';
       const content = item.querySelector('content\\:encoded, encoded')?.textContent || description;
       
+      // Sanitize content immediately before DOM manipulation to prevent XSS
+      const sanitizedContent = DOMPurify.sanitize(content, {
+        ALLOWED_TAGS: ['p', 'a', 'img', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'strong', 'em', 'br', 'div', 'span', 'blockquote', 'pre', 'code'],
+        ALLOWED_ATTR: ['href', 'src', 'alt', 'class', 'title', 'target', 'rel'],
+        ALLOW_DATA_ATTR: false
+      });
+      
       // Extract image from content if available
       const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = content;
+      tempDiv.innerHTML = sanitizedContent;
       
       // Remove Beehiiv CSS code snippets that appear as text
       const textNodes = document.createTreeWalker(tempDiv, NodeFilter.SHOW_TEXT, null);
@@ -131,8 +140,8 @@ export const fetchBlogFeed = async (): Promise<BlogPost[]> => {
     });
     
     return posts;
-  } catch (error) {
-    console.error('Error fetching blog feed:', error);
+  } catch {
+    // Error handled silently - return empty array
     return [];
   }
 };

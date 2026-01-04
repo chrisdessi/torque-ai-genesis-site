@@ -111,9 +111,8 @@ const Assessment = () => {
           timestamp: new Date().toISOString(),
         }),
       });
-      console.log("Data sent to webhook");
-    } catch (error) {
-      console.error("Error sending data:", error);
+    } catch {
+      // Webhook errors are handled silently to avoid exposing internal details
     }
   };
 

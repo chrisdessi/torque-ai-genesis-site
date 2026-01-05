@@ -59,7 +59,7 @@ export default function FreeAIAudit() {
 
       {/* Top bar / header */}
       <header className="border-b bg-white/80 backdrop-blur-sm relative z-10">
-        <div className="mx-auto max-w-6xl px-6 py-10">
+        <div className="mx-auto max-w-7xl px-6 py-10">
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ export default function FreeAIAudit() {
         transition={{ duration: 0.5, delay: 0.35 }}
         className="py-10 bg-white/60 backdrop-blur-sm border-b border-gray-100 relative z-10"
       >
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-7xl px-6 text-center">
           <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">
             Trusted By
           </p>
@@ -133,8 +133,8 @@ export default function FreeAIAudit() {
       </motion.section>
 
       {/* Main */}
-      <main className="mx-auto max-w-6xl px-6 py-10 relative z-10">
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           {/* LEFT: Video card */}
           <motion.section 
             initial={{ opacity: 0, x: -30 }}

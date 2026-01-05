@@ -108,14 +108,20 @@ export const ZohoCommunitySignupForm = () => {
           
           {/* Hidden fields required by Zoho */}
           <input type="hidden" id="fieldBorder" value="" />
-          <input type="hidden" id="submitType" name="submitType" value="opt498498" />
-          <input type="hidden" id="lD" name="lD" value="1a69e6e0f14feb3" />
+          <input type="hidden" id="submitType" name="submitType" value="optin498498" />
+          <input type="hidden" id="emailReportId" name="emailReportId" value="" />
+          <input type="hidden" id="formType" name="formType" value="QuickForm" />
           <input type="hidden" name="zx" id="cmpZuid" value="1a69e6e0e" />
+          <input type="hidden" name="zcvers" value="3.0" />
           <input type="hidden" name="oldListIds" id="allCheckedListIds" value="" />
-          <input type="hidden" name="mode" value="OptinCreate498498" />
-          <input type="hidden" name="zcld" value="1a69e6e0f14feb3" />
-          <input type="hidden" id="signupForm498498_498498" name="signupFormType" value="LargeForm_Horizontal_4498498" />
+          <input type="hidden" id="mode" name="mode" value="OptinCreate498498" />
+          <input type="hidden" id="zcld" name="zcld" value="1a69e6e0f14feb3" />
+          <input type="hidden" id="zctd" name="zctd" value="" />
+          <input type="hidden" id="Document" name="Document" value="" />
           <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW" />
+          <input type="hidden" id="zc_formIx" name="zc_formIx" value="3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6" />
+          <input type="hidden" id="viewFrom" name="viewFrom" value="URL_ACTION" />
+          <input type="hidden" id="scriptless" name="scriptless" value="yes" />
         </div>
       </form>
     </div>

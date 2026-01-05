@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import torqueLogo from "@/assets/torque-logo.svg";
+import torqueLogo from "@/assets/torque-ai-logo.png";
 
 export default function ScrollSpinLogo() {
   const { scrollYProgress } = useScroll();

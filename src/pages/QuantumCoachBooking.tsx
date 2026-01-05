@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { ZohoQuantumCoachWaitlistForm } from "@/components/ZohoQuantumCoachWaitlistForm";
+import { ZohoCommunitySignupForm } from "@/components/ZohoCommunitySignupForm";
 import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import chrisPortrait from "@/assets/chris-dessi-headshot.jpg";
@@ -113,7 +113,7 @@ const QuantumCoachBooking = () => {
                 <p className="text-sm text-slate-600">Enter your email to join the community</p>
               </div>
 
-              <ZohoQuantumCoachWaitlistForm />
+              <ZohoCommunitySignupForm />
             </div>
           </div>
 

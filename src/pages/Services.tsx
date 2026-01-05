@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import { ZohoCommunitySignupForm } from "@/components/ZohoCommunitySignupForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ServicesScoreApp from "@/components/ServicesScoreApp";
 
@@ -315,8 +316,37 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Community Signup */}
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-black text-white">
+        <div className="max-w-2xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Join the FREE Torque AI Community
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Get weekly AI insights, strategies, and exclusive content
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20"
+          >
+            <ZohoCommunitySignupForm />
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -327,7 +357,7 @@ const Services = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Accelerate with AI?
             </h2>
-            <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
               Partner with Torque AI to transform your business with strategic AI implementation
             </p>
             <ZohoLetsTalkButton size="large" />

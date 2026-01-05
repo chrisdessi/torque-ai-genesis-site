@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import { ZohoCommunitySignupForm } from "@/components/ZohoCommunitySignupForm";
 
 import { motion } from "framer-motion";
 import { Brain, Zap, Target, TrendingUp } from "lucide-react";
@@ -357,14 +358,31 @@ const Torque = () => {
         </div>
       </section>
 
+      {/* Community Signup Section */}
+      <section className="bg-gradient-to-br from-blue-600 to-purple-600 text-white py-24">
+        <div className="section-padding max-w-2xl mx-auto">
+          <motion.div {...fadeInUp} className="text-center mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Join the FREE Torque AI Community
+            </h2>
+            <p className="text-xl text-white/80">
+              Get weekly AI insights, strategies, and exclusive content
+            </p>
+          </motion.div>
+          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+            <ZohoCommunitySignupForm />
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-purple-600 text-white py-32">
+      <section className="bg-white py-24">
         <div className="section-padding max-w-5xl mx-auto text-center">
           <motion.div {...fadeInUp}>
-            <h2 className="text-5xl md:text-6xl font-bold mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
               Ready to Transform Your Business with AI?
             </h2>
-            <p className="text-2xl text-gray-200 mb-12 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
               Let's explore how AI can drive measurable results for your organization.
             </p>
             <ZohoLetsTalkButton size="large" />

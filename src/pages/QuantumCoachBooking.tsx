@@ -277,6 +277,28 @@ const QuantumCoachBooking = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Synthesia Video */}
+          <motion.div 
+            className="mt-12"
+            initial="hidden"
+            animate={aboutInView ? "visible" : "hidden"}
+            variants={fadeInUp}
+          >
+            <div className="bg-white border border-slate-200 rounded-3xl p-6 lg:p-8 shadow-lg">
+              <h3 className="text-2xl font-semibold mb-4 text-center text-slate-900">Embrace the AI Revolution</h3>
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-md" style={{ aspectRatio: '1920/1080' }}>
+                <iframe 
+                  src="https://share.synthesia.io/embeds/videos/cd9016f8-5b14-47d0-9fec-e893be33ccc9" 
+                  loading="lazy" 
+                  title="Synthesia video player - Embrace the AI Revolution" 
+                  allowFullScreen 
+                  allow="encrypted-media; fullscreen; microphone;" 
+                  className="absolute w-full h-full top-0 left-0 border-none p-0 m-0 overflow-hidden"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

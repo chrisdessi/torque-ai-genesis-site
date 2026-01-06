@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { ZohoCommunitySignupForm } from "@/components/ZohoCommunitySignupForm";
+
 import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import chrisPortrait from "@/assets/chris-dessi-headshot.jpg";
@@ -102,18 +102,6 @@ const QuantumCoachBooking = () => {
                   allowFullScreen
                 />
               </div>
-            </div>
-          </div>
-
-          {/* Main Signup Form */}
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white border-2 border-emerald-500/30 rounded-3xl p-6 lg:p-8 shadow-xl">
-              <div className="text-center mb-4">
-                <h2 className="text-xl font-bold mb-2 text-slate-900">Start Your Shift Today</h2>
-                <p className="text-sm text-slate-600">Enter your email to join the community</p>
-              </div>
-
-              <ZohoCommunitySignupForm />
             </div>
           </div>
 

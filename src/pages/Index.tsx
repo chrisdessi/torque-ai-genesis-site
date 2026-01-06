@@ -6,7 +6,7 @@ import SEO from "@/components/SEO";
 import ServicesScoreApp from "@/components/ServicesScoreApp";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoContactForm from "@/components/ZohoContactForm";
-import { ZohoCommunitySignupForm } from "@/components/ZohoCommunitySignupForm";
+
 import ScrollingWord from "@/components/ScrollingWord";
 import ScrollSpinLogo from "@/components/ScrollSpinLogo";
 import SystemFlowVisualization from "@/components/SystemFlowVisualization";
@@ -1058,22 +1058,6 @@ export default function Index() {
               <CalendlyEmbed />
             </div>
             
-            <div className="relative flex items-center justify-center">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-border/50"></div>
-              </div>
-              <span className="relative bg-secondary px-6 py-2 text-lg font-medium text-muted-foreground rounded-full">
-                Join the FREE Torque AI Community
-              </span>
-            </div>
-            
-            <div className="rounded-3xl glass-card p-8 lg:p-12">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-foreground mb-2">Get Weekly AI Insights</h3>
-                <p className="text-muted-foreground">Join thousands of leaders receiving actionable AI strategies</p>
-              </div>
-              <ZohoCommunitySignupForm />
-            </div>
             
             <div className="relative flex items-center justify-center">
               <div className="absolute inset-0 flex items-center">

@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
-import { ZohoCommunitySignupForm } from "@/components/ZohoCommunitySignupForm";
+
 
 
 const Events = () => {
@@ -196,35 +196,6 @@ const Events = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* Community Signup Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-purple-500/10 to-pink-500/10">
-        <div className="max-w-2xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Stay Updated on Events
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Get notified about upcoming events, early bird tickets, and exclusive opportunities.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-background rounded-3xl p-8 border border-border shadow-lg"
-          >
-            <ZohoCommunitySignupForm />
-          </motion.div>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoContactForm from "@/components/ZohoContactForm";
-import { ZohoCommunitySignupForm } from "@/components/ZohoCommunitySignupForm";
+
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 
@@ -125,35 +125,6 @@ const Contact = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Community Signup */}
-      <section className="py-24 bg-gradient-to-b from-gray-900 to-black text-white">
-        <div className="max-w-2xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Join the FREE Torque AI Community
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get weekly AI insights, strategies, and exclusive content delivered to your inbox
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20"
-          >
-            <ZohoCommunitySignupForm />
-          </motion.div>
         </div>
       </section>
 

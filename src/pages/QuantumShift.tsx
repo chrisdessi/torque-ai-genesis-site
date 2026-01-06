@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
-import { ZohoCommunitySignupForm } from "@/components/ZohoCommunitySignupForm";
+
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import { motion } from "framer-motion";
 import { BookOpen, Video, Music, ArrowRight, Check } from "lucide-react";
@@ -272,23 +272,6 @@ const QuantumShift = () => {
               </div>
             </motion.a>
           </div>
-        </div>
-      </section>
-
-      {/* Community Signup Section */}
-      <section className="bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 py-24">
-        <div className="section-padding max-w-2xl mx-auto">
-          <motion.div {...fadeInUp} className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Join the FREE Community
-            </h2>
-            <p className="text-xl text-white/80">
-              Get weekly insights on AI, leadership, and transformation
-            </p>
-          </motion.div>
-          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-            <ZohoCommunitySignupForm />
-          </motion.div>
         </div>
       </section>
 

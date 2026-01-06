@@ -12,7 +12,7 @@ export const ZohoCommunitySignupForm = () => {
       // @ts-ignore
       if (typeof window.setupSF === 'function') {
         // @ts-ignore
-        window.setupSF('sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6', 'ZCFORMVIEW', false, 'light', false, '0');
+        window.setupSF('sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa', 'ZCFORMVIEW', false, 'light', false, '0');
       }
     };
     document.body.appendChild(script);
@@ -29,7 +29,7 @@ export const ZohoCommunitySignupForm = () => {
       {/* Zoho Campaigns Form */}
       <form 
         className="quick_form_7_css"
-        id="sf3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6"
+        id="sf3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa"
         data-type="SIGNUP_FORM"
         name="SIGNUP_BODY"
         method="POST"
@@ -119,7 +119,7 @@ export const ZohoCommunitySignupForm = () => {
           <input type="hidden" id="zctd" name="zctd" value="" />
           <input type="hidden" id="Document" name="Document" value="" />
           <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW" />
-          <input type="hidden" id="zc_formIx" name="zc_formIx" value="3z830918a30cd527799e85190e4ff13e6ca45acda5d2713eb9c5dd97569cb462e6" />
+          <input type="hidden" id="zc_formIx" name="zc_formIx" value="3zb23177f10bdcc7c4ce377eb708724af15d47769e6568ec3b3c9ebafa26dd6daa" />
           <input type="hidden" id="viewFrom" name="viewFrom" value="URL_ACTION" />
           <input type="hidden" id="scriptless" name="scriptless" value="yes" />
         </div>

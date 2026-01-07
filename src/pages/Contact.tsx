@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoTorqueCommunityForm from "@/components/ZohoTorqueCommunityForm";
 
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
@@ -130,6 +131,8 @@ const Contact = () => {
 
       {/* Calendly Booking */}
       <CalendlyEmbed />
+
+      <ZohoTorqueCommunityForm />
 
       <Footer />
     </div>

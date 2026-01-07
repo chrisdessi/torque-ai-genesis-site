@@ -7,6 +7,7 @@ import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import SEO from "@/components/SEO";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoTorqueCommunityForm from "@/components/ZohoTorqueCommunityForm";
 
 
 import chrisProfile from "@/assets/chris-bio.png";
@@ -274,6 +275,7 @@ const About = () => {
           />
         </div>
       </section>
+      <ZohoTorqueCommunityForm />
       <Footer />
     </div>
   );

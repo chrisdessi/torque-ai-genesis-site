@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoTorqueCommunityForm from "@/components/ZohoTorqueCommunityForm";
 
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ServicesScoreApp from "@/components/ServicesScoreApp";
@@ -348,6 +349,7 @@ const Services = () => {
           />
         </div>
       </section>
+      <ZohoTorqueCommunityForm />
       <Footer />
     </div>
   );

@@ -6,6 +6,7 @@ import SEO from "@/components/SEO";
 import ServicesScoreApp from "@/components/ServicesScoreApp";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoContactForm from "@/components/ZohoContactForm";
+import ZohoTorqueCommunityForm from "@/components/ZohoTorqueCommunityForm";
 
 import ScrollingWord from "@/components/ScrollingWord";
 import ScrollSpinLogo from "@/components/ScrollSpinLogo";
@@ -1074,6 +1075,8 @@ export default function Index() {
           </motion.div>
         </div>
       </section>
+
+      <ZohoTorqueCommunityForm />
 
       <Footer />
     </div>

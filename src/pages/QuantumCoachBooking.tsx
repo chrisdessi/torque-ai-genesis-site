@@ -6,6 +6,7 @@ import SEO from "@/components/SEO";
 
 import { ZohoQuantumShiftButton } from "@/components/ZohoQuantumShiftButton";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
+import ZohoAICommunityButton from "@/components/ZohoAICommunityButton";
 import chrisPortrait from "@/assets/chris-dessi-headshot.jpg";
 
 const QuantumCoachBooking = () => {
@@ -91,7 +92,7 @@ const QuantumCoachBooking = () => {
           <div className="max-w-3xl mx-auto mb-12">
             <div className="bg-white border border-slate-200 rounded-3xl p-6 lg:p-8 shadow-lg">
               <h2 className="text-2xl font-semibold mb-4 text-center text-slate-900">A Message from Chris</h2>
-              <div className="aspect-video rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-md">
+              <div className="aspect-video rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-md mb-6">
                 <iframe 
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/GqyALozg1_4" 
@@ -102,6 +103,7 @@ const QuantumCoachBooking = () => {
                   allowFullScreen
                 />
               </div>
+              <ZohoAICommunityButton />
             </div>
           </div>
 

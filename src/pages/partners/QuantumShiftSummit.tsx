@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ZohoTorqueCommunityForm from "@/components/ZohoTorqueCommunityForm";
 import SEO from "@/components/SEO";
 import { Sparkles, Calendar, Users, Bell, ArrowRight, ExternalLink } from "lucide-react";
 
@@ -158,6 +159,8 @@ const QuantumShiftSummit = () => {
           </a>
         </div>
       </section>
+
+      <ZohoTorqueCommunityForm />
 
       <Footer />
     </div>

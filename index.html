@@ -300,5 +300,23 @@ document.head.appendChild(o)}initApollo();</script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
+    <!-- Zoho SalesIQ Chat Widget -->
+    <script type="text/javascript" id="zsiqchat">
+      var $zoho = $zoho || {};
+      $zoho.salesiq = $zoho.salesiq || {
+        widgetcode: "siqe1a1e7bccfb45bc62f61dc80e3af6784faebbaa4337ae133d3ac6f86512db310",
+        values: {},
+        ready: function() {}
+      };
+      var d = document;
+      s = d.createElement("script");
+      s.type = "text/javascript";
+      s.id = "zsiqscript";
+      s.defer = true;
+      s.src = "https://salesiq.zoho.com/widget";
+      t = d.getElementsByTagName("script")[0];
+      t.parentNode.insertBefore(s, t);
+    </script>
+    
   </body>
 </html>

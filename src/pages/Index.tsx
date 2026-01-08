@@ -7,6 +7,7 @@ import ServicesScoreApp from "@/components/ServicesScoreApp";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import ZohoTorqueCommunityForm from "@/components/ZohoTorqueCommunityForm";
+import ZohoAICommunityButton from "@/components/ZohoAICommunityButton";
 
 import ScrollingWord from "@/components/ScrollingWord";
 import ScrollSpinLogo from "@/components/ScrollSpinLogo";
@@ -118,6 +119,10 @@ export default function Index() {
             <motion.p variants={fadeInUp} className="text-sm sm:text-base text-muted-foreground">
               No hype. No tool soup. Just clarity, control, and execution that sticks.
             </motion.p>
+
+            <motion.div variants={fadeInUp}>
+              <ZohoAICommunityButton />
+            </motion.div>
           </motion.div>
 
           {/* Hero Right: Decision System card */}

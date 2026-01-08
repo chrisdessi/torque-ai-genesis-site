@@ -8,6 +8,7 @@ import SEO from "@/components/SEO";
 import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import ZohoTorqueCommunityForm from "@/components/ZohoTorqueCommunityForm";
+import ZohoAICommunityButton from "@/components/ZohoAICommunityButton";
 
 
 import chrisProfile from "@/assets/chris-bio.png";
@@ -258,6 +259,7 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <ZohoLetsTalkButton size="large" />
+              <ZohoAICommunityButton />
             </div>
           </motion.div>
         </div>

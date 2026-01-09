@@ -6,17 +6,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 
-// Declare the custom Stripe element for TypeScript
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'stripe-pricing-table': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        'pricing-table-id': string;
-        'publishable-key': string;
-      };
-    }
-  }
-}
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -57,16 +46,6 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 };
 
 const AIWorkshop = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://js.stripe.com/v3/pricing-table.js';
-    script.async = true;
-    document.body.appendChild(script);
-    
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -356,12 +335,6 @@ const AIWorkshop = () => {
               Choose your level of support — every ticket includes exclusive bonuses.
             </motion.p>
             
-            <motion.div variants={fadeInUp}>
-              <stripe-pricing-table 
-                pricing-table-id="prctbl_1SnjBtG7cympBc4IilDhbs7Y"
-                publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a"
-              />
-            </motion.div>
             
             {/* Bonus Value Cards */}
             <motion.div variants={fadeInUp} className="mt-10 grid md:grid-cols-3 gap-6">
@@ -389,6 +362,12 @@ const AIWorkshop = () => {
                   </div>
                 </div>
                 <p className="mt-4 text-xs text-muted-foreground">You save <span className="text-green-400 font-bold">$697</span> vs. buying separately</p>
+                <Button 
+                  className="w-full mt-4 bg-gradient-to-r from-[rgba(110,231,255,0.22)] to-[rgba(155,123,255,0.18)] border border-white/20 hover:shadow-lg font-bold"
+                  onClick={() => window.open('https://buy.stripe.com/cNi14n97u42PbYVgr18g00o', '_blank')}
+                >
+                  Buy Now
+                </Button>
               </div>
               
               {/* VIP Seat */}
@@ -425,6 +404,12 @@ const AIWorkshop = () => {
                   </div>
                 </div>
                 <p className="mt-4 text-xs text-muted-foreground">You save <span className="text-green-400 font-bold">$2,492</span> vs. buying separately</p>
+                <Button 
+                  className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+                  onClick={() => window.open('https://buy.stripe.com/bJefZhgzW56T5Ax5Mn8g00p', '_blank')}
+                >
+                  Buy Now
+                </Button>
               </div>
               
               {/* Team Pack */}
@@ -458,6 +443,12 @@ const AIWorkshop = () => {
                   </div>
                 </div>
                 <p className="mt-4 text-xs text-muted-foreground">You save <span className="text-green-400 font-bold">$7,493+</span> vs. buying separately</p>
+                <Button 
+                  className="w-full mt-4 bg-gradient-to-r from-[rgba(110,231,255,0.22)] to-[rgba(155,123,255,0.18)] border border-white/20 hover:shadow-lg font-bold"
+                  onClick={() => window.open('https://buy.stripe.com/7sYeVd4Rebvhe73fmX8g00q', '_blank')}
+                >
+                  Buy Now
+                </Button>
               </div>
             </motion.div>
             

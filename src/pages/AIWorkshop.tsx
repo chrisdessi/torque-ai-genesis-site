@@ -5,6 +5,7 @@ import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
+import workshopClassroom from "@/assets/workshop-classroom.jpg";
 
 
 const fadeInUp = {
@@ -133,9 +134,9 @@ const AIWorkshop = () => {
                 <div className="mt-4 border border-border/50 rounded-xl p-4 bg-black/20">
                   <p className="font-extrabold mb-2">Next Session</p>
                   <div className="text-muted-foreground text-sm grid gap-1">
-                    <p><Calendar className="w-4 h-4 inline mr-2" />Date: TBD</p>
-                    <p><Clock className="w-4 h-4 inline mr-2" />Time: TBD</p>
-                    <p><MapPin className="w-4 h-4 inline mr-2" />Location: TBD</p>
+                    <p><Calendar className="w-4 h-4 inline mr-2" />Friday, February 6th, 2026</p>
+                    <p><Clock className="w-4 h-4 inline mr-2" />Starting at 10:00 AM</p>
+                    <p><MapPin className="w-4 h-4 inline mr-2" />Prodigy Athletic Center, Somers, NY</p>
                   </div>
                   <p className="mt-3 text-muted-foreground text-sm">
                     Seats are capped to keep it hands-on.
@@ -288,14 +289,37 @@ const AIWorkshop = () => {
               Logistics
             </motion.h2>
             
+            {/* Venue Image */}
+            <motion.div variants={fadeInUp} className="mb-8">
+              <div className="relative rounded-2xl overflow-hidden border border-border/50">
+                <img 
+                  src={workshopClassroom} 
+                  alt="Workshop classroom at Prodigy Athletic Center" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <p className="text-white font-bold text-lg">Our Workshop Venue</p>
+                  <p className="text-white/80 text-sm">Professional learning environment with modern facilities</p>
+                </div>
+              </div>
+            </motion.div>
+            
             <div className="grid md:grid-cols-2 gap-4">
               <motion.div variants={fadeInUp} className="bg-card/30 border border-border/50 rounded-2xl p-5">
                 <h3 className="font-black text-lg mb-3">When & where</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li><Calendar className="w-4 h-4 inline mr-2" /><b className="text-foreground">Date:</b> TBD</li>
-                  <li><Clock className="w-4 h-4 inline mr-2" /><b className="text-foreground">Time:</b> TBD</li>
+                  <li><Calendar className="w-4 h-4 inline mr-2" /><b className="text-foreground">Date:</b> Friday, February 6th, 2026</li>
+                  <li><Clock className="w-4 h-4 inline mr-2" /><b className="text-foreground">Time:</b> 10:00 AM</li>
                   <li><Clock className="w-4 h-4 inline mr-2" /><b className="text-foreground">Duration:</b> 6 hours (with breaks)</li>
-                  <li><MapPin className="w-4 h-4 inline mr-2" /><b className="text-foreground">Location:</b> TBD</li>
+                  <li className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 shrink-0 mt-1" />
+                    <div>
+                      <b className="text-foreground">Location:</b><br />
+                      Prodigy Athletic Center<br />
+                      247 NY-100, Building C<br />
+                      Somers, NY 10589
+                    </div>
+                  </li>
                 </ul>
               </motion.div>
               

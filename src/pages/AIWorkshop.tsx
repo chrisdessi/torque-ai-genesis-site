@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Play, Calendar, MapPin, Clock, Laptop, FileText, Users, Mail, ChevronDown } from "lucide-react";
+import { Check, Play, Calendar, MapPin, Clock, Laptop, FileText, Users, Mail, ChevronDown, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
@@ -353,7 +353,7 @@ const AIWorkshop = () => {
               Tickets
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground mb-6">
-              Choose your level of support.
+              Choose your level of support — every ticket includes exclusive bonuses.
             </motion.p>
             
             <motion.div variants={fadeInUp}>
@@ -363,9 +363,116 @@ const AIWorkshop = () => {
               />
             </motion.div>
             
-            <motion.p variants={fadeInUp} className="mt-4 text-muted-foreground text-sm">
-              Seats are limited. If you want me to tailor examples to your industry, grab VIP or submit the intake.
-            </motion.p>
+            {/* Bonus Value Cards */}
+            <motion.div variants={fadeInUp} className="mt-10 grid md:grid-cols-3 gap-6">
+              {/* Standard Seat */}
+              <div className="relative bg-card/30 border border-border/50 rounded-2xl p-6 overflow-hidden">
+                <div className="absolute top-3 right-3 bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                  $1,194 VALUE
+                </div>
+                <h3 className="font-black text-xl mb-1">Standard Seat</h3>
+                <p className="text-2xl font-black text-primary mb-4">$497</p>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">Westchester AI Alliance Membership</p>
+                      <p className="text-muted-foreground">$995 Value — <span className="text-green-400 font-semibold">FREE</span></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">Westchester AI Summit Ticket</p>
+                      <p className="text-muted-foreground">$199 Value — <span className="text-green-400 font-semibold">FREE</span> (Spring 2025)</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-muted-foreground">You save <span className="text-green-400 font-bold">$697</span> vs. buying separately</p>
+              </div>
+              
+              {/* VIP Seat */}
+              <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/40 rounded-2xl p-6 overflow-hidden">
+                <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">
+                  $3,489 VALUE
+                </div>
+                <div className="absolute -top-1 left-6 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-b-lg">
+                  BEST VALUE
+                </div>
+                <h3 className="font-black text-xl mb-1 mt-2">VIP Seat</h3>
+                <p className="text-2xl font-black text-primary mb-4">$997</p>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">WAIA Business Membership (5 seats)</p>
+                      <p className="text-muted-foreground">$2,495 Value — <span className="text-green-400 font-semibold">FREE</span></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">5 Westchester AI Summit Tickets</p>
+                      <p className="text-muted-foreground">$995 Value — <span className="text-green-400 font-semibold">FREE</span></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">Priority 1:1 time with Chris</p>
+                      <p className="text-muted-foreground">Industry-tailored examples</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-muted-foreground">You save <span className="text-green-400 font-bold">$2,492</span> vs. buying separately</p>
+              </div>
+              
+              {/* Team Pack */}
+              <div className="relative bg-card/30 border border-border/50 rounded-2xl p-6 overflow-hidden">
+                <div className="absolute top-3 right-3 bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                  $9,990+ VALUE
+                </div>
+                <h3 className="font-black text-xl mb-1">Team Pack</h3>
+                <p className="text-2xl font-black text-primary mb-4">$2,497</p>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">WAIA Corporate Membership</p>
+                      <p className="text-muted-foreground">$7,500 Value — <span className="text-green-400 font-semibold">FREE</span></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">10 Westchester AI Summit Tickets</p>
+                      <p className="text-muted-foreground">$1,990 Value — <span className="text-green-400 font-semibold">FREE</span></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">Summit Sponsorship</p>
+                      <p className="text-muted-foreground">Brand visibility — <span className="text-green-400 font-semibold">FREE</span></p>
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-muted-foreground">You save <span className="text-green-400 font-bold">$7,493+</span> vs. buying separately</p>
+              </div>
+            </motion.div>
+            
+            {/* Urgency Banner */}
+            <motion.div 
+              variants={fadeInUp} 
+              className="mt-8 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border border-primary/30 rounded-2xl p-6 text-center"
+            >
+              <p className="text-lg font-bold mb-2">
+                🚀 Limited seats available — These bonuses are only valid for early registrants
+              </p>
+              <p className="text-muted-foreground">
+                Lock in your spot now and get <span className="text-primary font-semibold">instant access</span> to the Westchester AI Alliance community while you wait for the workshop.
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>

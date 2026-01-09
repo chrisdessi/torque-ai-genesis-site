@@ -379,32 +379,11 @@ const AIWorkshop = () => {
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl font-black mb-2">
+            <motion.h2 variants={fadeInUp} className="text-3xl font-black mb-6">
               Reserve your seat
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground mb-6 max-w-[75ch]">
-              Fill this out so the workshop feels like it was built for your business.
-              (Takes ~2 minutes.)
-            </motion.p>
             
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Form Side */}
-              <motion.div variants={fadeInUp} className="bg-card/30 border border-border/50 rounded-2xl p-5">
-                <h3 className="font-black text-lg mb-4">Quick intake</h3>
-                <div className="bg-muted/20 rounded-xl p-6 text-center text-muted-foreground">
-                  <p>Form embed coming soon</p>
-                  <p className="text-sm mt-2">(ScoreApp, Typeform, Tally, or Zoho)</p>
-                </div>
-                
-                <div className="mt-4 relative w-full pt-[56.25%] rounded-xl overflow-hidden border border-border/50 bg-black">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center cursor-pointer hover:bg-white/20 transition-colors">
-                      <Play className="w-6 h-6 ml-1" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-              
               {/* Info Side */}
               <motion.div variants={fadeInUp}>
                 <div className="border border-[rgba(110,231,255,0.20)] bg-[rgba(110,231,255,0.08)] rounded-2xl p-5 mb-4">
@@ -420,7 +399,11 @@ const AIWorkshop = () => {
                 <div className="bg-card/30 border border-border/50 rounded-2xl p-5">
                   <h3 className="font-black text-lg mb-2">Prefer to talk first?</h3>
                   <p className="text-muted-foreground mb-3">Book a quick call to see if this is right for you.</p>
-                  <Button variant="ghost" className="bg-white/[0.03] border border-border/50">
+                  <Button 
+                    variant="ghost" 
+                    className="bg-white/[0.03] border border-border/50"
+                    onClick={() => window.location.href = '/contact'}
+                  >
                     Book 15 minutes
                   </Button>
                 </div>

@@ -119,11 +119,13 @@ const AIWorkshop = () => {
                 </p>
                 
                 <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden border border-border/50 bg-black">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center cursor-pointer hover:bg-white/20 transition-colors">
-                      <Play className="w-6 h-6 ml-1" />
-                    </div>
-                  </div>
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/yX_uAy2fcRI"
+                    title="Welcome from Chris"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
                 
                 <div className="mt-4 border border-border/50 rounded-xl p-4 bg-black/20">

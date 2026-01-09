@@ -4,7 +4,19 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// Declare the custom Stripe element for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'stripe-pricing-table': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'pricing-table-id': string;
+        'publishable-key': string;
+      };
+    }
+  }
+}
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -45,6 +57,17 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 };
 
 const AIWorkshop = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://js.stripe.com/v3/pricing-table.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO 
@@ -333,71 +356,12 @@ const AIWorkshop = () => {
               Choose your level of support.
             </motion.p>
             
-            <div className="grid md:grid-cols-3 gap-4">
-              {/* Standard */}
-              <motion.div variants={fadeInUp} className="bg-card/30 border border-border/50 rounded-2xl p-5">
-                <div className="mb-4">
-                  <p className="font-black">Standard Seat</p>
-                  <p className="text-3xl font-black my-2">$497</p>
-                  <p className="text-muted-foreground text-sm">In-person workshop access</p>
-                </div>
-                <ul className="space-y-2 pl-5 list-disc marker:text-primary/70 mb-4">
-                  <li>6-hour bootcamp</li>
-                  <li>Templates + prompt library</li>
-                  <li>30-day rollout plan</li>
-                </ul>
-                <Button 
-                  className="w-full bg-gradient-to-r from-[rgba(110,231,255,0.22)] to-[rgba(155,123,255,0.18)] border border-white/20"
-                  onClick={() => document.getElementById('reserve')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Reserve Standard
-                </Button>
-              </motion.div>
-              
-              {/* VIP */}
-              <motion.div variants={fadeInUp} className="relative bg-gradient-to-b from-[rgba(110,231,255,0.10)] to-card/30 border border-[rgba(110,231,255,0.35)] rounded-2xl p-5">
-                <span className="absolute top-3 right-3 bg-[rgba(110,231,255,0.16)] border border-[rgba(110,231,255,0.30)] px-3 py-1.5 rounded-full text-xs font-black">
-                  Best for operators
-                </span>
-                <div className="mb-4">
-                  <p className="font-black">VIP Seat</p>
-                  <p className="text-3xl font-black my-2">$997</p>
-                  <p className="text-muted-foreground text-sm">Workshop + private workflow session</p>
-                </div>
-                <ul className="space-y-2 pl-5 list-disc marker:text-primary/70 mb-4">
-                  <li>Everything in Standard</li>
-                  <li>60–90 min private workflow session (within 7 days)</li>
-                  <li>Customized AI SOP + prompt pack for your business</li>
-                </ul>
-                <Button 
-                  className="w-full bg-gradient-to-r from-[rgba(110,231,255,0.22)] to-[rgba(155,123,255,0.18)] border border-white/20"
-                  onClick={() => document.getElementById('reserve')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Reserve VIP
-                </Button>
-              </motion.div>
-              
-              {/* Team */}
-              <motion.div variants={fadeInUp} className="bg-card/30 border border-border/50 rounded-2xl p-5">
-                <div className="mb-4">
-                  <p className="font-black">Team Pack</p>
-                  <p className="text-3xl font-black my-2">$2,497</p>
-                  <p className="text-muted-foreground text-sm">Bring 3–6 teammates</p>
-                </div>
-                <ul className="space-y-2 pl-5 list-disc marker:text-primary/70 mb-4">
-                  <li>Aligned implementation</li>
-                  <li>Team workflow mapping</li>
-                  <li>Optional on-site follow-up</li>
-                </ul>
-                <Button 
-                  variant="ghost"
-                  className="w-full bg-white/[0.03] border border-border/50"
-                  onClick={() => document.getElementById('reserve')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Ask about Team
-                </Button>
-              </motion.div>
-            </div>
+            <motion.div variants={fadeInUp}>
+              <stripe-pricing-table 
+                pricing-table-id="prctbl_1SnjBtG7cympBc4IilDhbs7Y"
+                publishable-key="pk_live_51Qn6VFG7cympBc4IA08eEyFC0UcNTBmHxl4SvxBr2nQugXsezKLcEiKdEcmdeTLxbYNQIXnhnrXtHNTvoribSpV700GFoEAA3a"
+              />
+            </motion.div>
             
             <motion.p variants={fadeInUp} className="mt-4 text-muted-foreground text-sm">
               Seats are limited. If you want me to tailor examples to your industry, grab VIP or submit the intake.

@@ -71,6 +71,13 @@ const Header = () => {
               AI Marketing Systems
             </a>
 
+            <Link
+              to="/ai-workshop"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Workshop
+            </Link>
+
             <a
               href="#about"
               className="text-foreground hover:text-primary transition-colors"
@@ -149,6 +156,13 @@ const Header = () => {
                 >
                   AI Marketing Systems
                 </a>
+                <Link
+                  to="/ai-workshop"
+                  className="block px-4 py-2 text-sm font-bold text-foreground hover:text-primary hover:bg-secondary rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Workshop
+                </Link>
                 <a
                   href="#about"
                   className="block px-4 py-2 text-sm font-bold text-foreground hover:text-primary hover:bg-secondary rounded-lg transition-colors"

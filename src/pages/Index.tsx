@@ -682,6 +682,86 @@ export default function Index() {
         </div>
       </section>
 
+      {/* IN-PERSON WORKSHOP CTA */}
+      <section className="border-b border-border bg-background relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(217_91%_60%_/_0.08)_0%,_transparent_70%)]" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24">
+          <motion.div 
+            className="rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-transparent p-8 sm:p-12 lg:p-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+              <div className="space-y-6">
+                <motion.div 
+                  className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-2 text-sm font-bold text-primary"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  🎟️ Limited Seats Available
+                </motion.div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
+                  AI for Business Operators <span className="gradient-text">Workshop</span>
+                </h2>
+                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+                  A hands-on, in-person workshop that turns AI into real leverage for your business — workflows, decisions, and execution (not random prompts).
+                </p>
+                <div className="space-y-3 text-base text-muted-foreground">
+                  <p className="flex items-center gap-2">
+                    <span className="text-primary">📅</span>
+                    <strong className="text-foreground">Friday, February 6th, 2026</strong> — Starting at 10am
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-primary">📍</span>
+                    Prodigy Athletic Center, Somers, NY
+                  </p>
+                </div>
+                <motion.a
+                  href="/ai-workshop"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Register for the Workshop →
+                </motion.a>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="rounded-2xl border border-border/50 bg-background/50 p-6">
+                  <h3 className="font-bold text-lg text-foreground mb-4">What you'll walk away with:</h3>
+                  <ul className="space-y-3 text-muted-foreground">
+                    {[
+                      "Your personal AI Operator Playbook",
+                      "10-20 prompts tailored to your role",
+                      "1 workflow rebuilt with AI (SOP + checklist)",
+                      "A clear 30-day implementation plan"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="text-primary mt-1">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                    WAIA Membership Included
+                  </span>
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                    Free Summit Ticket
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* AI READINESS QUIZ - Removed, replaced with Chris quote */}
       <section className="border-b border-border bg-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">

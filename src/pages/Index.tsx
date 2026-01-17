@@ -302,6 +302,57 @@ export default function Index() {
       {/* SYSTEM EVOLUTION */}
       <SystemEvolutionSection />
 
+      {/* DECISION SYSTEM */}
+      <section id="pillars" className="bg-background py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <motion.div 
+            className="mb-10 sm:mb-16 max-w-4xl"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
+              Decision System
+            </p>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-foreground leading-tight">
+              Torque is not a productivity tool.{" "}
+              <span className="highlight-text">It's a decision system</span> for leaders.
+            </h2>
+            <p className="mt-4 sm:mt-8 text-base sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+              AI should execute decisions — not create more of them.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            {[
+              { title: "Decide what actually matters", icon: "🎯" },
+              { title: "Ignore what doesn't", icon: "🚫" },
+              { title: "Eliminate repeated decisions", icon: "🔄" },
+              { title: "Remove founders from unnecessary loops", icon: "🔓" },
+              { title: "Execute without rework", icon: "⚡" }
+            ].map((item, i) => (
+              <motion.div 
+                key={item.title}
+                className="group flex flex-col items-center text-center rounded-2xl sm:rounded-3xl border-2 border-border bg-secondary p-4 sm:p-6 lg:p-8 hover:border-primary transition-all duration-300"
+                variants={scaleIn}
+                whileHover={{ y: -8 }}
+              >
+                <span className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">{item.icon}</span>
+                <p className="text-xs sm:text-sm lg:text-lg font-bold text-foreground">{item.title}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* MARKETING AGENCY SERVICES */}
       <section id="marketing-services" className="border-b border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -492,56 +543,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* DECISION SYSTEM */}
-      <section id="pillars" className="bg-background py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <motion.div 
-            className="mb-10 sm:mb-16 max-w-4xl"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
-              Decision System
-            </p>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-foreground leading-tight">
-              Torque is not a productivity tool.{" "}
-              <span className="highlight-text">It's a decision system</span> for leaders.
-            </h2>
-            <p className="mt-4 sm:mt-8 text-base sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              AI should execute decisions — not create more of them.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            {[
-              { title: "Decide what actually matters", icon: "🎯" },
-              { title: "Ignore what doesn't", icon: "🚫" },
-              { title: "Eliminate repeated decisions", icon: "🔄" },
-              { title: "Remove founders from unnecessary loops", icon: "🔓" },
-              { title: "Execute without rework", icon: "⚡" }
-            ].map((item, i) => (
-              <motion.div 
-                key={item.title}
-                className="group flex flex-col items-center text-center rounded-2xl sm:rounded-3xl border-2 border-border bg-secondary p-4 sm:p-6 lg:p-8 hover:border-primary transition-all duration-300"
-                variants={scaleIn}
-                whileHover={{ y: -8 }}
-              >
-                <span className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">{item.icon}</span>
-                <p className="text-xs sm:text-sm lg:text-lg font-bold text-foreground">{item.title}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* CASE STUDIES - Updated */}
       <section className="border-b border-border bg-background relative overflow-hidden">

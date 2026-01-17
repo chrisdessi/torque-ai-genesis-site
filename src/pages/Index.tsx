@@ -1,7 +1,5 @@
 import React from "react";
 import { motion, type Variants } from "framer-motion";
-import { Link } from "react-router-dom";
-import { Target, Brain, Database, Rocket, CheckCircle2, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -10,97 +8,11 @@ import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 import ZohoContactForm from "@/components/ZohoContactForm";
 import ZohoTorqueCommunityForm from "@/components/ZohoTorqueCommunityForm";
 import ZohoAICommunityButton from "@/components/ZohoAICommunityButton";
-import ZohoLetsTalkButton from "@/components/ZohoLetsTalkButton";
-import { Button } from "@/components/ui/button";
 
 import ScrollingWord from "@/components/ScrollingWord";
 import ScrollSpinLogo from "@/components/ScrollSpinLogo";
 import SystemFlowVisualization from "@/components/SystemFlowVisualization";
 import SystemEvolutionSection from "@/components/SystemEvolutionSection";
-
-// Services data
-const coreServices = [
-  {
-    icon: Target,
-    title: "AI Strategy & Consulting",
-    description: "Transform AI complexity into actionable strategies that deliver measurable business outcomes and competitive advantages."
-  },
-  {
-    icon: Brain,
-    title: "AI Model Development",
-    description: "Build custom AI solutions with advanced engineering, retrieval systems, and models trained specifically on your business data."
-  },
-  {
-    icon: Database,
-    title: "Data Engineering & Optimization",
-    description: "Convert fragmented data sources into unified, AI-ready infrastructure that drives intelligent decision-making."
-  },
-  {
-    icon: Rocket,
-    title: "AI-Driven Transformation",
-    description: "Leverage AI to modernize legacy systems, eliminate technical debt, and accelerate innovation."
-  }
-];
-
-const useCases = [
-  {
-    title: "Process Automation",
-    description: "Eliminate manual workflows and redeploy resources to high-value strategic activities."
-  },
-  {
-    title: "Content Generation & Analysis",
-    description: "Transform raw data into actionable insights, compelling content, and strategic reports."
-  },
-  {
-    title: "Intelligent Virtual Assistants",
-    description: "Deploy AI agents that enhance customer experiences and support team efficiency."
-  },
-  {
-    title: "Personalization Engines",
-    description: "Deliver targeted experiences through behavioral analysis and predictive recommendations."
-  },
-  {
-    title: "Risk Detection & Security",
-    description: "Implement real-time monitoring and AI-powered threat prevention systems."
-  },
-  {
-    title: "Predictive Analytics",
-    description: "Anticipate trends, optimize operations, and make data-driven strategic decisions."
-  }
-];
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Discovery & Strategy",
-    description: "Analyze your operations to identify high-impact AI opportunities and create a roadmap prioritized by ROI.",
-    features: ["Opportunity Assessment", "Use Case Development", "Workflow Analysis"]
-  },
-  {
-    number: "02",
-    title: "Data Foundation",
-    description: "Consolidate and prepare your data infrastructure for AI implementation with quality assurance at every stage.",
-    features: ["Data Quality Audit", "Integration Architecture", "Data Enhancement"]
-  },
-  {
-    number: "03",
-    title: "Model Engineering",
-    description: "Design and train AI models customized to your objectives with rigorous validation and ethical compliance.",
-    features: ["Model Selection", "Performance Optimization", "Quality Assurance"]
-  },
-  {
-    number: "04",
-    title: "Implementation & Integration",
-    description: "Deploy scalable AI solutions with seamless system integration and enterprise-grade security.",
-    features: ["MVP Development", "System Integration", "Interface Design"]
-  },
-  {
-    number: "05",
-    title: "Optimization & Support",
-    description: "Monitor performance, refine accuracy, and ensure sustained value through continuous improvement.",
-    features: ["Performance Monitoring", "Accuracy Refinement", "Ongoing Enhancement"]
-  }
-];
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -276,318 +188,6 @@ export default function Index() {
             <img src="/logos/abc-logo.png" alt="ABC" className="h-5 sm:h-6 lg:h-8 object-contain" />
             <img src="/logos/cnn-logo.png" alt="CNN" className="h-5 sm:h-6 lg:h-8 object-contain" />
           </a>
-        </div>
-      </section>
-
-      {/* IN-PERSON WORKSHOP CTA */}
-      <section className="border-b border-border bg-background relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(217_91%_60%_/_0.08)_0%,_transparent_70%)]" />
-        </div>
-        
-        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24">
-          <motion.div 
-            className="rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-transparent p-8 sm:p-12 lg:p-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div className="space-y-6">
-                <motion.div 
-                  className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-2 text-sm font-bold text-primary"
-                  animate={{ scale: [1, 1.02, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  🎟️ Limited Seats Available
-                </motion.div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
-                  AI for Business Operators <span className="gradient-text">Workshop</span>
-                </h2>
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  A hands-on, in-person workshop that turns AI into real leverage for your business — workflows, decisions, and execution (not random prompts).
-                </p>
-                <div className="space-y-3 text-base text-muted-foreground">
-                  <p className="flex items-center gap-2">
-                    <span className="text-primary">📅</span>
-                    <strong className="text-foreground">Friday, February 6th, 2026</strong> — Starting at 10am
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <span className="text-primary">📍</span>
-                    Prodigy Athletic Center, Somers, NY
-                  </p>
-                </div>
-                <motion.a
-                  href="/ai-workshop"
-                  className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Register for the Workshop →
-                </motion.a>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="rounded-2xl border border-border/50 bg-background/50 p-6">
-                  <h3 className="font-bold text-lg text-foreground mb-4">What you'll walk away with:</h3>
-                  <ul className="space-y-3 text-muted-foreground">
-                    {[
-                      "Your personal AI Operator Playbook",
-                      "10-20 prompts tailored to your role",
-                      "1 workflow rebuilt with AI (SOP + checklist)",
-                      "A clear 30-day implementation plan"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span className="text-primary mt-1">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-                    WAIA Membership Included
-                  </span>
-                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-                    Free Summit Ticket
-                  </span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* SERVICES HERO */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900 text-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              AI Consulting & Development
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Torque AI transforms business challenges into competitive advantages through 
-              strategic AI implementation that delivers measurable results and lasting impact.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ZohoLetsTalkButton size="large" />
-              <Link to="/ai-audit">
-                <Button size="lg" className="bg-white text-black hover:bg-gray-100 font-semibold px-12 py-6 text-lg">
-                  Start Your AI Journey
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CORE SERVICES */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Comprehensive AI Solutions
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              End-to-end AI services that turn emerging technology into business transformation.
-              <Link to="/about" className="text-primary hover:underline ml-2">Meet our team →</Link>
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {coreServices.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-muted p-8 rounded-lg hover:shadow-lg transition-shadow"
-              >
-                <service.icon className="w-12 h-12 mb-4" />
-                <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* USE CASES */}
-      <section className="py-24 bg-muted">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              High-Impact AI Applications
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Strategic AI implementation across operations and customer experiences
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {useCases.map((useCase, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-background p-6 rounded-lg border-2 border-transparent hover:border-foreground transition-all"
-              >
-                <h3 className="text-xl font-bold mb-3 text-foreground">{useCase.title}</h3>
-                <p className="text-muted-foreground">{useCase.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-16 text-center bg-gradient-to-br from-cyan-50 to-blue-50 p-12 rounded-2xl border-2 border-cyan-200"
-          >
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Not Sure Where to Start?
-            </h3>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Get a comprehensive 2-week AI audit of your business and discover high-impact opportunities
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ZohoLetsTalkButton />
-              <Button 
-                size="lg"
-                className="bg-black hover:bg-gray-800 text-white font-semibold px-12 py-6 text-lg"
-                asChild
-              >
-                <Link to="/ai-audit">
-                  Learn About AI Audit
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* AI READINESS ASSESSMENT */}
-      <section className="py-16 bg-background">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Free AI Readiness Assessment
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Discover how prepared your business is for AI transformation
-            </p>
-          </motion.div>
-          <ServicesScoreApp />
-        </div>
-      </section>
-
-      {/* PROVEN PROCESS */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Our Proven Process
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A systematic approach to AI success, from concept to continuous optimization
-            </p>
-          </motion.div>
-
-          <div className="space-y-16">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
-              >
-                <div className={index % 2 === 0 ? "lg:order-1" : "lg:order-2"}>
-                  <div className="text-6xl font-bold text-muted-foreground/20 mb-4">
-                    {step.number}
-                  </div>
-                  <h3 className="text-3xl font-bold mb-4 text-foreground">{step.title}</h3>
-                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    {step.description}
-                  </p>
-                  <div className="space-y-2">
-                    {step.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-3">
-                        <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-primary" />
-                        <span className="text-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className={`bg-muted rounded-lg p-12 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
-                  <div className="aspect-square flex items-center justify-center">
-                    <div className="text-8xl font-black text-muted-foreground/10">
-                      {step.number}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES CTA */}
-      <section className="py-24 bg-secondary">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Ready to Accelerate with AI?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Partner with Torque AI to transform your business with strategic AI implementation
-            </p>
-            <ZohoLetsTalkButton size="large" />
-          </motion.div>
         </div>
       </section>
 
@@ -1082,6 +682,85 @@ export default function Index() {
         </div>
       </section>
 
+      {/* IN-PERSON WORKSHOP CTA */}
+      <section className="border-b border-border bg-background relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(217_91%_60%_/_0.08)_0%,_transparent_70%)]" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24">
+          <motion.div 
+            className="rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-transparent p-8 sm:p-12 lg:p-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+              <div className="space-y-6">
+                <motion.div 
+                  className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-2 text-sm font-bold text-primary"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  🎟️ Limited Seats Available
+                </motion.div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight">
+                  AI for Business Operators <span className="gradient-text">Workshop</span>
+                </h2>
+                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+                  A hands-on, in-person workshop that turns AI into real leverage for your business — workflows, decisions, and execution (not random prompts).
+                </p>
+                <div className="space-y-3 text-base text-muted-foreground">
+                  <p className="flex items-center gap-2">
+                    <span className="text-primary">📅</span>
+                    <strong className="text-foreground">Friday, February 6th, 2026</strong> — Starting at 10am
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-primary">📍</span>
+                    Prodigy Athletic Center, Somers, NY
+                  </p>
+                </div>
+                <motion.a
+                  href="/ai-workshop"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Register for the Workshop →
+                </motion.a>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="rounded-2xl border border-border/50 bg-background/50 p-6">
+                  <h3 className="font-bold text-lg text-foreground mb-4">What you'll walk away with:</h3>
+                  <ul className="space-y-3 text-muted-foreground">
+                    {[
+                      "Your personal AI Operator Playbook",
+                      "10-20 prompts tailored to your role",
+                      "1 workflow rebuilt with AI (SOP + checklist)",
+                      "A clear 30-day implementation plan"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="text-primary mt-1">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                    WAIA Membership Included
+                  </span>
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                    Free Summit Ticket
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* AI READINESS QUIZ - Removed, replaced with Chris quote */}
       <section className="border-b border-border bg-background relative overflow-hidden">

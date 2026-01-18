@@ -3,8 +3,7 @@ import { motion, type Variants } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { ZohoAI90DayForm } from "@/components/ZohoAI90DayForm";
-import { CheckCircle, ArrowRight, Users, TrendingUp, Clock, Zap, Target, BarChart3 } from "lucide-react";
+import { CheckCircle, ArrowRight, Users, TrendingUp, Clock } from "lucide-react";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -68,7 +67,7 @@ export default function Index() {
 
             <motion.div variants={fadeInUp} className="pt-4">
               <a
-                href="#apply"
+                href="/enterprise-accelerator"
                 className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-8 py-4 text-lg font-semibold transition-all hover:bg-foreground/90"
               >
                 Apply for the 90-Day AI Accelerator
@@ -384,7 +383,7 @@ export default function Index() {
       </section>
 
       {/* FINAL CTA */}
-      <section id="apply" className="border-t border-border bg-background py-20 lg:py-28">
+      <section className="border-t border-border bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <motion.div
             initial="hidden"
@@ -405,11 +404,14 @@ export default function Index() {
               Apply for the 90-Day AI Accelerator. We'll review your application and schedule a strategy call if it's a fit.
             </motion.p>
 
-            <motion.div 
-              variants={fadeInUp}
-              className="bg-secondary/50 rounded-2xl p-8 border border-border"
-            >
-              <ZohoAI90DayForm />
+            <motion.div variants={fadeInUp}>
+              <a
+                href="/enterprise-accelerator"
+                className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-8 py-4 text-lg font-semibold transition-all hover:bg-foreground/90"
+              >
+                Apply for the 90-Day AI Accelerator
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </motion.div>
 
             <motion.p 

@@ -72,6 +72,24 @@ export default function EnterpriseAccelerator() {
               A hands-on, done-with-you AI accelerator for executives and operators who want measurable business results — not experiments, tools, or theory.
             </motion.p>
 
+            {/* YouTube Video Embed */}
+            <motion.div 
+              variants={fadeInUp}
+              className="pt-6 w-full max-w-2xl mx-auto"
+            >
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
+                <iframe 
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/zrixqwcGCNE?si=42pKSOsbHwlXMM6p" 
+                  title="YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                />
+              </div>
+            </motion.div>
+
             <motion.div variants={fadeInUp} className="pt-4 space-y-4">
               <button
                 onClick={openZohoForm}

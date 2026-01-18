@@ -72,190 +72,150 @@ export default function Index() {
       <Header />
       <ScrollSpinLogo />
 
-      {/* MARKETING AGENCY SERVICES */}
-      <section id="marketing-services" className="border-b border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      {/* MARKETING HERO HEADER */}
+      <section id="marketing-services" className="relative overflow-hidden bg-gradient-to-br from-background via-secondary/50 to-background">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(217_91%_60%_/_0.08)_0%,_transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(280_70%_50%_/_0.05)_0%,_transparent_50%)]" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20 lg:py-28">
+          {/* Hero Header */}
           <motion.div 
-            className="mb-12 sm:mb-16 text-center"
+            className="text-center mb-12 sm:mb-16"
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
+            animate="visible"
+            variants={staggerContainer}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
-              AI-Powered Marketing
-            </span>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-foreground leading-tight mb-6">
-              Marketing Services That{" "}
-              <span className="gradient-text">Actually Scale</span>
-            </h2>
-            <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our AI-enhanced marketing methodology takes you from strategy to execution. 
-              Build systems that grow with your business, not against it.
-            </p>
-          </motion.div>
-
-          <div className="space-y-12 sm:space-y-16">
-            {[
-              {
-                number: 1,
-                title: "Set Up Your Workspace",
-                subtitle: "Describe your business",
-                icon: Briefcase,
-                color: "from-emerald-500 to-teal-600",
-                services: [
-                  { name: "Business Description", description: "Provide your marketing context", icon: Briefcase },
-                  { name: "Product Offers", description: "Describe your products", icon: FileText },
-                  { name: "Tone of Voice", description: "Personalize your Tone of Voice", icon: MessageSquare },
-                ]
-              },
-              {
-                number: 2,
-                title: "Get Your Marketing Strategy",
-                subtitle: "Understand your direction",
-                icon: Target,
-                color: "from-blue-500 to-indigo-600",
-                services: [
-                  { name: "User Persona", description: "Understand your ideal customer", icon: Users },
-                  { name: "Positioning", description: "Define your value proposition", icon: Compass },
-                  { name: "Customer Transformation", description: "Sell the desired positive future", icon: Sparkles },
-                  { name: "Brand Marketing", description: "Stand out from the competition", icon: Target },
-                  { name: "Marketing Copy", description: "Explain your product effortlessly", icon: PenTool },
-                  { name: "User Acquisition", description: "Focus on the right marketing channels", icon: Share2 },
-                  { name: "Marketing KPIs", description: "Measure metrics that matter", icon: BarChart3 },
-                  { name: "Offer Audit", description: "Solve the problems of your product", icon: Search },
-                  { name: "Product Portfolio", description: "Leverage your next product launch", icon: Briefcase },
-                ]
-              },
-              {
-                number: 3,
-                title: "Analyze Your Market",
-                subtitle: "Get actionable insights",
-                icon: BarChart3,
-                color: "from-purple-500 to-violet-600",
-                services: [
-                  { name: "Market Analysis", description: "Study your environment", icon: BarChart3 },
-                  { name: "Competitor Finder", description: "Find alternative solutions to your offer", icon: Search },
-                  { name: "Competitor Analyzer", description: "Scan competitor websites for insights", icon: Brain },
-                  { name: "Customer Journey Map", description: "Understand your customers", icon: Compass },
-                ]
-              },
-              {
-                number: 4,
-                title: "Increase Your Conversion Rate",
-                subtitle: "Improve your marketing funnel",
-                icon: TrendingUp,
-                color: "from-orange-500 to-red-600",
-                services: [
-                  { name: "Landing Page Audit", description: "Roast your landing page", icon: Search },
-                  { name: "Landing Page Structure", description: "Create a landing page that sells", icon: FileText },
-                  { name: "Pricing Page Audit", description: "Roast your pricing page", icon: DollarSign },
-                  { name: "Pricing Strategies", description: "Find the best monetization model", icon: DollarSign },
-                  { name: "Product Improvement", description: "Make your product more desirable", icon: Sparkles },
-                  { name: "Email Sequence", description: "Send emails that sell your product", icon: MessageSquare },
-                ]
-              },
-              {
-                number: 5,
-                title: "Get More Traffic",
-                subtitle: "Generate high-quality content",
-                icon: Megaphone,
-                color: "from-pink-500 to-rose-600",
-                services: [
-                  { name: "Keyword Research", description: "Find untapped SEO opportunities", icon: Search },
-                  { name: "SEO Articles", description: "Publish high-quality blog articles", icon: PenTool },
-                  { name: "Social Media Posts", description: "Go viral with unique social media posts", icon: Share2 },
-                  { name: "Paid Ads", description: "Grow faster with profitable ads", icon: Megaphone },
-                ]
-              },
-              {
-                number: 6,
-                title: "Save Time on Marketing",
-                subtitle: "Finish more marketing tasks",
-                icon: Clock,
-                color: "from-cyan-500 to-blue-600",
-                services: [
-                  { name: "Marketing Ideas", description: "Get actionable marketing tactics", icon: Lightbulb },
-                  { name: "Chat with AI Assistant", description: "Delegate boring marketing tasks", icon: Brain },
-                  { name: "Deep Research", description: "Save hours on marketing research", icon: Search },
-                ]
-              },
-            ].map((step, stepIndex) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: stepIndex * 0.1 }}
-                className="relative"
-              >
-                {/* Step Header */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg`}>
-                    <step.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
-                  <div>
-                    <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-                      Step {step.number}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm sm:text-base mt-1">
-                      {step.subtitle}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Services Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  {step.services.map((service, serviceIndex) => {
-                    const IconComponent = service.icon || Zap;
-                    return (
-                      <motion.div
-                        key={service.name}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: serviceIndex * 0.03 }}
-                        className="group relative bg-card border border-border rounded-xl p-4 sm:p-5 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
-                      >
-                        <div className="flex items-start gap-3">
-                          <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br ${step.color} flex items-center justify-center flex-shrink-0`}>
-                            <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-foreground text-sm sm:text-base mb-0.5 group-hover:text-primary transition-colors">
-                              {service.name}
-                            </h4>
-                            <p className="text-muted-foreground text-xs sm:text-sm">
-                              {service.description}
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <motion.div 
-            className="mt-12 sm:mt-16 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
+            <motion.span 
+              variants={fadeInUp}
+              className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6"
+            >
+              Full-Service Marketing
+            </motion.span>
+            <motion.h1 
+              variants={fadeInUp}
+              className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-foreground leading-tight mb-6"
+            >
+              Marketing that actually{" "}
+              <span className="gradient-text">moves the needle</span>
+            </motion.h1>
+            <motion.p 
+              variants={fadeInUp}
+              className="text-base sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8"
+            >
+              Beyond decision systems, Torque offers complete marketing agency services — from strategy and positioning to content creation and conversion optimization.
+            </motion.p>
             <motion.a
+              variants={fadeInUp}
               href="/marketing-agency-services"
               className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Explore All Marketing Services
+              Explore All Services
+              <motion.span 
+                className="ml-2"
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                →
+              </motion.span>
+            </motion.a>
+          </motion.div>
+
+          {/* Service Cards Grid */}
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            {[
+              { 
+                icon: Target, 
+                title: "Marketing Strategy", 
+                description: "User personas, positioning, and acquisition channels that actually work",
+                color: "from-blue-500 to-indigo-600"
+              },
+              { 
+                icon: BarChart3, 
+                title: "Market Analysis", 
+                description: "Competitor research, customer journey mapping, and actionable insights",
+                color: "from-purple-500 to-violet-600"
+              },
+              { 
+                icon: TrendingUp, 
+                title: "Conversion Optimization", 
+                description: "Landing pages, pricing strategies, and email sequences that sell",
+                color: "from-orange-500 to-red-600"
+              },
+              { 
+                icon: PenTool, 
+                title: "Content & SEO", 
+                description: "High-quality blog articles, social posts, and keyword-optimized content",
+                color: "from-emerald-500 to-teal-600"
+              },
+              { 
+                icon: Megaphone, 
+                title: "Paid Advertising", 
+                description: "Profitable ad campaigns across Google, Meta, and LinkedIn",
+                color: "from-pink-500 to-rose-600"
+              },
+              { 
+                icon: Brain, 
+                title: "AI-Powered Execution", 
+                description: "Save hours on marketing tasks with our AI assistant and research tools",
+                color: "from-cyan-500 to-blue-600"
+              },
+            ].map((service, i) => (
+              <motion.div
+                key={service.title}
+                variants={scaleIn}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-6 sm:p-8 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300"
+              >
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg mb-4 sm:mb-5`}>
+                  <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Quiz CTA */}
+          <motion.div 
+            className="relative rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-secondary to-primary/5 p-8 sm:p-10 lg:p-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-bold shadow-lg">
+                <Brain className="w-4 h-4" />
+                Interactive Quiz
+              </span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-4">
+              Not sure which services you need?
+            </h3>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              Take our 2-minute quiz to get personalized recommendations based on your business goals, challenges, and growth stage.
+            </p>
+            <motion.a
+              href="/marketing-agency-services#quiz"
+              className="inline-flex items-center justify-center rounded-full border-2 border-primary bg-transparent px-8 py-4 text-lg font-bold text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Take the Quiz
               <span className="ml-2">→</span>
             </motion.a>
           </motion.div>

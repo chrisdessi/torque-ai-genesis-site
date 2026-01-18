@@ -3,9 +3,22 @@ import { motion, type Variants } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { ZohoAI90DayForm } from "@/components/ZohoAI90DayForm";
 import { CheckCircle, ArrowRight, X, Clock, Users, Zap, Target, BarChart3, Settings, TrendingUp, Shield } from "lucide-react";
 import chrisBioImage from "@/assets/chris-bio.png";
+
+const ZOHO_FORM_URL = "https://forms.zohopublic.com/chris283/form/Torque90DayAIAcceleratorApplication/formperma/Pk2OmbpW0X0aimPF7b1diFOJuZJaZByDucKRjov1t_4";
+
+const openZohoForm = () => {
+  const width = 700;
+  const height = 648;
+  const leftPos = (window.screen.width - width) / 2;
+  const topPos = (window.screen.height - height) / 2;
+  window.open(
+    ZOHO_FORM_URL,
+    null,
+    `width=${width},height=${height},left=${leftPos},top=${topPos},toolbar=0,location=0,status=1,scrollbars=1,resizable=1`
+  );
+};
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -60,12 +73,12 @@ export default function EnterpriseAccelerator() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="pt-4 space-y-4">
-              <a
-                href="#apply"
-                className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-8 py-4 text-lg font-semibold transition-all hover:bg-foreground/90"
+              <button
+                onClick={openZohoForm}
+                className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-8 py-4 text-lg font-semibold transition-all hover:bg-foreground/90 cursor-pointer"
               >
                 👉 Apply for the 90-Day AI Accelerator
-              </a>
+              </button>
               <p className="text-sm text-muted-foreground">
                 Selective. Limited capacity. Applications reviewed within 24 hours.
               </p>
@@ -497,11 +510,13 @@ export default function EnterpriseAccelerator() {
               This program is selective. We work with a limited number of organizations at a time to ensure real results.
             </motion.p>
 
-            <motion.div 
-              variants={fadeInUp}
-              className="bg-secondary/50 rounded-2xl p-8 border border-border"
-            >
-              <ZohoAI90DayForm />
+            <motion.div variants={fadeInUp}>
+              <button
+                onClick={openZohoForm}
+                className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-8 py-4 text-lg font-semibold transition-all hover:bg-foreground/90 cursor-pointer"
+              >
+                👉 Apply Now
+              </button>
             </motion.div>
           </motion.div>
         </div>
@@ -576,12 +591,12 @@ export default function EnterpriseAccelerator() {
             </motion.h2>
 
             <motion.div variants={fadeInUp} className="pt-4 space-y-4">
-              <a
-                href="#apply"
-                className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-8 py-4 text-lg font-semibold transition-all hover:bg-foreground/90"
+              <button
+                onClick={openZohoForm}
+                className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-8 py-4 text-lg font-semibold transition-all hover:bg-foreground/90 cursor-pointer"
               >
                 👉 Apply for the 90-Day AI Accelerator
-              </a>
+              </button>
               <p className="text-sm text-muted-foreground">
                 Serious operators only. No pressure. No obligation.
               </p>

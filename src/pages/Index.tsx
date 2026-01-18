@@ -211,148 +211,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* THE REAL PROBLEM */}
-      <section id="problem" className="dark-section py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <motion.div 
-            className="mb-10 sm:mb-16 max-w-4xl mx-auto text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
-              The Real Problem
-            </p>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
-              The real problem isn't AI.{" "}
-              <span className="highlight-text">It's decision overload.</span>
-            </h2>
-            <p className="mt-4 sm:mt-8 text-base sm:text-xl lg:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto">
-              Executives today are surrounded by tools, dashboards, and opinions — yet clarity keeps slipping away.
-              AI promised relief. Instead, it multiplied noise.
-            </p>
-            <p className="mt-3 sm:mt-4 text-base sm:text-xl text-primary font-bold">
-              This isn't a productivity issue. It's a decision issue.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            {/* Before */}
-            <motion.div 
-              className="group flex flex-col rounded-3xl border-2 border-red-500/30 bg-white/5 p-10"
-              variants={scaleIn}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-red-400">
-                Before
-              </p>
-              <ul className="space-y-4 text-lg text-white/80">
-                {[
-                  "Constant escalation and \"quick questions\"",
-                  "Recurring debates that never resolve",
-                  "Reactive priorities shifting daily",
-                  "Founder as the bottleneck for everything"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-red-400 mt-1">✕</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* After */}
-            <motion.div 
-              className="group flex flex-col rounded-3xl border-2 border-primary/30 bg-white/5 p-10"
-              variants={scaleIn}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">
-                After
-              </p>
-              <ul className="space-y-4 text-lg text-white/80">
-                {[
-                  "Clear ownership on every decision",
-                  "Stable priorities that hold",
-                  "Fewer meetings, faster execution",
-                  "Calmer leadership with more capacity"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-primary mt-1">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* SYSTEM FLOW VISUALIZATION */}
-      <SystemFlowVisualization />
-      
-      {/* SYSTEM EVOLUTION */}
-      <SystemEvolutionSection />
-
-      {/* DECISION SYSTEM */}
-      <section id="pillars" className="bg-background py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <motion.div 
-            className="mb-10 sm:mb-16 max-w-4xl"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
-              Decision System
-            </p>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-foreground leading-tight">
-              Torque is not a productivity tool.{" "}
-              <span className="highlight-text">It's a decision system</span> for leaders.
-            </h2>
-            <p className="mt-4 sm:mt-8 text-base sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              AI should execute decisions — not create more of them.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            {[
-              { title: "Decide what actually matters", icon: "🎯" },
-              { title: "Ignore what doesn't", icon: "🚫" },
-              { title: "Eliminate repeated decisions", icon: "🔄" },
-              { title: "Remove founders from unnecessary loops", icon: "🔓" },
-              { title: "Execute without rework", icon: "⚡" }
-            ].map((item, i) => (
-              <motion.div 
-                key={item.title}
-                className="group flex flex-col items-center text-center rounded-2xl sm:rounded-3xl border-2 border-border bg-secondary p-4 sm:p-6 lg:p-8 hover:border-primary transition-all duration-300"
-                variants={scaleIn}
-                whileHover={{ y: -8 }}
-              >
-                <span className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">{item.icon}</span>
-                <p className="text-xs sm:text-sm lg:text-lg font-bold text-foreground">{item.title}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* MARKETING AGENCY SERVICES */}
       <section id="marketing-services" className="border-b border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -539,6 +397,148 @@ export default function Index() {
               Explore All Marketing Services
               <span className="ml-2">→</span>
             </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* THE REAL PROBLEM */}
+      <section id="problem" className="dark-section py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <motion.div 
+            className="mb-10 sm:mb-16 max-w-4xl mx-auto text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
+              The Real Problem
+            </p>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
+              The real problem isn't AI.{" "}
+              <span className="highlight-text">It's decision overload.</span>
+            </h2>
+            <p className="mt-4 sm:mt-8 text-base sm:text-xl lg:text-2xl text-white/70 leading-relaxed max-w-3xl mx-auto">
+              Executives today are surrounded by tools, dashboards, and opinions — yet clarity keeps slipping away.
+              AI promised relief. Instead, it multiplied noise.
+            </p>
+            <p className="mt-3 sm:mt-4 text-base sm:text-xl text-primary font-bold">
+              This isn't a productivity issue. It's a decision issue.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            {/* Before */}
+            <motion.div 
+              className="group flex flex-col rounded-3xl border-2 border-red-500/30 bg-white/5 p-10"
+              variants={scaleIn}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-red-400">
+                Before
+              </p>
+              <ul className="space-y-4 text-lg text-white/80">
+                {[
+                  "Constant escalation and \"quick questions\"",
+                  "Recurring debates that never resolve",
+                  "Reactive priorities shifting daily",
+                  "Founder as the bottleneck for everything"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-red-400 mt-1">✕</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* After */}
+            <motion.div 
+              className="group flex flex-col rounded-3xl border-2 border-primary/30 bg-white/5 p-10"
+              variants={scaleIn}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">
+                After
+              </p>
+              <ul className="space-y-4 text-lg text-white/80">
+                {[
+                  "Clear ownership on every decision",
+                  "Stable priorities that hold",
+                  "Fewer meetings, faster execution",
+                  "Calmer leadership with more capacity"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-primary mt-1">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SYSTEM FLOW VISUALIZATION */}
+      <SystemFlowVisualization />
+      
+      {/* SYSTEM EVOLUTION */}
+      <SystemEvolutionSection />
+
+      {/* DECISION SYSTEM */}
+      <section id="pillars" className="bg-background py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <motion.div 
+            className="mb-10 sm:mb-16 max-w-4xl"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3 sm:mb-4">
+              Decision System
+            </p>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-foreground leading-tight">
+              Torque is not a productivity tool.{" "}
+              <span className="highlight-text">It's a decision system</span> for leaders.
+            </h2>
+            <p className="mt-4 sm:mt-8 text-base sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+              AI should execute decisions — not create more of them.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            {[
+              { title: "Decide what actually matters", icon: "🎯" },
+              { title: "Ignore what doesn't", icon: "🚫" },
+              { title: "Eliminate repeated decisions", icon: "🔄" },
+              { title: "Remove founders from unnecessary loops", icon: "🔓" },
+              { title: "Execute without rework", icon: "⚡" }
+            ].map((item, i) => (
+              <motion.div 
+                key={item.title}
+                className="group flex flex-col items-center text-center rounded-2xl sm:rounded-3xl border-2 border-border bg-secondary p-4 sm:p-6 lg:p-8 hover:border-primary transition-all duration-300"
+                variants={scaleIn}
+                whileHover={{ y: -8 }}
+              >
+                <span className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">{item.icon}</span>
+                <p className="text-xs sm:text-sm lg:text-lg font-bold text-foreground">{item.title}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
